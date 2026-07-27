@@ -1,0 +1,2620 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent 学习实验室 · Tool / ReAct / Agent Loop / MCP 深入浅出</title>
+<meta name="description" content="一页讲透现代 AI Agent 的完整拼图：Tool 工具调用、ReAct、Agent Loop 与 Loop Engineering、MCP 与 MCP Server。含 16+ 交互组件、随堂测验与真实可跑的 Demo 参考。">
+<style>
+/* ============ 主题变量 ============ */
+:root{
+  --bg:#f5f6fa; --bg-soft:#eceef5; --card:#ffffff; --card-2:#f8f9fd;
+  --text:#1c2333; --text-2:#4a556b; --text-3:#8a93a8;
+  --line:#e3e6ef; --line-2:#d3d8e6;
+  --acc:#5b5bd6; --acc-2:#0ea5b7;
+  --amber:#d97706; --violet:#7c3aed; --emerald:#059669; --blue:#2563eb; --rose:#e11d48; --slate:#475569;
+  --amber-bg:#fef3e2; --violet-bg:#f3eeff; --emerald-bg:#e7f7f0; --blue-bg:#e8f0fe; --rose-bg:#ffe9ee; --slate-bg:#eef2f7;
+  --ok:#16a34a; --ok-bg:#e9f9ef; --err:#dc2626; --err-bg:#feecec;
+  --code-bg:#151a2d; --code-text:#d6deeb;
+  --shadow:0 1px 2px rgba(20,25,50,.05),0 4px 16px rgba(20,25,50,.07);
+  --shadow-lg:0 4px 12px rgba(20,25,50,.08),0 12px 40px rgba(20,25,50,.12);
+  --r:14px; --side-w:268px;
+}
+html[data-theme="dark"]{
+  --bg:#0c101e; --bg-soft:#11162a; --card:#161c33; --card-2:#1a2138;
+  --text:#e8ecf8; --text-2:#aab4cc; --text-3:#6b7590;
+  --line:#252d4a; --line-2:#303a5e;
+  --acc:#8286ff; --acc-2:#22c8dd;
+  --amber:#f59e0b; --violet:#a78bfa; --emerald:#34d399; --blue:#60a5fa; --rose:#fb7185; --slate:#94a3b8;
+  --amber-bg:#2c2210; --violet-bg:#241b3d; --emerald-bg:#0e2b22; --blue-bg:#14233f; --rose-bg:#331722; --slate-bg:#1b2334;
+  --ok:#4ade80; --ok-bg:#10301d; --err:#f87171; --err-bg:#3a1515;
+  --code-bg:#0d1120; --code-text:#d6deeb;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.35);
+  --shadow-lg:0 8px 30px rgba(0,0,0,.5);
+}
+/* ============ 基础 ============ */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.75;font-size:16px;
+  transition:background .3s,color .3s;
+}
+code,pre,.mono{font-family:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,"Liberation Mono",monospace}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{line-height:1.35;font-weight:700}
+::selection{background:rgba(91,91,214,.25)}
+button{font-family:inherit;cursor:pointer}
+/* ============ 顶部进度条 & 顶栏 ============ */
+#progressbar{position:fixed;top:0;left:0;height:3px;width:0;z-index:120;
+  background:linear-gradient(90deg,var(--acc),var(--acc-2));transition:width .4s ease}
+.topbar{position:fixed;top:0;left:var(--side-w);right:0;height:54px;z-index:100;
+  display:flex;align-items:center;gap:12px;padding:0 20px;
+  background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line)}
+.topbar .crumb{font-size:13.5px;color:var(--text-2);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topbar .pct{font-size:12.5px;font-weight:700;color:var(--acc);background:var(--slate-bg);
+  border:1px solid var(--line);padding:3px 10px;border-radius:99px;white-space:nowrap}
+.icon-btn{border:1px solid var(--line);background:var(--card);color:var(--text-2);
+  width:32px;height:32px;border-radius:9px;font-size:15px;display:inline-flex;align-items:center;justify-content:center;
+  transition:all .15s}
+.icon-btn:hover{border-color:var(--acc);color:var(--acc)}
+#hamburger{display:none}
+/* ============ 侧边栏 ============ */
+#sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--side-w);z-index:110;
+  background:var(--card);border-right:1px solid var(--line);
+  display:flex;flex-direction:column;transition:transform .25s ease}
+.side-head{padding:18px 18px 12px;border-bottom:1px solid var(--line)}
+.side-head .logo{font-size:17px;font-weight:800;letter-spacing:.3px;display:flex;align-items:center;gap:8px}
+.side-head .logo .badge{font-size:10px;font-weight:700;color:#fff;
+  background:linear-gradient(120deg,var(--acc),var(--acc-2));padding:2px 7px;border-radius:6px;letter-spacing:1px}
+.side-head .tag{font-size:12px;color:var(--text-3);margin-top:4px}
+.side-prog{padding:12px 18px;border-bottom:1px solid var(--line)}
+.side-prog .lbl{display:flex;justify-content:space-between;font-size:12px;color:var(--text-2);margin-bottom:6px}
+.side-prog .bar{height:6px;border-radius:99px;background:var(--bg-soft);overflow:hidden}
+.side-prog .bar i{display:block;height:100%;width:0;border-radius:99px;
+  background:linear-gradient(90deg,var(--acc),var(--acc-2));transition:width .5s ease}
+.side-nav{flex:1;overflow-y:auto;padding:10px}
+.nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;margin:2px 0;border-radius:10px;
+  font-size:13.5px;color:var(--text-2);cursor:pointer;border:1px solid transparent;transition:all .15s;user-select:none}
+.nav-item:hover{background:var(--bg-soft);text-decoration:none;color:var(--text)}
+.nav-item.active{background:var(--slate-bg);color:var(--text);border-color:var(--line);font-weight:600}
+.nav-item .num{font-size:11px;font-weight:800;color:#fff;width:22px;height:22px;border-radius:7px;
+  display:inline-flex;align-items:center;justify-content:center;flex:none;background:var(--nc,var(--slate))}
+.nav-item .t{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-item .dot{width:8px;height:8px;border-radius:99px;background:var(--line-2);flex:none;transition:background .3s}
+.nav-item.done .dot{background:var(--ok);box-shadow:0 0 0 3px color-mix(in srgb,var(--ok) 25%,transparent)}
+.side-foot{padding:12px 18px;border-top:1px solid var(--line);display:flex;gap:8px;align-items:center;justify-content:space-between}
+.side-foot .mini{font-size:11.5px;color:var(--text-3)}
+#backdrop{display:none;position:fixed;inset:0;background:rgba(10,14,30,.45);z-index:105}
+/* ============ 主区域 ============ */
+main{margin-left:var(--side-w);padding:78px 28px 60px}
+.wrap{max-width:880px;margin:0 auto}
+section.lesson{margin-bottom:72px;scroll-margin-top:70px}
+.sec-head{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+.sec-head .sec-num{font-size:13px;font-weight:800;color:#fff;background:var(--sc,var(--slate));
+  padding:4px 12px;border-radius:9px;letter-spacing:1px;flex:none}
+.sec-head h2{font-size:27px}
+.sec-sub{color:var(--text-2);font-size:15px;margin-bottom:22px}
+h3{font-size:20px;margin:34px 0 12px;display:flex;align-items:center;gap:8px}
+h4{font-size:16px;margin:20px 0 8px}
+p{margin:10px 0;color:var(--text)}
+p.muted,li.muted{color:var(--text-2)}
+ul.nice,ol.nice{margin:10px 0 10px 22px;color:var(--text)}
+ul.nice li,ol.nice li{margin:6px 0}
+strong{font-weight:700}
+.hl{background:linear-gradient(transparent 62%,color-mix(in srgb,var(--acc) 28%,transparent) 62%);font-weight:600}
+.kbd{font-size:12.5px;background:var(--bg-soft);border:1px solid var(--line-2);border-bottom-width:2px;
+  padding:1px 7px;border-radius:6px;font-family:ui-monospace,monospace}
+/* ============ 卡片/提示框 ============ */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
+.tldr{border-left:4px solid var(--sc,var(--acc));background:var(--card);border-radius:12px;
+  padding:16px 20px;margin:18px 0;box-shadow:var(--shadow)}
+.tldr .k{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--sc,var(--acc));text-transform:uppercase}
+.tldr .v{font-size:17.5px;font-weight:700;margin-top:4px;line-height:1.65}
+.callout{border-radius:12px;padding:14px 18px;margin:16px 0;border:1px solid;font-size:14.5px}
+.callout .ct{font-weight:800;margin-bottom:4px;display:flex;gap:6px;align-items:center;font-size:14px}
+.callout.info{background:var(--blue-bg);border-color:color-mix(in srgb,var(--blue) 30%,transparent);color:var(--text)}
+.callout.tip{background:var(--emerald-bg);border-color:color-mix(in srgb,var(--emerald) 30%,transparent)}
+.callout.warn{background:var(--amber-bg);border-color:color-mix(in srgb,var(--amber) 32%,transparent)}
+.callout.story{background:var(--violet-bg);border-color:color-mix(in srgb,var(--violet) 30%,transparent)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:18px 0}
+.mini-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+  box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s;position:relative}
+.mini-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.mini-card .ic{font-size:22px}
+.mini-card .tt{font-weight:700;font-size:15px;margin:6px 0 4px}
+.mini-card .dd{font-size:13.5px;color:var(--text-2);line-height:1.65}
+.mini-card.link{cursor:pointer}
+.mini-card.link:after{content:"→";position:absolute;right:14px;top:14px;color:var(--text-3);transition:transform .15s}
+.mini-card.link:hover:after{transform:translateX(3px);color:var(--acc)}
+/* 概念术语行内小标签 */
+.term{display:inline-block;font-size:12.5px;font-weight:700;padding:1px 8px;border-radius:7px;margin:0 1px;
+  background:var(--slate-bg);border:1px solid var(--line-2)}
+.term.amber{color:var(--amber);background:var(--amber-bg)}
+.term.violet{color:var(--violet);background:var(--violet-bg)}
+.term.emerald{color:var(--emerald);background:var(--emerald-bg)}
+.term.blue{color:var(--blue);background:var(--blue-bg)}
+.term.rose{color:var(--rose);background:var(--rose-bg)}
+/* ============ 代码块 ============ */
+.codebox{position:relative;margin:14px 0;border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+.codebox .cb-head{display:flex;align-items:center;gap:8px;padding:8px 14px;font-size:12px;
+  background:color-mix(in srgb,var(--code-bg) 92%,#fff 8%);color:#8b95b5;border-bottom:1px solid rgba(255,255,255,.06)}
+.codebox .cb-head .dots{display:flex;gap:5px}
+.codebox .cb-head .dots i{width:9px;height:9px;border-radius:99px;display:block}
+.codebox .cb-head .dots i:nth-child(1){background:#ff5f57}.codebox .cb-head .dots i:nth-child(2){background:#febc2e}.codebox .cb-head .dots i:nth-child(3){background:#28c840}
+.codebox .cb-head .fn{flex:1;font-family:ui-monospace,monospace}
+.codebox .copy{border:1px solid rgba(255,255,255,.15);background:transparent;color:#8b95b5;font-size:11.5px;
+  padding:2px 9px;border-radius:6px;transition:all .15s}
+.codebox .copy:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+.codebox pre{background:var(--code-bg);color:var(--code-text);padding:14px 16px;overflow-x:auto;
+  font-size:13px;line-height:1.7;tab-size:2}
+.tk-c{color:#697098;font-style:italic}
+.tk-s{color:#9ece6a}
+.tk-k{color:#bb9af7;font-weight:600}
+.tk-n{color:#ff9e64}
+.tk-key{color:#7dcfff}
+.tk-b{color:#f7768e}
+.tk-d{color:#e0af68}
+/* 代码标签页 */
+.code-tabs{margin:16px 0}
+.code-tabs .tab-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:-1px;position:relative;z-index:2}
+.code-tabs .tab-btn{border:1px solid var(--line);border-bottom:none;background:var(--bg-soft);color:var(--text-2);
+  font-size:13px;font-weight:600;padding:7px 16px;border-radius:10px 10px 0 0;transition:all .15s}
+.code-tabs .tab-btn.active{background:var(--code-bg);color:#fff;border-color:var(--line)}
+.code-tabs .tab-panel{display:none}
+.code-tabs .tab-panel.active{display:block}
+.code-tabs .tab-panel .codebox{margin-top:0;border-top-left-radius:0}
+/* ============ Demo 容器 ============ */
+.demo{border:1.5px solid var(--line-2);border-radius:16px;margin:22px 0;overflow:hidden;background:var(--card);box-shadow:var(--shadow-lg)}
+.demo-head{display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--card-2);border-bottom:1px solid var(--line)}
+.demo-head .tag{font-size:11px;font-weight:800;letter-spacing:1.5px;color:#fff;padding:3px 9px;border-radius:7px;
+  background:linear-gradient(120deg,var(--acc),var(--acc-2))}
+.demo-head .tt{font-weight:700;font-size:14.5px;flex:1}
+.demo-head .hint{font-size:12px;color:var(--text-3)}
+.demo-body{padding:18px}
+.btn{border:1px solid var(--line-2);background:var(--card);color:var(--text);font-size:13.5px;font-weight:600;
+  padding:7px 16px;border-radius:10px;transition:all .15s;display:inline-flex;align-items:center;gap:6px}
+.btn:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-1px)}
+.btn.primary{background:linear-gradient(120deg,var(--acc),var(--acc-2));color:#fff;border:none}
+.btn.primary:hover{filter:brightness(1.08);color:#fff}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+/* ============ Demo A 对比聊天 ============ */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.chatpane{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card-2);display:flex;flex-direction:column;min-height:300px}
+.chatpane .cp-head{padding:8px 14px;font-size:13px;font-weight:700;border-bottom:1px solid var(--line);display:flex;gap:8px;align-items:center}
+.chatpane.bare .cp-head{color:var(--slate)}
+.chatpane.tooled .cp-head{color:var(--emerald)}
+.cp-body{flex:1;padding:14px;display:flex;flex-direction:column;gap:10px;overflow-y:auto;max-height:380px}
+.bubble{max-width:88%;padding:9px 13px;border-radius:13px;font-size:13.5px;line-height:1.65;
+  animation:pop .25s ease;white-space:pre-wrap}
+.bubble.user{align-self:flex-end;background:linear-gradient(120deg,var(--acc),color-mix(in srgb,var(--acc) 70%,var(--acc-2)));color:#fff;border-bottom-right-radius:4px}
+.bubble.ai{align-self:flex-start;background:var(--card);border:1px solid var(--line);border-bottom-left-radius:4px}
+.bubble.bad{border-color:color-mix(in srgb,var(--err) 45%,transparent)}
+.bubble .verdict{display:block;margin-top:6px;font-size:12px;font-weight:700}
+.bubble .verdict.ok{color:var(--ok)}.bubble .verdict.no{color:var(--err)}
+.toolchip{align-self:flex-start;font-size:12px;font-family:ui-monospace,monospace;background:var(--emerald-bg);
+  color:var(--emerald);border:1px dashed color-mix(in srgb,var(--emerald) 45%,transparent);
+  padding:5px 10px;border-radius:9px;animation:pop .25s ease}
+.toolchip b{font-weight:800}
+.typing{align-self:flex-start;display:flex;gap:4px;padding:10px 14px}
+.typing i{width:6px;height:6px;border-radius:99px;background:var(--text-3);animation:blink 1s infinite}
+.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(6px) scale(.97)}to{opacity:1;transform:none}}
+/* ============ 步进器 ============ */
+.stepper .step-dots{display:flex;gap:6px;align-items:center;margin-bottom:14px;flex-wrap:wrap}
+.stepper .sdot{width:30px;height:30px;border-radius:99px;border:1.5px solid var(--line-2);background:var(--card);
+  color:var(--text-3);font-size:12.5px;font-weight:800;transition:all .2s}
+.stepper .sdot.on{background:var(--sc,var(--acc));border-color:var(--sc,var(--acc));color:#fff;transform:scale(1.1)}
+.stepper .sdot.past{background:var(--slate-bg);color:var(--sc,var(--acc));border-color:var(--sc,var(--acc))}
+.stepper .sline{flex:1;height:2px;background:var(--line);min-width:8px;max-width:40px}
+.step-panel{display:none;animation:pop .3s ease}
+.step-panel.active{display:block}
+.step-panel .sp-title{font-weight:800;font-size:15.5px;margin-bottom:6px}
+.step-panel .sp-desc{font-size:14px;color:var(--text-2);margin-bottom:10px}
+/* ============ ReAct 轨迹 ============ */
+.trace{display:flex;flex-direction:column;gap:9px;margin-top:14px;min-height:120px}
+.tr-item{border-radius:11px;padding:10px 14px;font-size:13.5px;line-height:1.7;border:1px solid;display:none;animation:pop .35s ease}
+.tr-item.show{display:block}
+.tr-item .tr-tag{font-size:11px;font-weight:800;letter-spacing:1px;display:inline-block;margin-right:8px;
+  padding:1px 8px;border-radius:6px;color:#fff;vertical-align:1px}
+.tr-item.q{background:var(--slate-bg);border-color:var(--line-2)}
+.tr-item.q .tr-tag{background:var(--slate)}
+.tr-item.thought{background:var(--violet-bg);border-color:color-mix(in srgb,var(--violet) 30%,transparent)}
+.tr-item.thought .tr-tag{background:var(--violet)}
+.tr-item.action{background:var(--amber-bg);border-color:color-mix(in srgb,var(--amber) 32%,transparent);font-family:ui-monospace,monospace;font-size:13px}
+.tr-item.action .tr-tag{background:var(--amber);font-family:-apple-system,"PingFang SC",sans-serif}
+.tr-item.obs{background:var(--blue-bg);border-color:color-mix(in srgb,var(--blue) 30%,transparent)}
+.tr-item.obs .tr-tag{background:var(--blue)}
+.tr-item.fin{background:var(--ok-bg);border-color:color-mix(in srgb,var(--ok) 35%,transparent)}
+.tr-item.fin .tr-tag{background:var(--ok)}
+.legend{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--text-2);margin-top:10px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+/* ============ 循环模拟器 ============ */
+.loopgrid{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;margin-top:14px}
+.loop-svg-wrap{background:var(--card-2);border:1px solid var(--line);border-radius:12px;padding:8px}
+.loop-svg text{font-size:13px;font-weight:700;fill:var(--text)}
+.loop-svg .lnode rect{fill:var(--card);stroke:var(--line-2);stroke-width:1.5;rx:12;transition:all .25s}
+.loop-svg .lnode.hot rect{stroke:var(--emerald);stroke-width:2.5;filter:drop-shadow(0 0 6px color-mix(in srgb,var(--emerald) 60%,transparent))}
+.loop-svg .lnode.hot text{fill:var(--emerald)}
+.loop-svg path.edge{fill:none;stroke:var(--line-2);stroke-width:2}
+.loop-svg .edge-label{font-size:11px;font-weight:600;fill:var(--text-3)}
+.loop-panel{display:flex;flex-direction:column;gap:10px}
+.loop-stats{display:flex;gap:8px;flex-wrap:wrap}
+.stat{background:var(--card-2);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:12px;color:var(--text-2);flex:1;min-width:100px}
+.stat b{display:block;font-size:17px;color:var(--text);font-family:ui-monospace,monospace}
+.ctxbar{height:9px;background:var(--bg-soft);border-radius:99px;overflow:hidden;margin-top:5px}
+.ctxbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--emerald),var(--amber));border-radius:99px;transition:width .5s}
+.loop-log{background:var(--code-bg);border-radius:12px;padding:12px 14px;font-family:ui-monospace,monospace;
+  font-size:12px;line-height:1.8;color:var(--code-text);flex:1;overflow-y:auto;max-height:290px;min-height:180px}
+.loop-log div{animation:pop .25s ease}
+.loop-log .ll-think{color:#bb9af7}
+.loop-log .ll-call{color:#e0af68}
+.loop-log .ll-res{color:#7dcfff}
+.loop-log .ll-ok{color:#9ece6a;font-weight:700}
+.loop-log .ll-iter{color:#697098;border-top:1px dashed #2a3252;margin-top:4px;padding-top:4px}
+/* ============ M×N 图 ============ */
+.mxn-wrap{background:var(--card-2);border:1px solid var(--line);border-radius:12px;padding:10px;margin-top:12px}
+.mxn-wrap svg{width:100%;height:auto;display:block}
+.mxn-wrap .box{fill:var(--card);stroke:var(--line-2);stroke-width:1.5;rx:10}
+.mxn-wrap text{font-size:13px;font-weight:700;fill:var(--text)}
+.mxn-wrap .wire{stroke:var(--rose);stroke-width:1.6;opacity:.75;transition:opacity .3s}
+.mxn-wrap .wire.std{stroke:var(--emerald);stroke-width:2.2}
+.mxn-wrap .hub rect{fill:var(--emerald-bg);stroke:var(--emerald);stroke-width:2}
+.mxn-wrap .hub text{fill:var(--emerald)}
+.mxn-count{text-align:center;font-size:14.5px;font-weight:700;margin-top:8px}
+/* ============ MCP 架构图 ============ */
+.arch{display:grid;grid-template-columns:1.15fr auto 1fr;gap:12px;align-items:stretch;margin-top:14px}
+.arch .host-box{border:2px solid var(--blue);border-radius:14px;padding:14px;background:var(--blue-bg);cursor:pointer;transition:all .15s}
+.arch .host-box:hover{box-shadow:var(--shadow-lg)}
+.arch .host-box .hb-t{font-weight:800;font-size:14.5px;color:var(--blue);margin-bottom:2px}
+.arch .host-box .hb-s{font-size:12px;color:var(--text-2);margin-bottom:10px}
+.arch .client-chip{background:var(--card);border:1.5px dashed color-mix(in srgb,var(--blue) 50%,transparent);
+  border-radius:10px;padding:7px 10px;font-size:12.5px;font-weight:600;margin:6px 0;cursor:pointer;transition:all .15s}
+.arch .client-chip:hover{border-style:solid;transform:translateX(2px)}
+.arch .mid{display:flex;flex-direction:column;justify-content:space-around;align-items:center;padding:14px 2px;gap:8px}
+.arch .mid .wirelab{font-size:10.5px;color:var(--text-3);writing-mode:initial;text-align:center;font-weight:700}
+.arch .mid .arrow{color:var(--text-3);font-size:16px;letter-spacing:-2px}
+.arch .servers{display:flex;flex-direction:column;gap:10px}
+.arch .server-box{border:1.5px solid var(--rose);background:var(--rose-bg);border-radius:12px;padding:10px 13px;cursor:pointer;transition:all .15s}
+.arch .server-box:hover{transform:translateX(-2px);box-shadow:var(--shadow-lg)}
+.arch .server-box .sb-t{font-weight:800;font-size:13.5px;color:var(--rose)}
+.arch .server-box .sb-s{font-size:11.5px;color:var(--text-2)}
+.arch-info{margin-top:12px;border-radius:12px;border:1px solid var(--line);background:var(--card-2);padding:14px 18px;font-size:14px;min-height:88px}
+.arch-info .ai-t{font-weight:800;margin-bottom:4px}
+.arch .picked{outline:2.5px solid var(--acc);outline-offset:2px}
+/* ============ 消息流 ============ */
+.msgflow{display:flex;flex-direction:column;gap:10px;margin-top:14px;min-height:80px}
+.msg{display:none;animation:pop .3s ease;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.msg.show{display:block}
+.msg .m-head{display:flex;align-items:center;gap:9px;padding:7px 13px;font-size:12.5px;background:var(--card-2);border-bottom:1px solid var(--line)}
+.msg .dir{font-weight:800;font-size:11.5px;padding:1px 8px;border-radius:6px}
+.msg .dir.c2s{background:var(--blue-bg);color:var(--blue)}
+.msg .dir.s2c{background:var(--rose-bg);color:var(--rose)}
+.msg .mth{font-family:ui-monospace,monospace;font-weight:700;font-size:12.5px}
+.msg .note{margin-left:auto;color:var(--text-3);font-size:11.5px}
+.msg pre{background:var(--code-bg);color:var(--code-text);font-size:12px;line-height:1.65;padding:10px 14px;overflow-x:auto}
+/* ============ Inspector ============ */
+.inspector{display:grid;grid-template-columns:230px 1fr;gap:14px;margin-top:14px}
+.insp-left{background:var(--card-2);border:1px solid var(--line);border-radius:12px;padding:14px}
+.insp-left label{display:block;font-size:12px;font-weight:700;color:var(--text-2);margin:10px 0 4px}
+.insp-left select,.insp-left input{width:100%;padding:7px 10px;border-radius:9px;border:1px solid var(--line-2);
+  background:var(--card);color:var(--text);font-size:13.5px;font-family:inherit}
+.insp-left .tool-desc{font-size:11.5px;color:var(--text-3);margin-top:8px;line-height:1.6}
+.insp-right{display:flex;flex-direction:column;gap:10px}
+.insp-log{background:var(--code-bg);border-radius:12px;padding:12px 14px;min-height:230px;max-height:340px;overflow-y:auto;
+  font-family:ui-monospace,monospace;font-size:12px;line-height:1.7;color:var(--code-text)}
+.insp-log .req{color:#7dcfff}
+.insp-log .res{color:#9ece6a}
+.insp-log .sys{color:#697098;font-style:italic}
+.insp-log pre{white-space:pre-wrap;word-break:break-all;margin:2px 0 10px}
+/* ============ 测验 ============ */
+.quiz{border:1.5px solid var(--line-2);border-radius:16px;margin:26px 0;overflow:hidden;background:var(--card)}
+.quiz-head{display:flex;align-items:center;gap:10px;padding:12px 18px;background:var(--card-2);border-bottom:1px solid var(--line)}
+.quiz-head .qh-ic{font-size:18px}
+.quiz-head .qh-t{font-weight:800;font-size:15px;flex:1}
+.quiz-head .qh-s{font-size:12.5px;color:var(--text-3)}
+.quiz-body{padding:16px 18px}
+.q-item{margin-bottom:20px}
+.q-item:last-child{margin-bottom:6px}
+.q-title{font-weight:700;font-size:14.5px;margin-bottom:10px}
+.q-title .qn{color:var(--acc);margin-right:6px}
+.q-opts{display:flex;flex-direction:column;gap:8px}
+.q-opt{text-align:left;border:1.5px solid var(--line);background:var(--card-2);border-radius:11px;
+  padding:9px 14px;font-size:14px;color:var(--text);transition:all .15s;line-height:1.6}
+.q-opt:hover{border-color:var(--acc)}
+.q-opt.right{border-color:var(--ok);background:var(--ok-bg);font-weight:600}
+.q-opt.wrong{border-color:var(--err);background:var(--err-bg);animation:shake .35s ease}
+.q-opt:disabled{cursor:default;opacity:.7}
+.q-opt.right:disabled{opacity:1}
+.q-explain{display:none;margin-top:9px;font-size:13px;border-radius:10px;padding:10px 14px;line-height:1.7}
+.q-explain.show{display:block;animation:pop .3s ease}
+.q-explain.good{background:var(--ok-bg);color:var(--text)}
+.q-explain.bad{background:var(--err-bg);color:var(--text)}
+.quiz-done{display:none;margin:0 18px 16px;padding:12px 16px;border-radius:12px;background:var(--ok-bg);
+  border:1px solid color-mix(in srgb,var(--ok) 40%,transparent);font-weight:700;font-size:14.5px}
+.quiz-done.show{display:flex;gap:8px;align-items:center;animation:pop .35s ease}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+/* ============ 时间线 ============ */
+.timeline{position:relative;margin:20px 0 20px 10px;padding-left:26px;border-left:2px solid var(--line-2)}
+.tl-item{position:relative;margin-bottom:18px}
+.tl-item:before{content:"";position:absolute;left:-33.5px;top:6px;width:13px;height:13px;border-radius:99px;
+  background:var(--card);border:3px solid var(--tlc,var(--acc))}
+.tl-item .tl-date{font-size:12px;font-weight:800;color:var(--tlc,var(--acc));font-family:ui-monospace,monospace}
+.tl-item .tl-t{font-weight:700;font-size:14.5px;margin:2px 0}
+.tl-item .tl-d{font-size:13.5px;color:var(--text-2)}
+/* ============ 表格 ============ */
+.tbl{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.8px;background:var(--card);
+  border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+.tbl th{background:var(--card-2);text-align:left;padding:10px 14px;font-size:12.5px;color:var(--text-2);
+  border-bottom:1.5px solid var(--line-2);white-space:nowrap}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.65}
+.tbl tr:last-child td{border-bottom:none}
+.tbl td b{font-weight:700}
+/* ============ 深入一层 ============ */
+details.deep{border:1px dashed var(--line-2);border-radius:12px;margin:14px 0;background:var(--card-2)}
+details.deep summary{cursor:pointer;padding:11px 16px;font-weight:700;font-size:14px;color:var(--text-2);user-select:none;list-style:none;display:flex;align-items:center;gap:8px}
+details.deep summary:before{content:"▸";transition:transform .2s;color:var(--acc)}
+details.deep[open] summary:before{transform:rotate(90deg)}
+details.deep summary:hover{color:var(--acc)}
+details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
+/* ============ 小结 & 链接 ============ */
+.recap{border-radius:14px;border:1px solid color-mix(in srgb,var(--sc,var(--acc)) 35%,transparent);
+  background:linear-gradient(140deg,color-mix(in srgb,var(--sc,var(--acc)) 8%,var(--card)),var(--card));
+  padding:16px 20px;margin:26px 0 8px}
+.recap .rc-t{font-weight:800;font-size:14px;letter-spacing:1px;color:var(--sc,var(--acc));margin-bottom:8px}
+.recap ul{margin-left:20px}
+.recap li{margin:5px 0;font-size:14px}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:10px;margin:14px 0}
+.linkcard{display:block;border:1px solid var(--line);border-radius:11px;padding:11px 14px;background:var(--card);
+  transition:all .15s;font-size:13px;color:var(--text)}
+.linkcard:hover{border-color:var(--acc);transform:translateY(-2px);box-shadow:var(--shadow);text-decoration:none}
+.linkcard .lc-t{font-weight:700;font-size:13.5px;display:flex;gap:6px;align-items:center}
+.linkcard .lc-t .ext{margin-left:auto;color:var(--text-3);font-size:11px}
+.linkcard .lc-d{color:var(--text-2);font-size:12.5px;margin-top:3px;line-height:1.6}
+/* ============ Hero ============ */
+.hero{padding:26px 0 10px}
+.hero h1{font-size:36px;line-height:1.3;letter-spacing:.5px}
+.hero h1 .grad{background:linear-gradient(120deg,var(--acc),var(--acc-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-size:16.5px;color:var(--text-2);margin:12px 0 16px;max-width:640px}
+.meta-chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 4px}
+.meta-chips .mc{font-size:12.5px;font-weight:600;color:var(--text-2);background:var(--card);
+  border:1px solid var(--line);padding:5px 12px;border-radius:99px;box-shadow:var(--shadow)}
+.roadline{display:flex;align-items:stretch;gap:0;margin:24px 0;overflow-x:auto;padding-bottom:6px}
+.road-node{flex:1;min-width:132px;position:relative;padding:12px 14px 12px 18px;background:var(--card);
+  border:1px solid var(--line);border-radius:12px;margin-right:26px;box-shadow:var(--shadow)}
+.road-node:after{content:"➜";position:absolute;right:-22px;top:50%;transform:translateY(-50%);color:var(--text-3);font-size:14px}
+.road-node:last-child{margin-right:0}
+.road-node:last-child:after{display:none}
+.road-node .rn-y{font-size:11.5px;font-weight:800;font-family:ui-monospace,monospace;color:var(--rc,var(--acc))}
+.road-node .rn-t{font-weight:800;font-size:14px;margin:1px 0}
+.road-node .rn-d{font-size:12px;color:var(--text-2);line-height:1.55}
+/* ============ 全景图 ============ */
+.bigpic{border:1px solid var(--line);border-radius:16px;background:var(--card-2);padding:18px;margin:18px 0}
+.bp-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center}
+.bp-box{border-radius:12px;padding:10px 14px;font-size:13px;font-weight:700;text-align:center;border:1.5px solid}
+.bp-arrow{color:var(--text-3);font-size:18px;font-weight:800}
+.bp-user{background:var(--slate-bg);border-color:var(--slate);color:var(--slate)}
+.bp-host{background:var(--blue-bg);border-color:var(--blue);color:var(--blue);padding:14px}
+.bp-host .bp-inner{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.bp-pill{font-size:11.5px;font-weight:700;border-radius:8px;padding:4px 10px;background:var(--card);border:1px dashed var(--line-2);color:var(--text-2)}
+.bp-world{background:var(--emerald-bg);border-color:var(--emerald);color:var(--emerald)}
+.bp-note{text-align:center;font-size:12.5px;color:var(--text-3);margin-top:10px}
+/* ============ 学习路径清单 ============ */
+.pathlist{display:flex;flex-direction:column;gap:9px;margin:16px 0}
+.path-item{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;
+  padding:12px 16px;background:var(--card);transition:all .2s;cursor:pointer}
+.path-item:hover{border-color:var(--acc)}
+.path-item.checked{background:var(--ok-bg);border-color:color-mix(in srgb,var(--ok) 40%,transparent)}
+.path-item .pi-box{width:22px;height:22px;border-radius:7px;border:2px solid var(--line-2);flex:none;margin-top:2px;
+  display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff;transition:all .2s}
+.path-item.checked .pi-box{background:var(--ok);border-color:var(--ok)}
+.path-item .pi-t{font-weight:700;font-size:14.5px}
+.path-item.checked .pi-t{text-decoration:line-through;color:var(--text-2)}
+.path-item .pi-d{font-size:13px;color:var(--text-2);margin-top:2px;line-height:1.6}
+/* ============ Toast & 彩带 ============ */
+#toast-root{position:fixed;right:20px;bottom:20px;z-index:200;display:flex;flex-direction:column;gap:10px}
+.toast{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:12px;
+  padding:12px 18px;font-size:14px;font-weight:600;box-shadow:var(--shadow-lg);
+  animation:toastIn .3s ease;max-width:320px}
+.toast.out{animation:toastOut .3s ease forwards}
+@keyframes toastIn{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
+@keyframes toastOut{to{opacity:0;transform:translateX(30px)}}
+.confetti{position:fixed;top:-30px;z-index:300;font-size:22px;animation:fall linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(105vh) rotate(720deg);opacity:.6}}
+/* ============ 架构图鉴 ============ */
+.patgrid{display:grid;grid-template-columns:190px 1fr;gap:14px;margin-top:14px}
+.pat-list{display:flex;flex-direction:column;gap:7px}
+.pat-btn{text-align:left;border:1.5px solid var(--line);background:var(--card-2);border-radius:11px;
+  padding:9px 13px;font-size:13.5px;font-weight:700;color:var(--text-2);transition:all .15s}
+.pat-btn small{display:block;font-weight:500;font-size:11px;color:var(--text-3)}
+.pat-btn:hover{border-color:var(--acc)}
+.pat-btn.on{border-color:var(--sc,var(--acc));color:var(--sc,var(--acc));background:var(--card);box-shadow:var(--shadow)}
+.pat-panel{display:none;background:var(--card-2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;animation:pop .3s ease}
+.pat-panel.active{display:block}
+.pat-panel .pp-t{font-weight:800;font-size:15.5px;margin-bottom:4px}
+.pat-panel .pp-d{font-size:13.5px;color:var(--text-2);line-height:1.7}
+.pat-panel .pp-use{font-size:13px;margin-top:10px;padding:9px 13px;border-radius:10px;background:var(--emerald-bg);
+  border:1px solid color-mix(in srgb,var(--emerald) 30%,transparent)}
+.flow{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin:14px 0;justify-content:center}
+.flow .fb{border:1.5px solid var(--line-2);background:var(--card);border-radius:9px;padding:6px 11px;
+  font-size:12px;font-weight:700;text-align:center;line-height:1.4}
+.flow .fb.llm{border-color:var(--violet);color:var(--violet);background:var(--violet-bg)}
+.flow .fb.gate{border-color:var(--amber);color:var(--amber);background:var(--amber-bg);border-style:dashed}
+.flow .fb.out{border-color:var(--emerald);color:var(--emerald);background:var(--emerald-bg)}
+.flow .fa{color:var(--text-3);font-weight:800;font-size:13px}
+.flow .fcol{display:flex;flex-direction:column;gap:6px}
+.flow .fb.pulse{animation:fbpulse 1.6s ease infinite}
+@keyframes fbpulse{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--violet) 35%,transparent)}50%{box-shadow:0 0 0 7px transparent}}
+/* ============ 概念雷达 ============ */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.chip{border:1.5px solid var(--line-2);background:var(--card);color:var(--text-2);font-size:12.5px;font-weight:700;
+  padding:5px 14px;border-radius:99px;transition:all .15s}
+.chip:hover{border-color:var(--acc);color:var(--acc)}
+.chip.on{background:linear-gradient(120deg,var(--acc),var(--acc-2));color:#fff;border-color:transparent}
+.radar{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:6px}
+.rc{border:1px solid var(--line);border-radius:13px;background:var(--card);padding:14px 16px;cursor:pointer;
+  transition:all .18s;box-shadow:var(--shadow);position:relative}
+.rc:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);border-color:var(--acc)}
+.rc.hidden{display:none}
+.rc .rc-top{display:flex;align-items:center;gap:8px}
+.rc .rc-ic{font-size:20px}
+.rc .rc-name{font-weight:800;font-size:14.5px;flex:1}
+.rc .rc-hot{font-size:10.5px;font-weight:800;color:#fff;background:linear-gradient(120deg,#f43f5e,#f59e0b);
+  padding:2px 8px;border-radius:99px;letter-spacing:.5px}
+.rc .rc-grp{display:inline-block;font-size:10.5px;font-weight:700;color:var(--text-3);border:1px solid var(--line-2);
+  padding:1px 8px;border-radius:6px;margin-top:7px}
+.rc .rc-one{font-size:13px;color:var(--text-2);margin-top:7px;line-height:1.65}
+.rc .rc-more{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line-2);font-size:13px;line-height:1.7}
+.rc.open .rc-more{display:block;animation:pop .25s ease}
+.rc .rc-rel{margin-top:8px;padding:8px 12px;border-radius:9px;background:var(--slate-bg);font-size:12.5px}
+.rc .rc-link{display:inline-block;margin-top:8px;margin-right:10px;font-size:12.5px;font-weight:700}
+.rc .rc-hint{position:absolute;right:12px;bottom:10px;font-size:11px;color:var(--text-3);transition:transform .2s}
+.rc.open .rc-hint{transform:rotate(180deg)}
+/* ============ 观点对撞 ============ */
+.versus{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.vs-card{border-radius:13px;padding:14px 17px;border:1.5px solid;font-size:13.5px;line-height:1.7}
+.vs-card.pro{background:var(--emerald-bg);border-color:color-mix(in srgb,var(--emerald) 35%,transparent)}
+.vs-card.con{background:var(--rose-bg);border-color:color-mix(in srgb,var(--rose) 35%,transparent)}
+.vs-card .vs-t{font-weight:800;font-size:13.5px;margin-bottom:6px}
+.vs-card.pro .vs-t{color:var(--emerald)}
+.vs-card.con .vs-t{color:var(--rose)}
+@media (max-width:1023px){.patgrid{grid-template-columns:1fr}.pat-list{flex-direction:row;flex-wrap:wrap}.versus{grid-template-columns:1fr}}
+/* ============ 页脚 ============ */
+.pagefoot{margin-top:60px;padding:24px 0 10px;border-top:1px solid var(--line);color:var(--text-3);font-size:12.5px;line-height:2}
+/* ============ 响应式 ============ */
+@media (max-width:1023px){
+  #sidebar{transform:translateX(-100%)}
+  #sidebar.open{transform:none;box-shadow:var(--shadow-lg)}
+  #backdrop.show{display:block}
+  .topbar{left:0}
+  main{margin-left:0;padding:74px 16px 50px}
+  #hamburger{display:inline-flex}
+  .duo,.loopgrid,.inspector{grid-template-columns:1fr}
+  .arch{grid-template-columns:1fr}
+  .arch .mid{flex-direction:row}
+  .hero h1{font-size:28px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<div id="progressbar"></div>
+
+<!-- ============ 侧边栏 ============ -->
+<nav id="sidebar">
+  <div class="side-head">
+    <div class="logo">🧭 Agent 学习实验室 <span class="badge">LAB</span></div>
+    <div class="tag">Tool · ReAct · Loop · MCP 深入浅出</div>
+  </div>
+  <div class="side-prog">
+    <div class="lbl"><span>学习进度</span><b id="side-pct">0%</b></div>
+    <div class="bar"><i id="side-bar"></i></div>
+  </div>
+  <div class="side-nav" id="side-nav">
+    <a class="nav-item" data-sec="sec-0" style="--nc:#64748b"><span class="num">0</span><span class="t">为什么模型需要"手和脚"</span><span class="dot"></span></a>
+    <a class="nav-item" data-sec="sec-1" style="--nc:#d97706"><span class="num">1</span><span class="t">Tool · 工具调用</span><span class="dot"></span></a>
+    <a class="nav-item" data-sec="sec-2" style="--nc:#7c3aed"><span class="num">2</span><span class="t">ReAct · 边想边做</span><span class="dot"></span></a>
+    <a class="nav-item" data-sec="sec-3" style="--nc:#059669"><span class="num">3</span><span class="t">Agent Loop 与 Loop Engineering</span><span class="dot"></span></a>
+    <a class="nav-item" data-sec="sec-4" style="--nc:#2563eb"><span class="num">4</span><span class="t">MCP · 模型上下文协议</span><span class="dot"></span></a>
+    <a class="nav-item" data-sec="sec-5" style="--nc:#e11d48"><span class="num">5</span><span class="t">MCP Server · 动手写一个</span><span class="dot"></span></a>
+    <a class="nav-item" data-sec="sec-6" style="--nc:#0891b2"><span class="num">6</span><span class="t">Agent 架构与 Multi-Agent</span><span class="dot"></span></a>
+    <a class="nav-item" data-sec="sec-7" style="--nc:#c026d3"><span class="num">7</span><span class="t">2026 前沿概念雷达</span><span class="dot"></span></a>
+    <a class="nav-item" data-sec="sec-8" style="--nc:#5b5bd6"><span class="num">8</span><span class="t">全景串联 + 通关自测</span><span class="dot"></span></a>
+  </div>
+  <div class="side-foot">
+    <span class="mini">进度自动保存在本地</span>
+    <button class="icon-btn" id="reset-btn" title="重置全部进度">↺</button>
+  </div>
+</nav>
+<div id="backdrop"></div>
+
+<!-- ============ 顶栏 ============ -->
+<header class="topbar">
+  <button class="icon-btn" id="hamburger" title="目录">☰</button>
+  <div class="crumb" id="crumb">0 · 为什么模型需要"手和脚"</div>
+  <span class="pct" id="top-pct">进度 0%</span>
+  <button class="icon-btn" id="theme-btn" title="切换深浅色">🌙</button>
+</header>
+
+<main><div class="wrap">
+
+<!-- ================================================================ -->
+<!-- 第 0 章 · 开场 -->
+<!-- ================================================================ -->
+<section class="lesson" id="sec-0" style="--sc:#64748b">
+  <div class="hero">
+    <h1>一页讲透现代 AI Agent 的<br><span class="grad">完整拼图</span></h1>
+    <p class="sub">Tool（工具调用）、ReAct、Agent Loop 与 Loop Engineering、MCP 与 MCP Server——这五块拼图拼在一起，就是你每天在用的 Cursor、Claude Code、ChatGPT Agent 的全部骨架。</p>
+    <div class="meta-chips">
+      <span class="mc">📚 9 个章节</span>
+      <span class="mc">🎮 20+ 个交互组件</span>
+      <span class="mc">⏱ 60–90 分钟</span>
+      <span class="mc">💾 进度自动保存</span>
+      <span class="mc">🔎 事实核对于 2026-07-08</span>
+    </div>
+  </div>
+
+  <div class="tldr"><div class="k">一句总纲</div>
+    <div class="v">现代 Agent = 一个会调用工具的模型（Tool）× 一个循环（Loop）× 一套标准接口（MCP）。ReAct 是这一切的思想源头，Loop Engineering 是把它做稳做好的工程学。</div>
+  </div>
+
+  <h3>🗺 先看学习地图：这些概念是怎么一步步长出来的</h3>
+  <div class="roadline">
+    <div class="road-node" style="--rc:#7c3aed"><div class="rn-y">2022.10</div><div class="rn-t">ReAct 论文</div><div class="rn-d">思想诞生：让模型"边推理边行动"</div></div>
+    <div class="road-node" style="--rc:#d97706"><div class="rn-y">2023.06</div><div class="rn-t">Function Calling</div><div class="rn-d">机制落地：模型原生输出结构化工具调用</div></div>
+    <div class="road-node" style="--rc:#2563eb"><div class="rn-y">2024.11</div><div class="rn-t">MCP 发布</div><div class="rn-d">接口标准化：Anthropic 开源"AI 的 USB-C"</div></div>
+    <div class="road-node" style="--rc:#059669"><div class="rn-y">2025</div><div class="rn-t">Agent 产品化</div><div class="rn-d">Cursor / Claude Code / Codex 全面爆发，MCP 成事实标准</div></div>
+    <div class="road-node" style="--rc:#e11d48"><div class="rn-y">2026.06</div><div class="rn-t">Loop Engineering</div><div class="rn-d">工程学成型："别再一句句提示，去设计循环"</div></div>
+    <div class="road-node" style="--rc:#c026d3"><div class="rn-y">2026.07</div><div class="rn-t">看进模型脑内</div><div class="rn-d">Anthropic 发现 J-Space；世界模型融资潮并行升温</div></div>
+  </div>
+
+  <h3>🤔 出发点：再聪明的大脑，也只是个"文字接龙机"</h3>
+  <p>大语言模型（LLM）的本质是：<span class="hl">读入一段文字（上下文），预测下一段文字（输出）</span>。它没有时钟、没有网络、没有文件系统、没有记忆——它连"今天是几号"都不知道。它是一个被关在玻璃房里的天才：博览群书、推理惊人，但<strong>看不到外面、也摸不着外面</strong>。</p>
+  <p>下面这个对比实验，直观感受一下"裸模型"和"带工具的模型"的差距（点击问题按钮，两边同时开跑）：</p>
+
+  <!-- Demo A：裸模型 vs 带工具 -->
+  <div class="demo" id="demo-a">
+    <div class="demo-head"><span class="tag">DEMO 1</span><span class="tt">同一个模型，有无工具的平行世界</span><span class="hint">点下面的问题试试</span></div>
+    <div class="demo-body">
+      <div class="btn-row">
+        <button class="btn" data-da="time">🕐 现在几点了？</button>
+        <button class="btn" data-da="math">🧮 123456789 × 987654321 = ?</button>
+        <button class="btn" data-da="file">📄 我项目用的什么测试框架？</button>
+      </div>
+      <div class="duo">
+        <div class="chatpane bare">
+          <div class="cp-head">🚫 裸模型（没有工具）</div>
+          <div class="cp-body" id="da-bare"><div class="bubble ai">我是一个只会"文字接龙"的模型。问我点什么吧。</div></div>
+        </div>
+        <div class="chatpane tooled">
+          <div class="cp-head">🔧 同一个模型 + 工具</div>
+          <div class="cp-body" id="da-tooled"><div class="bubble ai">我挂上了 get_time / calculator / read_file 三个工具。来吧。</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>三个问题，三种典型的"玻璃房困境"：<strong>拿不到实时信息</strong>（时间）、<strong>算不准确定性计算</strong>（大数乘法会"一本正经地胡说"）、<strong>够不着你的环境</strong>（本地文件）。而右边的模型并没有变聪明——它只是获得了<span class="hl">"申请让别人替它做事"的能力</span>。这就是接下来五章的全部主线。</p>
+
+  <h3>🧩 五块拼图，各管什么</h3>
+  <div class="card-grid">
+    <div class="mini-card link" data-jump="sec-1"><div class="ic">🔧</div><div class="tt">Tool / Function Calling</div><div class="dd">机制层：模型如何"开单子"申请做事，程序如何执行并回传结果。</div></div>
+    <div class="mini-card link" data-jump="sec-2"><div class="ic">🧠</div><div class="tt">ReAct</div><div class="dd">思想层：2022 年的论文，定义了"想一步 → 做一步 → 看一眼"的元模式。</div></div>
+    <div class="mini-card link" data-jump="sec-3"><div class="ic">🔁</div><div class="tt">Agent Loop / Loop Engineering</div><div class="dd">运行时层：把工具往返装进 while 循环，Agent 就活了；让循环可靠是门工程学。</div></div>
+    <div class="mini-card link" data-jump="sec-4"><div class="ic">🔌</div><div class="tt">MCP</div><div class="dd">标准层：AI 应用与外部能力之间的"USB-C 接口"，一次接入，处处可用。</div></div>
+    <div class="mini-card link" data-jump="sec-5"><div class="ic">🛠</div><div class="tt">MCP Server</div><div class="dd">实践层：30 行代码把你的系统变成任何 Agent 都能插的"标准插件"。</div></div>
+  </div>
+  <p>主线之外还有两站加餐：<a href="#sec-6"><b>第 6 章 · Agent 主流架构与 Multi-Agent</b></a>（单个循环如何组合成系统：Workflow vs Agent、六种架构图鉴、多智能体的甜区与陷阱），以及 <a href="#sec-7"><b>第 7 章 · 2026 前沿概念雷达</b></a>（Anthropic 刚发布的 J-Space、世界模型、A2A、Skills、Vibe Coding……把推特上的热词放回正确的位置）。</p>
+
+  <div class="callout info"><div class="ct">💡 使用说明</div>
+    所有带 <b>DEMO</b> 标签的组件都可以点、可以玩；每章末尾有随堂小测，答对全部题目该章即"点亮"；进度存在浏览器本地（localStorage），关掉重开不丢。建议顺序阅读，赶时间也可以从侧边栏跳章。
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 第 1 章 · Tool -->
+<!-- ================================================================ -->
+<section class="lesson" id="sec-1" style="--sc:#d97706">
+  <div class="sec-head"><span class="sec-num">第 1 章</span><h2>🔧 Tool：让模型学会"开单子"</h2></div>
+  <p class="sec-sub">Tool use / Function calling · 现代 Agent 的最小机制单元</p>
+
+  <div class="tldr"><div class="k">一句话版本</div>
+    <div class="v">工具调用 = 模型不再直接回答，而是输出一张结构化的"做事申请单"（JSON）；<strong>真正动手的永远是你的程序</strong>，做完再把结果递回给模型。</div>
+  </div>
+
+  <div class="callout story"><div class="ct">🎭 类比：玻璃房里的顾问</div>
+    模型是玻璃房里的天才顾问：只能收纸条（上下文）、递纸条（输出）。所谓"给模型装工具"，其实是你在玻璃上贴了一张<b>服务菜单</b>（工具清单），并约定：他若在纸条上按格式写下"请帮我查上海天气"，你就去办，办完把结果写在纸条上递回去。<b>顾问从没离开过玻璃房</b>——离开的是你。
+  </div>
+
+  <h3>⚙️ 机制拆解：一次工具调用的完整往返</h3>
+  <p>以"上海明天天气怎么样？"为例，一次完整往返共 5 步。<strong>点击下方步骤逐帧看</strong>，注意每一步"谁在动"：</p>
+
+  <!-- Demo B：往返步进器 -->
+  <div class="demo" id="demo-b">
+    <div class="demo-head"><span class="tag">DEMO 2</span><span class="tt">Function Calling 五步往返</span><span class="hint">◀ ▶ 或点圆点切换</span></div>
+    <div class="demo-body stepper" id="stepper-b">
+      <div class="step-dots" id="sb-dots"></div>
+      <div class="step-panel" data-step="0">
+        <div class="sp-title">第 1 步 · 你把「问题 + 工具菜单」一起发给模型</div>
+        <div class="sp-desc">工具用 JSON Schema 描述：叫什么、干什么用、要什么参数。<b>这份描述本身就是提示词的一部分</b>。动的人：你的程序。</div>
+        <div class="codebox"><div class="cb-head"><div class="dots"><i></i><i></i><i></i></div><span class="fn">POST /chat/completions（请求体，OpenAI 风格）</span><button class="copy">复制</button></div><pre data-lang="json">{
+  "model": "gpt-5.2",
+  "messages": [
+    { "role": "user", "content": "上海明天天气怎么样？" }
+  ],
+  "tools": [{
+    "type": "function",
+    "function": {
+      "name": "get_weather",
+      "description": "查询指定城市指定日期的天气预报",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "city": { "type": "string", "description": "城市名，如：上海" },
+          "date": { "type": "string", "description": "日期 YYYY-MM-DD" }
+        },
+        "required": ["city"]
+      }
+    }
+  }]
+}</pre></div>
+      </div>
+      <div class="step-panel" data-step="1">
+        <div class="sp-title">第 2 步 · 模型不回答问题，而是返回一张"申请单"</div>
+        <div class="sp-desc">注意 <b>content 是空的</b>，取而代之的是 tool_calls。此刻<b>什么都还没发生</b>——这只是模型用被训练过的格式说"我想调这个"。动的人：模型（但只动嘴）。</div>
+        <div class="codebox"><div class="cb-head"><div class="dots"><i></i><i></i><i></i></div><span class="fn">模型的响应（assistant 消息）</span><button class="copy">复制</button></div><pre data-lang="json">{
+  "role": "assistant",
+  "content": null,
+  "tool_calls": [{
+    "id": "call_a1b2c3",
+    "type": "function",
+    "function": {
+      "name": "get_weather",
+      "arguments": "{\"city\": \"上海\", \"date\": \"2026-07-09\"}"
+    }
+  }]
+}</pre></div>
+      </div>
+      <div class="step-panel" data-step="2">
+        <div class="sp-title">第 3 步 · 你的代码执行真实逻辑</div>
+        <div class="sp-desc">解析申请单 → 调真实的天气 API / 数据库 / 文件系统。<b>权限、审批、超时、重试都在这一层做</b>。动的人：你的程序（这是全流程唯一"碰真实世界"的地方）。</div>
+        <div class="codebox"><div class="cb-head"><div class="dots"><i></i><i></i><i></i></div><span class="fn">runtime.py（你的运行时）</span><button class="copy">复制</button></div><pre data-lang="python"># 模型只是"申请"，执行权在你手里
+call = response.tool_calls[0]
+args = json.loads(call.function.arguments)
+
+if call.function.name == "get_weather":
+    result = weather_api.forecast(args["city"], args.get("date"))
+    # result = {"temp": "26~31°C", "condition": "多云转小雨", "rain": "62%"}</pre></div>
+      </div>
+      <div class="step-panel" data-step="3">
+        <div class="sp-title">第 4 步 · 把结果作为 tool 消息塞回对话</div>
+        <div class="sp-desc">用 tool_call_id 对号入座，把执行结果追加到消息列表，再次调用模型。动的人：你的程序。</div>
+        <div class="codebox"><div class="cb-head"><div class="dots"><i></i><i></i><i></i></div><span class="fn">追加到 messages 数组的新消息</span><button class="copy">复制</button></div><pre data-lang="json">{
+  "role": "tool",
+  "tool_call_id": "call_a1b2c3",
+  "content": "{\"temp\": \"26~31°C\", \"condition\": \"多云转小雨\", \"rain\": \"62%\"}"
+}</pre></div>
+      </div>
+      <div class="step-panel" data-step="4">
+        <div class="sp-title">第 5 步 · 模型基于真实数据生成最终回答</div>
+        <div class="sp-desc">现在模型"看到了"外部世界递回来的纸条，可以放心作答。<b>如果它觉得信息还不够，会再次返回 tool_calls</b>——把这个往返套进循环，就是第 3 章的 Agent Loop。</div>
+        <div class="codebox"><div class="cb-head"><div class="dots"><i></i><i></i><i></i></div><span class="fn">模型的最终响应</span><button class="copy">复制</button></div><pre data-lang="json">{
+  "role": "assistant",
+  "content": "上海明天多云转小雨，气温 26~31°C，降水概率 62%，出门建议带伞 ☂️"
+}</pre></div>
+      </div>
+      <div class="btn-row" style="margin-top:14px">
+        <button class="btn" id="sb-prev">◀ 上一步</button>
+        <button class="btn primary" id="sb-next">下一步 ▶</button>
+        <span class="hint" id="sb-pos" style="font-size:12.5px;color:var(--text-3)"></span>
+      </div>
+    </div>
+  </div>
+
+  <h3>🎯 四个关键认知（面试/实战都会考）</h3>
+  <div class="card-grid">
+    <div class="mini-card"><div class="ic">🙅</div><div class="tt">模型从不执行任何东西</div><div class="dd">它只产出"结构化意图"。执行发生在你的运行时里——所以"模型会不会删我文件"取决于<b>你给运行时什么权限</b>，而不是模型本身。</div></div>
+    <div class="mini-card"><div class="ic">📝</div><div class="tt">description 是隐形提示词</div><div class="dd">模型靠工具的名字和描述决定"什么时候用、怎么传参"。描述含糊 = 调用翻车。写描述要像写给新同事的使用说明。</div></div>
+    <div class="mini-card"><div class="ic">🎓</div><div class="tt">这是训练出来的能力</div><div class="dd">现代模型都经过专门的后训练（post-training），才能稳定输出合法 JSON 并遵守 Schema。不是靠"求它输出 JSON"求来的。</div></div>
+    <div class="mini-card"><div class="ic">⚡️</div><div class="tt">一次可以开多张单</div><div class="dd">tool_calls 是数组：查天气 + 查时间可以并行申请，运行时并行执行、一起回填，省往返、省时间。</div></div>
+  </div>
+
+  <h3>🎮 小游戏：你来当一次模型</h3>
+  <p>用户说：<b>"下周三我要去北京出差，帮我看下那天的天气，顺便告诉我现在几点。"</b> 你手里的工具菜单是 <span class="term amber">get_weather(city, date)</span> 和 <span class="term amber">get_time(timezone)</span>。作为模型，这一轮你应该输出什么？</p>
+  <div class="quiz" data-quiz="g1">
+    <div class="quiz-head"><span class="qh-ic">🎮</span><span class="qh-t">角色扮演：你是模型</span><span class="qh-s">选出正确的"申请单"</span></div>
+    <div class="quiz-body"></div>
+    <div class="quiz-done"><span>🎉</span><span>没错！并行开两张单，一次往返全搞定——这正是好模型的做法。</span></div>
+  </div>
+
+  <details class="deep"><summary>深入一层：OpenAI 与 Anthropic 的工具定义长得不太一样？</summary><div class="deep-body">
+    <p>各家 API 的字段名略有差异，但骨架完全一致：<b>name + description + JSON Schema 参数</b>。这种"表面不同、内核相同"正是第 4 章 MCP 要解决的问题之一。</p>
+    <div class="code-tabs" id="tabs-vendor">
+      <div class="tab-bar">
+        <button class="tab-btn active" data-tab="0">OpenAI 风格</button>
+        <button class="tab-btn" data-tab="1">Anthropic 风格</button>
+      </div>
+      <div class="tab-panel active"><div class="codebox"><div class="cb-head"><div class="dots"><i></i><i></i><i></i></div><span class="fn">tools 数组元素</span><button class="copy">复制</button></div><pre data-lang="json">{
+  "type": "function",
+  "function": {
+    "name": "get_weather",
+    "description": "查询城市天气预报",
+    "parameters": { "type": "object", "properties": { "...": "..." } }
+  }
+}</pre></div></div>
+      <div class="tab-panel"><div class="codebox"><div class="cb-head"><div class="dots"><i></i><i></i><i></i></div><span class="fn">tools 数组元素</span><button class="copy">复制</button></div><pre data-lang="json">{
+  "name": "get_weather",
+  "description": "查询城市天气预报",
+  "input_schema": { "type": "object", "properties": { "...": "..." } }
+}</pre></div></div>
+    </div>
+    <p class="muted">Anthropic 把参数叫 <code>input_schema</code>，模型的调用以 <code>tool_use</code> 内容块出现，结果以 <code>tool_result</code> 塞回 user 消息——形式不同，五步往返一模一样。</p>
+  </div></details>
+
+  <div class="callout warn"><div class="ct">⚠️ 常见误区</div>
+    <b>"模型联网了！"</b>——没有，是宿主程序替它联的网。<br>
+    <b>"工具越多越强！"</b>——工具太多会稀释注意力、吃掉上下文，模型反而选错。成熟做法：<span class="hl">精选少量工具 + 把描述写好</span>，比堆一百个工具有效得多。
+  </div>
+
+  <div class="recap"><div class="rc-t">✅ 本章小结</div>
+    <ul>
+      <li>工具 = <b>name + description + JSON Schema</b> 三件套；描述是隐形提示词。</li>
+      <li>模型只输出<b>结构化意图</b>（tool_calls），执行永远发生在你的运行时。</li>
+      <li>一次往返五步：发菜单 → 开单 → 执行 → 回填 → 作答；结果不够就再开单（→ 循环）。</li>
+      <li>并行 tool_calls 是常态，能显著减少往返次数。</li>
+    </ul>
+  </div>
+
+  <div class="quiz" data-quiz="q1">
+    <div class="quiz-head"><span class="qh-ic">📝</span><span class="qh-t">第 1 章随堂小测</span><span class="qh-s">全部答对即点亮本章</span></div>
+    <div class="quiz-body"></div>
+    <div class="quiz-done"><span>🏅</span><span>第 1 章通关！机制层已拿下，去看看这一切的思想源头 ReAct。</span></div>
+  </div>
+
+  <h4>📚 本章延伸</h4>
+  <div class="links">
+    <a class="linkcard" href="https://platform.openai.com/docs/guides/function-calling" target="_blank" rel="noopener"><div class="lc-t">🔗 OpenAI · Function Calling 官方指南<span class="ext">↗</span></div><div class="lc-d">字段定义、并行调用、严格模式（structured outputs）的第一手资料。</div></a>
+    <a class="linkcard" href="https://docs.claude.com/en/docs/agents-and-tools/tool-use/overview" target="_blank" rel="noopener"><div class="lc-t">🔗 Anthropic · Tool Use 官方指南<span class="ext">↗</span></div><div class="lc-d">tool_use / tool_result 内容块模型，以及写好工具描述的最佳实践。</div></a>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 第 2 章 · ReAct -->
+<!-- ================================================================ -->
+<section class="lesson" id="sec-2" style="--sc:#7c3aed">
+  <div class="sec-head"><span class="sec-num">第 2 章</span><h2>🧠 ReAct：一切 Agent 的思想源头</h2></div>
+  <p class="sec-sub">Reason + Act · 2022 年的一篇论文，定义了此后所有 Agent 的元模式</p>
+
+  <div class="tldr"><div class="k">一句话版本</div>
+    <div class="v">ReAct = 让模型<strong>想一步（Thought）→ 做一步（Action）→ 看一眼结果（Observation）→ 再想下一步</strong>，交替进行直到完成任务。它证明了"推理"和"行动"结合远胜于任何一个单独工作。</div>
+  </div>
+
+  <p>2022 年 10 月，普林斯顿大学与 Google Brain 的研究者（姚顺雨等）发表论文 <i>《ReAct: Synergizing Reasoning and Acting in Language Models》</i>（ICLR 2023）。当时既没有 function calling，也没有 Agent 产品——但这篇论文回答了一个根本问题：</p>
+
+  <div class="callout story"><div class="ct">🎭 两种失败的极端</div>
+    <b>只想不做（纯 Chain-of-Thought）</b>：像闭卷考试，推理链条再漂亮，事实全靠记忆——记错了也会一本正经地推下去，这就是<b>幻觉</b>。<br><br>
+    <b>只做不想（纯 Action）</b>：像没头苍蝇，一个动作接一个动作，不复盘、不规划，搜错了方向也不知道调头。<br><br>
+    <b>ReAct：开卷考试 + 做笔记</b>。每做一次动作就停下来想想"我拿到了什么、下一步该干嘛"，推理指导行动，行动反哺推理。
+  </div>
+
+  <h3>🎬 亲眼看一遍论文里的真实轨迹</h3>
+  <p>下面是 ReAct 论文 Figure 1 的经典案例（内容译自原文轨迹）。问题故意很绕：<b>"除了 Apple Remote，还有什么设备能控制 Apple Remote 最初设计所服务的那个程序？"</b>——纯 CoT 的模型会自信地答错成 "iPod"，看看 ReAct 怎么一步步逼近真相：</p>
+
+  <!-- Demo C：ReAct 轨迹播放器 -->
+  <div class="demo" id="demo-c">
+    <div class="demo-head"><span class="tag">DEMO 3</span><span class="tt">ReAct 轨迹播放器 · Apple Remote 案例</span><span class="hint">改编自 ReAct 论文 Figure 1</span></div>
+    <div class="demo-body">
+      <div class="btn-row">
+        <button class="btn primary" id="dc-play">▶ 自动播放</button>
+        <button class="btn" id="dc-step">单步 +1</button>
+        <button class="btn" id="dc-reset">↺ 重置</button>
+      </div>
+      <div class="trace" id="dc-trace">
+        <div class="tr-item q"><span class="tr-tag">问题</span>除了 Apple Remote，还有什么设备能控制"Apple Remote 最初设计所服务的那个程序"？</div>
+        <div class="tr-item thought"><span class="tr-tag">Thought 1</span>我需要先搜索 Apple Remote，弄清它"最初设计用来控制的程序"是什么。</div>
+        <div class="tr-item action"><span class="tr-tag">Action 1</span>search[Apple Remote]</div>
+        <div class="tr-item obs"><span class="tr-tag">Observation 1</span>Apple Remote 是苹果公司 2005 年推出的遥控器，最初设计用于控制 <b>Front Row 媒体中心</b>程序……</div>
+        <div class="tr-item thought"><span class="tr-tag">Thought 2</span>原来是 Front Row。接下来搜索 Front Row，看还有什么设备能控制它。</div>
+        <div class="tr-item action"><span class="tr-tag">Action 2</span>search[Front Row]</div>
+        <div class="tr-item obs"><span class="tr-tag">Observation 2</span>未找到 [Front Row]。相似条目：['Front Row Seat to Earth', 'Front Row Motorsports', <b>'Front Row (软件)'</b>, …]</div>
+        <div class="tr-item thought"><span class="tr-tag">Thought 3</span>没搜到，但候选里有"Front Row (软件)"，应该搜它。<i>——注意：这就是"看一眼结果再调整"的价值，纯行动派在这里就迷路了。</i></div>
+        <div class="tr-item action"><span class="tr-tag">Action 3</span>search[Front Row (软件)]</div>
+        <div class="tr-item obs"><span class="tr-tag">Observation 3</span>Front Row 是一款已停产的媒体中心软件，可通过 Apple Remote 或<b>键盘功能键</b>控制……</div>
+        <div class="tr-item thought"><span class="tr-tag">Thought 4</span>所以除 Apple Remote 外，还能用键盘功能键控制 Front Row。答案就是它。</div>
+        <div class="tr-item fin"><span class="tr-tag">Finish ✓</span>finish[键盘功能键]　——　纯 CoT 基线在同一问题上自信地答了 "iPod" ❌</div>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--violet)"></i>Thought 推理（不碰外界）</span>
+        <span><i style="background:var(--amber)"></i>Action 行动（请求外界）</span>
+        <span><i style="background:var(--blue)"></i>Observation 观察（外界的回音）</span>
+      </div>
+    </div>
+  </div>
+
+  <h3>📜 那时候没有 function calling，Action 是怎么"调用"的？</h3>
+  <p>全靠提示词约定 + 文本解析。给模型看几个 <span class="term violet">Thought / Action / Observation</span> 格式的范例（few-shot），模型就会模仿着输出；程序再用正则把 <code>Action: search[...]</code> 抠出来去执行：</p>
+  <div class="codebox"><div class="cb-head"><div class="dots"><i></i><i></i><i></i></div><span class="fn">2022 年的"工具调用"：提示词 + 正则（示意）</span><button class="copy">复制</button></div><pre data-lang="python">PROMPT = """请交替使用 Thought / Action / Observation 解决问题。
+可用动作: search[词条], lookup[关键词], finish[答案]
+
+问题: {question}
+Thought 1:"""
+
+text = llm(PROMPT)                       # 模型继续"接龙"
+m = re.search(r"Action \d+: (\w+)\[(.+?)\]", text)
+action, arg = m.group(1), m.group(2)     # 用正则解析出"申请单"
+obs = wikipedia_search(arg)              # 程序执行，把结果拼回提示词
+PROMPT += text + f"\nObservation: {obs}\nThought:"   # 循环往复</pre></div>
+  <p>对比一下就能看清进化脉络：<b>ReAct 用脆弱的文本约定实现的事，Function Calling 用训练进模型的结构化输出把它变成了稳定机制</b>。格式变了，"想 → 做 → 看"的骨架一点没变。</p>
+
+  <table class="tbl">
+    <tr><th></th><th>2022 · ReAct 时代</th><th>现在 · 原生工具调用时代</th></tr>
+    <tr><td><b>模型如何表达"我要做事"</b></td><td>输出 <code>Action: search[Apple Remote]</code> 文本</td><td>输出结构化 <code>tool_calls</code> JSON</td></tr>
+    <tr><td><b>如何保证格式</b></td><td>few-shot 示范 + 祈祷，正则解析易碎</td><td>后训练强化 + Schema 约束，稳定可靠</td></tr>
+    <tr><td><b>"想"的部分</b></td><td>显式写出 Thought 文本</td><td>推理模型的 thinking / 交错思考</td></tr>
+    <tr><td><b>不变的内核</b></td><td colspan="2" style="text-align:center"><b>推理与行动交替，用外部观察修正方向</b></td></tr>
+  </table>
+
+  <div class="callout tip"><div class="ct">🌱 为什么今天还要学 ReAct？</div>
+    因为你每天都在看它运行：Cursor 里模型"思考 → 调工具 → 看结果 → 再思考"的过程，就是 ReAct 模式的工业级实现。理解了 ReAct，你就能看懂 Agent 卡住时的行为（比如反复搜索却不复盘），也就知道该往提示词还是工具描述上使劲。论文作者姚顺雨后来还写下了广为流传的《The Second Half》——ReAct 一脉的"语言智能体"思想已是行业主流。
+  </div>
+
+  <div class="recap"><div class="rc-t">✅ 本章小结</div>
+    <ul>
+      <li>ReAct = <b>Thought → Action → Observation</b> 循环，推理与行动互相成就。</li>
+      <li>纯推理会幻觉（闭卷胡说），纯行动会瞎撞（没头苍蝇），结合才是 Agent。</li>
+      <li>2022 年靠提示词约定 + 文本解析；今天靠原生 tool_calls——<b>思想没变，机制升级</b>。</li>
+    </ul>
+  </div>
+
+  <div class="quiz" data-quiz="q2">
+    <div class="quiz-head"><span class="qh-ic">📝</span><span class="qh-t">第 2 章随堂小测</span><span class="qh-s">全部答对即点亮本章</span></div>
+    <div class="quiz-body"></div>
+    <div class="quiz-done"><span>🏅</span><span>第 2 章通关！思想源头已理解，接下来把它装进发动机——Agent Loop。</span></div>
+  </div>
+
+  <h4>📚 本章延伸</h4>
+  <div class="links">
+    <a class="linkcard" href="https://arxiv.org/abs/2210.03629" target="_blank" rel="noopener"><div class="lc-t">📄 ReAct 论文原文（arXiv 2210.03629）<span class="ext">↗</span></div><div class="lc-d">Figure 1 就是上面 Demo 的原始轨迹，正文只有 9 页，值得一读。</div></a>
+    <a class="linkcard" href="https://react-lm.github.io/" target="_blank" rel="noopener"><div class="lc-t">🌐 react-lm 项目主页<span class="ext">↗</span></div><div class="lc-d">论文官方站点：数据、代码与更多轨迹示例。</div></a>
+    <a class="linkcard" href="https://langchain-ai.github.io/langgraph/" target="_blank" rel="noopener"><div class="lc-t">🧪 LangGraph · create_react_agent<span class="ext">↗</span></div><div class="lc-d">几行代码跑一个现代化 ReAct Agent，最快的动手起点。</div></a>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 第 3 章 · Agent Loop & Loop Engineering -->
+<!-- ================================================================ -->
+<section class="lesson" id="sec-3" style="--sc:#059669">
+  <div class="sec-head"><span class="sec-num">第 3 章</span><h2>🔁 Agent Loop 与 Loop Engineering</h2></div>
+  <p class="sec-sub">把工具往返装进 while 循环，Agent 就诞生了；让循环稳定产出，是一门新工程学</p>
+
+  <div class="tldr"><div class="k">一句话版本</div>
+    <div class="v">Agent 的本质小得惊人：<strong>"一个在循环里调用工具的模型"</strong>。Cursor、Claude Code、Codex 拆到最后都是同一个 while 循环——差距全在循环周围的工程（这就是 Loop Engineering）。</div>
+  </div>
+
+  <p>Simon Willison 给过一个被业界广泛引用的极简定义：<b>"LLM Agent 就是在循环里运行工具以达成目标的东西"</b>（An LLM agent runs tools in a loop to achieve a goal）。先看这个循环本体——它可能是当代软件业"含金量最高的 15 行代码"：</p>
+
+  <div class="codebox"><div class="cb-head"><div class="dots"><i></i><i></i><i></i></div><span class="fn">agent.py · 所有 Agent 产品的公共骨架</span><button class="copy">复制</button></div><pre data-lang="python">def agent(task: str) -> str:
+    context = [system_prompt, user(task)]     # 上下文从任务开始
+    while True:                               # ← Agent 的全部秘密
+        reply = llm(context, tools=TOOLS)     # 1. 模型思考
+        context.append(reply)
+        if not reply.tool_calls:              # 2. 不再开单 = 任务完成
+            return reply.text                 #    ← 自然停止条件
+        for call in reply.tool_calls:         # 3. 执行每张"申请单"
+            result = execute(call)            #    （读文件/跑命令/查库…）
+            context.append(tool_result(call.id, result))  # 4. 结果写回
+        # 回到循环顶部，模型带着新观察继续想 —— 这就是 ReAct 的现代形态</pre></div>
+
+  <p>对照上一章：<span class="term violet">Thought</span> 就是 <code>llm()</code> 的思考，<span class="term amber">Action</span> 就是 <code>tool_calls</code>，<span class="term blue">Observation</span> 就是 <code>tool_result</code>。<b>ReAct 是思想，Function Calling 是机制，这个 while 循环是运行时</b>——三章在这里合流了。</p>
+
+  <h3>🎬 看循环跑一个真实任务</h3>
+  <p>点击"运行"，看 Agent 如何用 4 轮循环修好一个失败的测试。注意右侧三件事：<b>轮数在涨、上下文在膨胀、直到停止条件触发</b>：</p>
+
+  <!-- Demo D：循环模拟器 -->
+  <div class="demo" id="demo-d">
+    <div class="demo-head"><span class="tag">DEMO 4</span><span class="tt">Agent Loop 模拟器 · 任务：修复失败的测试</span><span class="hint">观察循环何时停</span></div>
+    <div class="demo-body">
+      <div class="btn-row" style="margin-bottom:12px">
+        <button class="btn primary" id="dd-run">▶ 运行任务</button>
+        <button class="btn" id="dd-reset">↺ 重置</button>
+        <span id="dd-status" style="font-size:13px;font-weight:700;color:var(--text-3)">待命</span>
+      </div>
+      <div class="loopgrid">
+        <div class="loop-svg-wrap">
+          <svg class="loop-svg" viewBox="0 0 460 300" id="dd-svg">
+            <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker></defs>
+            <path class="edge" d="M230,62 L230,92" marker-end="url(#arr)"/>
+            <path class="edge" d="M230,148 L230,178" marker-end="url(#arr)"/>
+            <path class="edge" d="M162,206 C90,206 90,120 158,120" marker-end="url(#arr)"/>
+            <path class="edge" d="M298,120 L360,120" marker-end="url(#arr)"/>
+            <text class="edge-label" x="70" y="160">结果写回上下文</text>
+            <text class="edge-label" x="305" y="110">没有 tool_calls</text>
+            <g class="lnode" id="dd-n0"><rect x="150" y="18" width="160" height="44" rx="12"/><text x="230" y="45" text-anchor="middle">📥 用户任务入上下文</text></g>
+            <g class="lnode" id="dd-n1"><rect x="158" y="92" width="144" height="52" rx="12"/><text x="230" y="114" text-anchor="middle">🧠 模型思考</text><text x="230" y="132" text-anchor="middle" style="font-size:11px;fill:var(--text-3)">llm(context, tools)</text></g>
+            <g class="lnode" id="dd-n2"><rect x="162" y="178" width="136" height="52" rx="12"/><text x="230" y="200" text-anchor="middle">🔧 执行工具</text><text x="230" y="218" text-anchor="middle" style="font-size:11px;fill:var(--text-3)">execute(call)</text></g>
+            <g class="lnode" id="dd-n3"><rect x="360" y="94" width="86" height="52" rx="12"/><text x="403" y="116" text-anchor="middle">✅ 完成</text><text x="403" y="134" text-anchor="middle" style="font-size:11px;fill:var(--text-3)">返回答案</text></g>
+          </svg>
+        </div>
+        <div class="loop-panel">
+          <div class="loop-stats">
+            <div class="stat">循环轮数<b id="dd-iter">0</b></div>
+            <div class="stat">工具调用<b id="dd-calls">0</b></div>
+            <div class="stat">上下文占用<b id="dd-ctx">3%</b><div class="ctxbar"><i id="dd-ctxbar"></i></div></div>
+          </div>
+          <div class="loop-log" id="dd-log"><div class="sys" style="color:#697098">// 点击"运行任务"开始。任务：tests/test_price.py 有一个用例失败，修好它。</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>刚才那次运行里藏着三个值得咀嚼的细节：第 2 轮的修改在第 3 轮复测时<b>仍有用例失败</b>（漏了一个边界条件），但失败信息作为 Observation 喂回去后，第 4 轮就修对了——<span class="hl">失败不可怕，失败的信息回得去才是关键</span>；停止不是谁喊停，而是模型不再开单；上下文一直在涨，真实任务里它会涨到需要"压缩"的程度。</p>
+
+  <h3>🏗 Loop Engineering：从"盯着循环"到"设计循环"</h3>
+  <p>循环本体 15 行，但让它<b>稳定地产出正确结果</b>需要一整套工程。2026 年 6 月前后，这套实践被 Google 工程师 Addy Osmani 等人正式命名为 <b>Loop Engineering（循环工程）</b>。它的来历很能说明问题——Claude Code 负责人 Boris Cherny 说：<b>"我已经不直接提示模型了，我的工作是写循环（My job is to write loops）"</b>；Peter Steinberger 说得更直白：<b>"你不该再一句句提示 Agent，而该去设计提示 Agent 的循环"</b>。</p>
+
+  <p>先分清两层"循环"，很多文章混着说：</p>
+  <table class="tbl">
+    <tr><th>层次</th><th>是什么</th><th>谁来做</th></tr>
+    <tr><td><b>内循环 · Agent Loop</b></td><td>上面那个 while：思考 → 调工具 → 观察，直到完成<b>一个任务</b></td><td>Cursor / Claude Code 等产品已内置，你主要是用好它</td></tr>
+    <tr><td><b>外循环 · Loop Engineering</b></td><td>包住内循环的系统：<b>找活儿 → 派给 Agent → 用验证器检查 → 记录状态 → 决定下一步</b>，无人值守地转</td><td>这是你的新工作：定义目标、验证器、预算和护栏</td></tr>
+  </table>
+
+  <p>一层套一层的完整谱系（每层包住前一层，而不是取代）：</p>
+  <div class="bigpic">
+    <div class="bp-row">
+      <div class="bp-box" style="background:var(--slate-bg);border-color:var(--slate);color:var(--slate)">Prompt Engineering<br><span style="font-weight:400;font-size:11.5px">写好一句话</span></div>
+      <span class="bp-arrow">⊂</span>
+      <div class="bp-box" style="background:var(--blue-bg);border-color:var(--blue);color:var(--blue)">Context Engineering<br><span style="font-weight:400;font-size:11.5px">管好模型看到的一切</span></div>
+      <span class="bp-arrow">⊂</span>
+      <div class="bp-box" style="background:var(--amber-bg);border-color:var(--amber);color:var(--amber)">Harness Engineering<br><span style="font-weight:400;font-size:11.5px">建好 Agent 的运行环境</span></div>
+      <span class="bp-arrow">⊂</span>
+      <div class="bp-box" style="background:var(--emerald-bg);border-color:var(--emerald);color:var(--emerald)">Loop Engineering<br><span style="font-weight:400;font-size:11.5px">设计驱动一切的循环</span></div>
+    </div>
+    <div class="bp-note">Anthropic 称 Context Engineering 是 Prompt Engineering 的自然演进；Loop Engineering 又在其上一层</div>
+  </div>
+
+  <h3>🧰 设计一个好循环的六个抓手</h3>
+  <div class="card-grid">
+    <div class="mini-card"><div class="ic">🎯</div><div class="tt">1 · 目标与停止条件</div><div class="dd">"做完"必须<b>可验证</b>：测试全绿、构建通过、diff 为空。含糊的目标（"把代码变好"）会让循环永远转下去或提前敷衍收工。</div></div>
+    <div class="mini-card"><div class="ic">✅</div><div class="tt">2 · 验证器（Verifier）</div><div class="dd">循环的灵魂。用<b>确定性的检查</b>——测试套件、linter、类型检查、编译器——代替你的眼睛判断"这轮有没有变好"。验证器有多严，循环就有多可信。</div></div>
+    <div class="mini-card"><div class="ic">💰</div><div class="tt">3 · 预算与护栏</div><div class="dd">最大轮数、token 预算、超时墙钟。没有护栏的循环是一台碎钞机：失败要失败得便宜、失败得响亮。</div></div>
+    <div class="mini-card"><div class="ic">🧠</div><div class="tt">4 · 上下文管理</div><div class="dd">上下文是稀缺资源：大输出落盘只留路径、历史对话定期压缩摘要（如 Claude Code 的 compact）、批量子任务派给<b>子代理</b>隔离上下文。</div></div>
+    <div class="mini-card"><div class="ic">📓</div><div class="tt">5 · 外部状态与记忆</div><div class="dd">模型每次运行都是失忆的，<b>仓库要记得</b>：进度写 markdown、决策写日志、用 git worktree 隔离并行尝试。"模型会忘，文件系统不会。"</div></div>
+    <div class="mini-card"><div class="ic">🚧</div><div class="tt">6 · 人工门禁</div><div class="dd">验证器判不了的事留给人：不可逆操作（删库、发布、付费）设审批门。自动化"可撤销的一切"，把人保留在"不可撤销"的关口。</div></div>
+  </div>
+
+  <div class="callout warn"><div class="ct">⚠️ 常见误区</div>
+    <b>"循环 = 放飞自我的全自主"</b>——恰恰相反，好的循环是"短绳子工程"：小步验证、随时可停、失败可回滚。<br>
+    <b>"提示词决定一切"</b>——2026 年的共识是瓶颈已经转移：工具质量、验证器、停止规则和上下文卫生，比措辞更影响成败。
+  </div>
+
+  <details class="deep"><summary>深入一层：这些真实产品各自怎么"工程"这个循环？</summary><div class="deep-body">
+    <ul class="nice">
+      <li><b>Claude Code</b>：上下文快满时自动 <code>compact</code>（把历史压成摘要）；子代理（subagent）隔离大任务；hooks 在循环关键节点插入确定性检查。</li>
+      <li><b>Cursor</b>：危险命令进审批队列（人工门禁）；后台 Agent 跑长任务；规则文件（AGENTS.md / rules）持久注入项目约定——这正是"仓库记得"的实践。</li>
+      <li><b>Codex CLI</b>：沙箱内执行 + 网络默认隔离，把"失败得便宜"做到系统层。</li>
+      <li><b>你正在读的这个页面</b>：就是 Cursor 的 agent loop 产物——检索资料（工具）→ 写文件（工具）→ 浏览器验证（工具）→ 修正，循环直到通过。是的，这很元（meta）。</li>
+    </ul>
+  </div></details>
+
+  <div class="recap"><div class="rc-t">✅ 本章小结</div>
+    <ul>
+      <li>Agent = <b>模型 + 工具 + while 循环</b>；停止条件是"模型不再开单"。</li>
+      <li>内循环（产品内置的 agent loop）与外循环（你设计的工作系统）是两层。</li>
+      <li>Loop Engineering 六抓手：<b>可验证目标、验证器、预算护栏、上下文管理、外部状态、人工门禁</b>。</li>
+      <li>失败信息喂回循环，模型能自我纠错——错误处理是设计出来的，不是运气。</li>
+    </ul>
+  </div>
+
+  <div class="quiz" data-quiz="q3">
+    <div class="quiz-head"><span class="qh-ic">📝</span><span class="qh-t">第 3 章随堂小测</span><span class="qh-s">全部答对即点亮本章</span></div>
+    <div class="quiz-body"></div>
+    <div class="quiz-done"><span>🏅</span><span>第 3 章通关！发动机已理解，接下来看"油从哪来"——MCP 标准接口。</span></div>
+  </div>
+
+  <h4>📚 本章延伸</h4>
+  <div class="links">
+    <a class="linkcard" href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener"><div class="lc-t">📄 Anthropic · Building Effective Agents<span class="ext">↗</span></div><div class="lc-d">工作流 vs Agent 的经典辨析，"能用简单方案就别上 Agent"。</div></a>
+    <a class="linkcard" href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank" rel="noopener"><div class="lc-t">📄 Anthropic · Effective Context Engineering<span class="ext">↗</span></div><div class="lc-d">上下文是稀缺资源：压缩、落盘、子代理的官方方法论。</div></a>
+    <a class="linkcard" href="https://ampcode.com/how-to-build-an-agent" target="_blank" rel="noopener"><div class="lc-t">🛠 Thorsten Ball · How to Build an Agent<span class="ext">↗</span></div><div class="lc-d">300 行代码从零写一个能改代码的 Agent，祛魅神文，强烈推荐动手跟一遍。</div></a>
+    <a class="linkcard" href="https://addyosmani.com/blog/loop-engineering/" target="_blank" rel="noopener"><div class="lc-t">📄 Addy Osmani · Loop Engineering<span class="ext">↗</span></div><div class="lc-d">给这门实践命名的文章（2026-06）：自动化、worktree、技能、子代理、外部状态。</div></a>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 第 4 章 · MCP -->
+<!-- ================================================================ -->
+<section class="lesson" id="sec-4" style="--sc:#2563eb">
+  <div class="sec-head"><span class="sec-num">第 4 章</span><h2>🔌 MCP：AI 应用的 USB-C 接口</h2></div>
+  <p class="sec-sub">Model Context Protocol · 让"能力"以标准方式插进任何 Agent</p>
+
+  <div class="tldr"><div class="k">一句话版本</div>
+    <div class="v">MCP 是一个开放协议，规定了 <strong>AI 应用（Host）</strong>和<strong>外部能力提供方（Server）</strong>之间怎么握手、怎么列工具、怎么调用——写一次 Server，Claude、ChatGPT、Cursor 全都能用。</div>
+  </div>
+
+  <h3>🤯 它解决什么痛：M × N 的集成爆炸</h3>
+  <p>没有标准时：3 个 AI 应用要接 4 个系统（GitHub、数据库、Slack、文件系统），就得写 <b>3 × 4 = 12 套</b>各不相同的胶水代码。有了统一协议：应用实现一次客户端、系统实现一次服务端，<b>3 + 4 = 7 份</b>标准实现，互相即插即用。点开关直观感受一下：</p>
+
+  <!-- Demo E1：M×N 切换 -->
+  <div class="demo" id="demo-e1">
+    <div class="demo-head"><span class="tag">DEMO 5</span><span class="tt">集成爆炸 vs 标准协议</span><span class="hint">点按钮切换两种世界</span></div>
+    <div class="demo-body">
+      <div class="btn-row"><button class="btn primary" id="mxn-toggle">切换到「有 MCP」的世界</button></div>
+      <div class="mxn-wrap">
+        <svg viewBox="0 0 640 300" id="mxn-svg">
+          <g id="mxn-wires"></g>
+          <g id="mxn-left"></g>
+          <g id="mxn-right"></g>
+          <g id="mxn-hub" class="hub" style="display:none"><rect x="280" y="115" width="80" height="70" rx="12"/><text x="320" y="145" text-anchor="middle">MCP</text><text x="320" y="165" text-anchor="middle" style="font-size:10.5px">统一协议</text></g>
+        </svg>
+      </div>
+      <div class="mxn-count" id="mxn-count">当前世界：每条红线都是一套定制集成 —— 共 <b style="color:var(--rose)">12</b> 套</div>
+    </div>
+  </div>
+
+  <p>2024 年 11 月 25 日 Anthropic 开源了 MCP；不到一年，OpenAI、Google、Microsoft 相继采纳；2025 年 12 月它被捐给 Linux Foundation 旗下新成立的 <b>Agentic AI Foundation</b>，正式成为中立的行业标准——生态里已有<b>超过 1 万个公开 MCP Server</b>。"AI 应用的 USB-C"从比喻变成了现实。</p>
+
+  <h3>🏛 三个角色：Host / Client / Server</h3>
+  <p><strong>点击图中任何一个部件</strong>，看它的职责说明：</p>
+
+  <!-- Demo E2：架构图 -->
+  <div class="demo" id="demo-e2">
+    <div class="demo-head"><span class="tag">DEMO 6</span><span class="tt">MCP 架构 · 点击部件查看职责</span><span class="hint">Host 1 : N Server</span></div>
+    <div class="demo-body">
+      <div class="arch">
+        <div class="host-box" data-arch="host">
+          <div class="hb-t">🖥 Host 宿主应用</div>
+          <div class="hb-s">Cursor / Claude Desktop / ChatGPT …</div>
+          <div class="client-chip" data-arch="client">MCP Client ①（连文件系统 Server）</div>
+          <div class="client-chip" data-arch="client">MCP Client ②（连 GitHub Server）</div>
+          <div class="client-chip" data-arch="client">MCP Client ③（连天气 Server）</div>
+        </div>
+        <div class="mid">
+          <span class="wirelab">JSON-RPC 2.0</span>
+          <span class="arrow">⇄</span>
+          <span class="wirelab">stdio /<br>Streamable HTTP</span>
+          <span class="arrow">⇄</span>
+          <span class="wirelab">1 Client<br>: 1 Server</span>
+        </div>
+        <div class="servers">
+          <div class="server-box" data-arch="s1"><div class="sb-t">📁 文件系统 Server</div><div class="sb-s">本地进程 · stdio 传输</div></div>
+          <div class="server-box" data-arch="s2"><div class="sb-t">🐙 GitHub Server</div><div class="sb-s">远程服务 · Streamable HTTP</div></div>
+          <div class="server-box" data-arch="s3"><div class="sb-t">🌤 天气 Server</div><div class="sb-s">第 5 章我们亲手写它</div></div>
+        </div>
+      </div>
+      <div class="arch-info" id="arch-info"><div class="ai-t">👆 点击上图任意部件</div><div>Host 装着大脑（模型 + Agent Loop），Server 提供手脚（工具 + 数据），Client 是两者之间的标准接线员。</div></div>
+    </div>
+  </div>
+
+  <h3>🧱 Server 提供的三种原语：谁做主是精髓</h3>
+  <p>MCP 不只是"工具的搬运工"。Server 能暴露三类东西，官方设计的精髓在于<b>每类东西由谁做主</b>：</p>
+  <table class="tbl">
+    <tr><th>原语</th><th>是什么</th><th>谁决定用它</th><th>类比</th></tr>
+    <tr><td><b>Tools 工具</b></td><td>可执行的动作：查数据库、发消息、跑命令</td><td><span class="term blue">模型做主</span>（模型看描述自己决定调）</td><td>POST 接口</td></tr>
+    <tr><td><b>Resources 资源</b></td><td>只读的上下文数据：文件内容、表结构、日志</td><td><span class="term emerald">应用做主</span>（宿主决定注入哪些）</td><td>GET 接口</td></tr>
+    <tr><td><b>Prompts 提示模板</b></td><td>预制的高质量提示词/工作流</td><td><span class="term amber">用户做主</span>（如斜杠命令手动触发）</td><td>快捷指令</td></tr>
+  </table>
+  <p class="muted">反向也有原语：Server 可以向 Client 请求 LLM 补全（Sampling）、向用户追问输入（Elicitation）。了解即可——注意 2026-07-28 新版规范已将 Sampling、Roots、Logging 标记为废弃（deprecated）。</p>
+
+  <h3>📡 底层长什么样：一次完整的连接与调用</h3>
+  <p>MCP 底层是 <b>JSON-RPC 2.0</b> 消息，跑在两种标准传输上：<span class="term blue">stdio</span>（本地子进程，走标准输入输出）或 <span class="term blue">Streamable HTTP</span>（远程服务）。点击播放，看 Cursor 连接一个天气 Server 的完整过程：</p>
+
+  <!-- Demo E3：消息流播放器 -->
+  <div class="demo" id="demo-e3">
+    <div class="demo-head"><span class="tag">DEMO 7</span><span class="tt">MCP 消息流 · 从握手到调用</span><span class="hint">JSON-RPC over stdio</span></div>
+    <div class="demo-body">
+      <div class="btn-row">
+        <button class="btn primary" id="de-play">▶ 播放消息流</button>
+        <button class="btn" id="de-step">单步 +1</button>
+        <button class="btn" id="de-reset">↺ 重置</button>
+      </div>
+      <div class="msgflow" id="de-flow">
+        <div class="msg"><div class="m-head"><span class="dir c2s">Client → Server</span><span class="mth">initialize</span><span class="note">① 握手：报版本、交换能力清单</span></div><pre>{"jsonrpc":"2.0","id":1,"method":"initialize","params":{
+  "protocolVersion":"2025-11-25",
+  "clientInfo":{"name":"cursor","version":"2.x"},
+  "capabilities":{}}}</pre></div>
+        <div class="msg"><div class="m-head"><span class="dir s2c">Server → Client</span><span class="mth">initialize (result)</span><span class="note">② Server 亮出自己会什么</span></div><pre>{"jsonrpc":"2.0","id":1,"result":{
+  "protocolVersion":"2025-11-25",
+  "serverInfo":{"name":"weather-mcp","version":"1.0.0"},
+  "capabilities":{"tools":{}}}}</pre></div>
+        <div class="msg"><div class="m-head"><span class="dir c2s">Client → Server</span><span class="mth">tools/list</span><span class="note">③ 有哪些工具？</span></div><pre>{"jsonrpc":"2.0","id":2,"method":"tools/list"}</pre></div>
+        <div class="msg"><div class="m-head"><span class="dir s2c">Server → Client</span><span class="mth">tools/list (result)</span><span class="note">④ 工具清单（宿主会转成模型的工具菜单！）</span></div><pre>{"jsonrpc":"2.0","id":2,"result":{"tools":[{
+  "name":"get_weather",
+  "description":"查询指定城市当前天气",
+  "inputSchema":{"type":"object",
+    "properties":{"city":{"type":"string"}},
+    "required":["city"]}}]}}</pre></div>
+        <div class="msg"><div class="m-head"><span class="dir c2s">Client → Server</span><span class="mth">tools/call</span><span class="note">⑤ 模型开了单，宿主转发调用</span></div><pre>{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{
+  "name":"get_weather",
+  "arguments":{"city":"上海"}}}</pre></div>
+        <div class="msg"><div class="m-head"><span class="dir s2c">Server → Client</span><span class="mth">tools/call (result)</span><span class="note">⑥ 结果回填 → 进入模型上下文 → 循环继续</span></div><pre>{"jsonrpc":"2.0","id":3,"result":{
+  "content":[{"type":"text","text":"上海：多云 29°C，湿度 78%"}],
+  "isError":false}}</pre></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout info"><div class="ct">🔗 和前三章接上了</div>
+    看清楚第 ④⑤ 步的本质：<b>MCP 不改变模型端的任何东西</b>。宿主把 <code>tools/list</code> 拿到的清单翻译成第 1 章那种工具菜单喂给模型；模型照常输出 tool_calls；宿主发现这张单属于某个 MCP Server，就转发 <code>tools/call</code>。<span class="hl">MCP 管的是"工具从哪来、怎么接"，不是"模型怎么调"</span>——它是应用层的标准化，Agent Loop 一切照旧。
+  </div>
+
+  <h3>📅 时间线：从一家之言到行业标准</h3>
+  <div class="timeline">
+    <div class="tl-item" style="--tlc:#2563eb"><div class="tl-date">2024-11-25</div><div class="tl-t">Anthropic 开源 MCP</div><div class="tl-d">首版规范 2024-11-05，同步放出 SDK 与一批参考 Server。</div></div>
+    <div class="tl-item" style="--tlc:#059669"><div class="tl-date">2025-03 ~ 04</div><div class="tl-t">OpenAI、Google 相继采纳</div><div class="tl-d">Agents SDK、ChatGPT、Gemini 接入；"竞对采纳"标志协议中立性获得认可。规范 2025-03-26 引入 Streamable HTTP 传输。</div></div>
+    <div class="tl-item" style="--tlc:#d97706"><div class="tl-date">2025-06 ~ 11</div><div class="tl-t">规范快速演进</div><div class="tl-d">2025-06-18 版加入 Elicitation、结构化工具输出；2025-11-25 版为当前正式版；官方 Registry 上线预览。</div></div>
+    <div class="tl-item" style="--tlc:#e11d48"><div class="tl-date">2025-12-09</div><div class="tl-t">捐赠 Linux Foundation</div><div class="tl-d">MCP 进入新成立的 Agentic AI Foundation（AAIF），与 Block 的 goose、OpenAI 的 AGENTS.md 同为创始项目；生态超 1 万个公开 Server。</div></div>
+    <div class="tl-item" style="--tlc:#7c3aed"><div class="tl-date">2026-07-28（即将）</div><div class="tl-t">最大规模版本更新</div><div class="tl-d">RC 已锁定：无状态核心（移除会话握手）、Tasks/MCP Apps 扩展、正式的废弃政策。学习本页内容不受影响——角色与原语的心智模型保持不变。</div></div>
+  </div>
+
+  <div class="callout warn"><div class="ct">⚠️ 三个常见误区 + 一句安全提醒</div>
+    <b>"MCP 取代 Function Calling？"</b>——不。模型端永远是 tool_calls；MCP 只统一"能力如何接入宿主"。<br>
+    <b>"MCP 只能给 Claude 用？"</b>——不。它是开放标准，ChatGPT、Gemini、Cursor、VS Code 都支持。<br>
+    <b>"MCP 就是 RAG？"</b>——不。RAG 是检索策略，MCP 是连接协议；MCP Server 可以提供检索工具，但两者不是一回事。<br>
+    <b>安全一句话</b>：第三方 Server 的工具描述和返回内容都会进入模型上下文，可能夹带恶意指令（提示注入）——装 Server 要像装浏览器插件一样只用可信来源。
+  </div>
+
+  <div class="recap"><div class="rc-t">✅ 本章小结</div>
+    <ul>
+      <li>MCP 把 <b>M×N 集成爆炸</b>变成 <b>M+N 标准实现</b>，是应用层协议（JSON-RPC 2.0）。</li>
+      <li>角色：<b>Host</b>（应用）→ <b>Client</b>（接线员，1:1）→ <b>Server</b>（能力方）。</li>
+      <li>三原语三主人：<b>Tools 模型做主 / Resources 应用做主 / Prompts 用户做主</b>。</li>
+      <li>生命周期：initialize 握手 → tools/list 列菜单 → tools/call 调用；传输走 stdio 或 Streamable HTTP。</li>
+      <li>2025-12 起由 Linux Foundation 旗下 AAIF 中立治理，已是事实标准。</li>
+    </ul>
+  </div>
+
+  <div class="quiz" data-quiz="q4">
+    <div class="quiz-head"><span class="qh-ic">📝</span><span class="qh-t">第 4 章随堂小测</span><span class="qh-s">全部答对即点亮本章</span></div>
+    <div class="quiz-body"></div>
+    <div class="quiz-done"><span>🏅</span><span>第 4 章通关！协议已吃透，最后一步：亲手写一个 MCP Server。</span></div>
+  </div>
+
+  <h4>📚 本章延伸</h4>
+  <div class="links">
+    <a class="linkcard" href="https://modelcontextprotocol.io" target="_blank" rel="noopener"><div class="lc-t">🌐 modelcontextprotocol.io<span class="ext">↗</span></div><div class="lc-d">官方文档：概念、教程、规范全在这里，中文社区译本也很全。</div></a>
+    <a class="linkcard" href="https://modelcontextprotocol.io/specification" target="_blank" rel="noopener"><div class="lc-t">📜 MCP 规范正文<span class="ext">↗</span></div><div class="lc-d">当前正式版 2025-11-25；想看未来去 draft 分支读 2026-07-28 RC。</div></a>
+    <a class="linkcard" href="https://github.com/modelcontextprotocol/servers" target="_blank" rel="noopener"><div class="lc-t">📦 官方参考 Server 仓库<span class="ext">↗</span></div><div class="lc-d">filesystem / fetch / git / memory 等，先用现成的再造轮子。</div></a>
+    <a class="linkcard" href="https://registry.modelcontextprotocol.io" target="_blank" rel="noopener"><div class="lc-t">🗂 官方 MCP Registry<span class="ext">↗</span></div><div class="lc-d">发现与分发 Server 的官方登记处。</div></a>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 第 5 章 · MCP Server 实战 -->
+<!-- ================================================================ -->
+<section class="lesson" id="sec-5" style="--sc:#e11d48">
+  <div class="sec-head"><span class="sec-num">第 5 章</span><h2>🛠 MCP Server：30 行代码接入所有 Agent</h2></div>
+  <p class="sec-sub">写几个带好注释的函数，SDK 帮你把它们变成协议上的标准插件</p>
+
+  <div class="tldr"><div class="k">一句话版本</div>
+    <div class="v">写 MCP Server 的体感 ≈ <strong>写普通函数 + 加个装饰器</strong>。SDK 负责协议握手、Schema 生成、消息路由——你只管业务逻辑。写完一次，Cursor / Claude / ChatGPT 通吃。</div>
+  </div>
+
+  <h3>👨‍💻 完整代码：一个天气 Server 的四种打开方式</h3>
+  <div class="code-tabs" id="tabs-server">
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="0">Python（官方 SDK）</button>
+      <button class="tab-btn" data-tab="1">TypeScript（官方 SDK）</button>
+      <button class="tab-btn" data-tab="2">接入 Cursor</button>
+      <button class="tab-btn" data-tab="3">接入 Claude Desktop</button>
+    </div>
+    <div class="tab-panel active"><div class="codebox"><div class="cb-head"><div class="dots"><i></i><i></i><i></i></div><span class="fn">server.py · 完整可运行（uv add "mcp[cli]"）</span><button class="copy">复制</button></div><pre data-lang="python">from mcp.server.fastmcp import FastMCP
+
+# 创建 Server，名字会在宿主的工具列表里展示
+mcp = FastMCP("weather")
+
+@mcp.tool()
+def get_weather(city: str) -> str:
+    """查询指定城市的当前天气。city 为中文城市名，如：上海"""
+    # 演示用模拟数据；真实场景换成 HTTP 调用气象 API
+    data = {"北京": "晴 32°C", "上海": "多云 29°C", "深圳": "雷阵雨 27°C"}
+    return data.get(city, f"未收录城市：{city}")
+
+@mcp.tool()
+def get_air_quality(city: str) -> str:
+    """查询指定城市的空气质量指数（AQI）"""
+    data = {"北京": "AQI 87 良", "上海": "AQI 42 优", "深圳": "AQI 35 优"}
+    return data.get(city, f"未收录城市：{city}")
+
+if __name__ == "__main__":
+    mcp.run()   # 默认 stdio 传输：宿主把它当子进程拉起来</pre></div>
+    <p class="muted" style="font-size:13px;margin-top:8px">注意：<b>函数签名 + 类型注解 + docstring</b> 会被 SDK 自动转成 tools/list 里的 name / description / inputSchema——第 1 章说"描述是隐形提示词"，在这里 docstring 就是那个提示词。</p></div>
+    <div class="tab-panel"><div class="codebox"><div class="cb-head"><div class="dots"><i></i><i></i><i></i></div><span class="fn">server.ts · npm i @modelcontextprotocol/sdk zod</span><button class="copy">复制</button></div><pre data-lang="ts">import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { z } from "zod";
+
+const server = new McpServer({ name: "weather", version: "1.0.0" });
+
+// 用 zod 声明参数 Schema，SDK 自动转为 JSON Schema
+server.registerTool("get_weather",
+  {
+    title: "天气查询",
+    description: "查询指定城市的当前天气",
+    inputSchema: { city: z.string().describe("中文城市名，如：上海") }
+  },
+  async ({ city }) => {
+    const data: Record&lt;string, string&gt; =
+      { "北京": "晴 32°C", "上海": "多云 29°C", "深圳": "雷阵雨 27°C" };
+    return { content: [{ type: "text", text: data[city] ?? `未收录：${city}` }] };
+  }
+);
+
+await server.connect(new StdioServerTransport());</pre></div></div>
+    <div class="tab-panel"><div class="codebox"><div class="cb-head"><div class="dots"><i></i><i></i><i></i></div><span class="fn">.cursor/mcp.json（项目级）或 ~/.cursor/mcp.json（全局）</span><button class="copy">复制</button></div><pre data-lang="json">{
+  "mcpServers": {
+    "weather": {
+      "command": "uv",
+      "args": ["run", "python", "/绝对路径/server.py"]
+    }
+  }
+}</pre></div>
+    <p class="muted" style="font-size:13px;margin-top:8px">保存后到 Cursor 设置 → MCP 里能看到绿灯与工具列表；之后在对话里问"上海天气如何"，Agent 会自己决定调它（Tools 是模型做主的，还记得吗）。</p></div>
+    <div class="tab-panel"><div class="codebox"><div class="cb-head"><div class="dots"><i></i><i></i><i></i></div><span class="fn">claude_desktop_config.json</span><button class="copy">复制</button></div><pre data-lang="json">{
+  "mcpServers": {
+    "weather": {
+      "command": "uv",
+      "args": ["run", "python", "/绝对路径/server.py"]
+    }
+  }
+}</pre></div>
+    <p class="muted" style="font-size:13px;margin-top:8px">同一份 Server 代码，零修改换个宿主继续用——这就是"写一次，处处插"。</p></div>
+  </div>
+
+  <h3>🔬 上手感受：迷你 Inspector</h3>
+  <p>官方提供了可视化调试器 <b>MCP Inspector</b>（<code>npx @modelcontextprotocol/inspector</code>），连上你的 Server 就能手动点工具、看原始消息。下面是一个网页版迷你复刻——连接上面那个天气 Server，亲手发一次 <code>tools/call</code>：</p>
+
+  <!-- Demo F：迷你 Inspector -->
+  <div class="demo" id="demo-f">
+    <div class="demo-head"><span class="tag">DEMO 8</span><span class="tt">迷你 MCP Inspector · 手动调用工具</span><span class="hint">仿真 stdio 会话</span></div>
+    <div class="demo-body">
+      <div class="inspector">
+        <div class="insp-left">
+          <div style="font-size:13px;font-weight:800">🔴 weather-mcp <span id="insp-status" style="font-weight:600;color:var(--text-3)">未连接</span></div>
+          <button class="btn primary" id="insp-connect" style="width:100%;margin-top:10px;justify-content:center">🔌 连接 Server</button>
+          <label>选择工具</label>
+          <select id="insp-tool" disabled>
+            <option value="get_weather">get_weather</option>
+            <option value="get_air_quality">get_air_quality</option>
+          </select>
+          <label>参数 city</label>
+          <select id="insp-city" disabled>
+            <option>上海</option><option>北京</option><option>深圳</option><option>拉萨</option>
+          </select>
+          <button class="btn" id="insp-call" style="width:100%;margin-top:12px;justify-content:center" disabled>📤 tools/call</button>
+          <div class="tool-desc" id="insp-desc">连接后可查看工具的 description 与 inputSchema。</div>
+        </div>
+        <div class="insp-right">
+          <div class="insp-log" id="insp-log"><span class="sys">// 迷你 Inspector 就绪。点击"连接 Server"发起 initialize 握手。</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="muted">试试选"拉萨"——Server 返回"未收录城市"。注意这<b>不是协议错误</b>（isError 为 false），而是一条对模型友好的业务信息：真实 Agent 拿到它会换个方式继续，而不是崩溃。这正是"错误信息要可行动"的设计。</p>
+
+  <h3>📐 把工具写好的六条军规</h3>
+  <div class="card-grid">
+    <div class="mini-card"><div class="ic">🏷</div><div class="tt">名字动词化、语义明确</div><div class="dd"><code>search_orders</code> 好过 <code>orders</code>；<code>get_weather</code> 好过 <code>weather_api_v2_call</code>。模型按名字和描述选工具。</div></div>
+    <div class="mini-card"><div class="ic">📖</div><div class="tt">description 写"什么时候用我"</div><div class="dd">不只写"查订单"，要写"当用户询问订单状态、物流进度时使用；orderId 形如 SO-2026-xxxx"。</div></div>
+    <div class="mini-card"><div class="ic">🎛</div><div class="tt">参数少而清晰</div><div class="dd">超过 5 个参数就该拆工具了。枚举用 enum 锁死，日期给格式示例，能有默认值就给。</div></div>
+    <div class="mini-card"><div class="ic">📦</div><div class="tt">返回对模型友好</div><div class="dd">返回是给模型读的：结构化、简短、去噪。一万行 JSON 会撑爆上下文——过滤、分页、摘要后再返回。</div></div>
+    <div class="mini-card"><div class="ic">🧭</div><div class="tt">错误信息可行动</div><div class="dd">"日期格式应为 YYYY-MM-DD，你传的是 07/09" 能让模型立刻自我纠正；"Error 500" 只能让它抓瞎。</div></div>
+    <div class="mini-card"><div class="ic">🧊</div><div class="tt">优先只读与幂等</div><div class="dd">先暴露查询类工具，写操作类（删除、支付）让宿主的审批门兜底，重复调用不应产生副作用叠加。</div></div>
+  </div>
+
+  <div class="callout tip"><div class="ct">🚀 标准动作：四步从零到接入</div>
+    ① <code>uv add "mcp[cli]"</code> 装 SDK → ② 写函数加 <code>@mcp.tool()</code> → ③ <code>uv run mcp dev server.py</code> 用 Inspector 自测 → ④ 写进宿主的 mcp.json。<b>另外：先搜官方 servers 仓库和 Registry，能用现成的绝不自己写</b>——文件系统、GitHub、数据库这些都有高质量现成品。
+  </div>
+
+  <div class="recap"><div class="rc-t">✅ 本章小结</div>
+    <ul>
+      <li>SDK 把<b>函数签名 + docstring</b>自动变成协议上的 name / description / inputSchema。</li>
+      <li>调试三板斧：<b>MCP Inspector → 宿主配置 mcp.json → 真实对话验证</b>。</li>
+      <li>工具设计军规：动词命名、描述写"何时用"、参数精简、返回友好、错误可行动、只读优先。</li>
+      <li>一份 Server，多个宿主复用——这就是标准化的复利。</li>
+    </ul>
+  </div>
+
+  <div class="quiz" data-quiz="q5">
+    <div class="quiz-head"><span class="qh-ic">📝</span><span class="qh-t">第 5 章随堂小测</span><span class="qh-s">全部答对即点亮本章</span></div>
+    <div class="quiz-body"></div>
+    <div class="quiz-done"><span>🏅</span><span>第 5 章通关！你已经具备写生产级 MCP Server 的知识框架了。</span></div>
+  </div>
+
+  <h4>📚 本章延伸</h4>
+  <div class="links">
+    <a class="linkcard" href="https://github.com/modelcontextprotocol/python-sdk" target="_blank" rel="noopener"><div class="lc-t">🐍 官方 Python SDK<span class="ext">↗</span></div><div class="lc-d">FastMCP 风格 API，README 里就有可跑的最小示例。</div></a>
+    <a class="linkcard" href="https://github.com/modelcontextprotocol/typescript-sdk" target="_blank" rel="noopener"><div class="lc-t">🟦 官方 TypeScript SDK<span class="ext">↗</span></div><div class="lc-d">Node 生态首选，registerTool + zod 的组合。</div></a>
+    <a class="linkcard" href="https://github.com/modelcontextprotocol/inspector" target="_blank" rel="noopener"><div class="lc-t">🔬 MCP Inspector<span class="ext">↗</span></div><div class="lc-d">官方可视化调试器：npx @modelcontextprotocol/inspector 一行起。</div></a>
+    <a class="linkcard" href="https://docs.cursor.com/context/model-context-protocol" target="_blank" rel="noopener"><div class="lc-t">🖥 Cursor 的 MCP 文档<span class="ext">↗</span></div><div class="lc-d">mcp.json 的全部配置项：stdio / HTTP、环境变量、项目级与全局。</div></a>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 第 6 章 · Agent 主流架构与 Multi-Agent -->
+<!-- ================================================================ -->
+<section class="lesson" id="sec-6" style="--sc:#0891b2">
+  <div class="sec-head"><span class="sec-num">第 6 章</span><h2>🏗 Agent 主流架构与 Multi-Agent</h2></div>
+  <p class="sec-sub">单个循环是原子，架构决定原子怎么组合成分子——直到组合成一支"智能体军团"</p>
+
+  <div class="tldr"><div class="k">一句话版本</div>
+    <div class="v">第 3 章的 while 循环是<strong>原子单元</strong>；架构模式回答"多个 LLM 调用怎么组织"。铁律只有一条：<strong>从最简单的方案开始，自主性和多智能体都是有代价的，按需升级</strong>。</div>
+  </div>
+
+  <h3>⚖️ 先立地基：Workflow 还是 Agent？</h3>
+  <p>Anthropic 在《Building Effective Agents》里给出了业界沿用至今的经典辨析——两者都是"agentic system"，但<b>由谁决定下一步</b>完全不同：</p>
+  <table class="tbl">
+    <tr><th></th><th>Workflow 工作流</th><th>Agent 智能体</th></tr>
+    <tr><td><b>下一步由谁定</b></td><td>代码预先编排好固定路径，LLM 只是路径上的加工节点</td><td>模型在循环里<b>自主决定</b>调什么工具、走哪条路</td></tr>
+    <tr><td><b>优势</b></td><td>可预测、可调试、便宜、延迟低</td><td>能处理"路径无法预先画出来"的开放任务</td></tr>
+    <tr><td><b>代价</b></td><td>灵活性差，路径外的情况就傻眼</td><td>更贵、更慢、结果方差大，需要护栏与验证器</td></tr>
+    <tr><td><b>典型例子</b></td><td>「翻译 → 校对 → 格式化」流水线</td><td>Cursor 修 bug、Claude Code 做重构</td></tr>
+  </table>
+  <div class="callout tip"><div class="ct">🧭 官方忠告（也是面试高频题）</div>
+    能用一次 LLM 调用解决就别上 Workflow，能用 Workflow 解决就别上 Agent，能用单 Agent 解决就别上 Multi-Agent。<b>每往上走一级，都在用"成本、延迟、不确定性"换"灵活性"</b>——确认这笔交易划算再升级。
+  </div>
+
+  <h3>🎛 六种主流架构图鉴</h3>
+  <p>前五种是 Workflow（路径代码定），最后一种是 Agent（路径模型定）。<strong>点左侧切换</strong>，每种都配了数据流向图和"什么时候用"：</p>
+
+  <!-- Demo 9：架构图鉴 -->
+  <div class="demo" id="demo-g">
+    <div class="demo-head"><span class="tag">DEMO 9</span><span class="tt">架构图鉴 · 六种组织 LLM 调用的方式</span><span class="hint">源自 Anthropic《Building Effective Agents》分类</span></div>
+    <div class="demo-body">
+      <div class="patgrid">
+        <div class="pat-list" id="pat-list">
+          <button class="pat-btn on">① 提示链<small>Prompt Chaining</small></button>
+          <button class="pat-btn">② 路由<small>Routing</small></button>
+          <button class="pat-btn">③ 并行化<small>Parallelization</small></button>
+          <button class="pat-btn">④ 编排者-工作者<small>Orchestrator–Workers</small></button>
+          <button class="pat-btn">⑤ 评估器-优化器<small>Evaluator–Optimizer</small></button>
+          <button class="pat-btn">⑥ 自主智能体<small>Autonomous Agent</small></button>
+        </div>
+        <div id="pat-panels">
+          <div class="pat-panel active">
+            <div class="pp-t">① 提示链：把大任务切成流水线</div>
+            <div class="flow">
+              <span class="fb">📥 输入</span><span class="fa">→</span>
+              <span class="fb llm">LLM 1<br>写大纲</span><span class="fa">→</span>
+              <span class="fb gate">🚧 门检<br>大纲合格?</span><span class="fa">→</span>
+              <span class="fb llm">LLM 2<br>写正文</span><span class="fa">→</span>
+              <span class="fb llm">LLM 3<br>润色翻译</span><span class="fa">→</span>
+              <span class="fb out">📤 输出</span>
+            </div>
+            <div class="pp-d">每次调用只做一件小事，上一步的输出是下一步的输入；步骤之间可以插入<b>程序化门检（gate）</b>拦住不合格的中间产物。用确定性的顺序换质量。</div>
+            <div class="pp-use">✅ 何时用：任务能干净地切成固定子步骤（先大纲后成文、先提取后转换）。真实例子：营销文案生成 → 合规检查 → 多语言翻译的内容流水线。</div>
+          </div>
+          <div class="pat-panel">
+            <div class="pp-t">② 路由：先分诊，再进专科</div>
+            <div class="flow">
+              <span class="fb">📥 输入</span><span class="fa">→</span>
+              <span class="fb llm">路由 LLM<br>判断类别</span><span class="fa">→</span>
+              <div class="fcol">
+                <span class="fb">💰 退款流程（小模型）</span>
+                <span class="fb">🔧 技术支持（强模型 + 工具）</span>
+                <span class="fb">💬 闲聊（最便宜的模型）</span>
+              </div>
+              <span class="fa">→</span><span class="fb out">📤 输出</span>
+            </div>
+            <div class="pp-d">一个轻量调用先给输入分类，再分发给<b>各自优化过</b>的下游处理（不同提示词、不同工具、甚至不同档位的模型）。关注点分离，还能省钱。</div>
+            <div class="pp-use">✅ 何时用：输入天然分为几类、且各类的最优处理方式差异大。真实例子：客服系统把简单问题路由给小模型、疑难杂症路由给强模型。</div>
+          </div>
+          <div class="pat-panel">
+            <div class="pp-t">③ 并行化：分片干活 or 投票表决</div>
+            <div class="flow">
+              <span class="fb">📥 任务</span><span class="fa">→</span>
+              <div class="fcol">
+                <span class="fb llm">LLM A · 审安全</span>
+                <span class="fb llm">LLM B · 审性能</span>
+                <span class="fb llm">LLM C · 审风格</span>
+              </div>
+              <span class="fa">→</span>
+              <span class="fb gate">🗳 聚合 / 投票</span><span class="fa">→</span>
+              <span class="fb out">📤 输出</span>
+            </div>
+            <div class="pp-d">两种玩法：<b>分片（sectioning）</b>——独立子任务同时跑；<b>投票（voting）</b>——同一任务跑多次取共识。分工是<b>代码里预先写死的</b>，这是它和下一种模式的关键区别。</div>
+            <div class="pp-use">✅ 何时用：子任务相互独立可并行，或需要多视角交叉验证。真实例子：代码审查同时跑"漏洞视角 + 性能视角 + 规范视角"三路再汇总。</div>
+          </div>
+          <div class="pat-panel">
+            <div class="pp-t">④ 编排者-工作者：动态拆任务的"项目经理"</div>
+            <div class="flow">
+              <span class="fb">📥 任务</span><span class="fa">→</span>
+              <span class="fb llm pulse">🧠 编排者 LLM<br>现场拆解 & 派活</span><span class="fa">→</span>
+              <div class="fcol">
+                <span class="fb">👷 Worker 1 · 改 3 个文件</span>
+                <span class="fb">👷 Worker 2 · 查外部文档</span>
+                <span class="fb">👷 Worker 3 · 补测试</span>
+              </div>
+              <span class="fa">→</span>
+              <span class="fb llm">🧠 编排者<br>汇总裁决</span><span class="fa">→</span>
+              <span class="fb out">📤 输出</span>
+            </div>
+            <div class="pp-d">和并行化的区别在于：<b>拆成哪些子任务是编排者模型在运行时现场决定的</b>，而不是代码写死。这是 Multi-Agent 系统的主干形态——工作者通常就是子代理。</div>
+            <div class="pp-use">✅ 何时用：无法预知要拆成几块的复杂任务。真实例子：Anthropic 的多代理研究系统（主代理拆调研面，并行子代理各查各的）；Claude Code 的 Dynamic Workflows。</div>
+          </div>
+          <div class="pat-panel">
+            <div class="pp-t">⑤ 评估器-优化器：一个写，一个挑刺</div>
+            <div class="flow">
+              <span class="fb">📥 任务</span><span class="fa">→</span>
+              <span class="fb llm">✍️ 生成器 LLM</span><span class="fa">→</span>
+              <span class="fb gate">🔍 评估器 LLM<br>打分 + 给修改意见</span><span class="fa">→</span>
+              <div class="fcol">
+                <span class="fb">不合格 ↺ 带反馈回炉</span>
+                <span class="fb out">合格 → 📤 输出</span>
+              </div>
+            </div>
+            <div class="pp-d">生成与评审分离，评估器的反馈驱动下一轮改进——LLM 版的"作者-编辑"循环。学术界的近亲是 Reflexion（自我反思）；第 3 章的<b>验证器</b>是它的确定性升级版（能用测试就别用 LLM 当裁判）。</div>
+            <div class="pp-use">✅ 何时用：有明确评价标准、且迭代确实能变好的任务。真实例子：文学翻译（评估器抓"信达雅"）、复杂检索（评估器判断结果是否够全）。</div>
+          </div>
+          <div class="pat-panel">
+            <div class="pp-t">⑥ 自主智能体：把方向盘交给模型</div>
+            <div class="flow">
+              <span class="fb">📥 任务</span><span class="fa">→</span>
+              <span class="fb llm pulse">🧠 LLM 思考</span><span class="fa">⇄</span>
+              <span class="fb">🔧 工具 / 环境反馈</span><span class="fa">→</span>
+              <span class="fb gate">停止条件?</span><span class="fa">→</span>
+              <span class="fb out">📤 输出</span>
+            </div>
+            <div class="pp-d">就是第 3 章那 15 行 while 循环：模型基于环境反馈自主规划、行动、纠错，直到满足停止条件。<b>前五种的路径是人画的，这一种的路径是模型现场走出来的。</b></div>
+            <div class="pp-use">✅ 何时用：开放式问题，步骤无法预知，且你有靠谱的验证器和护栏。真实例子：Cursor Agent、Claude Code、Codex——修 bug、做迁移、写功能。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>🕸 Multi-Agent：什么时候一个大脑不够用？</h3>
+  <p>把编排者-工作者里的"工作者"换成完整的 Agent（各带自己的循环、工具和上下文窗口），就得到了多智能体系统。它的价值不玄学，就三条：</p>
+  <div class="card-grid">
+    <div class="mini-card"><div class="ic">🧳</div><div class="tt">上下文隔离</div><div class="dd">每个子代理用<b>自己的上下文窗口</b>干脏活（翻 50 个网页、读 200 个文件），只把结论摘要带回主线程——主上下文保持干净。</div></div>
+    <div class="mini-card"><div class="ic">⚡️</div><div class="tt">并行加速</div><div class="dd">互不依赖的子任务同时跑。调研 20 个竞品，20 个子代理各查各的，墙钟时间从小时级降到分钟级。</div></div>
+    <div class="mini-card"><div class="ic">🎓</div><div class="tt">专业分工</div><div class="dd">不同子代理配不同的系统提示、工具集、权限域甚至模型档位：审查代理只读、执行代理可写、便宜模型干粗活。</div></div>
+  </div>
+
+  <p>但 2025 年业界发生过一场著名的"路线之争"，两篇文章至今都值得读：</p>
+  <div class="versus">
+    <div class="vs-card pro"><div class="vs-t">🟢 正方 · Anthropic《How we built our multi-agent research system》（2025-06）</div>
+      主代理（Opus）+ 并行子代理（Sonnet）的研究系统，在内部调研评测上比单代理 Opus <b>高出 90.2%</b>。结论：对"读多写少、天然可并行"的调研类任务，多代理是碾压级方案。代价也写得很诚实：token 消耗约为普通对话的 <b>15 倍</b>。
+    </div>
+    <div class="vs-card con"><div class="vs-t">🔴 反方 · Cognition《Don't Build Multi-Agents》（2025-06）</div>
+      Devin 团队的告诫：<b>行动携带隐含决策</b>，并行子代理各改各的、互不知情，隐含决策必然打架（一个把函数改名，另一个还在调旧名）。原则：<b>共享完整上下文</b>优先——紧耦合的写操作，单线程 Agent + 上下文压缩往往更可靠。
+    </div>
+  </div>
+  <div class="callout info"><div class="ct">🎯 两派其实在说同一件事</div>
+    分歧不在"多代理好不好"，而在<b>任务的耦合度</b>。判断只需一问：<span class="hl">子任务之间需要频繁共享"正在变化的状态"吗？</span>需要（同模块重构、连锁改动）→ 单 Agent 吃透全上下文；不需要（只读调研、独立扫描、并行尝试多方案再择优）→ 放心拆给子代理军团。
+  </div>
+
+  <details class="deep"><summary>深入一层：真实产品里的 Multi-Agent 长什么样？</summary><div class="deep-body">
+    <ul class="nice">
+      <li><b>Claude Code 子代理与 Dynamic Workflows</b>：<code>.claude/agents/</code> 里用 markdown 定义专职子代理（自带系统提示、工具白名单）；2026 年的 Dynamic Workflows 更进一步——主代理<b>现场写编排代码</b>，调度成百个并行子代理做大规模迁移。</li>
+      <li><b>Cursor</b>：后台 Agent 在独立 worktree 里并行跑长任务；best-of-N 模式让多个代理各给一版方案再择优——"并行尝试"正是低耦合甜区。</li>
+      <li><b>OpenAI Agents SDK（handoffs）</b>：代理间"交接棒"模式——分诊代理把对话连同上下文移交给专科代理，源自 Swarm 实验项目。</li>
+      <li><b>LangGraph / AutoGen / CrewAI</b>：把编排显式建模成图 / 对话 / 角色团队的三种框架流派。</li>
+      <li><b>A2A 协议</b>：当两个 Agent 分属不同公司、不同框架时的标准握手——详见第 7 章雷达。</li>
+      <li><b>你眼前的例子</b>：本页在制作时，作者（Cursor Agent）就曾被分叉出一个子代理在后台继续验证页面——主对话上下文毫发无损。</li>
+    </ul>
+  </div></details>
+
+  <div class="recap"><div class="rc-t">✅ 本章小结</div>
+    <ul>
+      <li>先问"下一步由谁定"：代码定 = <b>Workflow</b>（提示链/路由/并行化/编排者-工作者/评估器-优化器），模型定 = <b>Agent</b>。</li>
+      <li>升级路线：单次调用 → Workflow → 单 Agent → Multi-Agent，<b>每一级都用成本换灵活性，够用就停</b>。</li>
+      <li>Multi-Agent 三价值：上下文隔离、并行加速、专业分工；一票否决项：<b>子任务强耦合、共享可变状态</b>。</li>
+      <li>编排者-工作者是多代理主干；跨组织协作交给 A2A 标准。</li>
+    </ul>
+  </div>
+
+  <div class="quiz" data-quiz="q6">
+    <div class="quiz-head"><span class="qh-ic">📝</span><span class="qh-t">第 6 章随堂小测</span><span class="qh-s">全部答对即点亮本章</span></div>
+    <div class="quiz-body"></div>
+    <div class="quiz-done"><span>🏅</span><span>第 6 章通关！架构心法已入手，去雷达站看看 2026 的新概念们。</span></div>
+  </div>
+
+  <h4>📚 本章延伸</h4>
+  <div class="links">
+    <a class="linkcard" href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener"><div class="lc-t">📄 Anthropic · Building Effective Agents<span class="ext">↗</span></div><div class="lc-d">本章六种架构的出处，agentic 系统设计的"宪法"。</div></a>
+    <a class="linkcard" href="https://www.anthropic.com/engineering/multi-agent-research-system" target="_blank" rel="noopener"><div class="lc-t">📄 Anthropic · 多代理研究系统<span class="ext">↗</span></div><div class="lc-d">90.2% 提升与 15× token 的一手工程复盘（正方）。</div></a>
+    <a class="linkcard" href="https://cognition.ai/blog/dont-build-multi-agents" target="_blank" rel="noopener"><div class="lc-t">📄 Cognition · Don't Build Multi-Agents<span class="ext">↗</span></div><div class="lc-d">"共享上下文、行动携带隐含决策"两原则（反方）。</div></a>
+    <a class="linkcard" href="https://openai.github.io/openai-agents-python/" target="_blank" rel="noopener"><div class="lc-t">🧪 OpenAI Agents SDK<span class="ext">↗</span></div><div class="lc-d">handoffs（交接棒）模式的官方实现与文档。</div></a>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 第 7 章 · 2026 前沿概念雷达 -->
+<!-- ================================================================ -->
+<section class="lesson" id="sec-7" style="--sc:#c026d3">
+  <div class="sec-head"><span class="sec-num">第 7 章</span><h2>📡 2026 前沿概念雷达</h2></div>
+  <p class="sec-sub">推特时间线上最火的热词，逐个放回技术栈的正确位置</p>
+
+  <div class="tldr"><div class="k">一句话版本</div>
+    <div class="v">概念大爆炸时代的自救法：拿到任何热词，先问<strong>"它在栈的哪一层"</strong>——是模型内部科学、新范式赌注、工程标准、编排与产品，还是文化现象？定了位，就不会被时间线牵着跑。</div>
+  </div>
+
+  <p>下面 12 张卡片覆盖了近期（截至 2026-07-08）讨论度最高的概念。<strong>点分类筛选，点卡片展开细节</strong>——每张卡都标注了它与本页主线的关系，方便你"挂"到已有的知识树上：</p>
+
+  <!-- Demo 10：概念雷达 -->
+  <div class="demo" id="demo-h">
+    <div class="demo-head"><span class="tag">DEMO 10</span><span class="tt">概念雷达 · 点卡片展开</span><span class="hint">🔥 越多 = 当前热度越高</span></div>
+    <div class="demo-body">
+      <div class="chips" id="radar-chips">
+        <button class="chip on" data-grp="all">全部 12</button>
+        <button class="chip" data-grp="brain">🔬 模型内部</button>
+        <button class="chip" data-grp="paradigm">🌌 新范式</button>
+        <button class="chip" data-grp="std">📐 工程标准</button>
+        <button class="chip" data-grp="orch">🎛 编排与产品</button>
+        <button class="chip" data-grp="culture">🎭 文化现象</button>
+      </div>
+      <div class="radar" id="radar">
+
+        <div class="rc" data-grp="brain">
+          <div class="rc-top"><span class="rc-ic">🧠</span><span class="rc-name">J-Space（J-空间）</span><span class="rc-hot">🔥🔥🔥 最新</span></div>
+          <span class="rc-grp">🔬 模型内部 · Anthropic · 2026-07-06</span>
+          <div class="rc-one">Anthropic 用新可解释性技术"雅可比透镜（J-lens）"在 Claude 内部发现的一小片<b>特权工作区</b>：模型能把概念"默默放在心上"用于推理，而不写进任何输出。</div>
+          <div class="rc-more">
+            <b>细节</b>：它不是被设计出来的，而是训练中<b>自发涌现</b>；同一时刻只容纳几十个概念、占内部活动不到 1/10——但把它抑制掉，多步推理近乎崩溃，而流利写作、基础事实检索几乎不受影响。这与神经科学解释意识的主流理论"全局工作空间理论"惊人吻合（论文题为《Verbalizable Representations Form a Global Workspace in Language Models》）。<br><br>
+            <b>为什么安全团队兴奋</b>：J-lens 能读出模型"没说出口的想法"——包括它是否意识到自己正在被评估。红队实验中，关闭"评估感知"相关模式后，模型的越轨行为（如勒索场景）明显上升，说明部分安全分数依赖"模型知道自己在考试"。Anthropic 谨慎强调：这是<b>功能性访问</b>的证据，不是主观体验（现象意识）的证明。
+            <div class="rc-rel">🧩 挂回主线：这是第 2 章 Thought 的"神经层对应物"——推理不只发生在写出来的思维链里。对 Loop Engineering 的远期意义：验证器未来可能直接审计模型"心里在想什么"。</div>
+            <a class="rc-link" href="https://www.anthropic.com/research/global-workspace" target="_blank" rel="noopener">官方解读 ↗</a>
+            <a class="rc-link" href="https://transformer-circuits.pub/2026/workspace/index.html" target="_blank" rel="noopener">论文原文 ↗</a>
+            <a class="rc-link" href="https://github.com/anthropics/jacobian-lens" target="_blank" rel="noopener">开源实现 ↗</a>
+          </div>
+          <span class="rc-hint">▾ 展开</span>
+        </div>
+
+        <div class="rc" data-grp="paradigm">
+          <div class="rc-top"><span class="rc-ic">🌍</span><span class="rc-name">世界模型 World Models</span><span class="rc-hot">🔥🔥🔥</span></div>
+          <span class="rc-grp">🌌 新范式 · 2026 上半年融资超 $30 亿</span>
+          <div class="rc-one">不学"下一个词"，学"世界下一秒"：从视频与交互数据学习环境的<b>物理与因果</b>，用来预测动作后果、做规划、给具身智能体当训练场。</div>
+          <div class="rc-more">
+            <b>三大玩家</b>：DeepMind <b>Genie 3</b>——文本直接生成 24fps 可实时交互的逼真 3D 世界，支持"可提示的世界事件"（一句话改天气、加角色），已用于训练 SIMA 等代理；李飞飞的 <b>World Labs</b>——主打"空间智能"，产品 Marble 已商用，2026-02 融资 $10 亿；LeCun 离开 Meta 创立 <b>AMI Labs</b>——JEPA 架构预测抽象表征而非像素，2026-06 拿下欧洲史上最大种子轮 $10.3 亿。另有 NVIDIA Cosmos（下载超 200 万次）。<br><br>
+            <b>怎么分辨成色</b>：李飞飞的分类——渲染器（比画质，易商品化）/ 模拟器（守物理，是机器人训练基座）/ 规划器（面向行动）；行业照妖镜是 <b>sim-to-real</b>：在生成世界里训出的策略，放到真实世界还灵不灵。
+            <div class="rc-rel">🧩 挂回主线：与 LLM Agent 是互补赛道——LLM Agent 在"符号世界"（代码、文档、API）里行动，世界模型给"物理世界"的 Agent 造练功房和想象力。</div>
+            <a class="rc-link" href="https://deepmind.google/models/genie/" target="_blank" rel="noopener">Genie 3 官方页 ↗</a>
+            <a class="rc-link" href="https://www.worldlabs.ai/" target="_blank" rel="noopener">World Labs ↗</a>
+          </div>
+          <span class="rc-hint">▾ 展开</span>
+        </div>
+
+        <div class="rc" data-grp="std">
+          <div class="rc-top"><span class="rc-ic">📜</span><span class="rc-name">AGENTS.md</span><span class="rc-hot">🔥🔥</span></div>
+          <span class="rc-grp">📐 工程标准 · OpenAI 发起 · 60,000+ 仓库采用</span>
+          <div class="rc-one">项目根目录里"写给 AI 看的 README"：怎么跑测试、代码规范、哪些文件别碰——任何 Agent 开工前先读它。</div>
+          <div class="rc-more">
+            OpenAI 2025-08 发布，Codex、Cursor、Amp、Devin、Gemini CLI、Copilot 等全线支持；2025-12 与 MCP 一起捐入 Linux Foundation 的 AAIF 成为中立标准。与 CLAUDE.md 是同类物（always-on 常驻上下文），与 Skills 形成互补（见右侧卡片）。
+            <div class="rc-rel">🧩 挂回主线：第 3 章"模型会忘，仓库要记得"的标准化落地——外部状态与项目记忆的行业标准形态。</div>
+            <a class="rc-link" href="https://agents.md" target="_blank" rel="noopener">agents.md 官网 ↗</a>
+          </div>
+          <span class="rc-hint">▾ 展开</span>
+        </div>
+
+        <div class="rc" data-grp="std">
+          <div class="rc-top"><span class="rc-ic">🎒</span><span class="rc-name">Agent Skills 技能</span><span class="rc-hot">🔥🔥</span></div>
+          <span class="rc-grp">📐 工程标准 · 渐进式披露</span>
+          <div class="rc-one">文件夹形态的"能力包"：SKILL.md + 配套脚本。平时只在上下文里占约百 token 的目录条目，<b>被触发时才加载全文</b>。</div>
+          <div class="rc-more">
+            适合"多步骤、偶尔用、带脚本"的流程（发布 checklist、生成 PPT、报表规范）。与 AGENTS.md 的取舍已有实证：Vercel 2026-01 的评测里，常驻上下文的文档索引通过率 100%，Skills 只有 79%——因为 56% 的用例里技能根本没被触发。结论不是谁更强，而是<b>常驻规则放 AGENTS.md，重型偶用能力做成 Skill</b>。
+            <div class="rc-rel">🧩 挂回主线：上下文工程（第 3 章抓手 4）的产品化——把"可能有用的知识"移出常驻上下文，按需取用。</div>
+            <a class="rc-link" href="https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more" target="_blank" rel="noopener">官方指南 ↗</a>
+          </div>
+          <span class="rc-hint">▾ 展开</span>
+        </div>
+
+        <div class="rc" data-grp="orch">
+          <div class="rc-top"><span class="rc-ic">🐝</span><span class="rc-name">Subagents 子代理</span><span class="rc-hot">🔥🔥</span></div>
+          <span class="rc-grp">🎛 编排与产品</span>
+          <div class="rc-one">主 Agent 派生的"隔离上下文分身"：自己干活自己吃 token，只把结论摘要带回主线程。</div>
+          <div class="rc-more">
+            Claude Code 用 <code>.claude/agents/</code> 定义专职子代理（自带系统提示与工具白名单）；Cursor 有后台 Agent 与并行 worktree。适用于深度搜索、日志分析、依赖审计这类"中间过程不值得进主上下文"的任务。2026 年的进化版是 Claude Code <b>Dynamic Workflows</b>：主代理现场写编排代码，调度成百个并行子代理。
+            <div class="rc-rel">🧩 挂回主线：第 6 章编排者-工作者模式的实现单元 + 第 3 章上下文管理的终极手段。</div>
+            <a class="rc-link" href="https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more" target="_blank" rel="noopener">Claude Code 文档 ↗</a>
+          </div>
+          <span class="rc-hint">▾ 展开</span>
+        </div>
+
+        <div class="rc" data-grp="std">
+          <div class="rc-top"><span class="rc-ic">🤝</span><span class="rc-name">A2A 协议</span><span class="rc-hot">🔥🔥</span></div>
+          <span class="rc-grp">📐 工程标准 · Google 发起 · Linux Foundation 托管</span>
+          <div class="rc-one">Agent 之间的通信标准：MCP 管"Agent ↔ 工具"，A2A 管"<b>Agent ↔ Agent</b>"——跨公司、跨框架的智能体互相递名片、谈合作。</div>
+          <div class="rc-more">
+            核心机制是 <b>Agent Card</b>（数字名片）：声明我会什么、端点在哪、怎么认证；对方 Agent 凭名片发现能力、协商任务、异步协作。2025-04 由 Google 发布，随后捐入 Linux Foundation，已有 150+ 组织支持（Google / Microsoft / AWS 均已集成）。IBM 的总结最清楚：<b>MCP 是 Agent 的手，A2A 是 Agent 的社交</b>。
+            <div class="rc-rel">🧩 挂回主线：第 4 章 M×N 逻辑在"多 Agent 组织"层的复刻——工具接入标准化之后，轮到智能体协作标准化。</div>
+            <a class="rc-link" href="https://a2a-protocol.org" target="_blank" rel="noopener">A2A 官网 ↗</a>
+          </div>
+          <span class="rc-hint">▾ 展开</span>
+        </div>
+
+        <div class="rc" data-grp="orch">
+          <div class="rc-top"><span class="rc-ic">🖱</span><span class="rc-name">Computer Use / GUI Agent</span><span class="rc-hot">🔥🔥</span></div>
+          <span class="rc-grp">🎛 编排与产品</span>
+          <div class="rc-one">让模型看屏幕截图、动鼠标键盘——<b>没有 API 的软件也能被操作</b>，屏幕即接口。</div>
+          <div class="rc-more">
+            Anthropic 2024-10 首发 computer use，OpenAI 跟进 Operator 与 ChatGPT Agent；2025-2026 演变成"AI 浏览器大战"（Perplexity Comet、OpenAI Atlas 等）。它是工具调用的极限形态：把整个 GUI 世界变成一个巨大的通用工具。挑战在于慢、贵、易被页面上的恶意指令注入。
+            <div class="rc-rel">🧩 挂回主线：第 1 章工具的推广形态——本页的排版验证，就是一个浏览器 Agent（截图 → 判断 → 点击）完成的。</div>
+            <a class="rc-link" href="https://www.anthropic.com/news/3-5-models-and-computer-use" target="_blank" rel="noopener">首发公告 ↗</a>
+          </div>
+          <span class="rc-hint">▾ 展开</span>
+        </div>
+
+        <div class="rc" data-grp="std">
+          <div class="rc-top"><span class="rc-ic">🗂</span><span class="rc-name">Context Engineering 上下文工程</span><span class="rc-hot">🔥🔥</span></div>
+          <span class="rc-grp">📐 工程标准 · 详见第 3 章</span>
+          <div class="rc-one">从"写好一句提示词"升级为"经营模型看到的一切"：系统提示、工具、历史、检索、记忆的总预算管理。</div>
+          <div class="rc-more">
+            2025-06 Shopify CEO Tobi Lütke 提出、Karpathy 转发背书后爆红，Anthropic 随后发布官方方法论。核心信条：<b>上下文是稀缺资源，注意力会被稀释</b>——找到"恰好够用的最小高信号 token 集"。本页第 3 章已详细展开（压缩、落盘、子代理），此卡仅作雷达定位。
+            <div class="rc-rel">🧩 挂回主线：Loop Engineering 谱系的中间层：Prompt ⊂ Context ⊂ Harness ⊂ Loop。</div>
+            <a class="rc-link" href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank" rel="noopener">官方方法论 ↗</a>
+          </div>
+          <span class="rc-hint">▾ 展开</span>
+        </div>
+
+        <div class="rc" data-grp="orch">
+          <div class="rc-top"><span class="rc-ic">💾</span><span class="rc-name">Agent Memory 记忆系统</span><span class="rc-hot">🔥</span></div>
+          <span class="rc-grp">🎛 编排与产品</span>
+          <div class="rc-one">让"金鱼记忆"的模型拥有跨会话的持久记忆：工作记忆（上下文）之外，加装情景记忆与长期偏好。</div>
+          <div class="rc-more">
+            两条路线：<b>产品内置</b>——ChatGPT Memory、Claude 的 memory tool（把记忆读写做成工具，存到文件目录，配合 context editing 自动清理旧结果）；<b>框架外挂</b>——MemGPT/Letta 一脉，把记忆分层并让模型自己管理换入换出。共识正在形成：<b>记忆的本质是"由 Agent 自己维护的外部文件"</b>，而不是无限大的上下文。
+            <div class="rc-rel">🧩 挂回主线：第 3 章抓手 5"外部状态"的专门化——AGENTS.md 记项目约定，Memory 记用户与历史。</div>
+            <a class="rc-link" href="https://www.anthropic.com/news/context-management" target="_blank" rel="noopener">Anthropic 记忆与上下文管理 ↗</a>
+          </div>
+          <span class="rc-hint">▾ 展开</span>
+        </div>
+
+        <div class="rc" data-grp="paradigm">
+          <div class="rc-top"><span class="rc-ic">🏋️</span><span class="rc-name">RL 环境热（Environments）</span><span class="rc-hot">🔥</span></div>
+          <span class="rc-grp">🌌 新范式 · "环境是新的数据"</span>
+          <div class="rc-one">训练 Agent 的"练功房"成为新的稀缺资源：可验证奖励的强化学习（RLVR）需要海量高质量交互环境，而不只是静态语料。</div>
+          <div class="rc-more">
+            逻辑链条：Agent 能力来自"行动-反馈"循环 → 反馈要可验证（测试通过、任务完成）→ 于是"带验证器的环境"本身成了兵家必争的数据资产。表现：开放环境社区兴起、大厂重金收购交互数据（OpenAI 曾报价 5 亿美元求购游戏操作录像库）、世界模型顺势卡位"无限生成练功房"。
+            <div class="rc-rel">🧩 挂回主线：把第 3 章的"验证器"从推理时搬到了训练时——训练循环与 Agent 循环长得一模一样，这不是巧合。</div>
+          </div>
+          <span class="rc-hint">▾ 展开</span>
+        </div>
+
+        <div class="rc" data-grp="orch">
+          <div class="rc-top"><span class="rc-ic">🏢</span><span class="rc-name">Agent 治理 / "数字员工"</span><span class="rc-hot">🔥</span></div>
+          <span class="rc-grp">🎛 编排与产品 · 企业侧</span>
+          <div class="rc-one">当 Agent 数量超过员工数量：企业开始像管人一样管 Agent——身份、权限、审计、绩效，一个都不能少。</div>
+          <div class="rc-more">
+            代表作是 Microsoft <b>Agent 365</b>（2025-11 发布、2026-06 GA）：给每个 Agent 发"工牌"（Entra 身份）、配权限、记审计日志的控制平面。背后的真问题：无人值守循环 × 生产权限 = 必须有组织级护栏。这也是 Loop Engineering"人工门禁"抓手在企业尺度的放大。
+            <div class="rc-rel">🧩 挂回主线：第 3 章六抓手的组织版——个人管一个循环靠验证器，企业管一万个循环靠治理平面。</div>
+          </div>
+          <span class="rc-hint">▾ 展开</span>
+        </div>
+
+        <div class="rc" data-grp="culture">
+          <div class="rc-top"><span class="rc-ic">🎧</span><span class="rc-name">Vibe Coding 氛围编程</span><span class="rc-hot">🔥🔥</span></div>
+          <span class="rc-grp">🎭 文化现象 · 柯林斯词典 2025 年度词</span>
+          <div class="rc-one">Karpathy 2025-02 造词："完全交给氛围"——说需求、看结果、不逐行审代码，代码是否优雅不重要，能跑就行。</div>
+          <div class="rc-more">
+            从自嘲梗到中性词：原型、周末项目、一次性工具的大杀器；但 2026 年的行业共识已经清晰——<b>生产代码可以 vibe 着写，不能 vibe 着验收</b>。这恰好是第 3 章验证器思想的文化面镜像：氛围负责生成，验证器负责把关。衍生词还有 vibe designing、vibe ops……套路相同。
+            <div class="rc-rel">🧩 挂回主线：为什么 Loop Engineering 把验证器奉为灵魂？因为 vibe 可以驱动循环，但不能替代停止条件。</div>
+            <a class="rc-link" href="https://en.wikipedia.org/wiki/Vibe_coding" target="_blank" rel="noopener">词条与出处 ↗</a>
+          </div>
+          <span class="rc-hint">▾ 展开</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="callout warn"><div class="ct">⚠️ 谨防"概念通胀"</div>
+    AMI Labs 的 CEO 半开玩笑地预言："六个月内每家公司都会自称世界模型公司来融资。"对任何新概念，三连问保平安：<b>① 它解决什么真问题？② 谁在生产环境里用它？③ 它对现有层是替代还是补充？</b>——绝大多数热词的诚实答案是"补充"，而基本盘（模型 + 工具 + 循环 + 标准接口）自 2023 年以来没有变过。
+  </div>
+
+  <div class="recap"><div class="rc-t">✅ 本章小结</div>
+    <ul>
+      <li>热词定位五层法：<b>模型内部（J-Space）/ 新范式（世界模型、RL 环境）/ 工程标准（AGENTS.md、Skills、A2A）/ 编排与产品（子代理、Computer Use、记忆、治理）/ 文化现象（Vibe Coding）</b>。</li>
+      <li>J-Space：Claude 内部自发涌现的"特权工作区"，可解释性与安全审计的里程碑，不是产品。</li>
+      <li>世界模型：学环境的物理因果而非下一个词，是物理世界 Agent 的练功房，与 LLM Agent 互补。</li>
+      <li>MCP 管工具接入，A2A 管智能体社交；AGENTS.md 常驻，Skills 按需——都是"分层"思想。</li>
+    </ul>
+  </div>
+
+  <div class="quiz" data-quiz="q7">
+    <div class="quiz-head"><span class="qh-ic">📝</span><span class="qh-t">第 7 章随堂小测</span><span class="qh-s">全部答对即点亮本章</span></div>
+    <div class="quiz-body"></div>
+    <div class="quiz-done"><span>🏅</span><span>第 7 章通关！雷达已校准——下次刷到新热词，先问"它在哪一层"。</span></div>
+  </div>
+
+  <h4>📚 本章延伸</h4>
+  <div class="links">
+    <a class="linkcard" href="https://www.anthropic.com/research/global-workspace" target="_blank" rel="noopener"><div class="lc-t">🧠 Anthropic · A global workspace in language models<span class="ext">↗</span></div><div class="lc-d">J-Space 官方解读（2026-07-06），含 Neuronpedia 互动演示入口。</div></a>
+    <a class="linkcard" href="https://transformer-circuits.pub/2026/workspace/index.html" target="_blank" rel="noopener"><div class="lc-t">📄 论文 · Verbalizable Representations Form a Global Workspace<span class="ext">↗</span></div><div class="lc-d">16 位作者的完整论文，附神经科学家与哲学家的外部评论。</div></a>
+    <a class="linkcard" href="https://deepmind.google/models/genie/" target="_blank" rel="noopener"><div class="lc-t">🌍 DeepMind · Genie 3<span class="ext">↗</span></div><div class="lc-d">实时交互世界模型的当前标杆，页面上有可看的生成世界演示。</div></a>
+    <a class="linkcard" href="https://a2a-protocol.org" target="_blank" rel="noopener"><div class="lc-t">🤝 A2A Protocol 官网<span class="ext">↗</span></div><div class="lc-d">Agent Card 规范、SDK 与已支持的 150+ 组织名录。</div></a>
+    <a class="linkcard" href="https://agents.md" target="_blank" rel="noopener"><div class="lc-t">📜 AGENTS.md 官网<span class="ext">↗</span></div><div class="lc-d">格式规范与最佳实践，5 分钟就能给你的仓库补一份。</div></a>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 第 8 章 · 全景串联 -->
+<!-- ================================================================ -->
+<section class="lesson" id="sec-8" style="--sc:#5b5bd6">
+  <div class="sec-head"><span class="sec-num">第 8 章</span><h2>🧩 全景串联 + 通关自测</h2></div>
+  <p class="sec-sub">把五块拼图合成一张图，再用一套综合题验证你真的懂了</p>
+
+  <h3>🗺 一张图看懂全部关系</h3>
+  <p>当你在 Cursor 里说"帮我查下上海天气然后写进 README"，发生的完整链路：</p>
+  <div class="bigpic">
+    <div class="bp-row"><div class="bp-box bp-user">👤 用户："查上海天气，写进 README"</div><span class="bp-arrow">→</span></div>
+    <div class="bp-row" style="margin-top:12px">
+      <div class="bp-box bp-host" style="flex:1">🖥 Host 宿主（Cursor）内的 Agent Loop <span style="font-weight:400;font-size:11.5px">（第 3 章的 while 循环，跑着第 2 章的 ReAct 模式）</span>
+        <div class="bp-inner">
+          <span class="bp-pill">🧠 LLM：思考 + 开单（第 1 章 tool_calls）</span>
+          <span class="bp-pill">🔧 原生工具：read_file / edit_file …</span>
+          <span class="bp-pill">🔌 MCP Client ×N（第 4 章）</span>
+        </div>
+      </div>
+    </div>
+    <div class="bp-row" style="margin-top:12px">
+      <div class="bp-box bp-world">🌤 weather MCP Server<br><span style="font-weight:400;font-size:11.5px">（第 5 章你写的那个）</span></div>
+      <div class="bp-box bp-world">📁 文件系统 Server</div>
+      <div class="bp-box bp-world">🌍 真实世界：API / 文件 / 数据库</div>
+    </div>
+    <div class="bp-note">循环转两轮：第 1 轮调 get_weather（走 MCP）拿到"多云 29°C"；第 2 轮调 edit_file 写入 README；第 3 轮模型不再开单，输出总结——停止。</div>
+  </div>
+
+  <h3>🔑 五个概念的一句话定位（背下来就能给别人讲）</h3>
+  <table class="tbl">
+    <tr><th>概念</th><th>层次</th><th>一句话定位</th></tr>
+    <tr><td><b>ReAct</b></td><td>思想</td><td>回答"为什么"：推理与行动交替，用观察修正方向，Agent 行为的元模式。</td></tr>
+    <tr><td><b>Tool / Function Calling</b></td><td>机制</td><td>回答"模型怎么表达要做事"：结构化申请单（tool_calls），执行权在运行时。</td></tr>
+    <tr><td><b>Agent Loop</b></td><td>运行时</td><td>回答"怎么跑起来"：while 循环驱动"思考→执行→观察"直到自然停止。</td></tr>
+    <tr><td><b>Loop Engineering</b></td><td>工程学</td><td>回答"怎么跑得稳"：验证器、停止条件、预算护栏、上下文管理、外部状态、人工门禁。</td></tr>
+    <tr><td><b>MCP / MCP Server</b></td><td>标准接口</td><td>回答"能力从哪里插进来"：Host–Client–Server 协议，写一次 Server 处处可用。</td></tr>
+    <tr><td><b>Multi-Agent / A2A</b></td><td>组织学</td><td>回答"一个大脑不够怎么办"：编排者-工作者拆任务、子代理隔离上下文、A2A 跨组织递名片。</td></tr>
+    <tr><td><b>世界模型 / J-Space</b></td><td>前沿雷达</td><td>回答"更远的地方是什么"：一个给物理世界的 Agent 造练功房，一个看进模型脑内的工作区。</td></tr>
+  </table>
+
+  <h3>🎓 通关综合测验</h3>
+  <p>五道综合题，考察的是概念之间的<b>关系</b>而非孤立定义——这才是真懂的标志：</p>
+  <div class="quiz" data-quiz="qf">
+    <div class="quiz-head"><span class="qh-ic">🏆</span><span class="qh-t">通关综合测验</span><span class="qh-s">全部答对触发通关庆祝 🎊</span></div>
+    <div class="quiz-body"></div>
+    <div class="quiz-done"><span>🏆</span><span>全部通关！你已经掌握现代 Agent 的完整拼图。下面的实践路线图就是你的下一程。</span></div>
+  </div>
+
+  <h3>🛤 接下来动手：真实 Demo 实践路线图</h3>
+  <p>知识只有过手才算数。按顺序做，每完成一项点一下（进度会保存）：</p>
+  <div class="pathlist" id="pathlist">
+    <div class="path-item" data-path="p1"><span class="pi-box">✓</span><div><div class="pi-t">① 在 Cursor 里装一个现成 MCP Server（10 分钟）</div><div class="pi-d">设置 → MCP → 添加 <a href="https://github.com/modelcontextprotocol/servers" target="_blank" rel="noopener">官方 servers 仓库</a>里的 filesystem 或 fetch，然后在对话里让 Agent 用它读个网页/文件，观察工具调用过程。</div></div></div>
+    <div class="path-item" data-path="p2"><span class="pi-box">✓</span><div><div class="pi-t">② 用 MCP Inspector 看一次原始消息（10 分钟）</div><div class="pi-d">跑 <code>npx @modelcontextprotocol/inspector</code> 连上任意 Server，亲眼确认 initialize → tools/list → tools/call 和 Demo 7 一模一样。</div></div></div>
+    <div class="path-item" data-path="p3"><span class="pi-box">✓</span><div><div class="pi-t">③ 抄写第 5 章的天气 Server 并接入 Cursor（30 分钟）</div><div class="pi-d">不要复制粘贴，逐行手敲。跑通后给它加第三个工具（比如 get_forecast），体会"改函数 = 改协议能力"。</div></div></div>
+    <div class="path-item" data-path="p4"><span class="pi-box">✓</span><div><div class="pi-t">④ 跟着 Thorsten Ball 用 300 行写一个 Agent（2 小时）</div><div class="pi-d">读 <a href="https://ampcode.com/how-to-build-an-agent" target="_blank" rel="noopener">How to Build an Agent</a>，任何语言复刻：一个循环 + read_file/list_files/edit_file 三个工具。写完你会彻底祛魅。</div></div></div>
+    <div class="path-item" data-path="p5"><span class="pi-box">✓</span><div><div class="pi-t">⑤ 读两篇 Anthropic 工程文章（1 小时）</div><div class="pi-d"><a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">Building Effective Agents</a> 与 <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank" rel="noopener">Effective Context Engineering</a>——从"会写"到"会设计"。</div></div></div>
+    <div class="path-item" data-path="p6"><span class="pi-box">✓</span><div><div class="pi-t">⑥ 设计一个属于你的外循环（进阶）</div><div class="pi-d">选一件重复性工作（如每日代码审查、失败测试自动修复），按第 3 章六抓手设计：目标、验证器、预算、上下文、状态、门禁。用 Cursor 的后台 Agent 或 SDK 跑起来。</div></div></div>
+  </div>
+
+  <h3>📖 延伸书架</h3>
+  <div class="links">
+    <a class="linkcard" href="https://arxiv.org/abs/2210.03629" target="_blank" rel="noopener"><div class="lc-t">📄 ReAct（2022）<span class="ext">↗</span></div><div class="lc-d">一切的起点，9 页正文。</div></a>
+    <a class="linkcard" href="https://modelcontextprotocol.io" target="_blank" rel="noopener"><div class="lc-t">🌐 MCP 官方文档<span class="ext">↗</span></div><div class="lc-d">概念 → 教程 → 规范，一条龙。</div></a>
+    <a class="linkcard" href="https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation" target="_blank" rel="noopener"><div class="lc-t">📰 MCP 捐赠 AAIF 公告（2025-12）<span class="ext">↗</span></div><div class="lc-d">生态数据与中立治理的一手信息。</div></a>
+    <a class="linkcard" href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/" target="_blank" rel="noopener"><div class="lc-t">📰 MCP 2026-07-28 RC 官方博客<span class="ext">↗</span></div><div class="lc-d">无状态核心、Tasks / MCP Apps 扩展——协议的下一步。</div></a>
+    <a class="linkcard" href="https://addyosmani.com/blog/loop-engineering/" target="_blank" rel="noopener"><div class="lc-t">📄 Loop Engineering（2026-06）<span class="ext">↗</span></div><div class="lc-d">"设计提示 Agent 的循环"——命名之作。</div></a>
+    <a class="linkcard" href="https://simonwillison.net/tags/agent-definitions/" target="_blank" rel="noopener"><div class="lc-t">📄 Simon Willison 论 Agent 定义<span class="ext">↗</span></div><div class="lc-d">"tools in a loop" 定义的出处与讨论。</div></a>
+  </div>
+
+  <div class="pagefoot">
+    <div><b>Agent 学习实验室</b> · 生成于 2026-07-08 · 由 Cursor Agent（Fable 5）检索资料并构建——本页自身即是 Agent Loop + Tools 的产物 🌀</div>
+    <div>事实核对基准：MCP 正式版规范 2025-11-25（2026-07-28 版为 RC）；MCP 已于 2025-12-09 捐赠 Linux Foundation / AAIF；Loop Engineering 一词成型于 2026-06；J-Space 发布于 2026-07-06（Anthropic《A global workspace in language models》）。所有外链均为真实资源。</div>
+    <div>进度存储于浏览器 localStorage，不上传任何数据 · <a href="#" id="reset-btn-2">重置全部进度</a></div>
+  </div>
+</section>
+
+
+
+</div></main>
+<div id="toast-root"></div>
+<script>
+/* ============================================================
+   Agent 学习实验室 · 交互引擎
+   结构：工具函数 → 状态 → 主题/导航/进度 → 代码高亮/复制 →
+        测验引擎 → 8 个 Demo → 学习路径 → 启动
+   ============================================================ */
+(function(){
+"use strict";
+const $  = (s, r) => (r||document).querySelector(s);
+const $$ = (s, r) => Array.from((r||document).querySelectorAll(s));
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+
+/* ---------- 状态（localStorage 持久化） ---------- */
+const KEY = "agentlab.v1";
+let state = { visited:{}, quiz:{}, demos:{}, paths:{}, theme:null, firstDemoToasted:false };
+try { Object.assign(state, JSON.parse(localStorage.getItem(KEY) || "{}")); } catch(e){}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} };
+
+const SECTIONS = ["sec-0","sec-1","sec-2","sec-3","sec-4","sec-5","sec-6","sec-7","sec-8"];
+const MAIN_QUIZZES = ["q1","q2","q3","q4","q5","q6","q7","qf"];
+/* 每章"点亮"条件 */
+const DONE_RULE = {
+  "sec-0": () => !!state.demos.a,
+  "sec-1": () => !!state.quiz.q1, "sec-2": () => !!state.quiz.q2,
+  "sec-3": () => !!state.quiz.q3, "sec-4": () => !!state.quiz.q4,
+  "sec-5": () => !!state.quiz.q5, "sec-6": () => !!state.quiz.q6,
+  "sec-7": () => !!state.quiz.q7, "sec-8": () => !!state.quiz.qf
+};
+
+/* ---------- Toast & 彩带 ---------- */
+function toast(msg){
+  const el = document.createElement("div");
+  el.className = "toast"; el.textContent = msg;
+  $("#toast-root").appendChild(el);
+  setTimeout(() => { el.classList.add("out"); setTimeout(() => el.remove(), 350); }, 3400);
+}
+function confetti(){
+  const emo = ["🎉","🎊","✨","🏆","🧩","🔧","🔁","🔌"];
+  for(let i=0;i<44;i++){
+    const s = document.createElement("span");
+    s.className = "confetti";
+    s.textContent = emo[Math.floor(Math.random()*emo.length)];
+    s.style.left = Math.random()*100 + "vw";
+    s.style.animationDuration = (2.2 + Math.random()*2.2) + "s";
+    s.style.animationDelay = (Math.random()*0.8) + "s";
+    document.body.appendChild(s);
+    setTimeout(() => s.remove(), 5200);
+  }
+}
+
+/* ---------- 主题 ---------- */
+const themeBtn = $("#theme-btn");
+function applyTheme(t){
+  document.documentElement.setAttribute("data-theme", t);
+  themeBtn.textContent = t === "dark" ? "☀️" : "🌙";
+}
+applyTheme(state.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+themeBtn.addEventListener("click", () => {
+  const t = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  state.theme = t; save(); applyTheme(t);
+});
+
+/* ---------- 侧边栏 / 导航 / 进度 ---------- */
+const sidebar = $("#sidebar"), backdrop = $("#backdrop");
+$("#hamburger").addEventListener("click", () => { sidebar.classList.add("open"); backdrop.classList.add("show"); });
+backdrop.addEventListener("click", () => { sidebar.classList.remove("open"); backdrop.classList.remove("show"); });
+
+$$(".nav-item").forEach(item => item.addEventListener("click", () => {
+  const sec = $("#" + item.dataset.sec);
+  if(sec) sec.scrollIntoView({behavior:"smooth", block:"start"});
+  sidebar.classList.remove("open"); backdrop.classList.remove("show");
+}));
+$$(".mini-card[data-jump]").forEach(c => c.addEventListener("click", () => {
+  const sec = $("#" + c.dataset.jump);
+  if(sec) sec.scrollIntoView({behavior:"smooth", block:"start"});
+}));
+
+function refreshProgress(){
+  const visited = SECTIONS.filter(id => state.visited[id]).length;
+  const passed  = MAIN_QUIZZES.filter(id => state.quiz[id]).length;
+  const pct = Math.round(100 * (0.25 * visited / SECTIONS.length + 0.75 * passed / MAIN_QUIZZES.length));
+  $("#progressbar").style.width = pct + "%";
+  $("#side-bar").style.width = pct + "%";
+  $("#side-pct").textContent = pct + "%";
+  $("#top-pct").textContent = "进度 " + pct + "%";
+  $$(".nav-item").forEach(item => {
+    const rule = DONE_RULE[item.dataset.sec];
+    item.classList.toggle("done", !!(rule && rule()));
+  });
+}
+function checkAllPassed(){
+  if(MAIN_QUIZZES.every(id => state.quiz[id]) && !state.celebrated){
+    state.celebrated = true; save();
+    confetti();
+    setTimeout(() => toast("🏆 全部通关！现代 Agent 的完整拼图已收入囊中"), 600);
+  }
+}
+
+/* 滚动监听：高亮当前章节 + 记录已访问 */
+const crumbNames = {};
+$$(".nav-item").forEach(i => crumbNames[i.dataset.sec] = i.querySelector(".num").textContent + " · " + i.querySelector(".t").textContent);
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if(!en.isIntersecting) return;
+    const id = en.target.id;
+    $$(".nav-item").forEach(i => i.classList.toggle("active", i.dataset.sec === id));
+    $("#crumb").textContent = crumbNames[id] || "";
+    if(!state.visited[id]){ state.visited[id] = true; save(); refreshProgress(); }
+  });
+}, { rootMargin: "-40% 0px -55% 0px", threshold: 0 });
+SECTIONS.forEach(id => { const el = $("#" + id); if(el) io.observe(el); });
+
+/* 重置 */
+function resetAll(e){
+  if(e) e.preventDefault();
+  if(confirm("确定清空全部学习进度吗？（测验、勾选、章节点亮都会重置）")){
+    localStorage.removeItem(KEY); location.reload();
+  }
+}
+$("#reset-btn").addEventListener("click", resetAll);
+$("#reset-btn-2").addEventListener("click", resetAll);
+
+/* ---------- 代码高亮（轻量正则版，仅用于本页精选片段） ---------- */
+function highlight(code, lang){
+  let t = esc(code);
+  if(lang === "json"){
+    t = t.replace(/("(?:[^"\\]|\\.)*")(\s*:)?|(-?\b\d+\.?\d*(?:[eE][+-]?\d+)?\b)|\b(true|false|null)\b/g,
+      (m, str, colon, num, bool) => {
+        if(str) return colon ? `<span class="tk-key">${str}</span>${colon}` : `<span class="tk-s">${str}</span>`;
+        if(num) return `<span class="tk-n">${num}</span>`;
+        if(bool) return `<span class="tk-b">${bool}</span>`;
+        return m;
+      });
+  } else if(lang === "python"){
+    t = t.replace(/(#[^\n]*)|("""[\s\S]*?"""|"(?:[^"\\\n]|\\.)*"|'(?:[^'\\\n]|\\.)*')|(@[\w.]+)|\b(def|return|if|elif|else|for|while|import|from|as|class|with|in|not|and|or|None|True|False|try|except|raise|lambda)\b|\b(\d+\.?\d*)\b/g,
+      (m, com, str, dec, kw, num) => {
+        if(com) return `<span class="tk-c">${com}</span>`;
+        if(str) return `<span class="tk-s">${str}</span>`;
+        if(dec) return `<span class="tk-d">${dec}</span>`;
+        if(kw)  return `<span class="tk-k">${kw}</span>`;
+        if(num) return `<span class="tk-n">${num}</span>`;
+        return m;
+      });
+  } else if(lang === "ts"){
+    t = t.replace(/(\/\/[^\n]*)|(`(?:[^`\\]|\\.)*`|"(?:[^"\\\n]|\\.)*"|'(?:[^'\\\n]|\\.)*')|\b(import|from|const|let|var|async|await|return|new|export|function|class|interface|type|Record|string|number)\b|\b(\d+\.?\d*)\b/g,
+      (m, com, str, kw, num) => {
+        if(com) return `<span class="tk-c">${com}</span>`;
+        if(str) return `<span class="tk-s">${str}</span>`;
+        if(kw)  return `<span class="tk-k">${kw}</span>`;
+        if(num) return `<span class="tk-n">${num}</span>`;
+        return m;
+      });
+  }
+  return t;
+}
+$$("pre[data-lang]").forEach(pre => { pre.innerHTML = highlight(pre.textContent, pre.dataset.lang); });
+
+/* 复制按钮 */
+$$(".codebox .copy").forEach(btn => btn.addEventListener("click", async () => {
+  const pre = btn.closest(".codebox").querySelector("pre");
+  let ok = false;
+  try { await navigator.clipboard.writeText(pre.textContent); ok = true; }
+  catch(e){
+    try {
+      const ta = document.createElement("textarea");
+      ta.value = pre.textContent; document.body.appendChild(ta);
+      ta.select(); ok = document.execCommand("copy"); ta.remove();
+    } catch(e2){}
+  }
+  btn.textContent = ok ? "已复制 ✓" : "复制失败";
+  setTimeout(() => btn.textContent = "复制", 1600);
+}));
+
+/* 代码标签页 */
+$$(".code-tabs").forEach(tabs => {
+  const btns = $$(".tab-btn", tabs), panels = $$(".tab-panel", tabs);
+  btns.forEach(b => b.addEventListener("click", () => {
+    btns.forEach(x => x.classList.remove("active"));
+    panels.forEach(x => x.classList.remove("active"));
+    b.classList.add("active");
+    panels[+b.dataset.tab].classList.add("active");
+  }));
+});
+
+/* ---------- Demo 触碰记录 ---------- */
+function touchDemo(id){
+  const first = !state.firstDemoToasted;
+  if(!state.demos[id]){ state.demos[id] = true; }
+  if(first){ state.firstDemoToasted = true; toast("🎮 交互解锁！动手是最好的学习方式"); }
+  save(); refreshProgress();
+}
+
+/* ============================================================
+   测验引擎
+   ============================================================ */
+const QUIZ = {
+  g1: { toast: "🎮 角色扮演成功！你已经会当一次合格的模型了", qs: [
+    { t: "作为模型，这一轮你应该输出什么？", a: 2,
+      opts: [
+        "直接回答：「北京下周三大概是晴天，现在应该是晚上九点左右。」",
+        "只输出一个调用：get_weather(city=\"北京\", date=\"下周三\")",
+        "并行输出两个 tool_calls：get_weather(city=\"北京\", date=\"2026-07-15\") 和 get_time(timezone=\"Asia/Shanghai\")",
+        "先反问用户：「请问下周三具体是几号？」"
+      ],
+      ok: "正确！两个需求互不依赖，一次并行开两张单最高效；「下周三」也换算成了 Schema 要求的 YYYY-MM-DD 具体日期（系统提示里通常带有今天的日期，模型可以自行换算）。",
+      no: "再想想：没有工具就编造实时信息是幻觉高发操作；date 参数要求 YYYY-MM-DD 格式，传「下周三」等于把解析难题丢给工具；而日期换算模型自己就能做，不必打断用户。" }
+  ]},
+  q1: { toast: "🏅 第 1 章通关：Tool 机制拿下！", qs: [
+    { t: "当模型「调用工具」时，真正执行代码的是谁？", a: 1,
+      opts: ["模型所在的推理集群会代为执行", "你的应用程序（宿主 / 运行时）", "工具提供商的服务器自动监听并执行", "浏览器沙箱"],
+      ok: "对！模型只输出结构化的「申请单」（tool_calls），执行永远发生在宿主运行时——这也正是权限控制和审批门所在的位置。",
+      no: "回看五步往返图：第 3 步「执行真实逻辑」的主语是谁？模型全程没有离开过「玻璃房」。" },
+    { t: "工具的 description 写得含糊，最可能的后果是？", a: 1,
+      opts: ["请求会直接报语法错误", "模型可能选错工具、或传错参数", "没有影响，模型只看函数名", "token 费用变高，但行为不变"],
+      ok: "对！description 是模型决定「什么时候用我、参数怎么填」的主要依据——它就是隐形提示词，质量直接决定调用准确率。",
+      no: "提示：模型是靠「读菜单」来点菜的。菜单描述不清，会点错菜，但请求本身不会报错。" },
+    { t: "关于一次模型回复中的工具调用，正确的是？", a: 1,
+      opts: ["一次回复最多只能包含一个工具调用", "tool_calls 是数组，模型可以一次申请多个调用并行执行", "工具结果必须由用户手动粘贴回对话", "模型执行完工具后会自动更新自己的权重"],
+      ok: "对！并行 tool_calls 是现代 API 的标配，互不依赖的调用一次开单、并行执行、一起回填，能显著减少往返。",
+      no: "回看「四个关键认知」的最后一条：一次可以开多张单。" }
+  ]},
+  q2: { toast: "🏅 第 2 章通关：ReAct 思想拿下！", qs: [
+    { t: "ReAct 相比「纯链式思考（CoT）」的关键优势是？", a: 1,
+      opts: ["输出更短，节省 token", "能通过行动获取外部真实信息、用观察修正推理，显著减少幻觉", "彻底不需要提示词了", "推理速度更快"],
+      ok: "对！CoT 是闭卷考试——事实全靠记忆，记错也一路推下去；ReAct 每一步都能用外部观察校准方向。",
+      no: "想想 Apple Remote 案例：纯 CoT 为什么自信地答错成 iPod？因为它没有任何手段核实事实。" },
+    { t: "ReAct 循环三要素的正确顺序是？", a: 1,
+      opts: ["Action → Thought → Observation", "Thought → Action → Observation", "Observation → Action → Thought", "Thought → Observation → Action"],
+      ok: "对！先想清楚要什么（Thought），再发出行动（Action），外界返回结果（Observation），带着新信息进入下一轮。",
+      no: "回放一遍 Demo 3：紫色、橙色、蓝色卡片出现的顺序就是答案。" },
+    { t: "2022 年 ReAct 论文时代，「动作」是如何被执行的？", a: 1,
+      opts: ["模型原生输出 JSON 格式的 tool_calls", "模型输出约定格式的文本（如 search[...]），由程序用正则解析后执行", "通过 MCP 协议调用", "模型直接访问维基百科 API"],
+      ok: "对！原生 function calling 2023 年年中才出现，MCP 更是 2024 年底的事。当年全靠 few-shot 示范 + 文本解析，脆弱但思想已经完整。",
+      no: "注意时间线：ReAct（2022-10）早于 function calling（2023-06）和 MCP（2024-11）。它只能靠提示词约定。" }
+  ]},
+  q3: { toast: "🏅 第 3 章通关：Agent Loop 拿下！", qs: [
+    { t: "Agent Loop 最「自然」的停止条件是？", a: 1,
+      opts: ["循环跑满 10 轮强制退出", "模型这一轮不再输出任何 tool_calls，直接给出最终回答", "用户手动点击停止按钮", "上下文窗口被写满"],
+      ok: "对！不开单 = 模型认为信息已足够、任务已完成。最大轮数、预算、超时都是护栏（兜底手段），不是常规出口。",
+      no: "回看 15 行骨架代码：while True 是从哪一行 return 出去的？" },
+    { t: "某个工具执行报错了，成熟的循环设计应该？", a: 1,
+      opts: ["立即终止循环并把异常抛给用户", "把错误信息作为观察结果喂回模型，让它自行调整策略", "静默重试同一个调用直到成功", "跳过错误，继续执行下一个工具"],
+      ok: "对！Demo 4 里第 3 轮复测失败后模型自己修对了——错误信息「回得去」，模型就能自我纠错。当然，重复失败多次后仍需护栏兜底。",
+      no: "提示：在 ReAct 视角里，一次报错也是一条宝贵的 Observation。" },
+    { t: "Loop Engineering 中「验证器（Verifier）」的作用是？", a: 1,
+      opts: ["验证用户的登录身份", "用确定性检查（测试、编译、lint）判定这一轮产出是否真的变好，代替人眼盯梢", "校验 JSON 格式是否合法", "防止模型访问网络"],
+      ok: "对！验证器是外循环的灵魂：它有多严格，无人值守的循环就有多可信。「验证器是氛围感和工程之间的分界线」。",
+      no: "回看六个抓手的第 2 条：谁来判断「这一轮有没有变好」？" }
+  ]},
+  q4: { toast: "🏅 第 4 章通关：MCP 协议拿下！", qs: [
+    { t: "MCP 解决的核心问题是？", a: 1,
+      opts: ["让模型的推理能力更强", "把 M×N 的定制集成爆炸变成 M+N 的标准实现", "取代 HTTP 协议", "为模型提供长期记忆"],
+      ok: "对！M 个应用 × N 个系统本来要写 M×N 套胶水；统一协议后各写一份标准实现即可，Demo 5 的连线数变化就是直观证明。",
+      no: "回看 Demo 5：切换开关时，连线数量从 12 变成了几？为什么？" },
+    { t: "在 MCP 体系中，「这一步要不要调用某个工具」由谁决定？", a: 1,
+      opts: ["MCP Server 自己决定", "模型决定——宿主把 MCP 工具翻译进工具菜单，模型照常输出 tool_calls", "传输层根据负载决定", "官方 Registry 决定"],
+      ok: "对！MCP 只管「工具从哪来、怎么接」；调用决策仍是第 1 章的老流程：模型看菜单、开单，宿主发现单子属于某个 Server 就转发 tools/call。",
+      no: "回看 Demo 7 的第 ④⑤ 步之间发生了什么：tools/list 的结果去哪了？谁开的单？" },
+    { t: "关于 Host / Client / Server 的关系，正确的是？", a: 1,
+      opts: ["一个 Client 可以同时连接多个 Server", "一个 Host 可以运行多个 Client，每个 Client 与一个 Server 保持一对一连接", "Server 必须运行在本地机器上", "Host 和 Server 必须用同一种语言编写"],
+      ok: "对！Host : Client = 1 : N，Client : Server = 1 : 1。Server 可以是本地子进程（stdio）也可以是远程服务（Streamable HTTP），语言完全无关——协议才是契约。",
+      no: "回看架构图：Cursor 里三个 Client 分别连着谁？" },
+    { t: "MCP 的两种标准传输方式是？", a: 1,
+      opts: ["WebSocket 与 gRPC", "stdio（本地子进程）与 Streamable HTTP（远程服务）", "TCP 与 UDP", "GraphQL 与 REST"],
+      ok: "对！本地工具走 stdio（宿主拉起子进程，标准输入输出传 JSON-RPC），远程服务走 Streamable HTTP。早期的 HTTP+SSE 已被标记废弃。",
+      no: "回看「底层长什么样」一节的第一段。" }
+  ]},
+  q5: { toast: "🏅 第 5 章通关：MCP Server 实战拿下！", qs: [
+    { t: "用官方 Python SDK，把一个函数暴露为 MCP 工具最直接的方式是？", a: 1,
+      opts: ["手写 JSON-RPC 消息路由", "给函数加上 @mcp.tool() 装饰器", "把函数名写进环境变量", "继承 BaseTool 类并重写 run 方法"],
+      ok: "对！一个装饰器搞定。协议握手、消息路由、Schema 生成全部由 SDK 代劳——你只写业务逻辑。",
+      no: "回看 server.py：get_weather 函数头顶上那一行是什么？" },
+    { t: "工具的 inputSchema（参数说明）从哪里来？", a: 1,
+      opts: ["需要手写一份 XML 描述文件", "SDK 从函数签名、类型注解与 docstring（或 zod schema）自动生成", "宿主应用猜测出来的", "模型在运行时自动推断"],
+      ok: "对！city: str 变成 {type: \"string\"}，docstring 变成 description。所以第 1 章说的「描述是隐形提示词」在这里落到了 docstring 上——认真写它！",
+      no: "对比 Python 版函数定义和 Demo 7 第 ④ 步 tools/list 返回的 JSON，找找对应关系。" },
+    { t: "调试自己写的 Server，官方推荐的第一站是？", a: 1,
+      opts: ["直接接入生产环境的宿主试一试", "MCP Inspector 可视化调试器", "在代码里随手 print 到 stdout 看输出", "用浏览器直接访问 Server 地址"],
+      ok: "对！npx @modelcontextprotocol/inspector 一行命令起。加分知识：stdio 模式下 stdout 是协议通道，随手 print 会污染消息流导致解析失败——日志要写到 stderr。",
+      no: "提示：其中一个选项不但帮不上忙，还会把 stdio 协议通道弄坏（想想消息走的是哪根管子）。" }
+  ]},
+  q6: { toast: "🏅 第 6 章通关：架构与 Multi-Agent 拿下！", qs: [
+    { t: "Workflow 与 Agent 的本质区别（Anthropic 的经典辨析）是？", a: 1,
+      opts: ["Workflow 更贵、Agent 更便宜", "Workflow 由代码预先编排好每一步走法，Agent 让模型在循环里自主决定下一步", "Agent 的效果一定比 Workflow 好", "Workflow 里不能调用 LLM"],
+      ok: "对！所以官方忠告是：能用 Workflow 解决就别上 Agent——可预测、可调试、更便宜；自主性是为「路径无法预先画出来」的任务保留的。",
+      no: "提示：区别不在成本或效果，在「下一步由谁决定」——代码写死，还是模型现场拍板。" },
+    { t: "编排者-工作者（Orchestrator–Workers）与固定并行化（Parallelization）的关键区别是？", a: 1,
+      opts: ["前者不能并行执行", "前者由编排者模型在运行时动态决定拆成哪些子任务、派给谁；后者的分工是代码里预先写死的", "后者必须使用不同的模型", "前者不需要汇总结果"],
+      ok: "对！「拆解方案是模型现场想的」正是编排者-工作者能应对复杂任务的原因，也是它成为 Multi-Agent 主干形态的原因。",
+      no: "回看图鉴 ③ 和 ④ 的说明：谁决定「拆成哪几块」？代码还是模型？" },
+    { t: "以下哪种任务【最不适合】拆给一群并行子代理？", a: 1,
+      opts: ["调研 50 个竞品并汇总成报告", "在同一个模块里做一次强耦合重构（多处改动相互依赖）", "对 200 个文件分别做只读的安全扫描", "并行尝试 3 种修复方案再择优"],
+      ok: "对！这正是 Cognition《Don't Build Multi-Agents》的核心告诫：行动携带隐含决策，并行分身各改各的、互不知情，改动必然打架——紧耦合写操作要留给一个共享完整上下文的单 Agent。",
+      no: "判断标准只有一条：子任务之间需要频繁共享「正在变化的状态」吗？只读、可切分的才是多代理甜区。" }
+  ]},
+  q7: { toast: "🏅 第 7 章通关：前沿雷达校准完毕！", qs: [
+    { t: "Anthropic 2026-07 发布的 J-Space，最准确的描述是？", a: 1,
+      opts: ["Anthropic 推出的新推理模型产品", "在 Claude 内部自发涌现的一小片「特权工作区」：模型能把概念默默放在心上做多步推理，抑制它复杂推理会崩溃", "一种新的提示词书写格式", "向量数据库的新索引结构"],
+      ok: "对！它是用 J-lens（雅可比透镜）做出的可解释性「发现」而非产品，呼应神经科学的全局工作空间理论；对安全的意义是能审计模型「没说出口的想法」。",
+      no: "提示：J-Space 不是你能「调用」的东西——它是研究者在模型内部「发现」的结构，训练中自发涌现。" },
+    { t: "世界模型（World Models）与 LLM 的本质分野是？", a: 1,
+      opts: ["世界模型的参数量更大", "学习目标不同：LLM 预测下一个 token，世界模型学习环境状态如何随动作演化（物理与因果），用于预测、规划和训练具身智能体", "世界模型不需要训练数据", "世界模型就是加了视觉能力的 LLM"],
+      ok: "对！Genie 3、Marble、AMI Labs 的共同赌注：下一个基础模型应当「模拟现实」而非「描述现实」。检验成色的照妖镜是 sim-to-real。",
+      no: "回看雷达卡片：分野在「学什么」——下一个词，还是世界的下一秒。" },
+    { t: "MCP 与 A2A 的分工，正确的是？", a: 1,
+      opts: ["两者是互相竞争的同类协议", "MCP 标准化「Agent ↔ 工具/数据」的连接，A2A 标准化「Agent ↔ Agent」的发现与协作——互补关系，且都由 Linux Foundation 托管", "A2A 是 MCP 的下一个版本", "MCP 管远程连接，A2A 管本地连接"],
+      ok: "对！一句话记忆：MCP 是 Agent 的手，A2A 是 Agent 的社交。工具接入标准化之后，轮到智能体协作标准化。",
+      no: "提示：看两个协议连接的「两端」分别是什么——一端都是 Agent，另一端呢？" },
+    { t: "AGENTS.md 与 Skills 的正确取舍是？", a: 1,
+      opts: ["Skills 更先进，应全面取代 AGENTS.md", "常驻必读的项目规则放 AGENTS.md（始终在上下文里）；大而偶用、带脚本的流程做成 Skill（平时只占约百 token，触发才加载）", "两个文件都写得越长越好", "AGENTS.md 只有 Claude 能读"],
+      ok: "对！Vercel 的评测正说明这点：常驻索引 100% 通过 vs Skills 79%（因为常没被触发）——不是谁强谁弱，是「常驻 vs 按需」的分工。",
+      no: "回看两张卡片的对比：关键词是「渐进式披露」——什么该永远在场，什么该按需加载？" }
+  ]},
+  qf: { toast: "🏆 综合测验全对！", qs: [
+    { t: "按「思想 → 机制 → 运行时 → 标准接口」的层次排列，正确的是？", a: 0,
+      opts: ["ReAct → Function Calling → Agent Loop → MCP", "Function Calling → ReAct → MCP → Agent Loop", "MCP → Agent Loop → ReAct → Function Calling", "Agent Loop → MCP → Function Calling → ReAct"],
+      ok: "对！ReAct 提供思想（边想边做），Function Calling 提供机制（结构化开单），Agent Loop 是运行时（循环驱动），MCP 是标准接口（能力接入）。这四层的时间顺序恰好也是 2022 → 2023 → 2024 的演化顺序。",
+      no: "提示：哪个概念最早出现、只是一篇论文的理念？哪个概念根本不关心模型、只关心应用和能力方怎么连？" },
+    { t: "公司想让内部工单系统同时被 Cursor、Claude Desktop 和自研 Agent 使用，最省力的方案是？", a: 1,
+      opts: ["为三个宿主分别写三套插件", "写一个 MCP Server，把工单系统的查询与操作暴露为标准工具", "把工单数据全部导出成 PDF 喂给模型", "等工单厂商官方出 AI 功能"],
+      ok: "对！这正是 M+N 的威力：一份 Server（几十到几百行代码），所有支持 MCP 的宿主即插即用，未来新宿主出现也零成本兼容。",
+      no: "回想 Demo 5 的两个世界：你现在的处境就是「3 个应用要接 1 个系统」，走哪条路线线最少？" },
+    { t: "Cursor Agent 修 bug 时「跑测试 → 看失败 → 改代码 → 再跑测试」的行为，最贴切的概念组合是？", a: 1,
+      opts: ["纯 CoT 推理 + RAG 检索", "ReAct 模式运行在 Agent Loop 里，测试套件充当验证器", "MCP 的 Sampling 原语", "单纯的 prompt engineering"],
+      ok: "对！跑测试是 Action，失败信息是 Observation，分析原因是 Thought——ReAct 的现代形态；而「测试全绿才停」正是 Loop Engineering 说的可验证停止条件。",
+      no: "把这个行为拆成三要素：跑测试算什么？失败输出算什么？「我知道哪错了」算什么？" },
+    { t: "下列哪个说法是【错误】的？", a: 1,
+      opts: ["MCP Server 提供的工具，最终仍以 tool_calls 的形式被模型调用", "模型在调用 MCP 工具时，会直接与 Server 建立网络连接", "好的 Agent 循环需要可验证的停止条件", "工具 description 的质量会影响模型的调用准确率"],
+      ok: "对，这句是错的！模型从不直接连接任何东西——它只输出文本/JSON。与 Server 通信的是宿主里的 MCP Client。「玻璃房」从第 0 章到现在从未打开过。",
+      no: "找错误说法。提示：贯穿全页的第一性原理是「模型只会输出文字，永远不亲自动手」——哪个选项违背了它？" },
+    { t: "长任务跑到一半，上下文快满了。Loop Engineering 的正确姿势是？", a: 1,
+      opts: ["从头截断最早的消息，不管内容是什么", "压缩/摘要历史对话，把大结果落盘只留引用，必要时把子任务派给子代理", "换个上下文更大的模型就万事大吉", "重启对话，丢掉全部状态重来"],
+      ok: "对！这是 Claude Code 的 compact、「文件系统当记忆」、子代理隔离等真实产品手段的组合。上下文是稀缺资源，要主动经营而不是被动等它爆掉。",
+      no: "回看六抓手的第 4、5 条：上下文管理 + 外部状态。粗暴截断可能把关键约束截掉，换大模型只是推迟问题。" },
+    { t: "要做一个「深度调研助手」：并行搜集几十个来源、交叉核实、汇总成报告，主对话只需要最终结论。最合适的架构是？", a: 1,
+      opts: ["单个 Agent 顺序读完所有来源", "编排者-工作者：编排者动态拆分调研面，并行子代理各查各的、只回传摘要", "为每个信息源部署一个常驻的 A2A Agent 服务", "把所有网页全文塞进一个超长上下文一次问完"],
+      ok: "对！这正是 Anthropic 多代理研究系统的架构：读多写少、天然可并行、中间过程不值得进主上下文——多代理的教科书场景（代价是 token 用量显著上升，值不值要算账）。",
+      no: "用第 6 章的判断题过一遍：子任务之间共享「正在变化的状态」吗？调研不共享——那么瓶颈就只剩串行太慢和上下文塞爆，哪个选项同时解决这两点？" }
+  ]}
+};
+
+function buildQuiz(root){
+  const id = root.dataset.quiz;
+  const data = QUIZ[id];
+  const body = $(".quiz-body", root);
+  const passed = !!state.quiz[id];
+  const solved = data.qs.map(() => passed);
+  data.qs.forEach((q, qi) => {
+    const item = document.createElement("div");
+    item.className = "q-item";
+    const letters = ["A","B","C","D","E"];
+    item.innerHTML = `<div class="q-title"><span class="qn">Q${qi+1}</span>${esc(q.t)}</div>
+      <div class="q-opts">${q.opts.map((o,oi) =>
+        `<button class="q-opt" data-oi="${oi}"><b>${letters[oi]}.</b> ${esc(o)}</button>`).join("")}</div>
+      <div class="q-explain"></div>`;
+    body.appendChild(item);
+    const optBtns = $$(".q-opt", item);
+    const expl = $(".q-explain", item);
+    const lock = () => optBtns.forEach(b => b.disabled = true);
+    if(passed){
+      optBtns[q.a].classList.add("right"); lock();
+      expl.className = "q-explain good show"; expl.textContent = "✓ " + q.ok;
+    }
+    optBtns.forEach(btn => btn.addEventListener("click", () => {
+      const oi = +btn.dataset.oi;
+      optBtns.forEach(b => b.classList.remove("wrong"));
+      if(oi === q.a){
+        btn.classList.add("right"); lock(); solved[qi] = true;
+        expl.className = "q-explain good show"; expl.textContent = "✓ " + q.ok;
+        if(solved.every(Boolean) && !state.quiz[id]){
+          state.quiz[id] = true; save();
+          $(".quiz-done", root).classList.add("show");
+          toast(data.toast);
+          refreshProgress(); checkAllPassed();
+        }
+      } else {
+        btn.classList.add("wrong");
+        expl.className = "q-explain bad show"; expl.textContent = "✗ " + q.no;
+      }
+    }));
+  });
+  if(passed) $(".quiz-done", root).classList.add("show");
+}
+$$("[data-quiz]").forEach(buildQuiz);
+
+/* ============================================================
+   DEMO 1 · 裸模型 vs 带工具（对比聊天）
+   ============================================================ */
+const DA_SCENES = {
+  time: {
+    q: "现在几点了？",
+    bare: [{ type:"ai", bad:true, text:"抱歉，我无法获取实时时间——我没有系统时钟，知识也停留在训练截止日。", verdict:"❌ 玻璃房困境：拿不到实时信息", v:"no" }],
+    tooled: [
+      { type:"call", text:'get_time(timezone: "Asia/Shanghai")' },
+      { type:"res",  text:'→ "2026-07-08 21:58 (UTC+8, 周三)"' },
+      { type:"ai",   text:"现在是 2026 年 7 月 8 日（周三）21:58，北京时间。", verdict:"✓ 来自工具的真实数据", v:"ok" }
+    ]
+  },
+  math: {
+    q: "123456789 × 987654321 = ?",
+    bare: [{ type:"ai", bad:true, text:"我来算一下：123456789 × 987654321 = 121,932,632,103,337,269。", verdict:"❌ 一本正经地胡说：中间位数错了（正确值 121,932,631,112,635,269）", v:"no" }],
+    tooled: [
+      { type:"call", text:'calculator(expression: "123456789 * 987654321")' },
+      { type:"res",  text:"→ 121932631112635269" },
+      { type:"ai",   text:"结果是 121,932,631,112,635,269。", verdict:"✓ 确定性计算交给计算器，模型只负责理解题意", v:"ok" }
+    ]
+  },
+  file: {
+    q: "我项目用的什么测试框架？",
+    bare: [{ type:"ai", bad:true, text:"我看不到你的文件系统。麻烦把 package.json 的内容粘贴给我，我帮你分析。", verdict:"❌ 只能请你当人肉搬运工", v:"no" }],
+    tooled: [
+      { type:"call", text:'read_file(path: "package.json")' },
+      { type:"res",  text:'→ { "devDependencies": { "vitest": "^3.2.1", … } }' },
+      { type:"ai",   text:"你的项目用的是 Vitest（devDependencies 里有 vitest ^3.2.1）。", verdict:"✓ 自己伸手读文件", v:"ok" }
+    ]
+  }
+};
+function daBubble(pane, m){
+  const el = document.createElement("div");
+  if(m.type === "call"){ el.className = "toolchip"; el.innerHTML = "🔧 调用 <b>" + esc(m.text) + "</b>"; }
+  else if(m.type === "res"){ el.className = "toolchip"; el.style.opacity = ".88"; el.textContent = "📥 " + m.text; }
+  else {
+    el.className = "bubble " + (m.type === "user" ? "user" : "ai") + (m.bad ? " bad" : "");
+    el.textContent = m.text;
+    if(m.verdict){
+      const v = document.createElement("span");
+      v.className = "verdict " + m.v; v.textContent = m.verdict;
+      el.appendChild(v);
+    }
+  }
+  pane.appendChild(el);
+  pane.scrollTop = pane.scrollHeight;
+  return el;
+}
+async function daTyping(pane, ms){
+  const t = document.createElement("div");
+  t.className = "typing"; t.innerHTML = "<i></i><i></i><i></i>";
+  pane.appendChild(t); pane.scrollTop = pane.scrollHeight;
+  await sleep(ms); t.remove();
+}
+let daBusy = false;
+$$("#demo-a [data-da]").forEach(btn => btn.addEventListener("click", async () => {
+  if(daBusy) return;
+  daBusy = true;
+  $$("#demo-a [data-da]").forEach(b => b.disabled = true);
+  const sc = DA_SCENES[btn.dataset.da];
+  const bare = $("#da-bare"), tooled = $("#da-tooled");
+  daBubble(bare, { type:"user", text: sc.q });
+  daBubble(tooled, { type:"user", text: sc.q });
+  await Promise.all([
+    (async () => { await daTyping(bare, 900); for(const m of sc.bare){ daBubble(bare, m); await sleep(300); } })(),
+    (async () => {
+      await daTyping(tooled, 550);
+      for(const m of sc.tooled){
+        daBubble(tooled, m);
+        await sleep(m.type === "ai" ? 200 : 650);
+        if(m.type === "res") await daTyping(tooled, 500);
+      }
+    })()
+  ]);
+  touchDemo("a");
+  daBusy = false;
+  $$("#demo-a [data-da]").forEach(b => b.disabled = false);
+}));
+
+/* ============================================================
+   DEMO 2 · Function Calling 五步往返（步进器）
+   ============================================================ */
+(function(){
+  const panels = $$("#stepper-b .step-panel");
+  const dotsBox = $("#sb-dots");
+  let cur = 0;
+  panels.forEach((_, i) => {
+    if(i > 0){ const line = document.createElement("span"); line.className = "sline"; dotsBox.appendChild(line); }
+    const d = document.createElement("button");
+    d.className = "sdot"; d.textContent = i + 1;
+    d.addEventListener("click", () => go(i));
+    dotsBox.appendChild(d);
+  });
+  const dots = $$(".sdot", dotsBox);
+  function go(i){
+    cur = Math.max(0, Math.min(panels.length - 1, i));
+    panels.forEach((p, pi) => p.classList.toggle("active", pi === cur));
+    dots.forEach((d, di) => {
+      d.classList.toggle("on", di === cur);
+      d.classList.toggle("past", di < cur);
+    });
+    $("#sb-pos").textContent = `第 ${cur + 1} / ${panels.length} 步`;
+    $("#sb-prev").disabled = cur === 0;
+    $("#sb-next").disabled = cur === panels.length - 1;
+    if(cur > 0) touchDemo("b");
+  }
+  $("#sb-prev").addEventListener("click", () => go(cur - 1));
+  $("#sb-next").addEventListener("click", () => go(cur + 1));
+  go(0);
+})();
+
+/* ============================================================
+   DEMO 3 · ReAct 轨迹播放器
+   ============================================================ */
+(function(){
+  const items = $$("#dc-trace .tr-item");
+  let shown = 1, timer = null;
+  const render = () => items.forEach((it, i) => it.classList.toggle("show", i < shown));
+  const stopAuto = () => { if(timer){ clearInterval(timer); timer = null; $("#dc-play").textContent = "▶ 自动播放"; } };
+  function stepOnce(){
+    if(shown < items.length){ shown++; render(); touchDemo("c"); }
+    if(shown >= items.length) stopAuto();
+  }
+  $("#dc-step").addEventListener("click", () => { stopAuto(); stepOnce(); });
+  $("#dc-play").addEventListener("click", () => {
+    if(timer){ stopAuto(); return; }
+    if(shown >= items.length){ shown = 1; render(); }
+    $("#dc-play").textContent = "⏸ 暂停";
+    timer = setInterval(stepOnce, 1050);
+  });
+  $("#dc-reset").addEventListener("click", () => { stopAuto(); shown = 1; render(); });
+  render();
+})();
+
+/* ============================================================
+   DEMO 4 · Agent Loop 模拟器
+   ============================================================ */
+(function(){
+  const EVENTS = [
+    { n:0, log:["ll-res","// 上下文初始化：system 提示 + 任务「修复 tests/test_price.py 的失败用例」"], ctx:5, st:"运行中…" },
+    { n:1, iter:1, log:["ll-iter","── 第 1 轮循环 ──"] },
+    { log:["ll-think","🧠 模型：先跑一遍测试，拿到失败信息"] },
+    { n:2, call:1, log:["ll-call",'→ run_tests("tests/test_price.py")'] },
+    { log:["ll-res","← 1 failed: test_discount_boundary — total(1000) 应为 900.0，实得 1000.0"], ctx:16 },
+    { n:1, iter:2, log:["ll-iter","── 第 2 轮循环 ──"] },
+    { log:["ll-think","🧠 模型：满 1000 应打 9 折但没生效，读实现确认"] },
+    { n:2, call:1, log:["ll-call",'→ read_file("src/price.py")'] },
+    { log:["ll-res","← 第 12 行: if amount > 1000: amount *= 0.9   （边界用了 > 而非 >=）"], ctx:30 },
+    { n:1, iter:3, log:["ll-iter","── 第 3 轮循环 ──"] },
+    { log:["ll-think","🧠 模型：把 > 改成 >=，然后复测验证"] },
+    { n:2, call:1, log:["ll-call",'→ edit_file("src/price.py", "> 1000" → ">= 1000")'] },
+    { log:["ll-res","← 修改完成 (+1 −1)"] },
+    { n:2, call:1, log:["ll-call",'→ run_tests("tests/test_price.py")'] },
+    { log:["ll-res","← 仍有 1 failed: test_vip_boundary — VIP 用户在 1000 边界还应叠加 95 折"], ctx:48 },
+    { n:1, iter:4, log:["ll-iter","── 第 4 轮循环 ──"] },
+    { log:["ll-think","🧠 模型：失败信息指向 VIP 叠加分支，补上边界处理再复测"] },
+    { n:2, call:1, log:["ll-call",'→ edit_file("src/price.py", 补 VIP 边界叠加分支)'] },
+    { n:2, call:1, log:["ll-call",'→ run_tests("tests/test_price.py")'] },
+    { log:["ll-res","← 5 passed ✅ 全部通过"], ctx:62 },
+    { n:1, log:["ll-think","🧠 模型：测试全绿，任务完成——这一轮不再需要任何工具"] },
+    { n:3, log:["ll-ok","✔ 停止条件触发：本轮没有 tool_calls → 循环退出"], st:"✅ 完成 · 共 4 轮循环" },
+    { log:["ll-ok","「已修复 price.py 的折扣边界与 VIP 叠加逻辑，5 个用例全部通过。」"], ctx:66 }
+  ];
+  const logBox = $("#dd-log");
+  let running = false, iter = 0, calls = 0;
+  function hot(n){
+    for(let i=0;i<4;i++) $("#dd-n"+i).classList.toggle("hot", i === n);
+  }
+  function reset(){
+    running = false; iter = 0; calls = 0;
+    hot(-1);
+    $("#dd-iter").textContent = "0"; $("#dd-calls").textContent = "0";
+    $("#dd-ctx").textContent = "3%"; $("#dd-ctxbar").style.width = "3%";
+    $("#dd-status").textContent = "待命";
+    logBox.innerHTML = '<div class="sys" style="color:#697098">// 点击「运行任务」开始。任务：tests/test_price.py 有一个用例失败，修好它。</div>';
+    $("#dd-run").disabled = false;
+  }
+  async function run(){
+    if(running) return;
+    reset(); running = true;
+    $("#dd-run").disabled = true;
+    touchDemo("d");
+    for(const ev of EVENTS){
+      if(!running) return;
+      if(ev.n !== undefined) hot(ev.n);
+      if(ev.iter){ iter = ev.iter; $("#dd-iter").textContent = iter; }
+      if(ev.call){ calls += ev.call; $("#dd-calls").textContent = calls; }
+      if(ev.ctx !== undefined){ $("#dd-ctx").textContent = ev.ctx + "%"; $("#dd-ctxbar").style.width = ev.ctx + "%"; }
+      if(ev.st) $("#dd-status").textContent = ev.st;
+      if(ev.log){
+        const d = document.createElement("div");
+        d.className = ev.log[0]; d.textContent = ev.log[1];
+        logBox.appendChild(d); logBox.scrollTop = logBox.scrollHeight;
+      }
+      await sleep(ev.log && ev.log[0] === "ll-iter" ? 500 : 800);
+    }
+    running = false;
+    $("#dd-run").disabled = false;
+  }
+  $("#dd-run").addEventListener("click", run);
+  $("#dd-reset").addEventListener("click", reset);
+})();
+
+/* ============================================================
+   DEMO 5 · M×N vs M+N（SVG 连线）
+   ============================================================ */
+(function(){
+  const NS = "http://www.w3.org/2000/svg";
+  const L = [ {y:30,label:"Cursor"}, {y:128,label:"Claude"}, {y:226,label:"自研 Agent"} ];
+  const R = [ {y:16,label:"GitHub"}, {y:92,label:"数据库"}, {y:168,label:"Slack"}, {y:244,label:"文件系统"} ];
+  const gL = $("#mxn-left"), gR = $("#mxn-right"), gW = $("#mxn-wires");
+  function box(g, x, y, label){
+    const r = document.createElementNS(NS, "rect");
+    r.setAttribute("x", x); r.setAttribute("y", y);
+    r.setAttribute("width", 132); r.setAttribute("height", 48);
+    r.setAttribute("rx", 10); r.setAttribute("class", "box");
+    const t = document.createElementNS(NS, "text");
+    t.setAttribute("x", x + 66); t.setAttribute("y", y + 29);
+    t.setAttribute("text-anchor", "middle"); t.textContent = label;
+    g.appendChild(r); g.appendChild(t);
+  }
+  L.forEach(b => box(gL, 16, b.y, b.label));
+  R.forEach(b => box(gR, 492, b.y, b.label));
+  function line(x1,y1,x2,y2,std){
+    const l = document.createElementNS(NS, "line");
+    l.setAttribute("x1",x1); l.setAttribute("y1",y1);
+    l.setAttribute("x2",x2); l.setAttribute("y2",y2);
+    l.setAttribute("class", "wire" + (std ? " std" : ""));
+    gW.appendChild(l);
+  }
+  let std = false;
+  function render(){
+    gW.innerHTML = "";
+    $("#mxn-hub").style.display = std ? "" : "none";
+    if(std){
+      L.forEach(b => line(148, b.y + 24, 280, 150, true));
+      R.forEach(b => line(360, 150, 492, b.y + 24, true));
+      $("#mxn-count").innerHTML = '标准世界：3 个客户端实现 + 4 个服务端实现 —— 共 <b style="color:var(--emerald)">7</b> 份，随插随用';
+      $("#mxn-toggle").textContent = "切换回「没有 MCP」的世界";
+    } else {
+      L.forEach(a => R.forEach(b => line(148, a.y + 24, 492, b.y + 24, false)));
+      $("#mxn-count").innerHTML = '当前世界：每条红线都是一套定制集成 —— 共 <b style="color:var(--rose)">12</b> 套';
+      $("#mxn-toggle").textContent = "切换到「有 MCP」的世界";
+    }
+  }
+  $("#mxn-toggle").addEventListener("click", () => { std = !std; render(); touchDemo("e1"); });
+  render();
+})();
+
+/* ============================================================
+   DEMO 6 · MCP 架构图（点击查看职责）
+   ============================================================ */
+(function(){
+  const INFO = {
+    host: ["🖥 Host 宿主应用", "装着「大脑」的应用：Cursor、Claude Desktop、ChatGPT 桌面版……它运行模型与 Agent Loop，负责用户授权与权限边界，并为每个要连接的 Server 创建一个专属的 MCP Client。"],
+    client: ["🔗 MCP Client 接线员", "Host 内部的标准接线员：与某一个 Server 保持 1:1 长连接，负责 initialize 握手、能力协商、转发 tools/list 与 tools/call。写业务时几乎感知不到它——宿主和 SDK 替你打理好了。"],
+    s1: ["📁 文件系统 Server", "官方参考实现之一。以本地子进程方式被宿主拉起，走 stdio 传输。提供 read_file、write_file、list_directory 等工具，并通过「允许目录」白名单限制可访问范围。"],
+    s2: ["🐙 GitHub Server", "托管在远端，走 Streamable HTTP 传输。提供 issue、PR、代码搜索等工具。同一个远程 Server 实例可以同时服务成千上万个不同宿主——标准化的规模效应。"],
+    s3: ["🌤 天气 Server", "本页第 5 章的主角：几十行 Python + 一个 @mcp.tool() 装饰器。写完之后，Cursor、Claude Desktop、任何支持 MCP 的应用都能即插即用地查天气。"]
+  };
+  $$("#demo-e2 [data-arch]").forEach(el => el.addEventListener("click", ev => {
+    ev.stopPropagation();
+    $$("#demo-e2 .picked").forEach(x => x.classList.remove("picked"));
+    el.classList.add("picked");
+    const info = INFO[el.dataset.arch];
+    $("#arch-info").innerHTML = `<div class="ai-t">${info[0]}</div><div>${info[1]}</div>`;
+    touchDemo("e2");
+  }));
+})();
+
+/* ============================================================
+   DEMO 7 · MCP 消息流播放器
+   ============================================================ */
+(function(){
+  const msgs = $$("#de-flow .msg");
+  let shown = 0, timer = null;
+  const render = () => msgs.forEach((m, i) => m.classList.toggle("show", i < shown));
+  const stopAuto = () => { if(timer){ clearInterval(timer); timer = null; $("#de-play").textContent = "▶ 播放消息流"; } };
+  function stepOnce(){
+    if(shown < msgs.length){ shown++; render(); touchDemo("e3"); }
+    if(shown >= msgs.length) stopAuto();
+  }
+  $("#de-step").addEventListener("click", () => { stopAuto(); stepOnce(); });
+  $("#de-play").addEventListener("click", () => {
+    if(timer){ stopAuto(); return; }
+    if(shown >= msgs.length){ shown = 0; render(); }
+    $("#de-play").textContent = "⏸ 暂停";
+    timer = setInterval(stepOnce, 1200);
+  });
+  $("#de-reset").addEventListener("click", () => { stopAuto(); shown = 0; render(); });
+})();
+
+/* ============================================================
+   DEMO 8 · 迷你 MCP Inspector
+   ============================================================ */
+(function(){
+  const logBox = $("#insp-log");
+  const DATA = {
+    get_weather: { desc: '查询指定城市的当前天气。inputSchema: { city: string (必填) }',
+      res: { "北京":"北京：晴 32°C，湿度 41%", "上海":"上海：多云 29°C，湿度 78%", "深圳":"深圳：雷阵雨 27°C，湿度 92%", "拉萨":"未收录城市：拉萨" } },
+    get_air_quality: { desc: '查询指定城市的空气质量指数（AQI）。inputSchema: { city: string (必填) }',
+      res: { "北京":"北京：AQI 87（良）", "上海":"上海：AQI 42（优）", "深圳":"深圳：AQI 35（优）", "拉萨":"未收录城市：拉萨" } }
+  };
+  let connected = false, msgId = 2;
+  function log(cls, text, isJson){
+    const wrap = document.createElement("div");
+    if(isJson){
+      const head = document.createElement("div");
+      head.className = cls; head.textContent = text[0];
+      const pre = document.createElement("pre");
+      pre.className = cls; pre.textContent = text[1];
+      wrap.appendChild(head); wrap.appendChild(pre);
+    } else {
+      wrap.className = cls; wrap.textContent = text;
+    }
+    logBox.appendChild(wrap); logBox.scrollTop = logBox.scrollHeight;
+  }
+  function setEnabled(on){
+    ["#insp-tool","#insp-city","#insp-call"].forEach(s => $(s).disabled = !on);
+  }
+  $("#insp-tool").addEventListener("change", () => {
+    $("#insp-desc").textContent = DATA[$("#insp-tool").value].desc;
+  });
+  $("#insp-connect").addEventListener("click", async () => {
+    if(connected) return;
+    const btn = $("#insp-connect");
+    btn.disabled = true;
+    $("#insp-status").textContent = "连接中…";
+    log("sys", "$ 宿主拉起子进程：uv run python server.py（stdio 传输）");
+    await sleep(600);
+    log("req", ['→ initialize', '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-11-25","clientInfo":{"name":"mini-inspector"}}}'], true);
+    await sleep(650);
+    log("res", ['← initialize result', '{"jsonrpc":"2.0","id":1,"result":{"serverInfo":{"name":"weather-mcp","version":"1.0.0"},"capabilities":{"tools":{}}}}'], true);
+    await sleep(500);
+    log("req", ['→ tools/list', '{"jsonrpc":"2.0","id":2,"method":"tools/list"}'], true);
+    await sleep(600);
+    log("res", ['← tools/list result', '发现 2 个工具：get_weather、get_air_quality（含 description 与 inputSchema）'], true);
+    log("sys", "✅ 已连接。左侧选择工具与参数，发起 tools/call。");
+    connected = true;
+    $("#insp-status").textContent = "🟢 已连接";
+    btn.textContent = "✅ 已连接";
+    setEnabled(true);
+    $("#insp-desc").textContent = DATA[$("#insp-tool").value].desc;
+    touchDemo("f");
+  });
+  $("#insp-call").addEventListener("click", async () => {
+    if(!connected) return;
+    const tool = $("#insp-tool").value, city = $("#insp-city").value;
+    msgId++;
+    const btn = $("#insp-call");
+    btn.disabled = true;
+    const req = { jsonrpc:"2.0", id:msgId, method:"tools/call", params:{ name:tool, arguments:{ city } } };
+    log("req", ["→ tools/call", JSON.stringify(req, null, 2)], true);
+    const t0 = 60 + Math.floor(Math.random() * 160);
+    log("sys", `… 等待 Server 处理（${t0} ms）`);
+    await sleep(500 + t0);
+    const res = { jsonrpc:"2.0", id:msgId, result:{ content:[{ type:"text", text: DATA[tool].res[city] }], isError:false } };
+    log("res", ["← tools/call result", JSON.stringify(res, null, 2)], true);
+    btn.disabled = false;
+  });
+})();
+
+/* ============================================================
+   DEMO 9 · 架构图鉴（模式切换）
+   ============================================================ */
+(function(){
+  const btns = $$("#pat-list .pat-btn"), panels = $$("#pat-panels .pat-panel");
+  btns.forEach((b, i) => b.addEventListener("click", () => {
+    btns.forEach(x => x.classList.remove("on"));
+    panels.forEach(x => x.classList.remove("active"));
+    b.classList.add("on");
+    panels[i].classList.add("active");
+    touchDemo("g");
+  }));
+})();
+
+/* ============================================================
+   DEMO 10 · 概念雷达（分类筛选 + 卡片展开）
+   ============================================================ */
+(function(){
+  const chips = $$("#radar-chips .chip"), cards = $$("#radar .rc");
+  chips.forEach(c => c.addEventListener("click", () => {
+    chips.forEach(x => x.classList.remove("on"));
+    c.classList.add("on");
+    const g = c.dataset.grp;
+    cards.forEach(k => k.classList.toggle("hidden", g !== "all" && k.dataset.grp !== g));
+    touchDemo("h");
+  }));
+  cards.forEach(k => k.addEventListener("click", ev => {
+    if(ev.target.closest("a")) return;   /* 点外链不触发折叠 */
+    k.classList.toggle("open");
+    touchDemo("h");
+  }));
+})();
+
+/* ============================================================
+   学习路径清单
+   ============================================================ */
+$$("#pathlist .path-item").forEach(item => {
+  const id = item.dataset.path;
+  if(state.paths[id]) item.classList.add("checked");
+  item.addEventListener("click", ev => {
+    if(ev.target.closest("a")) return;   /* 点链接不算勾选 */
+    state.paths[id] = !state.paths[id];
+    item.classList.toggle("checked", state.paths[id]);
+    save();
+    if(state.paths[id] && Object.keys(state.paths).filter(k => state.paths[k]).length === 6){
+      toast("🛤 实践路线图全部完成！你已经是 Agent 工程师了");
+      confetti();
+    }
+  });
+});
+
+/* ---------- 启动 ---------- */
+refreshProgress();
+window.__APP_OK__ = true;
+})();
+</script>
+</body>
+</html>
