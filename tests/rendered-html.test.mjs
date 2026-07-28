@@ -35,6 +35,12 @@ test("server-renders the AI Learning Lab product surface", async () => {
   assert.match(html, /Graph Lab/);
   assert.match(html, /知识网络/);
   assert.match(html, /一手来源/);
+  assert.match(html, /Skill 体系/);
+  assert.match(html, /Agent Card/);
+  assert.match(html, /A2A/);
+  assert.match(html, /knowledge_chat/);
+  assert.match(html, /一个标准 Skill 真正必需的只有/);
+  assert.match(html, /判断手感/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
 
