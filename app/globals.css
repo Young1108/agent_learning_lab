@@ -80,7 +80,7 @@ body {
     system-ui,
     sans-serif;
   line-height: 1.65;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 ::selection {
@@ -116,11 +116,10 @@ select:focus-visible {
 
 .reveal {
   opacity: 0;
-  transform: translateY(16px);
+  transform: translateY(10px);
   transition:
-    opacity 0.55s ease var(--d, 0ms),
-    transform 0.55s var(--ease-spring) var(--d, 0ms);
-  will-change: opacity, transform;
+    opacity 0.3s ease var(--d, 0ms),
+    transform 0.3s ease var(--d, 0ms);
 }
 
 .reveal.in {
@@ -203,7 +202,7 @@ select:focus-visible {
   width: 0;
   z-index: 200;
   background: linear-gradient(90deg, var(--acc), var(--acc-2));
-  transition: width 0.4s ease;
+  transition: width 0.25s ease;
 }
 
 /* ---------- 侧边栏 ---------- */
@@ -461,7 +460,6 @@ select:focus-visible {
   inset: 0;
   z-index: 105;
   background: rgba(12, 16, 30, 0.45);
-  backdrop-filter: blur(2px);
 }
 
 /* ---------- 顶栏 ---------- */
@@ -479,8 +477,8 @@ select:focus-visible {
   padding: 0 20px;
   border-bottom: 1px solid var(--line);
   background: color-mix(in srgb, var(--bg) 82%, transparent);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .topbar .crumb {
@@ -537,7 +535,7 @@ select:focus-visible {
 
 .theme-ico {
   display: inline-block;
-  animation: popIn 0.35s var(--ease-spring);
+  animation: popIn 0.25s var(--ease-spring);
 }
 
 /* ---------- 主区 ---------- */
@@ -986,12 +984,12 @@ h3 {
 }
 
 .kn-card.dim {
-  opacity: 0.42;
-  filter: saturate(0.4);
+  opacity: 0.55;
+  filter: saturate(0.5);
 }
 
 .kn-card.dim:hover {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .kn-focus {
@@ -1313,7 +1311,7 @@ h3 {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-height: 120px;
+  min-height: 160px;
   color: var(--text-2);
   font-size: 14px;
 }
@@ -1323,7 +1321,7 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--bg-soft);
-  min-height: 160px;
+  min-height: 200px;
 }
 
 .result-panel .status {
@@ -1376,7 +1374,7 @@ h3 {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-height: 150px;
+  min-height: 160px;
   padding: 18px;
   border: 1px dashed var(--line-2);
   border-radius: 10px;
@@ -1416,7 +1414,7 @@ h3 {
 }
 
 .trace-item.anim {
-  animation: traceIn 0.35s var(--ease-spring);
+  animation: traceIn 0.28s ease;
 }
 
 .trace-item .ti-num {
@@ -1487,27 +1485,23 @@ input[type="range"] {
     var(--line-2) var(--fill, 50%) 100%
   );
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: #fff;
   border: 2px solid var(--acc);
   box-shadow: 0 1px 4px rgba(20, 25, 50, 0.25);
-  transition: transform 0.12s ease;
-}
-
-input[type="range"]::-webkit-slider-thumb:hover {
-  transform: scale(1.15);
 }
 
 input[type="range"]::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: #fff;
   border: 2px solid var(--acc);
@@ -2043,6 +2037,28 @@ input[type="range"]::-moz-range-thumb {
   box-shadow: var(--shadow-lg);
   transform: translateX(-50%);
   animation: toastIn 0.3s var(--ease-spring);
+}
+
+/* ---------- 触摸设备：禁用 hover 位移，避免点击粘滞 ---------- */
+
+@media (hover: none) {
+  .mini-card:hover,
+  .course-card:hover,
+  .source-card:hover,
+  .btn:hover,
+  .road-node:hover,
+  .nav-item:hover,
+  .icon-btn:hover,
+  .to-top:hover,
+  .kn-card:hover,
+  .choice-grid button:hover,
+  .level-card:hover {
+    transform: none;
+  }
+
+  .course-card:hover b {
+    transform: none;
+  }
 }
 
 /* ---------- 响应式 ---------- */

@@ -341,7 +341,7 @@ function useRun<T>(compute: () => T) {
       setResult(compute());
       setRunning(false);
       setRunId((id) => id + 1);
-    }, 480);
+    }, 160);
   }, [compute]);
 
   const reset = useCallback(() => {
@@ -361,7 +361,7 @@ function useRun<T>(compute: () => T) {
 }
 
 /** 结果 trace 逐条浮现 */
-function useStagger(count: number, step = 130) {
+function useStagger(count: number, step = 80) {
   // 调用方通过 key={runId} 重挂载来归零，无需在 effect 里同步重置
   const [shown, setShown] = useState(0);
   useEffect(() => {
@@ -1285,22 +1285,36 @@ export function LearningLab() {
     return () => observer.disconnect();
   }, [setDone]);
 
-  /* 滚动进入动画 */
+  /* 滚动进入动画：首屏内容立即显示，其余进入视口时快速淡入 */
   useEffect(() => {
     const targets = Array.from(
       document.querySelectorAll<HTMLElement>(
         ".lesson > *, .lab-card, .mini-card, .tacit-card, .source-card, .course-card, .card, .level-card",
       ),
     );
-    targets.forEach((el) => el.classList.add("reveal"));
+
+    // 网格内子项做小错峰（上限 3 档 × 45ms），其余无延迟
+    document
+      .querySelectorAll<HTMLElement>(".card-grid, .source-grid, .course-grid, .tacit-grid")
+      .forEach((grid) => {
+        Array.from(grid.children).forEach((child, index) => {
+          child.style.setProperty("--d", `${Math.min(index, 3) * 45}ms`);
+        });
+      });
+
+    // 不支持 IntersectionObserver 时直接全部显示，保证内容永远可见
+    if (!("IntersectionObserver" in window)) {
+      targets.forEach((el) => el.classList.add("reveal", "in"));
+      return;
+    }
+
     targets.forEach((el) => {
-      const siblings = el.parentElement
-        ? Array.from(el.parentElement.children).filter((node) =>
-            node.classList?.contains("reveal"),
-          )
-        : [];
-      const index = Math.max(0, siblings.indexOf(el));
-      el.style.setProperty("--d", `${Math.min(index, 6) * 60}ms`);
+      el.classList.add("reveal");
+      const rect = el.getBoundingClientRect();
+      // 已在视口内（或视口上方）的元素立即显示：不等待观察器，避免首屏闪动
+      if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
+        el.classList.add("in");
+      }
     });
 
     const io = new IntersectionObserver(
@@ -1312,9 +1326,12 @@ export function LearningLab() {
           }
         });
       },
-      { threshold: 0.06, rootMargin: "0px 0px -4% 0px" },
+      { threshold: 0.05, rootMargin: "0px 0px -2% 0px" },
     );
-    targets.forEach((el) => io.observe(el));
+    targets.forEach((el) => {
+      if (!el.classList.contains("in")) io.observe(el);
+    });
+
     return () => io.disconnect();
   }, []);
 
@@ -1325,32 +1342,6 @@ export function LearningLab() {
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  /* 键盘 ← → 切换章节 */
-  useEffect(() => {
-    function onKey(event: KeyboardEvent) {
-      if (event.metaKey || event.ctrlKey || event.altKey) return;
-      const target = event.target as HTMLElement | null;
-      if (
-        target &&
-        (target.tagName === "INPUT" ||
-          target.tagName === "TEXTAREA" ||
-          target.isContentEditable)
-      ) {
-        return;
-      }
-      if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
-      const index = navItems.findIndex((item) => item.id === activeId);
-      const next = event.key === "ArrowRight" ? index + 1 : index - 1;
-      if (next < 0 || next >= navItems.length) return;
-      event.preventDefault();
-      document
-        .getElementById(navItems[next].id)
-        ?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [activeId]);
 
   const progress = Math.round((done.length / navItems.length) * 100);
   const activeItem = navItems.find((item) => item.id === activeId) ?? navItems[0];
@@ -1404,7 +1395,7 @@ export function LearningLab() {
           ))}
         </div>
         <div className="side-foot">
-          <span className="mini">进度保存在本地 · ← → 切换章节</span>
+          <span className="mini">进度保存在本地</span>
           <button
             className="icon-btn"
             type="button"
