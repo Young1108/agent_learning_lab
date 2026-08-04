@@ -2145,8 +2145,6 @@ function checkAllPassed(){
 }
 
 /* 滚动监听：高亮当前章节 + 记录已访问 */
-const crumbNames = {};
-$$(".nav-item").forEach(i => crumbNames[i.dataset.sec] = i.querySelector(".num").textContent + " · " + i.querySelector(".t").textContent);
 const io = new IntersectionObserver(entries => {
   entries.forEach(en => {
     if(!en.isIntersecting) return;
