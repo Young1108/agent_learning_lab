@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   runGraphDemo,
   runHarnessDemo,
@@ -147,6 +147,18 @@ const knowledgeNodes = [
   },
 ];
 
+const knowledgeEdges: Record<string, string[]> = {
+  tool: ["react", "mcp"],
+  react: ["tool", "loop"],
+  mcp: ["tool", "a2a", "card", "skill"],
+  a2a: ["mcp", "card"],
+  card: ["a2a", "skill"],
+  skill: ["card", "harness", "mcp"],
+  harness: ["skill", "loop"],
+  loop: ["react", "harness", "graph"],
+  graph: ["loop"],
+};
+
 const protocolQuiz = [
   {
     id: "p1",
@@ -163,7 +175,8 @@ const protocolQuiz = [
   },
   {
     id: "p2",
-    prompt: "你需要让对方 Agent 通过公开名片发现“我会什么、端点在哪、怎么认证”。核心构件是？",
+    prompt:
+      "你需要让对方 Agent 通过公开名片发现“我会什么、端点在哪、怎么认证”。核心构件是？",
     answer: "card",
     choices: [
       { id: "mcp", label: "MCP tools/list 菜单" },
@@ -262,6 +275,131 @@ const skillPlacementQuiz = [
   },
 ];
 
+/* ---------------- 通用 hooks ---------------- */
+
+function useLocalStorage<T>(
+  key: string,
+  initial: T,
+): [T, React.Dispatch<React.SetStateAction<T>>] {
+  const [value, setValue] = useState<T>(initial);
+  const loadedRef = useRef(false);
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      try {
+        const raw = window.localStorage.getItem(key);
+        if (raw != null) setValue(JSON.parse(raw) as T);
+      } catch {
+        /* ignore */
+      }
+      loadedRef.current = true;
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [key]);
+
+  useEffect(() => {
+    if (!loadedRef.current) return;
+    try {
+      window.localStorage.setItem(key, JSON.stringify(value));
+    } catch {
+      /* ignore */
+    }
+  }, [key, value]);
+
+  return [value, setValue];
+}
+
+function useToast(): [string | null, (msg: string) => void] {
+  const [toast, setToast] = useState<string | null>(null);
+  const timer = useRef<number | null>(null);
+  const show = useCallback((msg: string) => {
+    setToast(msg);
+    if (timer.current) window.clearTimeout(timer.current);
+    timer.current = window.setTimeout(() => setToast(null), 2200);
+  }, []);
+  useEffect(
+    () => () => {
+      if (timer.current) window.clearTimeout(timer.current);
+    },
+    [],
+  );
+  return [toast, show];
+}
+
+/** 模拟一次"真实运行"：短暂 loading 后给出结果，每次运行 runId 自增以重置动画 */
+function useRun<T>(compute: () => T) {
+  const [result, setResult] = useState<T | null>(null);
+  const [running, setRunning] = useState(false);
+  const [runId, setRunId] = useState(0);
+  const timer = useRef<number | null>(null);
+
+  const run = useCallback(() => {
+    if (timer.current) window.clearTimeout(timer.current);
+    setRunning(true);
+    setResult(null);
+    timer.current = window.setTimeout(() => {
+      setResult(compute());
+      setRunning(false);
+      setRunId((id) => id + 1);
+    }, 480);
+  }, [compute]);
+
+  const reset = useCallback(() => {
+    if (timer.current) window.clearTimeout(timer.current);
+    setRunning(false);
+    setResult(null);
+  }, []);
+
+  useEffect(
+    () => () => {
+      if (timer.current) window.clearTimeout(timer.current);
+    },
+    [],
+  );
+
+  return { result, running, run, reset, runId };
+}
+
+/** 结果 trace 逐条浮现 */
+function useStagger(count: number, step = 130) {
+  // 调用方通过 key={runId} 重挂载来归零，无需在 effect 里同步重置
+  const [shown, setShown] = useState(0);
+  useEffect(() => {
+    if (count === 0) return;
+    let n = 0;
+    const timer = window.setInterval(() => {
+      n += 1;
+      setShown(n);
+      if (n >= count) window.clearInterval(timer);
+    }, step);
+    return () => window.clearInterval(timer);
+  }, [count, step]);
+  return shown;
+}
+
+/* ---------------- 通用组件 ---------------- */
+
+function ProgressRing({ value }: { value: number }) {
+  const r = 24;
+  const c = 2 * Math.PI * r;
+  return (
+    <svg viewBox="0 0 56 56" className="ring" aria-hidden="true">
+      <circle className="ring-bg" cx="28" cy="28" r={r} />
+      <circle
+        className="ring-fg"
+        cx="28"
+        cy="28"
+        r={r}
+        strokeDasharray={c}
+        strokeDashoffset={c * (1 - value / 100)}
+      />
+      <text className="ring-text" x="28" y="32" textAnchor="middle">
+        {value}%
+      </text>
+    </svg>
+  );
+}
+
 function Toggle({
   checked,
   label,
@@ -289,6 +427,158 @@ function Toggle({
   );
 }
 
+function RunButton({
+  running,
+  hasResult,
+  label,
+  onClick,
+}: {
+  running: boolean;
+  hasResult: boolean;
+  label: string;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      className={`run-button ${running ? "loading" : ""}`}
+      type="button"
+      disabled={running}
+      onClick={onClick}
+    >
+      {running ? "运行中…" : hasResult ? "再跑一次" : label}
+    </button>
+  );
+}
+
+function EmptyState({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="empty-state">
+      <span className="es-ico" aria-hidden="true">
+        ▶
+      </span>
+      <p>{children}</p>
+    </div>
+  );
+}
+
+function StatusPill({ kind, text }: { kind: "ok" | "warn" | "bad"; text: string }) {
+  return (
+    <span className={`status ${kind}`}>
+      <i aria-hidden="true" />
+      {text}
+    </span>
+  );
+}
+
+type QuizItem = {
+  id: string;
+  prompt: string;
+  answer: string;
+  choices: { id: string; label: string }[];
+  explain: string;
+};
+
+function Quiz({
+  storageKey,
+  items,
+  color,
+}: {
+  storageKey: string;
+  items: QuizItem[];
+  color: string;
+}) {
+  const [answers, setAnswers] = useLocalStorage<Record<string, string>>(
+    storageKey,
+    {},
+  );
+  const score = items.filter((item) => answers[item.id] === item.answer).length;
+  const answered = items.filter((item) => answers[item.id]).length;
+  const pct = items.length ? Math.round((score / items.length) * 100) : 0;
+  const complete = answered === items.length;
+
+  return (
+    <div className="quiz" style={{ ["--sc" as string]: color }}>
+      <div className="quiz-score">
+        <div className="qs-info">
+          <b>{score}</b>
+          <span> / {items.length} 正确 · 已作答 {answered}/{items.length}</span>
+        </div>
+        <div className="qs-bar" role="progressbar" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100}>
+          <i style={{ width: `${pct}%` }} />
+        </div>
+        {answered > 0 && (
+          <button type="button" className="text-button" onClick={() => setAnswers({})}>
+            重做
+          </button>
+        )}
+      </div>
+
+      {complete && (
+        <div className={`callout ${score === items.length ? "tip" : "info"}`}>
+          <div className="ct">
+            {score === items.length ? "全部答对，可以进入下一章" : `答对 ${score}/${items.length}`}
+          </div>
+          <div>
+            {score === items.length
+              ? "这些判断已经形成反射。试着把每条解释复述给一个不熟悉协议的同事听。"
+              : "回到上面的对比表，找出答错题对应的行，再判断一次。"}
+          </div>
+        </div>
+      )}
+
+      {items.map((item, qi) => {
+        const selected = answers[item.id];
+        return (
+          <div className="card quiz-card" key={item.id}>
+            <div className="quiz-q">
+              <span className="quiz-num">{qi + 1}</span>
+              <span>{item.prompt}</span>
+            </div>
+            <div className="choice-grid">
+              {item.choices.map((choice, ci) => {
+                const className =
+                  selected == null
+                    ? ""
+                    : choice.id === item.answer
+                      ? "correct"
+                      : selected === choice.id
+                        ? "wrong"
+                        : "muted";
+                return (
+                  <button
+                    key={choice.id}
+                    type="button"
+                    className={className}
+                    onClick={() =>
+                      setAnswers((current) => ({ ...current, [item.id]: choice.id }))
+                    }
+                  >
+                    <span className="ch-key">{String.fromCharCode(65 + ci)}</span>
+                    <span className="ch-label">{choice.label}</span>
+                    {selected != null && choice.id === item.answer && (
+                      <span className="ch-mark ok" aria-hidden="true">
+                        ✓
+                      </span>
+                    )}
+                    {selected === choice.id && choice.id !== item.answer && (
+                      <span className="ch-mark bad" aria-hidden="true">
+                        ✕
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+            {selected && <div className="feedback">{item.explain}</div>}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+/* ---------------- 三个技术实验 ---------------- */
+
 function HarnessLab() {
   const [config, setConfig] = useState<HarnessConfig>({
     tools: true,
@@ -296,11 +586,13 @@ function HarnessLab() {
     constraints: true,
     completionProof: true,
   });
-  const [result, setResult] = useState<HarnessResult | null>(null);
+  const { result, running, run, reset, runId } = useRun<HarnessResult>(() =>
+    runHarnessDemo(config),
+  );
 
   function update(key: keyof HarnessConfig, value: boolean) {
     setConfig((current) => ({ ...current, [key]: value }));
-    setResult(null);
+    reset();
   }
 
   return (
@@ -342,38 +634,50 @@ function HarnessLab() {
             detail="测试与用户路径决定何时停止"
             onChange={(value) => update("completionProof", value)}
           />
-          <button
-            className="run-button"
-            type="button"
-            onClick={() => setResult(runHarnessDemo(config))}
-          >
-            运行一次 Harness
-          </button>
+          <RunButton
+            running={running}
+            hasResult={result != null}
+            label="运行一次 Harness"
+            onClick={run}
+          />
         </div>
-        <div className="result-panel">
-          {result ? (
-            <>
-              <span className={`status ${result.status === "completed" ? "ok" : "bad"}`}>
-                {result.status}
-              </span>
-              <h4>{result.explanation}</h4>
-              <div className="trace-list">
-                {result.trace.map((item) => (
-                  <div
-                    className={`trace-item ${item.ok ? "ok" : "bad"}`}
-                    key={`${item.phase}-${item.text}`}
-                  >
-                    <b>{item.phase}</b> · {item.text}
-                  </div>
-                ))}
-              </div>
-            </>
+        <div className="result-panel" aria-live="polite">
+          {running ? (
+            <div className="running-hint">
+              <span className="spinner" aria-hidden="true" />
+              正在执行 Agent 运行…
+            </div>
+          ) : result ? (
+            <HarnessResultView key={runId} result={result} />
           ) : (
-            <p className="empty-state">先切换开关，再运行。失败原因会停在第一个缺失能力。</p>
+            <EmptyState>先切换开关，再运行。失败原因会停在第一个缺失能力。</EmptyState>
           )}
         </div>
       </div>
     </article>
+  );
+}
+
+function HarnessResultView({ result }: { result: HarnessResult }) {
+  const shown = useStagger(result.trace.length);
+  return (
+    <>
+      <StatusPill
+        kind={result.status === "completed" ? "ok" : "bad"}
+        text={result.status}
+      />
+      <h4>{result.explanation}</h4>
+      <div className="trace-list">
+        {result.trace.slice(0, shown).map((item) => (
+          <div
+            className={`trace-item anim ${item.ok ? "ok" : "bad"}`}
+            key={`${item.phase}-${item.text}`}
+          >
+            <b>{item.phase}</b> · {item.text}
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
 
@@ -382,7 +686,38 @@ function LoopLab() {
   const [targetScore, setTargetScore] = useState(80);
   const [maxIterations, setMaxIterations] = useState(5);
   const [budget, setBudget] = useState(3);
-  const [result, setResult] = useState<LoopResult | null>(null);
+  const { result, running, run, reset, runId } = useRun<LoopResult>(() =>
+    runLoopDemo({ initialScore, targetScore, maxIterations, budget }),
+  );
+
+  function slider(
+    label: string,
+    value: number,
+    min: number,
+    max: number,
+    setter: (v: number) => void,
+  ) {
+    const fill = ((value - min) / (max - min)) * 100;
+    return (
+      <label className="rg-row">
+        <span className="rg-head">
+          <span>{label}</span>
+          <b>{value}</b>
+        </span>
+        <input
+          type="range"
+          min={min}
+          max={max}
+          value={value}
+          style={{ ["--fill" as string]: `${fill}%` }}
+          onChange={(event) => {
+            setter(Number(event.target.value));
+            reset();
+          }}
+        />
+      </label>
+    );
+  }
 
   return (
     <article className="lab-card" id="loop-lab" style={{ ["--sc" as string]: "#0891b2" }}>
@@ -399,102 +734,27 @@ function LoopLab() {
       </p>
       <div className="lab-workbench">
         <div className="range-grid">
-          <label>
-            初始分数 {initialScore}
-            <input
-              type="range"
-              min={0}
-              max={100}
-              value={initialScore}
-              onChange={(event) => {
-                setInitialScore(Number(event.target.value));
-                setResult(null);
-              }}
-            />
-          </label>
-          <label>
-            目标分数 {targetScore}
-            <input
-              type="range"
-              min={0}
-              max={100}
-              value={targetScore}
-              onChange={(event) => {
-                setTargetScore(Number(event.target.value));
-                setResult(null);
-              }}
-            />
-          </label>
-          <label>
-            最大迭代 {maxIterations}
-            <input
-              type="range"
-              min={1}
-              max={8}
-              value={maxIterations}
-              onChange={(event) => {
-                setMaxIterations(Number(event.target.value));
-                setResult(null);
-              }}
-            />
-          </label>
-          <label>
-            预算 {budget}
-            <input
-              type="range"
-              min={1}
-              max={8}
-              value={budget}
-              onChange={(event) => {
-                setBudget(Number(event.target.value));
-                setResult(null);
-              }}
-            />
-          </label>
-          <button
-            className="run-button"
-            type="button"
-            onClick={() =>
-              setResult(
-                runLoopDemo({
-                  initialScore,
-                  targetScore,
-                  maxIterations,
-                  budget,
-                }),
-              )
-            }
-          >
-            运行 Loop
-          </button>
+          {slider("初始分数", initialScore, 0, 100, setInitialScore)}
+          {slider("目标分数", targetScore, 0, 100, setTargetScore)}
+          {slider("最大迭代", maxIterations, 1, 8, setMaxIterations)}
+          {slider("预算", budget, 1, 8, setBudget)}
+          <RunButton
+            running={running}
+            hasResult={result != null}
+            label="运行 Loop"
+            onClick={run}
+          />
         </div>
-        <div className="result-panel">
-          {result ? (
-            <>
-              <span
-                className={`status ${
-                  result.status === "converged"
-                    ? "ok"
-                    : result.status === "budget_exhausted"
-                      ? "warn"
-                      : "bad"
-                }`}
-              >
-                {result.status}
-              </span>
-              <h4>
-                迭代 {result.iterations} 次后分数 {result.finalScore}
-              </h4>
-              <div className="trace-list">
-                {result.trace.map((item) => (
-                  <div className="trace-item" key={item.iteration}>
-                    #{item.iteration}：{item.before} → {item.score} · {item.observation}
-                  </div>
-                ))}
-              </div>
-            </>
+        <div className="result-panel" aria-live="polite">
+          {running ? (
+            <div className="running-hint">
+              <span className="spinner" aria-hidden="true" />
+              正在迭代…
+            </div>
+          ) : result ? (
+            <LoopResultView key={runId} result={result} />
           ) : (
-            <p className="empty-state">试着把预算设得比目标所需更小，看它如何报告预算耗尽。</p>
+            <EmptyState>试着把预算设得比目标所需更小，看它如何报告预算耗尽。</EmptyState>
           )}
         </div>
       </div>
@@ -502,10 +762,41 @@ function LoopLab() {
   );
 }
 
+function LoopResultView({ result }: { result: LoopResult }) {
+  const shown = useStagger(result.trace.length);
+  return (
+    <>
+      <StatusPill
+        kind={
+          result.status === "converged"
+            ? "ok"
+            : result.status === "budget_exhausted"
+              ? "warn"
+              : "bad"
+        }
+        text={result.status}
+      />
+      <h4>
+        迭代 {result.iterations} 次后分数 {result.finalScore}
+      </h4>
+      <div className="trace-list">
+        {result.trace.slice(0, shown).map((item) => (
+          <div className="trace-item anim" key={item.iteration}>
+            <span className="ti-num">#{item.iteration}</span>
+            {item.before} → {item.score} · {item.observation}
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
 function GraphLab() {
   const [anchorEnabled, setAnchorEnabled] = useState(false);
   const [vetoEnabled, setVetoEnabled] = useState(false);
-  const [result, setResult] = useState<GraphResult | null>(null);
+  const { result, running, run, reset, runId } = useRun<GraphResult>(() =>
+    runGraphDemo({ anchorEnabled, vetoEnabled }),
+  );
 
   return (
     <article className="lab-card" id="graph-lab" style={{ ["--sc" as string]: "#e11d48" }}>
@@ -528,7 +819,7 @@ function GraphLab() {
             detail="不可被局部循环自行改写的真实目标"
             onChange={(value) => {
               setAnchorEnabled(value);
-              setResult(null);
+              reset();
             }}
           />
           <Toggle
@@ -537,37 +828,28 @@ function GraphLab() {
             detail="局部优化若伤害锚点则被拒绝"
             onChange={(value) => {
               setVetoEnabled(value);
-              setResult(null);
+              reset();
             }}
           />
-          <button
-            className="run-button"
-            type="button"
-            onClick={() => setResult(runGraphDemo({ anchorEnabled, vetoEnabled }))}
-          >
-            运行 Graph
-          </button>
+          <RunButton
+            running={running}
+            hasResult={result != null}
+            label="运行 Graph"
+            onClick={run}
+          />
         </div>
-        <div className="result-panel">
-          {result ? (
-            <>
-              <span className={`status ${result.status === "aligned" ? "ok" : "warn"}`}>
-                {result.status}
-              </span>
-              <h4>{result.explanation}</h4>
-              <div className="trace-list">
-                {Object.entries(result.localMetrics).map(([key, value]) => (
-                  <div className="trace-item" key={key}>
-                    局部 {key}: {value}
-                  </div>
-                ))}
-                <div className="trace-item">外部目标: {result.externalGoal}</div>
-              </div>
-            </>
+        <div className="result-panel" aria-live="polite">
+          {running ? (
+            <div className="running-hint">
+              <span className="spinner" aria-hidden="true" />
+              正在检查多循环治理…
+            </div>
+          ) : result ? (
+            <GraphResultView key={runId} result={result} />
           ) : (
-            <p className="empty-state">
+            <EmptyState>
               默认状态会复现“局部仪表盘全绿、真实目标下跌”。再逐步接入锚点和否决边。
-            </p>
+            </EmptyState>
           )}
         </div>
       </div>
@@ -575,13 +857,88 @@ function GraphLab() {
   );
 }
 
-function ProtocolLab() {
-  const [answers, setAnswers] = useState<Record<string, string>>({});
-  const score = useMemo(
-    () => protocolQuiz.filter((item) => answers[item.id] === item.answer).length,
-    [answers],
+function GraphResultView({ result }: { result: GraphResult }) {
+  const entries = Object.entries(result.localMetrics);
+  const shown = useStagger(entries.length + 1);
+  return (
+    <>
+      <StatusPill kind={result.status === "aligned" ? "ok" : "warn"} text={result.status} />
+      <h4>{result.explanation}</h4>
+      <div className="trace-list">
+        {entries.slice(0, shown).map(([key, value]) => (
+          <div className="trace-item anim" key={key}>
+            局部 {key}: {value}
+          </div>
+        ))}
+        {shown > entries.length && (
+          <div className="trace-item anim external">外部目标: {result.externalGoal}</div>
+        )}
+      </div>
+    </>
   );
+}
 
+/* ---------------- 知识网络（可点击高亮连接） ---------------- */
+
+function KnowledgeNetwork() {
+  const [focus, setFocus] = useState<string | null>(null);
+  const focusNode = knowledgeNodes.find((node) => node.id === focus);
+  const neighbors = focus ? (knowledgeEdges[focus] ?? []) : [];
+
+  return (
+    <>
+      <p className="kn-hint">
+        点击任意卡片，查看它在控制半径中的直接连接；再次点击取消。
+      </p>
+      <div className="card-grid cols-3 kn-grid">
+        {knowledgeNodes.map((node) => {
+          const state =
+            focus == null
+              ? ""
+              : node.id === focus
+                ? "lit"
+                : neighbors.includes(node.id)
+                  ? "linked"
+                  : "dim";
+          return (
+            <button
+              type="button"
+              className={`mini-card kn-card ${state}`}
+              key={node.id}
+              style={{ ["--sc" as string]: node.color }}
+              aria-pressed={focus === node.id}
+              onClick={() => setFocus((current) => (current === node.id ? null : node.id))}
+            >
+              <div className="eyebrow">{node.eyebrow}</div>
+              <h4>{node.title}</h4>
+              <p>{node.note}</p>
+              <small>{node.links}</small>
+            </button>
+          );
+        })}
+      </div>
+      {focusNode && (
+        <div className="kn-focus" style={{ ["--sc" as string]: focusNode.color }}>
+          <span>
+            <b>{focusNode.title}</b> 的直接连接：
+            {neighbors.length > 0
+              ? neighbors
+                  .map((id) => knowledgeNodes.find((n) => n.id === id)?.title ?? id)
+                  .join("、")
+              : "无（治理终点）"}
+          </span>
+          <button type="button" className="text-button" onClick={() => setFocus(null)}>
+            清除高亮
+          </button>
+        </div>
+      )}
+    </>
+  );
+}
+
+/* ---------------- 协议章节 ---------------- */
+
+function ProtocolLab() {
   return (
     <div className="protocol-lab">
       <h3>协议层举一反三：MCP · A2A · Agent Card · Skill</h3>
@@ -614,8 +971,8 @@ function ProtocolLab() {
           ["跨团队/跨供应商 Agent", "有限", "更适合", "同进程工具 vs 对等协作"],
         ].map((row) => (
           <div className="comparison-row" role="row" key={row[0]}>
-            {row.map((cell) => (
-              <span role="cell" key={cell}>
+            {row.map((cell, ci) => (
+              <span role="cell" key={cell} className={ci === 0 ? "row-key" : undefined}>
                 {cell}
               </span>
             ))}
@@ -665,42 +1022,7 @@ function ProtocolLab() {
       </div>
 
       <h3 style={{ marginTop: 28 }}>场景判断：该留 MCP 还是上 A2A？</h3>
-      <p className="sec-sub" style={{ marginBottom: 8 }}>
-        当前得分 {score}/{protocolQuiz.length}
-      </p>
-      {protocolQuiz.map((item) => {
-        const selected = answers[item.id];
-        return (
-          <div className="card" key={item.id} style={{ marginBottom: 14 }}>
-            <div style={{ fontWeight: 700, marginBottom: 10 }}>{item.prompt}</div>
-            <div className="choice-grid">
-              {item.choices.map((choice) => {
-                const className =
-                  selected == null
-                    ? ""
-                    : choice.id === item.answer
-                      ? "correct"
-                      : selected === choice.id
-                        ? "wrong"
-                        : "";
-                return (
-                  <button
-                    key={choice.id}
-                    type="button"
-                    className={className}
-                    onClick={() =>
-                      setAnswers((current) => ({ ...current, [item.id]: choice.id }))
-                    }
-                  >
-                    {choice.label}
-                  </button>
-                );
-              })}
-            </div>
-            {selected && <div className="feedback">{item.explain}</div>}
-          </div>
-        );
-      })}
+      <Quiz storageKey="ai-lab-quiz-protocol" items={protocolQuiz} color="#0891b2" />
 
       <div className="callout tip">
         <div className="ct">和相邻概念怎么挂</div>
@@ -714,15 +1036,9 @@ function ProtocolLab() {
   );
 }
 
+/* ---------------- Skill 章节 ---------------- */
+
 function SkillLab() {
-  const [answers, setAnswers] = useState<Record<string, string>>({});
-
-  const score = useMemo(
-    () =>
-      skillPlacementQuiz.filter((item) => answers[item.id] === item.answer).length,
-    [answers],
-  );
-
   return (
     <section className="lesson" id="sec-skill" style={{ ["--sc" as string]: "#7c3aed" }}>
       <div className="sec-head">
@@ -798,42 +1114,7 @@ function SkillLab() {
       </div>
 
       <h3>内容该放哪里？动手分类</h3>
-      <p className="sec-sub" style={{ marginBottom: 8 }}>
-        当前得分 {score}/{skillPlacementQuiz.length}。先判断，再看解释。
-      </p>
-      {skillPlacementQuiz.map((item) => {
-        const selected = answers[item.id];
-        return (
-          <div className="card" key={item.id} style={{ marginBottom: 14 }}>
-            <div style={{ fontWeight: 700, marginBottom: 10 }}>{item.prompt}</div>
-            <div className="choice-grid">
-              {item.choices.map((choice) => {
-                const className =
-                  selected == null
-                    ? ""
-                    : choice.id === item.answer
-                      ? "correct"
-                      : selected === choice.id
-                        ? "wrong"
-                        : "";
-                return (
-                  <button
-                    key={choice.id}
-                    type="button"
-                    className={className}
-                    onClick={() =>
-                      setAnswers((current) => ({ ...current, [item.id]: choice.id }))
-                    }
-                  >
-                    {choice.label}
-                  </button>
-                );
-              })}
-            </div>
-            {selected && <div className="feedback">{item.explain}</div>}
-          </div>
-        );
-      })}
+      <Quiz storageKey="ai-lab-quiz-skill" items={skillPlacementQuiz} color="#7c3aed" />
 
       <h3>Skill 形态与触发方式</h3>
       <div className="card-grid cols-3">
@@ -908,8 +1189,14 @@ function SkillLab() {
   );
 }
 
+/* ---------------- 判断手感 ---------------- */
+
 function TacitBridge() {
-  const [revealed, setRevealed] = useState<number[]>([]);
+  const [revealed, setRevealed] = useLocalStorage<number[]>("ai-lab-tacit-revealed", []);
+  const [notes, setNotes] = useLocalStorage<Record<string, string>>(
+    "ai-lab-tacit-notes",
+    {},
+  );
 
   return (
     <section className="lesson" id="sec-tacit" style={{ ["--sc" as string]: "#d97706" }}>
@@ -931,6 +1218,10 @@ function TacitBridge() {
               <textarea
                 aria-label={`${card.title}：写下你的观察`}
                 placeholder="先写下你的观察与判断依据…"
+                value={notes[index] ?? ""}
+                onChange={(event) =>
+                  setNotes((current) => ({ ...current, [index]: event.target.value }))
+                }
               />
               <button
                 type="button"
@@ -953,36 +1244,21 @@ function TacitBridge() {
   );
 }
 
+/* ---------------- 主组件 ---------------- */
+
 export function LearningLab() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useLocalStorage<"light" | "dark">("ai-lab-theme", "light");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeId, setActiveId] = useState("sec-0");
-  const [done, setDone] = useState<string[]>([]);
-
-  useEffect(() => {
-    const saved = window.localStorage.getItem("ai-lab-theme");
-    if (saved === "dark" || saved === "light") {
-      setTheme(saved);
-    }
-    const savedDone = window.localStorage.getItem("ai-lab-done");
-    if (savedDone) {
-      try {
-        setDone(JSON.parse(savedDone));
-      } catch {
-        /* ignore */
-      }
-    }
-  }, []);
+  const [done, setDone] = useLocalStorage<string[]>("ai-lab-done", []);
+  const [showTop, setShowTop] = useState(false);
+  const [toast, showToast] = useToast();
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
-    window.localStorage.setItem("ai-lab-theme", theme);
   }, [theme]);
 
-  useEffect(() => {
-    window.localStorage.setItem("ai-lab-done", JSON.stringify(done));
-  }, [done]);
-
+  /* 章节 scroll-spy + 完成记录 */
   useEffect(() => {
     const sections = navItems
       .map((item) => document.getElementById(item.id))
@@ -1007,12 +1283,77 @@ export function LearningLab() {
 
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
+  }, [setDone]);
+
+  /* 滚动进入动画 */
+  useEffect(() => {
+    const targets = Array.from(
+      document.querySelectorAll<HTMLElement>(
+        ".lesson > *, .lab-card, .mini-card, .tacit-card, .source-card, .course-card, .card, .level-card",
+      ),
+    );
+    targets.forEach((el) => el.classList.add("reveal"));
+    targets.forEach((el) => {
+      const siblings = el.parentElement
+        ? Array.from(el.parentElement.children).filter((node) =>
+            node.classList?.contains("reveal"),
+          )
+        : [];
+      const index = Math.max(0, siblings.indexOf(el));
+      el.style.setProperty("--d", `${Math.min(index, 6) * 60}ms`);
+    });
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.06, rootMargin: "0px 0px -4% 0px" },
+    );
+    targets.forEach((el) => io.observe(el));
+    return () => io.disconnect();
   }, []);
 
+  /* 回到顶部按钮 */
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 600);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  /* 键盘 ← → 切换章节 */
+  useEffect(() => {
+    function onKey(event: KeyboardEvent) {
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      const target = event.target as HTMLElement | null;
+      if (
+        target &&
+        (target.tagName === "INPUT" ||
+          target.tagName === "TEXTAREA" ||
+          target.isContentEditable)
+      ) {
+        return;
+      }
+      if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+      const index = navItems.findIndex((item) => item.id === activeId);
+      const next = event.key === "ArrowRight" ? index + 1 : index - 1;
+      if (next < 0 || next >= navItems.length) return;
+      event.preventDefault();
+      document
+        .getElementById(navItems[next].id)
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [activeId]);
+
   const progress = Math.round((done.length / navItems.length) * 100);
-  const activeLabel =
-    navItems.find((item) => item.id === activeId)?.label ?? "总览与学习地图";
-  const activeNum = navItems.find((item) => item.id === activeId)?.num ?? "0";
+  const activeItem = navItems.find((item) => item.id === activeId) ?? navItems[0];
 
   return (
     <div className="lab-shell">
@@ -1031,12 +1372,14 @@ export function LearningLab() {
           </div>
         </div>
         <div className="side-prog">
-          <div className="lbl">
-            <span>学习进度</span>
-            <b>{progress}%</b>
-          </div>
-          <div className="bar">
-            <i style={{ width: `${progress}%` }} />
+          <ProgressRing value={progress} />
+          <div className="sp-info">
+            <div className="lbl">
+              <span>学习进度</span>
+            </div>
+            <div className="sp-detail">
+              已读 {done.length}/{navItems.length} 章
+            </div>
           </div>
         </div>
         <div className="side-nav">
@@ -1048,7 +1391,11 @@ export function LearningLab() {
               }`}
               href={`#${item.id}`}
               style={{ ["--nc" as string]: item.color }}
-              onClick={() => setSidebarOpen(false)}
+              aria-current={activeId === item.id ? "true" : undefined}
+              onClick={() => {
+                setActiveId(item.id);
+                setSidebarOpen(false);
+              }}
             >
               <span className="num">{item.num}</span>
               <span className="t">{item.label}</span>
@@ -1057,12 +1404,15 @@ export function LearningLab() {
           ))}
         </div>
         <div className="side-foot">
-          <span className="mini">进度保存在本地</span>
+          <span className="mini">进度保存在本地 · ← → 切换章节</span>
           <button
             className="icon-btn"
             type="button"
             title="重置进度"
-            onClick={() => setDone([])}
+            onClick={() => {
+              setDone([]);
+              showToast("学习进度已重置");
+            }}
           >
             ↺
           </button>
@@ -1080,21 +1430,25 @@ export function LearningLab() {
           className="icon-btn"
           type="button"
           title="目录"
+          aria-label="打开目录"
           onClick={() => setSidebarOpen((open) => !open)}
         >
           ☰
         </button>
         <div className="crumb">
-          {activeNum} · {activeLabel}
+          <span className="crumb-dot" style={{ background: activeItem.color }} />
+          {activeItem.num} · {activeItem.label}
         </div>
         <span className="pct">进度 {progress}%</span>
         <button
-          className="icon-btn"
+          className="icon-btn theme-btn"
           type="button"
           title="切换深浅色"
           onClick={() => setTheme((current) => (current === "light" ? "dark" : "light"))}
         >
-          {theme === "light" ? "🌙" : "☀️"}
+          <span className="theme-ico" key={theme}>
+            {theme === "light" ? "🌙" : "☀️"}
+          </span>
         </button>
       </header>
 
@@ -1190,20 +1544,7 @@ export function LearningLab() {
               从“模型能调用工具”一路走到“多个优化循环如何不互相欺骗”，并把 MCP、A2A、Agent
               Card、Skill 放进同一张控制半径图。
             </p>
-            <div className="card-grid cols-3">
-              {knowledgeNodes.map((node) => (
-                <article
-                  className="mini-card"
-                  key={node.id}
-                  style={{ ["--sc" as string]: node.color }}
-                >
-                  <div className="eyebrow">{node.eyebrow}</div>
-                  <h4>{node.title}</h4>
-                  <p>{node.note}</p>
-                  <small>{node.links}</small>
-                </article>
-              ))}
-            </div>
+            <KnowledgeNetwork />
             <div className="comparison-table" role="table" aria-label="工程与协议层级对比">
               <div className="comparison-row comparison-head" role="row">
                 <span role="columnheader">层级</span>
@@ -1220,8 +1561,8 @@ export function LearningLab() {
                 ["A2A / Card", "独立 Agent 如何发现与协作？", "Agent Card、Task、委托与推送", "用 A2A 替换掉一切 MCP 调用"],
               ].map((row) => (
                 <div className="comparison-row" role="row" key={row[0]}>
-                  {row.map((cell) => (
-                    <span role="cell" key={cell}>
+                  {row.map((cell, ci) => (
+                    <span role="cell" key={cell} className={ci === 0 ? "row-key" : undefined}>
                       {cell}
                     </span>
                   ))}
@@ -1344,6 +1685,21 @@ export function LearningLab() {
           </footer>
         </div>
       </main>
+
+      <button
+        type="button"
+        className={`to-top ${showTop ? "show" : ""}`}
+        aria-label="回到顶部"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        ↑
+      </button>
+
+      {toast && (
+        <div className="toast" role="status">
+          {toast}
+        </div>
+      )}
     </div>
   );
 }

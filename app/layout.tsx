@@ -37,8 +37,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN">
-      <body>{children}</body>
+    <html lang="zh-CN" suppressHydrationWarning>
+      <body>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem("ai-lab-theme");if(t){t=t.replace(/^"|"$/g,"");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t;}}catch(e){}`,
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
