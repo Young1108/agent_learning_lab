@@ -21,6 +21,97 @@ const navItems = [
   { id: "sec-sources", num: "6", label: "一手来源", color: "#e11d48" },
 ];
 
+/* AI 导师章节上下文：让导师知道学习者当前学到哪、该问什么 */
+const mentorCtx: Record<
+  string,
+  { section: string; points: string[]; questions: string[] }
+> = {
+  "sec-0": {
+    section: "总览与学习地图",
+    points: [
+      "AI Learning Lab = 一手来源 × 概念对比网络 × 可运行 Demo × Skill 手册",
+      "主线是「控制半径」：Harness(单次) → Loop(重复) → Graph(多循环) → Skill(分层能力)",
+    ],
+    questions: [
+      "「控制半径」这个词，你是怎么理解的？可以先说说看。",
+      "首页的三个 Demo（Harness / Loop / Graph）分别解决哪一类问题？",
+      "如果只保留一个实验去理解 Agent 工程，你会选哪个？为什么？",
+    ],
+  },
+  "sec-network": {
+    section: "知识网络",
+    points: [
+      "Tool Calling 是模型改变外部状态的基础能力",
+      "MCP 连接工具与数据源（标准化的手）；A2A 是独立 Agent 间协作（社交协议）",
+      "Agent Card 是能力名片；Skill 是宿主内分层手册",
+      "ReAct = 推理→行动→观察的认知循环",
+    ],
+    questions: [
+      "MCP 和 A2A 一个讲「手」一个讲「社交」，你能各举一个真实场景吗？",
+      "为什么说 Agent Card 不是本地的 SKILL.md？",
+      "Tool Calling、MCP、Skill 三者之间是什么关系？试着用自己的话排个序。",
+    ],
+  },
+  "sec-labs": {
+    section: "技术复现实验",
+    points: [
+      "Harness：一次运行能不能完成——工具、可见性、约束、完成证据",
+      "Loop：重复运行能不能收敛——状态、验证器、预算、停止条件",
+      "Graph：多个循环会不会共同漂移——所有权、否决边、外部锚点",
+    ],
+    questions: [
+      "把 Harness 的「环境可观察」关掉，Agent 会卡在哪一步？为什么？",
+      "Loop 里「预算」和「目标分数」谁先触底，结果有什么不同？",
+      "Graph 实验中为什么会出现「局部指标全绿、外部目标下跌」？",
+    ],
+  },
+  "sec-skill": {
+    section: "Skill 体系",
+    points: [
+      "SKILL.md 是操作手册；references 是资料库；scripts 是工具箱；assets 是原材料",
+      "三级加载省上下文：name+description → SKILL.md → 按需读资料/跑脚本",
+      "Skill 的价值是流程可复现，不是输出完全一致",
+    ],
+    questions: [
+      "一个「只有 SKILL.md」的 Skill 和「超长提示词」的本质区别是什么？",
+      "为什么支付政策要放 references 而不是塞进 SKILL.md？",
+      "scripts 和 assets 都涉及「文件」，你怎么区分它们？",
+    ],
+  },
+  "sec-tacit": {
+    section: "判断手感",
+    points: [
+      "先看失败落在哪一层：跨任务重复→Harness；跨轮出现→Loop；局部全绿但真实目标下跌→Graph",
+      "把隐性判断桥接成可观察的线索，再形式化",
+    ],
+    questions: [
+      "「Agent 总要人复制日志才能继续」，这个现象提示先补哪一层？",
+      "三个诊断卡片里，哪个场景你见过或最可能遇到？",
+    ],
+  },
+  "sec-courses": {
+    section: "深入课程",
+    points: [
+      "基础馆把控制半径拆成可通关章节：Tool → ReAct → Loop → MCP → Multi-Agent → Skill → A2A",
+      "Git 实验室用图形化提交网络理解 merge / rebase / 冲突",
+    ],
+    questions: [
+      "你更想先通关基础馆，还是先回来玩首页的 Demo？为什么？",
+    ],
+  },
+  "sec-sources": {
+    section: "一手来源",
+    points: [
+      "来源有成熟度分级：established / emerging / proposed",
+      "Harness(OpenAI) 与 Loop(IBM) 标记 emerging；Graph(Eigent) 标记 proposed",
+      "来源支持定义 ≠ 行业已形成统一标准",
+    ],
+    questions: [
+      "proposed 和 emerging 有什么区别？看到 proposed 的术语你该抱什么态度？",
+    ],
+  },
+};
+
 const sources = [
   {
     label: "Harness Engineering",
@@ -574,6 +665,310 @@ function Quiz({
         );
       })}
     </div>
+  );
+}
+
+/* ---------------- AI 导师（DeepSeek · 苏格拉底式反问） ---------------- */
+
+type MentorMsg = { role: "user" | "assistant"; content: string };
+
+const DS_API = "https://api.deepseek.com/chat/completions";
+
+function welcomeFor(activeId: string): string {
+  const ctx = mentorCtx[activeId] ?? mentorCtx["sec-0"];
+  return `你好，我是这里的 AI 导师 👋 你现在正在「${ctx.section}」。
+我先不急着讲——先从你出发：${ctx.questions[0]}
+（也可以直接点下面的问题，或随意提问。想让我直接讲解时，说一声「直接告诉我答案」即可。）`;
+}
+
+function MentorPanel({ activeId }: { activeId: string }) {
+  const [open, setOpen] = useState(false);
+  const [tab, setTab] = useState<"chat" | "settings">("chat");
+  const [key, setKey] = useLocalStorage("ai-lab-ds-key", "");
+  const [model, setModel] = useLocalStorage("ai-lab-ds-model", "deepseek-chat");
+  const [messages, setMessages] = useState<MentorMsg[]>([]);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [testState, setTestState] = useState<"idle" | "ok" | "fail">("idle");
+  const listRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const ctx = mentorCtx[activeId] ?? mentorCtx["sec-0"];
+  // 欢迎语不进 state（避免 effect 内 setState），由展示层兜底
+  const display: MentorMsg[] =
+    messages.length > 0
+      ? messages
+      : [{ role: "assistant", content: welcomeFor(activeId) }];
+
+  useEffect(() => {
+    const el = listRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
+  }, [messages, loading, open]);
+
+  function buildSystem(): string {
+    return `你是「AI Learning Lab」内置的苏格拉底式导师，教学理念参考 DeepTutor：不灌输，而是通过反问引导学习者自己得出结论。
+
+【学习者当前所在章节】${ctx.section}
+【本章核心知识点】${ctx.points.join("；")}
+
+【对话规则】
+1. 默认反问引导：学习者提问后，先用 1-2 个启发式问题反问，激活他的已有知识，让他先说出自己的想法，不要急着给答案。
+2. 学习者给出想法后：先肯定其中正确的部分，再针对错误或模糊处给出精准反馈，并追问下一步。
+3. 以下情况可以直接讲解：(a) 学习者明确说「直接告诉我答案 / 直接回答 / 解释一下」；(b) 同一概念反问两次后仍卡住；(c) 纯事实性问题（如「MCP 的全称是什么」）。
+4. 用中文回答；常规回答控制在 150 字以内，讲解场景可适当展开；优先使用本园地已有类比：MCP=标准化的手、A2A=社交协议、Agent Card=名片、Skill=分层手册、控制半径=单次/重复/多循环治理。
+5. 对话要像一对一辅导而不是问答机器：解释后用提问收尾，或抛一个现实场景让学习者判断。`;
+  }
+
+  async function callDeepSeek(history: MentorMsg[]): Promise<string> {
+    const system: { role: "system"; content: string } = {
+      role: "system",
+      content: buildSystem(),
+    };
+    const res = await fetch(DS_API, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${key.trim()}`,
+      },
+      body: JSON.stringify({
+        model,
+        messages: [
+          system,
+          ...history.map((m) => ({ role: m.role, content: m.content })),
+        ],
+        temperature: 0.7,
+        max_tokens: 900,
+      }),
+    });
+    if (!res.ok) {
+      const data = await res.json().catch(() => null);
+      const detail = data?.error?.message ?? `HTTP ${res.status}`;
+      throw new Error(detail);
+    }
+    const data = await res.json();
+    const text: string | undefined = data?.choices?.[0]?.message?.content;
+    if (!text) throw new Error("返回内容为空，请重试");
+    return text;
+  }
+
+  async function send(text: string) {
+    const question = text.trim();
+    if (!question || loading) return;
+    if (!key.trim()) {
+      setTab("settings");
+      setError("请先在「设置」里填写 DeepSeek API Key（仅保存在你本地浏览器）");
+      return;
+    }
+    setError(null);
+    const next = [...messages, { role: "user" as const, content: question }];
+    setMessages(next);
+    setInput("");
+    setLoading(true);
+    try {
+      const reply = await callDeepSeek(next);
+      setMessages((cur) => [...cur, { role: "assistant", content: reply }]);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "请求失败";
+      setError(`出错了：${msg}。请检查 Key 是否有效、网络是否可达（页面直连 api.deepseek.com）。`);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function testConnection() {
+    if (!key.trim()) {
+      setTestState("fail");
+      return;
+    }
+    setTestState("idle");
+    try {
+      await callDeepSeek([{ role: "user", content: "只回复：ok" }]);
+      setTestState("ok");
+    } catch {
+      setTestState("fail");
+    }
+  }
+
+  function onKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      void send(input);
+    }
+  }
+
+  return (
+    <>
+      <button
+        type="button"
+        className={`mentor-fab ${open ? "active" : ""}`}
+        aria-label="打开 AI 导师"
+        title="AI 导师（DeepSeek）"
+        onClick={() => {
+          setOpen((o) => !o);
+          setError(null);
+        }}
+      >
+        🧑‍🏫
+        <span className="mentor-fab-dot" aria-hidden="true" />
+      </button>
+
+      {open && (
+        <section className="mentor-panel" aria-label="AI 导师对话">
+          <header className="mentor-head">
+            <div className="mentor-title">
+              <span className="mentor-avatar" aria-hidden="true">
+                🧑‍🏫
+              </span>
+              <div>
+                <strong>AI 导师</strong>
+                <small>
+                  DeepSeek · {ctx.section}
+                </small>
+              </div>
+            </div>
+            <div className="mentor-head-actions">
+              <button
+                type="button"
+                className={`mentor-tab-btn ${tab === "settings" ? "active" : ""}`}
+                onClick={() => setTab("settings")}
+                title="设置"
+                aria-label="设置"
+              >
+                ⚙️
+              </button>
+              <button
+                type="button"
+                className="mentor-tab-btn"
+                onClick={() => setOpen(false)}
+                title="关闭"
+                aria-label="关闭"
+              >
+                ✕
+              </button>
+            </div>
+          </header>
+
+          {tab === "settings" ? (
+            <div className="mentor-settings">
+              <div className="ms-field">
+                <label htmlFor="ds-key">DeepSeek API Key</label>
+                <input
+                  id="ds-key"
+                  type="password"
+                  value={key}
+                  placeholder="sk-..."
+                  autoComplete="off"
+                  onChange={(e) => {
+                    setKey(e.target.value);
+                    setTestState("idle");
+                  }}
+                />
+                <p className="ms-note">
+                  Key 仅保存在你当前浏览器的 localStorage 中，页面通过 HTTPS
+                  直连 api.deepseek.com，不会上传到其他服务器。可在{" "}
+                  <a href="https://platform.deepseek.com" target="_blank" rel="noreferrer">
+                    platform.deepseek.com
+                  </a>{" "}
+                  创建。
+                </p>
+              </div>
+              <div className="ms-field">
+                <label htmlFor="ds-model">模型</label>
+                <select
+                  id="ds-model"
+                  value={model}
+                  onChange={(e) => setModel(e.target.value)}
+                >
+                  <option value="deepseek-chat">deepseek-chat（V3 · 快，日常指导）</option>
+                  <option value="deepseek-reasoner">
+                    deepseek-reasoner（R1 · 强推理，慢一些）
+                  </option>
+                </select>
+              </div>
+              <button
+                type="button"
+                className="btn"
+                onClick={() => void testConnection()}
+                disabled={!key.trim()}
+              >
+                {testState === "ok"
+                  ? "✅ 连接成功"
+                  : testState === "fail"
+                    ? "❌ 连接失败"
+                    : "测试连接"}
+              </button>
+              <button type="button" className="btn back" onClick={() => setTab("chat")}>
+                ← 返回对话
+              </button>
+            </div>
+          ) : (
+            <div className="mentor-chat">
+              <div className="mentor-list" ref={listRef}>
+                {error && (
+                  <div className="mentor-error" role="alert">
+                    {error}
+                  </div>
+                )}
+                {display.map((m, i) => (
+                  <div
+                    key={`${m.role}-${i}`}
+                    className={`mentor-bubble ${m.role === "user" ? "user" : "assistant"}`}
+                  >
+                    {m.content}
+                  </div>
+                ))}
+                {loading && (
+                  <div className="mentor-bubble assistant typing">
+                    <span className="m-dot" />
+                    <span className="m-dot" />
+                    <span className="m-dot" />
+                  </div>
+                )}
+              </div>
+
+              <div className="mentor-suggests">
+                {ctx.questions.map((q) => (
+                  <button
+                    type="button"
+                    key={q}
+                    className="ms-chip"
+                    onClick={() => void send(q)}
+                    disabled={loading}
+                  >
+                    {q.length > 26 ? `${q.slice(0, 26)}…` : q}
+                  </button>
+                ))}
+              </div>
+
+              <div className="mentor-input-row">
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={input}
+                  placeholder="提问，或说「直接告诉我答案」"
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={onKeyDown}
+                  disabled={loading}
+                />
+                <button
+                  type="button"
+                  className="mentor-send"
+                  onClick={() => void send(input)}
+                  disabled={loading || !input.trim()}
+                  aria-label="发送"
+                >
+                  发送
+                </button>
+              </div>
+              <p className="mentor-foot">
+                苏格拉底式引导 · 反问默认开启；想听答案时说一声即可
+              </p>
+            </div>
+          )}
+        </section>
+      )}
+    </>
   );
 }
 
@@ -1685,6 +2080,8 @@ export function LearningLab() {
       >
         ↑
       </button>
+
+      <MentorPanel activeId={activeId} />
 
       {toast && (
         <div className="toast" role="status">
