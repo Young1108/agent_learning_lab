@@ -672,7 +672,13 @@ function Quiz({
 
 type MentorMsg = { role: "user" | "assistant"; content: string };
 
-const DS_API = "https://api.deepseek.com/chat/completions";
+/* DeepSeek 原生 Responses API（OpenAI Responses 格式，无状态：每次回传完整历史） */
+const DS_API = "https://api.deepseek.com/responses";
+const DS_DEFAULT_MODEL = "deepseek-v4-flash";
+
+type DSOutputPart = { type: "output_text"; text?: string };
+type DSOutputItem = { type?: string; content?: DSOutputPart[] };
+type DSResponse = { output_text?: string; output?: DSOutputItem[] };
 
 function welcomeFor(activeId: string): string {
   const ctx = mentorCtx[activeId] ?? mentorCtx["sec-0"];
@@ -685,7 +691,7 @@ function MentorPanel({ activeId }: { activeId: string }) {
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState<"chat" | "settings">("chat");
   const [key, setKey] = useLocalStorage("ai-lab-ds-key", "");
-  const [model, setModel] = useLocalStorage("ai-lab-ds-model", "deepseek-chat");
+  const [model, setModel] = useLocalStorage("ai-lab-ds-model", DS_DEFAULT_MODEL);
   const [messages, setMessages] = useState<MentorMsg[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -721,10 +727,6 @@ function MentorPanel({ activeId }: { activeId: string }) {
   }
 
   async function callDeepSeek(history: MentorMsg[]): Promise<string> {
-    const system: { role: "system"; content: string } = {
-      role: "system",
-      content: buildSystem(),
-    };
     const res = await fetch(DS_API, {
       method: "POST",
       headers: {
@@ -732,13 +734,11 @@ function MentorPanel({ activeId }: { activeId: string }) {
         Authorization: `Bearer ${key.trim()}`,
       },
       body: JSON.stringify({
-        model,
-        messages: [
-          system,
-          ...history.map((m) => ({ role: m.role, content: m.content })),
-        ],
+        model: model.trim() || DS_DEFAULT_MODEL,
+        instructions: buildSystem(),
+        input: history.map((m) => ({ role: m.role, content: m.content })),
         temperature: 0.7,
-        max_tokens: 900,
+        max_output_tokens: 1200,
       }),
     });
     if (!res.ok) {
@@ -746,8 +746,16 @@ function MentorPanel({ activeId }: { activeId: string }) {
       const detail = data?.error?.message ?? `HTTP ${res.status}`;
       throw new Error(detail);
     }
-    const data = await res.json();
-    const text: string | undefined = data?.choices?.[0]?.message?.content;
+    const data = (await res.json()) as DSResponse;
+    // 优先 output_text，否则从 output[] 中拼接 message → output_text
+    const text =
+      data.output_text ??
+      (data.output ?? [])
+        .filter((item) => item.type === "message")
+        .flatMap((item) => item.content ?? [])
+        .filter((part) => part.type === "output_text")
+        .map((part) => part.text ?? "")
+        .join("");
     if (!text) throw new Error("返回内容为空，请重试");
     return text;
   }
@@ -874,17 +882,22 @@ function MentorPanel({ activeId }: { activeId: string }) {
                 </p>
               </div>
               <div className="ms-field">
-                <label htmlFor="ds-model">模型</label>
-                <select
+                <label htmlFor="ds-model">模型名（像 cc-switch 一样自由填写）</label>
+                <input
                   id="ds-model"
+                  type="text"
                   value={model}
+                  placeholder={DS_DEFAULT_MODEL}
+                  autoComplete="off"
+                  spellCheck={false}
                   onChange={(e) => setModel(e.target.value)}
-                >
-                  <option value="deepseek-chat">deepseek-chat（V3 · 快，日常指导）</option>
-                  <option value="deepseek-reasoner">
-                    deepseek-reasoner（R1 · 强推理，慢一些）
-                  </option>
-                </select>
+                />
+                <p className="ms-note">
+                  走 DeepSeek 原生 Responses API（POST /responses，无状态，每次回传完整对话历史）。当前支持{" "}
+                  <code>deepseek-v4-flash</code>，<code>deepseek-v4-pro</code> 预计 2026-08
+                  支持；<code>deepseek-chat</code> / <code>deepseek-reasoner</code> 已于
+                  2026-07-24 弃用。
+                </p>
               </div>
               <button
                 type="button"
