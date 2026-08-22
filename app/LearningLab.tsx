@@ -1768,6 +1768,7 @@ export function LearningLab() {
             <a href="/agent-foundations.html">基础馆深读 →</a>
             <a href="/agent-foundations.html#sec-skill">Skill 章</a>
             <a href="/git-workflow.html">Git 实验室</a>
+            <a href="/concepts">前沿概念馆</a>
           </div>
         </div>
         <div className="side-prog">
@@ -1926,6 +1927,9 @@ export function LearningLab() {
               </a>
               <a className="btn" href="/agent-foundations.html">
                 进入基础馆
+              </a>
+              <a className="btn" href="/concepts">
+                📥 前沿概念馆（每日更新）
               </a>
             </div>
           </section>
