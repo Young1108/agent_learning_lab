@@ -11,7 +11,7 @@
   --bg:#f5f6fa; --bg-soft:#eceef5; --card:#ffffff; --card-2:#f8f9fd;
   --text:#1c2333; --text-2:#4a556b; --text-3:#8a93a8;
   --line:#e3e6ef; --line-2:#d3d8e6;
-  --acc:#5b5bd6; --acc-2:#0ea5b7;
+  --acc:#1f4e5a; --acc-2:#b4532a;
   --amber:#d97706; --violet:#7c3aed; --emerald:#059669; --blue:#2563eb; --rose:#e11d48; --slate:#475569;
   --amber-bg:#fef3e2; --violet-bg:#f3eeff; --emerald-bg:#e7f7f0; --blue-bg:#e8f0fe; --rose-bg:#ffe9ee; --slate-bg:#eef2f7;
   --ok:#16a34a; --ok-bg:#e9f9ef; --err:#dc2626; --err-bg:#feecec;
@@ -24,7 +24,7 @@ html[data-theme="dark"]{
   --bg:#0c101e; --bg-soft:#11162a; --card:#161c33; --card-2:#1a2138;
   --text:#e8ecf8; --text-2:#aab4cc; --text-3:#6b7590;
   --line:#252d4a; --line-2:#303a5e;
-  --acc:#8286ff; --acc-2:#22c8dd;
+  --acc:#8aa8a0; --acc-2:#e0a070;
   --amber:#f59e0b; --violet:#a78bfa; --emerald:#34d399; --blue:#60a5fa; --rose:#fb7185; --slate:#94a3b8;
   --amber-bg:#2c2210; --violet-bg:#241b3d; --emerald-bg:#0e2b22; --blue-bg:#14233f; --rose-bg:#331722; --slate-bg:#1b2334;
   --ok:#4ade80; --ok-bg:#10301d; --err:#f87171; --err-bg:#3a1515;
@@ -49,7 +49,7 @@ button{font-family:inherit;cursor:pointer}
 /* ============ 顶部进度条 & 顶栏 ============ */
 #progressbar{position:fixed;top:0;left:0;height:3px;width:0;z-index:120;
   background:linear-gradient(90deg,var(--acc),var(--acc-2));transition:width .4s ease}
-.topbar{position:fixed;top:0;left:var(--side-w);right:0;height:54px;z-index:100;
+.topbar{position:fixed;top:0;left:var(--side-w);right:0;height:58px;z-index:100;
   display:flex;align-items:center;gap:12px;padding:0 20px;
   background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line)}
@@ -61,6 +61,10 @@ button{font-family:inherit;cursor:pointer}
   transition:all .15s}
 .icon-btn:hover{border-color:var(--acc);color:var(--acc)}
 #hamburger{display:none}
+
+.lab-switch a[aria-current="page"]{background:var(--text);color:var(--bg);border-color:var(--text)}
+.side-head .logo{letter-spacing:-0.02em}
+#progressbar{height:2px;background:var(--acc-2)}
 /* ============ 侧边栏 ============ */
 #sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--side-w);z-index:110;
   background:var(--card);border-right:1px solid var(--line);
@@ -68,8 +72,12 @@ button{font-family:inherit;cursor:pointer}
 .side-head{padding:18px 18px 12px;border-bottom:1px solid var(--line)}
 .side-head .logo{font-size:17px;font-weight:800;letter-spacing:.3px;display:flex;align-items:center;gap:8px}
 .side-head .logo .badge{font-size:10px;font-weight:700;color:#fff;
-  background:linear-gradient(120deg,var(--acc),var(--acc-2));padding:2px 7px;border-radius:6px;letter-spacing:1px}
+  background:var(--text);color:var(--bg);padding:2px 7px;border-radius:6px;letter-spacing:1px}
 .side-head .tag{font-size:12px;color:var(--text-3);margin-top:4px}
+.lab-switch{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.lab-switch a{font-size:11.5px;font-weight:700;color:var(--acc);background:color-mix(in srgb,var(--acc) 10%,transparent);border:1px solid color-mix(in srgb,var(--acc) 28%,var(--line));padding:4px 8px;border-radius:999px}
+.lab-switch a:hover{filter:brightness(1.05);text-decoration:none}
+.lab-switch a[aria-current="page"]{background:var(--text);color:var(--bg);border-color:var(--text)}
 .side-prog{padding:12px 18px;border-bottom:1px solid var(--line)}
 .side-prog .lbl{display:flex;justify-content:space-between;font-size:12px;color:var(--text-2);margin-bottom:6px}
 .side-prog .bar{height:6px;border-radius:99px;background:var(--bg-soft);overflow:hidden}
@@ -367,6 +375,54 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
 @media (prefers-reduced-motion:reduce){
   *,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
+
+.mode-tabs{display:flex;align-items:center;gap:2px;padding:3px;border-radius:999px;background:color-mix(in srgb,var(--bg-soft) 80%,var(--card));border:1px solid var(--line)}
+.mode-tabs a{font-size:14px;font-weight:700;padding:7px 16px;border-radius:999px;color:var(--text-2);text-decoration:none}
+.mode-tabs a.on,.mode-tabs a[aria-current="page"]{background:var(--text);color:var(--bg)}
+.hello{padding:8px 0 4px}
+.hello-hi{margin:0 0 10px;font-size:clamp(20px,3vw,28px);font-weight:650;color:var(--text-2);letter-spacing:-.02em}
+.hero h1,.hello h1{font-size:clamp(30px,5vw,48px);letter-spacing:-.03em}
+.side-nav{position:relative}
+.nav-glide{position:absolute;left:8px;right:8px;top:0;height:40px;border-radius:10px;background:var(--bg-soft);opacity:0;pointer-events:none;transition:transform .18s ease,height .18s ease,opacity .15s ease;z-index:0}
+.nav-glide.on{opacity:1}
+.side-nav .nav-item{position:relative;z-index:1}
+.tool-chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.tool-chip{padding:3px 9px;border-radius:999px;border:1px solid var(--line);background:var(--card-2);color:var(--text-2);font-size:11.5px;font-weight:700}
+.task-list{display:grid;gap:8px;margin:14px 0 8px}
+.task-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:inherit;text-decoration:none}
+.task-row:hover{text-decoration:none;border-color:color-mix(in srgb,var(--acc) 40%,var(--line))}
+.tr-status{display:grid;width:28px;height:28px;place-items:center;border-radius:8px;background:var(--bg-soft);color:var(--text-3);font-size:11px;font-weight:800}
+.task-row b{display:block;font-size:14.5px}
+.task-row small{display:block;color:var(--text-3);font-size:12.5px}
+.tr-meta{color:var(--text-3);font-size:12px;font-weight:700}
+
+
+.side-nav{position:relative}
+.nav-glide{position:absolute;left:8px;right:8px;top:0;height:40px;border-radius:10px;background:var(--bg-soft);opacity:0;pointer-events:none;transition:transform .18s ease,height .18s ease,opacity .15s ease;z-index:0}
+.nav-glide.on{opacity:1}
+.side-nav .nav-item{position:relative;z-index:1}
+.side-nav .nav-item:hover{background:transparent;transform:none}
+.tool-chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}
+.tool-chip{padding:3px 9px;border-radius:999px;border:1px solid var(--line);background:var(--card-2);color:var(--text-2);font-size:11.5px;font-weight:700}
+.insight-card,.rec-card{margin:16px 0 10px;padding:20px 22px;border:1px solid var(--line);border-radius:20px;background:var(--card);box-shadow:var(--shadow)}
+.insight-k{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
+.insight-card h2{margin:8px 0;font-size:22px;letter-spacing:-.03em}
+.insight-card p{margin:0;color:var(--text-2);font-size:15px}
+.conf-meter{margin:12px 0 6px;height:6px;border-radius:99px;background:var(--bg-soft);overflow:hidden}
+.conf-meter i{display:block;height:100%;background:linear-gradient(90deg,var(--acc),var(--acc-2))}
+.rec-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.cmdk{position:fixed;inset:0;z-index:240;display:none}
+.cmdk.open{display:block}
+.cmdk-scrim{position:absolute;inset:0;border:0;background:rgba(12,16,30,.4)}
+.cmdk-panel{position:relative;z-index:1;width:min(520px,calc(100vw - 32px));margin:12vh auto 0;border:1px solid var(--line);border-radius:16px;background:var(--card);box-shadow:var(--shadow-lg);overflow:hidden}
+.cmdk-panel input{width:100%;border:0;border-bottom:1px solid var(--line);padding:14px 16px;background:transparent;color:var(--text);font-size:15px}
+.cmdk-panel ul{list-style:none;margin:0;padding:8px;max-height:360px;overflow:auto}
+.cmdk-panel a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;color:var(--text);text-decoration:none}
+.cmdk-panel a:hover{background:var(--bg-soft)}
+.cmdk-panel small{margin-left:auto;color:var(--text-3);font-size:12px}
+.cmdk-empty{padding:18px;color:var(--text-3);text-align:center}
+.context-card{display:block}
+
 </style>
 </head>
 <body>
@@ -377,6 +433,12 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
   <div class="side-head">
     <div class="logo">🌿 Git 协作工作坊 <span class="badge">LAB</span></div>
     <div class="tag">分支 · merge · rebase · 冲突 深入浅出</div>
+    <div class="lab-switch">
+      <a href="/">前沿首页</a>
+      <a href="/agent-foundations.html">基础馆</a>
+      <a href="/concepts">概念馆</a>
+      <a href="/git-workflow.html" aria-current="page">Git 实验室</a>
+    </div>
   </div>
   <div class="side-prog">
     <div class="lbl"><span>学习进度</span><b id="side-pct">0%</b></div>
@@ -403,6 +465,10 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
 <header class="topbar">
   <button class="icon-btn" id="hamburger" title="目录">☰</button>
   <div class="crumb" id="crumb">0 · 为什么需要分支</div>
+  <div class="mode-tabs" aria-label="内容模式">
+    <a href="/" class="on">为你</a>
+    <a href="/concepts">概念</a>
+  </div>
   <span class="pct" id="top-pct">进度 0%</span>
   <button class="icon-btn" id="theme-btn" title="切换深浅色">🌙</button>
 </header>
@@ -424,6 +490,18 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
       <span class="mc">💾 进度自动保存</span>
     </div>
   </div>
+
+  <article class="insight-card rec-card">
+    <div class="insight-k">下一间馆 · 把握 80%</div>
+    <h2>先记住：永远从目标合入分支拉新分支</h2>
+    <p>合进谁，就从谁的最新提交开。再去看事故演示，比先堆命令更不容易走偏。</p>
+    <div class="conf-meter" aria-hidden="true"><i style="width:80%"></i></div>
+    <div class="tool-chips"><span class="tool-chip">checkout</span><span class="tool-chip">merge</span><span class="tool-chip">rebase</span></div>
+    <div class="rec-actions">
+      <a class="btn primary" href="#sec-1">接受 · 分支规范</a>
+      <a class="btn" href="/">回为你首页</a>
+    </div>
+  </article>
 
   <div class="tldr"><div class="k">一句总纲</div>
     <div class="v">分支 = 随时可以开、随时可以扔的<strong>平行宇宙</strong>；merge 与 rebase = 两种把平行宇宙的成果带回主世界的方式；所有协作规范，都是为了让多人同时开发<strong>互不踩脚</strong>。</div>
@@ -471,10 +549,10 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
 <!-- ================================================================ -->
 <section class="lesson" id="sec-1" style="--sc:#d97706">
   <div class="sec-head"><span class="sec-num">第 1 章</span><h2>🏷 分支规范：给每条时间线一个职责</h2></div>
-  <p class="sec-sub">main / dev / feature / release / hotfix · 保护分支 · 三大协作模型 · 提交信息规范</p>
+  <p class="sec-sub">原则：永远从目标合入分支拉新分支 · main / dev / feature / release / hotfix · 保护分支</p>
 
   <div class="tldr"><div class="k">一句话版本</div>
-    <div class="v">分支规范的本质是<strong>职责分离</strong>：main 永远可发布、dev 汇集下个版本、feature 隔离每个功能、hotfix 抢救线上——名字则让人一眼看懂「这条时间线是干嘛的」。</div>
+    <div class="v">先记一条铁律：<strong>永远从目标合入分支拉新分支</strong>。分支规范的本质是职责分离：main 永远可发布、dev 汇集下个版本、feature 隔离每个功能、hotfix 抢救线上。</div>
   </div>
 
   <h3>🧭 五种分支，各管一段</h3>
@@ -486,7 +564,27 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
     <div class="mini-card"><div class="ic">📦</div><div class="tt">release/*（发布分支）</div><div class="dd">从 dev 拉出的「冻结候选版」：只修 bug、不加功能，QA 验收通过后合入 main 打 tag，同时回灌 dev。</div></div>
   </div>
 
-  <h3>✍️ 命名规范：让分支名自我介绍</h3>
+    <h3>📌 原则：永远从目标合入分支拉新分支</h3>
+  <p>开分支时，问的不是「我现在站在哪」，而是「这条分支最后要合进哪」。<span class="hl">新分支必须从那个目标分支的最新提交拉出</span>——feature 合进 dev，就从最新的 <span class="term">dev</span> 拉；hotfix 合进 main，就从最新的 <span class="term">main</span> 拉。从别人的 feature、过期的本地分支、或「我手头这条」切出去，等于把别人的半成品和陈旧历史一并带进你的平行宇宙，冲突会在合入时一次性爆掉。</p>
+  <div class="codebox"><div class="cb-head"><div class="dots"><i></i><i></i><i></i></div><span class="fn">正确姿势：先更新目标分支，再从它拉出</span><button class="copy">复制</button></div><pre data-lang="bash"># 要合进 dev 的功能
+git fetch origin
+git switch dev
+git pull --ff-only origin dev
+git switch -c feature/cart
+
+# 要合进 main 的热修（不要从 dev 或某条 feature 上开）
+git fetch origin
+git switch main
+git pull --ff-only origin main
+git switch -c hotfix/pay-timeout
+
+# ❌ 人还停在 feature/old-ui 上，顺手 git switch -c feature/cart
+#    新分支会带着 old-ui 的提交，PR 合进 dev 时像一锅乱炖</pre></div>
+  <div class="callout tip"><div class="ct">💚 要点</div>
+    「我本地已经在一条分支上了，直接再切一条新的」是最常见的踩坑。目标合入分支变了，起点必须跟着变；起点错了，后面 rebase / 冲突解决都是在给错误的历史擦屁股。
+  </div>
+
+<h3>✍️ 命名规范：让分支名自我介绍</h3>
   <div class="codebox"><div class="cb-head"><div class="dots"><i></i><i></i><i></i></div><span class="fn">团队常见约定：类型/简短描述（kebab-case）</span><button class="copy">复制</button></div><pre data-lang="bash"># ✅ 好名字：一眼看懂类型和内容
 feature/cart              # 购物车功能
 feature/order-export      # 订单导出
@@ -528,6 +626,7 @@ feat(api)!: 订单接口返回结构改为分页</pre></div>
 
   <div class="recap"><div class="rc-t">✅ 本章小结</div>
     <ul>
+      <li><b>永远从目标合入分支拉新分支</b>：合进谁，就从谁的最新提交开；不要从手头随便一条分支切出去。</li>
       <li>main 永远可发布；dev 是集结地；feature 短命隔离；hotfix 从 main 拉、双向合回。</li>
       <li>分支名 = <b>类型/描述</b>（feature/cart、fix/login-crash），图形工具会按前缀自动分组。</li>
       <li>保护分支把规范变成物理防御：main/dev 只进 PR，不接受直接 push。</li>
@@ -546,5 +645,99 @@ feat(api)!: 订单接口返回结构改为分页</pre></div>
 <!-- @@PART2@@ -->
 </div></main>
 <div id="toast-root"></div>
+<script>
+(function(){
+  var nav=document.querySelector('.side-nav');
+  if(!nav) return;
+  var glide=document.createElement('div');
+  glide.className='nav-glide';
+  nav.prepend(glide);
+  function go(el){
+    var hr=nav.getBoundingClientRect(), r=el.getBoundingClientRect();
+    glide.style.height=r.height+'px';
+    glide.style.transform='translateY('+(r.top-hr.top+nav.scrollTop)+'px)';
+    glide.classList.add('on');
+  }
+  nav.addEventListener('mouseover', function(e){
+    var item=e.target.closest('.nav-item');
+    if(item) go(item);
+  });
+  nav.addEventListener('mouseleave', function(){ glide.classList.remove('on'); });
+})();
+</script>
+
+<script>
+(function(){
+  var nav=document.querySelector('.side-nav');
+  if(nav && !nav.querySelector('.nav-glide')){
+    var glide=document.createElement('div');
+    glide.className='nav-glide';
+    nav.prepend(glide);
+    function go(el){
+      var hr=nav.getBoundingClientRect(), r=el.getBoundingClientRect();
+      glide.style.height=r.height+'px';
+      glide.style.transform='translateY('+(r.top-hr.top+nav.scrollTop)+'px)';
+      glide.classList.add('on');
+    }
+    nav.addEventListener('mouseover', function(e){
+      var item=e.target.closest('.nav-item');
+      if(item) go(item);
+    });
+    nav.addEventListener('mouseleave', function(){ glide.classList.remove('on'); });
+  }
+  document.querySelectorAll('.demo-head').forEach(function(h){
+    if(h.querySelector('.tool-chips')) return;
+    var tag=(h.querySelector('.tag')||{}).textContent||'DEMO';
+    var row=document.createElement('div');
+    row.className='tool-chips';
+    row.innerHTML='<span class="tool-chip">'+tag.trim()+'</span><span class="tool-chip">run</span>';
+    h.appendChild(row);
+  });
+  if(document.getElementById('cmdk')) return;
+  var btn=document.createElement('button');
+  btn.className='icon-btn';
+  btn.id='cmd-btn';
+  btn.title='搜索 ⌘K';
+  btn.setAttribute('aria-label','打开搜索');
+  btn.textContent='⌕';
+  var theme=document.getElementById('theme-btn');
+  if(theme && theme.parentNode) theme.parentNode.insertBefore(btn, theme);
+  var box=document.createElement('div');
+  box.className='cmdk';
+  box.id='cmdk';
+  box.setAttribute('role','dialog');
+  box.setAttribute('aria-label','搜索章节');
+  box.innerHTML='<button type="button" class="cmdk-scrim" id="cmdk-close" aria-label="关闭搜索"></button><div class="cmdk-panel"><input id="cmdk-q" placeholder="跳转章节、概念…" aria-label="搜索"/><ul id="cmdk-list"></ul></div>';
+  document.body.appendChild(box);
+  var catalog=[];
+  document.querySelectorAll('.nav-item').forEach(function(a){
+    catalog.push({href:a.getAttribute('href')||('#'+(a.dataset.sec||'')), label:(a.querySelector('.t')||a).textContent.trim(), kind:'目录', hint:'本章'});
+  });
+  catalog.push({href:'/', label:'前沿首页', kind:'馆翼', hint:'为你 / 概念'});
+  catalog.push({href:'/concepts', label:'概念馆', kind:'馆翼', hint:'每日账本'});
+  catalog.push({href:'/agent-foundations.html', label:'基础馆', kind:'馆翼', hint:'通关课程'});
+  catalog.push({href:'/git-workflow.html', label:'Git 实验室', kind:'馆翼', hint:'永远从目标合入分支拉新分支'});
+  function render(){
+    var q=(document.getElementById('cmdk-q').value||'').trim().toLowerCase();
+    var hits=catalog.filter(function(c){ return (c.label+' '+c.kind+' '+c.hint).toLowerCase().indexOf(q)!==-1; });
+    var ul=document.getElementById('cmdk-list');
+    if(!hits.length){ ul.innerHTML='<li class="cmdk-empty">没有匹配。试试 Loop、MCP、分支。</li>'; return; }
+    ul.innerHTML=hits.slice(0,12).map(function(h){
+      return '<li><a href="'+h.href+'"><span class="tool-chip">'+h.kind+'</span><span>'+h.label+'</span><small>'+h.hint+'</small></a></li>';
+    }).join('');
+  }
+  function open(){ box.classList.add('open'); document.getElementById('cmdk-q').value=''; render(); document.getElementById('cmdk-q').focus(); }
+  function close(){ box.classList.remove('open'); }
+  btn.addEventListener('click', open);
+  document.getElementById('cmdk-close').addEventListener('click', close);
+  document.getElementById('cmdk-q').addEventListener('input', render);
+  document.addEventListener('keydown', function(e){
+    if((e.metaKey||e.ctrlKey) && e.key.toLowerCase()==='k'){ e.preventDefault(); if(box.classList.contains('open')) close(); else open(); }
+    if(e.key==='Escape') close();
+  });
+  box.addEventListener('click', function(e){ var a=e.target.closest('a'); if(a) close(); });
+})();
+</script>
+
 </body>
 </html>

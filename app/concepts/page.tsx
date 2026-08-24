@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import Link from "next/link";
 import conceptsData from "../../data/concepts.json";
+import { LabShell } from "../LabShell";
+import { CURRICULUM_AS_OF, RADIUS, relateToRadius, type RadiusId } from "../lab-chrome";
 
 type Concept = {
   id: string;
@@ -29,6 +30,11 @@ const MATURITY_LABEL: Record<string, string> = {
   emerging: "新兴中",
   proposed: "提出中",
 };
+
+const archiveNav = [
+  { id: "sec-ledger", num: "Ⅰ", label: "每日账本", color: "#1f4e5a" },
+  { id: "sec-radius", num: "Ⅱ", label: "控制半径索引", color: "#b4532a" },
+];
 
 function useLocalStorage<T>(key: string, initial: T): [T, (v: T | ((c: T) => T)) => void] {
   const [value, setValue] = useState<T>(initial);
@@ -62,6 +68,7 @@ function ConceptArchive() {
   const [tag, setTag] = useState<string>("全部");
   const [maturity, setMaturity] = useState<string>("全部");
   const [source, setSource] = useState<string>("全部");
+  const [radius, setRadius] = useState<string>("全部");
   const [expanded, setExpanded] = useState<Set<string>>(new Set());
   const [subs, setSubs] = useLocalStorage<{ tags: string[]; email: string }>("ai-lab-subs", {
     tags: [],
@@ -70,8 +77,15 @@ function ConceptArchive() {
   const [seenVersion, setSeenVersion] = useLocalStorage<number>("ai-lab-seen-version", 0);
   const [showSub, setShowSub] = useState(false);
   const [draftEmail, setDraftEmail] = useState("");
+  const [activeId, setActiveId] = useState("sec-ledger");
 
   const concepts = DATA.concepts;
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const r = params.get("radius");
+    if (r && RADIUS.some((x) => x.id === r)) setRadius(r);
+  }, []);
 
   const allTags = useMemo(() => {
     const counts = new Map<string, number>();
@@ -93,11 +107,12 @@ function ConceptArchive() {
       if (tag !== "全部" && !c.tags.includes(tag)) return false;
       if (maturity !== "全部" && c.maturity !== maturity) return false;
       if (source !== "全部" && c.source !== source) return false;
+      if (radius !== "全部" && !relateToRadius(c).includes(radius as RadiusId)) return false;
       if (q && !`${c.title} ${c.summary} ${c.tags.join(" ")}`.toLowerCase().includes(q))
         return false;
       return true;
     });
-  }, [concepts, query, tag, maturity, source]);
+  }, [concepts, query, tag, maturity, source, radius]);
 
   const subTags = subs.tags;
   const recommendedCount = useMemo(
@@ -108,12 +123,18 @@ function ConceptArchive() {
     [concepts, subTags],
   );
 
+  const radiusCounts = useMemo(() => {
+    const m = new Map<string, number>();
+    concepts.forEach((c) => {
+      relateToRadius(c).forEach((id) => m.set(id, (m.get(id) ?? 0) + 1));
+    });
+    return m;
+  }, [concepts]);
+
   function toggleTag(t: string) {
     setSubs((cur) => ({
       ...cur,
-      tags: cur.tags.includes(t)
-        ? cur.tags.filter((x) => x !== t)
-        : [...cur.tags, t],
+      tags: cur.tags.includes(t) ? cur.tags.filter((x) => x !== t) : [...cur.tags, t],
     }));
   }
 
@@ -127,99 +148,162 @@ function ConceptArchive() {
   }
 
   return (
-    <div className="archive-shell">
-      <div className="archive-top">
-        <Link className="archive-back" href="/">
-          ← 返回 AI Learning Lab 首页
-        </Link>
-        <div className="hero archive-hero">
+    <LabShell
+      wing="concepts"
+      logo="概念馆"
+      tag="每日账本 · 挂回控制半径"
+      searchExtra={RADIUS.map((r) => ({
+        href: `/concepts?radius=${r.id}`,
+        label: `${r.en} · ${r.label}`,
+        hint: "控制半径",
+        kind: "概念",
+      }))}
+      navItems={archiveNav}
+      activeId={activeId}
+      onActive={setActiveId}
+      crumb={radius === "全部" ? "Ⅰ · 每日账本" : `半径 · ${RADIUS.find((r) => r.id === radius)?.en ?? radius}`}
+      progressLabel="馆藏"
+      footer={
+        <footer className="pagefoot">
+          概念馆账本每日本地抓取入库（GitHub Actions）；上限 400 条、自动去重。
+          <br />
+          基础馆课程核对于 {CURRICULUM_AS_OF}；本馆账本更新于 {DATA.updatedAt.slice(0, 10)}。proposed 仅代表提出方主张。
+          <div>
+            <a href="/">前沿首页</a>
+            <a href="/#sec-network">知识网络</a>
+            <a href="/agent-foundations.html">基础馆</a>
+          </div>
+        </footer>
+      }
+    >
+      <section className="lesson" id="sec-ledger" style={{ ["--sc" as string]: "#1f4e5a" }}>
+        <div className="path-bridge">
+          <span className="pb-k">AI LEARNING LAB · 学习路径</span>
+          <div className="pb-steps">
+            <a href="/">01 前沿首页</a>
+            <span>→</span>
+            <a href="/#sec-network">02 知识网络</a>
+            <span>→</span>
+            <a href="/agent-foundations.html">04 基础馆</a>
+            <span>→</span>
+            <strong>05 概念馆（当前）</strong>
+          </div>
+          <p>
+            这里不是另一份产品：新入库概念按控制半径挂回 Tool / ReAct / Loop / MCP / A2A / Skill / Harness / Graph，与基础馆章节对读。
+          </p>
+        </div>
+
+        <div className="hello archive-hero">
+          <p className="hello-hi">你好，翻一翻今天的账本</p>
           <h1>
             前沿概念馆
             <br />
-            <span className="grad">每日自动抓取 · 持续沉淀</span>
+            <span className="grad">账本在生长，半径不变</span>
           </h1>
           <p className="sub">
-            定时抓取 OpenAI / Google DeepMind / Google AI Blog / Hugging Face /
-            arXiv 等一手来源，把最新 AI 工程概念沉淀成可检索、可订阅的学习素材。
+            定时抓取 OpenAI / Google DeepMind / Hugging Face / arXiv 等一手来源。条目是展陈卡片，映射到同一条控制半径。
           </p>
           <div className="meta-chips">
-            <span className="mc">📥 概念 {DATA.conceptCount}+</span>
-            <span className="mc">🔗 来源 {DATA.sourceCount} 个</span>
-            <span className="mc">🔄 每日自动更新</span>
-            <span className="mc">🕓 更新于 {DATA.updatedAt.slice(0, 10)}</span>
+            <span className="mc">馆藏 {DATA.conceptCount} 条</span>
+            <span className="mc">来源 {DATA.sourceCount} 处</span>
+            <span className="mc">账本 {DATA.updatedAt.slice(0, 10)}</span>
+            <span className="mc">课程核对 {CURRICULUM_AS_OF}</span>
           </div>
         </div>
 
         {isNewVisit && (
           <div className="archive-banner">
-            ✨ 自上次访问新增 <b>{newCount}</b> 个概念（v{DATA.version}）。{" "}
-            <button
-              type="button"
-              className="text-button"
-              onClick={() => setSeenVersion(DATA.version)}
-            >
+            自上次访问新增 <b>{newCount}</b> 个版本记号（v{DATA.version}）。{" "}
+            <button type="button" className="text-button" onClick={() => setSeenVersion(DATA.version)}>
               标记为已读
             </button>
           </div>
         )}
-      </div>
 
-      <div className="archive-sub" style={{ ["--sc" as string]: "#7c3aed" }}>
-        <div className="as-head">
-          <div>
-            <b>订阅概念方向</b>
-            <small>
-              {subTags.length > 0
-                ? `已订阅 ${subTags.length} 个方向，馆内相关概念 ${recommendedCount} 条`
-                : "选择你关心的方向，新概念到达时优先提醒"}
-            </small>
-          </div>
-          <button type="button" className="btn" onClick={() => setShowSub((s) => !s)}>
-            {showSub ? "收起" : subTags.length > 0 ? "编辑订阅" : "立即订阅"}
-          </button>
-        </div>
-        {showSub && (
-          <div className="as-body">
-            <div className="as-tags">
-              {allTags.map((t) => (
-                <button
-                  type="button"
-                  key={t}
-                  className={`as-tag ${subTags.includes(t) ? "on" : ""}`}
-                  onClick={() => toggleTag(t)}
-                >
-                  {t}
-                </button>
-              ))}
+        <div className="archive-sub">
+          <div className="as-head">
+            <div>
+              <b>订阅概念方向</b>
+              <small>
+                {subTags.length > 0
+                  ? `已订阅 ${subTags.length} 个方向，馆内相关 ${recommendedCount} 条`
+                  : "选择关心的方向；新概念以站内横幅提醒"}
+              </small>
             </div>
-            <div className="as-email">
-              <input
-                type="email"
-                value={draftEmail || subs.email}
-                placeholder="邮箱（可选，仅存本地浏览器）"
-                onChange={(e) => {
-                  setDraftEmail(e.target.value);
-                  setSubs((cur) => ({ ...cur, email: e.target.value }));
-                }}
-              />
-              <p className="ms-note">
-                订阅信息仅保存在你当前浏览器。邮箱用于后续邮件提醒（邮件网关接入后启用）；
-                当前会以站内横幅提醒新概念。{" "}
-                <button
-                  type="button"
-                  className="text-button"
-                  onClick={() => {
-                    setSubs({ tags: [], email: "" });
-                    setDraftEmail("");
+            <button type="button" className="btn" onClick={() => setShowSub((s) => !s)}>
+              {showSub ? "收起" : subTags.length > 0 ? "编辑订阅" : "立即订阅"}
+            </button>
+          </div>
+          {showSub && (
+            <div className="as-body">
+              <div className="as-tags">
+                {allTags.map((t) => (
+                  <button
+                    type="button"
+                    key={t}
+                    className={`as-tag ${subTags.includes(t) ? "on" : ""}`}
+                    onClick={() => toggleTag(t)}
+                  >
+                    {t}
+                  </button>
+                ))}
+              </div>
+              <div className="as-email">
+                <input
+                  type="email"
+                  value={draftEmail || subs.email}
+                  placeholder="邮箱（可选，仅存本地浏览器）"
+                  onChange={(e) => {
+                    setDraftEmail(e.target.value);
+                    setSubs((cur) => ({ ...cur, email: e.target.value }));
                   }}
-                >
-                  清空订阅
-                </button>
-              </p>
+                />
+                <p className="ms-note">
+                  订阅仅保存在当前浏览器。邮件网关接入后启用提醒。{" "}
+                  <button
+                    type="button"
+                    className="text-button"
+                    onClick={() => {
+                      setSubs({ tags: [], email: "" });
+                      setDraftEmail("");
+                    }}
+                  >
+                    清空订阅
+                  </button>
+                </p>
+              </div>
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      </section>
+
+      <section className="lesson" id="sec-radius" style={{ ["--sc" as string]: "#b4532a" }}>
+        <div className="sec-head">
+          <span className="sec-num">Ⅱ</span>
+          <h2>按控制半径浏览</h2>
+        </div>
+        <p className="sec-sub">与首页知识网络、基础馆章节共用同一组节点。点选即筛选账本。</p>
+        <div className="card-grid cols-3">
+          {RADIUS.map((r) => (
+            <button
+              type="button"
+              key={r.id}
+              className={`mini-card kn-card ${radius === r.id ? "lit" : ""}`}
+              style={{ ["--sc" as string]: r.color }}
+              onClick={() => setRadius((cur) => (cur === r.id ? "全部" : r.id))}
+            >
+              <div className="eyebrow">{r.en}</div>
+              <h4>{r.label}</h4>
+              <p>账本相关 {radiusCounts.get(r.id) ?? 0} 条</p>
+              <small>
+                <a href={r.foundation} onClick={(e) => e.stopPropagation()}>
+                  基础馆对应展厅 →
+                </a>
+              </small>
+            </button>
+          ))}
+        </div>
+      </section>
 
       <div className="archive-toolbar">
         <input
@@ -247,51 +331,50 @@ function ConceptArchive() {
       </div>
 
       <div className="archive-tags">
-        <button
-          type="button"
-          className={`at-chip ${tag === "全部" ? "on" : ""}`}
-          onClick={() => setTag("全部")}
-        >
-          全部
+        <button type="button" className={`at-chip ${tag === "全部" ? "on" : ""}`} onClick={() => setTag("全部")}>
+          全部标签
         </button>
         {allTags.map((t) => (
-          <button
-            type="button"
-            key={t}
-            className={`at-chip ${tag === t ? "on" : ""}`}
-            onClick={() => setTag(t)}
-          >
+          <button type="button" key={t} className={`at-chip ${tag === t ? "on" : ""}`} onClick={() => setTag(t)}>
             {t}
           </button>
         ))}
       </div>
 
       <div className="archive-count">
-        共 {filtered.length} 条概念
+        共 {filtered.length} 条
+        {radius !== "全部" ? ` · 半径 ${RADIUS.find((r) => r.id === radius)?.en}` : ""}
       </div>
 
       <div className="archive-list">
         {filtered.map((c) => {
           const open = expanded.has(c.id);
+          const related = relateToRadius(c);
           return (
-            <article className="concept-card" key={c.id}>
+            <article className="concept-card exhibit concept-exhibit" key={c.id}>
               <div className="cc-head">
-                <span className={`maturity ${c.maturity}`}>
-                  {MATURITY_LABEL[c.maturity] ?? c.maturity}
-                </span>
+                <span className={`maturity ${c.maturity}`}>{MATURITY_LABEL[c.maturity] ?? c.maturity}</span>
                 <span className="cc-source">{c.source}</span>
                 <span className="cc-date">{c.date}</span>
               </div>
               <h3>{c.title}</h3>
-              <p className={open ? "cc-summary open" : "cc-summary"}>{c.summary}</p>
+              <p className={open ? "cc-summary open" : "cc-summary"}>{c.summary || "（摘要待补）"}</p>
+              {related.length > 0 && (
+                <div className="cc-radius">
+                  {related.map((id) => {
+                    const r = RADIUS.find((x) => x.id === id);
+                    if (!r) return null;
+                    return (
+                      <button type="button" key={id} className="cc-radius-chip" onClick={() => setRadius(id)}>
+                        {r.en}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
               <div className="cc-tags">
                 {c.tags.map((t) => (
-                  <button
-                    type="button"
-                    key={t}
-                    className="cc-tag"
-                    onClick={() => setTag(t)}
-                  >
+                  <button type="button" key={t} className="cc-tag" onClick={() => setTag(t)}>
                     #{t}
                   </button>
                 ))}
@@ -300,6 +383,11 @@ function ConceptArchive() {
                 <button type="button" className="text-button" onClick={() => toggleExpand(c.id)}>
                   {open ? "收起" : "查看详情"}
                 </button>
+                {related[0] && (
+                  <a className="text-button" href={RADIUS.find((r) => r.id === related[0])?.foundation}>
+                    对读基础馆
+                  </a>
+                )}
                 <a className="text-button" href={c.url} target="_blank" rel="noreferrer">
                   打开原文 ↗
                 </a>
@@ -321,7 +409,11 @@ function ConceptArchive() {
                     </a>
                   </div>
                   <p className="cd-hint">
-                    想要深入理解这个概念？回到首页打开 <b>🧑🏫 AI 导师</b>，它会结合你所在章节用反问方式带你搞懂它。
+                    想深入理解？回到{" "}
+                    <a href="/#sec-network">
+                      <b>知识网络</b>
+                    </a>{" "}
+                    点亮对应节点，或打开首页 AI 导师用反问带你走一遍。
                   </p>
                 </div>
               )}
@@ -333,17 +425,11 @@ function ConceptArchive() {
             <span className="es-ico" aria-hidden="true">
               🔍
             </span>
-            <p>没有匹配的概念，换个关键词或筛选条件试试。</p>
+            <p>没有匹配的概念，换个关键词或半径试试。</p>
           </div>
         )}
       </div>
-
-      <footer className="archive-foot">
-        概念库每日本地抓取入库（GitHub Actions 定时任务）；来源与条目自动去重，上限 400
-        条。<br />
-        标记为 proposed 的概念仅代表提出方主张，不等于行业已形成统一标准。
-      </footer>
-    </div>
+    </LabShell>
   );
 }
 

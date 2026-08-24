@@ -11,7 +11,7 @@
   --bg:#f7f8fa; --bg-soft:#eef0f4; --card:#ffffff; --card-2:#fafbfc;
   --text:#16181d; --text-2:#4b5163; --text-3:#888fa2;
   --line:#e5e8ee; --line-2:#d5d9e2;
-  --acc:#4f46e5; --acc-2:#0891b2;
+  --acc:#1f4e5a; --acc-2:#b4532a;
   --amber:#d97706; --violet:#7c3aed; --emerald:#059669; --blue:#2563eb; --rose:#e11d48; --slate:#475569;
   --amber-bg:#fdf3e3; --violet-bg:#f4efff; --emerald-bg:#e8f7f1; --blue-bg:#e9f1fe; --rose-bg:#feebef; --slate-bg:#eef1f6;
   --ok:#16a34a; --ok-bg:#e8f9ef; --err:#dc2626; --err-bg:#fdecec;
@@ -24,7 +24,7 @@ html[data-theme="dark"]{
   --bg:#0c0e13; --bg-soft:#13161d; --card:#161a22; --card-2:#1b202a;
   --text:#edeff4; --text-2:#a9aebe; --text-3:#6f7589;
   --line:#262b38; --line-2:#343b4a;
-  --acc:#818cf8; --acc-2:#22d3ee;
+  --acc:#8aa8a0; --acc-2:#e0a070;
   --amber:#fbbf24; --violet:#a78bfa; --emerald:#34d399; --blue:#60a5fa; --rose:#fb7185; --slate:#94a3b8;
   --amber-bg:#2a2110; --violet-bg:#221a3a; --emerald-bg:#102b21; --blue-bg:#122238; --rose-bg:#2e151d; --slate-bg:#1c222e;
   --ok:#4ade80; --ok-bg:#122f1f; --err:#f87171; --err-bg:#321414;
@@ -51,7 +51,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 /* ============ 顶部进度条 & 顶栏 ============ */
 #progressbar{position:fixed;top:0;left:0;height:3px;width:0;z-index:120;
   background:linear-gradient(90deg,var(--acc),var(--acc-2));transition:width .4s ease}
-.topbar{position:fixed;top:0;left:var(--side-w);right:0;height:54px;z-index:100;
+.topbar{position:fixed;top:0;left:var(--side-w);right:0;height:58px;z-index:100;
   display:flex;align-items:center;gap:12px;padding:0 20px;
   background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(8px);
   border-bottom:1px solid var(--line)}
@@ -70,11 +70,12 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .side-head{padding:18px 18px 12px;border-bottom:1px solid var(--line)}
 .side-head .logo{font-size:17px;font-weight:800;letter-spacing:.3px;display:flex;align-items:center;gap:8px}
 .side-head .logo .badge{font-size:10px;font-weight:700;color:#fff;
-  background:linear-gradient(120deg,var(--acc),var(--acc-2));padding:2px 7px;border-radius:6px;letter-spacing:1px}
+  background:var(--text);color:var(--bg);padding:2px 7px;border-radius:6px;letter-spacing:1px}
 .side-head .tag{font-size:12px;color:var(--text-3);margin-top:4px}
 .lab-switch{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .lab-switch a{font-size:11.5px;font-weight:700;color:var(--acc);background:color-mix(in srgb,var(--acc) 10%,transparent);border:1px solid color-mix(in srgb,var(--acc) 28%,var(--line));padding:4px 8px;border-radius:999px}
 .lab-switch a:hover{filter:brightness(1.05);text-decoration:none}
+.lab-switch a[aria-current="page"]{background:var(--text);color:var(--bg);border-color:var(--text)}
 .side-prog{padding:12px 18px;border-bottom:1px solid var(--line)}
 .side-prog .lbl{display:flex;justify-content:space-between;font-size:12px;color:var(--text-2);margin-bottom:6px}
 .side-prog .bar{height:6px;border-radius:99px;background:var(--bg-soft);overflow:hidden}
@@ -525,6 +526,54 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
 @media (prefers-reduced-motion:reduce){
   *,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
+
+.mode-tabs{display:flex;align-items:center;gap:2px;padding:3px;border-radius:999px;background:color-mix(in srgb,var(--bg-soft) 80%,var(--card));border:1px solid var(--line)}
+.mode-tabs a{font-size:14px;font-weight:700;padding:7px 16px;border-radius:999px;color:var(--text-2);text-decoration:none}
+.mode-tabs a.on,.mode-tabs a[aria-current="page"]{background:var(--text);color:var(--bg)}
+.hello{padding:8px 0 4px}
+.hello-hi{margin:0 0 10px;font-size:clamp(20px,3vw,28px);font-weight:650;color:var(--text-2);letter-spacing:-.02em}
+.hero h1,.hello h1{font-size:clamp(30px,5vw,48px);letter-spacing:-.03em}
+.side-nav{position:relative}
+.nav-glide{position:absolute;left:8px;right:8px;top:0;height:40px;border-radius:10px;background:var(--bg-soft);opacity:0;pointer-events:none;transition:transform .18s ease,height .18s ease,opacity .15s ease;z-index:0}
+.nav-glide.on{opacity:1}
+.side-nav .nav-item{position:relative;z-index:1}
+.tool-chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.tool-chip{padding:3px 9px;border-radius:999px;border:1px solid var(--line);background:var(--card-2);color:var(--text-2);font-size:11.5px;font-weight:700}
+.task-list{display:grid;gap:8px;margin:14px 0 8px}
+.task-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:inherit;text-decoration:none}
+.task-row:hover{text-decoration:none;border-color:color-mix(in srgb,var(--acc) 40%,var(--line))}
+.tr-status{display:grid;width:28px;height:28px;place-items:center;border-radius:8px;background:var(--bg-soft);color:var(--text-3);font-size:11px;font-weight:800}
+.task-row b{display:block;font-size:14.5px}
+.task-row small{display:block;color:var(--text-3);font-size:12.5px}
+.tr-meta{color:var(--text-3);font-size:12px;font-weight:700}
+
+
+.side-nav{position:relative}
+.nav-glide{position:absolute;left:8px;right:8px;top:0;height:40px;border-radius:10px;background:var(--bg-soft);opacity:0;pointer-events:none;transition:transform .18s ease,height .18s ease,opacity .15s ease;z-index:0}
+.nav-glide.on{opacity:1}
+.side-nav .nav-item{position:relative;z-index:1}
+.side-nav .nav-item:hover{background:transparent;transform:none}
+.tool-chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}
+.tool-chip{padding:3px 9px;border-radius:999px;border:1px solid var(--line);background:var(--card-2);color:var(--text-2);font-size:11.5px;font-weight:700}
+.insight-card,.rec-card{margin:16px 0 10px;padding:20px 22px;border:1px solid var(--line);border-radius:20px;background:var(--card);box-shadow:var(--shadow)}
+.insight-k{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
+.insight-card h2{margin:8px 0;font-size:22px;letter-spacing:-.03em}
+.insight-card p{margin:0;color:var(--text-2);font-size:15px}
+.conf-meter{margin:12px 0 6px;height:6px;border-radius:99px;background:var(--bg-soft);overflow:hidden}
+.conf-meter i{display:block;height:100%;background:linear-gradient(90deg,var(--acc),var(--acc-2))}
+.rec-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.cmdk{position:fixed;inset:0;z-index:240;display:none}
+.cmdk.open{display:block}
+.cmdk-scrim{position:absolute;inset:0;border:0;background:rgba(12,16,30,.4)}
+.cmdk-panel{position:relative;z-index:1;width:min(520px,calc(100vw - 32px));margin:12vh auto 0;border:1px solid var(--line);border-radius:16px;background:var(--card);box-shadow:var(--shadow-lg);overflow:hidden}
+.cmdk-panel input{width:100%;border:0;border-bottom:1px solid var(--line);padding:14px 16px;background:transparent;color:var(--text);font-size:15px}
+.cmdk-panel ul{list-style:none;margin:0;padding:8px;max-height:360px;overflow:auto}
+.cmdk-panel a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;color:var(--text);text-decoration:none}
+.cmdk-panel a:hover{background:var(--bg-soft)}
+.cmdk-panel small{margin-left:auto;color:var(--text-3);font-size:12px}
+.cmdk-empty{padding:18px;color:var(--text-3);text-align:center}
+.context-card{display:block}
+
 </style>
 <script>
 /* 预渲染主题：与首页共用 ai-lab-theme，避免黑白闪屏 */
@@ -552,9 +601,10 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
     <div class="logo">🧭 Agent 基础馆 <span class="badge">COURSE</span></div>
     <div class="tag">AI Learning Lab · 深入课程</div>
     <div class="lab-switch">
-      <a href="/">← 前沿实验室首页</a>
-      <a href="/#sec-network">知识网络</a>
-      <a href="/#sec-labs">技术 Demo</a>
+      <a href="/">前沿首页</a>
+      <a href="/agent-foundations.html" aria-current="page">基础馆</a>
+      <a href="/concepts">概念馆</a>
+      <a href="/git-workflow.html">Git 实验室</a>
     </div>
   </div>
   <div class="side-prog">
@@ -585,6 +635,10 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
   <button class="icon-btn" id="hamburger" title="目录">☰</button>
   <a class="icon-btn" id="home-link" href="/" title="返回 AI Learning Lab 首页">⌂</a>
   <div class="crumb" id="crumb">0 · 为什么模型需要"手和脚"</div>
+  <div class="mode-tabs" aria-label="内容模式">
+    <a href="/" class="on">为你</a>
+    <a href="/concepts">概念</a>
+  </div>
   <span class="pct" id="top-pct">进度 0%</span>
   <button class="icon-btn" id="theme-btn" title="切换深浅色">🌙</button>
 </header>
@@ -602,9 +656,10 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
       <a href="/#sec-network">02 知识网络</a><span>→</span>
       <a href="/#sec-labs">03 技术 Demo</a><span>→</span>
       <strong>04 基础馆深读（当前）</strong><span>→</span>
-      <a href="/git-workflow.html">05 Git 实验室</a>
+      <a href="/concepts">05 概念馆账本</a><span>→</span>
+      <a href="/git-workflow.html">06 Git 实验室</a>
     </div>
-    <p>这里把首页的控制半径拆成可通关章节：Tool → ReAct → Loop → MCP → Multi-Agent → Skill → A2A/Card → 前沿雷达。</p>
+    <p>三馆同一条控制半径。此处把首页节点拆成可通关章节；新概念请到概念馆，并按 Tool / ReAct / Loop / MCP / Skill 等挂回对应展厅。</p>
   </div>
   <div class="hero">
     <h1>一页讲透现代 AI Agent 的<br><span class="grad">完整拼图</span></h1>
@@ -614,9 +669,22 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
       <span class="mc">🎮 20+ 个交互组件</span>
       <span class="mc">⏱ 60–90 分钟</span>
       <span class="mc">💾 进度自动保存</span>
-      <span class="mc">🔎 事实核对于 2026-07-28</span>
+      <span class="mc">🔎 课程核对于 2026-07-28</span>
+      <span class="mc">📥 概念馆每日账本</span>
     </div>
   </div>
+
+  <article class="insight-card rec-card">
+    <div class="insight-k">下一间馆 · 把握 72%</div>
+    <h2>通关 Tool 后，把同一条半径带回首页 Demo</h2>
+    <p>基础馆拆章节；首页 Harness / Loop / Graph 负责亲手跑。不要在这里再开一层假对话。</p>
+    <div class="conf-meter" aria-hidden="true"><i style="width:72%"></i></div>
+    <div class="tool-chips"><span class="tool-chip">Tool</span><span class="tool-chip">Loop</span><span class="tool-chip">MCP</span></div>
+    <div class="rec-actions">
+      <a class="btn primary" href="#sec-1">接受 · 第 1 章</a>
+      <a class="btn" href="/#graph-lab">回首页 Graph Demo</a>
+    </div>
+  </article>
 
   <div class="tldr"><div class="k">一句总纲</div>
     <div class="v">现代 Agent = 一个会调用工具的模型（Tool）× 一个循环（Loop）× 一套标准接口（MCP）。ReAct 是这一切的思想源头，Loop Engineering 是把它做稳做好的工程学。</div>
@@ -3032,5 +3100,99 @@ refreshProgress();
 window.__APP_OK__ = true;
 })();
 </script>
+<script>
+(function(){
+  var nav=document.querySelector('.side-nav');
+  if(!nav) return;
+  var glide=document.createElement('div');
+  glide.className='nav-glide';
+  nav.prepend(glide);
+  function go(el){
+    var hr=nav.getBoundingClientRect(), r=el.getBoundingClientRect();
+    glide.style.height=r.height+'px';
+    glide.style.transform='translateY('+(r.top-hr.top+nav.scrollTop)+'px)';
+    glide.classList.add('on');
+  }
+  nav.addEventListener('mouseover', function(e){
+    var item=e.target.closest('.nav-item');
+    if(item) go(item);
+  });
+  nav.addEventListener('mouseleave', function(){ glide.classList.remove('on'); });
+})();
+</script>
+
+<script>
+(function(){
+  var nav=document.querySelector('.side-nav');
+  if(nav && !nav.querySelector('.nav-glide')){
+    var glide=document.createElement('div');
+    glide.className='nav-glide';
+    nav.prepend(glide);
+    function go(el){
+      var hr=nav.getBoundingClientRect(), r=el.getBoundingClientRect();
+      glide.style.height=r.height+'px';
+      glide.style.transform='translateY('+(r.top-hr.top+nav.scrollTop)+'px)';
+      glide.classList.add('on');
+    }
+    nav.addEventListener('mouseover', function(e){
+      var item=e.target.closest('.nav-item');
+      if(item) go(item);
+    });
+    nav.addEventListener('mouseleave', function(){ glide.classList.remove('on'); });
+  }
+  document.querySelectorAll('.demo-head').forEach(function(h){
+    if(h.querySelector('.tool-chips')) return;
+    var tag=(h.querySelector('.tag')||{}).textContent||'DEMO';
+    var row=document.createElement('div');
+    row.className='tool-chips';
+    row.innerHTML='<span class="tool-chip">'+tag.trim()+'</span><span class="tool-chip">run</span>';
+    h.appendChild(row);
+  });
+  if(document.getElementById('cmdk')) return;
+  var btn=document.createElement('button');
+  btn.className='icon-btn';
+  btn.id='cmd-btn';
+  btn.title='搜索 ⌘K';
+  btn.setAttribute('aria-label','打开搜索');
+  btn.textContent='⌕';
+  var theme=document.getElementById('theme-btn');
+  if(theme && theme.parentNode) theme.parentNode.insertBefore(btn, theme);
+  var box=document.createElement('div');
+  box.className='cmdk';
+  box.id='cmdk';
+  box.setAttribute('role','dialog');
+  box.setAttribute('aria-label','搜索章节');
+  box.innerHTML='<button type="button" class="cmdk-scrim" id="cmdk-close" aria-label="关闭搜索"></button><div class="cmdk-panel"><input id="cmdk-q" placeholder="跳转章节、概念…" aria-label="搜索"/><ul id="cmdk-list"></ul></div>';
+  document.body.appendChild(box);
+  var catalog=[];
+  document.querySelectorAll('.nav-item').forEach(function(a){
+    catalog.push({href:a.getAttribute('href')||('#'+(a.dataset.sec||'')), label:(a.querySelector('.t')||a).textContent.trim(), kind:'目录', hint:'本章'});
+  });
+  catalog.push({href:'/', label:'前沿首页', kind:'馆翼', hint:'为你 / 概念'});
+  catalog.push({href:'/concepts', label:'概念馆', kind:'馆翼', hint:'每日账本'});
+  catalog.push({href:'/agent-foundations.html', label:'基础馆', kind:'馆翼', hint:'通关课程'});
+  catalog.push({href:'/git-workflow.html', label:'Git 实验室', kind:'馆翼', hint:'永远从目标合入分支拉新分支'});
+  function render(){
+    var q=(document.getElementById('cmdk-q').value||'').trim().toLowerCase();
+    var hits=catalog.filter(function(c){ return (c.label+' '+c.kind+' '+c.hint).toLowerCase().indexOf(q)!==-1; });
+    var ul=document.getElementById('cmdk-list');
+    if(!hits.length){ ul.innerHTML='<li class="cmdk-empty">没有匹配。试试 Loop、MCP、分支。</li>'; return; }
+    ul.innerHTML=hits.slice(0,12).map(function(h){
+      return '<li><a href="'+h.href+'"><span class="tool-chip">'+h.kind+'</span><span>'+h.label+'</span><small>'+h.hint+'</small></a></li>';
+    }).join('');
+  }
+  function open(){ box.classList.add('open'); document.getElementById('cmdk-q').value=''; render(); document.getElementById('cmdk-q').focus(); }
+  function close(){ box.classList.remove('open'); }
+  btn.addEventListener('click', open);
+  document.getElementById('cmdk-close').addEventListener('click', close);
+  document.getElementById('cmdk-q').addEventListener('input', render);
+  document.addEventListener('keydown', function(e){
+    if((e.metaKey||e.ctrlKey) && e.key.toLowerCase()==='k'){ e.preventDefault(); if(box.classList.contains('open')) close(); else open(); }
+    if(e.key==='Escape') close();
+  });
+  box.addEventListener('click', function(e){ var a=e.target.closest('a'); if(a) close(); });
+})();
+</script>
+
 </body>
 </html>
