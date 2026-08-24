@@ -133,6 +133,7 @@ export function runGraphDemo({ anchorEnabled, vetoEnabled }) {
     });
     return {
       status: "drift",
+      explanation: "三个局部优化循环全绿，但没有外部锚点：真实续费率跌至 62%。",
       localMetricsGreen: true,
       systemHealthy: false,
       retention: 62,
@@ -153,6 +154,7 @@ export function runGraphDemo({ anchorEnabled, vetoEnabled }) {
     });
     return {
       status: "detected_not_corrected",
+      explanation: "锚点发现偏差，但没有否决边，快速循环仍可继续放大局部指标；真实续费率停在 62%。",
       localMetricsGreen: true,
       systemHealthy: false,
       retention: 62,
@@ -171,6 +173,7 @@ export function runGraphDemo({ anchorEnabled, vetoEnabled }) {
   });
   return {
     status: "corrected",
+    explanation: "外部锚点与否决边生效：速度与解决质量重新平衡，真实续费率恢复到 84%。",
     localMetricsGreen: true,
     systemHealthy: true,
     retention: 84,

@@ -1287,20 +1287,36 @@ function GraphLab() {
 }
 
 function GraphResultView({ result }: { result: GraphResult }) {
-  const entries = Object.entries(result.localMetrics);
-  const shown = useStagger(entries.length + 1);
+  const shown = useStagger(result.events.length + 1);
+  const kind =
+    result.status === "corrected"
+      ? "ok"
+      : result.status === "detected_not_corrected"
+        ? "warn"
+        : "bad";
   return (
     <>
-      <StatusPill kind={result.status === "aligned" ? "ok" : "warn"} text={result.status} />
+      <StatusPill kind={kind} text={result.status} />
       <h4>{result.explanation}</h4>
       <div className="trace-list">
-        {entries.slice(0, shown).map(([key, value]) => (
-          <div className="trace-item anim" key={key}>
-            局部 {key}: {value}
+        {result.events.slice(0, shown).map((event, index) => (
+          <div
+            className={`trace-item anim ${
+              event.kind === "veto" || event.kind === "recover"
+                ? "ok"
+                : event.kind === "blindness"
+                  ? "bad"
+                  : ""
+            }`}
+            key={`${event.kind}-${index}`}
+          >
+            <b>{event.kind}</b> · {event.text}
           </div>
         ))}
-        {shown > entries.length && (
-          <div className="trace-item anim external">外部目标: {result.externalGoal}</div>
+        {shown > result.events.length && (
+          <div className="trace-item anim external">
+            外部目标（真实续费率）: {result.retention}%
+          </div>
         )}
       </div>
     </>

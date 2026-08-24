@@ -78,3 +78,15 @@ test("Graph Demo uses anchor and veto edges to correct conflicting loops", () =>
   assert.equal(result.systemHealthy, true);
   assert.ok(result.events.some((event) => event.kind === "veto"));
 });
+
+test("Graph Demo explains the drift outcome with the external metric", () => {
+  const result = runGraphDemo({ anchorEnabled: false, vetoEnabled: false });
+  assert.equal(result.status, "drift");
+  assert.match(result.explanation, /62/);
+});
+
+test("Graph Demo explains the corrected outcome with the recovered metric", () => {
+  const result = runGraphDemo({ anchorEnabled: true, vetoEnabled: true });
+  assert.equal(result.status, "corrected");
+  assert.match(result.explanation, /84/);
+});

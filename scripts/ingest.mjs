@@ -3,14 +3,14 @@
  * 前沿概念抓取脚本（GitHub Actions 定时运行）
  *
  * 抓取一手来源（RSS / arXiv API），解析出概念条目，
- * 与 data/concepts.json 按 URL 去重合并，写回仓库。
- * 有新增时退出码 0 且控制台输出 CHANGED，供 workflow 判断是否提交。
+ * 与 data/concepts.json 按规范化 URL 去重合并，写回仓库。
+ * 有新增时控制台输出 CHANGED，供 workflow 判断是否提交。
  *
  * 运行：node scripts/ingest.mjs
  */
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_PATH = join(__dirname, "..", "data", "concepts.json");
@@ -51,10 +51,44 @@ const SOURCES = [
   },
 ];
 
-/* 摘要清洗：去 HTML、截断 */
+/* 解码常见 HTML 实体（RSS/Atom 标题与摘要里的常见转义） */
+const NAMED_ENTITIES = {
+  amp: "&",
+  lt: "<",
+  gt: ">",
+  quot: '"',
+  apos: "'",
+  nbsp: " ",
+  copy: "©",
+  hellip: "…",
+  mdash: "—",
+  ndash: "–",
+  rsquo: "’",
+  lsquo: "‘",
+  rdquo: "”",
+  ldquo: "“",
+};
+
+function fromCodePointSafe(code) {
+  try {
+    return String.fromCodePoint(code);
+  } catch {
+    return "";
+  }
+}
+
+/* 解码命名与数字 HTML 实体；未知实体原样保留 */
+export function decodeEntities(str = "") {
+  return String(str)
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex) => fromCodePointSafe(parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, dec) => fromCodePointSafe(parseInt(dec, 10)))
+    .replace(/&([a-z]+);/gi, (match, name) => NAMED_ENTITIES[name.toLowerCase()] ?? match);
+}
+
+/* 摘要清洗：去 HTML、解码实体、截断 */
 function cleanSummary(raw, max = 220) {
   if (!raw) return "";
-  const text = raw
+  const text = decodeEntities(raw)
     .replace(/<[^>]+>/g, " ")
     .replace(/\s+/g, " ")
     .trim();
@@ -70,43 +104,93 @@ function hashId(str) {
   return h.toString(36);
 }
 
-/* 解析 RSS/Atom（正则粗解析，够用） */
-function parseFeed(xml) {
+/* 常见跟踪参数：同一文章带不同参数会绕过 URL 去重 */
+const TRACKING_PARAMS = /^(fbclid|gclid|yclid|igshid|mc_cid|mc_eid|ref|source|from)$/i;
+
+function isTrackingParam(key) {
+  return key.toLowerCase().startsWith("utm_") || TRACKING_PARAMS.test(key);
+}
+const ARXIV_RE = /arxiv\.org\/(?:abs|pdf)\/([\w.-]+)/i;
+
+/* URL 规范化：arXiv 统一到 abs 页；去掉跟踪参数与锚点，保证按 URL 去重可靠 */
+export function normalizeUrl(raw) {
+  const trimmed = String(raw ?? "").trim();
+  if (!trimmed) return "";
+  let url;
+  try {
+    url = new URL(trimmed);
+  } catch {
+    return trimmed;
+  }
+  const arxiv = ARXIV_RE.exec(url.href);
+  if (arxiv) return `https://arxiv.org/abs/${arxiv[1]}`;
+  for (const key of [...url.searchParams.keys()]) {
+    if (isTrackingParam(key)) url.searchParams.delete(key);
+  }
+  url.hash = "";
+  return url.href;
+}
+
+/* 条目内首选链接：Atom 优先 rel=alternate / text/html，再回退到第一个带 href 的 link */
+function firstHref(block) {
+  for (const re of [
+    /<link[^>]*rel=["']?alternate["']?[^>]*>/gi,
+    /<link[^>]*type=["']text\/html["'][^>]*>/gi,
+  ]) {
+    for (const link of block.match(re) ?? []) {
+      const href = link.match(/href=["']([^"']+)["']/i)?.[1];
+      if (href) return href;
+    }
+  }
+  return (
+    block.match(/<link[^>]*href=["']([^"']+)["']/i)?.[1] ??
+    block.match(/<link[^>]*>([\s\S]*?)<\/link>/)?.[1] ??
+    ""
+  );
+}
+
+/* 解析 RSS/Atom（正则粗解析，够用；标题/摘要做实体解码） */
+export function parseFeed(xml) {
   const items = [];
-  // RSS <item> 或 Atom <entry>
   const blocks = xml.match(/<(?:item|entry)[\s\S]*?<\/(?:item|entry)>/g) ?? [];
   for (const block of blocks) {
-    const title = block.match(/<title[^>]*>([\s\S]*?)<\/title>/)?.[1] ?? "";
-    const link =
-      block.match(/<link[^>]*href="([^"]+)"/)?.[1] ??
-      block.match(/<link[^>]*>([\s\S]*?)<\/link>/)?.[1] ??
-      "";
+    const title = decodeEntities(
+      block.match(/<title[^>]*>([\s\S]*?)<\/title>/)?.[1] ?? "",
+    )
+      .replace(/<!\[CDATA\[|\]\]>/g, "")
+      .trim();
+    const link = firstHref(block);
     const date =
       block.match(/<pubDate[^>]*>([\s\S]*?)<\/pubDate>/)?.[1] ??
       block.match(/<published[^>]*>([\s\S]*?)<\/published>/)?.[1] ??
       block.match(/<updated[^>]*>([\s\S]*?)<\/updated>/)?.[1] ??
       "";
-    const summary =
+    const summary = decodeEntities(
       block.match(/<description[^>]*>([\s\S]*?)<\/description>/)?.[1] ??
-      block.match(/<summary[^>]*>([\s\S]*?)<\/summary>/)?.[1] ??
-      "";
-    const cleanTitle = title.replace(/<!\[CDATA\[|\]\]>/g, "").trim();
-    if (!cleanTitle || !link) continue;
-    items.push({ title: cleanTitle, link, date, summary });
+        block.match(/<summary[^>]*>([\s\S]*?)<\/summary>/)?.[1] ??
+        "",
+    );
+    if (!title || !link) continue;
+    items.push({ title, link, date, summary });
   }
   return items;
 }
 
 /* 解析 arXiv Atom */
-function parseArxiv(xml) {
+export function parseArxiv(xml) {
   const items = [];
   const blocks = xml.match(/<entry>[\s\S]*?<\/entry>/g) ?? [];
   for (const block of blocks) {
-    const title =
-      block.match(/<title[^>]*>([\s\S]*?)<\/title>/)?.[1]?.replace(/\s+/g, " ").trim() ?? "";
-    const link = block.match(/<id[^>]*>([\s\S]*?)<\/id>/)?.[1] ?? "";
+    const title = decodeEntities(
+      block.match(/<title[^>]*>([\s\S]*?)<\/title>/)?.[1] ?? "",
+    )
+      .replace(/\s+/g, " ")
+      .trim();
+    const link = normalizeUrl(block.match(/<id[^>]*>([\s\S]*?)<\/id>/)?.[1] ?? "");
     const date = block.match(/<published[^>]*>([\s\S]*?)<\/published>/)?.[1] ?? "";
-    const summary = cleanSummary(block.match(/<summary[^>]*>([\s\S]*?)<\/summary>/)?.[1] ?? "");
+    const summary = cleanSummary(
+      block.match(/<summary[^>]*>([\s\S]*?)<\/summary>/)?.[1] ?? "",
+    );
     if (!title || !link) continue;
     items.push({ title, link, date, summary });
   }
@@ -166,19 +250,29 @@ async function fetchWithTimeout(url, ms = 15000) {
   }
 }
 
+/* 日期统一为 YYYY-MM-DD；解析失败返回空串（由调用方兜底为今天） */
+function normalizeDate(raw) {
+  if (!raw) return "";
+  try {
+    return new Date(raw).toISOString().slice(0, 10);
+  } catch {
+    return "";
+  }
+}
+
 async function fetchSource(source) {
   const raw = await fetchWithTimeout(source.url);
-  const parsed =
-    source.type === "arxiv" ? parseArxiv(raw) : parseFeed(raw);
+  const parsed = source.type === "arxiv" ? parseArxiv(raw) : parseFeed(raw);
   return parsed.slice(0, source.limit).map((item) => {
-    const date = item.date ? new Date(item.date).toISOString().slice(0, 10) : "";
-    const summary = source.type === "arxiv" ? item.summary : cleanSummary(item.summary);
+    const url = normalizeUrl(item.link);
+    const summary =
+      source.type === "arxiv" ? item.summary : cleanSummary(item.summary);
     return {
-      id: hashId(item.link),
+      id: hashId(url),
       title: item.title,
       source: source.name,
-      url: item.link,
-      date: date || new Date().toISOString().slice(0, 10),
+      url,
+      date: normalizeDate(item.date) || new Date().toISOString().slice(0, 10),
       summary,
       maturity: source.maturity,
       tags: inferTags(item.title, summary),
@@ -190,34 +284,55 @@ async function fetchSource(source) {
 function loadExisting() {
   try {
     const data = JSON.parse(readFileSync(DATA_PATH, "utf8"));
-    return { concepts: Array.isArray(data.concepts) ? data.concepts : [], version: data.version ?? 0 };
+    return {
+      concepts: Array.isArray(data.concepts) ? data.concepts : [],
+      version: data.version ?? 0,
+    };
   } catch {
     return { concepts: [], version: 0 };
   }
 }
 
+/* 按规范化 URL 合并：新 URL 直接入库；同 URL 条目补全 tags 与缺失字段，保留原 addedAt */
+export function mergeItems(existing, fetched) {
+  const byUrl = new Map();
+  for (const item of [...existing, ...fetched]) {
+    const url = normalizeUrl(item.url) || item.url;
+    const normalized = { ...item, url };
+    const current = byUrl.get(url);
+    if (!current) {
+      byUrl.set(url, normalized);
+      continue;
+    }
+    const tags = [...new Set([...(current.tags ?? []), ...(item.tags ?? [])])];
+    byUrl.set(url, {
+      ...current,
+      tags,
+      title: current.title || item.title || current.title,
+      summary: current.summary || item.summary || current.summary,
+    });
+  }
+  return [...byUrl.values()];
+}
+
 async function main() {
   const { concepts: existing, version } = loadExisting();
-  const byUrl = new Map(existing.map((c) => [c.url, c]));
 
   let fetched = 0;
   let failed = 0;
+  const collected = [];
   for (const source of SOURCES) {
     try {
       const items = await fetchSource(source);
       fetched += items.length;
-      for (const item of items) {
-        // 跳过已有 URL，避免重复；保留已有条目的 tags（可被新数据增强）
-        if (!byUrl.has(item.url)) byUrl.set(item.url, item);
-      }
+      collected.push(...items);
     } catch (err) {
       failed += 1;
       console.error(`[skip] ${source.name}: ${err.message}`);
     }
   }
 
-  // 已有条目：若有抓取到同 URL 的新信息，合并 tags
-  const merged = [...byUrl.values()].map((c) => c);
+  const merged = mergeItems(existing, collected);
   // 按 date 倒序（最新在前），再按 addedAt 倒序
   merged.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
 
@@ -235,12 +350,17 @@ async function main() {
   mkdirSync(dirname(DATA_PATH), { recursive: true });
   writeFileSync(DATA_PATH, JSON.stringify(data, null, 2) + "\n");
 
-  console.log(`sources ok: ${SOURCES.length - failed}/${SOURCES.length}, items: ${fetched}, total: ${capped.length}, new: ${isNew ? "yes" : "no"}`);
+  console.log(
+    `sources ok: ${SOURCES.length - failed}/${SOURCES.length}, items: ${fetched}, total: ${capped.length}, new: ${isNew ? "yes" : "no"}`,
+  );
   if (isNew) console.log("CHANGED");
   process.exit(0);
 }
 
-main().catch((err) => {
-  console.error("ingest failed:", err.message);
-  process.exit(1);
-});
+// 仅作为脚本直接运行时执行；被测试 import 时只导出纯函数，不碰网络与磁盘
+if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
+  main().catch((err) => {
+    console.error("ingest failed:", err.message);
+    process.exit(1);
+  });
+}

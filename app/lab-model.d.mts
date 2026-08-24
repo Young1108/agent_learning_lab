@@ -32,6 +32,7 @@ export type LoopResult = {
 
 export type GraphResult = {
   status: "drift" | "detected_not_corrected" | "corrected";
+  explanation: string;
   localMetricsGreen: boolean;
   systemHealthy: boolean;
   retention: number;
