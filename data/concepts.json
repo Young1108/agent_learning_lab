@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-23T08:26:04.764Z",
-  "version": 2,
+  "updatedAt": "2026-08-24T08:43:52.378Z",
+  "version": 3,
   "sourceCount": 4,
-  "conceptCount": 80,
+  "conceptCount": 100,
   "concepts": [
     {
       "id": "1n78d8c",
@@ -29,6 +29,268 @@
         "评测"
       ],
       "addedAt": "2026-08-22T14:39:42.621Z"
+    },
+    {
+      "id": "17oohz9",
+      "title": "Primal Acceleration of Newton's Method",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21359v1",
+      "date": "2026-08-21",
+      "summary": "We develop a new direct accelerated Newton method for minimizing convex functions with Lipschitz continuous Hessian. The algorithm uses only primal variables and performs just one linear solve per iteration. With a simpl…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
+    },
+    {
+      "id": "17ooghv",
+      "title": "VIALS: A Benchmark for Visual Interpretation of Artifacts in the Life Sciences",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21357v1",
+      "date": "2026-08-21",
+      "summary": "In professional life sciences workflows, scientists routinely interpret visual artifacts (gel blots, microscopy images, plasmid maps, flow cytometry plots, molecular structures, ...) to inform research decisions. We intr…",
+      "maturity": "proposed",
+      "tags": [
+        "评测"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
+    },
+    {
+      "id": "17oofr6",
+      "title": "AI with Authority, from Application to Silicon",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21356v1",
+      "date": "2026-08-21",
+      "summary": "For sixty years, machine verification has been a major cost overhead, affordable only for exceptional artifacts. Here we report that generative AI inverts this relationship: at AI speed, machine verification is not only …",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
+    },
+    {
+      "id": "17onqjk",
+      "title": "TurboBias 2.0: Streaming Context-Biasing for Production-Efficient ASR Systems",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21343v1",
+      "date": "2026-08-21",
+      "summary": "Contextualization is essential for production automatic speech recognition (ASR) systems, where user-provided phrases must be recognized accurately under strict latency constraints. Although many context-biasing methods …",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
+    },
+    {
+      "id": "17on2tc",
+      "title": "Anatomy-Informed Neural Networks: Encoding Anatomic Priors in Loss and Architecture, with an SE(3) Formulation of Guidewire-Induced Aortoiliac Deformation",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21332v1",
+      "date": "2026-08-21",
+      "summary": "Deep-learning models of anatomy can be numerically plausible yet anatomically impossible, and they generalize poorly when data are scarce. We introduce Anatomy-Informed Neural Networks (AINN), in which soft anatomic prio…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
+    },
+    {
+      "id": "17omi1w",
+      "title": "Move by Move: Measuring and Steering How LLMs Conduct Psychotherapy",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21325v1",
+      "date": "2026-08-21",
+      "summary": "Users increasingly turn to large language models for emotional support, yet little is known about how these models actually conduct a psychotherapy interaction. We introduce an ontology of ten therapeutic moves: compact,…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
+    },
+    {
+      "id": "17oly15",
+      "title": "Unified Branch-and-Bound Search for the Steiner Traveling Salesman Problem on Graphs of Convex Sets",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21319v1",
+      "date": "2026-08-21",
+      "summary": "We formalize the Steiner Traveling Salesman Problem (Steiner-TSP) on Graphs of Convex Sets (GCS), which seeks a minimum-cost closed trajectory through required convex sets while allowing optional transit vertices and rev…",
+      "maturity": "proposed",
+      "tags": [
+        "Graph"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
+    },
+    {
+      "id": "17olwjr",
+      "title": "From Regulation to Implementation: A Critical Evaluation of LLM-Assisted Regulatory Compliance in Industry",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21317v1",
+      "date": "2026-08-21",
+      "summary": "The European Union (EU) has emerged as a leading regulatory body in the development of sustainability and privacy regulations. While new regulation requirements vary, many include a documentation artifact to ensure compl…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
+    },
+    {
+      "id": "17olv2d",
+      "title": "Prompt-Model Interaction Reaches the Fixed Points: A deterministic, task-free structural readout -- and the factorizations of it that failed",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21315v1",
+      "date": "2026-08-21",
+      "summary": "That a prompt's effect is not a property of the prompt is established: prompts optimised for one model degrade on another, and rankings reorder under neutral reformatting. That evidence is about task accuracy, which cann…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
+    },
+    {
+      "id": "17ol82u",
+      "title": "Re$^3$Cap: Retrieval-Guided Refinement for Image Captioning Enhancement via Reinforcement Learning",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21305v1",
+      "date": "2026-08-21",
+      "summary": "Reinforcement Learning (RL) has demonstrated significant gains in image captioning, yet it is still limited in encouraging Large Vision-Language Models (LVLMs) to explore novel reasoning strategies. This limitation leads…",
+      "maturity": "proposed",
+      "tags": [
+        "推理",
+        "多模态"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
+    },
+    {
+      "id": "17o7455",
+      "title": "AUSO: Action-Level Unified Skill Optimization from Internalization to Utilization",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21292v1",
+      "date": "2026-08-21",
+      "summary": "Skills play different roles as an agent's policy evolves: they should first provide learnable knowledge, then support capability formation, and finally be invoked only when they improve individual decisions. Existing met…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Skill"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
+    },
+    {
+      "id": "17o5ym9",
+      "title": "CLEAR: Continuous Latent Adapter Routing for Utility-Preserving LLM Safety Alignment",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21278v1",
+      "date": "2026-08-21",
+      "summary": "Improving the safety of large language models (LLMs) often comes at the expense of utility, as globally applied safety tuning may affect model responses to both harmful and benign inputs. We propose \\textbf{C}ontinuous \\…",
+      "maturity": "proposed",
+      "tags": [
+        "安全"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
+    },
+    {
+      "id": "17o59en",
+      "title": "Memory Augmentation Unlocks Efficient Chain-of-Thought Reasoning",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21265v1",
+      "date": "2026-08-21",
+      "summary": "Large language models often rely on Chain-of-Thought (CoT) reasoning to solve complex tasks, but verbose reasoning traces introduce substantial inference overhead. CoT compression shortens generation, yet aggressive comp…",
+      "maturity": "proposed",
+      "tags": [
+        "推理"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
+    },
+    {
+      "id": "17o4k71",
+      "title": "EnSI-RAG: Entity-Structure-Indexed Retrieval-Augmented Generation for Long-Document Question Answering",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21252v1",
+      "date": "2026-08-21",
+      "summary": "Question answering (QA) over long, connected documents remains challenging because relevant evidence may span multiple entities and their relationships. Existing retrieval-augmented generation (RAG) methods typically ind…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
+    },
+    {
+      "id": "17o42ed",
+      "title": "Benchmarking Patent Drafting from Inventor-Style Disclosures",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21249v1",
+      "date": "2026-08-21",
+      "summary": "While recent large language models (LLMs) have achieved promising results on individual patent drafting tasks, they fundamentally fail to investigate the core challenge of real-world patent drafting: generating a complet…",
+      "maturity": "proposed",
+      "tags": [
+        "评测"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
+    },
+    {
+      "id": "17o3xy7",
+      "title": "Adapting Knowledge Graphs for Behavior Denoising in Sequential Recommendation",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21243v1",
+      "date": "2026-08-21",
+      "summary": "Sequential recommendation predicts the next item from a user's interaction history, but not every interaction is equally informative. Real logs combine persistent preferences with temporary needs, exploration, and incide…",
+      "maturity": "proposed",
+      "tags": [
+        "Graph"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
+    },
+    {
+      "id": "17o3x7i",
+      "title": "Affective Context Amplifies Sycophancy in LLM Responses",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21242v1",
+      "date": "2026-08-21",
+      "summary": "As conversational companions, large language models (LLMs) often have access to users' emotional states. We study how this affective context modulates LLM sycophancy in subjective, evaluative interactions, where users sh…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
+    },
+    {
+      "id": "17o3d6r",
+      "title": "RARE: Decoupling Representation Steering from Expert Routing in Mixture-of-Experts Language Models",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21236v1",
+      "date": "2026-08-21",
+      "summary": "Representation engineering offers a lightweight means of controlling language-model behavior by modifying intermediate hidden states, but its direct application to Mixture-of-Experts (MoE) models introduces a structural …",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
+    },
+    {
+      "id": "17o3ayo",
+      "title": "Fine-Grain GPU Parallelization of the Generalized Partition Crossover for Large-Scale Traveling Salesman Problems",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21233v1",
+      "date": "2026-08-21",
+      "summary": "The Traveling Salesman Problem (TSP) is one of the most extensively studied NP-hard optimization problems. Genetic Algorithm (GA)-based solvers, such as the Edge Assembly Crossover (EAX), achieve state-of-the-art perform…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
+    },
+    {
+      "id": "17o38ql",
+      "title": "Utility Under Attack: Agent Memory Poisoning and the Limits of Content Screening and Provenance Ranking",
+      "source": "arXiv AI",
+      "url": "http://arxiv.org/abs/2608.21230v1",
+      "date": "2026-08-21",
+      "summary": "Persistent memory makes false information durable: once a false statement is stored, it can be retrieved into future sessions that match it. We measure the cost of this failure mode using plainly worded false assertions …",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-08-24T08:43:52.378Z"
     },
     {
       "id": "1txbos4",
