@@ -1,9 +1,24 @@
 {
-  "updatedAt": "2026-08-24T09:29:00.453Z",
-  "version": 3,
+  "updatedAt": "2026-08-24T09:59:20.155Z",
+  "version": 4,
   "sourceCount": 4,
-  "conceptCount": 100,
+  "conceptCount": 101,
   "concepts": [
+    {
+      "id": "1d0bhcc",
+      "title": "ACP（Agent Client Protocol）：客户端到本地 Agent 的标准通道",
+      "source": "本地实践",
+      "url": "https://agentclientprotocol.com",
+      "date": "2026-08-24",
+      "summary": "Zed 提出的开放协议：客户端把本地 Agent 作为子进程拉起，经 stdin/stdout 用 JSON-RPC 2.0（NDJSON 流）驱动完整会话；与 MCP 互补分层，MCP 管 Agent↔工具/数据，ACP 管客户端↔Agent。本 Lab 实践：Bloome 作 ACP 客户端，npx 启动 grok agent stdio 作本地 agent（grok-4.5），IM 消息进本地进程、回复写回会话。",
+      "maturity": "emerging",
+      "tags": [
+        "Agent",
+        "协议",
+        "MCP"
+      ],
+      "addedAt": "2026-08-24T09:59:20.155Z"
+    },
     {
       "id": "1n78d8c",
       "title": "From Atari to EVE Online: Building on 15 Years of AI Research in Games",
