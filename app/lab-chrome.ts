@@ -15,6 +15,8 @@ export type RadiusId =
   | "react"
   | "loop"
   | "mcp"
+  | "acp"
+  | "cli"
   | "a2a"
   | "card"
   | "skill"
@@ -34,6 +36,8 @@ export const RADIUS: {
   { id: "react", label: "认知循环", en: "ReAct", color: "#434343", foundation: "/agent-foundations.html#sec-2", tags: ["推理"] },
   { id: "loop", label: "重复运行", en: "Loop", color: "#218c00", foundation: "/agent-foundations.html#sec-3", tags: ["推理", "Agent"] },
   { id: "mcp", label: "工具协议", en: "MCP", color: "#262626", foundation: "/agent-foundations.html#sec-4", tags: ["MCP"] },
+  { id: "acp", label: "会话协议", en: "ACP", color: "#8a6234", foundation: "/agent-foundations.html#sec-acp", tags: ["ACP"] },
+  { id: "cli", label: "本地 Agent", en: "CLI", color: "#c46a2b", foundation: "/agent-foundations.html#sec-cli", tags: ["CLI"] },
   { id: "a2a", label: "协作协议", en: "A2A", color: "#595959", foundation: "/agent-foundations.html#sec-6", tags: ["Agent"] },
   { id: "card", label: "能力名片", en: "Agent Card", color: "#595959", foundation: "/agent-foundations.html#sec-6", tags: ["Agent"] },
   { id: "skill", label: "分层手册", en: "Skill", color: "#434343", foundation: "/agent-foundations.html#sec-skill", tags: ["Skill"] },
@@ -43,6 +47,8 @@ export const RADIUS: {
 
 const TITLE_HINTS: [RegExp, RadiusId][] = [
   [/\bmcp\b|model context protocol/i, "mcp"],
+  [/\bacp\b|agent client protocol/i, "acp"],
+  [/\bstdio agent\b|coding[- ]agent cli|\bgrok cli\b|\bcodex cli\b|\bcli\b.*stdio|本地 Agent CLI/i, "cli"],
   [/\bskill\b/i, "skill"],
   [/\bharness\b/i, "harness"],
   [/\bgraph\b|multi-agent|multi agent/i, "graph"],

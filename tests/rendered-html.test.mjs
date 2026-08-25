@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { readFileSync } from "node:fs";
 
 async function render(path = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
@@ -56,4 +57,19 @@ test("preserves the original learning assets as deeper courses", async () => {
 
   assert.match(html, /href="\/agent-foundations\.html"/);
   assert.match(html, /href="\/git-workflow\.html"/);
+});
+
+
+test("foundations HTML and React surface include ACP and CLI", async () => {
+  const foundations = readFileSync(new URL("../public/agent-foundations.html", import.meta.url), "utf8");
+  assert.match(foundations, /id="sec-acp"/);
+  assert.match(foundations, /id="sec-cli"/);
+  assert.match(foundations, /Agent Client Protocol/);
+  assert.match(foundations, /agentclientprotocol\.com/);
+  assert.match(foundations, /Grok CLI|Codex CLI|stdio agent/);
+
+  const html = await (await render()).text();
+  assert.match(html, /\bACP\b/);
+  assert.match(html, /Agent CLI/);
+  assert.match(html, /Client ↔ Agent|Client ↔ 本地 Agent/);
 });

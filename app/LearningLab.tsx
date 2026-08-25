@@ -45,12 +45,13 @@ const mentorCtx: Record<
     section: "知识网络",
     points: [
       "Tool Calling 是模型改变外部状态的基础能力",
-      "MCP 连接工具与数据源（标准化的手）；A2A 是独立 Agent 间协作（社交协议）",
+      "MCP 连接工具与数据源（标准化的手）；ACP 是客户端到本地 Agent 的会话通道；A2A 是独立 Agent 间协作（社交协议）",
+      "CLI 是可执行的本地编码 Agent（stdio 子进程），不是云端对话框",
       "Agent Card 是能力名片；Skill 是宿主内分层手册",
       "ReAct = 推理→行动→观察的认知循环",
     ],
     questions: [
-      "MCP 和 A2A 一个讲「手」一个讲「社交」，你能各举一个真实场景吗？",
+      "MCP、ACP、A2A 分别连接哪两端？你能各举一个真实场景吗？",
       "为什么说 Agent Card 不是本地的 SKILL.md？",
       "Tool Calling、MCP、Skill 三者之间是什么关系？试着用自己的话排个序。",
     ],
@@ -95,7 +96,7 @@ const mentorCtx: Record<
   "sec-courses": {
     section: "深入课程",
     points: [
-      "基础馆把控制半径拆成可通关章节：Tool → ReAct → Loop → MCP → Multi-Agent → Skill → A2A",
+      "基础馆把控制半径拆成可通关章节：Tool → ReAct → Loop → MCP → ACP/CLI → Multi-Agent → Skill → A2A",
       "Git 实验室用图形化提交网络理解 merge / rebase / 冲突",
     ],
     questions: [
@@ -149,6 +150,14 @@ const sources = [
     note: "官方互补定位：MCP 连接工具与数据源，A2A 负责独立 Agent 间发现、任务协作与上下文交换。",
   },
   {
+    label: "Agent Client Protocol",
+    publisher: "Zed / ACP",
+    date: "持续更新",
+    maturity: "emerging",
+    url: "https://agentclientprotocol.com/",
+    note: "客户端把本地 Agent 作为子进程拉起，JSON-RPC 2.0 over stdin/stdout（NDJSON）。MCP 管 Agent↔工具，ACP 管 Client↔Agent。",
+  },
+  {
     label: "Agent Skills and Card",
     publisher: "A2A Project",
     date: "持续更新",
@@ -188,8 +197,24 @@ const knowledgeNodes = [
     eyebrow: "工具协议",
     title: "MCP",
     note: "Agent ↔ 工具 / API / 数据源",
-    links: "对比 → a2a / card",
+    links: "对比 → acp / a2a / card",
     color: "#262626",
+  },
+  {
+    id: "acp",
+    eyebrow: "会话协议",
+    title: "ACP",
+    note: "Client ↔ 本地 Agent 会话",
+    links: "对比 → mcp · 依赖 → cli",
+    color: "#8a6234",
+  },
+  {
+    id: "cli",
+    eyebrow: "本地 Agent",
+    title: "Agent CLI",
+    note: "命令行里的编码 Agent，stdio 会话",
+    links: "连接 → acp / harness / loop",
+    color: "#c46a2b",
   },
   {
     id: "a2a",
@@ -244,12 +269,14 @@ const knowledgeNodes = [
 const knowledgeEdges: Record<string, string[]> = {
   tool: ["react", "mcp"],
   react: ["tool", "loop"],
-  mcp: ["tool", "a2a", "card", "skill"],
-  a2a: ["mcp", "card"],
+  mcp: ["tool", "a2a", "card", "skill", "acp"],
+  acp: ["mcp", "cli", "a2a"],
+  cli: ["acp", "harness", "loop"],
+  a2a: ["mcp", "card", "acp"],
   card: ["a2a", "skill"],
   skill: ["card", "harness", "mcp"],
-  harness: ["skill", "loop"],
-  loop: ["react", "harness", "graph"],
+  harness: ["skill", "loop", "cli"],
+  loop: ["react", "harness", "graph", "cli"],
   graph: ["loop"],
 };
 
@@ -291,6 +318,19 @@ const protocolQuiz = [
     ],
     explain:
       "官方定位是互补。未来应分层：短请求与确定性工具走 MCP，长任务与独立 Agent 委托走 A2A；只把 A2A 再包成 MCP 工具，往往只增加复杂度。",
+  },
+  {
+    id: "p4",
+    prompt:
+      "编辑器要把本地编码 Agent 拉起来做完整会话（提示、流式输出、diff、权限确认）。该用什么？",
+    answer: "acp",
+    choices: [
+      { id: "acp", label: "ACP：客户端 spawn 子进程，JSON-RPC over stdio 驱动会话" },
+      { id: "mcpwrap", label: "把整个 Agent 包成一个 MCP 工具，一次 tools/call 跑完" },
+      { id: "a2a", label: "A2A：先给这个本地进程发一张 Agent Card" },
+    ],
+    explain:
+      "完整编码会话是 Client↔Agent，走 ACP。有界短能力才包成 MCP 工具；A2A 留给独立部署的对等体。",
   },
 ];
 
@@ -725,7 +765,7 @@ function MentorPanel({ activeId }: { activeId: string }) {
 1. 默认反问引导：学习者提问后，先用 1-2 个启发式问题反问，激活他的已有知识，让他先说出自己的想法，不要急着给答案。
 2. 学习者给出想法后：先肯定其中正确的部分，再针对错误或模糊处给出精准反馈，并追问下一步。
 3. 以下情况可以直接讲解：(a) 学习者明确说「直接告诉我答案 / 直接回答 / 解释一下」；(b) 同一概念反问两次后仍卡住；(c) 纯事实性问题（如「MCP 的全称是什么」）。
-4. 用中文回答；常规回答控制在 150 字以内，讲解场景可适当展开；优先使用本园地已有类比：MCP=标准化的手、A2A=社交协议、Agent Card=名片、Skill=分层手册、控制半径=单次/重复/多循环治理。
+4. 用中文回答；常规回答控制在 150 字以内，讲解场景可适当展开；优先使用本园地已有类比：MCP=标准化的手、ACP=工位上的会话、CLI=请来的本地顾问、A2A=社交协议、Agent Card=名片、Skill=分层手册、控制半径=单次/重复/多循环治理。
 5. 对话要像一对一辅导而不是问答机器：解释后用提问收尾，或抛一个现实场景让学习者判断。`;
   }
 
@@ -1400,9 +1440,9 @@ function KnowledgeNetwork() {
 function ProtocolLab() {
   return (
     <div className="protocol-lab">
-      <h3>协议层举一反三：MCP · A2A · Agent Card · Skill</h3>
+      <h3>协议层举一反三：MCP · ACP · CLI · A2A · Agent Card · Skill</h3>
       <p className="sec-sub" style={{ marginBottom: 12 }}>
-        先看“交互对象是什么”，再选协议。A2A 与 MCP 是互补，不是替代。
+        先看“谁在跟谁说话”，再选协议。MCP / ACP / A2A 互补，不是互相取代的版本号。
       </p>
 
       <div className="tldr" style={{ ["--sc" as string]: "#434343" }}>
@@ -1414,20 +1454,21 @@ function ProtocolLab() {
         </div>
       </div>
 
-      <div className="comparison-table protocol-table" role="table" aria-label="MCP 与 A2A 对比">
+      <div className="comparison-table protocol-table cols-5" role="table" aria-label="MCP、ACP 与 A2A 对比">
         <div className="comparison-row comparison-head" role="row">
           <span role="columnheader">场景</span>
           <span role="columnheader">MCP</span>
+          <span role="columnheader">ACP</span>
           <span role="columnheader">A2A</span>
           <span role="columnheader">举一反三</span>
         </div>
         {[
-          ["外层调用知识查询", "适合", "过重", "角色像 Agent，协议仍是能力调用"],
-          ["工具 schema / 结构化结果", "核心", "不是重点", "像 function calling 的接入层"],
-          ["能力发现", "tools/list", "Agent Card", "菜单 vs 名片"],
-          ["Agent 间任务委托", "弱", "核心", "手 vs 社交"],
-          ["长任务取消/恢复/推送", "需另建", "原生支持", "短请求 vs 任务生命周期"],
-          ["跨团队/跨供应商 Agent", "有限", "更适合", "同进程工具 vs 对等协作"],
+          ["谁连谁", "Agent ↔ 工具", "Client ↔ Agent", "Agent ↔ Agent", "先看两端再选协议"],
+          ["外层调用知识查询", "适合", "过重", "过重", "角色像 Agent，协议仍是能力调用"],
+          ["完整编码会话", "不够", "核心", "过重", "编辑器 spawn 本地 CLI Agent"],
+          ["能力发现", "tools/list", "初始化 / 会话", "Agent Card", "菜单 vs 工位 vs 名片"],
+          ["Agent 间任务委托", "弱", "不是这层", "核心", "手 vs 会话 vs 社交"],
+          ["长任务取消/恢复/推送", "需另建", "会话内取消", "原生支持", "短请求 vs 会话 vs 任务生命周期"],
         ].map((row) => (
           <div className="comparison-row" role="row" key={row[0]}>
             {row.map((cell, ci) => (
@@ -1446,13 +1487,25 @@ function ProtocolLab() {
           <p>连接工具、API、数据源；强调参数、schema、结构化结果。</p>
           <small>类比：给 Agent 装上标准化的手</small>
         </article>
+        <article className="mini-card" style={{ ["--sc" as string]: "#8a6234" }}>
+          <div className="eyebrow">Client ↔ Agent</div>
+          <h4>ACP</h4>
+          <p>客户端 spawn 本地 Agent 子进程，JSON-RPC 2.0 / NDJSON / stdio 驱动完整会话。</p>
+          <small>类比：把顾问请到工位上对话</small>
+        </article>
+        <article className="mini-card" style={{ ["--sc" as string]: "#c46a2b" }}>
+          <div className="eyebrow">本地进程</div>
+          <h4>Agent CLI</h4>
+          <p>会说 ACP stdio 的编码 Agent：一条命令，不是云端对话框。</p>
+          <small>类比：请来的那位顾问本人</small>
+        </article>
         <article className="mini-card" style={{ ["--sc" as string]: "#434343" }}>
           <div className="eyebrow">Agent ↔ Agent</div>
           <h4>A2A</h4>
           <p>发现、协商、委托、共享任务与上下文；面向独立对等体。</p>
           <small>类比：给 Agent 装上社交与协作协议</small>
         </article>
-        <article className="mini-card" style={{ ["--sc" as string]: "#c026d3" }}>
+        <article className="mini-card" style={{ ["--sc" as string]: "#595959" }}>
           <div className="eyebrow">公开身份</div>
           <h4>Agent Card</h4>
           <p>名片：名字、端点、skills、能力特性、认证方式。</p>
@@ -1469,15 +1522,19 @@ function ProtocolLab() {
           </span>
           <span>推荐分层，而不是替换</span>
         </div>
-        <pre>{`外层 Agent
+        <pre>{`编辑器 / IM 宿主
+  └─ ACP：spawn 本地 CLI Agent，stdio 会话（完整编码任务）
+
+外层 Agent
   ├─ MCP：短请求、确定性工具、knowledge_chat
+  ├─ ACP：需要把本地编码 Agent 请来工位时
   └─ A2A：长任务、异步协作、独立 Agent 委托
 
 知识库 Agent
   └─ MCP：内部检索、HSCode、合规等业务工具
 
-注意：A2A contextId → opaque knowledge_thread_id
-不要继续直接暴露数据库整数 conversation_id`}</pre>
+注意：不要把整个 CLI Agent 包成一次 MCP tools/call
+A2A contextId → opaque knowledge_thread_id`}</pre>
       </div>
 
       <h3 style={{ marginTop: 28 }}>场景判断：该留 MCP 还是上 A2A？</h3>
@@ -1486,7 +1543,8 @@ function ProtocolLab() {
       <div className="callout tip">
         <div className="ct">和相邻概念怎么挂</div>
         <div>
-          Tool Calling 是模型怎么开单；MCP 是工具从哪接进来；Skill
+          Tool Calling 是模型怎么开单；MCP 是工具从哪接进来；ACP 是客户端如何与本地
+          Agent 做完整会话；CLI 是那条可执行命令；Skill
           是宿主内如何分层复用流程；Agent Card / A2A 是独立 Agent
           如何被发现并协作。换协议解决不了“鞋子和玻璃杯是否同一主题”这类上下文边界问题。
         </div>
@@ -1884,6 +1942,16 @@ export function LearningLab() {
                 <h2>基础馆</h2>
                 <p>把同一条半径拆成可通关章节。</p>
               </a>
+              <a className="start-card" href="/agent-foundations.html#sec-acp">
+                <span className="start-k">协议</span>
+                <div className="start-preview" aria-hidden="true">
+                  <i style={{ left: 14, top: 18, width: 36, height: 28 }} />
+                  <i style={{ left: 62, top: 22, width: 22, height: 8 }} />
+                  <i style={{ left: 92, top: 18, width: 40, height: 28 }} />
+                </div>
+                <h2>ACP / CLI</h2>
+                <p>客户端如何拉起本地 Agent 会话。</p>
+              </a>
               <a className="start-card" href="/concepts">
                 <span className="start-k">账本</span>
                 <div className="start-preview" aria-hidden="true">
@@ -1973,7 +2041,7 @@ export function LearningLab() {
               <h2>知识网络：不是词汇表，是控制半径</h2>
             </div>
             <p className="sec-sub">
-              从“模型能调用工具”一路走到“多个优化循环如何不互相欺骗”，并把 MCP、A2A、Agent
+              从“模型能调用工具”一路走到“多个优化循环如何不互相欺骗”，并把 MCP、ACP、CLI、A2A、Agent
               Card、Skill 放进同一张控制半径图。
             </p>
             <div className="studio-frame">
@@ -1995,6 +2063,8 @@ export function LearningLab() {
                 ["Graph", "多个循环会不会共同漂移？", "所有权、否决边、节奏、外部锚点", "局部指标全绿就是成功"],
                 ["Skill", "能力如何分层复用？", "手册、资料、脚本、素材、路由", "写成超长提示词一次塞满"],
                 ["MCP", "工具/数据如何标准化接入？", "tools/list、schema、结构化结果", "把 MCP 当成 Agent 社交协议"],
+                ["ACP", "客户端如何驱动本地 Agent 会话？", "stdio 子进程、JSON-RPC、NDJSON 流", "把 ACP 当成 MCP 或 A2A"],
+                ["CLI", "Agent 作为一条本地命令如何跑？", "Grok CLI / Codex CLI 等 stdio agent", "把编码 Agent 再包成 MCP 工具就当完事"],
                 ["A2A / Card", "独立 Agent 如何发现与协作？", "Agent Card、Task、委托与推送", "用 A2A 替换掉一切 MCP 调用"],
               ].map((row) => (
                 <div className="comparison-row" role="row" key={row[0]}>
@@ -2042,7 +2112,7 @@ export function LearningLab() {
                 <span>基础馆 · 静态课程</span>
                 <h3>Agent 基础馆</h3>
                 <p>
-                  Tool → ReAct → Loop → MCP → Multi-Agent → Skill → A2A。课程事实核对于 {CURRICULUM_AS_OF}。
+                  Tool → ReAct → Loop → MCP → ACP/CLI → Multi-Agent → Skill → A2A。课程事实核对于 {CURRICULUM_AS_OF}。
                 </p>
                 <b>进入展厅 →</b>
               </a>
@@ -2067,9 +2137,10 @@ export function LearningLab() {
                   ["#sec-2", "2 ReAct"],
                   ["#sec-3", "3 Loop"],
                   ["#sec-4", "4 MCP"],
-                  ["#sec-6", "6 架构"],
-                  ["#sec-skill", "7 Skill"],
-                  ["#sec-7", "8 雷达"],
+                  ["#sec-acp", "6 ACP/CLI"],
+                  ["#sec-6", "7 架构"],
+                  ["#sec-skill", "8 Skill"],
+                  ["#sec-7", "9 雷达"],
                 ].map(([hash, label]) => (
                   <a key={hash} href={`/agent-foundations.html${hash}`}>
                     {label}
