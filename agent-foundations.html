@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agent 学习实验室 · Tool / ReAct / Agent Loop / MCP 深入浅出</title>
+<title>Agent 学习实验室 · Tool / ReAct / Loop / MCP / ACP / CLI 深入浅出</title>
 <meta name="description" content="一页讲透现代 AI Agent 的完整拼图：Tool 工具调用、ReAct、Agent Loop 与 Loop Engineering、MCP 与 MCP Server。含 16+ 交互组件、随堂测验与真实可跑的 Demo 参考。">
 <style>
 /* ============ 主题变量 ============ */
@@ -650,10 +650,11 @@ main .wrap{padding-top:24px}
     <a class="nav-item" href="#sec-3" data-sec="sec-3" style="--nc:#218c00"><span class="num">3</span><span class="t">Agent Loop 与 Loop Engineering</span><span class="dot"></span></a>
     <a class="nav-item" href="#sec-4" data-sec="sec-4" style="--nc:#262626"><span class="num">4</span><span class="t">MCP · 模型上下文协议</span><span class="dot"></span></a>
     <a class="nav-item" href="#sec-5" data-sec="sec-5" style="--nc:#262626"><span class="num">5</span><span class="t">MCP Server · 动手写一个</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-6" data-sec="sec-6" style="--nc:#595959"><span class="num">6</span><span class="t">Agent 架构与 Multi-Agent</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-skill" data-sec="sec-skill" style="--nc:#434343"><span class="num">7</span><span class="t">Skill · 分层能力手册</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-7" data-sec="sec-7" style="--nc:#595959"><span class="num">8</span><span class="t">2026 前沿概念雷达</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-8" data-sec="sec-8" style="--nc:#262626"><span class="num">9</span><span class="t">全景串联 + 通关自测</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-acp" data-sec="sec-acp" style="--nc:#8a6234"><span class="num">6</span><span class="t">ACP · CLI · 本地 Agent</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-6" data-sec="sec-6" style="--nc:#595959"><span class="num">7</span><span class="t">Agent 架构与 Multi-Agent</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-skill" data-sec="sec-skill" style="--nc:#434343"><span class="num">8</span><span class="t">Skill · 分层能力手册</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-7" data-sec="sec-7" style="--nc:#595959"><span class="num">9</span><span class="t">2026 前沿概念雷达</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-8" data-sec="sec-8" style="--nc:#262626"><span class="num">10</span><span class="t">全景串联 + 通关自测</span><span class="dot"></span></a>
   </div>
   <div class="side-foot">
     <span class="mini">进度自动保存在本地</span>
@@ -700,7 +701,7 @@ main .wrap{padding-top:24px}
     <h1>一页讲透现代 AI Agent 的 <span class="grad">完整拼图</span></h1>
     <p class="sub">Tool（工具调用）、ReAct、Agent Loop 与 Loop Engineering、MCP 与 MCP Server——这五块拼图拼在一起，就是你每天在用的 Cursor、Claude Code、ChatGPT Agent 的全部骨架。学完可回到首页，用 Harness / Loop / Graph Demo 亲手验证。</p>
     <div class="meta-chips">
-      <span class="mc">📚 10 个章节</span>
+      <span class="mc">📚 11 个章节</span>
       <span class="mc">🎮 20+ 个交互组件</span>
       <span class="mc">⏱ 60–90 分钟</span>
       <span class="mc">💾 进度自动保存</span>
@@ -770,8 +771,9 @@ main .wrap{padding-top:24px}
     <div class="mini-card link" data-jump="sec-3"><div class="ic">🔁</div><div class="tt">Agent Loop / Loop Engineering</div><div class="dd">运行时层：把工具往返装进 while 循环，Agent 就活了；让循环可靠是门工程学。</div></div>
     <div class="mini-card link" data-jump="sec-4"><div class="ic">🔌</div><div class="tt">MCP</div><div class="dd">标准层：AI 应用与外部能力之间的"USB-C 接口"，一次接入，处处可用。</div></div>
     <div class="mini-card link" data-jump="sec-5"><div class="ic">🛠</div><div class="tt">MCP Server</div><div class="dd">实践层：30 行代码把你的系统变成任何 Agent 都能插的"标准插件"。</div></div>
+    <div class="mini-card link" data-jump="sec-acp"><div class="ic">📡</div><div class="tt">ACP / CLI</div><div class="dd">会话层：客户端 spawn 本地 Agent 子进程，JSON-RPC over stdio 驱动完整会话。</div></div>
   </div>
-  <p>主线之外还有两站加餐：<a href="#sec-6"><b>第 6 章 · Agent 主流架构与 Multi-Agent</b></a>（单个循环如何组合成系统：Workflow vs Agent、六种架构图鉴、多智能体的甜区与陷阱），以及 <a href="#sec-skill"><b>第 7 章 · Skill 分层能力手册</b></a>（把可复用流程做成渐进披露的能力包），再加 <a href="#sec-7"><b>第 8 章 · 2026 前沿概念雷达</b></a>（J-Space、世界模型、A2A、Skills、Vibe Coding……把热词放回正确位置）。</p>
+  <p>主线之外还有加餐：<a href="#sec-6"><b>第 7 章 · Agent 主流架构与 Multi-Agent</b></a>（单个循环如何组合成系统：Workflow vs Agent、六种架构图鉴、多智能体的甜区与陷阱），<a href="#sec-skill"><b>第 8 章 · Skill 分层能力手册</b></a>（把可复用流程做成渐进披露的能力包），再加 <a href="#sec-7"><b>第 9 章 · 2026 前沿概念雷达</b></a>（J-Space、世界模型、A2A、Skills、Vibe Coding……把热词放回正确位置）。</p>
 
   <div class="callout info"><div class="ct">💡 使用说明</div>
     所有带 <b>DEMO</b> 标签的组件都可以点、可以玩；每章末尾有随堂小测，答对全部题目该章即"点亮"；进度存在浏览器本地（localStorage），关掉重开不丢。建议顺序阅读，赶时间也可以从侧边栏跳章。
@@ -1322,8 +1324,8 @@ PROMPT += text + f"\nObservation: {obs}\nThought:"   # 循环往复</pre></div>
   </div>
 
 
-  <div class="callout info"><div class="ct">🧭 边界提示：MCP 不是 A2A</div>
-    MCP 解决 <b>Agent ↔ 工具 / API / 数据源</b>。若你的“内层 Agent”对外暴露的是带 schema 的知识查询能力，它在协议上仍更像工具，继续用 MCP 合适。真正的 <b>Agent ↔ Agent</b>（发现名片、任务委托、长任务生命周期）才轮到 A2A 与 Agent Card——详见 <a href="#sec-6">第 6 章对比</a> 与 <a href="#sec-7">雷达卡</a>。
+  <div class="callout info"><div class="ct">🧭 边界提示：MCP 不是 ACP，也不是 A2A</div>
+    MCP 解决 <b>Agent ↔ 工具 / API / 数据源</b>。客户端要把本地 Agent 拉起来做完整会话，走 <a href="#sec-acp">第 6 章 ACP / CLI</a>。若你的“内层 Agent”对外暴露的是带 schema 的知识查询能力，它在协议上仍更像工具，继续用 MCP 合适。真正的 <b>Agent ↔ Agent</b>（发现名片、任务委托、长任务生命周期）才轮到 A2A 与 Agent Card——详见 <a href="#sec-6">第 7 章对比</a> 与 <a href="#sec-7">雷达卡</a>。
   </div>
 
   <div class="recap"><div class="rc-t">✅ 本章小结</div>
@@ -1502,10 +1504,140 @@ await server.connect(new StdioServerTransport());</pre></div></div>
 </section>
 
 <!-- ================================================================ -->
+<!-- 第 6 章 · ACP / CLI -->
+<!-- ================================================================ -->
+<section class="lesson" id="sec-acp" style="--sc:#8a6234">
+  <div class="sec-head"><span class="sec-num">第 6 章</span><h2>📡 ACP：客户端到本地 Agent 的标准通道</h2></div>
+  <p class="sec-sub">Agent Client Protocol · 编辑器把本地 Agent 当子进程来会话，而不是再包一层工具</p>
+
+  <div class="tldr"><div class="k">一句话版本</div>
+    <div class="v">ACP 是 Zed 提出的开放协议：<strong>客户端把本地 Agent 作为子进程拉起</strong>，经 stdin/stdout 用 JSON-RPC 2.0（NDJSON 流）驱动完整会话。它与 MCP 互补分层——MCP 管 <b>Agent ↔ 工具 / 数据</b>，ACP 管 <b>Client ↔ Agent</b>。</div>
+  </div>
+
+  <div class="callout story"><div class="ct">🎭 类比：请顾问进办公室，而不是把顾问塞进菜单</div>
+    MCP 像给顾问贴一张<b>服务菜单</b>：查天气、读文件、跑 SQL，点哪一项就办哪一项。ACP 像把顾问<b>请到你隔壁工位</b>：你们对着同一份稿子来回话、改 diff、问权限。CLI 则是这位顾问本人——一条你在终端里跑起来的命令，不是云端对话框里的头像。
+  </div>
+
+  <h3>🧭 先看两端，再选协议</h3>
+  <p>协议不是互相取代的版本号。先问「谁在跟谁说话」，再决定走哪根管子：</p>
+  <table class="tbl">
+    <tr><th></th><th>MCP</th><th>ACP</th><th>CLI</th><th>A2A</th></tr>
+    <tr><td><b>连接的两端</b></td><td>Agent ↔ 工具 / API / 数据</td><td>Client ↔ Agent 会话</td><td>人（或客户端）在本地拉起 Agent 进程</td><td>独立 Agent ↔ 独立 Agent</td></tr>
+    <tr><td><b>它是什么</b></td><td>能力接入的标准接口</td><td>会话驱动的标准通道</td><td>可执行的本地编码 Agent</td><td>发现、委托、长任务协作</td></tr>
+    <tr><td><b>典型形态</b></td><td>tools/list · tools/call</td><td>JSON-RPC 2.0 over stdio（NDJSON）</td><td><code>npx … agent stdio</code> / Codex CLI / 同类</td><td>Agent Card · Task · 推送</td></tr>
+    <tr><td><b>谁做主</b></td><td>模型点菜单，宿主转发调用</td><td>客户端主持会话，Agent 在子进程里跑循环</td><td>这条命令就是 Agent</td><td>对等体互相发现与协商</td></tr>
+    <tr><td><b>一句话误区</b></td><td>当成 Agent 社交协议</td><td>把整段会话再包成一个 MCP 工具</td><td>当成云端聊天框</td><td>用它替换掉一切 MCP 调用</td></tr>
+  </table>
+  <p class="muted">四者同桌：CLI 是<b>人</b>，ACP 是<b>怎么请来对话</b>，MCP 是<b>对话中伸出去的手</b>，A2A 是<b>两个独立顾问怎么递名片</b>。本 Lab 实践里，Bloome 作 ACP 客户端，<code>npx</code> 拉起 grok agent stdio 作本地 Agent——这里只讲协议层，不拆客户端实现。</p>
+
+  <h3>🏛 stdio 心智模型：谁拉起谁</h3>
+  <p>ACP 默认假定：人主要待在编辑器（或 IM 宿主）里，临时请 Agent 来帮一把。客户端<b>按需 spawn 子进程</b>，此后所有会话都走那两根管子——标准输入、标准输出。点图中部件，看各自职责：</p>
+
+  <div class="demo" id="demo-acp">
+    <div class="demo-head"><span class="tag">DEMO 11</span><span class="tt">ACP 架构 · 点击部件查看职责</span><span class="hint">Client 1 : 1 Agent 子进程 · 会话可并发</span></div>
+    <div class="demo-body">
+      <div class="arch">
+        <div class="host-box" data-acp="client">
+          <div class="hb-t">🖥 ACP Client 客户端</div>
+          <div class="hb-s">编辑器 / IM 宿主 · 例如 Bloome、Zed</div>
+          <div class="client-chip" data-acp="session">Session ① 当前会话</div>
+          <div class="client-chip" data-acp="session">Session ② 另一条思路</div>
+          <div class="client-chip" data-acp="perm">权限门 · diff · 文件系统</div>
+        </div>
+        <div class="mid">
+          <span class="wirelab">JSON-RPC 2.0</span>
+          <span class="arrow">⇄</span>
+          <span class="wirelab">NDJSON<br>stdin / stdout</span>
+          <span class="arrow">⇄</span>
+          <span class="wirelab">spawn<br>子进程</span>
+        </div>
+        <div class="servers">
+          <div class="server-box" data-acp="agent"><div class="sb-t">⌨️ 本地 Agent CLI</div><div class="sb-s">grok agent stdio / Codex CLI / 同类</div></div>
+          <div class="server-box" data-acp="loop"><div class="sb-t">🔁 Agent Loop 在子进程里</div><div class="sb-s">思考 → 行动 → 观察，流式回写会话</div></div>
+          <div class="server-box" data-acp="mcp"><div class="sb-t">🔌 再向下接 MCP</div><div class="sb-s">Agent 自己当 Host，去调工具与数据</div></div>
+        </div>
+      </div>
+      <div class="arch-info" id="acp-arch-info"><div class="ai-t">👆 点击上图任意部件</div><div>Client 主持会话与授权；Agent 是被拉起的子进程，不是云端对话框。MCP 仍在更里一层：给这个 Agent 装手。</div></div>
+    </div>
+  </div>
+
+  <div class="callout info"><div class="ct">🔗 和前两章接上了</div>
+    第 4–5 章的 MCP 并没有被替换。ACP 官方刻意复用 MCP 的 JSON 类型，好让实现者不必再造一套「文件 / 工具 / 内容块」。常见接法：客户端把用户已配置的 MCP Server 交给 Agent；Agent 在自己的循环里 <code>tools/call</code>。两根管子不要拧到同一根 socket 上——会话走 ACP，工具走 MCP。
+  </div>
+
+  <h3>📡 管子里长什么样：一行一行的 JSON</h3>
+  <p>stdio 传输的规矩几乎和 MCP 本地模式相同：<b>一行一个 JSON-RPC 消息</b>（NDJSON），stdout 是协议通道，日志只能写 stderr。心智上记住三步即可——握手、开会话、送提示：</p>
+  <div class="codebox">
+    <div class="cb-head"><div class="dots"><i></i><i></i><i></i></div><span class="fn">ACP · 客户端 spawn 之后（示意，不是某产品的私有 RPC）</span><button class="copy">复制</button></div>
+    <pre data-lang="json">{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "initialize",
+  "params": { "protocolVersion": 1, "clientInfo": { "name": "editor" } }
+}
+{"jsonrpc":"2.0","id":2,"method":"session/new","params":{"cwd":"/repo"}}
+{"jsonrpc":"2.0","id":3,"method":"session/prompt","params":{
+  "sessionId": "s1",
+  "prompt": [{ "type": "text", "text": "给 README 补一节安装说明" }]
+}}</pre>
+  </div>
+  <p class="muted">Agent 用通知把思考、工具调用、diff 流式推回客户端；需要写文件或跑命令时，再反向请求客户端授权。细节以 <a href="https://agentclientprotocol.com/" target="_blank" rel="noopener">agentclientprotocol.com</a> 规范为准——本页只建立心智模型，不把某一客户端的实现倒过来拆。</p>
+
+  <h3>⚖️ 何时用 ACP，何时把 Agent 包成 MCP 工具</h3>
+  <table class="tbl">
+    <tr><th>你真正要的是…</th><th>该走哪层</th><th>为什么</th></tr>
+    <tr><td>在编辑器 / IM 里进行<b>完整编码会话</b>：多轮提示、流式输出、diff、权限确认</td><td><span class="term amber">ACP + CLI</span></td><td>你要的是「请来一位顾问」，不是「点菜单上的一项」</td></tr>
+    <tr><td>外层 Agent 需要一项<b>有 schema 的短能力</b>：查知识库、算价格、读工单</td><td><span class="term blue">MCP 工具</span></td><td>角色即使像 Agent，协议上仍是 tools/call；见第 4 章与知识网络对照</td></tr>
+    <tr><td>两个<b>独立部署</b>的 Agent 要发现彼此、委托长任务、交付 Artifact</td><td><span class="term violet">A2A</span></td><td>那是下一章的社交协议，不是把本地进程再包一层</td></tr>
+    <tr><td>「我已经有一个 CLI Agent，外层想随手调一下」</td><td>先问会不会变成完整会话</td><td>会 → ACP；只是一次有界调用 → 才考虑包成 MCP 工具</td></tr>
+  </table>
+  <div class="callout warn"><div class="ct">⚠️ 典型错法</div>
+    把整个编码 Agent 包成一个 MCP 工具，让外层一次 <code>tools/call</code>「去把这个仓库改好」。会话、权限、diff、取消/恢复全被压进一次工具返回，复杂度上升、可观察性下降。MCP 很擅长当手；它不擅长当工位。
+  </div>
+
+  <h3 id="sec-cli" style="scroll-margin-top:70px">⌨️ CLI：Agent 是一条命令，不是云端对话框</h3>
+  <p>这里的 CLI，指<b>会说 ACP stdio 的本地编码 Agent</b>：Grok CLI、Codex CLI、以及任何 <code>command … stdio</code> 拉起来就能会话的同类。它不是「又一个 ChatGPT 网页」，而是：</p>
+  <ul class="nice">
+    <li><b>进程</b>：一条你（或客户端）在本机执行的命令，有工作目录、环境变量、退出码。</li>
+    <li><b>会话端点</b>：stdin/stdout 上的 JSON-RPC，而不是浏览器里的 websocket 聊天框。</li>
+    <li><b>循环载体</b>：第 3 章的 Agent Loop 跑在这个子进程里；Harness 的工具、可见性、约束、完成证据，也是给它配的。</li>
+  </ul>
+  <div class="card-grid">
+    <div class="mini-card"><div class="ic">⌨️</div><div class="tt">CLI</div><div class="dd">人 / 形态：可执行的本地 Agent。没有它，ACP 客户端没有子进程可 spawn。</div></div>
+    <div class="mini-card"><div class="ic">📡</div><div class="tt">ACP</div><div class="dd">协议：Client 如何与这个进程做完整会话。不绑定某一家模型网页。</div></div>
+    <div class="mini-card"><div class="ic">🔌</div><div class="tt">MCP</div><div class="dd">工具层：这个进程内部如何接数据源。Agent 在这里是 Host，不是菜单项。</div></div>
+  </div>
+
+  <div class="recap"><div class="rc-t">✅ 本章小结</div>
+    <ul>
+      <li>ACP = <b>Client ↔ Agent</b> 的开放会话协议（Zed）；默认 JSON-RPC 2.0 / NDJSON / stdio。</li>
+      <li>CLI = <b>本地编码 Agent 本身</b>：一条命令，不是云端对话框；ACP 客户端负责把它 spawn 起来。</li>
+      <li>分层记忆：<b>MCP 是手，ACP 是工位上的对话，A2A 是社交，CLI 是请来的那位顾问</b>。</li>
+      <li>完整会话走 ACP；有界短能力走 MCP；不要把 Agent 整段包成一次 tools/call。</li>
+      <li>本馆实践：Bloome 作客户端，<code>npx</code> grok agent stdio 作本地 Agent——只记协议层。</li>
+    </ul>
+  </div>
+
+  <div class="quiz" data-quiz="qacp">
+    <div class="quiz-head"><span class="qh-ic">📝</span><span class="qh-t">第 6 章随堂小测</span><span class="qh-s">全部答对即点亮本章</span></div>
+    <div class="quiz-body"></div>
+    <div class="quiz-done"><span>🏅</span><span>第 6 章通关！会话通道已接通——下一站看循环如何组合成架构。</span></div>
+  </div>
+
+  <h4>📚 本章延伸</h4>
+  <div class="links">
+    <a class="linkcard" href="https://agentclientprotocol.com/" target="_blank" rel="noopener"><div class="lc-t">🌐 agentclientprotocol.com<span class="ext">↗</span></div><div class="lc-d">ACP 官方：动机、架构、会话与传输。先读 Introduction 与 Architecture。</div></a>
+    <a class="linkcard" href="https://agentclientprotocol.com/get-started/architecture" target="_blank" rel="noopener"><div class="lc-t">🏛 ACP 架构<span class="ext">↗</span></div><div class="lc-d">子进程、多会话、通知流式更新，以及为何 MCP 类型被复用、管子却要分开。</div></a>
+    <a class="linkcard" href="/concepts?radius=acp"><div class="lc-t">📥 概念馆 · ACP 半径</div><div class="lc-d">账本里与会话协议挂回的条目，包括本 Lab 的本地实践卡。</div></a>
+    <a class="linkcard" href="/#sec-network"><div class="lc-t">🕸 知识网络 · 点亮 ACP / CLI</div><div class="lc-d">和 MCP、Harness、Loop 放在同一张控制半径图上对照。</div></a>
+  </div>
+</section>
+
+<!-- ================================================================ -->
 <!-- 第 6 章 · Agent 主流架构与 Multi-Agent -->
 <!-- ================================================================ -->
 <section class="lesson" id="sec-6" style="--sc:#595959">
-  <div class="sec-head"><span class="sec-num">第 6 章</span><h2>🏗 Agent 主流架构与 Multi-Agent</h2></div>
+  <div class="sec-head"><span class="sec-num">第 7 章</span><h2>🏗 Agent 主流架构与 Multi-Agent</h2></div>
   <p class="sec-sub">单个循环是原子，架构决定原子怎么组合成分子——直到组合成一支"智能体军团"</p>
 
   <div class="tldr"><div class="k">一句话版本</div>
@@ -1728,9 +1860,9 @@ await server.connect(new StdioServerTransport());</pre></div></div>
   </div>
 
   <div class="quiz" data-quiz="q6">
-    <div class="quiz-head"><span class="qh-ic">📝</span><span class="qh-t">第 6 章随堂小测</span><span class="qh-s">全部答对即点亮本章</span></div>
+    <div class="quiz-head"><span class="qh-ic">📝</span><span class="qh-t">第 7 章随堂小测</span><span class="qh-s">全部答对即点亮本章</span></div>
     <div class="quiz-body"></div>
-    <div class="quiz-done"><span>🏅</span><span>第 6 章通关！架构心法已入手，下一站先学会把能力封装成 Skill。</span></div>
+    <div class="quiz-done"><span>🏅</span><span>第 7 章通关！架构心法已入手，下一站先学会把能力封装成 Skill。</span></div>
   </div>
 
   <h4>📚 本章延伸</h4>
@@ -1745,14 +1877,14 @@ await server.connect(new StdioServerTransport());</pre></div></div>
 </section>
 
 <!-- ================================================================ -->
-<!-- 第 7 章 · 2026 前沿概念雷达 -->
+<!-- 第 9 章 · 2026 前沿概念雷达 -->
 <!-- ================================================================ -->
 
 <!-- ================================================================ -->
-<!-- 第 7 章 · Skill 体系 -->
+<!-- 第 8 章 · Skill 体系 -->
 <!-- ================================================================ -->
 <section class="lesson" id="sec-skill" style="--sc:#434343">
-  <div class="sec-head"><span class="sec-num">第 7 章</span><h2>🎒 Skill：把能力做成可组合的分层手册</h2></div>
+  <div class="sec-head"><span class="sec-num">第 8 章</span><h2>🎒 Skill：把能力做成可组合的分层手册</h2></div>
   <p class="sec-sub">不是超长提示词，而是节省上下文的分层执行系统</p>
 
   <div class="tldr"><div class="k">一句总纲</div>
@@ -1851,9 +1983,9 @@ await server.connect(new StdioServerTransport());</pre></div></div>
   </div>
 
   <div class="quiz" data-quiz="qskill">
-    <div class="quiz-head"><span class="qh-ic">📝</span><span class="qh-t">第 7 章随堂小测</span><span class="qh-s">全部答对即点亮本章</span></div>
+    <div class="quiz-head"><span class="qh-ic">📝</span><span class="qh-t">第 8 章随堂小测</span><span class="qh-s">全部答对即点亮本章</span></div>
     <div class="quiz-body"></div>
-    <div class="quiz-done"><span>🏅</span><span>第 7 章通关！你会设计 Skill 分层了——去雷达站把 Skills 放回工程标准层。</span></div>
+    <div class="quiz-done"><span>🏅</span><span>第 8 章通关！你会设计 Skill 分层了——去雷达站把 Skills 放回工程标准层。</span></div>
   </div>
 
   <h4>📚 本章延伸</h4>
@@ -1865,21 +1997,21 @@ await server.connect(new StdioServerTransport());</pre></div></div>
 </section>
 
 <section class="lesson" id="sec-7" style="--sc:#595959">
-  <div class="sec-head"><span class="sec-num">第 8 章</span><h2>📡 2026 前沿概念雷达</h2></div>
+  <div class="sec-head"><span class="sec-num">第 9 章</span><h2>📡 2026 前沿概念雷达</h2></div>
   <p class="sec-sub">推特时间线上最火的热词，逐个放回技术栈的正确位置</p>
 
   <div class="tldr"><div class="k">一句话版本</div>
     <div class="v">概念大爆炸时代的自救法：拿到任何热词，先问<strong>"它在栈的哪一层"</strong>——是模型内部科学、新范式赌注、工程标准、编排与产品，还是文化现象？定了位，就不会被时间线牵着跑。</div>
   </div>
 
-  <p>下面 12 张卡片覆盖了近期（截至 2026-07-08）讨论度最高的概念。<strong>点分类筛选，点卡片展开细节</strong>——每张卡都标注了它与本页主线的关系，方便你"挂"到已有的知识树上：</p>
+  <p>下面 13 张卡片覆盖了近期（截至 2026-07-08）讨论度最高的概念。<strong>点分类筛选，点卡片展开细节</strong>——每张卡都标注了它与本页主线的关系，方便你"挂"到已有的知识树上：</p>
 
   <!-- Demo 10：概念雷达 -->
   <div class="demo" id="demo-h">
     <div class="demo-head"><span class="tag">DEMO 10</span><span class="tt">概念雷达 · 点卡片展开</span><span class="hint">🔥 越多 = 当前热度越高</span></div>
     <div class="demo-body">
       <div class="chips" id="radar-chips">
-        <button class="chip on" data-grp="all">全部 12</button>
+        <button class="chip on" data-grp="all">全部 13</button>
         <button class="chip" data-grp="brain">🔬 模型内部</button>
         <button class="chip" data-grp="paradigm">🌌 新范式</button>
         <button class="chip" data-grp="std">📐 工程标准</button>
@@ -1935,8 +2067,8 @@ await server.connect(new StdioServerTransport());</pre></div></div>
           <div class="rc-one">文件夹形态的"能力包"：SKILL.md + 配套脚本。平时只在上下文里占约百 token 的目录条目，<b>被触发时才加载全文</b>。</div>
           <div class="rc-more">
             适合"多步骤、偶尔用、带脚本"的流程（发布 checklist、生成 PPT、报表规范）。与 AGENTS.md 的取舍已有实证：Vercel 2026-01 的评测里，常驻上下文的文档索引通过率 100%，Skills 只有 79%——因为 56% 的用例里技能根本没被触发。结论不是谁更强，而是<b>常驻规则放 AGENTS.md，重型偶用能力做成 Skill</b>。
-            <div class="rc-rel">🧩 挂回主线：上下文工程（第 3 章抓手 4）的产品化；完整写法见 <a href="#sec-skill">第 7 章 Skill</a>。</div>
-            <a class="rc-link" href="#sec-skill">进入第 7 章深读 ↗</a>
+            <div class="rc-rel">🧩 挂回主线：上下文工程（第 3 章抓手 4）的产品化；完整写法见 <a href="#sec-skill">第 8 章 Skill</a>。</div>
+            <a class="rc-link" href="#sec-skill">进入第 8 章深读 ↗</a>
             <a class="rc-link" href="https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more" target="_blank" rel="noopener">官方指南 ↗</a>
           </div>
           <span class="rc-hint">▾ 展开</span>
@@ -1948,7 +2080,7 @@ await server.connect(new StdioServerTransport());</pre></div></div>
           <div class="rc-one">主 Agent 派生的"隔离上下文分身"：自己干活自己吃 token，只把结论摘要带回主线程。</div>
           <div class="rc-more">
             Claude Code 用 <code>.claude/agents/</code> 定义专职子代理（自带系统提示与工具白名单）；Cursor 有后台 Agent 与并行 worktree。适用于深度搜索、日志分析、依赖审计这类"中间过程不值得进主上下文"的任务。2026 年的进化版是 Claude Code <b>Dynamic Workflows</b>：主代理现场写编排代码，调度成百个并行子代理。
-            <div class="rc-rel">🧩 挂回主线：第 6 章编排者-工作者模式的实现单元 + 第 3 章上下文管理的终极手段。</div>
+            <div class="rc-rel">🧩 挂回主线：第 7 章编排者-工作者模式的实现单元 + 第 3 章上下文管理的终极手段。</div>
             <a class="rc-link" href="https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more" target="_blank" rel="noopener">Claude Code 文档 ↗</a>
           </div>
           <span class="rc-hint">▾ 展开</span>
@@ -1960,11 +2092,24 @@ await server.connect(new StdioServerTransport());</pre></div></div>
           <div class="rc-one">Agent 之间的通信标准：MCP 管"Agent ↔ 工具"，A2A 管"<b>Agent ↔ Agent</b>"——跨公司、跨框架的智能体互相递名片、谈合作。</div>
           <div class="rc-more">
             核心机制是 <b>Agent Card</b>（数字名片，常驻 <code>.well-known/agent-card.json</code>）：声明名字、版本、端点、capabilities、skills、认证方式；对方凭名片发现能力、协商任务、异步协作。Card 里的 skills 描述“我会什么任务”；这与本地宿主 <code>SKILL.md</code> 不是同一层。2025-04 由 Google 发布，随后捐入 Linux Foundation。一句话：<b>MCP 是 Agent 的手，A2A 是 Agent 的社交，Agent Card 是社交名片</b>。
-            <div class="rc-rel">🧩 挂回主线：第 4 章解决工具接入；第 6 章决定何时多代理；本章告诉你跨组织协作用 A2A，而不是把 MCP knowledge_chat 强行替换掉。</div>
-            <a class="rc-link" href="#sec-6">第 6 章完整对比 ↗</a>
+            <div class="rc-rel">🧩 挂回主线：第 4 章解决工具接入；第 6 章 ACP 解决 Client↔Agent 会话；第 7 章决定何时多代理；跨组织协作用 A2A，而不是把 MCP knowledge_chat 强行替换掉。</div>
+            <a class="rc-link" href="#sec-6">第 7 章完整对比 ↗</a>
             <a class="rc-link" href="https://a2acn.com/docs/topics/a2a-and-mcp/" target="_blank" rel="noopener">A2A vs MCP ↗</a>
             <a class="rc-link" href="https://a2acn.com/docs/tutorials/python/3-agent-skills-and-card/" target="_blank" rel="noopener">Agent Card 教程 ↗</a>
             <a class="rc-link" href="https://a2a-protocol.org" target="_blank" rel="noopener">A2A 官网 ↗</a>
+          </div>
+          <span class="rc-hint">▾ 展开</span>
+        </div>
+
+        <div class="rc" data-grp="std">
+          <div class="rc-top"><span class="rc-ic">📡</span><span class="rc-name">ACP / 本地 CLI Agent</span><span class="rc-hot">🔥🔥</span></div>
+          <span class="rc-grp">📐 工程标准 · Zed 发起 · Agent Client Protocol</span>
+          <div class="rc-one">编辑器把本地 Agent 当子进程拉起：JSON-RPC 2.0 走 stdin/stdout。MCP 管 Agent↔工具，ACP 管 <b>Client↔Agent</b>，CLI 是那条可执行命令。</div>
+          <div class="rc-more">
+            与 A2A 不是竞品：A2A 是独立 Agent 之间的社交，ACP 是宿主与本地编码 Agent 的会话通道。不要把整段 Agent 再包成一个 MCP 工具。
+            <div class="rc-rel">🧩 挂回主线：完整写法见 <a href="#sec-acp">第 6 章 ACP / CLI</a>；工具接入仍是第 4 章 MCP。</div>
+            <a class="rc-link" href="#sec-acp">进入第 6 章深读 ↗</a>
+            <a class="rc-link" href="https://agentclientprotocol.com/" target="_blank" rel="noopener">ACP 官网 ↗</a>
           </div>
           <span class="rc-hint">▾ 展开</span>
         </div>
@@ -2057,9 +2202,9 @@ await server.connect(new StdioServerTransport());</pre></div></div>
   </div>
 
   <div class="quiz" data-quiz="q7">
-    <div class="quiz-head"><span class="qh-ic">📝</span><span class="qh-t">第 8 章随堂小测</span><span class="qh-s">全部答对即点亮本章</span></div>
+    <div class="quiz-head"><span class="qh-ic">📝</span><span class="qh-t">第 9 章随堂小测</span><span class="qh-s">全部答对即点亮本章</span></div>
     <div class="quiz-body"></div>
-    <div class="quiz-done"><span>🏅</span><span>第 8 章通关！雷达已校准——下次刷到新热词，先问"它在哪一层"。</span></div>
+    <div class="quiz-done"><span>🏅</span><span>第 9 章通关！雷达已校准——下次刷到新热词，先问"它在哪一层"。</span></div>
   </div>
 
   <h4>📚 本章延伸</h4>
@@ -2073,10 +2218,10 @@ await server.connect(new StdioServerTransport());</pre></div></div>
 </section>
 
 <!-- ================================================================ -->
-<!-- 第 8 章 · 全景串联 -->
+<!-- 第 10 章 · 全景串联 -->
 <!-- ================================================================ -->
 <section class="lesson" id="sec-8" style="--sc:#262626">
-  <div class="sec-head"><span class="sec-num">第 9 章</span><h2>🧩 全景串联 + 通关自测</h2></div>
+  <div class="sec-head"><span class="sec-num">第 10 章</span><h2>🧩 全景串联 + 通关自测</h2></div>
   <p class="sec-sub">把五块拼图合成一张图，再用一套综合题验证你真的懂了</p>
 
   <h3>🗺 一张图看懂全部关系</h3>
@@ -2108,6 +2253,8 @@ await server.connect(new StdioServerTransport());</pre></div></div>
     <tr><td><b>Agent Loop</b></td><td>运行时</td><td>回答"怎么跑起来"：while 循环驱动"思考→执行→观察"直到自然停止。</td></tr>
     <tr><td><b>Loop Engineering</b></td><td>工程学</td><td>回答"怎么跑得稳"：验证器、停止条件、预算护栏、上下文管理、外部状态、人工门禁。</td></tr>
     <tr><td><b>MCP / MCP Server</b></td><td>标准接口</td><td>回答"能力从哪里插进来"：Host–Client–Server 协议，写一次 Server 处处可用。</td></tr>
+    <tr><td><b>ACP</b></td><td>会话协议</td><td>回答"客户端如何驱动本地 Agent"：JSON-RPC 2.0 / NDJSON / stdio，Client ↔ Agent 会话。</td></tr>
+    <tr><td><b>CLI</b></td><td>本地 Agent</td><td>回答"Agent 作为一条命令如何跑"：Grok CLI / Codex CLI 等 stdio agent，不是云端对话框。</td></tr>
     <tr><td><b>Multi-Agent</b></td><td>组织学</td><td>回答"一个大脑不够怎么办"：编排者-工作者拆任务、子代理隔离上下文。</td></tr>
     <tr><td><b>A2A / Agent Card</b></td><td>协作协议</td><td>回答"独立 Agent 如何发现并协作"：名片发现、任务委托、长任务生命周期；与 MCP 互补而非替代。</td></tr>
     <tr><td><b>Skill</b></td><td>能力封装</td><td>回答"可复用流程怎么分层"：description 路由，正文给手册，references/scripts/assets 按需加载。</td></tr>
@@ -2173,14 +2320,15 @@ let state = { visited:{}, quiz:{}, demos:{}, paths:{}, theme:null, firstDemoToas
 try { Object.assign(state, JSON.parse(localStorage.getItem(KEY) || "{}")); } catch(e){}
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} };
 
-const SECTIONS = ["sec-0","sec-1","sec-2","sec-3","sec-4","sec-5","sec-6","sec-skill","sec-7","sec-8"];
-const MAIN_QUIZZES = ["q1","q2","q3","q4","q5","q6","qskill","q7","qf"];
+const SECTIONS = ["sec-0","sec-1","sec-2","sec-3","sec-4","sec-5","sec-acp","sec-6","sec-skill","sec-7","sec-8"];
+const MAIN_QUIZZES = ["q1","q2","q3","q4","q5","qacp","q6","qskill","q7","qf"];
 /* 每章"点亮"条件 */
 const DONE_RULE = {
   "sec-0": () => !!state.demos.a,
   "sec-1": () => !!state.quiz.q1, "sec-2": () => !!state.quiz.q2,
   "sec-3": () => !!state.quiz.q3, "sec-4": () => !!state.quiz.q4,
-  "sec-5": () => !!state.quiz.q5, "sec-6": () => !!state.quiz.q6,
+  "sec-5": () => !!state.quiz.q5, "sec-acp": () => !!state.quiz.qacp,
+  "sec-6": () => !!state.quiz.q6,
   "sec-skill": () => !!state.quiz.qskill,
   "sec-7": () => !!state.quiz.q7, "sec-8": () => !!state.quiz.qf
 };
@@ -2586,7 +2734,21 @@ const QUIZ = {
       ok: "对！npx @modelcontextprotocol/inspector 一行命令起。加分知识：stdio 模式下 stdout 是协议通道，随手 print 会污染消息流导致解析失败——日志要写到 stderr。",
       no: "提示：其中一个选项不但帮不上忙，还会把 stdio 协议通道弄坏（想想消息走的是哪根管子）。" }
   ]},
-  q6: { toast: "🏅 第 6 章通关：架构与 Multi-Agent 拿下！", qs: [
+  qacp: { toast: "🏅 第 6 章通关：ACP / CLI 会话通道拿下！", qs: [
+    { t: "ACP 连接的两端是？", a: 1,
+      opts: ["Agent ↔ 工具 / API / 数据源", "Client ↔ Agent 会话", "独立 Agent ↔ 独立 Agent", "模型参数 ↔ 训练数据"],
+      ok: "对！MCP 是手（Agent↔工具），ACP 是工位上的对话（Client↔Agent），A2A 是社交（Agent↔Agent）。先看两端，再选协议。",
+      no: "回看本章对比表第一行：谁在跟谁说话？" },
+    { t: "ACP 默认传输的正确心智模型是？", a: 1,
+      opts: ["浏览器打开一个云端对话框，走 HTTPS 聊天 API", "客户端把本地 Agent 当作子进程 spawn，JSON-RPC 2.0 以 NDJSON 走 stdin/stdout", "把 Agent 注册成 MCP Server，外层 tools/call 一次跑完", "双方先交换 Agent Card，再建立 A2A Task"],
+      ok: "对！编辑器/IM 宿主拉起命令（Grok CLI / Codex CLI / 同类 stdio agent），会话在那两根管子里流。stdout 是协议通道，日志写 stderr。",
+      no: "提示：ACP 官网把本地 Agent 定义为编辑器的子进程。它不是网页，也不是一张工具菜单。" },
+    { t: "已经有一个会改仓库的 CLI Agent。外层客服只想「查一下工单状态」。更合理的是？", a: 2,
+      opts: ["用 ACP 把客服客户端接到这个编码 Agent 上，开完整编程会话", "给这个 CLI 发一张 Agent Card，强制走 A2A", "把它要的那项有界查询做成 MCP 工具；完整编码会话才用 ACP", "三种协议叠在一次调用里最稳"],
+      ok: "对！有界短能力走 MCP；完整会话走 ACP。把整段 Agent 包成一次 tools/call，会话与权限都被压扁。",
+      no: "回看「何时用 ACP，何时包成 MCP 工具」：先问你要的是工位，还是菜单上的一项。" }
+  ]},
+  q6: { toast: "🏅 第 7 章通关：架构与 Multi-Agent 拿下！", qs: [
     { t: "外层客服 Agent 通过 MCP knowledge_chat 调内层知识库（传 message / conversation_id，返回答案）。当前最合适的做法是？", a: 1,
       opts: ["立刻改成 A2A，因为内层也是 Agent", "保留 MCP：协议上这是在调用一个知识能力；先做上下文边界治理", "删除 knowledge_chat，改为纯 Prompt 内嵌全文", "必须同时强制启用 Agent Card 才能问答"],
       ok: "对！角色像 Agent 调 Agent，协议上仍是能力调用。MCP 适合短请求与结构化结果；A2A 留给跨团队、长任务与独立部署。",
@@ -2608,7 +2770,7 @@ const QUIZ = {
       ok: "对！这正是 Cognition《Don't Build Multi-Agents》的核心告诫：行动携带隐含决策，并行分身各改各的、互不知情，改动必然打架——紧耦合写操作要留给一个共享完整上下文的单 Agent。",
       no: "判断标准只有一条：子任务之间需要频繁共享「正在变化的状态」吗？只读、可切分的才是多代理甜区。" }
   ]},
-  qskill: { toast: "🏅 第 7 章通关：Skill 分层拿下！", qs: [
+  qskill: { toast: "🏅 第 8 章通关：Skill 分层拿下！", qs: [
     { t: "一个标准 Skill 真正必需的最小集合是？", a: 1,
       opts: ["SKILL.md + references + scripts", "一个独立目录 + SKILL.md", "必须包含 agents/openai.yaml", "必须先写完整 assets 模板库"],
       ok: "对！真正必需的只有独立目录和 SKILL.md；references/scripts/assets 都是按需可选。",
@@ -2626,7 +2788,7 @@ const QUIZ = {
       ok: "对！先轻量路由，再加载手册，细节资源用到才取——这就是节省上下文的关键。",
       no: "回忆本章 roadline：第一级、第二级、第三级分别是什么。" }
   ]},
-  q7: { toast: "🏅 第 8 章通关：前沿雷达校准完毕！", qs: [
+  q7: { toast: "🏅 第 9 章通关：前沿雷达校准完毕！", qs: [
     { t: "Anthropic 2026-07 发布的 J-Space，最准确的描述是？", a: 1,
       opts: ["Anthropic 推出的新推理模型产品", "在 Claude 内部自发涌现的一小片「特权工作区」：模型能把概念默默放在心上做多步推理，抑制它复杂推理会崩溃", "一种新的提示词书写格式", "向量数据库的新索引结构"],
       ok: "对！它是用 J-lens（雅可比透镜）做出的可解释性「发现」而非产品，呼应神经科学的全局工作空间理论；对安全的意义是能审计模型「没说出口的想法」。",
@@ -2668,7 +2830,7 @@ const QUIZ = {
     { t: "要做一个「深度调研助手」：并行搜集几十个来源、交叉核实、汇总成报告，主对话只需要最终结论。最合适的架构是？", a: 1,
       opts: ["单个 Agent 顺序读完所有来源", "编排者-工作者：编排者动态拆分调研面，并行子代理各查各的、只回传摘要", "为每个信息源部署一个常驻的 A2A Agent 服务", "把所有网页全文塞进一个超长上下文一次问完"],
       ok: "对！这正是 Anthropic 多代理研究系统的架构：读多写少、天然可并行、中间过程不值得进主上下文——多代理的教科书场景（代价是 token 用量显著上升，值不值要算账）。",
-      no: "用第 6 章的判断题过一遍：子任务之间共享「正在变化的状态」吗？调研不共享——那么瓶颈就只剩串行太慢和上下文塞爆，哪个选项同时解决这两点？" }
+      no: "用第 7 章的判断题过一遍：子任务之间共享「正在变化的状态」吗？调研不共享——那么瓶颈就只剩串行太慢和上下文塞爆，哪个选项同时解决这两点？" }
   ]}
 };
 
@@ -2984,6 +3146,28 @@ $$("#demo-a [data-da]").forEach(btn => btn.addEventListener("click", async () =>
     const info = INFO[el.dataset.arch];
     $("#arch-info").innerHTML = `<div class="ai-t">${info[0]}</div><div>${info[1]}</div>`;
     touchDemo("e2");
+  }));
+})();
+
+/* ============================================================
+   DEMO 11 · ACP 架构图（点击查看职责）
+   ============================================================ */
+(function(){
+  const INFO = {
+    client: ["🖥 ACP Client 客户端", "编辑器或 IM 宿主（Zed、Bloome 等）。它按需 spawn 本地 Agent 子进程，主持会话、渲染 diff、把用户的授权决定回传给 Agent。"],
+    session: ["💬 Session 会话", "一条连接上可以同时开多条思路。会话是 ACP 的工作单元：提示、流式更新、取消都挂在 sessionId 上。"],
+    perm: ["🛡 权限与工作区", "Agent 要读文件、改文件、开终端时，反向请求客户端。Trusted 前提：你信任这个 Agent，但工具调用仍经过宿主门禁。"],
+    agent: ["⌨️ 本地 Agent CLI", "一条命令，不是云端对话框。Grok CLI / Codex CLI / 同类以 stdio 模式被拉起，JSON-RPC 走 stdin/stdout。"],
+    loop: ["🔁 子进程里的 Agent Loop", "第 3 章的 while 循环跑在这个进程里：思考、开单、观察、再想。流式通知让客户端实时画出意图。"],
+    mcp: ["🔌 再向下接 MCP", "Agent 自己当 Host 去连 MCP Server。ACP 与 MCP 不要挤在同一根 socket：会话走 ACP，工具走 MCP。"]
+  };
+  $$("#demo-acp [data-acp]").forEach(el => el.addEventListener("click", ev => {
+    ev.stopPropagation();
+    $$("#demo-acp .picked").forEach(x => x.classList.remove("picked"));
+    el.classList.add("picked");
+    const info = INFO[el.dataset.acp];
+    $("#acp-arch-info").innerHTML = `<div class="ai-t">${info[0]}</div><div>${info[1]}</div>`;
+    touchDemo("acp");
   }));
 })();
 
