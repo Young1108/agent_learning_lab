@@ -1,9 +1,22 @@
 {
-  "updatedAt": "2026-08-24T09:59:59.163Z",
-  "version": 4,
+  "updatedAt": "2026-08-25T03:31:38.196Z",
+  "version": 5,
   "sourceCount": 4,
-  "conceptCount": 101,
+  "conceptCount": 123,
   "concepts": [
+    {
+      "id": "17lk5le",
+      "title": "Wire It, Run It, Deploy It: AI Workflows in Gradio",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/gradio-workflow-guide",
+      "date": "2026-08-25",
+      "summary": "",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-25T03:31:38.002Z"
+    },
     {
       "id": "1d0bhcc",
       "title": "ACP（Agent Client Protocol）：客户端到本地 Agent 的标准通道",
@@ -18,6 +31,284 @@
         "MCP"
       ],
       "addedAt": "2026-08-24T09:59:20.155Z"
+    },
+    {
+      "id": "1vemd4q",
+      "title": "Advancing price-performance for developers with GPT‑5.6 in Kiro",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/gpt-5-6-in-kiro",
+      "date": "2026-08-24",
+      "summary": "",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-25T03:31:37.315Z"
+    },
+    {
+      "id": "2vmf32",
+      "title": "How to Train a Critic Stably and Efficiently",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23566v1",
+      "date": "2026-08-24",
+      "summary": "Group-based reinforcement learning methods such as GRPO for large language models avoid training a critic by sampling multiple responses for each prompt. A reliable critic could instead estimate token-level advantages fr…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "2vmecd",
+      "title": "ReWorld: An Interactive World Model with Long-Horizon Memory",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23565v1",
+      "date": "2026-08-24",
+      "summary": "An interactive world model must follow the user's actions, remember the places it has shown, and stream in real time. The tension is structural: control wants a short horizon, memory wants an unbounded one. ReWorld separ…",
+      "maturity": "proposed",
+      "tags": [
+        "世界模型"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "2vmdlo",
+      "title": "SWE Refactor Bench: Can Coding Agents Complete a Long-Horizon, Whole-Repository Stack Migration?",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23564v1",
+      "date": "2026-08-24",
+      "summary": "Modern software systems accumulate technical debt over decades of development, which makes migration expensive and largely manual. As coding agents become increasingly capable at bug fixing, can they autonomously perform…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "2vmcuz",
+      "title": "EG-ARSA: An Expert-Grounded Open Model for Visual Road Safety Auditing in Low-Resource Settings",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23563v1",
+      "date": "2026-08-24",
+      "summary": "Road traffic injuries remain a major challenge in low- and middle-income countries, where proactive road safety auditing is limited by incomplete crash records, shortages of qualified auditors, and the high cost of large…",
+      "maturity": "proposed",
+      "tags": [
+        "安全"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "2vmc4a",
+      "title": "Physics-Constrained Deep Learning Model for Contactless Blood Pressure Monitoring from Triaxial Bodyseismography",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23562v1",
+      "date": "2026-08-24",
+      "summary": "Ballistocardiography (BCG) is promising for unobtrusive long-term blood pressure (BP) monitoring in laboratory settings, but traditional BCG signals are vulnerable to the variations in body-bed interaction with shifted f…",
+      "maturity": "proposed",
+      "tags": [
+        "Graph"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "2vlp4r",
+      "title": "Prime Agent: A Self-Improving RLM Harness",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23552v1",
+      "date": "2026-08-24",
+      "summary": "Language models are sequential processors, but long-horizon agency requires external information and computation beyond model weights and active context. Prime Agent is an open-source harness for long-horizon evaluation …",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Harness"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "2vloe2",
+      "title": "ConvergeFlow: Language Flow with Provable Convergence to Token Embeddings",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23551v1",
+      "date": "2026-08-24",
+      "summary": "Recent advances in continuous diffusion and flow-based language models (LMs) have achieved performance competitive with discrete LMs. However, existing continuous frameworks still rely on decoders supervised with cross e…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "2vl2vx",
+      "title": "How AI Assistance Affects Human Skill Development: A Study of Learning with Logic Puzzles",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23543v1",
+      "date": "2026-08-24",
+      "summary": "While AI assistance can improve human task performance in the short term, it may also undermine the development of skills in the longer term. We examine this tension in a controlled logic-puzzle experiment involving on-d…",
+      "maturity": "proposed",
+      "tags": [
+        "Skill"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "2vl1ej",
+      "title": "The Interaction Tax: When Communication Erases Diversity in Multi-Agent Teams",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23541v1",
+      "date": "2026-08-24",
+      "summary": "Does multi-agent LLM interaction help or hurt? Some work reports gains from debate (Du et al., 2024), critique loops (Chen et al., 2025), and mixture-of-agents synthesis (Wang et al., 2025), while other work finds that i…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Loop",
+        "Multi-Agent"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "2vki4h",
+      "title": "Adapter-Based Few-Shot Continual Learning for Malicious Packet Recognition",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23536v1",
+      "date": "2026-08-24",
+      "summary": "The continual evolution of malware variants necessitates detection systems that can adapt to new threats without retraining from scratch. However, continually updating models on new data often leads to catastrophic forge…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "2vjv4y",
+      "title": "Correcting a learned physical invariant improves world-model rollouts",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23526v1",
+      "date": "2026-08-24",
+      "summary": "World models can predict video without learning dynamics that they reliably preserve. We test whether a frozen DreamerV3 trained only on pendulum video learns a scalar that its own latent transition treats as approximate…",
+      "maturity": "proposed",
+      "tags": [
+        "世界模型"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "2vjue9",
+      "title": "EarthVerse: Benchmarking Scientific Agents Across Dynamic Earth Systems and Natural Hazards",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23525v1",
+      "date": "2026-08-24",
+      "summary": "Earth-system analysis reconstructs changing physical processes from observations that differ in source, scale, timing, and modality. Natural hazards make this work consequential because incomplete evidence can change est…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "评测"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "2vjtnk",
+      "title": "The Measurement Revolution? Credible Measurement and Inference in the Age of AI",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23524v1",
+      "date": "2026-08-24",
+      "summary": "Artificial intelligence (AI) is transforming measurement in economics. AI models convert unstructured data, such as text and images, into structured variables at low cost, making previously prohibitive measurement feasib…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "2vilwl",
+      "title": "When Names Cross Scripts: A Source-Grounded Benchmark for Historical Entity Reconciliation in the Mongol World",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23507v1",
+      "date": "2026-08-24",
+      "summary": "Historical people may appear under different languages, scripts, and transcription traditions, while distinct individuals may share highly similar or even identical names. This makes historical identity reconciliation mo…",
+      "maturity": "proposed",
+      "tags": [
+        "评测"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "2v4k6z",
+      "title": "Mitigating Reasoning-Induced Misalignment via Safety-Direction Penalty",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23497v1",
+      "date": "2026-08-24",
+      "summary": "Reasoning-Induced Misalignment, where fine-tuning on reasoning data containing no harmful content, including mathematics, code, and problem-solving with chain-of-thought traces can induce harmful behaviors of LLM, posing…",
+      "maturity": "proposed",
+      "tags": [
+        "推理",
+        "安全"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "2v4h87",
+      "title": "SRPO: Self-Reflective Policy Optimization for Long-Horizon Reasoning",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23493v1",
+      "date": "2026-08-24",
+      "summary": "Self-reflection is a powerful mechanism for credit assignment in human learning, converting sparse outcome feedback into actionable guidance. However, its potential for post-training Large Language Models (LLMs) remains …",
+      "maturity": "proposed",
+      "tags": [
+        "推理"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "2v3uzd",
+      "title": "Multi-Modal Semantic Expansion with Constrained LLM Reranking for Conversational Music Recommendation",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23484v1",
+      "date": "2026-08-24",
+      "summary": "We present Team Semiintelligencn's solution for the ACM RecSys 2026 TalkPlayData Challenge, addressing conversational music recommendation through a multi-modal and personalized conversational recommender system. Our sub…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "2v3aym",
+      "title": "Act with Intent: Distilling Behavior Intent for Vision-Language-Action Models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23478v1",
+      "date": "2026-08-24",
+      "summary": "Vision-Language-Action (VLA) models can turn multimodal context into robot actions, but their action decoders are still trained largely by behavior cloning. This supervises which motor command was demonstrated while leav…",
+      "maturity": "proposed",
+      "tags": [
+        "多模态"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "2v39h8",
+      "title": "On the Threat Model of Weird Generalization and Emergent Misalignment",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23476v1",
+      "date": "2026-08-24",
+      "summary": "Narrow fine-tuning on small, domain-specific datasets can produce broad and surprising changes in model behavior-a phenomenon called weird generalization (WG). Yet, it remains unclear what features of the fine-tuning dat…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "2v38qj",
+      "title": "StrategyBench: Evaluating Explicit Strategy Induction in Large Language Models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.23475v1",
+      "date": "2026-08-24",
+      "summary": "As large language models are increasingly used in data-scarce and evolving task scenarios, few-shot in-context learning (ICL) has become a key paradigm for task adaptation. However, direct ICL often uses a small set of e…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-25T03:31:38.196Z"
     },
     {
       "id": "1n78d8c",
