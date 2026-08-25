@@ -28,6 +28,22 @@ function useLocalStorage<T>(key: string, initial: T): [T, (v: T | ((c: T) => T))
   return [value, setValue];
 }
 
+
+function samePageHash(href: string) {
+  if (href.startsWith("#")) return href.slice(1);
+  if (href.startsWith("/#") && window.location.pathname === "/") return href.slice(2);
+  return null;
+}
+
+function scrollToId(id: string) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.querySelectorAll(".reveal").forEach((node) => node.classList.add("in"));
+  el.classList.add("in");
+  const y = Math.max(0, window.scrollY + el.getBoundingClientRect().top - 88);
+  window.scrollTo({ top: y, behavior: "smooth" });
+}
+
 export function LabShell({
   wing,
   logo,
@@ -150,6 +166,24 @@ export function LabShell({
               href={w.href}
               className={w.id === wing ? "on" : undefined}
               aria-current={w.id === wing ? "page" : undefined}
+              onClick={(event) => {
+                if (w.id === "home" && window.location.pathname === "/") {
+                  event.preventDefault();
+                  onActive?.("sec-0");
+                  try { history.replaceState(null, "", "/"); } catch { /* ignore */ }
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  setSidebarOpen(false);
+                  return;
+                }
+                const id = samePageHash(w.href);
+                if (id) {
+                  event.preventDefault();
+                  onActive?.(id);
+                  try { history.replaceState(null, "", `/#${id}`); } catch { /* ignore */ }
+                  scrollToId(id);
+                  setSidebarOpen(false);
+                }
+              }}
             >
               {w.label}
             </a>
@@ -221,8 +255,18 @@ export function LabShell({
               className={`nav-item ${activeId === item.id ? "active" : ""} ${done?.includes(item.id) ? "done" : ""}`}
               href={item.href ?? `#${item.id}`}
               aria-current={activeId === item.id ? "true" : undefined}
-              onClick={() => {
-                onActive?.(item.id);
+              onClick={(event) => {
+                const href = item.href ?? `#${item.id}`;
+                const id = item.id;
+                const hash = samePageHash(href);
+                if (hash || href.startsWith("#")) {
+                  event.preventDefault();
+                  onActive?.(id);
+                  try { history.replaceState(null, "", href.startsWith("#") ? href : `/#${id}`); } catch { /* ignore */ }
+                  scrollToId(id);
+                } else {
+                  onActive?.(id);
+                }
                 setSidebarOpen(false);
               }}
             >
