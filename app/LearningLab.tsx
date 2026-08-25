@@ -15,13 +15,13 @@ import { CURRICULUM_AS_OF, RADIUS, relateToRadius } from "./lab-chrome";
 import conceptsData from "../data/concepts.json";
 
 const navItems = [
-  { id: "sec-0", num: "0", label: "总览与学习地图", color: "#64748b" },
-  { id: "sec-network", num: "1", label: "知识网络", color: "#2563eb" },
-  { id: "sec-labs", num: "2", label: "技术复现实验", color: "#059669" },
-  { id: "sec-skill", num: "3", label: "Skill 体系", color: "#7c3aed" },
-  { id: "sec-tacit", num: "4", label: "判断手感", color: "#d97706" },
-  { id: "sec-courses", num: "5", label: "深入课程", color: "#0891b2" },
-  { id: "sec-sources", num: "6", label: "一手来源", color: "#e11d48" },
+  { id: "sec-0", num: "0", label: "今日", color: "#262626" },
+  { id: "sec-network", num: "1", label: "知识网络", color: "#262626" },
+  { id: "sec-labs", num: "2", label: "技术复现实验", color: "#218c00" },
+  { id: "sec-skill", num: "3", label: "Skill 体系", color: "#434343" },
+  { id: "sec-tacit", num: "4", label: "判断手感", color: "#595959" },
+  { id: "sec-courses", num: "5", label: "深入课程", color: "#434343" },
+  { id: "sec-sources", num: "6", label: "一手来源", color: "#262626" },
 ];
 
 /* AI 导师章节上下文：让导师知道学习者当前学到哪、该问什么 */
@@ -173,7 +173,7 @@ const knowledgeNodes = [
     title: "Tool Calling",
     note: "让模型能改变外部状态",
     links: "连接 → react / mcp",
-    color: "#d97706",
+    color: "#262626",
   },
   {
     id: "react",
@@ -181,7 +181,7 @@ const knowledgeNodes = [
     title: "ReAct",
     note: "推理 → 行动 → 观察",
     links: "连接 → loop",
-    color: "#7c3aed",
+    color: "#434343",
   },
   {
     id: "mcp",
@@ -189,7 +189,7 @@ const knowledgeNodes = [
     title: "MCP",
     note: "Agent ↔ 工具 / API / 数据源",
     links: "对比 → a2a / card",
-    color: "#2563eb",
+    color: "#262626",
   },
   {
     id: "a2a",
@@ -197,7 +197,7 @@ const knowledgeNodes = [
     title: "A2A",
     note: "独立 Agent 间发现、委托、长任务",
     links: "依赖 → card · 对比 → mcp",
-    color: "#0891b2",
+    color: "#595959",
   },
   {
     id: "card",
@@ -205,7 +205,7 @@ const knowledgeNodes = [
     title: "Agent Card",
     note: "公开身份、技能、端点与认证",
     links: "服务 → a2a · 不同于 → skill",
-    color: "#c026d3",
+    color: "#595959",
   },
   {
     id: "skill",
@@ -213,7 +213,7 @@ const knowledgeNodes = [
     title: "Skill",
     note: "分层手册：路由、流程、资料、工具",
     links: "连接 → harness / mcp",
-    color: "#7c3aed",
+    color: "#434343",
   },
   {
     id: "harness",
@@ -221,7 +221,7 @@ const knowledgeNodes = [
     title: "Harness Engineering",
     note: "环境、工具、可见性、约束、完成证据",
     links: "连接 → loop",
-    color: "#059669",
+    color: "#218c00",
   },
   {
     id: "loop",
@@ -229,7 +229,7 @@ const knowledgeNodes = [
     title: "Loop Engineering",
     note: "状态、验证、预算、停止与升级",
     links: "连接 → graph",
-    color: "#0891b2",
+    color: "#595959",
   },
   {
     id: "graph",
@@ -237,7 +237,7 @@ const knowledgeNodes = [
     title: "Graph Engineering",
     note: "目标所有权、冲突、节奏与外部锚点",
     links: "外部目标与治理锚点",
-    color: "#e11d48",
+    color: "#262626",
   },
 ];
 
@@ -1007,7 +1007,7 @@ function HarnessLab() {
   }
 
   return (
-    <article className="lab-card" id="harness-lab" style={{ ["--sc" as string]: "#059669" }}>
+    <article className="lab-card studio-frame" id="harness-lab" style={{ ["--sc" as string]: "#218c00" }}>
       <div className="lab-title">
         <span className="lab-index">01</span>
         <div>
@@ -1137,7 +1137,7 @@ function LoopLab() {
   }
 
   return (
-    <article className="lab-card" id="loop-lab" style={{ ["--sc" as string]: "#0891b2" }}>
+    <article className="lab-card studio-frame" id="loop-lab" style={{ ["--sc" as string]: "#434343" }}>
       <div className="lab-title">
         <span className="lab-index">02</span>
         <div>
@@ -1222,7 +1222,7 @@ function GraphLab() {
   );
 
   return (
-    <article className="lab-card" id="graph-lab" style={{ ["--sc" as string]: "#e11d48" }}>
+    <article className="lab-card studio-frame" id="graph-lab" style={{ ["--sc" as string]: "#262626" }}>
       <div className="lab-title">
         <span className="lab-index">03</span>
         <div>
@@ -1405,7 +1405,7 @@ function ProtocolLab() {
         先看“交互对象是什么”，再选协议。A2A 与 MCP 是互补，不是替代。
       </p>
 
-      <div className="tldr" style={{ ["--sc" as string]: "#0891b2" }}>
+      <div className="tldr" style={{ ["--sc" as string]: "#434343" }}>
         <div className="k">当前实践结论</div>
         <div className="v">
           外层 Agent 通过 MCP <code>knowledge_chat</code> 调用知识能力时，应保留
@@ -1440,13 +1440,13 @@ function ProtocolLab() {
       </div>
 
       <div className="card-grid cols-3" style={{ marginTop: 16 }}>
-        <article className="mini-card" style={{ ["--sc" as string]: "#2563eb" }}>
+        <article className="mini-card" style={{ ["--sc" as string]: "#262626" }}>
           <div className="eyebrow">Agent ↔ 工具</div>
           <h4>MCP</h4>
           <p>连接工具、API、数据源；强调参数、schema、结构化结果。</p>
           <small>类比：给 Agent 装上标准化的手</small>
         </article>
-        <article className="mini-card" style={{ ["--sc" as string]: "#0891b2" }}>
+        <article className="mini-card" style={{ ["--sc" as string]: "#434343" }}>
           <div className="eyebrow">Agent ↔ Agent</div>
           <h4>A2A</h4>
           <p>发现、协商、委托、共享任务与上下文；面向独立对等体。</p>
@@ -1704,114 +1704,12 @@ function TacitBridge() {
 }
 
 
-type LedgerConcept = {
-  id: string;
-  title: string;
-  source: string;
-  url: string;
-  date: string;
-  summary: string;
-  maturity: string;
-  tags: string[];
-};
-
-function greetingHi() {
-  const hour = Number(
-    new Intl.DateTimeFormat("en-GB", { hour: "numeric", hour12: false, timeZone: "Asia/Shanghai" }).format(new Date()),
-  );
-  if (hour < 5) return "夜深了";
-  if (hour < 12) return "早上好";
-  if (hour < 18) return "下午好";
-  return "晚上好";
-}
-
-function ConceptFeed({ onEnterForYou }: { onEnterForYou: () => void }) {
-  const ledger = (conceptsData as { concepts: LedgerConcept[] }).concepts;
-  const [chip, setChip] = useState<string>("全部");
-  const shown = ledger.filter((c) => {
-    if (chip === "全部") return true;
-    return relateToRadius(c).includes(chip as (typeof RADIUS)[number]["id"]);
-  });
-  return (
-    <div className="feed concept-feed">
-      <div className="cat-chips" aria-label="控制半径">
-        <button type="button" className={`cat-chip ${chip === "全部" ? "on" : ""}`} onClick={() => setChip("全部")}>
-          全部
-        </button>
-        {RADIUS.map((r) => (
-          <button
-            key={r.id}
-            type="button"
-            className={`cat-chip ${chip === r.id ? "on" : ""}`}
-            style={{ ["--sc" as string]: r.color }}
-            onClick={() => setChip(r.id)}
-          >
-            {r.en}
-          </button>
-        ))}
-      </div>
-      {shown.slice(0, 28).map((c) => {
-        const related = relateToRadius(c);
-        const first = related[0] ? RADIUS.find((r) => r.id === related[0]) : undefined;
-        return (
-          <article className="exhibit concept-exhibit" key={c.id}>
-            <div className="ex-kicker">
-              <span>{c.source}</span>
-              <span className={`maturity ${c.maturity}`}>{c.maturity}</span>
-              <span className="ex-date">{c.date}</span>
-            </div>
-            <h2>{c.title}</h2>
-            <p>{c.summary || "点进半径节点或基础馆，把这条账本挂回可运行的控制半径。"}</p>
-            <div className="ex-actions">
-              {first && (
-                <a className="btn primary" href="/#sec-network" onClick={() => onEnterForYou()}>
-                  半径 · {first.en}
-                </a>
-              )}
-              {first && (
-                <a className="btn" href={first.foundation}>
-                  基础馆
-                </a>
-              )}
-              <a className="btn" href={c.url} target="_blank" rel="noreferrer">
-                原文 ↗
-              </a>
-              <a className="btn" href={`/concepts?radius=${related[0] ?? ""}`}>
-                概念馆
-              </a>
-            </div>
-          </article>
-        );
-      })}
-      <p className="feed-more">
-        账本共 {(conceptsData as { conceptCount: number }).conceptCount} 条。
-        <a href="/concepts">打开完整概念馆 →</a>
-      </p>
-    </div>
-  );
-}
-
 /* ---------------- 主组件 ---------------- */
 
 export function LearningLab() {
   const [activeId, setActiveId] = useState("sec-0");
-  const [feedMode, setFeedMode] = useLocalStorage<"for-you" | "concept">("ai-lab-feed-mode", "for-you");
   const [done, setDone] = useLocalStorage<string[]>("ai-lab-done", []);
   const [toast, showToast] = useToast();
-
-  useEffect(() => {
-    const sync = () => {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get("mode") === "concept" || window.location.hash === "#concept") {
-        setFeedMode("concept");
-      } else if (window.location.hash.startsWith("#sec")) {
-        setFeedMode("for-you");
-      }
-    };
-    sync();
-    window.addEventListener("hashchange", sync);
-    return () => window.removeEventListener("hashchange", sync);
-  }, [setFeedMode]);
 
   /* 章节 scroll-spy + 完成记录 */
   useEffect(() => {
@@ -1895,9 +1793,9 @@ export function LearningLab() {
 
   return (
     <LabShell
-      wing="home"
-      logo="AI Learning Lab"
-      tag="同一条控制半径 · 对比 · 通关 · 账本"
+      wing={activeId === "sec-network" ? "network" : "home"}
+      logo="本章"
+      tag="控制半径 · 对比 · 通关 · 账本"
       searchExtra={[
         { href: "/#harness-lab", label: "Harness Lab", hint: "单次运行", kind: "Demo", id: "sec-labs" },
         { href: "/#loop-lab", label: "Loop Lab", hint: "重复运行", kind: "Demo", id: "sec-labs" },
@@ -1908,7 +1806,6 @@ export function LearningLab() {
       navItems={navItems}
       activeId={activeId}
       onActive={(id) => {
-        setFeedMode("for-you");
         setActiveId(id);
       }}
       done={done}
@@ -1916,16 +1813,7 @@ export function LearningLab() {
         setDone([]);
         showToast("学习进度已重置");
       }}
-      crumb={feedMode === "concept" ? "概念 · 生长账本" : `${activeItem.num} · ${activeItem.label}`}
-      modes={[
-        { id: "for-you", label: "为你" },
-        { id: "concept", label: "概念" },
-      ]}
-      mode={feedMode}
-      onMode={(id) => {
-        setFeedMode(id === "concept" ? "concept" : "for-you");
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }}
+      crumb={`${activeItem.num} · ${activeItem.label}`}
       extra={
         <>
           <MentorPanel activeId={activeId} />
@@ -1951,104 +1839,85 @@ export function LearningLab() {
           </footer>
       }
     >
-          {feedMode === "concept" ? (
-            <section className="lesson" id="sec-0" style={{ ["--sc" as string]: "#64748b" }}>
-              <div className="hello">
-                <p className="hello-hi">{greetingHi()}，翻一翻今天的账本</p>
-                <h1>
-                  概念在生长
-                  <br />
-                  <span className="grad">半径还是那一条</span>
-                </h1>
-                <p className="sub">
-                  一手来源入库后挂回 Tool / ReAct / Loop / MCP / A2A / Skill / Harness / Graph。点卡片即可跳进知识网络或基础馆。
-                </p>
-              </div>
-              <ConceptFeed onEnterForYou={() => setFeedMode("for-you")} />
-            </section>
-          ) : (
-          <>
-          <section className="lesson" id="sec-0" style={{ ["--sc" as string]: "#64748b" }}>
+          <section className="lesson" id="sec-0" style={{ ["--sc" as string]: "#262626" }}>
             <div className="hello">
-              <p className="hello-hi">{greetingHi()}，今天继续走控制半径</p>
+              <p className="eyebrow">今日</p>
               <h1>
                 前沿技术，亲手跑懂
-                <br />
-                <span className="grad">并形成自己的知识网络</span>
+                <span className="tone"> 并形成自己的知识网络</span>
               </h1>
               <p className="sub">
-                一手来源沉淀 × 知识网络 × 可运行 Demo × Skill。为你：今天只走一条路径。概念：账本展陈。
+                一手来源沉淀 × 知识网络 × 可运行 Demo × Skill。选一个起点进入工作室画布。
               </p>
-              <div className="cat-chips">
-                <a className="cat-chip on" href="#sec-network">知识网络</a>
-                <a className="cat-chip" href="#graph-lab">今日 Demo</a>
-                <a className="cat-chip" href="#sec-tacit">一道判断</a>
-                <a className="cat-chip" href="/agent-foundations.html">基础馆</a>
-              </div>
-            </div>
-            <article className="insight-card rec-card">
-              <div className="insight-k">今日建议 · 把握 78%</div>
-              <h2>先点亮 Graph，再跑一次多循环 Demo</h2>
-              <p>
-                知识网络已高亮 Graph。跑完 Demo 后做一张判断手感卡，再进基础馆把节点拆成可通关章节。
+              <p className="today-path" aria-label="今日路径">
+                今日路径：知识网络 → Graph Demo → 判断手感 → 基础馆
               </p>
-              <div className="conf-meter" aria-hidden="true"><i style={{ width: "78%" }} /></div>
-              <div className="tool-chips" aria-label="今天用到的能力">
-                <span className="tool-chip">知识网络</span>
-                <span className="tool-chip">Graph Lab</span>
-                <span className="tool-chip">判断手感</span>
-                <span className="tool-chip">基础馆</span>
-              </div>
-              <div className="rec-alts">
-                <span>其他路径</span>
-                <a href="#loop-lab">先跑 Loop</a>
-                <a href="#harness-lab">从 Harness 补环境</a>
-                <a href="/concepts">改看概念账本</a>
-              </div>
-              <div className="rec-actions">
-                <a className="btn primary" href="#graph-lab">接受建议</a>
-                <a className="btn" href="/agent-foundations.html#sec-3">下一间馆 · Loop 通关</a>
-              </div>
-            </article>
-            <div className="task-list" aria-label="今日路径">
-              <a className="task-row" href="#sec-network">
-                <span className="tr-status">01</span>
-                <span>
-                  <b>点亮控制半径</b>
-                  <small>Graph 已高亮；看它连向 Loop</small>
-                </span>
-                <span className="tr-meta">进行中</span>
+            </div>
+            <div className="start-grid">
+              <a className="start-card" href="#sec-network">
+                <span className="start-k">画布</span>
+                <div className="start-preview" aria-hidden="true">
+                  <i style={{ left: 10, top: 16, width: 42, height: 28 }} />
+                  <i style={{ left: 62, top: 22, width: 36, height: 22 }} />
+                  <i style={{ left: 108, top: 14, width: 48, height: 34 }} />
+                </div>
+                <h2>知识网络</h2>
+                <p>不是词汇表，是控制半径。</p>
               </a>
-              <a className="task-row" href="#graph-lab">
-                <span className="tr-status">02</span>
-                <span>
-                  <b>跑一次 Graph Demo</b>
-                  <small>默认会复现局部全绿、外部目标下跌</small>
-                </span>
-                <span className="tr-meta">Demo</span>
+              <a className="start-card" href="#sec-labs">
+                <span className="start-k">沙盒</span>
+                <div className="start-preview" aria-hidden="true">
+                  <i style={{ left: 12, top: 12, width: "70%", height: 10 }} />
+                  <i style={{ left: 12, top: 30, width: "40%", height: 10 }} />
+                  <i style={{ left: 12, top: 48, width: 18, height: 10, background: "var(--lime)" }} />
+                </div>
+                <h2>Harness / Loop / Graph Demo</h2>
+                <p>亲手观察机制：单次、重复、多循环。</p>
               </a>
-              <a className="task-row" href="#sec-tacit">
-                <span className="tr-status">03</span>
-                <span>
-                  <b>做一道判断手感</b>
-                  <small>先写观察，再展开参考线索</small>
-                </span>
-                <span className="tr-meta">Drill</span>
+              <a className="start-card" href="/agent-foundations.html">
+                <span className="start-k">课程</span>
+                <div className="start-preview" aria-hidden="true">
+                  <i style={{ left: 12, top: 14, width: "80%", height: 8 }} />
+                  <i style={{ left: 12, top: 30, width: "55%", height: 8 }} />
+                  <i style={{ left: 12, top: 46, width: "66%", height: 8 }} />
+                </div>
+                <h2>基础馆</h2>
+                <p>把同一条半径拆成可通关章节。</p>
               </a>
-              <a className="task-row" href="/agent-foundations.html">
-                <span className="tr-status">04</span>
-                <span>
-                  <b>进入基础馆</b>
-                  <small>把同一条半径拆成可通关章节</small>
-                </span>
-                <span className="tr-meta">深读</span>
+              <a className="start-card" href="/concepts">
+                <span className="start-k">账本</span>
+                <div className="start-preview" aria-hidden="true">
+                  <i style={{ left: 10, top: 12, width: "45%", height: 48 }} />
+                  <i style={{ left: "52%", top: 12, width: "40%", height: 48 }} />
+                </div>
+                <h2>概念账本</h2>
+                <p>一手来源入库，按半径挂回节点。</p>
+              </a>
+              <a className="start-card" href="/git-workflow.html">
+                <span className="start-k">工坊</span>
+                <div className="start-preview" aria-hidden="true">
+                  <i style={{ left: 20, top: 18, width: 14, height: 14, borderRadius: 99 }} />
+                  <i style={{ left: 50, top: 28, width: 14, height: 14, borderRadius: 99 }} />
+                  <i style={{ left: 80, top: 18, width: 14, height: 14, borderRadius: 99 }} />
+                </div>
+                <h2>Git</h2>
+                <p>永远从目标合入分支拉新分支。</p>
+              </a>
+              <a className="start-card" href="#sec-skill">
+                <span className="start-k">手册</span>
+                <div className="start-preview" aria-hidden="true">
+                  <i style={{ left: 14, top: 14, width: 22, height: 44 }} />
+                  <i style={{ left: 44, top: 14, width: "50%", height: 12 }} />
+                  <i style={{ left: 44, top: 34, width: "38%", height: 12 }} />
+                </div>
+                <h2>Skill 体系</h2>
+                <p>分层手册，不是超长提示词。</p>
               </a>
             </div>
-            <div className="meta-chips">
+            <div className="meta-chips" aria-label="馆藏规模">
                 <span className="mc">3 个机制 Demo</span>
                 <span className="mc">Skill 分层手册</span>
                 <span className="mc">判断手感训练</span>
-                <span className="mc">进度自动保存</span>
                 <span className="mc">课程核对 {CURRICULUM_AS_OF}</span>
                 <span className="mc">账本 {ledgerUpdated}</span>
               </div>
@@ -2070,7 +1939,7 @@ export function LearningLab() {
                 ["04", "Skill 整合", "手册、资料、工具、素材"],
                 ["05", "判断迁移", "先观察，再形式化"],
               ].map(([year, title, detail]) => (
-                <div className="road-node" key={year} style={{ ["--rc" as string]: "#5b5bd6" }}>
+                <div className="road-node" key={year} style={{ ["--rc" as string]: "#262626" }}>
                   <div className="rn-y">{year}</div>
                   <div className="rn-t">{title}</div>
                   <div className="rn-d">{detail}</div>
@@ -2097,7 +1966,7 @@ export function LearningLab() {
           <section
             className="lesson"
             id="sec-network"
-            style={{ ["--sc" as string]: "#2563eb" }}
+            style={{ ["--sc" as string]: "#262626" }}
           >
             <div className="sec-head">
               <span className="sec-num">1</span>
@@ -2107,7 +1976,12 @@ export function LearningLab() {
               从“模型能调用工具”一路走到“多个优化循环如何不互相欺骗”，并把 MCP、A2A、Agent
               Card、Skill 放进同一张控制半径图。
             </p>
-            <KnowledgeNetwork />
+            <div className="studio-frame">
+              <div className="studio-frame-bar">知识网络</div>
+              <div style={{ padding: "16px 20px 20px" }}>
+                <KnowledgeNetwork />
+              </div>
+            </div>
             <div className="comparison-table" role="table" aria-label="工程与协议层级对比">
               <div className="comparison-row comparison-head" role="row">
                 <span role="columnheader">层级</span>
@@ -2135,7 +2009,7 @@ export function LearningLab() {
             <ProtocolLab />
           </section>
 
-          <section className="lesson" id="sec-labs" style={{ ["--sc" as string]: "#059669" }}>
+          <section className="lesson" id="sec-labs" style={{ ["--sc" as string]: "#218c00" }}>
             <div className="sec-head">
               <span className="sec-num">2</span>
               <h2>技术复现 Demo：亲手观察机制</h2>
@@ -2154,7 +2028,7 @@ export function LearningLab() {
           <section
             className="lesson"
             id="sec-courses"
-            style={{ ["--sc" as string]: "#0891b2" }}
+            style={{ ["--sc" as string]: "#434343" }}
           >
             <div className="sec-head">
               <span className="sec-num">5</span>
@@ -2208,7 +2082,7 @@ export function LearningLab() {
           <section
             className="lesson"
             id="sec-sources"
-            style={{ ["--sc" as string]: "#e11d48" }}
+            style={{ ["--sc" as string]: "#262626" }}
           >
             <div className="sec-head">
               <span className="sec-num">6</span>
@@ -2242,8 +2116,6 @@ export function LearningLab() {
               ))}
             </div>
           </section>
-          </>
-          )}
 
     </LabShell>
   );

@@ -8,35 +8,39 @@
 <style>
 /* ============ 主题变量 ============ */
 :root{
-  --bg:#f7f8fa; --bg-soft:#eef0f4; --card:#ffffff; --card-2:#fafbfc;
-  --text:#16181d; --text-2:#4b5163; --text-3:#888fa2;
-  --line:#e5e8ee; --line-2:#d5d9e2;
-  --acc:#1f4e5a; --acc-2:#b4532a;
-  --amber:#d97706; --violet:#7c3aed; --emerald:#059669; --blue:#2563eb; --rose:#e11d48; --slate:#475569;
-  --amber-bg:#fdf3e3; --violet-bg:#f4efff; --emerald-bg:#e8f7f1; --blue-bg:#e9f1fe; --rose-bg:#feebef; --slate-bg:#eef1f6;
-  --ok:#16a34a; --ok-bg:#e8f9ef; --err:#dc2626; --err-bg:#fdecec;
-  --code-bg:#14171f; --code-text:#d8dee9;
-  --shadow:0 1px 2px rgba(16,24,40,.04),0 4px 16px rgba(16,24,40,.06);
-  --shadow-lg:0 4px 12px rgba(16,24,40,.07),0 12px 40px rgba(16,24,40,.1);
-  --r:14px; --side-w:268px;
+  --paper:#fafafa; --paper-warm:#f5f5f5; --paper-dark:#f0f0f0; --bone:#ffffff;
+  --ink:#262626; --ink-soft:#434343; --ink-mute:#595959; --ink-faint:#8c8c8c;
+  --lime:#63fe13; --lime-soft:#83ff3b; --olive:#218c00;
+  --bg:#fafafa; --bg-soft:#f5f5f5; --card:#ffffff; --card-2:#f5f5f5;
+  --text:#262626; --text-2:#595959; --text-3:#8c8c8c;
+  --line:#d9d9d9; --line-2:#bfbfbf;
+  --acc:#63fe13; --acc-2:#83ff3b;
+  --amber:#8c8c8c; --violet:#434343; --emerald:#218c00; --blue:#262626; --rose:#262626; --slate:#595959;
+  --amber-bg:#f5f5f5; --violet-bg:#f5f5f5; --emerald-bg:#f0f0f0; --blue-bg:#f5f5f5; --rose-bg:#f5f5f5; --slate-bg:#f5f5f5;
+  --ok:#218c00; --ok-bg:#f0f0f0; --err:#262626; --err-bg:#f5f5f5;
+  --code-bg:#262626; --code-text:#fafafa;
+  --shadow:none; --shadow-lg:0 30px 60px -30px rgba(38,38,38,.16);
+  --r:12px; --side-w:212px;
 }
 html[data-theme="dark"]{
-  --bg:#0c0e13; --bg-soft:#13161d; --card:#161a22; --card-2:#1b202a;
-  --text:#edeff4; --text-2:#a9aebe; --text-3:#6f7589;
-  --line:#262b38; --line-2:#343b4a;
-  --acc:#8aa8a0; --acc-2:#e0a070;
-  --amber:#fbbf24; --violet:#a78bfa; --emerald:#34d399; --blue:#60a5fa; --rose:#fb7185; --slate:#94a3b8;
-  --amber-bg:#2a2110; --violet-bg:#221a3a; --emerald-bg:#102b21; --blue-bg:#122238; --rose-bg:#2e151d; --slate-bg:#1c222e;
-  --ok:#4ade80; --ok-bg:#122f1f; --err:#f87171; --err-bg:#321414;
-  --code-bg:#0a0d14; --code-text:#d8dee9;
-  --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.32);
-  --shadow-lg:0 8px 30px rgba(0,0,0,.48);
+  --paper:#262626; --paper-warm:#2e2e2e; --paper-dark:#1a1a1a; --bone:#2e2e2e;
+  --ink:#fafafa; --ink-soft:#e5e5e5; --ink-mute:#8c8c8c; --ink-faint:#8c8c8c;
+  --lime:#63fe13; --lime-soft:#83ff3b; --olive:#83ff3b;
+  --bg:#262626; --bg-soft:#2e2e2e; --card:#2e2e2e; --card-2:#262626;
+  --text:#fafafa; --text-2:#8c8c8c; --text-3:#8c8c8c;
+  --line:color-mix(in srgb,#fafafa 16%,#262626); --line-2:color-mix(in srgb,#fafafa 22%,#262626);
+  --acc:#63fe13; --acc-2:#83ff3b;
+  --amber:#8c8c8c; --violet:#e5e5e5; --emerald:#83ff3b; --blue:#fafafa; --rose:#fafafa; --slate:#8c8c8c;
+  --amber-bg:#2e2e2e; --violet-bg:#2e2e2e; --emerald-bg:#2e2e2e; --blue-bg:#2e2e2e; --rose-bg:#2e2e2e; --slate-bg:#2e2e2e;
+  --ok:#83ff3b; --ok-bg:#2e2e2e; --err:#fafafa; --err-bg:#2e2e2e;
+  --code-bg:#1a1a1a; --code-text:#fafafa;
+  --shadow:none; --shadow-lg:0 30px 60px -30px rgba(0,0,0,.45);
 }
 /* ============ 基础 ============ */
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+  font-family:"Albert Sans","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
   background:var(--bg);color:var(--text);line-height:1.75;font-size:16px;
   transition:background .25s,color .25s;
 }
@@ -50,10 +54,10 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
   outline:2px solid var(--acc);outline-offset:2px}
 /* ============ 顶部进度条 & 顶栏 ============ */
 #progressbar{position:fixed;top:0;left:0;height:3px;width:0;z-index:120;
-  background:linear-gradient(90deg,var(--acc),var(--acc-2));transition:width .4s ease}
+  background:var(--lime);transition:width .4s ease}
 .topbar{position:fixed;top:0;left:var(--side-w);right:0;height:58px;z-index:100;
   display:flex;align-items:center;gap:12px;padding:0 20px;
-  background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(8px);
+  background:color-mix(in srgb,var(--bg) 82%,transparent);
   border-bottom:1px solid var(--line)}
 .topbar .crumb{font-size:13.5px;color:var(--text-2);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .topbar .pct{font-size:12.5px;font-weight:700;color:var(--acc);background:var(--slate-bg);
@@ -80,7 +84,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .side-prog .lbl{display:flex;justify-content:space-between;font-size:12px;color:var(--text-2);margin-bottom:6px}
 .side-prog .bar{height:6px;border-radius:99px;background:var(--bg-soft);overflow:hidden}
 .side-prog .bar i{display:block;height:100%;width:0;border-radius:99px;
-  background:linear-gradient(90deg,var(--acc),var(--acc-2));transition:width .5s ease}
+  background:var(--lime);transition:width .5s ease}
 .side-nav{flex:1;overflow-y:auto;padding:10px}
 .nav-item{position:relative;display:flex;align-items:center;gap:10px;padding:9px 12px;margin:2px 0;border-radius:10px;
   font-size:13.5px;color:var(--text-2);cursor:pointer;border:1px solid transparent;transition:all .15s;user-select:none}
@@ -185,7 +189,7 @@ strong{font-weight:700}
 .btn{border:1px solid var(--line-2);background:var(--card);color:var(--text);font-size:13.5px;font-weight:600;
   padding:7px 16px;border-radius:10px;transition:all .15s;display:inline-flex;align-items:center;gap:6px}
 .btn:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-1px)}
-.btn.primary{background:linear-gradient(120deg,var(--acc),var(--acc-2));color:#fff;border:none}
+.btn.primary{background:var(--ink);color:var(--paper);border:none}
 .btn.primary:hover{filter:brightness(1.08);color:#fff}
 .btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
 .btn-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
@@ -574,6 +578,39 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
 .cmdk-empty{padding:18px;color:var(--text-3);text-align:center}
 .context-card{display:block}
 
+
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+body{font-family:"Albert Sans","PingFang SC","Microsoft YaHei",system-ui,sans-serif;font-weight:400;line-height:1.5}
+h1,h2,h3,h4{font-weight:600;letter-spacing:0;line-height:1.15}
+.hero h1 .grad,h1 .tone{background:none;-webkit-background-clip:unset;background-clip:unset;color:var(--ink-mute);font-weight:400}
+#progressbar{height:2px;background:var(--lime)}
+.topbar.pill-nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);width:min(1120px,calc(100vw - 24px));height:52px;z-index:120;display:flex;align-items:center;gap:10px;padding:0 10px 0 16px;border:1px solid var(--line);border-radius:999px;background:var(--bone);box-shadow:var(--shadow-lg);backdrop-filter:none}
+.brand{font-size:14px;font-weight:700;color:var(--ink);text-decoration:none;white-space:nowrap}
+.wing-picker{display:flex;align-items:center;gap:2px;flex:1;overflow:auto;scrollbar-width:none}
+.wing-picker a{padding:6px 10px;border-radius:999px;color:var(--ink-mute);font-size:13px;font-weight:600;text-decoration:none;position:relative}
+.wing-picker a.on,.wing-picker a[aria-current="page"]{color:var(--ink)}
+.wing-picker a.on::after,.wing-picker a[aria-current="page"]::after{content:"";position:absolute;left:10px;right:10px;bottom:4px;height:2px;background:var(--lime);border-radius:99px}
+.pill-nav .crumb{flex:1;color:var(--ink-faint);font-size:12px}
+.pill-nav .pct{background:transparent;border:0;color:var(--ink-mute);font-weight:600}
+.pill-nav .icon-btn{border:0;background:transparent;border-radius:999px}
+#sidebar{padding-top:76px;width:var(--side-w);background:var(--paper)}
+.side-head{padding:8px 16px 12px;border-bottom:0}
+.side-head .logo{font-size:13px;font-weight:600;letter-spacing:0}
+.side-head .logo .badge{display:none}
+.lab-switch{display:none}
+.btn{border-radius:999px;padding:10px 16px}
+.btn.primary{background:var(--ink);color:var(--paper);border:none;box-shadow:none}
+.btn.primary:hover{color:var(--paper);background:var(--ink-soft);filter:none}
+.insight-card,.rec-card{border:1px solid var(--line);border-radius:12px;box-shadow:none;background:var(--bone)}
+.insight-k{letter-spacing:0;text-transform:none;color:var(--ink-faint);font-size:12px}
+.mode-tabs{display:none}
+main .wrap{padding-top:24px}
+.hero{background:transparent;border:0;box-shadow:none;padding:8px 0}
+.hero::after{display:none}
+.path-bridge{background:transparent;border:0;padding:0 0 16px}
+.path-bridge .pb-k{letter-spacing:.08em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+@media(max-width:1023px){.pill-nav.topbar{left:12px;right:12px;transform:none;width:auto}.wing-picker{display:none}#sidebar{padding-top:12px}}
+
 </style>
 <script>
 /* 预渲染主题：与首页共用 ai-lab-theme，避免黑白闪屏 */
@@ -598,30 +635,25 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
 <!-- ============ 侧边栏 ============ -->
 <nav id="sidebar">
   <div class="side-head">
-    <div class="logo">🧭 Agent 基础馆 <span class="badge">COURSE</span></div>
+    <div class="logo">本章</div>
     <div class="tag">AI Learning Lab · 深入课程</div>
-    <div class="lab-switch">
-      <a href="/">前沿首页</a>
-      <a href="/agent-foundations.html" aria-current="page">基础馆</a>
-      <a href="/concepts">概念馆</a>
-      <a href="/git-workflow.html">Git 实验室</a>
-    </div>
+    <div class="lab-switch" hidden></div>
   </div>
   <div class="side-prog">
     <div class="lbl"><span>学习进度</span><b id="side-pct">0%</b></div>
     <div class="bar"><i id="side-bar"></i></div>
   </div>
   <div class="side-nav" id="side-nav">
-    <a class="nav-item" href="#sec-0" data-sec="sec-0" style="--nc:#64748b"><span class="num">0</span><span class="t">为什么模型需要"手和脚"</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-1" data-sec="sec-1" style="--nc:#d97706"><span class="num">1</span><span class="t">Tool · 工具调用</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-2" data-sec="sec-2" style="--nc:#7c3aed"><span class="num">2</span><span class="t">ReAct · 边想边做</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-3" data-sec="sec-3" style="--nc:#059669"><span class="num">3</span><span class="t">Agent Loop 与 Loop Engineering</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-4" data-sec="sec-4" style="--nc:#2563eb"><span class="num">4</span><span class="t">MCP · 模型上下文协议</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-5" data-sec="sec-5" style="--nc:#e11d48"><span class="num">5</span><span class="t">MCP Server · 动手写一个</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-6" data-sec="sec-6" style="--nc:#0891b2"><span class="num">6</span><span class="t">Agent 架构与 Multi-Agent</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-skill" data-sec="sec-skill" style="--nc:#7c3aed"><span class="num">7</span><span class="t">Skill · 分层能力手册</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-7" data-sec="sec-7" style="--nc:#c026d3"><span class="num">8</span><span class="t">2026 前沿概念雷达</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-8" data-sec="sec-8" style="--nc:#5b5bd6"><span class="num">9</span><span class="t">全景串联 + 通关自测</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-0" data-sec="sec-0" style="--nc:#262626"><span class="num">0</span><span class="t">为什么模型需要"手和脚"</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-1" data-sec="sec-1" style="--nc:#434343"><span class="num">1</span><span class="t">Tool · 工具调用</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-2" data-sec="sec-2" style="--nc:#434343"><span class="num">2</span><span class="t">ReAct · 边想边做</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-3" data-sec="sec-3" style="--nc:#218c00"><span class="num">3</span><span class="t">Agent Loop 与 Loop Engineering</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-4" data-sec="sec-4" style="--nc:#262626"><span class="num">4</span><span class="t">MCP · 模型上下文协议</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-5" data-sec="sec-5" style="--nc:#262626"><span class="num">5</span><span class="t">MCP Server · 动手写一个</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-6" data-sec="sec-6" style="--nc:#595959"><span class="num">6</span><span class="t">Agent 架构与 Multi-Agent</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-skill" data-sec="sec-skill" style="--nc:#434343"><span class="num">7</span><span class="t">Skill · 分层能力手册</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-7" data-sec="sec-7" style="--nc:#595959"><span class="num">8</span><span class="t">2026 前沿概念雷达</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-8" data-sec="sec-8" style="--nc:#262626"><span class="num">9</span><span class="t">全景串联 + 通关自测</span><span class="dot"></span></a>
   </div>
   <div class="side-foot">
     <span class="mini">进度自动保存在本地</span>
@@ -631,16 +663,19 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
 <div id="backdrop"></div>
 
 <!-- ============ 顶栏 ============ -->
-<header class="topbar">
+<header class="topbar pill-nav">
   <button class="icon-btn" id="hamburger" title="目录">☰</button>
-  <a class="icon-btn" id="home-link" href="/" title="返回 AI Learning Lab 首页">⌂</a>
-  <div class="crumb" id="crumb">0 · 为什么模型需要"手和脚"</div>
-  <div class="mode-tabs" aria-label="内容模式">
-    <a href="/" class="on">为你</a>
+  <a class="brand" href="/">AI Learning Lab</a>
+  <nav class="wing-picker" aria-label="馆翼">
+    <a href="/">今日</a>
+    <a href="/#sec-network">知识网络</a>
     <a href="/concepts">概念</a>
-  </div>
+    <a href="/agent-foundations.html" class="on" aria-current="page">基础馆</a>
+    <a href="/git-workflow.html">Git</a>
+  </nav>
+  <div class="crumb" id="crumb">0 · 为什么模型需要"手和脚"</div>
   <span class="pct" id="top-pct">进度 0%</span>
-  <button class="icon-btn" id="theme-btn" title="切换深浅色">🌙</button>
+  <button class="icon-btn" id="theme-btn" title="切换深浅色">夜</button>
 </header>
 
 <main><div class="wrap">
@@ -648,11 +683,11 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
 <!-- ================================================================ -->
 <!-- 第 0 章 · 开场 -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-0" style="--sc:#64748b">
+<section class="lesson" id="sec-0" style="--sc:#262626">
   <div class="path-bridge">
-    <span class="pb-k">AI LEARNING LAB · 学习路径</span>
+    <span class="pb-k">学习路径</span>
     <div class="pb-steps">
-      <a href="/">01 前沿首页</a><span>→</span>
+      <a href="/">今日</a><span>→</span>
       <a href="/#sec-network">02 知识网络</a><span>→</span>
       <a href="/#sec-labs">03 技术 Demo</a><span>→</span>
       <strong>04 基础馆深读（当前）</strong><span>→</span>
@@ -662,7 +697,7 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
     <p>三馆同一条控制半径。此处把首页节点拆成可通关章节；新概念请到概念馆，并按 Tool / ReAct / Loop / MCP / Skill 等挂回对应展厅。</p>
   </div>
   <div class="hero">
-    <h1>一页讲透现代 AI Agent 的<br><span class="grad">完整拼图</span></h1>
+    <h1>一页讲透现代 AI Agent 的 <span class="grad">完整拼图</span></h1>
     <p class="sub">Tool（工具调用）、ReAct、Agent Loop 与 Loop Engineering、MCP 与 MCP Server——这五块拼图拼在一起，就是你每天在用的 Cursor、Claude Code、ChatGPT Agent 的全部骨架。学完可回到首页，用 Harness / Loop / Graph Demo 亲手验证。</p>
     <div class="meta-chips">
       <span class="mc">📚 10 个章节</span>
@@ -746,7 +781,7 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
 <!-- ================================================================ -->
 <!-- 第 1 章 · Tool -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-1" style="--sc:#d97706">
+<section class="lesson" id="sec-1" style="--sc:#434343">
   <div class="sec-head"><span class="sec-num">第 1 章</span><h2>🔧 Tool：让模型学会"开单子"</h2></div>
   <p class="sec-sub">Tool use / Function calling · 现代 Agent 的最小机制单元</p>
 
@@ -913,7 +948,7 @@ if call.function.name == "get_weather":
 <!-- ================================================================ -->
 <!-- 第 2 章 · ReAct -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-2" style="--sc:#7c3aed">
+<section class="lesson" id="sec-2" style="--sc:#434343">
   <div class="sec-head"><span class="sec-num">第 2 章</span><h2>🧠 ReAct：一切 Agent 的思想源头</h2></div>
   <p class="sec-sub">Reason + Act · 2022 年的一篇论文，定义了此后所有 Agent 的元模式</p>
 
@@ -1015,7 +1050,7 @@ PROMPT += text + f"\nObservation: {obs}\nThought:"   # 循环往复</pre></div>
 <!-- ================================================================ -->
 <!-- 第 3 章 · Agent Loop & Loop Engineering -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-3" style="--sc:#059669">
+<section class="lesson" id="sec-3" style="--sc:#218c00">
   <div class="sec-head"><span class="sec-num">第 3 章</span><h2>🔁 Agent Loop 与 Loop Engineering</h2></div>
   <p class="sec-sub">把工具往返装进 while 循环，Agent 就诞生了；让循环稳定产出，是一门新工程学</p>
 
@@ -1156,7 +1191,7 @@ PROMPT += text + f"\nObservation: {obs}\nThought:"   # 循环往复</pre></div>
 <!-- ================================================================ -->
 <!-- 第 4 章 · MCP -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-4" style="--sc:#2563eb">
+<section class="lesson" id="sec-4" style="--sc:#262626">
   <div class="sec-head"><span class="sec-num">第 4 章</span><h2>🔌 MCP：AI 应用的 USB-C 接口</h2></div>
   <p class="sec-sub">Model Context Protocol · 让"能力"以标准方式插进任何 Agent</p>
 
@@ -1319,7 +1354,7 @@ PROMPT += text + f"\nObservation: {obs}\nThought:"   # 循环往复</pre></div>
 <!-- ================================================================ -->
 <!-- 第 5 章 · MCP Server 实战 -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-5" style="--sc:#e11d48">
+<section class="lesson" id="sec-5" style="--sc:#262626">
   <div class="sec-head"><span class="sec-num">第 5 章</span><h2>🛠 MCP Server：30 行代码接入所有 Agent</h2></div>
   <p class="sec-sub">写几个带好注释的函数，SDK 帮你把它们变成协议上的标准插件</p>
 
@@ -1469,7 +1504,7 @@ await server.connect(new StdioServerTransport());</pre></div></div>
 <!-- ================================================================ -->
 <!-- 第 6 章 · Agent 主流架构与 Multi-Agent -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-6" style="--sc:#0891b2">
+<section class="lesson" id="sec-6" style="--sc:#595959">
   <div class="sec-head"><span class="sec-num">第 6 章</span><h2>🏗 Agent 主流架构与 Multi-Agent</h2></div>
   <p class="sec-sub">单个循环是原子，架构决定原子怎么组合成分子——直到组合成一支"智能体军团"</p>
 
@@ -1716,7 +1751,7 @@ await server.connect(new StdioServerTransport());</pre></div></div>
 <!-- ================================================================ -->
 <!-- 第 7 章 · Skill 体系 -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-skill" style="--sc:#7c3aed">
+<section class="lesson" id="sec-skill" style="--sc:#434343">
   <div class="sec-head"><span class="sec-num">第 7 章</span><h2>🎒 Skill：把能力做成可组合的分层手册</h2></div>
   <p class="sec-sub">不是超长提示词，而是节省上下文的分层执行系统</p>
 
@@ -1829,7 +1864,7 @@ await server.connect(new StdioServerTransport());</pre></div></div>
   </div>
 </section>
 
-<section class="lesson" id="sec-7" style="--sc:#c026d3">
+<section class="lesson" id="sec-7" style="--sc:#595959">
   <div class="sec-head"><span class="sec-num">第 8 章</span><h2>📡 2026 前沿概念雷达</h2></div>
   <p class="sec-sub">推特时间线上最火的热词，逐个放回技术栈的正确位置</p>
 
@@ -2040,7 +2075,7 @@ await server.connect(new StdioServerTransport());</pre></div></div>
 <!-- ================================================================ -->
 <!-- 第 8 章 · 全景串联 -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-8" style="--sc:#5b5bd6">
+<section class="lesson" id="sec-8" style="--sc:#262626">
   <div class="sec-head"><span class="sec-num">第 9 章</span><h2>🧩 全景串联 + 通关自测</h2></div>
   <p class="sec-sub">把五块拼图合成一张图，再用一套综合题验证你真的懂了</p>
 
@@ -2109,7 +2144,7 @@ await server.connect(new StdioServerTransport());</pre></div></div>
   </div>
 
   <div class="pagefoot">
-    <div><b>AI Learning Lab · Agent 基础馆</b> · 与 <a href="/">前沿首页</a> / <a href="/#sec-labs">技术 Demo</a> / <a href="/git-workflow.html">Git 实验室</a> 同一学习路径 · 本页自身即是 Agent Loop + Tools 的产物 🌀</div>
+    <div><b>AI Learning Lab · Agent 基础馆</b> · 与 <a href="/">今日</a> / <a href="/#sec-labs">技术 Demo</a> / <a href="/git-workflow.html">Git 实验室</a> 同一学习路径 · 本页自身即是 Agent Loop + Tools 的产物 🌀</div>
     <div>事实核对基准：MCP 正式版规范 2025-11-25（2026-07-28 版为 RC）；MCP 已于 2025-12-09 捐赠 Linux Foundation / AAIF；Loop Engineering 一词成型于 2026-06；J-Space 发布于 2026-07-06（Anthropic《A global workspace in language models》）。所有外链均为真实资源。</div>
     <div>进度存储于浏览器 localStorage，不上传任何数据 · <a href="#" id="reset-btn-2">重置全部进度</a></div>
   </div>
@@ -3168,10 +3203,10 @@ window.__APP_OK__ = true;
   document.querySelectorAll('.nav-item').forEach(function(a){
     catalog.push({href:a.getAttribute('href')||('#'+(a.dataset.sec||'')), label:(a.querySelector('.t')||a).textContent.trim(), kind:'目录', hint:'本章'});
   });
-  catalog.push({href:'/', label:'前沿首页', kind:'馆翼', hint:'为你 / 概念'});
-  catalog.push({href:'/concepts', label:'概念馆', kind:'馆翼', hint:'每日账本'});
+  catalog.push({href:'/', label:'今日', kind:'馆翼', hint:'选择起点'});
+  catalog.push({href:'/concepts', label:'概念', kind:'馆翼', hint:'每日账本'});
   catalog.push({href:'/agent-foundations.html', label:'基础馆', kind:'馆翼', hint:'通关课程'});
-  catalog.push({href:'/git-workflow.html', label:'Git 实验室', kind:'馆翼', hint:'永远从目标合入分支拉新分支'});
+  catalog.push({href:'/git-workflow.html', label:'Git', kind:'馆翼', hint:'永远从目标合入分支拉新分支'});
   function render(){
     var q=(document.getElementById('cmdk-q').value||'').trim().toLowerCase();
     var hits=catalog.filter(function(c){ return (c.label+' '+c.kind+' '+c.hint).toLowerCase().indexOf(q)!==-1; });

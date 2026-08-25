@@ -28,27 +28,6 @@ function useLocalStorage<T>(key: string, initial: T): [T, (v: T | ((c: T) => T))
   return [value, setValue];
 }
 
-function ProgressRing({ value }: { value: number }) {
-  const r = 24;
-  const c = 2 * Math.PI * r;
-  return (
-    <svg viewBox="0 0 56 56" className="ring" aria-hidden="true">
-      <circle className="ring-bg" cx="28" cy="28" r={r} />
-      <circle
-        className="ring-fg"
-        cx="28"
-        cy="28"
-        r={r}
-        strokeDasharray={c}
-        strokeDashoffset={c * (1 - value / 100)}
-      />
-      <text className="ring-text" x="28" y="32" textAnchor="middle">
-        {value}%
-      </text>
-    </svg>
-  );
-}
-
 export function LabShell({
   wing,
   logo,
@@ -91,8 +70,6 @@ export function LabShell({
   const [showTop, setShowTop] = useState(false);
   const [cmdOpen, setCmdOpen] = useState(false);
   const [cmdQ, setCmdQ] = useState("");
-  const [glide, setGlide] = useState({ y: 0, h: 0, on: false });
-  const navRef = useRef<HTMLDivElement>(null);
   const cmdInput = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -125,7 +102,6 @@ export function LabShell({
 
   const doneCount = done?.length ?? 0;
   const progress = navItems.length ? Math.round((doneCount / navItems.length) * 100) : 0;
-  const activeItem = navItems.find((item) => item.id === activeId) ?? navItems[0];
 
   const catalog = useMemo(() => {
     const wings = WINGS.map((w) => ({
@@ -156,64 +132,95 @@ export function LabShell({
     return blob.includes(cmdQ.trim().toLowerCase());
   });
 
-  function moveGlide(el: HTMLElement) {
-    const host = navRef.current;
-    if (!host) return;
-    const hr = host.getBoundingClientRect();
-    const r = el.getBoundingClientRect();
-    setGlide({ y: r.top - hr.top + host.scrollTop, h: r.height, on: true });
-  }
-
   return (
-    <div className={`lab-shell ${modes?.length ? "has-modes" : ""}`}>
+    <div className={`lab-shell studio-shell ${modes?.length ? "has-modes" : ""}`}>
       <div id="progressbar" style={{ width: `${progress}%` }} />
+
+      <header className="topbar pill-nav">
+        <button className="icon-btn" type="button" title="目录" aria-label="打开目录" onClick={() => setSidebarOpen((o) => !o)}>
+          ☰
+        </button>
+        <a className="brand" href="/">
+          AI Learning Lab
+        </a>
+        <nav className="wing-picker" aria-label="馆翼">
+          {WINGS.map((w) => (
+            <a
+              key={w.id}
+              href={w.href}
+              className={w.id === wing ? "on" : undefined}
+              aria-current={w.id === wing ? "page" : undefined}
+            >
+              {w.label}
+            </a>
+          ))}
+        </nav>
+        {modes && modes.length > 0 && (
+          <div className="mode-tabs" role="tablist" aria-label="内容模式">
+            {modes.map((m) => (
+              <button
+                key={m.id}
+                type="button"
+                role="tab"
+                aria-selected={mode === m.id}
+                className={mode === m.id ? "on" : undefined}
+                onClick={() => onMode?.(m.id)}
+              >
+                {m.label}
+              </button>
+            ))}
+          </div>
+        )}
+        <span className="crumb">{crumb}</span>
+        {done && <span className="pct">{progressLabel ? `${progressLabel} ${progress}%` : `${progress}%`}</span>}
+        <button
+          className="icon-btn"
+          type="button"
+          title="搜索 ⌘K"
+          aria-label="打开搜索"
+          onClick={() => {
+            setCmdOpen(true);
+            setCmdQ("");
+          }}
+        >
+          ⌕
+        </button>
+        <button
+          className="icon-btn theme-btn"
+          type="button"
+          title="切换深浅色"
+          onClick={() => setTheme((current) => (current === "light" ? "dark" : "light"))}
+        >
+          <span className="theme-ico" key={theme}>
+            {theme === "light" ? "夜" : "日"}
+          </span>
+        </button>
+      </header>
 
       <nav id="sidebar" className={sidebarOpen ? "open" : ""} aria-label="馆内目录">
         <div className="side-head">
-          <div className="logo">
-            {logo} <span className="badge">LAB</span>
-          </div>
+          <div className="logo">{logo}</div>
           <div className="tag">{tag}</div>
-          <div className="lab-switch wing-switch" role="navigation" aria-label="馆翼">
-            {WINGS.map((w) => (
-              <a key={w.id} href={w.href} className={w.id === wing ? "on" : undefined} aria-current={w.id === wing ? "page" : undefined}>
-                {w.label}
-              </a>
-            ))}
-          </div>
         </div>
         {navItems.length > 0 && (
           <div className="side-prog">
-            <ProgressRing value={progress} />
-            <div className="sp-info">
-              <div className="lbl">
-                <span>{progressLabel ?? "学习进度"}</span>
-              </div>
-              <div className="sp-detail">
-                {done ? `已读 ${doneCount}/${navItems.length}` : "同一条控制半径"}
-              </div>
+            <div className="lbl">
+              <span>{progressLabel ?? "学习进度"}</span>
+              <b>{progress}%</b>
             </div>
+            <div className="bar">
+              <i style={{ width: `${progress}%` }} />
+            </div>
+            <div className="sp-detail">{done ? `已读 ${doneCount}/${navItems.length}` : "同一条控制半径"}</div>
           </div>
         )}
-        <div
-          className="side-nav"
-          ref={navRef}
-          onMouseLeave={() => setGlide((g) => ({ ...g, on: false }))}
-        >
-          <div
-            className={`nav-glide ${glide.on ? "on" : ""}`}
-            style={{ transform: `translateY(${glide.y}px)`, height: glide.h || 40 }}
-            aria-hidden="true"
-          />
+        <div className="side-nav">
           {navItems.map((item) => (
             <a
               key={item.id}
               className={`nav-item ${activeId === item.id ? "active" : ""} ${done?.includes(item.id) ? "done" : ""}`}
               href={item.href ?? `#${item.id}`}
-              style={{ ["--nc" as string]: item.color }}
               aria-current={activeId === item.id ? "true" : undefined}
-              onMouseEnter={(e) => moveGlide(e.currentTarget)}
-              onFocus={(e) => moveGlide(e.currentTarget)}
               onClick={() => {
                 onActive?.(item.id);
                 setSidebarOpen(false);
@@ -236,55 +243,6 @@ export function LabShell({
       </nav>
 
       <div id="backdrop" className={sidebarOpen ? "open" : ""} onClick={() => setSidebarOpen(false)} />
-
-      <header className="topbar">
-        <button className="icon-btn" type="button" title="目录" aria-label="打开目录" onClick={() => setSidebarOpen((o) => !o)}>
-          ☰
-        </button>
-        <div className="crumb">
-          <span className="crumb-dot" style={{ background: activeItem?.color ?? "var(--acc)" }} />
-          {crumb}
-        </div>
-        {modes && modes.length > 0 && (
-          <div className="mode-tabs" role="tablist" aria-label="内容模式">
-            {modes.map((m) => (
-              <button
-                key={m.id}
-                type="button"
-                role="tab"
-                aria-selected={mode === m.id}
-                className={mode === m.id ? "on" : undefined}
-                onClick={() => onMode?.(m.id)}
-              >
-                {m.label}
-              </button>
-            ))}
-          </div>
-        )}
-        {done && <span className="pct">{progressLabel ? `${progressLabel} ${progress}%` : `进度 ${progress}%`}</span>}
-        <button
-          className="icon-btn"
-          type="button"
-          title="搜索 ⌘K"
-          aria-label="打开搜索"
-          onClick={() => {
-            setCmdOpen(true);
-            setCmdQ("");
-          }}
-        >
-          ⌕
-        </button>
-        <button
-          className="icon-btn theme-btn"
-          type="button"
-          title="切换深浅色"
-          onClick={() => setTheme((current) => (current === "light" ? "dark" : "light"))}
-        >
-          <span className="theme-ico" key={theme}>
-            {theme === "light" ? "🌙" : "☀️"}
-          </span>
-        </button>
-      </header>
 
       {cmdOpen && (
         <div className="cmdk" role="dialog" aria-label="搜索馆内内容">
@@ -321,10 +279,7 @@ export function LabShell({
       )}
 
       <main className="lab-main">
-        <div className="wrap">
-          {children}
-          {footer}
-        </div>
+        <div className="wrap studio-canvas">{children}{footer}</div>
       </main>
 
       <button

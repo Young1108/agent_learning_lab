@@ -1,12 +1,13 @@
 export const CURRICULUM_AS_OF = "2026-07-28";
 
-export type WingId = "home" | "foundations" | "concepts" | "git";
+export type WingId = "home" | "network" | "foundations" | "concepts" | "git";
 
 export const WINGS: { id: WingId; href: string; label: string; hint: string }[] = [
-  { id: "home", href: "/", label: "前沿首页", hint: "对比 · 亲手跑" },
+  { id: "home", href: "/", label: "今日", hint: "选择起点" },
+  { id: "network", href: "/#sec-network", label: "知识网络", hint: "控制半径" },
+  { id: "concepts", href: "/concepts", label: "概念", hint: "每日账本" },
   { id: "foundations", href: "/agent-foundations.html", label: "基础馆", hint: "通关课程" },
-  { id: "concepts", href: "/concepts", label: "概念馆", hint: "每日账本" },
-  { id: "git", href: "/git-workflow.html", label: "Git 实验室", hint: "协作图" },
+  { id: "git", href: "/git-workflow.html", label: "Git", hint: "协作图" },
 ];
 
 export type RadiusId =
@@ -20,6 +21,7 @@ export type RadiusId =
   | "harness"
   | "graph";
 
+/* Open Design live tokens only: ink / mute / olive. Lime is never a node fill. */
 export const RADIUS: {
   id: RadiusId;
   label: string;
@@ -28,15 +30,15 @@ export const RADIUS: {
   foundation: string;
   tags: string[];
 }[] = [
-  { id: "tool", label: "工具", en: "Tool", color: "#b4532a", foundation: "/agent-foundations.html#sec-1", tags: ["Tool Use"] },
-  { id: "react", label: "认知循环", en: "ReAct", color: "#5b4636", foundation: "/agent-foundations.html#sec-2", tags: ["推理"] },
-  { id: "loop", label: "重复运行", en: "Loop", color: "#2f6f5e", foundation: "/agent-foundations.html#sec-3", tags: ["推理", "Agent"] },
-  { id: "mcp", label: "工具协议", en: "MCP", color: "#1f4e5a", foundation: "/agent-foundations.html#sec-4", tags: ["MCP"] },
-  { id: "a2a", label: "协作协议", en: "A2A", color: "#3d5a80", foundation: "/agent-foundations.html#sec-6", tags: ["Agent"] },
-  { id: "card", label: "能力名片", en: "Agent Card", color: "#6b4c7a", foundation: "/agent-foundations.html#sec-6", tags: ["Agent"] },
-  { id: "skill", label: "分层手册", en: "Skill", color: "#8a5a2a", foundation: "/agent-foundations.html#sec-skill", tags: ["Skill"] },
-  { id: "harness", label: "单次运行", en: "Harness", color: "#2f6f5e", foundation: "/#sec-labs", tags: ["Harness"] },
-  { id: "graph", label: "多循环治理", en: "Graph", color: "#8c2f39", foundation: "/#sec-network", tags: ["Graph"] },
+  { id: "tool", label: "工具", en: "Tool", color: "#262626", foundation: "/agent-foundations.html#sec-1", tags: ["Tool Use"] },
+  { id: "react", label: "认知循环", en: "ReAct", color: "#434343", foundation: "/agent-foundations.html#sec-2", tags: ["推理"] },
+  { id: "loop", label: "重复运行", en: "Loop", color: "#218c00", foundation: "/agent-foundations.html#sec-3", tags: ["推理", "Agent"] },
+  { id: "mcp", label: "工具协议", en: "MCP", color: "#262626", foundation: "/agent-foundations.html#sec-4", tags: ["MCP"] },
+  { id: "a2a", label: "协作协议", en: "A2A", color: "#595959", foundation: "/agent-foundations.html#sec-6", tags: ["Agent"] },
+  { id: "card", label: "能力名片", en: "Agent Card", color: "#595959", foundation: "/agent-foundations.html#sec-6", tags: ["Agent"] },
+  { id: "skill", label: "分层手册", en: "Skill", color: "#434343", foundation: "/agent-foundations.html#sec-skill", tags: ["Skill"] },
+  { id: "harness", label: "单次运行", en: "Harness", color: "#218c00", foundation: "/#sec-labs", tags: ["Harness"] },
+  { id: "graph", label: "多循环治理", en: "Graph", color: "#262626", foundation: "/#sec-network", tags: ["Graph"] },
 ];
 
 const TITLE_HINTS: [RegExp, RadiusId][] = [

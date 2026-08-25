@@ -32,8 +32,8 @@ const MATURITY_LABEL: Record<string, string> = {
 };
 
 const archiveNav = [
-  { id: "sec-ledger", num: "Ⅰ", label: "每日账本", color: "#1f4e5a" },
-  { id: "sec-radius", num: "Ⅱ", label: "控制半径索引", color: "#b4532a" },
+  { id: "sec-ledger", num: "Ⅰ", label: "每日账本", color: "#262626" },
+  { id: "sec-radius", num: "Ⅱ", label: "控制半径索引", color: "#434343" },
 ];
 
 function useLocalStorage<T>(key: string, initial: T): [T, (v: T | ((c: T) => T)) => void] {
@@ -150,7 +150,7 @@ function ConceptArchive() {
   return (
     <LabShell
       wing="concepts"
-      logo="概念馆"
+      logo="本章"
       tag="每日账本 · 挂回控制半径"
       searchExtra={RADIUS.map((r) => ({
         href: `/concepts?radius=${r.id}`,
@@ -169,39 +169,34 @@ function ConceptArchive() {
           <br />
           基础馆课程核对于 {CURRICULUM_AS_OF}；本馆账本更新于 {DATA.updatedAt.slice(0, 10)}。proposed 仅代表提出方主张。
           <div>
-            <a href="/">前沿首页</a>
+            <a href="/">今日</a>
             <a href="/#sec-network">知识网络</a>
             <a href="/agent-foundations.html">基础馆</a>
           </div>
         </footer>
       }
     >
-      <section className="lesson" id="sec-ledger" style={{ ["--sc" as string]: "#1f4e5a" }}>
+      <section className="lesson" id="sec-ledger" style={{ ["--sc" as string]: "#262626" }}>
         <div className="path-bridge">
-          <span className="pb-k">AI LEARNING LAB · 学习路径</span>
+          <span className="pb-k">学习路径</span>
           <div className="pb-steps">
-            <a href="/">01 前沿首页</a>
+            <a href="/">今日</a>
             <span>→</span>
-            <a href="/#sec-network">02 知识网络</a>
+            <a href="/#sec-network">知识网络</a>
             <span>→</span>
-            <a href="/agent-foundations.html">04 基础馆</a>
+            <a href="/agent-foundations.html">基础馆</a>
             <span>→</span>
-            <strong>05 概念馆（当前）</strong>
+            <strong>概念（当前）</strong>
           </div>
-          <p>
-            这里不是另一份产品：新入库概念按控制半径挂回 Tool / ReAct / Loop / MCP / A2A / Skill / Harness / Graph，与基础馆章节对读。
-          </p>
         </div>
 
         <div className="hello archive-hero">
-          <p className="hello-hi">你好，翻一翻今天的账本</p>
+          <p className="eyebrow">概念账本</p>
           <h1>
-            前沿概念馆
-            <br />
-            <span className="grad">账本在生长，半径不变</span>
+            账本在生长，<span className="tone">半径不变</span>
           </h1>
           <p className="sub">
-            定时抓取 OpenAI / Google DeepMind / Hugging Face / arXiv 等一手来源。条目是展陈卡片，映射到同一条控制半径。
+            定时抓取 OpenAI / Google DeepMind / Hugging Face / arXiv 等一手来源。每张卡片是一条可对读的展陈，不是信息流。
           </p>
           <div className="meta-chips">
             <span className="mc">馆藏 {DATA.conceptCount} 条</span>
@@ -277,29 +272,24 @@ function ConceptArchive() {
         </div>
       </section>
 
-      <section className="lesson" id="sec-radius" style={{ ["--sc" as string]: "#b4532a" }}>
+      <section className="lesson" id="sec-radius" style={{ ["--sc" as string]: "#434343" }}>
         <div className="sec-head">
           <span className="sec-num">Ⅱ</span>
           <h2>按控制半径浏览</h2>
         </div>
         <p className="sec-sub">与首页知识网络、基础馆章节共用同一组节点。点选即筛选账本。</p>
-        <div className="card-grid cols-3">
+        <div className="cat-chips" aria-label="按控制半径筛选">
+          <button type="button" className={`count-chip ${radius === "全部" ? "on" : ""}`} onClick={() => setRadius("全部")}>
+            全部 <b>{concepts.length}</b>
+          </button>
           {RADIUS.map((r) => (
             <button
               type="button"
               key={r.id}
-              className={`mini-card kn-card ${radius === r.id ? "lit" : ""}`}
-              style={{ ["--sc" as string]: r.color }}
+              className={`count-chip ${radius === r.id ? "on" : ""}`}
               onClick={() => setRadius((cur) => (cur === r.id ? "全部" : r.id))}
             >
-              <div className="eyebrow">{r.en}</div>
-              <h4>{r.label}</h4>
-              <p>账本相关 {radiusCounts.get(r.id) ?? 0} 条</p>
-              <small>
-                <a href={r.foundation} onClick={(e) => e.stopPropagation()}>
-                  基础馆对应展厅 →
-                </a>
-              </small>
+              {r.en} <b>{radiusCounts.get(r.id) ?? 0}</b>
             </button>
           ))}
         </div>
@@ -331,11 +321,11 @@ function ConceptArchive() {
       </div>
 
       <div className="archive-tags">
-        <button type="button" className={`at-chip ${tag === "全部" ? "on" : ""}`} onClick={() => setTag("全部")}>
+        <button type="button" className={`count-chip ${tag === "全部" ? "on" : ""}`} onClick={() => setTag("全部")}>
           全部标签
         </button>
         {allTags.map((t) => (
-          <button type="button" key={t} className={`at-chip ${tag === t ? "on" : ""}`} onClick={() => setTag(t)}>
+          <button type="button" key={t} className={`count-chip ${tag === t ? "on" : ""}`} onClick={() => setTag(t)}>
             {t}
           </button>
         ))}
@@ -346,16 +336,23 @@ function ConceptArchive() {
         {radius !== "全部" ? ` · 半径 ${RADIUS.find((r) => r.id === radius)?.en}` : ""}
       </div>
 
-      <div className="archive-list">
+      <div className="archive-list catalog-grid">
         {filtered.map((c) => {
           const open = expanded.has(c.id);
           const related = relateToRadius(c);
           return (
-            <article className="concept-card exhibit concept-exhibit" key={c.id}>
+            <article className="concept-card catalog-card" key={c.id}>
+              <div className="catalog-preview" aria-hidden="true">
+                <div className="pv-win">
+                  <div className="pv-bar" />
+                </div>
+                <span className="pv-dot" />
+              </div>
+              <div className="cc-body">
               <div className="cc-head">
-                <span className={`maturity ${c.maturity}`}>{MATURITY_LABEL[c.maturity] ?? c.maturity}</span>
                 <span className="cc-source">{c.source}</span>
                 <span className="cc-date">{c.date}</span>
+                <span className={`maturity ${c.maturity}`}>{MATURITY_LABEL[c.maturity] ?? c.maturity}</span>
               </div>
               <h3>{c.title}</h3>
               <p className={open ? "cc-summary open" : "cc-summary"}>{c.summary || "（摘要待补）"}</p>
@@ -417,6 +414,7 @@ function ConceptArchive() {
                   </p>
                 </div>
               )}
+              </div>
             </article>
           );
         })}
