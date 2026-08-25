@@ -15,13 +15,13 @@ import { CURRICULUM_AS_OF, RADIUS, relateToRadius } from "./lab-chrome";
 import conceptsData from "../data/concepts.json";
 
 const navItems = [
-  { id: "sec-0", num: "0", label: "今日", color: "#262626" },
-  { id: "sec-network", num: "1", label: "知识网络", color: "#262626" },
-  { id: "sec-labs", num: "2", label: "技术复现实验", color: "#218c00" },
-  { id: "sec-skill", num: "3", label: "Skill 体系", color: "#434343" },
-  { id: "sec-tacit", num: "4", label: "判断手感", color: "#595959" },
-  { id: "sec-courses", num: "5", label: "深入课程", color: "#434343" },
-  { id: "sec-sources", num: "6", label: "一手来源", color: "#262626" },
+  { id: "sec-0", num: "0", label: "今日", color: "var(--ink)" },
+  { id: "sec-network", num: "1", label: "知识网络", color: "var(--ink)" },
+  { id: "sec-labs", num: "2", label: "技术复现实验", color: "var(--emerald)" },
+  { id: "sec-skill", num: "3", label: "Skill 体系", color: "var(--ink-soft)" },
+  { id: "sec-tacit", num: "4", label: "判断手感", color: "var(--slate)" },
+  { id: "sec-courses", num: "5", label: "深入课程", color: "var(--ink-soft)" },
+  { id: "sec-sources", num: "6", label: "一手来源", color: "var(--ink)" },
 ];
 
 /* AI 导师章节上下文：让导师知道学习者当前学到哪、该问什么 */
@@ -182,7 +182,7 @@ const knowledgeNodes = [
     title: "Tool Calling",
     note: "让模型能改变外部状态",
     links: "连接 → react / mcp",
-    color: "#262626",
+    color: "var(--ink)",
   },
   {
     id: "react",
@@ -190,7 +190,7 @@ const knowledgeNodes = [
     title: "ReAct",
     note: "推理 → 行动 → 观察",
     links: "连接 → loop",
-    color: "#434343",
+    color: "var(--ink-soft)",
   },
   {
     id: "mcp",
@@ -198,7 +198,7 @@ const knowledgeNodes = [
     title: "MCP",
     note: "Agent ↔ 工具 / API / 数据源",
     links: "对比 → acp / a2a / card",
-    color: "#262626",
+    color: "var(--ink)",
   },
   {
     id: "acp",
@@ -222,7 +222,7 @@ const knowledgeNodes = [
     title: "A2A",
     note: "独立 Agent 间发现、委托、长任务",
     links: "依赖 → card · 对比 → mcp",
-    color: "#595959",
+    color: "var(--slate)",
   },
   {
     id: "card",
@@ -230,7 +230,7 @@ const knowledgeNodes = [
     title: "Agent Card",
     note: "公开身份、技能、端点与认证",
     links: "服务 → a2a · 不同于 → skill",
-    color: "#595959",
+    color: "var(--slate)",
   },
   {
     id: "skill",
@@ -238,7 +238,7 @@ const knowledgeNodes = [
     title: "Skill",
     note: "分层手册：路由、流程、资料、工具",
     links: "连接 → harness / mcp",
-    color: "#434343",
+    color: "var(--ink-soft)",
   },
   {
     id: "harness",
@@ -246,7 +246,7 @@ const knowledgeNodes = [
     title: "Harness Engineering",
     note: "环境、工具、可见性、约束、完成证据",
     links: "连接 → loop",
-    color: "#218c00",
+    color: "var(--emerald)",
   },
   {
     id: "loop",
@@ -254,7 +254,7 @@ const knowledgeNodes = [
     title: "Loop Engineering",
     note: "状态、验证、预算、停止与升级",
     links: "连接 → graph",
-    color: "#595959",
+    color: "var(--slate)",
   },
   {
     id: "graph",
@@ -262,7 +262,7 @@ const knowledgeNodes = [
     title: "Graph Engineering",
     note: "目标所有权、冲突、节奏与外部锚点",
     links: "外部目标与治理锚点",
-    color: "#262626",
+    color: "var(--ink)",
   },
 ];
 
@@ -1047,7 +1047,7 @@ function HarnessLab() {
   }
 
   return (
-    <article className="lab-card studio-frame" id="harness-lab" style={{ ["--sc" as string]: "#218c00" }}>
+    <article className="lab-card studio-frame" id="harness-lab" style={{ ["--sc" as string]: "var(--emerald)" }}>
       <div className="lab-title">
         <span className="lab-index">01</span>
         <div>
@@ -1177,7 +1177,7 @@ function LoopLab() {
   }
 
   return (
-    <article className="lab-card studio-frame" id="loop-lab" style={{ ["--sc" as string]: "#434343" }}>
+    <article className="lab-card studio-frame" id="loop-lab" style={{ ["--sc" as string]: "var(--ink-soft)" }}>
       <div className="lab-title">
         <span className="lab-index">02</span>
         <div>
@@ -1262,7 +1262,7 @@ function GraphLab() {
   );
 
   return (
-    <article className="lab-card studio-frame" id="graph-lab" style={{ ["--sc" as string]: "#262626" }}>
+    <article className="lab-card studio-frame" id="graph-lab" style={{ ["--sc" as string]: "var(--ink)" }}>
       <div className="lab-title">
         <span className="lab-index">03</span>
         <div>
@@ -1445,7 +1445,7 @@ function ProtocolLab() {
         先看“谁在跟谁说话”，再选协议。MCP / ACP / A2A 互补，不是互相取代的版本号。
       </p>
 
-      <div className="tldr" style={{ ["--sc" as string]: "#434343" }}>
+      <div className="tldr" style={{ ["--sc" as string]: "var(--ink-soft)" }}>
         <div className="k">当前实践结论</div>
         <div className="v">
           外层 Agent 通过 MCP <code>knowledge_chat</code> 调用知识能力时，应保留
@@ -1481,7 +1481,7 @@ function ProtocolLab() {
       </div>
 
       <div className="card-grid cols-3" style={{ marginTop: 16 }}>
-        <article className="mini-card" style={{ ["--sc" as string]: "#262626" }}>
+        <article className="mini-card" style={{ ["--sc" as string]: "var(--ink)" }}>
           <div className="eyebrow">Agent ↔ 工具</div>
           <h4>MCP</h4>
           <p>连接工具、API、数据源；强调参数、schema、结构化结果。</p>
@@ -1499,13 +1499,13 @@ function ProtocolLab() {
           <p>会说 ACP stdio 的编码 Agent：一条命令，不是云端对话框。</p>
           <small>类比：请来的那位顾问本人</small>
         </article>
-        <article className="mini-card" style={{ ["--sc" as string]: "#434343" }}>
+        <article className="mini-card" style={{ ["--sc" as string]: "var(--ink-soft)" }}>
           <div className="eyebrow">Agent ↔ Agent</div>
           <h4>A2A</h4>
           <p>发现、协商、委托、共享任务与上下文；面向独立对等体。</p>
           <small>类比：给 Agent 装上社交与协作协议</small>
         </article>
-        <article className="mini-card" style={{ ["--sc" as string]: "#595959" }}>
+        <article className="mini-card" style={{ ["--sc" as string]: "var(--slate)" }}>
           <div className="eyebrow">公开身份</div>
           <h4>Agent Card</h4>
           <p>名片：名字、端点、skills、能力特性、认证方式。</p>
@@ -1897,7 +1897,7 @@ export function LearningLab() {
           </footer>
       }
     >
-          <section className="lesson" id="sec-0" style={{ ["--sc" as string]: "#262626" }}>
+          <section className="lesson" id="sec-0" style={{ ["--sc" as string]: "var(--ink)" }}>
             <div className="hello">
               <p className="eyebrow">今日</p>
               <h1>
@@ -2007,7 +2007,7 @@ export function LearningLab() {
                 ["04", "Skill 整合", "手册、资料、工具、素材"],
                 ["05", "判断迁移", "先观察，再形式化"],
               ].map(([year, title, detail]) => (
-                <div className="road-node" key={year} style={{ ["--rc" as string]: "#262626" }}>
+                <div className="road-node" key={year} style={{ ["--rc" as string]: "var(--ink)" }}>
                   <div className="rn-y">{year}</div>
                   <div className="rn-t">{title}</div>
                   <div className="rn-d">{detail}</div>
@@ -2034,7 +2034,7 @@ export function LearningLab() {
           <section
             className="lesson"
             id="sec-network"
-            style={{ ["--sc" as string]: "#262626" }}
+            style={{ ["--sc" as string]: "var(--ink)" }}
           >
             <div className="sec-head">
               <span className="sec-num">1</span>
@@ -2079,7 +2079,7 @@ export function LearningLab() {
             <ProtocolLab />
           </section>
 
-          <section className="lesson" id="sec-labs" style={{ ["--sc" as string]: "#218c00" }}>
+          <section className="lesson" id="sec-labs" style={{ ["--sc" as string]: "var(--emerald)" }}>
             <div className="sec-head">
               <span className="sec-num">2</span>
               <h2>技术复现 Demo：亲手观察机制</h2>
@@ -2098,7 +2098,7 @@ export function LearningLab() {
           <section
             className="lesson"
             id="sec-courses"
-            style={{ ["--sc" as string]: "#434343" }}
+            style={{ ["--sc" as string]: "var(--ink-soft)" }}
           >
             <div className="sec-head">
               <span className="sec-num">5</span>
@@ -2153,7 +2153,7 @@ export function LearningLab() {
           <section
             className="lesson"
             id="sec-sources"
-            style={{ ["--sc" as string]: "#262626" }}
+            style={{ ["--sc" as string]: "var(--ink)" }}
           >
             <div className="sec-head">
               <span className="sec-num">6</span>

@@ -8,40 +8,40 @@
 <style>
 /* ============ 主题变量 ============ */
 :root{
-  --paper:#f1e6d4; --paper-warm:#ead9c0; --paper-dark:#e0cdb4; --bone:#f7efe2;
+  --paper:#faf6ef; --paper-warm:#f3eadc; --paper-dark:#e8dcc8; --bone:#fffdf8;
   --ink:#2b241c; --ink-soft:#4a4034; --ink-mute:#6e6254; --ink-faint:#9a8b78;
   --lime:#c46a2b; --lime-soft:#d4894a; --olive:#8a6234;
-  --bg:#f1e6d4; --bg-soft:#ead9c0; --card:#f7efe2; --card-2:#ead9c0;
+  --bg:#faf6ef; --bg-soft:#f3eadc; --card:#fffdf8; --card-2:#f3eadc;
   --text:#2b241c; --text-2:#6e6254; --text-3:#9a8b78;
-  --line:#ddcdaf; --line-2:#cbb894;
+  --line:#eadfce; --line-2:#ddcfb8;
   --acc:#c46a2b; --acc-2:#d4894a;
-  --amber:#8c8c8c; --violet:#434343; --emerald:#218c00; --blue:#262626; --rose:#262626; --slate:#595959;
-  --amber-bg:#f5f5f5; --violet-bg:#f5f5f5; --emerald-bg:#f0f0f0; --blue-bg:#f5f5f5; --rose-bg:#f5f5f5; --slate-bg:#f5f5f5;
-  --ok:#6b7a3a; --ok-bg:#efe6d4; --err:#8a3a28; --err-bg:#f3e4d8;
+  --amber:#b07a2e; --violet:#6e5a44; --emerald:#6b7a3a; --blue:#4a4034; --rose:#8a3a28; --slate:#6e6254;
+  --amber-bg:color-mix(in srgb,#b07a2e 12%,#fffdf8); --violet-bg:color-mix(in srgb,#6e5a44 10%,#fffdf8); --emerald-bg:color-mix(in srgb,#6b7a3a 12%,#fffdf8); --blue-bg:color-mix(in srgb,#4a4034 8%,#fffdf8); --rose-bg:color-mix(in srgb,#8a3a28 10%,#fffdf8); --slate-bg:var(--paper-warm);
+  --ok:#6b7a3a; --ok-bg:color-mix(in srgb,#6b7a3a 14%,#fffdf8); --err:#8a3a28; --err-bg:color-mix(in srgb,#8a3a28 12%,#fffdf8);
   --code-bg:#2b241c; --code-text:#f7efe2;
-  --shadow:none; --shadow-lg:0 30px 60px -30px rgba(43,36,28,.22);
+  --shadow:none; --shadow-lg:0 30px 60px -30px rgba(43,36,28,.16);
   --r:12px; --side-w:212px;
 }
 html[data-theme="dark"]{
-  --paper:#262626; --paper-warm:#2e2e2e; --paper-dark:#1a1a1a; --bone:#2e2e2e;
-  --ink:#fafafa; --ink-soft:#e5e5e5; --ink-mute:#8c8c8c; --ink-faint:#8c8c8c;
+  --paper:#1c1814; --paper-warm:#241f1a; --paper-dark:#14110e; --bone:#241f1a;
+  --ink:#f3eadc; --ink-soft:#e4d8c6; --ink-mute:#b5a48e; --ink-faint:#8c7d6a;
   --lime:#e08a4a; --lime-soft:#f0a66a; --olive:#c9a36a;
-  --bg:#262626; --bg-soft:#2e2e2e; --card:#2e2e2e; --card-2:#262626;
-  --text:#fafafa; --text-2:#8c8c8c; --text-3:#8c8c8c;
-  --line:color-mix(in srgb,#fafafa 16%,#262626); --line-2:color-mix(in srgb,#fafafa 22%,#262626);
+  --bg:#1c1814; --bg-soft:#241f1a; --card:#241f1a; --card-2:#1c1814;
+  --text:#f3eadc; --text-2:#b5a48e; --text-3:#8c7d6a;
+  --line:color-mix(in srgb,#f3eadc 16%,#1c1814); --line-2:color-mix(in srgb,#f3eadc 22%,#1c1814);
   --acc:#e08a4a; --acc-2:#f0a66a;
-  --amber:#8c8c8c; --violet:#e5e5e5; --emerald:#83ff3b; --blue:#fafafa; --rose:#fafafa; --slate:#8c8c8c;
-  --amber-bg:#2e2e2e; --violet-bg:#2e2e2e; --emerald-bg:#2e2e2e; --blue-bg:#2e2e2e; --rose-bg:#2e2e2e; --slate-bg:#2e2e2e;
-  --ok:#83ff3b; --ok-bg:#2e2e2e; --err:#fafafa; --err-bg:#2e2e2e;
-  --code-bg:#1a1a1a; --code-text:#fafafa;
-  --shadow:none; --shadow-lg:0 30px 60px -30px rgba(0,0,0,.45);
+  --amber:#d4a05a; --violet:#c4b09a; --emerald:#c9a36a; --blue:#e4d8c6; --rose:#e08a4a; --slate:#b5a48e;
+  --amber-bg:color-mix(in srgb,#d4a05a 14%,#1c1814); --violet-bg:color-mix(in srgb,#c4b09a 12%,#1c1814); --emerald-bg:color-mix(in srgb,#c9a36a 14%,#1c1814); --blue-bg:color-mix(in srgb,#e4d8c6 10%,#1c1814); --rose-bg:color-mix(in srgb,#e08a4a 14%,#1c1814); --slate-bg:var(--paper-warm);
+  --ok:#c9a36a; --ok-bg:color-mix(in srgb,#c9a36a 14%,#1c1814); --err:#e08a4a; --err-bg:color-mix(in srgb,#e08a4a 14%,#1c1814);
+  --code-bg:#14110e; --code-text:#f3eadc;
+  --shadow:none; --shadow-lg:0 30px 60px -30px rgba(0,0,0,.5);
 }
 /* ============ 基础 ============ */
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:auto;scroll-padding-top:88px}
 body{
   font-family:"Albert Sans","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
-  background:var(--bg);color:var(--text);line-height:1.75;font-size:16px;
+  background:var(--bg);color:var(--text);line-height:1.5;font-size:16px;font-weight:400;
   transition:background .25s,color .25s;
 }
 code,pre,.mono{font-family:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,"Liberation Mono",monospace}
@@ -55,10 +55,9 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 /* ============ 顶部进度条 & 顶栏 ============ */
 #progressbar{position:fixed;top:0;left:0;height:3px;width:0;z-index:120;
   background:var(--lime);transition:width .4s ease}
-.topbar{position:fixed;top:0;left:var(--side-w);right:0;height:58px;z-index:100;
-  display:flex;align-items:center;gap:12px;padding:0 20px;
-  background:color-mix(in srgb,var(--bg) 82%,transparent);
-  border-bottom:1px solid var(--line)}
+.topbar{position:fixed;top:12px;left:auto;right:auto;height:auto;z-index:120;
+  display:flex;align-items:center;gap:12px;padding:0;
+  background:transparent;border-bottom:0}
 .topbar .crumb{font-size:13.5px;color:var(--text-2);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .topbar .pct{font-size:12.5px;font-weight:700;color:var(--acc);background:var(--slate-bg);
   border:1px solid var(--line);padding:3px 10px;border-radius:99px;white-space:nowrap}
@@ -69,7 +68,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 #hamburger{display:none}
 /* ============ 侧边栏 ============ */
 #sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--side-w);z-index:110;
-  background:var(--card);border-right:1px solid var(--line);
+  background:var(--paper);border-right:1px solid var(--line);padding-top:76px;
   display:flex;flex-direction:column;transition:transform .25s ease}
 .side-head{padding:18px 18px 12px;border-bottom:1px solid var(--line)}
 .side-head .logo{font-size:17px;font-weight:800;letter-spacing:.3px;display:flex;align-items:center;gap:8px}
@@ -79,7 +78,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .lab-switch{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .lab-switch a{font-size:11.5px;font-weight:700;color:var(--acc);background:color-mix(in srgb,var(--acc) 10%,transparent);border:1px solid color-mix(in srgb,var(--acc) 28%,var(--line));padding:4px 8px;border-radius:999px}
 .lab-switch a:hover{filter:brightness(1.05);text-decoration:none}
-.lab-switch a[aria-current="page"]{background:var(--text);color:var(--bg);border-color:var(--text)}
+.lab-switch a[aria-current="page"],.lab-switch a.on{background:transparent;color:var(--ink);border-color:transparent;position:relative}
+.lab-switch a[aria-current="page"]::after,.lab-switch a.on::after{content:"";position:absolute;left:8px;right:8px;bottom:0;height:2px;background:var(--lime);border-radius:99px}
 .side-prog{padding:12px 18px;border-bottom:1px solid var(--line)}
 .side-prog .lbl{display:flex;justify-content:space-between;font-size:12px;color:var(--text-2);margin-bottom:6px}
 .side-prog .bar{height:6px;border-radius:99px;background:var(--bg-soft);overflow:hidden}
@@ -89,11 +89,11 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .nav-item{position:relative;display:flex;align-items:center;gap:10px;padding:9px 12px;margin:2px 0;border-radius:10px;
   font-size:13.5px;color:var(--text-2);cursor:pointer;border:1px solid transparent;transition:all .15s;user-select:none}
 .nav-item:hover{background:var(--bg-soft);text-decoration:none;color:var(--text)}
-.nav-item.active{background:var(--slate-bg);color:var(--text);border-color:var(--line);font-weight:600}
+.nav-item.active{background:var(--paper-warm);color:var(--text);border-color:transparent;font-weight:600}
 .nav-item.active::before{content:"";position:absolute;left:-1px;top:8px;bottom:8px;width:3px;border-radius:99px;background:var(--nc,var(--acc))}
-.nav-item .num{font-size:11px;font-weight:800;color:var(--nc,var(--slate));width:22px;height:22px;border-radius:7px;
-  display:inline-flex;align-items:center;justify-content:center;flex:none;background:color-mix(in srgb,var(--nc,var(--slate)) 16%,transparent)}
-.nav-item.active .num{background:var(--nc,var(--slate));color:#fff}
+.nav-item .num{font-size:11px;font-weight:800;color:var(--ink-faint);width:auto;height:auto;border-radius:7px;
+  display:inline-flex;align-items:center;justify-content:center;flex:none;background:transparent}
+.nav-item.active .num{background:transparent;color:var(--ink)}
 .nav-item .t{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .nav-item .dot{width:8px;height:8px;border-radius:99px;background:var(--line-2);flex:none;transition:background .3s}
 .nav-item.done .dot{background:var(--ok);box-shadow:0 0 0 3px color-mix(in srgb,var(--ok) 25%,transparent)}
@@ -120,8 +120,8 @@ strong{font-weight:700}
 .kbd{font-size:12.5px;background:var(--bg-soft);border:1px solid var(--line-2);border-bottom-width:2px;
   padding:1px 7px;border-radius:6px;font-family:ui-monospace,monospace}
 /* ============ 卡片/提示框 ============ */
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
-.tldr{border-left:4px solid var(--sc,var(--acc));background:var(--card);border-radius:12px;
+.card{background:var(--bone);border:1px solid var(--line);border-radius:12px;padding:20px 22px;box-shadow:var(--shadow)}
+.tldr{border-left:4px solid var(--sc,var(--acc));background:var(--bone);border-radius:12px;
   padding:16px 20px;margin:18px 0;box-shadow:var(--shadow)}
 .tldr .k{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--sc,var(--acc));text-transform:uppercase}
 .tldr .v{font-size:17.5px;font-weight:700;margin-top:4px;line-height:1.65}
@@ -132,7 +132,7 @@ strong{font-weight:700}
 .callout.warn{background:var(--amber-bg);border-color:color-mix(in srgb,var(--amber) 32%,transparent)}
 .callout.story{background:var(--violet-bg);border-color:color-mix(in srgb,var(--violet) 30%,transparent)}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:18px 0}
-.mini-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+.mini-card{background:var(--bone);border:1px solid var(--line);border-radius:12px;padding:16px 18px;
   box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s;position:relative}
 .mini-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
 .mini-card .ic{font-size:22px}
@@ -179,7 +179,7 @@ strong{font-weight:700}
 .code-tabs .tab-panel.active{display:block}
 .code-tabs .tab-panel .codebox{margin-top:0;border-top-left-radius:0}
 /* ============ Demo 容器 ============ */
-.demo{border:1.5px solid var(--line-2);border-radius:16px;margin:22px 0;overflow:hidden;background:var(--card);box-shadow:var(--shadow-lg)}
+.demo{border:1.5px solid var(--line-2);border-radius:16px;margin:22px 0;overflow:hidden;background:var(--bone);box-shadow:var(--shadow-lg)}
 .demo-head{display:flex;align-items:center;gap:10px;padding:11px 16px;background:var(--card-2);border-bottom:1px solid var(--line)}
 .demo-head .tag{font-size:11px;font-weight:800;letter-spacing:1.5px;color:#fff;padding:3px 9px;border-radius:7px;
   background:linear-gradient(120deg,var(--acc),var(--acc-2))}
@@ -519,7 +519,7 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
   #sidebar{transform:translateX(-100%)}
   #sidebar.open{transform:none;box-shadow:var(--shadow-lg)}
   #backdrop.show{display:block}
-  .topbar{left:0}
+  .topbar{left:auto;right:auto}
   main{margin-left:0;padding:74px 16px 50px}
   #hamburger{display:inline-flex}
   .duo,.loopgrid,.inspector{grid-template-columns:1fr}
@@ -584,16 +584,16 @@ body{font-family:"Albert Sans","PingFang SC","Microsoft YaHei",system-ui,sans-se
 h1,h2,h3,h4{font-weight:600;letter-spacing:0;line-height:1.15}
 .hero h1 .grad,h1 .tone{background:none;-webkit-background-clip:unset;background-clip:unset;color:var(--ink-mute);font-weight:400}
 #progressbar{height:2px;background:var(--lime)}
-.topbar.pill-nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);width:min(1120px,calc(100vw - 24px));height:52px;z-index:120;display:flex;align-items:center;gap:10px;padding:0 10px 0 16px;border:1px solid var(--line);border-radius:999px;background:var(--bone);box-shadow:var(--shadow-lg);backdrop-filter:none}
+.topbar.pill-nav,.pill-nav.topbar{position:fixed;top:12px;left:50%;right:auto;transform:translateX(-50%);width:min(1120px,calc(100vw - 24px));height:52px;z-index:120;display:flex;align-items:center;gap:10px;padding:0 10px 0 16px;border:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:999px;background:var(--bone);box-shadow:var(--shadow-lg);backdrop-filter:none}
 .brand{font-size:14px;font-weight:700;color:var(--ink);text-decoration:none;white-space:nowrap}
 .wing-picker{display:flex;align-items:center;gap:2px;flex:1;overflow:auto;scrollbar-width:none}
 .wing-picker a{padding:6px 10px;border-radius:999px;color:var(--ink-mute);font-size:13px;font-weight:600;text-decoration:none;position:relative}
 .wing-picker a.on,.wing-picker a[aria-current="page"]{color:var(--ink)}
 .wing-picker a.on::after,.wing-picker a[aria-current="page"]::after{content:"";position:absolute;left:10px;right:10px;bottom:4px;height:2px;background:var(--lime);border-radius:99px}
-.pill-nav .crumb{flex:1;color:var(--ink-faint);font-size:12px}
+.pill-nav .crumb{flex:none;max-width:22%;color:var(--ink-faint);font-size:12px}
 .pill-nav .pct{background:transparent;border:0;color:var(--ink-mute);font-weight:600}
-.pill-nav .icon-btn{border:0;background:transparent;border-radius:999px}
-#sidebar{padding-top:76px;width:var(--side-w);background:var(--paper)}
+.pill-nav .icon-btn{width:32px;height:32px;border:0;background:transparent;border-radius:999px;color:var(--ink-mute);box-shadow:none}.pill-nav .icon-btn:hover{background:var(--paper-warm);color:var(--ink);transform:none}
+#sidebar{padding-top:76px;width:var(--side-w);background:var(--paper);border-right:1px solid var(--line)}.nav-item.active{background:var(--paper-warm);border-color:transparent}.nav-item.active::before{background:var(--lime);width:2px}.nav-item .num{background:transparent;color:var(--ink-faint);font-weight:600;width:auto;height:auto}.nav-item.active .num{background:transparent;color:var(--ink)}
 .side-head{padding:8px 16px 12px;border-bottom:0}
 .side-head .logo{font-size:13px;font-weight:600;letter-spacing:0}
 .side-head .logo .badge{display:none}
@@ -644,17 +644,17 @@ main .wrap{padding-top:24px}
     <div class="bar"><i id="side-bar"></i></div>
   </div>
   <div class="side-nav" id="side-nav">
-    <a class="nav-item" href="#sec-0" data-sec="sec-0" style="--nc:#262626"><span class="num">0</span><span class="t">为什么模型需要"手和脚"</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-1" data-sec="sec-1" style="--nc:#434343"><span class="num">1</span><span class="t">Tool · 工具调用</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-2" data-sec="sec-2" style="--nc:#434343"><span class="num">2</span><span class="t">ReAct · 边想边做</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-3" data-sec="sec-3" style="--nc:#218c00"><span class="num">3</span><span class="t">Agent Loop 与 Loop Engineering</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-4" data-sec="sec-4" style="--nc:#262626"><span class="num">4</span><span class="t">MCP · 模型上下文协议</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-5" data-sec="sec-5" style="--nc:#262626"><span class="num">5</span><span class="t">MCP Server · 动手写一个</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-0" data-sec="sec-0" style="--nc:var(--ink)"><span class="num">0</span><span class="t">为什么模型需要"手和脚"</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-1" data-sec="sec-1" style="--nc:var(--ink-soft)"><span class="num">1</span><span class="t">Tool · 工具调用</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-2" data-sec="sec-2" style="--nc:var(--ink-soft)"><span class="num">2</span><span class="t">ReAct · 边想边做</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-3" data-sec="sec-3" style="--nc:var(--emerald)"><span class="num">3</span><span class="t">Agent Loop 与 Loop Engineering</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-4" data-sec="sec-4" style="--nc:var(--ink)"><span class="num">4</span><span class="t">MCP · 模型上下文协议</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-5" data-sec="sec-5" style="--nc:var(--ink)"><span class="num">5</span><span class="t">MCP Server · 动手写一个</span><span class="dot"></span></a>
     <a class="nav-item" href="#sec-acp" data-sec="sec-acp" style="--nc:#8a6234"><span class="num">6</span><span class="t">ACP · CLI · 本地 Agent</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-6" data-sec="sec-6" style="--nc:#595959"><span class="num">7</span><span class="t">Agent 架构与 Multi-Agent</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-skill" data-sec="sec-skill" style="--nc:#434343"><span class="num">8</span><span class="t">Skill · 分层能力手册</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-7" data-sec="sec-7" style="--nc:#595959"><span class="num">9</span><span class="t">2026 前沿概念雷达</span><span class="dot"></span></a>
-    <a class="nav-item" href="#sec-8" data-sec="sec-8" style="--nc:#262626"><span class="num">10</span><span class="t">全景串联 + 通关自测</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-6" data-sec="sec-6" style="--nc:var(--slate)"><span class="num">7</span><span class="t">Agent 架构与 Multi-Agent</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-skill" data-sec="sec-skill" style="--nc:var(--ink-soft)"><span class="num">8</span><span class="t">Skill · 分层能力手册</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-7" data-sec="sec-7" style="--nc:var(--slate)"><span class="num">9</span><span class="t">2026 前沿概念雷达</span><span class="dot"></span></a>
+    <a class="nav-item" href="#sec-8" data-sec="sec-8" style="--nc:var(--ink)"><span class="num">10</span><span class="t">全景串联 + 通关自测</span><span class="dot"></span></a>
   </div>
   <div class="side-foot">
     <span class="mini">进度自动保存在本地</span>
@@ -684,7 +684,7 @@ main .wrap{padding-top:24px}
 <!-- ================================================================ -->
 <!-- 第 0 章 · 开场 -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-0" style="--sc:#262626">
+<section class="lesson" id="sec-0" style="--sc:var(--ink)">
   <div class="path-bridge">
     <span class="pb-k">学习路径</span>
     <div class="pb-steps">
@@ -783,7 +783,7 @@ main .wrap{padding-top:24px}
 <!-- ================================================================ -->
 <!-- 第 1 章 · Tool -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-1" style="--sc:#434343">
+<section class="lesson" id="sec-1" style="--sc:var(--ink-soft)">
   <div class="sec-head"><span class="sec-num">第 1 章</span><h2>🔧 Tool：让模型学会"开单子"</h2></div>
   <p class="sec-sub">Tool use / Function calling · 现代 Agent 的最小机制单元</p>
 
@@ -950,7 +950,7 @@ if call.function.name == "get_weather":
 <!-- ================================================================ -->
 <!-- 第 2 章 · ReAct -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-2" style="--sc:#434343">
+<section class="lesson" id="sec-2" style="--sc:var(--ink-soft)">
   <div class="sec-head"><span class="sec-num">第 2 章</span><h2>🧠 ReAct：一切 Agent 的思想源头</h2></div>
   <p class="sec-sub">Reason + Act · 2022 年的一篇论文，定义了此后所有 Agent 的元模式</p>
 
@@ -1052,7 +1052,7 @@ PROMPT += text + f"\nObservation: {obs}\nThought:"   # 循环往复</pre></div>
 <!-- ================================================================ -->
 <!-- 第 3 章 · Agent Loop & Loop Engineering -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-3" style="--sc:#218c00">
+<section class="lesson" id="sec-3" style="--sc:var(--emerald)">
   <div class="sec-head"><span class="sec-num">第 3 章</span><h2>🔁 Agent Loop 与 Loop Engineering</h2></div>
   <p class="sec-sub">把工具往返装进 while 循环，Agent 就诞生了；让循环稳定产出，是一门新工程学</p>
 
@@ -1193,7 +1193,7 @@ PROMPT += text + f"\nObservation: {obs}\nThought:"   # 循环往复</pre></div>
 <!-- ================================================================ -->
 <!-- 第 4 章 · MCP -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-4" style="--sc:#262626">
+<section class="lesson" id="sec-4" style="--sc:var(--ink)">
   <div class="sec-head"><span class="sec-num">第 4 章</span><h2>🔌 MCP：AI 应用的 USB-C 接口</h2></div>
   <p class="sec-sub">Model Context Protocol · 让"能力"以标准方式插进任何 Agent</p>
 
@@ -1356,7 +1356,7 @@ PROMPT += text + f"\nObservation: {obs}\nThought:"   # 循环往复</pre></div>
 <!-- ================================================================ -->
 <!-- 第 5 章 · MCP Server 实战 -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-5" style="--sc:#262626">
+<section class="lesson" id="sec-5" style="--sc:var(--ink)">
   <div class="sec-head"><span class="sec-num">第 5 章</span><h2>🛠 MCP Server：30 行代码接入所有 Agent</h2></div>
   <p class="sec-sub">写几个带好注释的函数，SDK 帮你把它们变成协议上的标准插件</p>
 
@@ -1636,7 +1636,7 @@ await server.connect(new StdioServerTransport());</pre></div></div>
 <!-- ================================================================ -->
 <!-- 第 6 章 · Agent 主流架构与 Multi-Agent -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-6" style="--sc:#595959">
+<section class="lesson" id="sec-6" style="--sc:var(--slate)">
   <div class="sec-head"><span class="sec-num">第 7 章</span><h2>🏗 Agent 主流架构与 Multi-Agent</h2></div>
   <p class="sec-sub">单个循环是原子，架构决定原子怎么组合成分子——直到组合成一支"智能体军团"</p>
 
@@ -1883,7 +1883,7 @@ await server.connect(new StdioServerTransport());</pre></div></div>
 <!-- ================================================================ -->
 <!-- 第 8 章 · Skill 体系 -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-skill" style="--sc:#434343">
+<section class="lesson" id="sec-skill" style="--sc:var(--ink-soft)">
   <div class="sec-head"><span class="sec-num">第 8 章</span><h2>🎒 Skill：把能力做成可组合的分层手册</h2></div>
   <p class="sec-sub">不是超长提示词，而是节省上下文的分层执行系统</p>
 
@@ -1996,7 +1996,7 @@ await server.connect(new StdioServerTransport());</pre></div></div>
   </div>
 </section>
 
-<section class="lesson" id="sec-7" style="--sc:#595959">
+<section class="lesson" id="sec-7" style="--sc:var(--slate)">
   <div class="sec-head"><span class="sec-num">第 9 章</span><h2>📡 2026 前沿概念雷达</h2></div>
   <p class="sec-sub">推特时间线上最火的热词，逐个放回技术栈的正确位置</p>
 
@@ -2220,7 +2220,7 @@ await server.connect(new StdioServerTransport());</pre></div></div>
 <!-- ================================================================ -->
 <!-- 第 10 章 · 全景串联 -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-8" style="--sc:#262626">
+<section class="lesson" id="sec-8" style="--sc:var(--ink)">
   <div class="sec-head"><span class="sec-num">第 10 章</span><h2>🧩 全景串联 + 通关自测</h2></div>
   <p class="sec-sub">把五块拼图合成一张图，再用一套综合题验证你真的懂了</p>
 

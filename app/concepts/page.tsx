@@ -32,8 +32,8 @@ const MATURITY_LABEL: Record<string, string> = {
 };
 
 const archiveNav = [
-  { id: "sec-ledger", num: "Ⅰ", label: "每日账本", color: "#262626" },
-  { id: "sec-radius", num: "Ⅱ", label: "控制半径索引", color: "#434343" },
+  { id: "sec-ledger", num: "Ⅰ", label: "每日账本", color: "var(--ink)" },
+  { id: "sec-radius", num: "Ⅱ", label: "控制半径索引", color: "var(--ink-soft)" },
 ];
 
 function useLocalStorage<T>(key: string, initial: T): [T, (v: T | ((c: T) => T)) => void] {
@@ -176,7 +176,7 @@ function ConceptArchive() {
         </footer>
       }
     >
-      <section className="lesson" id="sec-ledger" style={{ ["--sc" as string]: "#262626" }}>
+      <section className="lesson" id="sec-ledger" style={{ ["--sc" as string]: "var(--ink)" }}>
         <div className="path-bridge">
           <span className="pb-k">学习路径</span>
           <div className="pb-steps">
@@ -272,7 +272,7 @@ function ConceptArchive() {
         </div>
       </section>
 
-      <section className="lesson" id="sec-radius" style={{ ["--sc" as string]: "#434343" }}>
+      <section className="lesson" id="sec-radius" style={{ ["--sc" as string]: "var(--ink-soft)" }}>
         <div className="sec-head">
           <span className="sec-num">Ⅱ</span>
           <h2>按控制半径浏览</h2>

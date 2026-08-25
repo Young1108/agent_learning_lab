@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f1e6d4;
-  --paper-warm: #ead9c0;
-  --paper-dark: #e0cdb4;
-  --bone: #f7efe2;
+  --paper: #faf6ef;
+  --paper-warm: #f3eadc;
+  --paper-dark: #e8dcc8;
+  --bone: #fffdf8;
   --ink: #2b241c;
   --ink-soft: #4a4034;
   --ink-mute: #6e6254;
@@ -12,37 +12,37 @@
   --lime: #c46a2b;
   --lime-soft: #d4894a;
   --olive: #8a6234;
-  --bg: #f1e6d4;
-  --bg-soft: #ead9c0;
-  --card: #f7efe2;
-  --card-2: #ead9c0;
+  --bg: #faf6ef;
+  --bg-soft: #f3eadc;
+  --card: #fffdf8;
+  --card-2: #f3eadc;
   --text: #2b241c;
   --text-2: #6e6254;
   --text-3: #9a8b78;
-  --line: #ddcdaf;
-  --line-2: #cbb894;
+  --line: #eadfce;
+  --line-2: #ddcfb8;
   --acc: #c46a2b;
   --acc-2: #d4894a;
-  --amber: #8c8c8c;
-  --violet: #434343;
-  --emerald: #218c00;
-  --blue: #262626;
-  --rose: #262626;
-  --slate: #595959;
-  --amber-bg: #f5f5f5;
-  --violet-bg: #f5f5f5;
-  --emerald-bg: color-mix(in srgb, #218c00 12%, #ffffff);
-  --blue-bg: #f5f5f5;
-  --rose-bg: #f5f5f5;
-  --slate-bg: #f5f5f5;
+  --amber: #b07a2e;
+  --violet: #6e5a44;
+  --emerald: #6b7a3a;
+  --blue: #4a4034;
+  --rose: #8a3a28;
+  --slate: #6e6254;
+  --amber-bg: color-mix(in srgb, #b07a2e 12%, #fffdf8);
+  --violet-bg: color-mix(in srgb, #6e5a44 10%, #fffdf8);
+  --emerald-bg: color-mix(in srgb, #6b7a3a 12%, #fffdf8);
+  --blue-bg: color-mix(in srgb, #4a4034 8%, #fffdf8);
+  --rose-bg: color-mix(in srgb, #8a3a28 10%, #fffdf8);
+  --slate-bg: var(--paper-warm);
   --ok: #6b7a3a;
-  --ok-bg: color-mix(in srgb, #6b7a3a 14%, #f7efe2);
+  --ok-bg: color-mix(in srgb, #6b7a3a 14%, #fffdf8);
   --err: #8a3a28;
-  --err-bg: color-mix(in srgb, #8a3a28 12%, #f7efe2);
+  --err-bg: color-mix(in srgb, #8a3a28 12%, #fffdf8);
   --code-bg: #2b241c;
   --code-text: #f7efe2;
   --shadow: none;
-  --shadow-lg: 0 30px 60px -30px rgba(43, 36, 28, 0.22);
+  --shadow-lg: 0 30px 60px -30px rgba(43, 36, 28, 0.16);
   --r: 12px;
   --r-btn: 999px;
   --side-w: 212px;
@@ -69,22 +69,22 @@ html[data-theme="dark"] {
   --text: #f3eadc;
   --text-2: #b5a48e;
   --text-3: #8c7d6a;
-  --line: color-mix(in srgb, #fafafa 16%, #262626);
-  --line-2: color-mix(in srgb, #fafafa 22%, #262626);
+  --line: color-mix(in srgb, #f3eadc 16%, #1c1814);
+  --line-2: color-mix(in srgb, #f3eadc 22%, #1c1814);
   --acc: #e08a4a;
   --acc-2: #f0a66a;
-  --amber: #8c8c8c;
-  --violet: #e5e5e5;
-  --emerald: #83ff3b;
-  --blue: #fafafa;
-  --rose: #fafafa;
-  --slate: #8c8c8c;
-  --amber-bg: #2e2e2e;
-  --violet-bg: #2e2e2e;
-  --emerald-bg: color-mix(in srgb, #63fe13 12%, #262626);
-  --blue-bg: #2e2e2e;
-  --rose-bg: #2e2e2e;
-  --slate-bg: #2e2e2e;
+  --amber: #d4a05a;
+  --violet: #c4b09a;
+  --emerald: #c9a36a;
+  --blue: #e4d8c6;
+  --rose: #e08a4a;
+  --slate: #b5a48e;
+  --amber-bg: color-mix(in srgb, #d4a05a 14%, #1c1814);
+  --violet-bg: color-mix(in srgb, #c4b09a 12%, #1c1814);
+  --emerald-bg: color-mix(in srgb, #c9a36a 14%, #1c1814);
+  --blue-bg: color-mix(in srgb, #e4d8c6 10%, #1c1814);
+  --rose-bg: color-mix(in srgb, #e08a4a 14%, #1c1814);
+  --slate-bg: var(--paper-warm);
   --ok: #c9a36a;
   --ok-bg: color-mix(in srgb, #c9a36a 14%, #1c1814);
   --err: #e08a4a;
@@ -2542,10 +2542,28 @@ input[type="range"]::-moz-range-thumb {
 }
 
 
-.lab-switch a.on {
-  background: var(--text);
-  color: var(--bg);
-  border-color: var(--text);
+.lab-switch a {
+  position: relative;
+  background: transparent;
+  border-color: transparent;
+  color: var(--ink-mute);
+}
+.lab-switch a.on,
+.lab-switch a[aria-current="page"] {
+  background: transparent;
+  color: var(--ink);
+  border-color: transparent;
+}
+.lab-switch a.on::after,
+.lab-switch a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 0;
+  height: 2px;
+  background: var(--lime);
+  border-radius: 99px;
 }
 
 .kn-focus-actions {
@@ -3365,10 +3383,14 @@ a.cat-chip:hover {
 }
 
 html[data-theme="dark"] .mode-tabs button.on,
-html[data-theme="dark"] .cat-chip.on,
-html[data-theme="dark"] .lab-switch a.on {
+html[data-theme="dark"] .cat-chip.on {
   background: var(--text);
   color: var(--bg);
+}
+html[data-theme="dark"] .lab-switch a.on,
+html[data-theme="dark"] .lab-switch a[aria-current="page"] {
+  background: transparent;
+  color: var(--ink);
 }
 
 .conf-meter {
@@ -4081,16 +4103,32 @@ button.cat-chip.on {
   font-weight: 600;
 }
 
-.conf-meter i,
-.lab-switch a {
+.conf-meter i {
   background: color-mix(in srgb, var(--lime) 45%, var(--bone));
 }
 
+.lab-switch a {
+  position: relative;
+  background: transparent;
+  border: 0;
+  color: var(--ink-mute);
+}
 .lab-switch a.on,
 .lab-switch a[aria-current="page"] {
-  background: var(--ink);
-  color: var(--paper);
-  border-color: var(--ink);
+  background: transparent;
+  color: var(--ink);
+  border-color: transparent;
+}
+.lab-switch a.on::after,
+.lab-switch a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 0;
+  height: 2px;
+  background: var(--lime);
+  border-radius: 99px;
 }
 
 html[data-theme="dark"] .btn.primary {

@@ -23,7 +23,7 @@ export type RadiusId =
   | "harness"
   | "graph";
 
-/* Open Design live tokens only: ink / mute / olive. Lime is never a node fill. */
+/* Warm paper tokens: ink / ink-soft / olive / emerald / slate. Lime is never a node fill. */
 export const RADIUS: {
   id: RadiusId;
   label: string;
@@ -32,17 +32,17 @@ export const RADIUS: {
   foundation: string;
   tags: string[];
 }[] = [
-  { id: "tool", label: "工具", en: "Tool", color: "#262626", foundation: "/agent-foundations.html#sec-1", tags: ["Tool Use"] },
-  { id: "react", label: "认知循环", en: "ReAct", color: "#434343", foundation: "/agent-foundations.html#sec-2", tags: ["推理"] },
-  { id: "loop", label: "重复运行", en: "Loop", color: "#218c00", foundation: "/agent-foundations.html#sec-3", tags: ["推理", "Agent"] },
-  { id: "mcp", label: "工具协议", en: "MCP", color: "#262626", foundation: "/agent-foundations.html#sec-4", tags: ["MCP"] },
+  { id: "tool", label: "工具", en: "Tool", color: "var(--ink)", foundation: "/agent-foundations.html#sec-1", tags: ["Tool Use"] },
+  { id: "react", label: "认知循环", en: "ReAct", color: "var(--ink-soft)", foundation: "/agent-foundations.html#sec-2", tags: ["推理"] },
+  { id: "loop", label: "重复运行", en: "Loop", color: "var(--emerald)", foundation: "/agent-foundations.html#sec-3", tags: ["推理", "Agent"] },
+  { id: "mcp", label: "工具协议", en: "MCP", color: "var(--ink)", foundation: "/agent-foundations.html#sec-4", tags: ["MCP"] },
   { id: "acp", label: "会话协议", en: "ACP", color: "#8a6234", foundation: "/agent-foundations.html#sec-acp", tags: ["ACP"] },
   { id: "cli", label: "本地 Agent", en: "CLI", color: "#c46a2b", foundation: "/agent-foundations.html#sec-cli", tags: ["CLI"] },
-  { id: "a2a", label: "协作协议", en: "A2A", color: "#595959", foundation: "/agent-foundations.html#sec-6", tags: ["Agent"] },
-  { id: "card", label: "能力名片", en: "Agent Card", color: "#595959", foundation: "/agent-foundations.html#sec-6", tags: ["Agent"] },
-  { id: "skill", label: "分层手册", en: "Skill", color: "#434343", foundation: "/agent-foundations.html#sec-skill", tags: ["Skill"] },
-  { id: "harness", label: "单次运行", en: "Harness", color: "#218c00", foundation: "/#sec-labs", tags: ["Harness"] },
-  { id: "graph", label: "多循环治理", en: "Graph", color: "#262626", foundation: "/#sec-network", tags: ["Graph"] },
+  { id: "a2a", label: "协作协议", en: "A2A", color: "var(--slate)", foundation: "/agent-foundations.html#sec-6", tags: ["Agent"] },
+  { id: "card", label: "能力名片", en: "Agent Card", color: "var(--slate)", foundation: "/agent-foundations.html#sec-6", tags: ["Agent"] },
+  { id: "skill", label: "分层手册", en: "Skill", color: "var(--ink-soft)", foundation: "/agent-foundations.html#sec-skill", tags: ["Skill"] },
+  { id: "harness", label: "单次运行", en: "Harness", color: "var(--emerald)", foundation: "/#sec-labs", tags: ["Harness"] },
+  { id: "graph", label: "多循环治理", en: "Graph", color: "var(--ink)", foundation: "/#sec-network", tags: ["Graph"] },
 ];
 
 const TITLE_HINTS: [RegExp, RadiusId][] = [
