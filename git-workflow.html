@@ -8,35 +8,39 @@
 <style>
 /* ============ 主题变量 ============ */
 :root{
-  --bg:#f5f6fa; --bg-soft:#eceef5; --card:#ffffff; --card-2:#f8f9fd;
-  --text:#1c2333; --text-2:#4a556b; --text-3:#8a93a8;
-  --line:#e3e6ef; --line-2:#d3d8e6;
-  --acc:#1f4e5a; --acc-2:#b4532a;
-  --amber:#d97706; --violet:#7c3aed; --emerald:#059669; --blue:#2563eb; --rose:#e11d48; --slate:#475569;
-  --amber-bg:#fef3e2; --violet-bg:#f3eeff; --emerald-bg:#e7f7f0; --blue-bg:#e8f0fe; --rose-bg:#ffe9ee; --slate-bg:#eef2f7;
-  --ok:#16a34a; --ok-bg:#e9f9ef; --err:#dc2626; --err-bg:#feecec;
-  --code-bg:#151a2d; --code-text:#d6deeb;
-  --shadow:0 1px 2px rgba(20,25,50,.05),0 4px 16px rgba(20,25,50,.07);
-  --shadow-lg:0 4px 12px rgba(20,25,50,.08),0 12px 40px rgba(20,25,50,.12);
-  --r:14px; --side-w:268px;
+  --paper:#fafafa; --paper-warm:#f5f5f5; --paper-dark:#f0f0f0; --bone:#ffffff;
+  --ink:#262626; --ink-soft:#434343; --ink-mute:#595959; --ink-faint:#8c8c8c;
+  --lime:#63fe13; --lime-soft:#83ff3b; --olive:#218c00;
+  --bg:#fafafa; --bg-soft:#f5f5f5; --card:#ffffff; --card-2:#f5f5f5;
+  --text:#262626; --text-2:#595959; --text-3:#8c8c8c;
+  --line:#d9d9d9; --line-2:#bfbfbf;
+  --acc:#63fe13; --acc-2:#83ff3b;
+  --amber:#8c8c8c; --violet:#434343; --emerald:#218c00; --blue:#262626; --rose:#262626; --slate:#595959;
+  --amber-bg:#f5f5f5; --violet-bg:#f5f5f5; --emerald-bg:#f0f0f0; --blue-bg:#f5f5f5; --rose-bg:#f5f5f5; --slate-bg:#f5f5f5;
+  --ok:#218c00; --ok-bg:#f0f0f0; --err:#262626; --err-bg:#f5f5f5;
+  --code-bg:#262626; --code-text:#fafafa;
+  --shadow:none; --shadow-lg:0 30px 60px -30px rgba(38,38,38,.16);
+  --r:12px; --side-w:212px;
 }
 html[data-theme="dark"]{
-  --bg:#0c101e; --bg-soft:#11162a; --card:#161c33; --card-2:#1a2138;
-  --text:#e8ecf8; --text-2:#aab4cc; --text-3:#6b7590;
-  --line:#252d4a; --line-2:#303a5e;
-  --acc:#8aa8a0; --acc-2:#e0a070;
-  --amber:#f59e0b; --violet:#a78bfa; --emerald:#34d399; --blue:#60a5fa; --rose:#fb7185; --slate:#94a3b8;
-  --amber-bg:#2c2210; --violet-bg:#241b3d; --emerald-bg:#0e2b22; --blue-bg:#14233f; --rose-bg:#331722; --slate-bg:#1b2334;
-  --ok:#4ade80; --ok-bg:#10301d; --err:#f87171; --err-bg:#3a1515;
-  --code-bg:#0d1120; --code-text:#d6deeb;
-  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.35);
-  --shadow-lg:0 8px 30px rgba(0,0,0,.5);
+  --paper:#262626; --paper-warm:#2e2e2e; --paper-dark:#1a1a1a; --bone:#2e2e2e;
+  --ink:#fafafa; --ink-soft:#e5e5e5; --ink-mute:#8c8c8c; --ink-faint:#8c8c8c;
+  --lime:#63fe13; --lime-soft:#83ff3b; --olive:#83ff3b;
+  --bg:#262626; --bg-soft:#2e2e2e; --card:#2e2e2e; --card-2:#262626;
+  --text:#fafafa; --text-2:#8c8c8c; --text-3:#8c8c8c;
+  --line:color-mix(in srgb,#fafafa 16%,#262626); --line-2:color-mix(in srgb,#fafafa 22%,#262626);
+  --acc:#63fe13; --acc-2:#83ff3b;
+  --amber:#8c8c8c; --violet:#e5e5e5; --emerald:#83ff3b; --blue:#fafafa; --rose:#fafafa; --slate:#8c8c8c;
+  --amber-bg:#2e2e2e; --violet-bg:#2e2e2e; --emerald-bg:#2e2e2e; --blue-bg:#2e2e2e; --rose-bg:#2e2e2e; --slate-bg:#2e2e2e;
+  --ok:#83ff3b; --ok-bg:#2e2e2e; --err:#fafafa; --err-bg:#2e2e2e;
+  --code-bg:#1a1a1a; --code-text:#fafafa;
+  --shadow:none; --shadow-lg:0 30px 60px -30px rgba(0,0,0,.45);
 }
 /* ============ 基础 ============ */
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+  font-family:"Albert Sans","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
   background:var(--bg);color:var(--text);line-height:1.75;font-size:16px;
   transition:background .3s,color .3s;
 }
@@ -48,10 +52,10 @@ h1,h2,h3,h4{line-height:1.35;font-weight:700}
 button{font-family:inherit;cursor:pointer}
 /* ============ 顶部进度条 & 顶栏 ============ */
 #progressbar{position:fixed;top:0;left:0;height:3px;width:0;z-index:120;
-  background:linear-gradient(90deg,var(--acc),var(--acc-2));transition:width .4s ease}
+  background:var(--lime);transition:width .4s ease}
 .topbar{position:fixed;top:0;left:var(--side-w);right:0;height:58px;z-index:100;
   display:flex;align-items:center;gap:12px;padding:0 20px;
-  background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);
+  background:color-mix(in srgb,var(--bg) 82%,transparent);
   border-bottom:1px solid var(--line)}
 .topbar .crumb{font-size:13.5px;color:var(--text-2);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .topbar .pct{font-size:12.5px;font-weight:700;color:var(--acc);background:var(--slate-bg);
@@ -82,7 +86,7 @@ button{font-family:inherit;cursor:pointer}
 .side-prog .lbl{display:flex;justify-content:space-between;font-size:12px;color:var(--text-2);margin-bottom:6px}
 .side-prog .bar{height:6px;border-radius:99px;background:var(--bg-soft);overflow:hidden}
 .side-prog .bar i{display:block;height:100%;width:0;border-radius:99px;
-  background:linear-gradient(90deg,var(--acc),var(--acc-2));transition:width .5s ease}
+  background:var(--lime);transition:width .5s ease}
 .side-nav{flex:1;overflow-y:auto;padding:10px}
 .nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;margin:2px 0;border-radius:10px;
   font-size:13.5px;color:var(--text-2);cursor:pointer;border:1px solid transparent;transition:all .15s;user-select:none}
@@ -177,7 +181,7 @@ strong{font-weight:700}
 .btn{border:1px solid var(--line-2);background:var(--card);color:var(--text);font-size:13.5px;font-weight:600;
   padding:7px 16px;border-radius:10px;transition:all .15s;display:inline-flex;align-items:center;gap:6px}
 .btn:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-1px)}
-.btn.primary{background:linear-gradient(120deg,var(--acc),var(--acc-2));color:#fff;border:none}
+.btn.primary{background:var(--ink);color:var(--paper);border:none}
 .btn.primary:hover{filter:brightness(1.08);color:#fff}
 .btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
 .btn-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
@@ -423,6 +427,39 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
 .cmdk-empty{padding:18px;color:var(--text-3);text-align:center}
 .context-card{display:block}
 
+
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+body{font-family:"Albert Sans","PingFang SC","Microsoft YaHei",system-ui,sans-serif;font-weight:400;line-height:1.5}
+h1,h2,h3,h4{font-weight:600;letter-spacing:0;line-height:1.15}
+.hero h1 .grad,h1 .tone{background:none;-webkit-background-clip:unset;background-clip:unset;color:var(--ink-mute);font-weight:400}
+#progressbar{height:2px;background:var(--lime)}
+.topbar.pill-nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);width:min(1120px,calc(100vw - 24px));height:52px;z-index:120;display:flex;align-items:center;gap:10px;padding:0 10px 0 16px;border:1px solid var(--line);border-radius:999px;background:var(--bone);box-shadow:var(--shadow-lg);backdrop-filter:none}
+.brand{font-size:14px;font-weight:700;color:var(--ink);text-decoration:none;white-space:nowrap}
+.wing-picker{display:flex;align-items:center;gap:2px;flex:1;overflow:auto;scrollbar-width:none}
+.wing-picker a{padding:6px 10px;border-radius:999px;color:var(--ink-mute);font-size:13px;font-weight:600;text-decoration:none;position:relative}
+.wing-picker a.on,.wing-picker a[aria-current="page"]{color:var(--ink)}
+.wing-picker a.on::after,.wing-picker a[aria-current="page"]::after{content:"";position:absolute;left:10px;right:10px;bottom:4px;height:2px;background:var(--lime);border-radius:99px}
+.pill-nav .crumb{flex:1;color:var(--ink-faint);font-size:12px}
+.pill-nav .pct{background:transparent;border:0;color:var(--ink-mute);font-weight:600}
+.pill-nav .icon-btn{border:0;background:transparent;border-radius:999px}
+#sidebar{padding-top:76px;width:var(--side-w);background:var(--paper)}
+.side-head{padding:8px 16px 12px;border-bottom:0}
+.side-head .logo{font-size:13px;font-weight:600;letter-spacing:0}
+.side-head .logo .badge{display:none}
+.lab-switch{display:none}
+.btn{border-radius:999px;padding:10px 16px}
+.btn.primary{background:var(--ink);color:var(--paper);border:none;box-shadow:none}
+.btn.primary:hover{color:var(--paper);background:var(--ink-soft);filter:none}
+.insight-card,.rec-card{border:1px solid var(--line);border-radius:12px;box-shadow:none;background:var(--bone)}
+.insight-k{letter-spacing:0;text-transform:none;color:var(--ink-faint);font-size:12px}
+.mode-tabs{display:none}
+main .wrap{padding-top:24px}
+.hero{background:transparent;border:0;box-shadow:none;padding:8px 0}
+.hero::after{display:none}
+.path-bridge{background:transparent;border:0;padding:0 0 16px}
+.path-bridge .pb-k{letter-spacing:.08em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+@media(max-width:1023px){.pill-nav.topbar{left:12px;right:12px;transform:none;width:auto}.wing-picker{display:none}#sidebar{padding-top:12px}}
+
 </style>
 </head>
 <body>
@@ -431,28 +468,23 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
 <!-- ============ 侧边栏 ============ -->
 <nav id="sidebar">
   <div class="side-head">
-    <div class="logo">🌿 Git 协作工作坊 <span class="badge">LAB</span></div>
+    <div class="logo">本章</div>
     <div class="tag">分支 · merge · rebase · 冲突 深入浅出</div>
-    <div class="lab-switch">
-      <a href="/">前沿首页</a>
-      <a href="/agent-foundations.html">基础馆</a>
-      <a href="/concepts">概念馆</a>
-      <a href="/git-workflow.html" aria-current="page">Git 实验室</a>
-    </div>
+    <div class="lab-switch" hidden></div>
   </div>
   <div class="side-prog">
     <div class="lbl"><span>学习进度</span><b id="side-pct">0%</b></div>
     <div class="bar"><i id="side-bar"></i></div>
   </div>
   <div class="side-nav" id="side-nav">
-    <a class="nav-item" data-sec="sec-0" style="--nc:#64748b"><span class="num">0</span><span class="t">为什么需要分支</span><span class="dot"></span></a>
-    <a class="nav-item" data-sec="sec-1" style="--nc:#d97706"><span class="num">1</span><span class="t">分支规范与协作模型</span><span class="dot"></span></a>
-    <a class="nav-item" data-sec="sec-2" style="--nc:#2563eb"><span class="num">2</span><span class="t">日常流：拉 feature 开发</span><span class="dot"></span></a>
-    <a class="nav-item" data-sec="sec-3" style="--nc:#059669"><span class="num">3</span><span class="t">merge 详解 + 图形模拟器</span><span class="dot"></span></a>
-    <a class="nav-item" data-sec="sec-4" style="--nc:#7c3aed"><span class="num">4</span><span class="t">rebase 详解</span><span class="dot"></span></a>
-    <a class="nav-item" data-sec="sec-5" style="--nc:#e11d48"><span class="num">5</span><span class="t">冲突解决实战</span><span class="dot"></span></a>
-    <a class="nav-item" data-sec="sec-6" style="--nc:#0891b2"><span class="num">6</span><span class="t">完整业务场景串联</span><span class="dot"></span></a>
-    <a class="nav-item" data-sec="sec-7" style="--nc:#5b5bd6"><span class="num">7</span><span class="t">通关自测 + 速查表</span><span class="dot"></span></a>
+    <a class="nav-item" data-sec="sec-0" style="--nc:#262626"><span class="num">0</span><span class="t">为什么需要分支</span><span class="dot"></span></a>
+    <a class="nav-item" data-sec="sec-1" style="--nc:#434343"><span class="num">1</span><span class="t">分支规范与协作模型</span><span class="dot"></span></a>
+    <a class="nav-item" data-sec="sec-2" style="--nc:#262626"><span class="num">2</span><span class="t">日常流：拉 feature 开发</span><span class="dot"></span></a>
+    <a class="nav-item" data-sec="sec-3" style="--nc:#218c00"><span class="num">3</span><span class="t">merge 详解 + 图形模拟器</span><span class="dot"></span></a>
+    <a class="nav-item" data-sec="sec-4" style="--nc:#434343"><span class="num">4</span><span class="t">rebase 详解</span><span class="dot"></span></a>
+    <a class="nav-item" data-sec="sec-5" style="--nc:#262626"><span class="num">5</span><span class="t">冲突解决实战</span><span class="dot"></span></a>
+    <a class="nav-item" data-sec="sec-6" style="--nc:#595959"><span class="num">6</span><span class="t">完整业务场景串联</span><span class="dot"></span></a>
+    <a class="nav-item" data-sec="sec-7" style="--nc:#262626"><span class="num">7</span><span class="t">通关自测 + 速查表</span><span class="dot"></span></a>
   </div>
   <div class="side-foot">
     <span class="mini">进度自动保存在本地</span>
@@ -462,15 +494,19 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
 <div id="backdrop"></div>
 
 <!-- ============ 顶栏 ============ -->
-<header class="topbar">
+<header class="topbar pill-nav">
   <button class="icon-btn" id="hamburger" title="目录">☰</button>
-  <div class="crumb" id="crumb">0 · 为什么需要分支</div>
-  <div class="mode-tabs" aria-label="内容模式">
-    <a href="/" class="on">为你</a>
+  <a class="brand" href="/">AI Learning Lab</a>
+  <nav class="wing-picker" aria-label="馆翼">
+    <a href="/">今日</a>
+    <a href="/#sec-network">知识网络</a>
     <a href="/concepts">概念</a>
-  </div>
+    <a href="/agent-foundations.html">基础馆</a>
+    <a href="/git-workflow.html" class="on" aria-current="page">Git</a>
+  </nav>
+  <div class="crumb" id="crumb">0 · 为什么需要分支</div>
   <span class="pct" id="top-pct">进度 0%</span>
-  <button class="icon-btn" id="theme-btn" title="切换深浅色">🌙</button>
+  <button class="icon-btn" id="theme-btn" title="切换深浅色">夜</button>
 </header>
 
 <main><div class="wrap">
@@ -478,9 +514,9 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
 <!-- ================================================================ -->
 <!-- 第 0 章 · 为什么需要分支 -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-0" style="--sc:#64748b">
+<section class="lesson" id="sec-0" style="--sc:#262626">
   <div class="hero">
-    <h1>让团队不再互相踩脚的<br><span class="grad">Git 分支协作术</span></h1>
+    <h1>让团队不再互相踩脚的 <span class="grad">Git 分支协作术</span></h1>
     <p class="sub">分支规范 · feature 日常开发流 · merge 与 rebase 的本质区别 · 冲突解决实战——配一台「命令 ↔ 图形」同屏对照的 Git Graph 模拟器，把每一条命令在提交图上的效果亲眼看一遍。</p>
     <div class="meta-chips">
       <span class="mc">📚 8 个章节</span>
@@ -492,14 +528,14 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
   </div>
 
   <article class="insight-card rec-card">
-    <div class="insight-k">下一间馆 · 把握 80%</div>
+    <div class="insight-k">原则</div>
     <h2>先记住：永远从目标合入分支拉新分支</h2>
     <p>合进谁，就从谁的最新提交开。再去看事故演示，比先堆命令更不容易走偏。</p>
     <div class="conf-meter" aria-hidden="true"><i style="width:80%"></i></div>
     <div class="tool-chips"><span class="tool-chip">checkout</span><span class="tool-chip">merge</span><span class="tool-chip">rebase</span></div>
     <div class="rec-actions">
-      <a class="btn primary" href="#sec-1">接受 · 分支规范</a>
-      <a class="btn" href="/">回为你首页</a>
+      <a class="btn primary" href="#sec-1">从分支规范开始</a>
+      <a class="btn" href="/">回今日</a>
     </div>
   </article>
 
@@ -547,7 +583,7 @@ details.deep .deep-body{padding:2px 18px 14px;font-size:14px}
 <!-- ================================================================ -->
 <!-- 第 1 章 · 分支规范 -->
 <!-- ================================================================ -->
-<section class="lesson" id="sec-1" style="--sc:#d97706">
+<section class="lesson" id="sec-1" style="--sc:#434343">
   <div class="sec-head"><span class="sec-num">第 1 章</span><h2>🏷 分支规范：给每条时间线一个职责</h2></div>
   <p class="sec-sub">原则：永远从目标合入分支拉新分支 · main / dev / feature / release / hotfix · 保护分支</p>
 
@@ -713,10 +749,10 @@ feat(api)!: 订单接口返回结构改为分页</pre></div>
   document.querySelectorAll('.nav-item').forEach(function(a){
     catalog.push({href:a.getAttribute('href')||('#'+(a.dataset.sec||'')), label:(a.querySelector('.t')||a).textContent.trim(), kind:'目录', hint:'本章'});
   });
-  catalog.push({href:'/', label:'前沿首页', kind:'馆翼', hint:'为你 / 概念'});
-  catalog.push({href:'/concepts', label:'概念馆', kind:'馆翼', hint:'每日账本'});
+  catalog.push({href:'/', label:'今日', kind:'馆翼', hint:'选择起点'});
+  catalog.push({href:'/concepts', label:'概念', kind:'馆翼', hint:'每日账本'});
   catalog.push({href:'/agent-foundations.html', label:'基础馆', kind:'馆翼', hint:'通关课程'});
-  catalog.push({href:'/git-workflow.html', label:'Git 实验室', kind:'馆翼', hint:'永远从目标合入分支拉新分支'});
+  catalog.push({href:'/git-workflow.html', label:'Git', kind:'馆翼', hint:'永远从目标合入分支拉新分支'});
   function render(){
     var q=(document.getElementById('cmdk-q').value||'').trim().toLowerCase();
     var hits=catalog.filter(function(c){ return (c.label+' '+c.kind+' '+c.hint).toLowerCase().indexOf(q)!==-1; });
