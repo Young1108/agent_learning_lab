@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-25T04:05:00.000Z",
+  "updatedAt": "2026-08-25T04:55:41.757Z",
   "version": 6,
   "sourceCount": 4,
   "conceptCount": 124,
@@ -18,6 +18,22 @@
       "addedAt": "2026-08-25T03:31:38.002Z"
     },
     {
+      "id": "u448pi",
+      "title": "CLI（本地 Agent CLI）：命令行里的编码 Agent，不是云端对话框",
+      "source": "本地实践",
+      "url": "https://agentclientprotocol.com/get-started/agents",
+      "date": "2026-08-25",
+      "summary": "会说 ACP stdio 的本地编码 Agent（Grok CLI / Codex CLI / 同类）：一条你或客户端在本机执行的命令，经 stdin/stdout 做完整会话。对比 MCP（Agent↔工具）与 A2A（Agent↔Agent）——CLI 是被 spawn 的那位顾问，ACP 是请来对话的协议。本 Lab：npx 启动 grok agent stdio 作本地 agent。",
+      "maturity": "emerging",
+      "tags": [
+        "CLI",
+        "ACP",
+        "Agent",
+        "Harness"
+      ],
+      "addedAt": "2026-08-25T04:00:00.000Z"
+    },
+    {
       "id": "1d0bhcc",
       "title": "ACP（Agent Client Protocol）：客户端到本地 Agent 的标准通道",
       "source": "本地实践",
@@ -33,22 +49,6 @@
         "CLI"
       ],
       "addedAt": "2026-08-24T09:59:20.155Z"
-    },
-    {
-      "id": "u448pi",
-      "title": "CLI（本地 Agent CLI）：命令行里的编码 Agent，不是云端对话框",
-      "source": "本地实践",
-      "url": "https://agentclientprotocol.com/get-started/agents",
-      "date": "2026-08-25",
-      "summary": "会说 ACP stdio 的本地编码 Agent（Grok CLI / Codex CLI / 同类）：一条你或客户端在本机执行的命令，经 stdin/stdout 做完整会话。对比 MCP（Agent↔工具）与 A2A（Agent↔Agent）——CLI 是被 spawn 的那位顾问，ACP 是请来对话的协议。本 Lab：npx 启动 grok agent stdio 作本地 agent。",
-      "maturity": "emerging",
-      "tags": [
-        "CLI",
-        "ACP",
-        "Agent",
-        "Harness"
-      ],
-      "addedAt": "2026-08-25T04:00:00.000Z"
     },
     {
       "id": "1vemd4q",
