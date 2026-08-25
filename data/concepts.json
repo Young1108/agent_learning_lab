@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-25T08:38:34.820Z",
-  "version": 6,
+  "updatedAt": "2026-08-25T11:13:51.981Z",
+  "version": 7,
   "sourceCount": 4,
-  "conceptCount": 124,
+  "conceptCount": 125,
   "concepts": [
     {
       "id": "17lk5le",
@@ -32,6 +32,19 @@
         "Harness"
       ],
       "addedAt": "2026-08-25T04:00:00.000Z"
+    },
+    {
+      "id": "1diadwv",
+      "title": "Disrupting a new covert influence campaign from Russia",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-influence-campaign-russia",
+      "date": "2026-08-25",
+      "summary": "",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-25T11:13:50.890Z"
     },
     {
       "id": "1d0bhcc",
