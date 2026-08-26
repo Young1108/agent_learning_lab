@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-26T10:15:15.459Z",
-  "version": 9,
-  "sourceCount": 4,
-  "conceptCount": 153,
+  "updatedAt": "2026-08-26T10:20:36.573Z",
+  "version": 10,
+  "sourceCount": 6,
+  "conceptCount": 168,
   "concepts": [
     {
       "id": "1x9t81x",
@@ -407,6 +407,84 @@
       "addedAt": "2026-08-26T08:39:17.415Z"
     },
     {
+      "id": "882y87",
+      "title": "Funding better evaluations of AI’s impact on wellbeing",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/wellbeing-research-grants",
+      "date": "2026-08-25",
+      "summary": "Anthropic is launching a $5 million grant program to fund independent research into how AI impacts users’ wellbeing.",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-26T10:20:29.569Z"
+    },
+    {
+      "id": "1ul3r7h",
+      "title": "Introducing the Anthropic Economic Index",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/the-anthropic-economic-index",
+      "date": "2026-08-25",
+      "summary": "Announcement of the new Anthropic Economic Index and description of the new data on AI use in occupations",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-26T10:20:29.935Z"
+    },
+    {
+      "id": "oul822",
+      "title": "Launching the Anthropic Economic Futures Programme in the UK and Europe",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/economic-futures-uk-europe",
+      "date": "2026-08-25",
+      "summary": "Anthropic's support for economic research comes to the UK and Europe",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-26T10:20:30.275Z"
+    },
+    {
+      "id": "hu9bld",
+      "title": "Supporting ambitious external research through the Anthropic Economic Futures Research Fund",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/economic-futures-research-fund-agenda",
+      "date": "2026-08-25",
+      "summary": "We’re committing $200 million to the Anthropic Economic Futures Research Fund to support ambitious external research.",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-26T10:20:30.664Z"
+    },
+    {
+      "id": "1isqv65",
+      "title": "Anthropic Economic Index: Insights from Claude 3.7 Sonnet",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/anthropic-economic-index-insights-from-claude-sonnet-3-7",
+      "date": "2026-08-25",
+      "summary": "The second update from the Anthropic Economic Index",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-26T10:20:31.346Z"
+    },
+    {
+      "id": "w6o4rl",
+      "title": "The Anthropic Economic Index connector",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/anthropic-economic-index-connector",
+      "date": "2026-08-25",
+      "summary": "We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore the data directly.",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-26T10:20:31.779Z"
+    },
+    {
       "id": "1d0bhcc",
       "title": "ACP（Agent Client Protocol）：客户端到本地 Agent 的标准通道",
       "source": "本地实践",
@@ -700,6 +778,32 @@
         "前沿"
       ],
       "addedAt": "2026-08-25T03:31:38.196Z"
+    },
+    {
+      "id": "sd0i20",
+      "title": "Improving Fable 5 Safeguards",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
+      "date": "2026-08-24",
+      "summary": "We’re making updates to Claude Fable 5’s biology safeguards in a way that substantially reduces fallbacks.",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-26T10:20:32.144Z"
+    },
+    {
+      "id": "w1kkml",
+      "title": "How Claude's text watermarking works",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/claude-text-watermark",
+      "date": "2026-08-24",
+      "summary": "Future Claude models will generate text that contains a watermark. This is a way of determining the likelihood that Claude was involved in writing the text, and we, along with several other major AI providers, are implem…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-26T10:20:32.501Z"
     },
     {
       "id": "1n78d8c",
@@ -1710,6 +1814,33 @@
       "addedAt": "2026-08-22T14:39:42.621Z"
     },
     {
+      "id": "ntc197",
+      "title": "Building Effective AI Agents",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "date": "2026-08-10",
+      "summary": "Discover how Anthropic approaches the development of reliable AI agents. Learn about our research on agent capabilities, safety considerations, and technical framework for building trustworthy AI.",
+      "maturity": "emerging",
+      "tags": [
+        "Agent",
+        "安全"
+      ],
+      "addedAt": "2026-08-26T10:20:32.886Z"
+    },
+    {
+      "id": "1k9gbh8",
+      "title": "Introducing Claude Sonnet 5",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/claude-sonnet-5",
+      "date": "2026-08-10",
+      "summary": "Our most agentic Sonnet yet, with top-tier intelligence for coding and everyday professional work.",
+      "maturity": "emerging",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-08-26T10:20:33.427Z"
+    },
+    {
       "id": "1722x98",
       "title": "WeatherNext: AI model achieves breakthrough in forecasting cyclones",
       "source": "Google DeepMind",
@@ -1749,6 +1880,19 @@
       "addedAt": "2026-08-22T14:39:42.173Z"
     },
     {
+      "id": "1tlgckz",
+      "title": "Tino Cuellar joins Anthropic as Chief Global Affairs Officer",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/tino-cuellar",
+      "date": "2026-08-04",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "maturity": "emerging",
+      "tags": [
+        "安全"
+      ],
+      "addedAt": "2026-08-26T10:20:33.862Z"
+    },
+    {
       "id": "5xeta",
       "title": "Inside our 353,000-person vibe coding course",
       "source": "Google AI Blog",
@@ -1760,6 +1904,32 @@
         "Agent"
       ],
       "addedAt": "2026-08-22T14:39:42.173Z"
+    },
+    {
+      "id": "1pnvaen",
+      "title": "Introducing Claude for Nonprofits",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/claude-for-nonprofits",
+      "date": "2026-08-03",
+      "summary": "Anthropic launches Claude for Nonprofits to help organizations maximize their impact, featuring free AI training and discounted rates for nonprofits.",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-26T10:20:34.216Z"
+    },
+    {
+      "id": "u5kvts",
+      "title": "Investigating three real-world incidents in our cybersecurity evaluations",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+      "date": "2026-08-03",
+      "summary": "In a review of our cybersecurity evaluation transcripts, we found three incidents in which a Claude model reached the internet from within or while interacting with a third-party evaluation environment, and then gained u…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-26T10:20:34.582Z"
     },
     {
       "id": "1xbwtec",
@@ -1851,6 +2021,32 @@
         "前沿"
       ],
       "addedAt": "2026-08-22T14:39:42.173Z"
+    },
+    {
+      "id": "1uvzcgx",
+      "title": "Our position on open-weights models",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/position-open-weights-models",
+      "date": "2026-07-28",
+      "summary": "Anthropic CEO Dario Amodei on open-weights models",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-26T10:20:34.986Z"
+    },
+    {
+      "id": "9wtskc",
+      "title": "Expanding our partnership with Cognizant | Anthropic",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/cognizant-anthropic",
+      "date": "2026-07-27",
+      "summary": "Cognizant embeds Claude across its platforms, with 30,000+ associates trained, and becomes a Global Premier Partner in the Claude Partner Network.",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-26T10:20:35.360Z"
     },
     {
       "id": "9lkl3q",
