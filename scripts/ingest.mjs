@@ -165,6 +165,23 @@ function firstHref(block) {
   );
 }
 
+/* 条目封面：RSS 里的 enclosure / media: / itunes:image（仅接受 http(s)） */
+function extractImage(block) {
+  const patterns = [
+    /<enclosure[^>]*url=["']([^"']+)["'][^>]*type=["']image\/[^"']+["']/i,
+    /<enclosure[^>]*type=["']image\/[^"']+["'][^>]*url=["']([^"']+)["']/i,
+    /<media:thumbnail[^>]*url=["']([^"']+)["']/i,
+    /<media:content[^>]*url=["']([^"']+)["'][^>]*type=["']image\/[^"']+["']/i,
+    /<media:content[^>]*type=["']image\/[^"']+["'][^>]*url=["']([^"']+)["']/i,
+    /<itunes:image[^>]*href=["']([^"']+)["']/i,
+  ];
+  for (const re of patterns) {
+    const m = block.match(re);
+    if (m?.[1] && /^https?:/i.test(m[1])) return m[1];
+  }
+  return "";
+}
+
 /* 解析 RSS/Atom（正则粗解析，够用；标题/摘要做实体解码） */
 export function parseFeed(xml) {
   const items = [];
@@ -187,7 +204,7 @@ export function parseFeed(xml) {
         "",
     );
     if (!title || !link) continue;
-    items.push({ title, link, date, summary });
+    items.push({ title, link, date, summary, image: extractImage(block) });
   }
   return items;
 }
@@ -281,6 +298,17 @@ function normalizeDate(raw) {
   }
 }
 
+/* TLDR：摘要精简到 ~90 字；空摘要时用来源兜底 */
+function makeTldr(title, summary, source) {
+  const clean = cleanSummary(summary, 160);
+  if (clean) {
+    return clean.length > 90
+      ? `${clean.slice(0, 90).replace(/[。，、；：\s]+$/, "")}…`
+      : clean;
+  }
+  return `来自 ${source} 的官方技术文章：${title.slice(0, 60)}…`;
+}
+
 /* 解析 sitemap：提取 news/engineering 文章 URL + lastmod */
 export function parseSitemap(xml) {
   const pairs = [];
@@ -313,6 +341,11 @@ async function fetchSitemapArticles(source, xml) {
       const desc = decodeEntities(
         html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? "",
       );
+      const cover = (
+        html.match(/<meta[^>]*property=["']og:image["'][^>]*content=["']([^"']+)["']/i)?.[1] ??
+        html.match(/<meta[^>]*name=["']twitter:image["'][^>]*content=["']([^"']+)["']/i)?.[1] ??
+        ""
+      ).trim();
       const url = normalizeUrl(loc);
       const summary = cleanSummary(desc);
       items.push({
@@ -322,6 +355,8 @@ async function fetchSitemapArticles(source, xml) {
         url,
         date: normalizeDate(lastmod) || new Date().toISOString().slice(0, 10),
         summary,
+        cover: /^https?:/i.test(cover) ? cover : undefined,
+        tldr: makeTldr(title, summary, source.name),
         maturity: source.maturity,
         tags: inferTags(title, summary),
         addedAt: new Date().toISOString(),
@@ -350,6 +385,9 @@ async function fetchSource(source) {
       url,
       date: normalizeDate(item.date) || new Date().toISOString().slice(0, 10),
       summary,
+      cover:
+        source.type === "rss" && item.image ? item.image : undefined,
+      tldr: makeTldr(item.title, summary, source.name),
       maturity: source.maturity,
       tags: inferTags(item.title, summary),
       addedAt: new Date().toISOString(),
@@ -386,6 +424,9 @@ export function mergeItems(existing, fetched) {
       tags,
       title: current.title || item.title || current.title,
       summary: current.summary || item.summary || current.summary,
+      // 缺失字段（封面/TLDR）用新抓取补全，保留人工修正过的旧值
+      cover: current.cover ?? item.cover,
+      tldr: current.tldr ?? item.tldr,
     });
   }
   return [...byUrl.values()];
@@ -409,6 +450,10 @@ async function main() {
   }
 
   const merged = mergeItems(existing, collected);
+  // 历史条目补全 TLDR（封面无法回填，前端用占位图兜底）
+  for (const c of merged) {
+    if (!c.tldr) c.tldr = makeTldr(c.title, c.summary, c.source);
+  }
   // 按 date 倒序（最新在前），再按 addedAt 倒序
   merged.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
 

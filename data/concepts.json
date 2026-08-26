@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-26T10:20:36.573Z",
+  "updatedAt": "2026-08-26T10:25:14.189Z",
   "version": 10,
   "sourceCount": 6,
   "conceptCount": 168,
@@ -15,7 +15,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T10:15:14.693Z"
+      "addedAt": "2026-08-26T10:15:14.693Z",
+      "tldr": "来自 OpenAI 的官方技术文章：How loveholidays is making everyone a builder with Codex…"
     },
     {
       "id": "17lk5le",
@@ -28,7 +29,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-25T03:31:38.002Z"
+      "addedAt": "2026-08-25T03:31:38.002Z",
+      "tldr": "来自 Hugging Face 的官方技术文章：Wire It, Run It, Deploy It: AI Workflows in Gradio…"
     },
     {
       "id": "u448pi",
@@ -44,7 +46,8 @@
         "Agent",
         "Harness"
       ],
-      "addedAt": "2026-08-25T04:00:00.000Z"
+      "addedAt": "2026-08-25T04:00:00.000Z",
+      "tldr": "会说 ACP stdio 的本地编码 Agent（Grok CLI / Codex CLI / 同类）：一条你或客户端在本机执行的命令，经 stdin/stdout 做完整会话。对…"
     },
     {
       "id": "1diadwv",
@@ -57,7 +60,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-25T11:13:50.890Z"
+      "addedAt": "2026-08-25T11:13:50.890Z",
+      "tldr": "来自 OpenAI 的官方技术文章：Disrupting a new covert influence campaign from Russia…"
     },
     {
       "id": "1xuex7",
@@ -70,7 +74,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T08:39:16.786Z"
+      "addedAt": "2026-08-26T08:39:16.786Z",
+      "tldr": "来自 OpenAI 的官方技术文章：The full stack behind abundant intelligence…"
     },
     {
       "id": "1idu6g6",
@@ -83,7 +88,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T08:39:16.786Z"
+      "addedAt": "2026-08-26T08:39:16.786Z",
+      "tldr": "来自 OpenAI 的官方技术文章：Jalapeño’s first results show industry-leading speed and eff…"
     },
     {
       "id": "k80yd6",
@@ -96,7 +102,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T08:39:16.786Z"
+      "addedAt": "2026-08-26T08:39:16.786Z",
+      "tldr": "来自 OpenAI 的官方技术文章：Introducing the Admin plugin for ChatGPT Work and Codex…"
     },
     {
       "id": "6kgzf6",
@@ -109,7 +116,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T08:39:17.087Z"
+      "addedAt": "2026-08-26T08:39:17.087Z",
+      "tldr": "Learn how to use Google Search tools to find home decor inspiration, shop for furniture, a…"
     },
     {
       "id": "tyx80j",
@@ -122,7 +130,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T08:39:17.218Z"
+      "addedAt": "2026-08-26T08:39:17.218Z",
+      "tldr": "来自 Hugging Face 的官方技术文章：Granite 4.2 LLMs: How They're Built…"
     },
     {
       "id": "1in84o6",
@@ -135,7 +144,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T08:39:17.218Z"
+      "addedAt": "2026-08-26T08:39:17.218Z",
+      "tldr": "来自 Hugging Face 的官方技术文章：Quantization-Aware Healing: a compressed, 4-bit model that o…"
     },
     {
       "id": "3ec28v",
@@ -150,7 +160,8 @@
         "Harness",
         "Skill"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "Recursive self-improvement (RSI) remains hard in long-horizon tasks, where growing histori…"
     },
     {
       "id": "3ebxsp",
@@ -163,7 +174,8 @@
       "tags": [
         "Agent"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "Group-relative reinforcement learning waits for sibling rollouts of the same prompt, which…"
     },
     {
       "id": "3ea6ro",
@@ -176,7 +188,8 @@
       "tags": [
         "Agent"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "Web agents that act from rendered pixels avoid the fragility and heavy token cost of readi…"
     },
     {
       "id": "3ea5aa",
@@ -189,7 +202,8 @@
       "tags": [
         "Graph"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "Real-world data for knowledge graph question answering is often distributed across differe…"
     },
     {
       "id": "3ea4jl",
@@ -202,7 +216,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "We present LAION-BVD, a large-scale open video dataset for multimodal learning, which cont…"
     },
     {
       "id": "3ea2bi",
@@ -215,7 +230,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "Large language models (LLMs) are increasingly deployed as AI analysts to process financial…"
     },
     {
       "id": "3e8ukj",
@@ -228,7 +244,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "The rapid expansion of large-scale assessments and the growing adoption of automatic item…"
     },
     {
       "id": "3e8ttu",
@@ -241,7 +258,8 @@
       "tags": [
         "Graph"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "Large language models are increasingly used for knowledge graph question answering (KGQA),…"
     },
     {
       "id": "3e83vj",
@@ -254,7 +272,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "Recent work has applied Mamba style state space models (SSMs) to video anomaly detection,…"
     },
     {
       "id": "3e7nk9",
@@ -269,7 +288,8 @@
         "Loop",
         "Graph"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "We present Crase, a bounded and inspectable alternative to deep research agents for schola…"
     },
     {
       "id": "3e7m2v",
@@ -282,7 +302,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "Model cards are structured documents that summarize key information about machine learning…"
     },
     {
       "id": "3e7jus",
@@ -298,7 +319,8 @@
         "MCP",
         "Skill"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "We present StarHarness, a framework for evolving environment-specific agent harnesses whil…"
     },
     {
       "id": "3dti56",
@@ -311,7 +333,8 @@
       "tags": [
         "Agent"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "Outcome-supervised search agents learn when and how to retrieve evidence, but terminal rew…"
     },
     {
       "id": "3dtf6e",
@@ -324,7 +347,8 @@
       "tags": [
         "推理"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "Clinicians read chain-of-thought (CoT) rationales as evidence of medical reasoning, but wh…"
     },
     {
       "id": "3dss6v",
@@ -337,7 +361,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "Distinguishing machine-generated text (MGT) from human-written text (HWT) becomes increasi…"
     },
     {
       "id": "3dsae7",
@@ -352,7 +377,8 @@
         "安全",
         "多模态"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "LLM-based agents can interact with external environments through tool invocation, but this…"
     },
     {
       "id": "3ds5y1",
@@ -365,7 +391,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "Brain stroke, known for its high mortality and incidence rates, poses significant health r…"
     },
     {
       "id": "3dro5d",
@@ -378,7 +405,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "The Bayesian Ideal Observer (IO) establishes the theoretical upper bound on task performan…"
     },
     {
       "id": "3drl6l",
@@ -391,7 +419,8 @@
       "tags": [
         "Agent"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "Large language model agents are moving beyond conventional retrieval-augmented generation…"
     },
     {
       "id": "3drjp7",
@@ -404,7 +433,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T08:39:17.415Z"
+      "addedAt": "2026-08-26T08:39:17.415Z",
+      "tldr": "Many disentanglement methods represent generative factors using Euclidean product coordina…"
     },
     {
       "id": "882y87",
@@ -417,7 +447,9 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T10:20:29.569Z"
+      "addedAt": "2026-08-26T10:20:29.569Z",
+      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20HeadFlower&amp;backgroundColor=heather",
+      "tldr": "Anthropic is launching a $5 million grant program to fund independent research into how AI…"
     },
     {
       "id": "1ul3r7h",
@@ -430,7 +462,9 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T10:20:29.935Z"
+      "addedAt": "2026-08-26T10:20:29.935Z",
+      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20NodeGraph&amp;backgroundColor=heather",
+      "tldr": "Announcement of the new Anthropic Economic Index and description of the new data on AI use…"
     },
     {
       "id": "oul822",
@@ -443,7 +477,9 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T10:20:30.275Z"
+      "addedAt": "2026-08-26T10:20:30.275Z",
+      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20BarChart&amp;backgroundColor=sky",
+      "tldr": "Anthropic's support for economic research comes to the UK and Europe"
     },
     {
       "id": "hu9bld",
@@ -456,7 +492,9 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T10:20:30.664Z"
+      "addedAt": "2026-08-26T10:20:30.664Z",
+      "cover": "https://cdn.sanity.io/images/4zrzovbb/website/303a79341c6210020de254eaabc259548d27ba58-1200x630.jpg",
+      "tldr": "We’re committing $200 million to the Anthropic Economic Futures Research Fund to support a…"
     },
     {
       "id": "1isqv65",
@@ -469,7 +507,9 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T10:20:31.346Z"
+      "addedAt": "2026-08-26T10:20:31.346Z",
+      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20NodeGraph&amp;backgroundColor=heather",
+      "tldr": "The second update from the Anthropic Economic Index"
     },
     {
       "id": "w6o4rl",
@@ -482,7 +522,9 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T10:20:31.779Z"
+      "addedAt": "2026-08-26T10:20:31.779Z",
+      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20NodeBook&amp;backgroundColor=coral",
+      "tldr": "We're launching the Anthropic Economic Index connector for Claude, which lets anyone explo…"
     },
     {
       "id": "1d0bhcc",
@@ -499,7 +541,8 @@
         "ACP",
         "CLI"
       ],
-      "addedAt": "2026-08-24T09:59:20.155Z"
+      "addedAt": "2026-08-24T09:59:20.155Z",
+      "tldr": "Zed 提出的开放协议：客户端把本地 Agent 作为子进程拉起，经 stdin/stdout 用 JSON-RPC 2.0（NDJSON 流）驱动完整会话；与 MCP 互补分层…"
     },
     {
       "id": "1vemd4q",
@@ -512,7 +555,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-25T03:31:37.315Z"
+      "addedAt": "2026-08-25T03:31:37.315Z",
+      "tldr": "来自 OpenAI 的官方技术文章：Advancing price-performance for developers with GPT‑5.6 in K…"
     },
     {
       "id": "2vmf32",
@@ -525,7 +569,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "Group-based reinforcement learning methods such as GRPO for large language models avoid tr…"
     },
     {
       "id": "2vmecd",
@@ -538,7 +583,8 @@
       "tags": [
         "世界模型"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "An interactive world model must follow the user's actions, remember the places it has show…"
     },
     {
       "id": "2vmdlo",
@@ -551,7 +597,8 @@
       "tags": [
         "Agent"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "Modern software systems accumulate technical debt over decades of development, which makes…"
     },
     {
       "id": "2vmcuz",
@@ -564,7 +611,8 @@
       "tags": [
         "安全"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "Road traffic injuries remain a major challenge in low- and middle-income countries, where…"
     },
     {
       "id": "2vmc4a",
@@ -577,7 +625,8 @@
       "tags": [
         "Graph"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "Ballistocardiography (BCG) is promising for unobtrusive long-term blood pressure (BP) moni…"
     },
     {
       "id": "2vlp4r",
@@ -591,7 +640,8 @@
         "Agent",
         "Harness"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "Language models are sequential processors, but long-horizon agency requires external infor…"
     },
     {
       "id": "2vloe2",
@@ -604,7 +654,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "Recent advances in continuous diffusion and flow-based language models (LMs) have achieved…"
     },
     {
       "id": "2vl2vx",
@@ -617,7 +668,8 @@
       "tags": [
         "Skill"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "While AI assistance can improve human task performance in the short term, it may also unde…"
     },
     {
       "id": "2vl1ej",
@@ -632,7 +684,8 @@
         "Loop",
         "Multi-Agent"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "Does multi-agent LLM interaction help or hurt? Some work reports gains from debate (Du et…"
     },
     {
       "id": "2vki4h",
@@ -645,7 +698,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "The continual evolution of malware variants necessitates detection systems that can adapt…"
     },
     {
       "id": "2vjv4y",
@@ -658,7 +712,8 @@
       "tags": [
         "世界模型"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "World models can predict video without learning dynamics that they reliably preserve. We t…"
     },
     {
       "id": "2vjue9",
@@ -672,7 +727,8 @@
         "Agent",
         "评测"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "Earth-system analysis reconstructs changing physical processes from observations that diff…"
     },
     {
       "id": "2vjtnk",
@@ -685,7 +741,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "Artificial intelligence (AI) is transforming measurement in economics. AI models convert u…"
     },
     {
       "id": "2vilwl",
@@ -698,7 +755,8 @@
       "tags": [
         "评测"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "Historical people may appear under different languages, scripts, and transcription traditi…"
     },
     {
       "id": "2v4k6z",
@@ -712,7 +770,8 @@
         "推理",
         "安全"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "Reasoning-Induced Misalignment, where fine-tuning on reasoning data containing no harmful…"
     },
     {
       "id": "2v4h87",
@@ -725,7 +784,8 @@
       "tags": [
         "推理"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "Self-reflection is a powerful mechanism for credit assignment in human learning, convertin…"
     },
     {
       "id": "2v3uzd",
@@ -738,7 +798,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "We present Team Semiintelligencn's solution for the ACM RecSys 2026 TalkPlayData Challenge…"
     },
     {
       "id": "2v3aym",
@@ -751,7 +812,8 @@
       "tags": [
         "多模态"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "Vision-Language-Action (VLA) models can turn multimodal context into robot actions, but th…"
     },
     {
       "id": "2v39h8",
@@ -764,7 +826,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "Narrow fine-tuning on small, domain-specific datasets can produce broad and surprising cha…"
     },
     {
       "id": "2v38qj",
@@ -777,7 +840,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-25T03:31:38.196Z"
+      "addedAt": "2026-08-25T03:31:38.196Z",
+      "tldr": "As large language models are increasingly used in data-scarce and evolving task scenarios,…"
     },
     {
       "id": "sd0i20",
@@ -790,7 +854,9 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T10:20:32.144Z"
+      "addedAt": "2026-08-26T10:20:32.144Z",
+      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Node%20Bird&amp;backgroundColor=heather",
+      "tldr": "We’re making updates to Claude Fable 5’s biology safeguards in a way that substantially re…"
     },
     {
       "id": "w1kkml",
@@ -803,7 +869,9 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T10:20:32.501Z"
+      "addedAt": "2026-08-26T10:20:32.501Z",
+      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20Quill&amp;backgroundColor=heather",
+      "tldr": "Future Claude models will generate text that contains a watermark. This is a way of determ…"
     },
     {
       "id": "1n78d8c",
@@ -816,7 +884,9 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:44.074Z"
+      "addedAt": "2026-08-22T14:38:44.074Z",
+      "cover": "https://lh3.googleusercontent.com/ymmK0Dgovn-_MGlnQJffYxKdTe5LAnkAZr-GNnIjiFzsGOAAmOmUDuVACbNgIy-tqrJhGBdaQ_PaElc8EKRKRWtYg4eWx8HVcaVzdYy7hg7Q_8k=w528-h297-n-nu-rw-lo",
+      "tldr": "Google DeepMind partners with game studios to prototype breakthrough AI gameplay."
     },
     {
       "id": "87mzof",
@@ -829,7 +899,8 @@
       "tags": [
         "评测"
       ],
-      "addedAt": "2026-08-22T14:39:42.621Z"
+      "addedAt": "2026-08-22T14:39:42.621Z",
+      "tldr": "来自 Hugging Face 的官方技术文章：Measuring benchmark optimization in speech recognition…"
     },
     {
       "id": "17oohz9",
@@ -842,7 +913,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "We develop a new direct accelerated Newton method for minimizing convex functions with Lip…"
     },
     {
       "id": "17ooghv",
@@ -855,7 +927,8 @@
       "tags": [
         "评测"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "In professional life sciences workflows, scientists routinely interpret visual artifacts (…"
     },
     {
       "id": "17oofr6",
@@ -868,7 +941,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "For sixty years, machine verification has been a major cost overhead, affordable only for…"
     },
     {
       "id": "17onqjk",
@@ -881,7 +955,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "Contextualization is essential for production automatic speech recognition (ASR) systems,…"
     },
     {
       "id": "17on2tc",
@@ -894,7 +969,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "Deep-learning models of anatomy can be numerically plausible yet anatomically impossible,…"
     },
     {
       "id": "17omi1w",
@@ -907,7 +983,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "Users increasingly turn to large language models for emotional support, yet little is know…"
     },
     {
       "id": "17oly15",
@@ -920,7 +997,8 @@
       "tags": [
         "Graph"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "We formalize the Steiner Traveling Salesman Problem (Steiner-TSP) on Graphs of Convex Sets…"
     },
     {
       "id": "17olwjr",
@@ -933,7 +1011,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "The European Union (EU) has emerged as a leading regulatory body in the development of sus…"
     },
     {
       "id": "17olv2d",
@@ -946,7 +1025,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "That a prompt's effect is not a property of the prompt is established: prompts optimised f…"
     },
     {
       "id": "17ol82u",
@@ -960,7 +1040,8 @@
         "推理",
         "多模态"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "Reinforcement Learning (RL) has demonstrated significant gains in image captioning, yet it…"
     },
     {
       "id": "17o7455",
@@ -974,7 +1055,8 @@
         "Agent",
         "Skill"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "Skills play different roles as an agent's policy evolves: they should first provide learna…"
     },
     {
       "id": "17o5ym9",
@@ -987,7 +1069,8 @@
       "tags": [
         "安全"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "Improving the safety of large language models (LLMs) often comes at the expense of utility…"
     },
     {
       "id": "17o59en",
@@ -1000,7 +1083,8 @@
       "tags": [
         "推理"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "Large language models often rely on Chain-of-Thought (CoT) reasoning to solve complex task…"
     },
     {
       "id": "17o4k71",
@@ -1013,7 +1097,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "Question answering (QA) over long, connected documents remains challenging because relevan…"
     },
     {
       "id": "17o42ed",
@@ -1026,7 +1111,8 @@
       "tags": [
         "评测"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "While recent large language models (LLMs) have achieved promising results on individual pa…"
     },
     {
       "id": "17o3xy7",
@@ -1039,7 +1125,8 @@
       "tags": [
         "Graph"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "Sequential recommendation predicts the next item from a user's interaction history, but no…"
     },
     {
       "id": "17o3x7i",
@@ -1052,7 +1139,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "As conversational companions, large language models (LLMs) often have access to users' emo…"
     },
     {
       "id": "17o3d6r",
@@ -1065,7 +1153,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "Representation engineering offers a lightweight means of controlling language-model behavi…"
     },
     {
       "id": "17o3ayo",
@@ -1078,7 +1167,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "The Traveling Salesman Problem (TSP) is one of the most extensively studied NP-hard optimi…"
     },
     {
       "id": "17o38ql",
@@ -1091,7 +1181,8 @@
       "tags": [
         "Agent"
       ],
-      "addedAt": "2026-08-24T08:43:52.378Z"
+      "addedAt": "2026-08-24T08:43:52.378Z",
+      "tldr": "Persistent memory makes false information durable: once a false statement is stored, it ca…"
     },
     {
       "id": "1fl5w0e",
@@ -1104,7 +1195,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T08:39:17.218Z"
+      "addedAt": "2026-08-26T08:39:17.218Z",
+      "tldr": "来自 Hugging Face 的官方技术文章：How Hugging Face Inference Endpoints, Jobs, and Buckets Powe…"
     },
     {
       "id": "1txbos4",
@@ -1117,7 +1209,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:39.633Z"
+      "addedAt": "2026-08-22T14:38:39.633Z",
+      "tldr": "来自 OpenAI 的官方技术文章：Introducing AI Futures…"
     },
     {
       "id": "a3d6vc",
@@ -1130,7 +1223,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:39.633Z"
+      "addedAt": "2026-08-22T14:38:39.633Z",
+      "tldr": "来自 OpenAI 的官方技术文章：Stampli cuts launch hours by 68% using ChatGPT Work…"
     },
     {
       "id": "1e574p2",
@@ -1143,7 +1237,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.621Z"
+      "addedAt": "2026-08-22T14:39:42.621Z",
+      "tldr": "来自 Hugging Face 的官方技术文章：Up to 3.2x Faster Inference with LFM2.5-DSpark…"
     },
     {
       "id": "177lkvb",
@@ -1156,7 +1251,8 @@
       "tags": [
         "评测"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "Large Language Models (LLMs) increasingly require selective removal of harmful or sensitiv…"
     },
     {
       "id": "177lfog",
@@ -1169,7 +1265,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "Personalized interpretation of medical reports has emerged as an increasingly important ne…"
     },
     {
       "id": "177kry8",
@@ -1182,7 +1279,8 @@
       "tags": [
         "Agent"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "Travel behavior research increasingly combines digital data collection with predictive mod…"
     },
     {
       "id": "177kbmy",
@@ -1195,7 +1293,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "Naturalistic computer-use traces, passively recorded screenshots and mouse or keyboard act…"
     },
     {
       "id": "177kaw9",
@@ -1209,7 +1308,8 @@
         "Agent",
         "评测"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "Recursive self-improvement (RSI) asks whether an AI system can improve the process that pr…"
     },
     {
       "id": "177k9ev",
@@ -1222,7 +1322,8 @@
       "tags": [
         "Harness"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "Heterogeneous AI systems composed of multiple models, architectures, harnesses, or inferen…"
     },
     {
       "id": "177k7xh",
@@ -1237,7 +1338,8 @@
         "Tool Use",
         "推理"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "Mid-training is increasingly recognized as a critical stage for shaping the capabilities o…"
     },
     {
       "id": "1775g9k",
@@ -1250,7 +1352,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "Whether a language model has improved itself is increasingly judged not by mean accuracy b…"
     },
     {
       "id": "1774u0q",
@@ -1263,7 +1366,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "Large language models often fail to answer questions about a bounded document collection w…"
     },
     {
       "id": "177499a",
@@ -1277,7 +1381,8 @@
         "Agent",
         "Skill"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "Large language model (LLM) agents can induce skills from completed tasks and reuse them la…"
     },
     {
       "id": "1774717",
@@ -1290,7 +1395,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "The rapid proliferation of memecoins on blockchain platforms has increased the risk of fra…"
     },
     {
       "id": "17730rm",
@@ -1303,7 +1409,8 @@
       "tags": [
         "推理"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "Reasoning language models trained with reinforcement learning typically operate under a fi…"
     },
     {
       "id": "17729bx",
@@ -1316,7 +1423,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "X-band SAR satellites (8-12 GHz) play a critical role in disaster response, environmental…"
     },
     {
       "id": "1771rj9",
@@ -1329,7 +1437,8 @@
       "tags": [
         "推理"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "Multimodal large language models (MLLMs) combine linguistic reasoning with visual percepti…"
     },
     {
       "id": "1771n33",
@@ -1342,7 +1451,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "The standard objection to full automation is demand-side: if humans earn nothing, who buys…"
     },
     {
       "id": "1771614",
@@ -1355,7 +1465,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "Anatomically plausible segmentation remains challenging because of low contrast, ambiguous…"
     },
     {
       "id": "1770zcv",
@@ -1368,7 +1479,8 @@
       "tags": [
         "评测"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "Legal AI systems are increasingly used to answer legal questions, yet existing benchmarks…"
     },
     {
       "id": "1770iaw",
@@ -1381,7 +1493,8 @@
       "tags": [
         "Graph"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "Electronic Navigational Charts (ENCs) are geospatial vector datasets used in maritime navi…"
     },
     {
       "id": "1770cdc",
@@ -1394,7 +1507,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "Small language models are usually built like large ones and then squeezed onto a CPU after…"
     },
     {
       "id": "176zscl",
@@ -1407,7 +1521,8 @@
       "tags": [
         "评测"
       ],
-      "addedAt": "2026-08-22T14:39:42.988Z"
+      "addedAt": "2026-08-22T14:39:42.988Z",
+      "tldr": "Legal work, with its heavy reliance on processing large amounts of text, is often consider…"
     },
     {
       "id": "5c16oa",
@@ -1420,7 +1535,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:39.633Z"
+      "addedAt": "2026-08-22T14:38:39.633Z",
+      "tldr": "来自 OpenAI 的官方技术文章：Offering Zero Data Retention for frontier models…"
     },
     {
       "id": "12kzccy",
@@ -1433,7 +1549,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:39.633Z"
+      "addedAt": "2026-08-22T14:38:39.633Z",
+      "tldr": "来自 OpenAI 的官方技术文章：Replit expands access to software creation with GPT-5.6 Luna…"
     },
     {
       "id": "1p61984",
@@ -1446,7 +1563,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.173Z"
+      "addedAt": "2026-08-22T14:39:42.173Z",
+      "tldr": "Here’s how you can use Google Search tools to study for classes and standardized tests."
     },
     {
       "id": "1d578rx",
@@ -1459,7 +1577,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:39.633Z"
+      "addedAt": "2026-08-22T14:38:39.633Z",
+      "tldr": "来自 OpenAI 的官方技术文章：ChatGPT Ads expands across Europe…"
     },
     {
       "id": "w2ja9k",
@@ -1472,7 +1591,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:39.633Z"
+      "addedAt": "2026-08-22T14:38:39.633Z",
+      "tldr": "来自 OpenAI 的官方技术文章：Strengthening democratic oversight in national security…"
     },
     {
       "id": "fdlvl",
@@ -1485,7 +1605,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:39.633Z"
+      "addedAt": "2026-08-22T14:38:39.633Z",
+      "tldr": "来自 OpenAI 的官方技术文章：Partnering with CodeAI to prepare the first AI generation…"
     },
     {
       "id": "1jjkekl",
@@ -1498,7 +1619,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:39.633Z"
+      "addedAt": "2026-08-22T14:38:39.633Z",
+      "tldr": "来自 OpenAI 的官方技术文章：Pacing model development in an era of cyber-critical capabil…"
     },
     {
       "id": "1klw31f",
@@ -1511,7 +1633,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:39.633Z"
+      "addedAt": "2026-08-22T14:38:39.633Z",
+      "tldr": "来自 OpenAI 的官方技术文章：Introducing ChatGPT for Teens: Built for learning, backed by…"
     },
     {
       "id": "vdqsrr",
@@ -1524,7 +1647,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:39.633Z"
+      "addedAt": "2026-08-22T14:38:39.633Z",
+      "tldr": "来自 OpenAI 的官方技术文章：How NVIDIA scales expertise with ChatGPT Work…"
     },
     {
       "id": "jbljhm",
@@ -1537,7 +1661,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:39.633Z"
+      "addedAt": "2026-08-22T14:38:39.633Z",
+      "tldr": "来自 OpenAI 的官方技术文章：Asana cleared 5 years of engineering work in 2 weeks with Co…"
     },
     {
       "id": "ol8su5",
@@ -1550,7 +1675,8 @@
       "tags": [
         "Agent"
       ],
-      "addedAt": "2026-08-22T14:39:42.621Z"
+      "addedAt": "2026-08-22T14:39:42.621Z",
+      "tldr": "来自 Hugging Face 的官方技术文章：How Much Memory Does Your Agent Actually Need?…"
     },
     {
       "id": "91lpaz",
@@ -1563,7 +1689,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.621Z"
+      "addedAt": "2026-08-22T14:39:42.621Z",
+      "tldr": "来自 Hugging Face 的官方技术文章：Multi-Vector (Late Interaction) Embedding Models with Senten…"
     },
     {
       "id": "1qoavgh",
@@ -1576,7 +1703,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:39.633Z"
+      "addedAt": "2026-08-22T14:38:39.633Z",
+      "tldr": "来自 OpenAI 的官方技术文章：The Defender’s Window…"
     },
     {
       "id": "8alkox",
@@ -1589,7 +1717,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:39.633Z"
+      "addedAt": "2026-08-22T14:38:39.633Z",
+      "tldr": "来自 OpenAI 的官方技术文章：OpenAI joins PORTS-Pike project…"
     },
     {
       "id": "1s1prco",
@@ -1602,7 +1731,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:39.633Z"
+      "addedAt": "2026-08-22T14:38:39.633Z",
+      "tldr": "来自 OpenAI 的官方技术文章：New policy ideas for the Intelligence Age…"
     },
     {
       "id": "70pq8q",
@@ -1615,7 +1745,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.173Z"
+      "addedAt": "2026-08-22T14:39:42.173Z",
+      "tldr": "Google Gemini and Pixel partner with five global football clubs to elevate the fan matchda…"
     },
     {
       "id": "122r8hp",
@@ -1628,7 +1759,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.621Z"
+      "addedAt": "2026-08-22T14:39:42.621Z",
+      "tldr": "来自 Hugging Face 的官方技术文章：Same Cluster, 33 Points More Utilization: What Changed Was t…"
     },
     {
       "id": "1q2zpi3",
@@ -1641,7 +1773,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.621Z"
+      "addedAt": "2026-08-22T14:39:42.621Z",
+      "tldr": "来自 Hugging Face 的官方技术文章：State of Open Models: Summer 2026 Observations…"
     },
     {
       "id": "1875r88",
@@ -1654,7 +1787,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:39.633Z"
+      "addedAt": "2026-08-22T14:38:39.633Z",
+      "tldr": "来自 OpenAI 的官方技术文章：The builder’s guide to GPT‑5.6…"
     },
     {
       "id": "1jqlyzi",
@@ -1667,7 +1801,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:44.074Z"
+      "addedAt": "2026-08-22T14:38:44.074Z",
+      "tldr": "来自 Google DeepMind 的官方技术文章：Introducing Gemini 3.7 Flash…"
     },
     {
       "id": "1il5rpv",
@@ -1680,7 +1815,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.173Z"
+      "addedAt": "2026-08-22T14:39:42.173Z",
+      "tldr": "Sheets canvas turns data into interactive dashboards, custom study trackers, seating chart…"
     },
     {
       "id": "rwzcui",
@@ -1693,7 +1829,8 @@
       "tags": [
         "Agent"
       ],
-      "addedAt": "2026-08-22T14:39:42.621Z"
+      "addedAt": "2026-08-22T14:39:42.621Z",
+      "tldr": "来自 Hugging Face 的官方技术文章：Record, train, and deploy from one place with Strands Agents…"
     },
     {
       "id": "d09p3k",
@@ -1706,7 +1843,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.621Z"
+      "addedAt": "2026-08-22T14:39:42.621Z",
+      "tldr": "来自 Hugging Face 的官方技术文章：What We Learned by Reproducing 2,200 papers from ICML…"
     },
     {
       "id": "1sw3m91",
@@ -1719,7 +1857,9 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:44.074Z"
+      "addedAt": "2026-08-22T14:38:44.074Z",
+      "cover": "https://lh3.googleusercontent.com/8RcynTx1ujudyw8Fs05Pv8WJahe2FQ3z1Y7gNHm-xvOTJLdMp9hNDsIIoQbJsnav6evNLgY1iT9B9ercsyIn0U1N51pzScvSfe6IHk2SjDJx-MaVzQ=w528-h297-n-nu-rw-lo",
+      "tldr": "Introducing sign-language-to-text (SL2T), our breakthrough model powering new sign languag…"
     },
     {
       "id": "tyinww",
@@ -1732,7 +1872,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.621Z"
+      "addedAt": "2026-08-22T14:39:42.621Z",
+      "tldr": "来自 Hugging Face 的官方技术文章：Introducing OlmoEarth embeddings: Custom embedding exports f…"
     },
     {
       "id": "tqxm7z",
@@ -1745,7 +1886,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.173Z"
+      "addedAt": "2026-08-22T14:39:42.173Z",
+      "tldr": "Google introduces AMIE for real-time clinical video consultations in simulated settings."
     },
     {
       "id": "1fzna6c",
@@ -1758,7 +1900,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.621Z"
+      "addedAt": "2026-08-22T14:39:42.621Z",
+      "tldr": "来自 Hugging Face 的官方技术文章：Thinking of ACE? We Can Do It with Fewer Tokens…"
     },
     {
       "id": "14qay7r",
@@ -1771,7 +1914,8 @@
       "tags": [
         "Agent"
       ],
-      "addedAt": "2026-08-22T14:39:42.173Z"
+      "addedAt": "2026-08-22T14:39:42.173Z",
+      "tldr": "Learn how new AI and agentic experiences across Google Ads and Google Analytics can simpli…"
     },
     {
       "id": "zyw37a",
@@ -1784,7 +1928,8 @@
       "tags": [
         "Agent"
       ],
-      "addedAt": "2026-08-22T14:39:42.621Z"
+      "addedAt": "2026-08-22T14:39:42.621Z",
+      "tldr": "来自 Hugging Face 的官方技术文章：Build Low-Latency Multilingual Voice Agents: Open Weights & …"
     },
     {
       "id": "f540wk",
@@ -1797,7 +1942,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.621Z"
+      "addedAt": "2026-08-22T14:39:42.621Z",
+      "tldr": "来自 Hugging Face 的官方技术文章：Making Knowledge Distillation Cheap Enough to Run at Scale…"
     },
     {
       "id": "xw6r83",
@@ -1811,7 +1957,8 @@
         "Agent",
         "开源"
       ],
-      "addedAt": "2026-08-22T14:39:42.621Z"
+      "addedAt": "2026-08-22T14:39:42.621Z",
+      "tldr": "来自 Hugging Face 的官方技术文章：Meta is back with Muse Glimmer: local, agentic, multimodal, …"
     },
     {
       "id": "ntc197",
@@ -1825,7 +1972,9 @@
         "Agent",
         "安全"
       ],
-      "addedAt": "2026-08-26T10:20:32.886Z"
+      "addedAt": "2026-08-26T10:20:32.886Z",
+      "cover": "https://cdn.sanity.io/images/4zrzovbb/website/76b5733c669f0dfb9c7aa7fc512a495867cf12e6-2400x1260.png",
+      "tldr": "Discover how Anthropic approaches the development of reliable AI agents. Learn about our r…"
     },
     {
       "id": "1k9gbh8",
@@ -1838,7 +1987,9 @@
       "tags": [
         "Agent"
       ],
-      "addedAt": "2026-08-26T10:20:33.427Z"
+      "addedAt": "2026-08-26T10:20:33.427Z",
+      "cover": "https://cdn.sanity.io/images/4zrzovbb/website/2039cc549c023bc855671308211d20d3382828a9-2880x1620.jpg",
+      "tldr": "Our most agentic Sonnet yet, with top-tier intelligence for coding and everyday profession…"
     },
     {
       "id": "1722x98",
@@ -1851,7 +2002,9 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:44.074Z"
+      "addedAt": "2026-08-22T14:38:44.074Z",
+      "cover": "https://lh3.googleusercontent.com/Mj8GyJnsjROScr1hYl7PL_QCAaLGukliPCTMUlpKiQtZuVkmh2ouydYh80ibejg9vWgKkg2dYPx2jCJOOohKid5P-dLzwvIyB4-fZjWXYIx0ImZd=w528-h297-n-nu-rw-lo",
+      "tldr": "来自 Google DeepMind 的官方技术文章：WeatherNext: AI model achieves breakthrough in forecasting c…"
     },
     {
       "id": "1n23wt3",
@@ -1864,7 +2017,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.621Z"
+      "addedAt": "2026-08-22T14:39:42.621Z",
+      "tldr": "来自 Hugging Face 的官方技术文章：Baseten on Hugging Face Inference Providers 🔥…"
     },
     {
       "id": "1ssqzo2",
@@ -1877,7 +2031,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.173Z"
+      "addedAt": "2026-08-22T14:39:42.173Z",
+      "tldr": "Here are Google’s latest AI updates from July 2026"
     },
     {
       "id": "1tlgckz",
@@ -1890,7 +2045,9 @@
       "tags": [
         "安全"
       ],
-      "addedAt": "2026-08-26T10:20:33.862Z"
+      "addedAt": "2026-08-26T10:20:33.862Z",
+      "cover": "https://cdn.sanity.io/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+      "tldr": "Anthropic is an AI safety and research company that's working to build reliable, interpret…"
     },
     {
       "id": "5xeta",
@@ -1903,7 +2060,8 @@
       "tags": [
         "Agent"
       ],
-      "addedAt": "2026-08-22T14:39:42.173Z"
+      "addedAt": "2026-08-22T14:39:42.173Z",
+      "tldr": "Kaggle’s AI Agents Intensive with Google brought learners together in a no-cost course to…"
     },
     {
       "id": "1pnvaen",
@@ -1916,7 +2074,9 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T10:20:34.216Z"
+      "addedAt": "2026-08-26T10:20:34.216Z",
+      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20NodeGlobe&amp;backgroundColor=clay",
+      "tldr": "Anthropic launches Claude for Nonprofits to help organizations maximize their impact, feat…"
     },
     {
       "id": "u5kvts",
@@ -1929,7 +2089,9 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T10:20:34.582Z"
+      "addedAt": "2026-08-26T10:20:34.582Z",
+      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20Lock&amp;backgroundColor=heather",
+      "tldr": "In a review of our cybersecurity evaluation transcripts, we found three incidents in which…"
     },
     {
       "id": "1xbwtec",
@@ -1942,7 +2104,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:44.074Z"
+      "addedAt": "2026-08-22T14:38:44.074Z",
+      "tldr": "Gemini Robotics ER 2 helps robots reason, collaborate, and solve real-world tasks. It repr…"
     },
     {
       "id": "s9um3g",
@@ -1955,7 +2118,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.621Z"
+      "addedAt": "2026-08-22T14:39:42.621Z",
+      "tldr": "来自 Hugging Face 的官方技术文章：GPU Management: Why Idle GPUs Are the New Grounded Aircraft…"
     },
     {
       "id": "twyv5o",
@@ -1968,7 +2132,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:44.074Z"
+      "addedAt": "2026-08-22T14:38:44.074Z",
+      "tldr": "来自 Google DeepMind 的官方技术文章：We’re launching Lyria 3.5 in Google Flow Music, with advance…"
     },
     {
       "id": "1gywwsg",
@@ -1981,7 +2146,9 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:44.074Z"
+      "addedAt": "2026-08-22T14:38:44.074Z",
+      "cover": "https://lh3.googleusercontent.com/VZ5KwQMxv9xBcQnYipsQB2EUj3oX1yvFYLktIamY8V2a76Y6ctEEuaLF59TuPdnaVn6OAMINDilqnuhju1O-AXc7QlOVmcogjskrWxS7xVQ1mc5S7g=w528-h297-n-nu-rw-lo",
+      "tldr": "来自 Google DeepMind 的官方技术文章：Gemini Robotics 2 brings whole body intelligence to robots…"
     },
     {
       "id": "um3nfn",
@@ -1994,7 +2161,8 @@
       "tags": [
         "Agent"
       ],
-      "addedAt": "2026-08-22T14:39:42.173Z"
+      "addedAt": "2026-08-22T14:39:42.173Z",
+      "tldr": "We’re announcing even more new capabilities in Managed Agents in Gemini API so developers…"
     },
     {
       "id": "162lptv",
@@ -2007,7 +2175,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.173Z"
+      "addedAt": "2026-08-22T14:39:42.173Z",
+      "tldr": "It might sound counterintuitive, but Search's AI tools can actually help you make the most…"
     },
     {
       "id": "1pxz91v",
@@ -2020,7 +2189,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.173Z"
+      "addedAt": "2026-08-22T14:39:42.173Z",
+      "tldr": "These AI features can help you craft a menu, design a tablescape, and handle other party-p…"
     },
     {
       "id": "1uvzcgx",
@@ -2033,7 +2203,9 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T10:20:34.986Z"
+      "addedAt": "2026-08-26T10:20:34.986Z",
+      "cover": "https://cdn.sanity.io/images/4zrzovbb/website/62993bb857986e2808c2a75024f384e7b85312b6-2400x1254.png",
+      "tldr": "Anthropic CEO Dario Amodei on open-weights models"
     },
     {
       "id": "9wtskc",
@@ -2046,7 +2218,9 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-26T10:20:35.360Z"
+      "addedAt": "2026-08-26T10:20:35.360Z",
+      "cover": "https://cdn.sanity.io/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+      "tldr": "Cognizant embeds Claude across its platforms, with 30,000+ associates trained, and becomes…"
     },
     {
       "id": "9lkl3q",
@@ -2059,7 +2233,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:44.074Z"
+      "addedAt": "2026-08-22T14:38:44.074Z",
+      "tldr": "Google commits $40M in AI tokens and credits for the Genesis Mission"
     },
     {
       "id": "1ydlqkq",
@@ -2072,7 +2247,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.173Z"
+      "addedAt": "2026-08-22T14:39:42.173Z",
+      "tldr": "We shared how Samsung users can boost productivity and get time back on new foldables, wat…"
     },
     {
       "id": "ydxqem",
@@ -2085,7 +2261,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:44.074Z"
+      "addedAt": "2026-08-22T14:38:44.074Z",
+      "tldr": "We’re introducing new Gemini models, including Gemini 3.6 Flash, 3.5 Flash-Lite and 3.5 Fl…"
     },
     {
       "id": "tn8xzo",
@@ -2098,7 +2275,9 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:44.074Z"
+      "addedAt": "2026-08-22T14:38:44.074Z",
+      "cover": "https://lh3.googleusercontent.com/esSD0-kSrZ8K07XxNkSKL3OGlcx1Cf3M-qiQut0q_vArHMiK2L1CpUIGVkjuQrhu_m0g8UMVflVQpDp7VFAJSubDdCjSXsPJPDeK-PUtaPbqA8W1=w528-h297-n-nu-rw-lo",
+      "tldr": "Google introduces Gemini 3.5 Flash Cyber, a lightweight cybersecurity model to find and pa…"
     },
     {
       "id": "19l2uik",
@@ -2111,7 +2290,9 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:44.074Z"
+      "addedAt": "2026-08-22T14:38:44.074Z",
+      "cover": "https://lh3.googleusercontent.com/ZRyQg91pjea8kXXaGSlnZIJF90-VwnKHSBxo22e2RedCvCCszsurR8W9NHw80e1V6HtWXccbU1MI27Rtjjf963rD673XgkWK7cZe_1ekfruPgdHHVEc=w528-h297-n-nu-rw-lo",
+      "tldr": "Google DeepMind and Isomorphic Labs are sharing our joint approach to bioresilience and AI…"
     },
     {
       "id": "17vso6g",
@@ -2124,7 +2305,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.173Z"
+      "addedAt": "2026-08-22T14:39:42.173Z",
+      "tldr": "You’ll be able to securely link and interact with your go-to services directly in AI Mode."
     },
     {
       "id": "l04qpi",
@@ -2137,7 +2319,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.173Z"
+      "addedAt": "2026-08-22T14:39:42.173Z",
+      "tldr": "Gemini Omni and personal avatars in Google Vids make video creation easier than ever."
     },
     {
       "id": "1yz4737",
@@ -2150,7 +2333,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:39:42.173Z"
+      "addedAt": "2026-08-22T14:39:42.173Z",
+      "tldr": "Google Images is turning 25. Here’s a look back at some major milestones — and new ways to…"
     },
     {
       "id": "19iqs2g",
@@ -2163,7 +2347,9 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:44.074Z"
+      "addedAt": "2026-08-22T14:38:44.074Z",
+      "cover": "https://lh3.googleusercontent.com/0BYvIo8ObViyRtRGOYajXHdEGUFX6cKMTQ6lxys98kN0sB6H7rrTo1pdW8M4kCUGnBnidJWbIr6VvcxGKDEDD4YxOVqYRlyxj_a48uqNw_AytF7c-A=w528-h297-n-nu-rw-lo",
+      "tldr": "Google and AIM launched ATL Saathi, a Gemini-powered AI tool empowering Indian educators i…"
     },
     {
       "id": "1tf7q6w",
@@ -2177,7 +2363,8 @@
         "Agent",
         "MCP"
       ],
-      "addedAt": "2026-08-22T14:39:42.173Z"
+      "addedAt": "2026-08-22T14:39:42.173Z",
+      "tldr": "We’re announcing new capabilities in Managed Agents in Gemini API so developer…"
     },
     {
       "id": "10b3ggh",
@@ -2190,7 +2377,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:44.074Z"
+      "addedAt": "2026-08-22T14:38:44.074Z",
+      "tldr": "来自 Google DeepMind 的官方技术文章：Google DeepMind and A24 announce first-of-its-kind research …"
     },
     {
       "id": "1jum991",
@@ -2203,7 +2391,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:44.074Z"
+      "addedAt": "2026-08-22T14:38:44.074Z",
+      "tldr": "来自 Google DeepMind 的官方技术文章：Start building with Nano Banana 2 Lite and Gemini Omni Flash…"
     },
     {
       "id": "1jw7d9s",
@@ -2216,7 +2405,8 @@
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-08-22T14:38:44.074Z"
+      "addedAt": "2026-08-22T14:38:44.074Z",
+      "tldr": "来自 Google DeepMind 的官方技术文章：Introducing computer use in Gemini 3.5 Flash…"
     }
   ]
 }

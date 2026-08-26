@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import conceptsData from "../../data/concepts.json";
+import Link from "next/link";
 import { LabShell } from "../LabShell";
 import { CURRICULUM_AS_OF, RADIUS, relateToRadius, type RadiusId } from "../lab-chrome";
 
@@ -15,6 +16,8 @@ type Concept = {
   maturity: "established" | "emerging" | "proposed";
   tags: string[];
   addedAt: string;
+  cover?: string;
+  tldr?: string;
 };
 
 const DATA = conceptsData as {
@@ -82,9 +85,12 @@ function ConceptArchive() {
   const concepts = DATA.concepts;
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const r = params.get("radius");
-    if (r && RADIUS.some((x) => x.id === r)) setRadius(r);
+    const frame = window.requestAnimationFrame(() => {
+      const params = new URLSearchParams(window.location.search);
+      const r = params.get("radius");
+      if (r && RADIUS.some((x) => x.id === r)) setRadius(r);
+    });
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   const allTags = useMemo(() => {
@@ -169,8 +175,8 @@ function ConceptArchive() {
           <br />
           基础馆课程核对于 {CURRICULUM_AS_OF}；本馆账本更新于 {DATA.updatedAt.slice(0, 10)}。proposed 仅代表提出方主张。
           <div>
-            <a href="/">今日</a>
-            <a href="/#sec-network">知识网络</a>
+            <Link href="/">今日</Link>
+            <Link href="/#sec-network">知识网络</Link>
             <a href="/agent-foundations.html">基础馆</a>
           </div>
         </footer>
@@ -180,9 +186,9 @@ function ConceptArchive() {
         <div className="path-bridge">
           <span className="pb-k">学习路径</span>
           <div className="pb-steps">
-            <a href="/">今日</a>
+            <Link href="/">今日</Link>
             <span>→</span>
-            <a href="/#sec-network">知识网络</a>
+            <Link href="/#sec-network">知识网络</Link>
             <span>→</span>
             <a href="/agent-foundations.html">基础馆</a>
             <span>→</span>
@@ -343,9 +349,22 @@ function ConceptArchive() {
           return (
             <article className="concept-card catalog-card" key={c.id}>
               <div className="catalog-preview" aria-hidden="true">
-                <div className="pv-win">
-                  <div className="pv-bar" />
-                </div>
+                {c.cover ? (
+                  <img
+                    className="pv-img"
+                    src={c.cover}
+                    alt=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
+                ) : (
+                  <div className="pv-win">
+                    <div className="pv-bar" />
+                  </div>
+                )}
                 <span className="pv-dot" />
               </div>
               <div className="cc-body">
@@ -355,7 +374,16 @@ function ConceptArchive() {
                 <span className={`maturity ${c.maturity}`}>{MATURITY_LABEL[c.maturity] ?? c.maturity}</span>
               </div>
               <h3>{c.title}</h3>
-              <p className={open ? "cc-summary open" : "cc-summary"}>{c.summary || "（摘要待补）"}</p>
+              <p className={open ? "cc-summary open" : "cc-summary"}>
+                {open ? (
+                  c.summary || c.tldr || "（摘要待补）"
+                ) : (
+                  <>
+                    <span className="cc-tldr-badge">TL;DR</span>
+                    {c.tldr || c.summary || "（摘要待补）"}
+                  </>
+                )}
+              </p>
               {related.length > 0 && (
                 <div className="cc-radius">
                   {related.map((id) => {
@@ -407,9 +435,9 @@ function ConceptArchive() {
                   </div>
                   <p className="cd-hint">
                     想深入理解？回到{" "}
-                    <a href="/#sec-network">
+                    <Link href="/#sec-network">
                       <b>知识网络</b>
-                    </a>{" "}
+                    </Link>{" "}
                     点亮对应节点，或打开首页 AI 导师用反问带你走一遍。
                   </p>
                 </div>

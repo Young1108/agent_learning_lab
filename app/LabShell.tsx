@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { WINGS, type WingId } from "./lab-chrome";
 
@@ -9,13 +11,16 @@ function useLocalStorage<T>(key: string, initial: T): [T, (v: T | ((c: T) => T))
   const [value, setValue] = useState<T>(initial);
   const [ready, setReady] = useState(false);
   useEffect(() => {
-    try {
-      const raw = window.localStorage.getItem(key);
-      if (raw != null) setValue(JSON.parse(raw) as T);
-    } catch {
-      /* ignore */
-    }
-    setReady(true);
+    const frame = window.requestAnimationFrame(() => {
+      try {
+        const raw = window.localStorage.getItem(key);
+        if (raw != null) setValue(JSON.parse(raw) as T);
+      } catch {
+        /* ignore */
+      }
+      setReady(true);
+    });
+    return () => window.cancelAnimationFrame(frame);
   }, [key]);
   useEffect(() => {
     if (!ready) return;
@@ -156,9 +161,9 @@ export function LabShell({
         <button className="icon-btn" type="button" title="目录" aria-label="打开目录" onClick={() => setSidebarOpen((o) => !o)}>
           ☰
         </button>
-        <a className="brand" href="/">
+        <Link className="brand" href="/">
           AI Learning Lab
-        </a>
+        </Link>
         <nav className="wing-picker" aria-label="馆翼">
           {WINGS.map((w) => (
             <a
