@@ -15,7 +15,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_PATH = join(__dirname, "..", "data", "concepts.json");
 
-/* 来源清单：type = rss | arxiv */
+/* 来源清单：type = rss | arxiv | sitemap */
 const SOURCES = [
   {
     name: "OpenAI",
@@ -23,6 +23,22 @@ const SOURCES = [
     url: "https://openai.com/news/rss.xml",
     maturity: "emerging",
     tags: ["openai", "模型"],
+    limit: 15,
+  },
+  {
+    name: "Anthropic",
+    type: "sitemap",
+    url: "https://www.anthropic.com/sitemap.xml",
+    maturity: "emerging",
+    tags: ["anthropic", "模型"],
+    limit: 15,
+  },
+  {
+    name: "Google DeepMind",
+    type: "rss",
+    url: "https://deepmind.google/blog/rss.xml",
+    maturity: "emerging",
+    tags: ["deepmind", "模型"],
     limit: 15,
   },
   {
@@ -265,8 +281,63 @@ function normalizeDate(raw) {
   }
 }
 
+/* 解析 sitemap：提取 news/engineering 文章 URL + lastmod */
+export function parseSitemap(xml) {
+  const pairs = [];
+  const blocks = xml.match(/<url>[\s\S]*?<\/url>/g) ?? [];
+  for (const block of blocks) {
+    const loc = block.match(/<loc>([^<]+)<\/loc>/)?.[1] ?? "";
+    if (!/\/news\/|\/engineering\//.test(loc)) continue;
+    const lastmod = block.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1] ?? "";
+    pairs.push({ loc, lastmod });
+  }
+  return pairs;
+}
+
+/* Anthropic 无公开 RSS：sitemap 取最新文章，逐篇抓 title + description */
+async function fetchSitemapArticles(source, xml) {
+  const pairs = parseSitemap(xml)
+    .sort((a, b) => (a.lastmod < b.lastmod ? 1 : -1))
+    .slice(0, source.limit);
+  const items = [];
+  for (const { loc, lastmod } of pairs) {
+    await new Promise((resolve) => setTimeout(resolve, 250)); // 限速，避免触发风控
+    try {
+      const html = await fetchWithTimeout(loc, 12000);
+      const title = decodeEntities(
+        html.match(/<title[^>]*>([\s\S]*?)<\/title>/)?.[1] ?? "",
+      )
+        .replace(/\s*[|\\]\s*Anthropic\s*$/i, "")
+        .replace(/\s+/g, " ")
+        .trim();
+      const desc = decodeEntities(
+        html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? "",
+      );
+      const url = normalizeUrl(loc);
+      const summary = cleanSummary(desc);
+      items.push({
+        id: hashId(url),
+        title,
+        source: source.name,
+        url,
+        date: normalizeDate(lastmod) || new Date().toISOString().slice(0, 10),
+        summary,
+        maturity: source.maturity,
+        tags: inferTags(title, summary),
+        addedAt: new Date().toISOString(),
+      });
+    } catch (err) {
+      console.error(`[skip] article ${loc}: ${err.message}`);
+    }
+  }
+  return items;
+}
+
 async function fetchSource(source) {
   const raw = await fetchWithTimeout(source.url);
+  if (source.type === "sitemap") {
+    return fetchSitemapArticles(source, raw);
+  }
   const parsed = source.type === "arxiv" ? parseArxiv(raw) : parseFeed(raw);
   return parsed.slice(0, source.limit).map((item) => {
     const url = normalizeUrl(item.link);
