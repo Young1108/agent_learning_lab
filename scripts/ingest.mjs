@@ -298,15 +298,53 @@ function normalizeDate(raw) {
   }
 }
 
-/* TLDR：摘要精简到 ~90 字；空摘要时用来源兜底 */
-function makeTldr(title, summary, source) {
-  const clean = cleanSummary(summary, 160);
-  if (clean) {
-    return clean.length > 90
-      ? `${clean.slice(0, 90).replace(/[。，、；：\s]+$/, "")}…`
-      : clean;
+/* 取一句话：首个句子（中英标点），≤max 字 */
+function firstSentence(text, max = 90) {
+  const clean = cleanSummary(text, 200);
+  if (!clean) return "";
+  const m = clean.match(/^.*?[。！？!?]|^[^。！？!?\n]+/);
+  let s = (m?.[0] ?? clean).trim();
+  if (s.length > max) {
+    s = `${s.slice(0, max).replace(/[，、：;；\s]+$/, "")}…`;
   }
-  return `来自 ${source} 的官方技术文章：${title.slice(0, 60)}…`;
+  return s;
+}
+
+/* TLDR：一句话总结；没有任何摘要时退化为标题本身（不带任何前缀） */
+function makeTldr(title, summary) {
+  const sentence = firstSentence(summary);
+  if (sentence) return sentence;
+  return cleanSummary(title, 80) || "暂无摘要";
+}
+
+/* 抓文章摘要：正文首段优先（跳过站点导航段），meta description 兜底（过滤站点通用文案） */
+async function fetchArticleSummary(url) {
+  try {
+    const html = await fetchWithTimeout(url, 12000);
+    const NAV_START = /^(models|datasets|spaces|buckets|pricing|enterprise|docs|tasks|website|products)\b/i;
+    const para = [...html.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g)]
+      .map((m) =>
+        decodeEntities(m[1])
+          .replace(/<[^>]+>/g, "")
+          .replace(/\s+/g, " ")
+          .trim(),
+      )
+      .find((t) => t.length >= 40 && !NAV_START.test(t));
+    if (para) return cleanSummary(para, 200);
+    const desc = decodeEntities(
+      html.match(/<meta[^>]*name=["']description["'][^>]*content=["']([^"']+)["']/i)?.[1] ??
+        html.match(/<meta[^>]*property=["']og:description["'][^>]*content=["']([^"']+)["']/i)?.[1] ??
+        html.match(/<meta[^>]*content=["']([^"']+)["'][^>]*name=["']description["']/i)?.[1] ??
+        "",
+    );
+    const clean = cleanSummary(desc, 200);
+    if (clean && !/on a journey to advance|we'?re on a journey/i.test(clean)) {
+      return clean;
+    }
+    return "";
+  } catch {
+    return "";
+  }
 }
 
 /* 解析 sitemap：提取 news/engineering 文章 URL + lastmod */
@@ -356,7 +394,7 @@ async function fetchSitemapArticles(source, xml) {
         date: normalizeDate(lastmod) || new Date().toISOString().slice(0, 10),
         summary,
         cover: /^https?:/i.test(cover) ? cover : undefined,
-        tldr: makeTldr(title, summary, source.name),
+        tldr: makeTldr(title, summary),
         maturity: source.maturity,
         tags: inferTags(title, summary),
         addedAt: new Date().toISOString(),
@@ -373,26 +411,35 @@ async function fetchSource(source) {
   if (source.type === "sitemap") {
     return fetchSitemapArticles(source, raw);
   }
-  const parsed = source.type === "arxiv" ? parseArxiv(raw) : parseFeed(raw);
-  return parsed.slice(0, source.limit).map((item) => {
+  const parsed = (source.type === "arxiv" ? parseArxiv(raw) : parseFeed(raw)).slice(
+    0,
+    source.limit,
+  );
+  const items = [];
+  for (const item of parsed) {
     const url = normalizeUrl(item.link);
-    const summary =
-      source.type === "arxiv" ? item.summary : cleanSummary(item.summary);
-    return {
+    let summary = source.type === "arxiv" ? item.summary : cleanSummary(item.summary);
+    // RSS 无摘要时抓文章正文首句（meta description / 首段）
+    if (source.type === "rss" && !summary) {
+      const body = await fetchArticleSummary(url);
+      if (body) summary = body;
+      await new Promise((resolve) => setTimeout(resolve, 150));
+    }
+    items.push({
       id: hashId(url),
       title: item.title,
       source: source.name,
       url,
       date: normalizeDate(item.date) || new Date().toISOString().slice(0, 10),
       summary,
-      cover:
-        source.type === "rss" && item.image ? item.image : undefined,
-      tldr: makeTldr(item.title, summary, source.name),
+      cover: source.type === "rss" && item.image ? item.image : undefined,
+      tldr: makeTldr(item.title, summary),
       maturity: source.maturity,
       tags: inferTags(item.title, summary),
       addedAt: new Date().toISOString(),
-    };
-  });
+    });
+  }
+  return items;
 }
 
 function loadExisting() {
@@ -423,10 +470,11 @@ export function mergeItems(existing, fetched) {
       ...current,
       tags,
       title: current.title || item.title || current.title,
-      summary: current.summary || item.summary || current.summary,
-      // 缺失字段（封面/TLDR）用新抓取补全，保留人工修正过的旧值
+      // 摘要为自动抓取产物：新抓取（含正文首段）优先刷新
+      summary: item.summary || current.summary || "",
+      // 缺失字段（封面）用新抓取补全；tldr 是自动生成的，新抓取优先刷新
       cover: current.cover ?? item.cover,
-      tldr: current.tldr ?? item.tldr,
+      tldr: item.tldr ?? current.tldr,
     });
   }
   return [...byUrl.values()];
@@ -450,9 +498,9 @@ async function main() {
   }
 
   const merged = mergeItems(existing, collected);
-  // 历史条目补全 TLDR（封面无法回填，前端用占位图兜底）
+  // TLDR 纯自动生成：每次全量重算（用最新 summary），无需保留旧值
   for (const c of merged) {
-    if (!c.tldr) c.tldr = makeTldr(c.title, c.summary, c.source);
+    c.tldr = makeTldr(c.title, c.summary);
   }
   // 按 date 倒序（最新在前），再按 addedAt 倒序
   merged.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-26T10:25:14.189Z",
+  "updatedAt": "2026-08-26T10:44:41.260Z",
   "version": 10,
   "sourceCount": 6,
   "conceptCount": 168,
@@ -16,7 +16,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-26T10:15:14.693Z",
-      "tldr": "来自 OpenAI 的官方技术文章：How loveholidays is making everyone a builder with Codex…"
+      "tldr": "How loveholidays is making everyone a builder with Codex"
     },
     {
       "id": "17lk5le",
@@ -24,13 +24,15 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/gradio-workflow-guide",
       "date": "2026-08-25",
-      "summary": "",
+      "summary": "gr.Workflow, built right into Gradio, makes the pipeline the interface. You describe your steps as a graph of typed nodes, and Gradio serves a drag-and-drop canvas where every node is runnable and eve…",
       "maturity": "emerging",
       "tags": [
-        "前沿"
+        "前沿",
+        "开源",
+        "Graph"
       ],
       "addedAt": "2026-08-25T03:31:38.002Z",
-      "tldr": "来自 Hugging Face 的官方技术文章：Wire It, Run It, Deploy It: AI Workflows in Gradio…"
+      "tldr": "gr.Workflow, built right into Gradio, makes the pipeline the interface. You describe your…"
     },
     {
       "id": "u448pi",
@@ -47,7 +49,7 @@
         "Harness"
       ],
       "addedAt": "2026-08-25T04:00:00.000Z",
-      "tldr": "会说 ACP stdio 的本地编码 Agent（Grok CLI / Codex CLI / 同类）：一条你或客户端在本机执行的命令，经 stdin/stdout 做完整会话。对…"
+      "tldr": "会说 ACP stdio 的本地编码 Agent（Grok CLI / Codex CLI / 同类）：一条你或客户端在本机执行的命令，经 stdin/stdout 做完整会话。"
     },
     {
       "id": "1diadwv",
@@ -61,7 +63,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-25T11:13:50.890Z",
-      "tldr": "来自 OpenAI 的官方技术文章：Disrupting a new covert influence campaign from Russia…"
+      "tldr": "Disrupting a new covert influence campaign from Russia"
     },
     {
       "id": "1xuex7",
@@ -75,7 +77,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-26T08:39:16.786Z",
-      "tldr": "来自 OpenAI 的官方技术文章：The full stack behind abundant intelligence…"
+      "tldr": "The full stack behind abundant intelligence"
     },
     {
       "id": "1idu6g6",
@@ -89,7 +91,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-26T08:39:16.786Z",
-      "tldr": "来自 OpenAI 的官方技术文章：Jalapeño’s first results show industry-leading speed and eff…"
+      "tldr": "Jalapeño’s first results show industry-leading speed and efficiency in AI infere…"
     },
     {
       "id": "k80yd6",
@@ -103,7 +105,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-26T08:39:16.786Z",
-      "tldr": "来自 OpenAI 的官方技术文章：Introducing the Admin plugin for ChatGPT Work and Codex…"
+      "tldr": "Introducing the Admin plugin for ChatGPT Work and Codex"
     },
     {
       "id": "6kgzf6",
@@ -125,13 +127,14 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/ibm-granite/granite-4-2",
       "date": "2026-08-25",
-      "summary": "",
+      "summary": "TL;DR: Granite 4.2 is our first family of dense, decoder-only reasoning LLMs, released in three sizes: 3B, 8B, and 30B. Each model is pre-trained from scratch on roughly 15T tokens with a five-phase s…",
       "maturity": "emerging",
       "tags": [
-        "前沿"
+        "前沿",
+        "推理"
       ],
       "addedAt": "2026-08-26T08:39:17.218Z",
-      "tldr": "来自 Hugging Face 的官方技术文章：Granite 4.2 LLMs: How They're Built…"
+      "tldr": "TL;DR: Granite 4.2 is our first family of dense, decoder-only reasoning LLMs, released in…"
     },
     {
       "id": "1in84o6",
@@ -139,13 +142,13 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/MultiverseComputingCAI/quantization-aware-healing",
       "date": "2026-08-25",
-      "summary": "",
+      "summary": "Our latest paper, Quantization-Aware Healing: A Practical Recipe for Recovering Compressed, 4-Bit LLMs, asks a question that the field has mostly left open: once a model has already been through struc…",
       "maturity": "emerging",
       "tags": [
         "前沿"
       ],
       "addedAt": "2026-08-26T08:39:17.218Z",
-      "tldr": "来自 Hugging Face 的官方技术文章：Quantization-Aware Healing: a compressed, 4-bit model that o…"
+      "tldr": "Our latest paper, Quantization-Aware Healing: A Practical Recipe for Recovering Compressed…"
     },
     {
       "id": "3ec28v",
@@ -556,7 +559,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-25T03:31:37.315Z",
-      "tldr": "来自 OpenAI 的官方技术文章：Advancing price-performance for developers with GPT‑5.6 in K…"
+      "tldr": "Advancing price-performance for developers with GPT‑5.6 in Kiro"
     },
     {
       "id": "2vmf32",
@@ -685,7 +688,7 @@
         "Multi-Agent"
       ],
       "addedAt": "2026-08-25T03:31:38.196Z",
-      "tldr": "Does multi-agent LLM interaction help or hurt? Some work reports gains from debate (Du et…"
+      "tldr": "Does multi-agent LLM interaction help or hurt?"
     },
     {
       "id": "2vki4h",
@@ -894,13 +897,14 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/asr-benchmark-optimization",
       "date": "2026-08-21",
-      "summary": "",
+      "summary": "One reason is that traditional benchmarks overlook many of the conditions and qualities that make voice systems reliable, natural, contextually appropriate, and effective in practice. That's why we re…",
       "maturity": "emerging",
       "tags": [
-        "评测"
+        "评测",
+        "开源"
       ],
       "addedAt": "2026-08-22T14:39:42.621Z",
-      "tldr": "来自 Hugging Face 的官方技术文章：Measuring benchmark optimization in speech recognition…"
+      "tldr": "One reason is that traditional benchmarks overlook many of the conditions and qualities th…"
     },
     {
       "id": "17oohz9",
@@ -1190,13 +1194,15 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/pwc-search",
       "date": "2026-08-21",
-      "summary": "",
+      "summary": "Of course, making AI research accessible requires a powerful search engine, so that humans and agents can quickly find relevant and related work, either through the website or the pwc search CLI comma…",
       "maturity": "emerging",
       "tags": [
-        "前沿"
+        "前沿",
+        "开源",
+        "Agent"
       ],
       "addedAt": "2026-08-26T08:39:17.218Z",
-      "tldr": "来自 Hugging Face 的官方技术文章：How Hugging Face Inference Endpoints, Jobs, and Buckets Powe…"
+      "tldr": "Of course, making AI research accessible requires a powerful search engine, so that humans…"
     },
     {
       "id": "1txbos4",
@@ -1210,7 +1216,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:39.633Z",
-      "tldr": "来自 OpenAI 的官方技术文章：Introducing AI Futures…"
+      "tldr": "Introducing AI Futures"
     },
     {
       "id": "a3d6vc",
@@ -1224,7 +1230,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:39.633Z",
-      "tldr": "来自 OpenAI 的官方技术文章：Stampli cuts launch hours by 68% using ChatGPT Work…"
+      "tldr": "Stampli cuts launch hours by 68% using ChatGPT Work"
     },
     {
       "id": "1e574p2",
@@ -1232,13 +1238,13 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/LiquidAI/lfm25-dspark",
       "date": "2026-08-20",
-      "summary": "",
+      "summary": "How does DSpark work The decode phase in LLM inference is traditionally memory-bound. Most latency comes from streaming weights from DRAM into SRAM, not from intense computation. Speculative decoding …",
       "maturity": "emerging",
       "tags": [
         "前沿"
       ],
       "addedAt": "2026-08-22T14:39:42.621Z",
-      "tldr": "来自 Hugging Face 的官方技术文章：Up to 3.2x Faster Inference with LFM2.5-DSpark…"
+      "tldr": "How does DSpark work The decode phase in LLM inference is traditionally memory-bound. Most…"
     },
     {
       "id": "177lkvb",
@@ -1536,7 +1542,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:39.633Z",
-      "tldr": "来自 OpenAI 的官方技术文章：Offering Zero Data Retention for frontier models…"
+      "tldr": "Offering Zero Data Retention for frontier models"
     },
     {
       "id": "12kzccy",
@@ -1550,7 +1556,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:39.633Z",
-      "tldr": "来自 OpenAI 的官方技术文章：Replit expands access to software creation with GPT-5.6 Luna…"
+      "tldr": "Replit expands access to software creation with GPT-5.6 Luna"
     },
     {
       "id": "1p61984",
@@ -1558,7 +1564,7 @@
       "source": "Google AI Blog",
       "url": "https://blog.google/products-and-platforms/products/search/back-to-school-study-tools/",
       "date": "2026-08-19",
-      "summary": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Blog_header_2_JwwDb02.max-600x600.format-webp.webp\"&gt;Here’s how you can use Google Search tools to study for classes and standardized tests.",
+      "summary": "Here’s how you can use Google Search tools to study for classes and standardized tests.",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -1578,7 +1584,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:39.633Z",
-      "tldr": "来自 OpenAI 的官方技术文章：ChatGPT Ads expands across Europe…"
+      "tldr": "ChatGPT Ads expands across Europe"
     },
     {
       "id": "w2ja9k",
@@ -1592,7 +1598,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:39.633Z",
-      "tldr": "来自 OpenAI 的官方技术文章：Strengthening democratic oversight in national security…"
+      "tldr": "Strengthening democratic oversight in national security"
     },
     {
       "id": "fdlvl",
@@ -1606,7 +1612,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:39.633Z",
-      "tldr": "来自 OpenAI 的官方技术文章：Partnering with CodeAI to prepare the first AI generation…"
+      "tldr": "Partnering with CodeAI to prepare the first AI generation"
     },
     {
       "id": "1jjkekl",
@@ -1620,7 +1626,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:39.633Z",
-      "tldr": "来自 OpenAI 的官方技术文章：Pacing model development in an era of cyber-critical capabil…"
+      "tldr": "Pacing model development in an era of cyber-critical capabilities"
     },
     {
       "id": "1klw31f",
@@ -1634,7 +1640,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:39.633Z",
-      "tldr": "来自 OpenAI 的官方技术文章：Introducing ChatGPT for Teens: Built for learning, backed by…"
+      "tldr": "Introducing ChatGPT for Teens: Built for learning, backed by protections"
     },
     {
       "id": "vdqsrr",
@@ -1648,7 +1654,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:39.633Z",
-      "tldr": "来自 OpenAI 的官方技术文章：How NVIDIA scales expertise with ChatGPT Work…"
+      "tldr": "How NVIDIA scales expertise with ChatGPT Work"
     },
     {
       "id": "jbljhm",
@@ -1662,7 +1668,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:39.633Z",
-      "tldr": "来自 OpenAI 的官方技术文章：Asana cleared 5 years of engineering work in 2 weeks with Co…"
+      "tldr": "Asana cleared 5 years of engineering work in 2 weeks with Codex"
     },
     {
       "id": "ol8su5",
@@ -1670,13 +1676,13 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/ibm-research/altk-evolve-hmm",
       "date": "2026-08-18",
-      "summary": "",
+      "summary": "Equipping an agent with agentic memory sounds simple: distill lessons from its past work, put them back in context, and more experience should mean better performance. It doesn't always work that way.…",
       "maturity": "emerging",
       "tags": [
         "Agent"
       ],
       "addedAt": "2026-08-22T14:39:42.621Z",
-      "tldr": "来自 Hugging Face 的官方技术文章：How Much Memory Does Your Agent Actually Need?…"
+      "tldr": "Equipping an agent with agentic memory sounds simple: distill lessons from its past work,…"
     },
     {
       "id": "91lpaz",
@@ -1684,13 +1690,14 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/multi-vector-encoder",
       "date": "2026-08-18",
-      "summary": "",
+      "summary": "Where a regular embedding model compresses a whole text into one vector, a multi-vector model keeps one vector per token and scores query against document with the MaxSim operator. That preserves toke…",
       "maturity": "emerging",
       "tags": [
-        "前沿"
+        "前沿",
+        "开源"
       ],
       "addedAt": "2026-08-22T14:39:42.621Z",
-      "tldr": "来自 Hugging Face 的官方技术文章：Multi-Vector (Late Interaction) Embedding Models with Senten…"
+      "tldr": "Where a regular embedding model compresses a whole text into one vector, a multi-vector mo…"
     },
     {
       "id": "1qoavgh",
@@ -1704,7 +1711,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:39.633Z",
-      "tldr": "来自 OpenAI 的官方技术文章：The Defender’s Window…"
+      "tldr": "The Defender’s Window"
     },
     {
       "id": "8alkox",
@@ -1718,7 +1725,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:39.633Z",
-      "tldr": "来自 OpenAI 的官方技术文章：OpenAI joins PORTS-Pike project…"
+      "tldr": "OpenAI joins PORTS-Pike project"
     },
     {
       "id": "1s1prco",
@@ -1732,7 +1739,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:39.633Z",
-      "tldr": "来自 OpenAI 的官方技术文章：New policy ideas for the Intelligence Age…"
+      "tldr": "New policy ideas for the Intelligence Age"
     },
     {
       "id": "70pq8q",
@@ -1740,7 +1747,7 @@
       "source": "Google AI Blog",
       "url": "https://blog.google/products-and-platforms/products/gemini/google-gemini-pixel-football-club-partnerships/",
       "date": "2026-08-17",
-      "summary": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/football_multi-club_hero_nphU3P.max-600x600.format-webp.webp\"&gt;Google Gemini and Pixel partner with five global football clubs to elevate the…",
+      "summary": "Google Gemini and Pixel partner with five global football clubs to elevate the fan matchday experience through AI and Smartphone Technology.",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -1754,13 +1761,14 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2",
       "date": "2026-08-17",
-      "summary": "",
+      "summary": "We built a constraint-aware GPU allocator and benchmarked it against a FIFO scheduler across seven benchmark scenarios. On identical hardware, running identical workloads, GPU utilization rose by as m…",
       "maturity": "emerging",
       "tags": [
-        "前沿"
+        "前沿",
+        "评测"
       ],
       "addedAt": "2026-08-22T14:39:42.621Z",
-      "tldr": "来自 Hugging Face 的官方技术文章：Same Cluster, 33 Points More Utilization: What Changed Was t…"
+      "tldr": "We built a constraint-aware GPU allocator and benchmarked it against a FIFO scheduler acro…"
     },
     {
       "id": "1q2zpi3",
@@ -1768,13 +1776,14 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/state-of-open-models-summer-2026",
       "date": "2026-08-14",
-      "summary": "",
+      "summary": "There used to be a clear progression path: labs would start by releasing smaller models and gradually work their way toward the top end of the scale. In 2026, several Chinese labs skipped this progres…",
       "maturity": "emerging",
       "tags": [
-        "前沿"
+        "前沿",
+        "开源"
       ],
       "addedAt": "2026-08-22T14:39:42.621Z",
-      "tldr": "来自 Hugging Face 的官方技术文章：State of Open Models: Summer 2026 Observations…"
+      "tldr": "There used to be a clear progression path: labs would start by releasing smaller models an…"
     },
     {
       "id": "1875r88",
@@ -1788,7 +1797,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:39.633Z",
-      "tldr": "来自 OpenAI 的官方技术文章：The builder’s guide to GPT‑5.6…"
+      "tldr": "The builder’s guide to GPT‑5.6"
     },
     {
       "id": "1jqlyzi",
@@ -1796,13 +1805,14 @@
       "source": "Google DeepMind",
       "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash/",
       "date": "2026-08-13",
-      "summary": "",
+      "summary": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --btn-bg-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --card-draw-percent{inherits:fa…",
       "maturity": "emerging",
       "tags": [
-        "前沿"
+        "前沿",
+        "Agent"
       ],
       "addedAt": "2026-08-22T14:38:44.074Z",
-      "tldr": "来自 Google DeepMind 的官方技术文章：Introducing Gemini 3.7 Flash…"
+      "tldr": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@proper…"
     },
     {
       "id": "1il5rpv",
@@ -1810,7 +1820,7 @@
       "source": "Google AI Blog",
       "url": "https://blog.google/products-and-platforms/products/workspace/sheets-canvas-for-google-sheets-spreadsheets/",
       "date": "2026-08-13",
-      "summary": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Sheets_canvas-blog-header-2784x.max-600x600.format-webp.webp\"&gt;Sheets canvas turns data into interactive dashboards, custom study trackers, s…",
+      "summary": "Sheets canvas turns data into interactive dashboards, custom study trackers, seating charts, and more, all with a simple prompt.",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -1824,13 +1834,14 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/amazon/strands-lerobot-streaming-data-loop",
       "date": "2026-08-13",
-      "summary": "",
+      "summary": "You have an agent that can already record a demonstration and push it to the Hugging Face Hub. Now you want to run that loop continuously: collect episodes through the day, train a policy on the growi…",
       "maturity": "emerging",
       "tags": [
-        "Agent"
+        "Agent",
+        "Loop"
       ],
       "addedAt": "2026-08-22T14:39:42.621Z",
-      "tldr": "来自 Hugging Face 的官方技术文章：Record, train, and deploy from one place with Strands Agents…"
+      "tldr": "You have an agent that can already record a demonstration and push it to the Hugging Face…"
     },
     {
       "id": "d09p3k",
@@ -1838,13 +1849,15 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/icml-2026-open-reproductions",
       "date": "2026-08-13",
-      "summary": "",
+      "summary": "In this post, we're sharing what we learned from running this hackathon, and what it suggests about the role humans will play when agents are doing the research experiments.",
       "maturity": "emerging",
       "tags": [
-        "前沿"
+        "前沿",
+        "开源",
+        "Agent"
       ],
       "addedAt": "2026-08-22T14:39:42.621Z",
-      "tldr": "来自 Hugging Face 的官方技术文章：What We Learned by Reproducing 2,200 papers from ICML…"
+      "tldr": "In this post, we're sharing what we learned from running this hackathon, and what it sugge…"
     },
     {
       "id": "1sw3m91",
@@ -1867,13 +1880,13 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/allenai/olmoearth-embeddings",
       "date": "2026-08-12",
-      "summary": "",
+      "summary": "OlmoEarth Studio, our platform for building Earth observation models, now lets you compute and export embedding vectors—compact numerical representations of Earth-observation data produced by our open…",
       "maturity": "emerging",
       "tags": [
         "前沿"
       ],
       "addedAt": "2026-08-22T14:39:42.621Z",
-      "tldr": "来自 Hugging Face 的官方技术文章：Introducing OlmoEarth embeddings: Custom embedding exports f…"
+      "tldr": "OlmoEarth Studio, our platform for building Earth observation models, now lets you compute…"
     },
     {
       "id": "tqxm7z",
@@ -1881,7 +1894,7 @@
       "source": "Google AI Blog",
       "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-video-consultations/",
       "date": "2026-08-11",
-      "summary": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/AIME_SIZZLE_THUMBNAIL.Aug10.max-600x600.format-webp.webp\"&gt;Google introduces AMIE for real-time clinical video consultations in simulated set…",
+      "summary": "Google introduces AMIE for real-time clinical video consultations in simulated settings.",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -1895,13 +1908,14 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/ibm-research/altk-evolve-sldd",
       "date": "2026-08-11",
-      "summary": "",
+      "summary": "Give an LLM agent a realistic multi-step task — split a bill, find a song, reconcile an order across nine simulated apps — and when it fails, it usually isn't for lack of knowledge. It mis-paginates a…",
       "maturity": "emerging",
       "tags": [
-        "前沿"
+        "前沿",
+        "Agent"
       ],
       "addedAt": "2026-08-22T14:39:42.621Z",
-      "tldr": "来自 Hugging Face 的官方技术文章：Thinking of ACE? We Can Do It with Fewer Tokens…"
+      "tldr": "Give an LLM agent a realistic multi-step task — split a bill, find a song, reconcile an or…"
     },
     {
       "id": "14qay7r",
@@ -1909,7 +1923,7 @@
       "source": "Google AI Blog",
       "url": "https://blog.google/products/ads-commerce/google-ads-analytics-ai-updates/",
       "date": "2026-08-10",
-      "summary": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Advisor_Header.max-600x600.format-webp.webp\"&gt;Learn how new AI and agentic experiences across Google Ads and Google Analytics can simplify yo…",
+      "summary": "Learn how new AI and agentic experiences across Google Ads and Google Analytics can simplify your marketing workflow.",
       "maturity": "emerging",
       "tags": [
         "Agent"
@@ -1923,13 +1937,13 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/nvidia/magpie-tts-multilingual-voice-agents",
       "date": "2026-08-10",
-      "summary": "",
+      "summary": "Every voice interaction has a latency budget.",
       "maturity": "emerging",
       "tags": [
         "Agent"
       ],
       "addedAt": "2026-08-22T14:39:42.621Z",
-      "tldr": "来自 Hugging Face 的官方技术文章：Build Low-Latency Multilingual Voice Agents: Open Weights & …"
+      "tldr": "Every voice interaction has a latency budget."
     },
     {
       "id": "f540wk",
@@ -1943,7 +1957,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-22T14:39:42.621Z",
-      "tldr": "来自 Hugging Face 的官方技术文章：Making Knowledge Distillation Cheap Enough to Run at Scale…"
+      "tldr": "Making Knowledge Distillation Cheap Enough to Run at Scale"
     },
     {
       "id": "xw6r83",
@@ -1958,7 +1972,7 @@
         "开源"
       ],
       "addedAt": "2026-08-22T14:39:42.621Z",
-      "tldr": "来自 Hugging Face 的官方技术文章：Meta is back with Muse Glimmer: local, agentic, multimodal, …"
+      "tldr": "Meta is back with Muse Glimmer: local, agentic, multimodal, and open source"
     },
     {
       "id": "ntc197",
@@ -1997,14 +2011,14 @@
       "source": "Google DeepMind",
       "url": "https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/",
       "date": "2026-08-06",
-      "summary": "",
+      "summary": ".g-blue { fill: var(--g-logo-blue); } .g-red { fill: var(--g-logo-red); } .g-yellow { fill: var(--g-logo-yellow); } .g-green { fill: var(--g-logo-green); } Explore our next generation AI systems Explo…",
       "maturity": "emerging",
       "tags": [
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:44.074Z",
       "cover": "https://lh3.googleusercontent.com/Mj8GyJnsjROScr1hYl7PL_QCAaLGukliPCTMUlpKiQtZuVkmh2ouydYh80ibejg9vWgKkg2dYPx2jCJOOohKid5P-dLzwvIyB4-fZjWXYIx0ImZd=w528-h297-n-nu-rw-lo",
-      "tldr": "来自 Google DeepMind 的官方技术文章：WeatherNext: AI model achieves breakthrough in forecasting c…"
+      "tldr": ".g-blue { fill: var(--g-logo-blue); } .g-red { fill: var(--g-logo-red); } .g-yellow { fill…"
     },
     {
       "id": "1n23wt3",
@@ -2018,7 +2032,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-22T14:39:42.621Z",
-      "tldr": "来自 Hugging Face 的官方技术文章：Baseten on Hugging Face Inference Providers 🔥…"
+      "tldr": "Baseten on Hugging Face Inference Providers 🔥"
     },
     {
       "id": "1ssqzo2",
@@ -2026,7 +2040,7 @@
       "source": "Google AI Blog",
       "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-july-2026/",
       "date": "2026-08-04",
-      "summary": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/July_AI_Recap_still.max-600x600.format-webp.webp\"&gt;Here are Google’s latest AI updates from July 2026",
+      "summary": "Here are Google’s latest AI updates from July 2026",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -2055,7 +2069,7 @@
       "source": "Google AI Blog",
       "url": "https://blog.google/innovation-and-ai/technology/developers-tools/ai-agents-intensive-recap-2026/",
       "date": "2026-08-03",
-      "summary": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Vibe_coding_course_hero.max-600x600.format-webp.webp\"&gt;Kaggle’s AI Agents Intensive with Google brought learners together in a no-cost course…",
+      "summary": "Kaggle’s AI Agents Intensive with Google brought learners together in a no-cost course to build and deploy the next frontier of AI.",
       "maturity": "emerging",
       "tags": [
         "Agent"
@@ -2119,7 +2133,7 @@
         "前沿"
       ],
       "addedAt": "2026-08-22T14:39:42.621Z",
-      "tldr": "来自 Hugging Face 的官方技术文章：GPU Management: Why Idle GPUs Are the New Grounded Aircraft…"
+      "tldr": "GPU Management: Why Idle GPUs Are the New Grounded Aircraft"
     },
     {
       "id": "twyv5o",
@@ -2127,13 +2141,13 @@
       "source": "Google DeepMind",
       "url": "https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control/",
       "date": "2026-07-29",
-      "summary": "",
+      "summary": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --btn-bg-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --card-draw-percent{inherits:fa…",
       "maturity": "emerging",
       "tags": [
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:44.074Z",
-      "tldr": "来自 Google DeepMind 的官方技术文章：We’re launching Lyria 3.5 in Google Flow Music, with advance…"
+      "tldr": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@proper…"
     },
     {
       "id": "1gywwsg",
@@ -2141,14 +2155,14 @@
       "source": "Google DeepMind",
       "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
       "date": "2026-07-28",
-      "summary": "",
+      "summary": ".g-blue { fill: var(--g-logo-blue); } .g-red { fill: var(--g-logo-red); } .g-yellow { fill: var(--g-logo-yellow); } .g-green { fill: var(--g-logo-green); } Explore our next generation AI systems Explo…",
       "maturity": "emerging",
       "tags": [
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:44.074Z",
       "cover": "https://lh3.googleusercontent.com/VZ5KwQMxv9xBcQnYipsQB2EUj3oX1yvFYLktIamY8V2a76Y6ctEEuaLF59TuPdnaVn6OAMINDilqnuhju1O-AXc7QlOVmcogjskrWxS7xVQ1mc5S7g=w528-h297-n-nu-rw-lo",
-      "tldr": "来自 Google DeepMind 的官方技术文章：Gemini Robotics 2 brings whole body intelligence to robots…"
+      "tldr": ".g-blue { fill: var(--g-logo-blue); } .g-red { fill: var(--g-logo-red); } .g-yellow { fill…"
     },
     {
       "id": "um3nfn",
@@ -2156,7 +2170,7 @@
       "source": "Google AI Blog",
       "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/",
       "date": "2026-07-28",
-      "summary": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/unnamed_2_vNnOv20.max-600x600.format-webp.webp\"&gt;We’re announcing even more new capabilities in Managed Agents in Gemini API so developers ca…",
+      "summary": "We’re announcing even more new capabilities in Managed Agents in Gemini API so developers can build reliable, production-ready agents.",
       "maturity": "emerging",
       "tags": [
         "Agent"
@@ -2170,7 +2184,7 @@
       "source": "Google AI Blog",
       "url": "https://blog.google/products-and-platforms/products/search/ai-mode-real-world-tips/",
       "date": "2026-07-28",
-      "summary": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/AI_Mode_real_world.max-600x600.format-webp.webp\"&gt;It might sound counterintuitive, but Search's AI tools can actually help you make the most …",
+      "summary": "It might sound counterintuitive, but Search's AI tools can actually help you make the most of your time offline whether you want to book concert tickets or find the perf…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -2184,7 +2198,7 @@
       "source": "Google AI Blog",
       "url": "https://blog.google/products-and-platforms/products/search/dinner-party-hosting-tips/",
       "date": "2026-07-28",
-      "summary": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Dinner_parties.max-600x600.format-webp.webp\"&gt;These AI features can help you craft a menu, design a tablescape, and handle other party-planni…",
+      "summary": "These AI features can help you craft a menu, design a tablescape, and handle other party-planning tasks.",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -2242,7 +2256,7 @@
       "source": "Google AI Blog",
       "url": "https://blog.google/products-and-platforms/platforms/android/galaxy-unpacked-2026/",
       "date": "2026-07-22",
-      "summary": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Unpacked_hero.max-600x600.format-webp.webp\"&gt;We shared how Samsung users can boost productivity and get time back on new foldables, watches, …",
+      "summary": "We shared how Samsung users can boost productivity and get time back on new foldables, watches, and glasses coming soon.",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -2300,7 +2314,7 @@
       "source": "Google AI Blog",
       "url": "https://blog.google/products-and-platforms/products/search/connected-apps/",
       "date": "2026-07-16",
-      "summary": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/ConnectedAppshero.max-600x600.format-webp.webp\"&gt;You’ll be able to securely link and interact with your go-to services directly in AI Mode.",
+      "summary": "You’ll be able to securely link and interact with your go-to services directly in AI Mode.",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -2314,7 +2328,7 @@
       "source": "Google AI Blog",
       "url": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/",
       "date": "2026-07-16",
-      "summary": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/omni-blog-header_OarEe2t.max-600x600.format-webp.webp\"&gt;Gemini Omni and personal avatars in Google Vids make video creation easier than ever.",
+      "summary": "Gemini Omni and personal avatars in Google Vids make video creation easier than ever.",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -2328,7 +2342,7 @@
       "source": "Google AI Blog",
       "url": "https://blog.google/products-and-platforms/products/search/google-images-25th-anniversary/",
       "date": "2026-07-14",
-      "summary": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Google_Images_25th_hero.max-600x600.format-webp.webp\"&gt;Google Images is turning 25. Here’s a look back at some major milestones — and new way…",
+      "summary": "Google Images is turning 25. Here’s a look back at some major milestones — and new ways to explore and create visual content.",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -2372,13 +2386,13 @@
       "source": "Google DeepMind",
       "url": "https://deepmind.google/blog/google-deepmind-and-a24-announce-first-of-its-kind-research-partnership/",
       "date": "2026-07-03",
-      "summary": "",
+      "summary": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --btn-bg-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --card-draw-percent{inherits:fa…",
       "maturity": "emerging",
       "tags": [
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:44.074Z",
-      "tldr": "来自 Google DeepMind 的官方技术文章：Google DeepMind and A24 announce first-of-its-kind research …"
+      "tldr": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@proper…"
     },
     {
       "id": "1jum991",
@@ -2386,13 +2400,13 @@
       "source": "Google DeepMind",
       "url": "https://deepmind.google/blog/start-building-with-nano-banana-2-lite-and-gemini-omni-flash/",
       "date": "2026-06-30",
-      "summary": "",
+      "summary": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --btn-bg-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --card-draw-percent{inherits:fa…",
       "maturity": "emerging",
       "tags": [
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:44.074Z",
-      "tldr": "来自 Google DeepMind 的官方技术文章：Start building with Nano Banana 2 Lite and Gemini Omni Flash…"
+      "tldr": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@proper…"
     },
     {
       "id": "1jw7d9s",
@@ -2400,13 +2414,13 @@
       "source": "Google DeepMind",
       "url": "https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/",
       "date": "2026-06-24",
-      "summary": "",
+      "summary": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --btn-bg-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --card-draw-percent{inherits:fa…",
       "maturity": "emerging",
       "tags": [
         "前沿"
       ],
       "addedAt": "2026-08-22T14:38:44.074Z",
-      "tldr": "来自 Google DeepMind 的官方技术文章：Introducing computer use in Gemini 3.5 Flash…"
+      "tldr": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@proper…"
     }
   ]
 }
