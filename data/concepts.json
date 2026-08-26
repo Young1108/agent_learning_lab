@@ -1,9 +1,22 @@
 {
-  "updatedAt": "2026-08-26T08:39:17.416Z",
-  "version": 8,
+  "updatedAt": "2026-08-26T10:15:15.459Z",
+  "version": 9,
   "sourceCount": 4,
-  "conceptCount": 152,
+  "conceptCount": 153,
   "concepts": [
+    {
+      "id": "1x9t81x",
+      "title": "How loveholidays is making everyone a builder with Codex",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/loveholidays",
+      "date": "2026-08-26",
+      "summary": "",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-26T10:15:14.693Z"
+    },
     {
       "id": "17lk5le",
       "title": "Wire It, Run It, Deploy It: AI Workflows in Gradio",
