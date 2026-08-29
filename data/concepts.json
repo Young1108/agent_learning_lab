@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-28T19:52:46.877Z",
-  "version": 12,
+  "updatedAt": "2026-08-29T13:36:26.434Z",
+  "version": 13,
   "sourceCount": 6,
-  "conceptCount": 237,
+  "conceptCount": 239,
   "concepts": [
     {
       "id": "1da6xi",
@@ -47,6 +47,34 @@
         "安全"
       ],
       "addedAt": "2026-08-28T19:52:33.596Z"
+    },
+    {
+      "id": "t6465i",
+      "title": "Our decision on Cursor following its acquisition by SpaceX",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
+      "date": "2026-08-28",
+      "summary": "",
+      "tldr": "Our decision on Cursor following its acquisition by SpaceX",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-29T13:36:08.558Z"
+    },
+    {
+      "id": "3h22i6",
+      "title": "The Open ASR Leaderboard Adds Its First Global South Language",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/open-asr-leaderboard-global-south",
+      "date": "2026-08-28",
+      "summary": "Benchmarks decide what gets built. A model that scores well on the Open ASR Leaderboard gets adopted and iterated on, while capabilities the leaderboard does not measure tend not to improve. Much of t…",
+      "tldr": "Benchmarks decide what gets built. A model that scores well on the Open ASR Leaderboard ge…",
+      "maturity": "emerging",
+      "tags": [
+        "评测"
+      ],
+      "addedAt": "2026-08-29T13:36:22.697Z"
     },
     {
       "id": "dox36k",
