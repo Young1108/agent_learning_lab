@@ -1,9 +1,23 @@
 {
-  "updatedAt": "2026-08-30T13:31:12.959Z",
-  "version": 13,
+  "updatedAt": "2026-08-31T15:49:39.683Z",
+  "version": 14,
   "sourceCount": 6,
-  "conceptCount": 239,
+  "conceptCount": 260,
   "concepts": [
+    {
+      "id": "fiv88e",
+      "title": "A milestone in expanding access to AI",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads",
+      "date": "2026-08-31",
+      "summary": "",
+      "tldr": "A milestone in expanding access to AI",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-31T15:49:23.759Z"
+    },
     {
       "id": "1da6xi",
       "title": "Supporting Thailand’s next generation of AI startups",
@@ -77,6 +91,291 @@
       "addedAt": "2026-08-29T13:36:22.697Z"
     },
     {
+      "id": "58v7iy",
+      "title": "Aero Hand Open: A Simulation-Ready Tendon-Driven Hand for Dexterous Manipulation Learning",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28578v1",
+      "date": "2026-08-28",
+      "summary": "Tendon-driven hands are anthropomorphic, and moving the actuators off the joints is what makes a hand of this capability affordable to build. Two effects produce that saving. Routing force through a cable removes the req…",
+      "tldr": "Tendon-driven hands are anthropomorphic, and moving the actuators off the joints is what m…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
+      "id": "58v61k",
+      "title": "Learning a Size-Weight Frontier for Synthetic-Augmented Inference",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28576v1",
+      "date": "2026-08-28",
+      "summary": "Synthetic data can improve statistical inference when real data are scarce, but naively treating synthetic samples as real data can introduce bias and lead to unreliable inference. We develop a general framework for synt…",
+      "tldr": "Synthetic data can improve statistical inference when real data are scarce, but naively tr…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
+      "id": "58uelv",
+      "title": "A Formal Limitation on Learning Human Language From Textual Corpora",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28560v1",
+      "date": "2026-08-28",
+      "summary": "Can a listener recover what a speaker means from the form of an utterance alone? We answer this question information-theoretically, and for a listener given by any featurizer of text, including the hidden states of conte…",
+      "tldr": "Can a listener recover what a speaker means from the form of an utterance alone?",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
+      "id": "58twt7",
+      "title": "Blog: Survey of Optimizers",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28557v1",
+      "date": "2026-08-28",
+      "summary": "Neural-network optimization in 2025-2026 is no longer well described as a succession of new Adam variants. The design space has expanded from coordinates to matrices and layers, from fixed training horizons to policies o…",
+      "tldr": "Neural-network optimization in 2025-2026 is no longer well described as a succession of ne…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
+      "id": "58ttuf",
+      "title": "Logos: An Agent Harness on a Cross-Process Bus",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28553v1",
+      "date": "2026-08-28",
+      "summary": "Modern agent systems assemble capabilities at runtime, and this dynamic composition has recently received a complete formal treat ment in the spatiotemporal-composability calculus, in which a capability is a component ca…",
+      "tldr": "Modern agent systems assemble capabilities at runtime, and this dynamic composition has re…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Harness"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
+      "id": "58tbb2",
+      "title": "Video Generative Models as Geometry Learner",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28549v1",
+      "date": "2026-08-28",
+      "summary": "Recent generative approaches to geometry estimation adapt pretrained image diffusion models and treat the task as image-conditioned generation. Leveraging off-the-shelf image diffusion models, they either (i) train task-…",
+      "tldr": "Recent generative approaches to geometry estimation adapt pretrained image diffusion model…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
+      "id": "58t5di",
+      "title": "An Enclosed Mode Is a Gauge Choice: Topology Relative to Reach in Certified Code World Models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28541v1",
+      "date": "2026-08-28",
+      "summary": "A code world model accepted by a sampling gate can be exactly right on everything the gate can see and arbitrarily wrong beyond it. We characterize what a certified model can know, and what its errors can cost, when the …",
+      "tldr": "A code world model accepted by a sampling gate can be exactly right on everything the gate…",
+      "maturity": "proposed",
+      "tags": [
+        "世界模型"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
+      "id": "58skm2",
+      "title": "InstructMesh: Selective Refinement of Generative 3D Models for Fabrication",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28534v1",
+      "date": "2026-08-28",
+      "summary": "Recent advances in generative AI allow users to create 3D models from text or images. However, these models prioritize visual plausibility over geometric accuracy, often generating results with flaws that compromise thei…",
+      "tldr": "Recent advances in generative AI allow users to create 3D models from text or images. Howe…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
+      "id": "58rxmj",
+      "title": "Texture Image Classification Using DWT AlexNet Feature Fusion and Deep Neural Networks",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28524v1",
+      "date": "2026-08-28",
+      "summary": "Texture image classification plays a significant role in computer vision applications, including industrial inspection, medical image analysis, remote sensing, and object recognition. Handcrafted features can capture loc…",
+      "tldr": "Texture image classification plays a significant role in computer vision applications, inc…",
+      "maturity": "proposed",
+      "tags": [
+        "多模态"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
+      "id": "58rdls",
+      "title": "When Robots Mishear Us: Mapping the Safety Risks of Voice-Controlled Embodied AI",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28518v1",
+      "date": "2026-08-28",
+      "summary": "We investigate whether automatic speech recognition (ASR) errors in user input can lead to unsafe outputs from Embodied AI (EAI) models. We find that ASR errors can lead to harmful instructions being accepted and execute…",
+      "tldr": "We investigate whether automatic speech recognition (ASR) errors in user input can lead to…",
+      "maturity": "proposed",
+      "tags": [
+        "安全"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
+      "id": "58rbdp",
+      "title": "Conformal Uncertainty Quantification Guarantees for Neural Operators",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28515v1",
+      "date": "2026-08-28",
+      "summary": "Neural operators provide fast surrogate models for approximating operators between function spaces, but their predictions often lack uncertainty quantification. We develop a split conformal framework to guarantee that a …",
+      "tldr": "Neural operators provide fast surrogate models for approximating operators between functio…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
+      "id": "58r8ex",
+      "title": "Training Communication-Efficient Mixture-of-Experts Language Models with Layer Re-Configuration",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28511v1",
+      "date": "2026-08-28",
+      "summary": "When training Mixture-of-Experts (MoE) language models with expert parallelism, all-to-all token dispatch and combine collectives can consume a substantial fraction of end-to-end training time. In this work, we study com…",
+      "tldr": "When training Mixture-of-Experts (MoE) language models with expert parallelism, all-to-all…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
+      "id": "58qqm9",
+      "title": "Phoneme- and Word-Level Metrics Using Self-Supervised Speech Representations for Forced Alignment Evaluation",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28508v1",
+      "date": "2026-08-28",
+      "summary": "Forced alignment evaluation typically requires manually annotated timestamps, limiting large-scale and multilingual analysis. We introduce two corpus-level metrics based on self-supervised (SSL) speech representations fo…",
+      "tldr": "Forced alignment evaluation typically requires manually annotated timestamps, limiting lar…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
+      "id": "58co5y",
+      "title": "On the Maintenance and Co-evolution of Agent Plugins: An Empirical Study of Claude Code Plugin Marketplaces",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28497v1",
+      "date": "2026-08-28",
+      "summary": "AI coding agents, software tools that automate development tasks through reasoning and tool use, are increasingly extended through plugin marketplaces, yet the structure, maintenance, and co-evolution dynamics of these e…",
+      "tldr": "AI coding agents, software tools that automate development tasks through reasoning and too…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Tool Use",
+        "推理"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
+      "id": "58cnf9",
+      "title": "Ladders in Chaos: When, How, (and Perhaps Why) Does Test-Time Scaling Improve LLM Machine Translation",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28496v1",
+      "date": "2026-08-28",
+      "summary": "Two forms of test-time scaling for Large Language Models (LLMs) have emerged as effective and widely adopted paradigms: sequential, in which later answer attempts depend on earlier ones, and parallel, such as i.i.d. samp…",
+      "tldr": "Two forms of test-time scaling for Large Language Models (LLMs) have emerged as effective…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
+      "id": "58cjps",
+      "title": "AcrossVAM1.0: Particle World Modeling for Text-Assisted Robot Video Prediction",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28491v1",
+      "date": "2026-08-28",
+      "summary": "Predicting robot videos requires both precise motion reasoning and preservation of high-frequency appearance, yet monolithic pixel models entangle these objectives and often conceal their progress behind a strong last-fr…",
+      "tldr": "Predicting robot videos requires both precise motion reasoning and preservation of high-fr…",
+      "maturity": "proposed",
+      "tags": [
+        "推理",
+        "世界模型"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
+      "id": "58ciz3",
+      "title": "LLM-Based Agents for Software and Systems Security: Approaches, Applications, and Assessment",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28490v1",
+      "date": "2026-08-28",
+      "summary": "Software and systems security workflows are typically procedural: analysts inspect heterogeneous artifacts, form hypotheses, invoke tools, interpret outputs, and revise plans. Large language model (LLM)-based agents, whi…",
+      "tldr": "Software and systems security workflows are typically procedural: analysts inspect heterog…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
+      "id": "58bxgy",
+      "title": "How Proper Scoring Rules Shape LLM Forecasting",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28482v1",
+      "date": "2026-08-28",
+      "summary": "This paper evaluates how reward function choice shapes the performance and behavior of LLM forecasters. We compare five proper scoring rules as training objectives for binary forecasts of resolved real-world events. Alth…",
+      "tldr": "This paper evaluates how reward function choice shapes the performance and behavior of LLM…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
+      "id": "58bwq9",
+      "title": "NL2AGBench: Benchmarking LLM Auto-Formalization for AlphaGeometry",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28481v1",
+      "date": "2026-08-28",
+      "summary": "Recent advances in large language models (LLMs) have demonstrated strong capabilities in natural language understanding and mathematical reasoning. However, their ability to translate informal mathematical problems into …",
+      "tldr": "Recent advances in large language models (LLMs) have demonstrated strong capabilities in n…",
+      "maturity": "proposed",
+      "tags": [
+        "推理",
+        "评测"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
+      "id": "58bexl",
+      "title": "Blind Men and the Elephant: Probing the Epistemic Myopia of LLMs under Long-Tail Divergent Knowledge",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.28478v1",
+      "date": "2026-08-28",
+      "summary": "Factual question answering (QA) typically assumes a single canonical answer, obscuring whether large language models (LLMs) retain divergent accounts of long-tail facts. To address this gap, we introduce ElephantBench, a…",
+      "tldr": "Factual question answering (QA) typically assumes a single canonical answer, obscuring whe…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-08-31T15:49:39.681Z"
+    },
+    {
       "id": "dox36k",
       "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
       "source": "OpenAI",
@@ -96,8 +395,8 @@
       "source": "OpenAI",
       "url": "https://openai.com/index/expanding-our-presence-in-brazil",
       "date": "2026-08-27",
-      "summary": "",
-      "tldr": "Expanding OpenAI’s presence in Brazil",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60\">ResearchProductsBusinessDevelopersCompanyFoundation(opens in a new window)Log inTry ChatGPT(opens in a new window)ResearchProductsBusinessDevelopersCompany…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60\">ResearchProductsBusinessDevelopersCompanyFoun…",
       "maturity": "emerging",
       "tags": [
         "前沿"
