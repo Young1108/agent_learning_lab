@@ -1,9 +1,24 @@
 {
-  "updatedAt": "2026-08-31T15:49:39.683Z",
-  "version": 14,
+  "updatedAt": "2026-09-01T13:03:57.581Z",
+  "version": 15,
   "sourceCount": 6,
-  "conceptCount": 260,
+  "conceptCount": 283,
   "concepts": [
+    {
+      "id": "1ddov6q",
+      "title": "Improving our alignment and security practices",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/improving-alignment-security-efforts",
+      "date": "2026-09-01",
+      "summary": "On July 30, we reported three incidents in which Claude models gained unauthorized access to real computer systems. We are conducting an in-depth analysis of both incidents, and planning to work with METR for an independ…",
+      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20ShapeBuild&amp;backgroundColor=cactus",
+      "tldr": "On July 30, we reported three incidents in which Claude models gained unauthorized access…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-01T13:03:43.934Z"
+    },
     {
       "id": "fiv88e",
       "title": "A milestone in expanding access to AI",
@@ -17,6 +32,319 @@
         "前沿"
       ],
       "addedAt": "2026-08-31T15:49:23.759Z"
+    },
+    {
+      "id": "1ygrufn",
+      "title": "OpenAI supports California’s bill to advance youth AI safety",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety",
+      "date": "2026-08-31",
+      "summary": "",
+      "tldr": "OpenAI supports California’s bill to advance youth AI safety",
+      "maturity": "emerging",
+      "tags": [
+        "安全"
+      ],
+      "addedAt": "2026-09-01T13:03:40.451Z"
+    },
+    {
+      "id": "g4ino0",
+      "title": "Polimill builds Japan's next-generation public AI infrastructure",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/polimill",
+      "date": "2026-08-31",
+      "summary": "",
+      "tldr": "Polimill builds Japan's next-generation public AI infrastructure",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-01T13:03:40.669Z"
+    },
+    {
+      "id": "gjqsom",
+      "title": "Context-Aware Interleaved Batching for WhisperX",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31170v1",
+      "date": "2026-08-31",
+      "summary": "While WhisperX accelerates speech transcription via intra-audio batching, it isolates audio segments, losing the historical context needed for coherent punctuation and terminology transcription. Conversely, standard Whis…",
+      "tldr": "While WhisperX accelerates speech transcription via intra-audio batching, it isolates audi…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-01T13:03:57.578Z"
+    },
+    {
+      "id": "gjqavy",
+      "title": "SUN: Persistent Programs For Language-Grounded Control-to-Learning-to-Real Policies",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31167v1",
+      "date": "2026-08-31",
+      "summary": "Bridging model-based control and learned policies in long-horizon manipulation has harbored a silent disagreement: control executes specified objectives, learning amortizes that behavior into a reactive policy, yet exist…",
+      "tldr": "Bridging model-based control and learned policies in long-horizon manipulation has harbore…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-01T13:03:57.578Z"
+    },
+    {
+      "id": "gjox7f",
+      "title": "Auditing Anonymous AI Models: A Four-Stage Protocol for Black-Box Identity Verification",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31142v1",
+      "date": "2026-08-31",
+      "summary": "The 2025--2026 AI market has seen a wave of stealth releases: frontier models launched anonymously on developer platforms under codenames. For their users, identity determines data-handling terms, supply-chain risk, and …",
+      "tldr": "The 2025--2026 AI market has seen a wave of stealth releases: frontier models launched ano…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-01T13:03:57.578Z"
+    },
+    {
+      "id": "gjofer",
+      "title": "Configurable Semantic Chunking for Biomedical Information Extraction in Retrieval-Augmented Generation",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31139v1",
+      "date": "2026-08-31",
+      "summary": "BioMedRAG introduced retrieval-augmented generation with a learned chunk scorer for biomedical information extraction. However, it relies on fixed-size chunking which can fragment semantic evidence. We propose a configur…",
+      "tldr": "BioMedRAG introduced retrieval-augmented generation with a learned chunk scorer for biomed…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-01T13:03:57.579Z"
+    },
+    {
+      "id": "gjodxd",
+      "title": "OntoAligner-Ensemble: Voting-Based Fusion across Heterogeneous Ontology Alignment Techniques",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31137v1",
+      "date": "2026-08-31",
+      "summary": "Ontology alignment (OA) has evolved through several methodological paradigms, ranging from lexical and structural aligners to knowledge graph embedding (KGE) models and, more recently, Large Language Model (LLM)-based ap…",
+      "tldr": "Ontology alignment (OA) has evolved through several methodological paradigms, ranging from…",
+      "maturity": "proposed",
+      "tags": [
+        "Graph"
+      ],
+      "addedAt": "2026-09-01T13:03:57.579Z"
+    },
+    {
+      "id": "gjnroj",
+      "title": "DIASENTINEL: An Auditable Multi-Agent System for Guideline-Grounded Diabetes Risk Screening",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31128v1",
+      "date": "2026-08-31",
+      "summary": "Large language models (LLMs) offer promising clinical decision support but remain vulnerable to hallucinated facts, unsupported recommendations, and citation errors. We present DIASENTINEL, a fully on-premise multi-agent…",
+      "tldr": "Large language models (LLMs) offer promising clinical decision support but remain vulnerab…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Multi-Agent"
+      ],
+      "addedAt": "2026-09-01T13:03:57.579Z"
+    },
+    {
+      "id": "gjn5fp",
+      "title": "PaperGym: Rubric-Centered Evolution for Research-Plan Generation",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31119v1",
+      "date": "2026-08-31",
+      "summary": "Research planning is the decisive capability of AI scientists. Yet a research plan admits no verifiable answer, so reinforcement learning lacks the environment it requires: tasks paired with a critic. Rubrics extracted f…",
+      "tldr": "Research planning is the decisive capability of AI scientists. Yet a research plan admits…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-01T13:03:57.579Z"
+    },
+    {
+      "id": "gjn4p0",
+      "title": "When Does Bigger Help? A Controlled Study of LLM Scale for Ontology Learning",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31118v1",
+      "date": "2026-08-31",
+      "summary": "The effect of Large Language Model (LLM) scale on ontology learning (OL) performance remains insufficiently characterized. We present a controlled evaluation of 13 models spanning dense and Mixture-of-Experts variants fr…",
+      "tldr": "The effect of Large Language Model (LLM) scale on ontology learning (OL) performance remai…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-01T13:03:57.579Z"
+    },
+    {
+      "id": "gjmzi5",
+      "title": "Aspire: Can Models Self-Evolve from Vague Goals?",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31111v1",
+      "date": "2026-08-31",
+      "summary": "Many important forms of human learning begin with a vague goal, such as \"become a better physicist\" or \"improve at research.\" Learners must interpret the goal, identify capability gaps, decide how to learn, and determine…",
+      "tldr": "Many important forms of human learning begin with a vague goal, such as \"become a better p…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-01T13:03:57.579Z"
+    },
+    {
+      "id": "gjmfhe",
+      "title": "BLOOM-WILT: Logit Tilting for Behaviour Elicitation in Automated LLM Auditing",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31105v1",
+      "date": "2026-08-31",
+      "summary": "Users of a deployed language model routinely encounter behaviours that testing almost never surfaces, since deployment puts the model through orders of magnitude more interactions than any evaluation can simulate. Automa…",
+      "tldr": "Users of a deployed language model routinely encounter behaviours that testing almost neve…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-01T13:03:57.579Z"
+    },
+    {
+      "id": "gjmd9b",
+      "title": "LLM Post-Training as Brownfield Maintenance: An Industrial Perspective on Dataware Engineering",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31102v1",
+      "date": "2026-08-31",
+      "summary": "Industrial post-training is a brownfield regime. Teams inherit a deployed checkpoint and must land targeted improvements under fixed compute and mixture budgets without regressing the rest. The maintained artifact is inc…",
+      "tldr": "Industrial post-training is a brownfield regime. Teams inherit a deployed checkpoint and m…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-01T13:03:57.579Z"
+    },
+    {
+      "id": "gjmbrx",
+      "title": "S3Gym: Can LLMs Turn Self-Testing and Self-Judging into Self-Improvement?",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31100v1",
+      "date": "2026-08-31",
+      "summary": "Large language models (LLMs) increasingly interact with external environments and accumulate substantial behavioral experience, yet existing agent benchmarks largely evaluate them as fixed policies. It therefore remains …",
+      "tldr": "Large language models (LLMs) increasingly interact with external environments and accumula…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "评测"
+      ],
+      "addedAt": "2026-09-01T13:03:57.579Z"
+    },
+    {
+      "id": "gj8f96",
+      "title": "Cross-Regional Grapevine Cold Hardiness Prediction via Learned Multimodal Latent Representations",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31097v1",
+      "date": "2026-08-31",
+      "summary": "Accurate daily predictions of cold hardiness in woody plants are critical in regions where freezing temperatures can damage dormant buds and reduce seasonal yield. Existing biophysical, hybrid, and deep learning models h…",
+      "tldr": "Accurate daily predictions of cold hardiness in woody plants are critical in regions where…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-01T13:03:57.579Z"
+    },
+    {
+      "id": "gj7q1k",
+      "title": "The First Token Is a Clue: Verbalizing Multi-Token Concepts from the J-lens",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31084v1",
+      "date": "2026-08-31",
+      "summary": "The Jacobian Lens (J-lens) is a recent tool for interpreting LLMs. It reads a hidden state as a ranked list of vocabulary tokens, leaving multi-token concepts without a representation of their own. The original J-lens wo…",
+      "tldr": "The Jacobian Lens (J-lens) is a recent tool for interpreting LLMs. It reads a hidden state…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-01T13:03:57.579Z"
+    },
+    {
+      "id": "gj7ok6",
+      "title": "Token-Efficient Data Reasoning Agents via Adaptive Structuring of Unstructured Data",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31082v1",
+      "date": "2026-08-31",
+      "summary": "Valuable data remains embedded in unstructured sources: web pages, reports, contracts, filings, earnings calls, and PDFs. The big bet in enterprise AI is deploying LLM agents that reason over this data to answer complex …",
+      "tldr": "Valuable data remains embedded in unstructured sources: web pages, reports, contracts, fil…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "推理"
+      ],
+      "addedAt": "2026-09-01T13:03:57.579Z"
+    },
+    {
+      "id": "gj75a4",
+      "title": "Reconciling Process Supervision with Outcome-Based Credit in Agentic Policy Optimization",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31077v1",
+      "date": "2026-08-31",
+      "summary": "Outcome-based reinforcement learning provides verified feedback for language-model agents, but assigns trajectory-level advantage uniformly to all decisions, yielding coarse credit over long-horizon interactions. On-poli…",
+      "tldr": "Outcome-based reinforcement learning provides verified feedback for language-model agents,…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "多模态"
+      ],
+      "addedAt": "2026-09-01T13:03:57.579Z"
+    },
+    {
+      "id": "gj74jf",
+      "title": "Learning to Evaluate Before Improving: Automatic Rubric Induction for Automatic Research Agents",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31076v1",
+      "date": "2026-08-31",
+      "summary": "Autonomous scientific research agents are increasingly applied to end-to-end scientific workflows, including literature review, data analysis, experimentation, and report generation. However, open-ended research tasks of…",
+      "tldr": "Autonomous scientific research agents are increasingly applied to end-to-end scientific wo…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-01T13:03:57.579Z"
+    },
+    {
+      "id": "gj73sq",
+      "title": "Scaling Large Reasoning Models beyond Human Supervision: A Path toward Superintelligence",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31075v1",
+      "date": "2026-08-31",
+      "summary": "Recent advances in large reasoning models (LRMs) have shown that reinforcement learning with verifiable rewards (RLVR) can substantially improve reasoning in mathematics and code, where outcomes can be checked automatica…",
+      "tldr": "Recent advances in large reasoning models (LRMs) have shown that reinforcement learning wi…",
+      "maturity": "proposed",
+      "tags": [
+        "推理",
+        "多模态"
+      ],
+      "addedAt": "2026-09-01T13:03:57.579Z"
+    },
+    {
+      "id": "gj7321",
+      "title": "Real-Time Video Anomaly Detection Using YOLO Pose Estimation and CLIP-Based Semantic Scoring",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31074v1",
+      "date": "2026-08-31",
+      "summary": "We propose a lightweight two-stage framework for real-time video anomaly detection. The first stage employs YOLO v11n-pose to detect persons and extract seventeen skeletal keypoints in a single forward pass. The second s…",
+      "tldr": "We propose a lightweight two-stage framework for real-time video anomaly detection. The fi…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-01T13:03:57.579Z"
+    },
+    {
+      "id": "gj6jrz",
+      "title": "A Model with No Head and Many Thoughts",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2608.31069v1",
+      "date": "2026-08-31",
+      "summary": "Large language models decode by projecting hidden states through a large vocabulary head at every step. This operation is computationally costly and forces all reasoning to be expressed in discrete tokens. We introduce S…",
+      "tldr": "Large language models decode by projecting hidden states through a large vocabulary head a…",
+      "maturity": "proposed",
+      "tags": [
+        "推理"
+      ],
+      "addedAt": "2026-09-01T13:03:57.579Z"
     },
     {
       "id": "1da6xi",
