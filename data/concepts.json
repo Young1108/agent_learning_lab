@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-01T13:03:57.581Z",
-  "version": 15,
+  "updatedAt": "2026-09-02T12:31:41.363Z",
+  "version": 16,
   "sourceCount": 6,
-  "conceptCount": 283,
+  "conceptCount": 313,
   "concepts": [
     {
       "id": "1ddov6q",
@@ -18,6 +18,431 @@
         "前沿"
       ],
       "addedAt": "2026-09-01T13:03:43.934Z"
+    },
+    {
+      "id": "1mzslnf",
+      "title": "How AI-native companies turn workflows into operating capability",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/ai-native-company-workflows",
+      "date": "2026-09-01",
+      "summary": "",
+      "tldr": "How AI-native companies turn workflows into operating capability",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-02T12:31:25.650Z"
+    },
+    {
+      "id": "meno27",
+      "title": "Path to Astra: critical capabilities and frontier safeguards",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/path-to-astra",
+      "date": "2026-09-01",
+      "summary": "",
+      "tldr": "Path to Astra: critical capabilities and frontier safeguards",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-02T12:31:25.871Z"
+    },
+    {
+      "id": "10p3gl4",
+      "title": "Healthcare organizations can now connect EHR and additional industry data to ChatGPT",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources",
+      "date": "2026-09-01",
+      "summary": "",
+      "tldr": "Healthcare organizations can now connect EHR and additional industry data to Cha…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-02T12:31:26.099Z"
+    },
+    {
+      "id": "w2hh12",
+      "title": "How law firm Gilbert + Tobin governs and scales AI with OpenAI",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/gilbert-tobin",
+      "date": "2026-09-01",
+      "summary": "",
+      "tldr": "How law firm Gilbert + Tobin governs and scales AI with OpenAI",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-02T12:31:26.319Z"
+    },
+    {
+      "id": "1wgtjxx",
+      "title": "Developing Enterprise Frontier Safeguards with our customers",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/enterprise-frontier-safeguards",
+      "date": "2026-09-01",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20City&amp;backgroundColor=sky",
+      "tldr": "Anthropic is an AI safety and research company that's working to build reliable, interpret…",
+      "maturity": "emerging",
+      "tags": [
+        "安全"
+      ],
+      "addedAt": "2026-09-02T12:31:29.469Z"
+    },
+    {
+      "id": "la2whn",
+      "title": "Introducing agentic video understanding with Gemini",
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/introducing-agentic-video-in-gemini/",
+      "date": "2026-09-01",
+      "summary": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --btn-bg-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --card-draw-percent{inherits:fa…",
+      "tldr": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@proper…",
+      "maturity": "emerging",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-02T12:31:35.729Z"
+    },
+    {
+      "id": "ldfs60",
+      "title": "The latest AI news we announced in August 2026",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026/",
+      "date": "2026-09-01",
+      "summary": "Here are Google’s latest AI updates from August 2026",
+      "tldr": "Here are Google’s latest AI updates from August 2026",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-02T12:31:37.669Z"
+    },
+    {
+      "id": "1rbqcte",
+      "title": "Try Google Pics: Easy image creation and editing in Google Workspace",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/workspace/google-pics/",
+      "date": "2026-09-01",
+      "summary": "Built on our latest Nano Banana model, Google Pics — our image creation and editing tool — is now available.",
+      "tldr": "Built on our latest Nano Banana model, Google Pics — our image creation and editing tool —…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-02T12:31:37.669Z"
+    },
+    {
+      "id": "1qmeicc",
+      "title": "BenchMIRT: What are LLM benchmarks actually measuring?",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/allenai/benchmirt",
+      "date": "2026-09-01",
+      "summary": "Today we’re introducing BenchMIRT, a new method for auditing LLM benchmarks at the level of individual prompts—the questions and tasks a model is scored on.",
+      "tldr": "Today we’re introducing BenchMIRT, a new method for auditing LLM benchmarks at the level o…",
+      "maturity": "emerging",
+      "tags": [
+        "评测"
+      ],
+      "addedAt": "2026-09-02T12:31:37.990Z"
+    },
+    {
+      "id": "1x23sra",
+      "title": "Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/webgpu-kernels",
+      "date": "2026-09-01",
+      "summary": "Today, we are releasing the first layer of that effort: @huggingface/kernels, a minimal library for loading and running optimized WebGPU kernels from the Hugging Face Hub, together with an initial col…",
+      "tldr": "Today, we are releasing the first layer of that effort: @huggingface/kernels, a minimal li…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-02T12:31:38.227Z"
+    },
+    {
+      "id": "dq6k84",
+      "title": "Beyond Scores: Understanding LLM-as-a-Judge Mechanisms in Summarization Evaluation",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01604v1",
+      "date": "2026-09-01",
+      "summary": "LLM-based evaluators of natural language generation (NLG) quality are widely deployed as scoring tools and as automated training signals, yet the internal procedure by which they assign a rating remains poorly understood…",
+      "tldr": "LLM-based evaluators of natural language generation (NLG) quality are widely deployed as s…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
+    },
+    {
+      "id": "dq6jhf",
+      "title": "Efficient SWE Agent Benchmarking via Trajectory-Aware Evaluation",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01603v1",
+      "date": "2026-09-01",
+      "summary": "Evaluating software engineering agents on realistic benchmarks is costly, since each task may require multi-step code exploration, modification, and test execution. Existing efficient evaluation methods select representa…",
+      "tldr": "Evaluating software engineering agents on realistic benchmarks is costly, since each task…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "评测"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
+    },
+    {
+      "id": "dq6i01",
+      "title": "Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01601v1",
+      "date": "2026-09-01",
+      "summary": "The repository-level code generation task requires synthesizing code that satisfies task requirements while remaining consistent with the target repository context. Since real-world repositories often exceed the input le…",
+      "tldr": "The repository-level code generation task requires synthesizing code that satisfies task r…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
+    },
+    {
+      "id": "dq6h9c",
+      "title": "CordisBench: Can Language Models Reason About Component Lifecycles in Dynamic Agent Harnesses?",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01600v1",
+      "date": "2026-09-01",
+      "summary": "Dynamic agent harnesses let language models change the software that shapes their own execution. This flexibility brings a new reasoning burden: a local plugin change can propagate through dependencies and cleanup. We in…",
+      "tldr": "Dynamic agent harnesses let language models change the software that shapes their own exec…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Harness",
+        "推理"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
+    },
+    {
+      "id": "dpskql",
+      "title": "The Rise of Verbal Reinforcement Learning",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01597v1",
+      "date": "2026-09-01",
+      "summary": "Natural language is emerging as a primary feedback channel for improving language agents, capable of conveying intent, preferences, and causal structure in forms interpretable by both humans and modern language models. W…",
+      "tldr": "Natural language is emerging as a primary feedback channel for improving language agents,…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
+    },
+    {
+      "id": "dpsj97",
+      "title": "Mechanism Design for Alignment and Control",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01595v1",
+      "date": "2026-09-01",
+      "summary": "We develop a framework for mechanism design with AI agents whose alignment (preferences) and capabilities (feasible actions and information) are unknown. We want such agents to act on our behalf so mechanisms must incent…",
+      "tldr": "We develop a framework for mechanism design with AI agents whose alignment (preferences) a…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
+    },
+    {
+      "id": "dpsgaf",
+      "title": "StudentSim: Training LLM-based Student Simulators",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01591v1",
+      "date": "2026-09-01",
+      "summary": "AI tutors are most useful when they adapt to each student's strengths, weaknesses, and preferred guidance, but evidence about which guidance works for which student is sparse, slow, and costly to collect from real learne…",
+      "tldr": "AI tutors are most useful when they adapt to each student's strengths, weaknesses, and pre…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
+    },
+    {
+      "id": "dpryhr",
+      "title": "Designing Proactive Thought Partners for Writing",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01588v1",
+      "date": "2026-09-01",
+      "summary": "Writing involves diverse cognitive activities, from ideation to revision, and writers' needs vary across individuals and moments. Proactive AI promises to provide the right support at the right time, yet existing proacti…",
+      "tldr": "Writing involves diverse cognitive activities, from ideation to revision, and writers' nee…",
+      "maturity": "proposed",
+      "tags": [
+        "多模态"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
+    },
+    {
+      "id": "dprxr2",
+      "title": "The Structure of Quantization Damage in LLMs: Why the Next Bit Should Be Spent Globally",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01587v1",
+      "date": "2026-09-01",
+      "summary": "Post-training quantization (PTQ) is widely used to reduce the cost of serving large language models (LLMs), but its accuracy cost is uneven and is often tuned per model. We study where quantization damage occurs and how …",
+      "tldr": "Post-training quantization (PTQ) is widely used to reduce the cost of serving large langua…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
+    },
+    {
+      "id": "dpr9a5",
+      "title": "Closing Cost-Quality Gap in Document VLMs: Difficulty-Aware Data Curation and Quality-Adjusted Deployment Economics",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01575v1",
+      "date": "2026-09-01",
+      "summary": "Extracting structured fields from hundreds of millions of documents annually remains costly in regulated industries: bespoke OCR cascades cover only a fraction of workflows, privacy rules preclude external models, and ex…",
+      "tldr": "Extracting structured fields from hundreds of millions of documents annually remains costl…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
+    },
+    {
+      "id": "dpr7sr",
+      "title": "Scaling Near-Optimal SFT-RL Annotation Budget Allocation from Small to Large LLMs",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01573v1",
+      "date": "2026-09-01",
+      "summary": "How to divide a fixed annotation budget between supervised fine-tuning (SFT) and reinforcement learning (RL) during LLM post-training remains an open problem. Existing work characterizes only broad trends (e.g., SFT domi…",
+      "tldr": "How to divide a fixed annotation budget between supervised fine-tuning (SFT) and reinforce…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
+    },
+    {
+      "id": "dpr722",
+      "title": "From Production Traffic to Post-Training: Building a Self-Hosted LLM That Covers the Corporate Request Mix",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01572v1",
+      "date": "2026-09-01",
+      "summary": "Data-residency constraints force enterprises to self-host LLMs, but continuous adoption of newer models without decommissioning their predecessors expands the serving fleet, fragmenting a finite GPU pool. We consolidate …",
+      "tldr": "Data-residency constraints force enterprises to self-host LLMs, but continuous adoption of…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
+    },
+    {
+      "id": "dpqns0",
+      "title": "Selective Agent Guidance via Entropy: Learning Autonomous Policies from Imperfect VLM Teachers",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01567v1",
+      "date": "2026-09-01",
+      "summary": "Vision-Language Models (VLMs) provide useful priors for interactive decision-making, but using them directly as policies is expensive and brittle: they must be queried at every step, do not improve from environment inter…",
+      "tldr": "Vision-Language Models (VLMs) provide useful priors for interactive decision-making, but u…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "多模态"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
+    },
+    {
+      "id": "dpqljx",
+      "title": "From Confusion to Clarity: Confusion-Aware Retrieval and Knowledge Injection for Text Classification",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01564v1",
+      "date": "2026-09-01",
+      "summary": "Large language models (LLMs) struggle to classify text into taxonomies with many semantically similar labels, as the distinctions are domain-specific and not captured by pre-training. To handle large label spaces, a comm…",
+      "tldr": "Large language models (LLMs) struggle to classify text into taxonomies with many semantica…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
+    },
+    {
+      "id": "dpqkt8",
+      "title": "A systematic Approach to constructing a Chance-and-Risk Matrix for Semiconductor Supply Chains",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01563v1",
+      "date": "2026-09-01",
+      "summary": "Semiconductor supply chains face escalating risks from geopolitical tensions, geographic concentration, and rapid technological shifts, yet no scalable system continuously extracts, structures, and prioritizes risk intel…",
+      "tldr": "Semiconductor supply chains face escalating risks from geopolitical tensions, geographic c…",
+      "maturity": "proposed",
+      "tags": [
+        "Graph"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
+    },
+    {
+      "id": "dpqil5",
+      "title": "H3-World: Turning Language Understanding into World Control",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01560v1",
+      "date": "2026-09-01",
+      "summary": "We present H3-World, an efficient framework that turns the 33B MiniMax-H3 video generator into an interactive world model. Our key finding is that, as large video generators become more capable, language is emerging as a…",
+      "tldr": "We present H3-World, an efficient framework that turns the 33B MiniMax-H3 video generator…",
+      "maturity": "proposed",
+      "tags": [
+        "世界模型"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
+    },
+    {
+      "id": "dpq01s",
+      "title": "Retrieved but not ranked: surface-form bias in structural retrieval, from mathematics to agent trajectories",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01556v1",
+      "date": "2026-09-01",
+      "summary": "We evaluate embedding retrieval where surface form and meaning are pulled apart on purpose: retrieving items that share underlying structure but not wording, in two unrelated domains under one protocol, competition mathe…",
+      "tldr": "We evaluate embedding retrieval where surface form and meaning are pulled apart on purpose…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
+    },
+    {
+      "id": "dppyke",
+      "title": "BS: Take the Hint - Interactive Multitracer PET/CT Lesion Segmentation with a Scribble-Conditioned ResEnc U-Net",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01554v1",
+      "date": "2026-09-01",
+      "summary": "Automated lesion segmentation in whole-body PET/CT is complicated by the variety of physiological tracer uptake patterns and by the differing appearance of lesions across tracers. The autoPET/CT V challenge addresses thi…",
+      "tldr": "Automated lesion segmentation in whole-body PET/CT is complicated by the variety of physio…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
+    },
+    {
+      "id": "dppx30",
+      "title": "Can LLMs Discover Scientific Laws in Real and Parallel Worlds?",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01552v1",
+      "date": "2026-09-01",
+      "summary": "Scientific equation discovery has long been central to scientific progress, proceeding through iterative cycles of hypothesis generation, observational testing, and refinement under scientific constraints. As LLM capabil…",
+      "tldr": "Scientific equation discovery has long been central to scientific progress, proceeding thr…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
+    },
+    {
+      "id": "dppvlm",
+      "title": "A Mathematical Theory of Reusable Neural Bases for Network Compression",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.01550v1",
+      "date": "2026-09-01",
+      "summary": "As large AI models become increasingly prevalent across a wide range of applications, memory cost has become a critical bottleneck in both training and inference. To mitigate this issue, we introduce the Linear Reusable …",
+      "tldr": "As large AI models become increasingly prevalent across a wide range of applications, memo…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-02T12:31:41.360Z"
     },
     {
       "id": "fiv88e",
