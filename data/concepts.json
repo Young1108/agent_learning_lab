@@ -1,9 +1,409 @@
 {
-  "updatedAt": "2026-09-02T12:31:41.363Z",
-  "version": 16,
+  "updatedAt": "2026-09-03T12:35:06.736Z",
+  "version": 17,
   "sourceCount": 6,
-  "conceptCount": 313,
+  "conceptCount": 341,
   "concepts": [
+    {
+      "id": "vcouju",
+      "title": "Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/grpo-with-trl-ifstruct",
+      "date": "2026-09-03",
+      "summary": "Structured output is one of the most common real-world tasks for LLMs, yet most benchmarks fold it into broader reasoning or extraction scores rather than measuring it on its own. Whether a model reli…",
+      "tldr": "Structured output is one of the most common real-world tasks for LLMs, yet most benchmarks…",
+      "maturity": "emerging",
+      "tags": [
+        "推理",
+        "评测"
+      ],
+      "addedAt": "2026-09-03T12:35:02.574Z"
+    },
+    {
+      "id": "1bnppi0",
+      "title": "Give Your Coding Agents a Memory You Own",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/funes",
+      "date": "2026-09-03",
+      "summary": "Earlier this year, Software Forgets: Agent Traces Are the Memory made the case that coding agents already produce the record we keep losing. As they search a codebase, try approaches, hit errors, read…",
+      "tldr": "Earlier this year, Software Forgets: Agent Traces Are the Memory made the case that coding…",
+      "maturity": "emerging",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-03T12:35:02.855Z"
+    },
+    {
+      "id": "fkkwbx",
+      "title": "Training a coding model to paint watercolours with TRL and OpenEnv",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/train-to-paint-with-code",
+      "date": "2026-09-03",
+      "summary": "On 23 August, Surya Narreddi posted a beautiful video of watercolours painted by a language model. The model writes JavaScript through p5.brush, a library that \"adds natural drawing tools to p5.js\". T…",
+      "tldr": "On 23 August, Surya Narreddi posted a beautiful video of watercolours painted by a languag…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-03T12:35:03.144Z"
+    },
+    {
+      "id": "xp9t3e",
+      "title": "ATV Big Air Tour turned 3 days of work into 3 hours with ChatGPT",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/atv-big-air-tour",
+      "date": "2026-09-02",
+      "summary": "",
+      "tldr": "ATV Big Air Tour turned 3 days of work into 3 hours with ChatGPT",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-03T12:34:44.532Z"
+    },
+    {
+      "id": "1iislmd",
+      "title": "Proactive cyber defense for governments and enterprises",
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/proactive-cyber-defense-for-governments-and-enterprises/",
+      "date": "2026-09-02",
+      "summary": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --btn-bg-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --card-draw-percent{inherits:fa…",
+      "tldr": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@proper…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-03T12:34:58.776Z"
+    },
+    {
+      "id": "wk256y",
+      "title": "Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/",
+      "date": "2026-09-02",
+      "summary": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --btn-bg-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --card-draw-percent{inherits:fa…",
+      "tldr": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@proper…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-03T12:34:59.180Z"
+    },
+    {
+      "id": "1dh2htj",
+      "title": "Proactive cyber defense for governments and enterprises",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/",
+      "date": "2026-09-02",
+      "summary": "The Fairwind Program is a limited access program for governments and trusted partners to use our cyber defense tools.",
+      "tldr": "The Fairwind Program is a limited access program for governments and trusted partners to u…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-03T12:35:02.048Z"
+    },
+    {
+      "id": "9qg9sm",
+      "title": "Real-Time Intelligence with IBM Time Series Models on Confluent",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/ibm-research/real-time-intelligence",
+      "date": "2026-09-02",
+      "summary": "Until now, those decisions have run on outdated economics: one bespoke model at a time and months of expert work on each. So teams model the few hundred series where the money is and cover the rest wi…",
+      "tldr": "Until now, those decisions have run on outdated economics: one bespoke model at a time and…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-03T12:35:03.404Z"
+    },
+    {
+      "id": "e8gwfy",
+      "title": "Discriminative World Models for Web Agents",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02885v1",
+      "date": "2026-09-02",
+      "summary": "Recent web agents use world models for test-time action selection by sampling candidate actions, predicting the resulting web states, and ranking them with a ranker model or a Process Reward Model (PRM). These world mode…",
+      "tldr": "Recent web agents use world models for test-time action selection by sampling candidate ac…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "世界模型"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
+    {
+      "id": "e8fji4",
+      "title": "Towards Trustworthy Autonomous Robots: An Explainable AI-Based Decision Framework",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02861v1",
+      "date": "2026-09-02",
+      "summary": "Autonomous robots powered by deep learning face a fundamental auditability challenge: when incidents occur, investigators cannot reconstruct why the system made specific decisions. This paper presents TRACE (Transparent …",
+      "tldr": "Autonomous robots powered by deep learning face a fundamental auditability challenge: when…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
+    {
+      "id": "e8f2g5",
+      "title": "User Feedback Provides a Unique Signal that LLMs Can not Detect",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02859v1",
+      "date": "2026-09-02",
+      "summary": "Harnessing naturally occurring feedback from user interactions offers a promising learning signal for Large Language Models (LLMs). However, recent studies suggest this feedback is inherently noisy and difficult to lever…",
+      "tldr": "Harnessing naturally occurring feedback from user interactions offers a promising learning…",
+      "maturity": "proposed",
+      "tags": [
+        "Harness"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
+    {
+      "id": "e8efgm",
+      "title": "Post-Training Language Models for Gold-Medal Performance in Coding Competitions",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02849v1",
+      "date": "2026-09-02",
+      "summary": "Competitive programming has become a key test of large language model reasoning, with international competitions such as IOI and ICPC representing its most challenging settings. We present an end-to-end specialization pi…",
+      "tldr": "Competitive programming has become a key test of large language model reasoning, with inte…",
+      "maturity": "proposed",
+      "tags": [
+        "推理"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
+    {
+      "id": "e8czk0",
+      "title": "AI Contextual Measurement for Recovering Individual and Group-Level Effects: Validation Against Survey Measures and an Occupational Application",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02821v1",
+      "date": "2026-09-02",
+      "summary": "Researchers increasingly use artificial intelligence to construct measures of social, organizational, and occupational characteristics that are absent from conventional surveys. We propose AICOME, AI COntextual MEasureme…",
+      "tldr": "Researchers increasingly use artificial intelligence to construct measures of social, orga…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
+    {
+      "id": "e8bsjq",
+      "title": "Large Language Models (LLMs) for Telecom Root Cause Analysis (RCA): A Structured Reasoning Framework for Evidence-Grounded Diagnosis",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02805v1",
+      "date": "2026-09-02",
+      "summary": "Root cause analysis (RCA) is a critical task in telecom network operations, but diagnosing performance degradations in modern 5G and emerging 6G networks remains challenging due to complex cross-layer dependencies. While…",
+      "tldr": "Root cause analysis (RCA) is a critical task in telecom network operations, but diagnosing…",
+      "maturity": "proposed",
+      "tags": [
+        "推理"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
+    {
+      "id": "e8brt1",
+      "title": "frb100-40 After Two Decades: An Optimality Certificate and a Preregistered Search Study",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02804v1",
+      "date": "2026-09-02",
+      "summary": "For more than 20 years, the Model-RB benchmark frb100-40 remained an open challenge; since 2014, its public record had stood at 99 of 100 variables. We give a directly checkable 100-vertex independent set for its 4,000-v…",
+      "tldr": "For more than 20 years, the Model-RB benchmark frb100-40 remained an open challenge; since…",
+      "maturity": "proposed",
+      "tags": [
+        "评测"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
+    {
+      "id": "e7xsbi",
+      "title": "Dutch Books for Language Models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02797v1",
+      "date": "2026-09-02",
+      "summary": "People increasingly use language models to support life decisions. Many such decisions involve a probabilistic forecast: How likely is a major life event, a natural disaster, or an economic outcome? Users of language mod…",
+      "tldr": "People increasingly use language models to support life decisions. Many such decisions inv…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
+    {
+      "id": "e7xrkt",
+      "title": "DiscoSign: Discourse-Aware Text to Sign Language Gloss Translation",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02796v1",
+      "date": "2026-09-02",
+      "summary": "Sign language processing systems have traditionally operated at the sentence level, ignoring critical discourse phenomena fundamental to sign language comprehension. We introduce DiscoSign, a computational approach for d…",
+      "tldr": "Sign language processing systems have traditionally operated at the sentence level, ignori…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
+    {
+      "id": "e7x4la",
+      "title": "SafeEvolve: Harness-Policy Co-Evolution from Agent Experience for Safety Alignment",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02786v1",
+      "date": "2026-09-02",
+      "summary": "The performance of LLM-based agents is jointly shaped by the base model and the harness used when interacting with the environment. This exposes them to safety risks in both harmful final responses and multi-step executi…",
+      "tldr": "The performance of LLM-based agents is jointly shaped by the base model and the harness us…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Harness",
+        "安全"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
+    {
+      "id": "e7x2d7",
+      "title": "EarlyEval: Cheaper Agent Evaluation via Early Outcome Prediction",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02783v1",
+      "date": "2026-09-02",
+      "summary": "Evaluating LLM agents is essential for guiding their development, yet it has grown prohibitively expensive: a single pass of a frontier model over an agentic benchmark can cost hundreds to thousands of dollars, a price p…",
+      "tldr": "Evaluating LLM agents is essential for guiding their development, yet it has grown prohibi…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "评测"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
+    {
+      "id": "e7x054",
+      "title": "ShallowStream: Index Shallow then Answer Deep for Streaming Video Understanding",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02780v1",
+      "date": "2026-09-02",
+      "summary": "Streaming video understanding is a critical capability for real-world applications, including embodied intelligence, autonomous driving, industrial monitoring, surveillance and early warning, and wearable assistants. How…",
+      "tldr": "Streaming video understanding is a critical capability for real-world applications, includ…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
+    {
+      "id": "e7wemz",
+      "title": "HyperStyler: Low-resource Authorship Style Transfer via Context-aware Style Navigation and Hypernetworks",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02772v1",
+      "date": "2026-09-02",
+      "summary": "Low-resource authorship style transfer (LAST) aims to rewrite text into the style of an arbitrary target author using only a few reference examples while preserving the original meaning. Existing methods often struggle t…",
+      "tldr": "Low-resource authorship style transfer (LAST) aims to rewrite text into the style of an ar…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
+    {
+      "id": "e7wdwa",
+      "title": "From Reweighting to Rewriting: Unlocking the Intervention Effects of Influential Samples in Training Data Attribution",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02771v1",
+      "date": "2026-09-02",
+      "summary": "Training data attribution (TDA) aims to identify training examples that shape model behavior, but its intervention value depends on both which examples are selected and how they are modified. Influence functions (IF) est…",
+      "tldr": "Training data attribution (TDA) aims to identify training examples that shape model behavi…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
+    {
+      "id": "e7vq62",
+      "title": "Measurement-Driven Sub-Network Selection for On-Premise Retrieval-Augmented Factory Agents",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02760v1",
+      "date": "2026-09-02",
+      "summary": "On-premise assistants can give factory workers conversational access to machine documentation, but models capable of the task rarely fit shop-floor hardware. We show that after structural compression and retrieval-ground…",
+      "tldr": "On-premise assistants can give factory workers conversational access to machine documentat…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
+    {
+      "id": "e7v65b",
+      "title": "Untangling the Mechanisms of Misleading Context in Medical Question Answering",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02754v1",
+      "date": "2026-09-02",
+      "summary": "Large language models now answer medical questions with expert-level performance. However, the context these systems act on can be misleading, and misleading context can corrupt a model's medical judgment. To understand …",
+      "tldr": "Large language models now answer medical questions with expert-level performance. However,…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
+    {
+      "id": "e7v36j",
+      "title": "Bilevel Coordinated Reflection: A Game-Theoretic Approach to Multi-Agent LLM Systems",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02750v1",
+      "date": "2026-09-02",
+      "summary": "Multi-agent LLM systems commonly use an orchestrator to decompose a task for a team of workers and then improve through textual reflection. Despite strong empirical results, these systems lack a unified account of coordi…",
+      "tldr": "Multi-agent LLM systems commonly use an orchestrator to decompose a task for a team of wor…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Multi-Agent"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
+    {
+      "id": "e7umv9",
+      "title": "Repo-To-Skill: Distilling GitHub Repositories Into AI4AI Skills",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02749v1",
+      "date": "2026-09-02",
+      "summary": "Autonomous agents are beginning to carry out machine-learning (ML) research end to end. These agents combine a model backbone with a harness for planning, execution, memory, and verification, but this architecture still …",
+      "tldr": "Autonomous agents are beginning to carry out machine-learning (ML) research end to end. Th…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Harness",
+        "Skill"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
+    {
+      "id": "e7ukn6",
+      "title": "HiPoly: a hierarchical polymer-native AI framework for property prediction and generative design",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02746v1",
+      "date": "2026-09-02",
+      "summary": "Polymeric materials are central to modern technologies, with applications ranging from energy to health and transportation. Although AI has made significant advances in materials discovery, the hierarchical structure of …",
+      "tldr": "Polymeric materials are central to modern technologies, with applications ranging from ene…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
+    {
+      "id": "e7ujwh",
+      "title": "Incremental Pooled LLM Evaluation for Cost-Effective Retrieval Model Selection",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.02745v1",
+      "date": "2026-09-02",
+      "summary": "Selecting a retrieval model for a production RAG system requires reliable comparative evaluation, but obtaining relevance judgments at scale is expensive and difficult to repeat as new candidate systems arrive. We study …",
+      "tldr": "Selecting a retrieval model for a production RAG system requires reliable comparative eval…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-03T12:35:06.733Z"
+    },
     {
       "id": "1ddov6q",
       "title": "Improving our alignment and security practices",
