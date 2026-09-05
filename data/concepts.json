@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-04T12:29:12.610Z",
-  "version": 18,
+  "updatedAt": "2026-09-05T11:37:08.784Z",
+  "version": 19,
   "sourceCount": 6,
-  "conceptCount": 367,
+  "conceptCount": 368,
   "concepts": [
     {
       "id": "vcouju",
@@ -414,6 +414,20 @@
         "前沿"
       ],
       "addedAt": "2026-09-04T12:29:12.605Z"
+    },
+    {
+      "id": "txtj5s",
+      "title": "GPT-6 Astra: A new generation of intelligence",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/gpt-6-astra",
+      "date": "2026-09-03",
+      "summary": "",
+      "tldr": "GPT-6 Astra: A new generation of intelligence",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-05T11:36:52.929Z"
     },
     {
       "id": "xp9t3e",
