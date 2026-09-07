@@ -1,9 +1,335 @@
 {
-  "updatedAt": "2026-09-06T11:56:33.775Z",
-  "version": 19,
+  "updatedAt": "2026-09-07T13:57:43.918Z",
+  "version": 20,
   "sourceCount": 6,
-  "conceptCount": 368,
+  "conceptCount": 391,
   "concepts": [
+    {
+      "id": "101ndwf",
+      "title": "Supporting independent journalism in Ukraine",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/supporting-independent-journalism-in-ukraine",
+      "date": "2026-09-07",
+      "summary": "",
+      "tldr": "Supporting independent journalism in Ukraine",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-07T13:57:27.139Z"
+    },
+    {
+      "id": "9oeyf4",
+      "title": "An Alien Mind",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/an-alien-mind",
+      "date": "2026-09-06",
+      "summary": "",
+      "tldr": "An Alien Mind",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-07T13:57:27.359Z"
+    },
+    {
+      "id": "14xmgku",
+      "title": "Research acceleration: The view inside OpenAI",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/research-acceleration-view-inside-openai",
+      "date": "2026-09-06",
+      "summary": "",
+      "tldr": "Research acceleration: The view inside OpenAI",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-07T13:57:27.580Z"
+    },
+    {
+      "id": "fl9hcv",
+      "title": "WearableQA: A Benchmark for Health Reasoning over Real-World Wearable Data",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05405v1",
+      "date": "2026-09-04",
+      "summary": "Recent advances in wearable sensing enable continuous monitoring of physiological and behavioral signals, yet existing benchmarks rarely evaluate whether AI systems can reason over a real user's longitudinal wearable rec…",
+      "tldr": "Recent advances in wearable sensing enable continuous monitoring of physiological and beha…",
+      "maturity": "proposed",
+      "tags": [
+        "推理",
+        "评测"
+      ],
+      "addedAt": "2026-09-07T13:57:43.912Z"
+    },
+    {
+      "id": "fl9gm6",
+      "title": "Diffusion TV: Experiencing Diffusion Models through Tangible, Embodied Interaction",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05404v1",
+      "date": "2026-09-04",
+      "summary": "Diffusion TV is an interactive AI art installation that offers a tangible and embodied experience of diffusion models through a modified CRT TV. By physically manipulating the TV's antenna, audiences control the clarity …",
+      "tldr": "Diffusion TV is an interactive AI art installation that offers a tangible and embodied exp…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-07T13:57:43.912Z"
+    },
+    {
+      "id": "fl9fvh",
+      "title": "RegionFed: Federated Learning for Personalized Query Understanding in Heterogeneous Retail Environments",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05403v1",
+      "date": "2026-09-04",
+      "summary": "Retail search systems serve diverse geographic regions with distinct query patterns, vocabularies, and product preferences, creating significant data heterogeneity that challenges both privacy-preserving training and mod…",
+      "tldr": "Retail search systems serve diverse geographic regions with distinct query patterns, vocab…",
+      "maturity": "proposed",
+      "tags": [
+        "Graph"
+      ],
+      "addedAt": "2026-09-07T13:57:43.913Z"
+    },
+    {
+      "id": "fl9ee3",
+      "title": "Same Trajectory, Contradictory Rewards (ROBORMBENCH): Paraphrase Fragility in Vision Language Reward Models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05401v1",
+      "date": "2026-09-04",
+      "summary": "Vision-language models are increasingly used as reward functions for robotic learning, but this role requires paraphrase invariance: the same trajectory should receive the same reward under semantically equivalent goal d…",
+      "tldr": "Vision-language models are increasingly used as reward functions for robotic learning, but…",
+      "maturity": "proposed",
+      "tags": [
+        "多模态"
+      ],
+      "addedAt": "2026-09-07T13:57:43.913Z"
+    },
+    {
+      "id": "fkvgdy",
+      "title": "A Deep Generative Model for Synthesizing Labeled Wireless Signals",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05396v1",
+      "date": "2026-09-04",
+      "summary": "Wireless signals with position-related labels are pivotal for both performance evaluation and model training in the realm of wireless sensing. However, acquiring real-world datasets is often challenged by significant mea…",
+      "tldr": "Wireless signals with position-related labels are pivotal for both performance evaluation…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-07T13:57:43.913Z"
+    },
+    {
+      "id": "fkvfn9",
+      "title": "Multi-Step Tool-Calling over Korean Open Public APIs: A Benchmark and a Data-Synthesis Recipe",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05395v1",
+      "date": "2026-09-04",
+      "summary": "Data-sovereignty regulations increasingly require public institutions to deploy open-source, on-premise LLM agents that chain multiple tool-calls across live government APIs. However, open-source models consistently unde…",
+      "tldr": "Data-sovereignty regulations increasingly require public institutions to deploy open-sourc…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "评测"
+      ],
+      "addedAt": "2026-09-07T13:57:43.913Z"
+    },
+    {
+      "id": "fkusnq",
+      "title": "Necessary or Sufficient? Evaluating LLM Explanations With Behavioural Evidence",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05385v1",
+      "date": "2026-09-04",
+      "summary": "LLM decision components that can operate within agent workflows often produce action-relevant recommendations or judgements together with explanations. Operators may use the named factors to monitor a system, diagnose er…",
+      "tldr": "LLM decision components that can operate within agent workflows often produce action-relev…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-07T13:57:43.913Z"
+    },
+    {
+      "id": "fkuqfn",
+      "title": "Reflection-aware Generative Novel View Synthesis",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05382v1",
+      "date": "2026-09-04",
+      "summary": "We propose Ref-GeNVS, a training-free, reflection-aware method for generative novel view synthesis (NVS) in mirror scenes. Existing multi-view diffusion models often fail to recognize the mirror in the scene and cannot e…",
+      "tldr": "We propose Ref-GeNVS, a training-free, reflection-aware method for generative novel view s…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-07T13:57:43.913Z"
+    },
+    {
+      "id": "fkupoy",
+      "title": "Molecular Déjà Vu: Digit-Level Retrieval of Published Values in Frontier Language Models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05381v1",
+      "date": "2026-09-04",
+      "summary": "Large language models (LLMs) are increasingly evaluated on molecular property benchmarks, but accuracy cannot distinguish a model that predicts a property from one that retrieves a published number. We audit 22 frontier …",
+      "tldr": "Large language models (LLMs) are increasingly evaluated on molecular property benchmarks,…",
+      "maturity": "proposed",
+      "tags": [
+        "评测"
+      ],
+      "addedAt": "2026-09-07T13:57:43.913Z"
+    },
+    {
+      "id": "fku6ew",
+      "title": "What Matters, When? Diagnosing and Improving Conditional Visual Grounding in Visuomotor Imitation Policies",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05376v1",
+      "date": "2026-09-04",
+      "summary": "Visuomotor imitation policies can achieve high performance under in-distribution visual conditions yet fail when visually similar objects or receptacles are introduced. We study this behavior as a problem of conditional …",
+      "tldr": "Visuomotor imitation policies can achieve high performance under in-distribution visual co…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-07T13:57:43.913Z"
+    },
+    {
+      "id": "fku4xi",
+      "title": "CUA-Universe: A Scalable and Dynamic Environment for Hybrid GUI+CLI Agents",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05374v1",
+      "date": "2026-09-04",
+      "summary": "Computer-use agents have advanced on benchmarks like OSWorld and AndroidWorld, but still act mostly through the GUI, often producing inefficient trajectories. Real-world computer work is hybrid, combining visual-state in…",
+      "tldr": "Computer-use agents have advanced on benchmarks like OSWorld and AndroidWorld, but still a…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "评测"
+      ],
+      "addedAt": "2026-09-07T13:57:43.913Z"
+    },
+    {
+      "id": "fku1yq",
+      "title": "When LLM Decompilers Recompile More and Preserve Less",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05370v1",
+      "date": "2026-09-04",
+      "summary": "Decompilation recovers high-level source from compiled machine code and serves as a foundation for security tasks such as vulnerability detection and malware analysis. Traditional decompilers like Ghidra and Hex-Rays exp…",
+      "tldr": "Decompilation recovers high-level source from compiled machine code and serves as a founda…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-07T13:57:43.913Z"
+    },
+    {
+      "id": "fkthxz",
+      "title": "Design Docs Are All You Need: An AI-native Machine-Learning Performance Tool",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05364v1",
+      "date": "2026-09-04",
+      "summary": "Machine-learning performance modeling is a uniquely hostile terrain for long-lived software: the assumptions baked into today's abstractions are invalidated by tomorrow's models and systems, forcing perpetual refactoring…",
+      "tldr": "Machine-learning performance modeling is a uniquely hostile terrain for long-lived softwar…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-07T13:57:43.913Z"
+    },
+    {
+      "id": "fks9gb",
+      "title": "Who Should Grade My Work? Student Perspectives on Transparent AI-Assisted Writing Assessment in Higher Education",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05346v1",
+      "date": "2026-09-04",
+      "summary": "The integration of GenAI tools into higher education assessment raises important questions about how students understand, interpret, and respond to AI-mediated evaluation. As instructors increasingly explore AI tools for…",
+      "tldr": "The integration of GenAI tools into higher education assessment raises important questions…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-07T13:57:43.913Z"
+    },
+    {
+      "id": "fkroov",
+      "title": "Does Your Agent's Memory Survive a Model Upgrade? A Controlled Study of Memory Portability",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05339v1",
+      "date": "2026-09-04",
+      "summary": "Model upgrades are routine; memory migrations are not. An agent can keep the same memory store and still forget: a new model may interpret old notes differently, mixed embedding versions may break retrieval, and repair m…",
+      "tldr": "Model upgrades are routine; memory migrations are not. An agent can keep the same memory s…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-07T13:57:43.913Z"
+    },
+    {
+      "id": "fkrlq3",
+      "title": "The History Is the Detector: Executing CVE Patch History, End-to-End",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05335v1",
+      "date": "2026-09-04",
+      "summary": "Public vulnerability databases collect rich information about known software flaws, including their weakness types, affected components, and related patches. Fixing commits provide the exact code changes that removed the…",
+      "tldr": "Public vulnerability databases collect rich information about known software flaws, includ…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-07T13:57:43.913Z"
+    },
+    {
+      "id": "fkrkze",
+      "title": "Lightweight Vision Transformer Compression for On-Device Plant Disease Detection in Resource-Constrained Agricultural Field Conditions",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05334v1",
+      "date": "2026-09-04",
+      "summary": "Chilli (Capsicum annuum) is one of India's most economically significant crops, yet its productivity is persistently threatened by diseases that are difficult to identify without expert intervention. While Vision Transfo…",
+      "tldr": "Chilli (Capsicum annuum) is one of India's most economically significant crops, yet its pr…",
+      "maturity": "proposed",
+      "tags": [
+        "多模态"
+      ],
+      "addedAt": "2026-09-07T13:57:43.913Z"
+    },
+    {
+      "id": "fkrk8p",
+      "title": "Technical Manual for a Toolkit for Measuring Contextual Individuation in Transformer Language Models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05333v1",
+      "date": "2026-09-04",
+      "summary": "A transformer language model assigns a single, context-independent vector to a word type at its embedding layer, yet is widely believed to individuate that word's occurrences by context in its later layers. Testing this …",
+      "tldr": "A transformer language model assigns a single, context-independent vector to a word type a…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-07T13:57:43.913Z"
+    },
+    {
+      "id": "fkr07y",
+      "title": "LLM-Driven Algorithm Design for Quantum Circuit Synthesis based on Binary Decision Diagrams",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05327v1",
+      "date": "2026-09-04",
+      "summary": "Quantum circuits are central to implementing quantum algorithms on quantum devices, where quantum gates must be reversible. Many quantum algorithms rely on Boolean functions, which must therefore be implemented reversibl…",
+      "tldr": "Quantum circuits are central to implementing quantum algorithms on quantum devices, where…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-07T13:57:43.913Z"
+    },
+    {
+      "id": "fkqxzv",
+      "title": "RoboSPA: Can VLA Models Go Beyond Simple Scenes and Short-Horizon Tasks?",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.05324v1",
+      "date": "2026-09-04",
+      "summary": "Vision-Language-Action (VLA) models have shown promising progress in language-conditioned robotic manipulation. However, existing datasets and benchmarks mainly evaluate task completion under predefined settings, offerin…",
+      "tldr": "Vision-Language-Action (VLA) models have shown promising progress in language-conditioned…",
+      "maturity": "proposed",
+      "tags": [
+        "评测",
+        "多模态"
+      ],
+      "addedAt": "2026-09-07T13:57:43.913Z"
+    },
     {
       "id": "vcouju",
       "title": "Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps",
