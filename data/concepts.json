@@ -1,9 +1,84 @@
 {
-  "updatedAt": "2026-09-07T13:57:43.918Z",
-  "version": 20,
+  "updatedAt": "2026-09-08T12:36:43.833Z",
+  "version": 21,
   "sourceCount": 6,
-  "conceptCount": 391,
+  "conceptCount": 396,
   "concepts": [
+    {
+      "id": "1m3mgw9",
+      "title": "Detecting and preventing distillation attacks",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks",
+      "date": "2026-09-08",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Object%20Lock&amp;backgroundColor=fig",
+      "tldr": "Anthropic is an AI safety and research company that's working to build reliable, interpret…",
+      "maturity": "emerging",
+      "tags": [
+        "安全"
+      ],
+      "addedAt": "2026-09-08T12:36:31.484Z"
+    },
+    {
+      "id": "2jtjh9",
+      "title": "What we learned mapping a year’s worth of AI-enabled cyber threats",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack",
+      "date": "2026-09-08",
+      "summary": "As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.",
+      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Object-LaptopSecure&amp;backgroundColor=cactus",
+      "tldr": "As AI transforms the nature of and methods behind cyberattacks, how well do the techniques…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-08T12:36:31.849Z"
+    },
+    {
+      "id": "48olu9",
+      "title": "Detecting and countering malicious uses of Claude",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/detecting-and-countering-malicious-uses-of-claude-march-2025",
+      "date": "2026-09-08",
+      "summary": "Detecting and Countering Malicious Uses of Claude",
+      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Object%20CodeMagnifier&amp;backgroundColor=sky",
+      "tldr": "Detecting and Countering Malicious Uses of Claude",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-08T12:36:32.204Z"
+    },
+    {
+      "id": "1y9rjri",
+      "title": "Disrupting the first reported AI-orchestrated cyber espionage campaign",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/disrupting-AI-espionage",
+      "date": "2026-09-08",
+      "summary": "A report describing an a highly sophisticated AI-led cyberattack",
+      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Object%20Lock&amp;backgroundColor=fig",
+      "tldr": "A report describing an a highly sophisticated AI-led cyberattack",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-08T12:36:32.588Z"
+    },
+    {
+      "id": "oajllx",
+      "title": "Detecting and countering misuse of AI: August 2025",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025",
+      "date": "2026-09-08",
+      "summary": "Anthropic's threat intelligence report on AI cybercrime and other abuses",
+      "cover": "https://cdn.sanity.io/images/4zrzovbb/website/faffa5377164658980f804e5bee648fe07370268-2401x1261.png",
+      "tldr": "Anthropic's threat intelligence report on AI cybercrime and other abuses",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-08T12:36:33.031Z"
+    },
     {
       "id": "101ndwf",
       "title": "Supporting independent journalism in Ukraine",
@@ -1161,8 +1236,8 @@
       "source": "OpenAI",
       "url": "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources",
       "date": "2026-09-01",
-      "summary": "",
-      "tldr": "Healthcare organizations can now connect EHR and additional industry data to Cha…",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60\">ResearchProductsBusinessDevelopersCompanyFoundation(opens in a new window)Log inTry ChatGPT(opens in a new window)ResearchProductsBusinessDevelopersCompany…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60\">ResearchProductsBusinessDevelopersCompanyFoun…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -1175,8 +1250,8 @@
       "source": "OpenAI",
       "url": "https://openai.com/index/gilbert-tobin",
       "date": "2026-09-01",
-      "summary": "",
-      "tldr": "How law firm Gilbert + Tobin governs and scales AI with OpenAI",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60\">ResearchProductsBusinessDevelopersCompanyFoundation(opens in a new window)Log inTry ChatGPT(opens in a new window)ResearchProductsBusinessDevelopersCompany…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60\">ResearchProductsBusinessDevelopersCompanyFoun…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -1572,8 +1647,8 @@
       "source": "OpenAI",
       "url": "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety",
       "date": "2026-08-31",
-      "summary": "",
-      "tldr": "OpenAI supports California’s bill to advance youth AI safety",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60\">ResearchProductsBusinessDevelopersCompanyFoundation(opens in a new window)Log inTry ChatGPT(opens in a new window)ResearchProductsBusinessDevelopersCompany…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60\">ResearchProductsBusinessDevelopersCompanyFoun…",
       "maturity": "emerging",
       "tags": [
         "安全"
@@ -1586,8 +1661,8 @@
       "source": "OpenAI",
       "url": "https://openai.com/index/polimill",
       "date": "2026-08-31",
-      "summary": "",
-      "tldr": "Polimill builds Japan's next-generation public AI infrastructure",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60\">ResearchProductsBusinessDevelopersCompanyFoundation(opens in a new window)Log inTry ChatGPT(opens in a new window)ResearchProductsBusinessDevelopersCompany…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60\">ResearchProductsBusinessDevelopersCompanyFoun…",
       "maturity": "emerging",
       "tags": [
         "前沿"
