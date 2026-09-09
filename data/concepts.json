@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-08T12:36:43.833Z",
-  "version": 21,
+  "updatedAt": "2026-09-09T12:43:19.466Z",
+  "version": 22,
   "sourceCount": 6,
-  "conceptCount": 396,
+  "conceptCount": 400,
   "concepts": [
     {
       "id": "1m3mgw9",
@@ -78,6 +78,416 @@
         "前沿"
       ],
       "addedAt": "2026-09-08T12:36:33.031Z"
+    },
+    {
+      "id": "134tjxt",
+      "title": "How GPT-5.6 Sol helps run quantum computing experiments",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/codex-quantum-computing-experiments",
+      "date": "2026-09-08",
+      "summary": "",
+      "tldr": "How GPT-5.6 Sol helps run quantum computing experiments",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-09T12:43:02.570Z"
+    },
+    {
+      "id": "16ehg9c",
+      "title": "The Work Now Within Reach",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/the-work-now-within-reach",
+      "date": "2026-09-08",
+      "summary": "",
+      "tldr": "The Work Now Within Reach",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-09T12:43:02.796Z"
+    },
+    {
+      "id": "1duz7rc",
+      "title": "Introducing ChatGPT Images 2.5",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/introducing-chatgpt-images-2-5",
+      "date": "2026-09-08",
+      "summary": "",
+      "tldr": "Introducing ChatGPT Images 2.5",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-09T12:43:03.034Z"
+    },
+    {
+      "id": "pm8yzd",
+      "title": "On the Navier–Stokes Millennium Prize Problem",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/navier-stokes-solution",
+      "date": "2026-09-08",
+      "summary": "",
+      "tldr": "On the Navier–Stokes Millennium Prize Problem",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-09T12:43:03.272Z"
+    },
+    {
+      "id": "1i85nzw",
+      "title": "Funding grants for new research into AI and teen development",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/teen-development-research-grants",
+      "date": "2026-09-08",
+      "summary": "",
+      "tldr": "Funding grants for new research into AI and teen development",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-09T12:43:03.506Z"
+    },
+    {
+      "id": "1bt4h5o",
+      "title": "OpenAI expands initiatives to support journalism from classrooms to newsrooms",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/supporting-journalism-from-classrooms-to-newsrooms",
+      "date": "2026-09-08",
+      "summary": "",
+      "tldr": "OpenAI expands initiatives to support journalism from classrooms to newsrooms",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-09T12:43:03.727Z"
+    },
+    {
+      "id": "1hbvej8",
+      "title": "1Password increases engineering productivity 21% with Codex",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/1password",
+      "date": "2026-09-08",
+      "summary": "",
+      "tldr": "1Password increases engineering productivity 21% with Codex",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-09T12:43:03.962Z"
+    },
+    {
+      "id": "skramt",
+      "title": "AlphaGenome Atlas: A predictive map of every possible DNA letter change in the human genome",
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
+      "date": "2026-09-08",
+      "summary": "AlphaGenome Atlas maps the molecular effects of 9 billion single-letter DNA variants across the human genome.",
+      "cover": "https://lh3.googleusercontent.com/vOjFcTcdX2GCEB9yk-tJ7GAfyhTAMo-zW7scq3TrT9qk1mYw5qE0BdUqI8XQclMuUchZr7pYUFdVt3ZzrXc1NGFFJOqi7kIUX_QuAXZR7lkVzxjk=w528-h297-n-nu-rw-lo",
+      "tldr": "AlphaGenome Atlas maps the molecular effects of 9 billion single-letter DNA variants acros…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-09T12:43:11.998Z"
+    },
+    {
+      "id": "7x4yx3",
+      "title": "Safety for Whom? Refusing the Right Subset of a Topic, Not the Whole Topic",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/MultiverseComputingCAI/safety-for-whom",
+      "date": "2026-09-08",
+      "summary": "Real deployments rarely fit the topic-level picture. The same base model may be adapted for a general assistant, an educational product, an enterprise system, or a public-sector service, and each sett…",
+      "tldr": "Real deployments rarely fit the topic-level picture. The same base model may be adapted fo…",
+      "maturity": "emerging",
+      "tags": [
+        "安全"
+      ],
+      "addedAt": "2026-09-09T12:43:16.082Z"
+    },
+    {
+      "id": "hfvuba",
+      "title": "TANGO: Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09158v1",
+      "date": "2026-09-08",
+      "summary": "We study the problem of navigating cluttered indoor environments with a humanoid robot. Unlike conventional methods that model navigation as a 2D path planning problem, humanoid traversal in cluttered environments requir…",
+      "tldr": "We study the problem of navigating cluttered indoor environments with a humanoid robot. Un…",
+      "maturity": "proposed",
+      "tags": [
+        "多模态"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
+    },
+    {
+      "id": "hfvtkl",
+      "title": "Learning Length-Extrapolatable Recurrent Models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09157v1",
+      "date": "2026-09-08",
+      "summary": "Recurrent models provide a natural path to long-context modeling, yet models trained with backpropagation through time (BPTT) often fail beyond their training horizon. Classical analyses emphasize gradients that vanish o…",
+      "tldr": "Recurrent models provide a natural path to long-context modeling, yet models trained with…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
+    },
+    {
+      "id": "hfvstw",
+      "title": "ReCite: Agentic Reasoning for Faithful Citation",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09156v1",
+      "date": "2026-09-08",
+      "summary": "Accurate citations are the foundation of academic writing, tracing intellectual origins and substantiating core claims. However, manually navigating the growing volume of scientific literature is increasingly difficult, …",
+      "tldr": "Accurate citations are the foundation of academic writing, tracing intellectual origins an…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "推理"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
+    },
+    {
+      "id": "hfvqlt",
+      "title": "Procedural Graphs: Self-Evolving Execution Structures for LLM Agents",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09153v1",
+      "date": "2026-09-08",
+      "summary": "Large language models are increasingly deployed as agents that plan over long horizons and act through external tools. Most agents select actions through unconstrained generation over an accumulating history, leaving imp…",
+      "tldr": "Large language models are increasingly deployed as agents that plan over long horizons and…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Graph"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
+    },
+    {
+      "id": "hfvodq",
+      "title": "Copying explains the collective behavior of AI agents in the wild",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09150v1",
+      "date": "2026-09-08",
+      "summary": "In June 2026, thousands of AI agents found that a small public wiki would accept edits from inside their sandboxes, and started using it to help one another pass a timed test. Each agent lived for about an hour and remem…",
+      "tldr": "In June 2026, thousands of AI agents found that a small public wiki would accept edits fro…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
+    },
+    {
+      "id": "hfv3ma",
+      "title": "Studying Image Tokenizers as Visual Languages in Unified Multimodal Models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09143v1",
+      "date": "2026-09-08",
+      "summary": "Image tokenizers define the ``visual language'' of unified multimodal models, yet are commonly studied through isolated metrics or generation-/understanding-only evaluations. These evaluations do not fully capture how vi…",
+      "tldr": "Image tokenizers define the ``visual language'' of unified multimodal models, yet are comm…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
+    },
+    {
+      "id": "hfv1e7",
+      "title": "NOAH: Learning the Full Patient Journey. A Longitudinal Multimodal Time-Aware Model for Representation and Forecasting",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09140v1",
+      "date": "2026-09-08",
+      "summary": "The digitization of healthcare has generated vast, longitudinal, and multimodal patient records over a lifetime, yet fully exploiting these data to represent and predict patient state trajectories remains a critical chal…",
+      "tldr": "The digitization of healthcare has generated vast, longitudinal, and multimodal patient re…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
+    },
+    {
+      "id": "hfujlj",
+      "title": "A Data-Driven Framework for Identifying and Prioritizing RPA Opportunities in Healthcare Processes",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09137v1",
+      "date": "2026-09-08",
+      "summary": "Robotic Process Automation (RPA) is widely used to reduce administrative burden in United States hospitals, yet an estimated 30-50% of RPA initiatives underperform because processes are selected informally, without a rep…",
+      "tldr": "Robotic Process Automation (RPA) is widely used to reduce administrative burden in United…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
+    },
+    {
+      "id": "hfui45",
+      "title": "Entropy-Regularized Rank-Masked Policy Optimization for Test-Time Reinforcement Learning in Code Generation",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09135v1",
+      "date": "2026-09-08",
+      "summary": "Existing methods for test-time reinforcement learning (TTRL) derive rewards from answer-level self-voting on unlabeled test-time tasks with canonical answers, but this breaks down for code generation because programs can…",
+      "tldr": "Existing methods for test-time reinforcement learning (TTRL) derive rewards from answer-le…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
+    },
+    {
+      "id": "hfuhdg",
+      "title": "Co-Evolving Harnesses and Models: On-Policy Correction Helps Weaker Models Catch Up Where Imitation Fails",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09134v1",
+      "date": "2026-09-08",
+      "summary": "Agent harnesses (the system prompt, tool set, execution hooks, and context-management scaffolding around a model) are a critical determinant of agentic task success. Automated harness evolution can enable smaller models …",
+      "tldr": "Agent harnesses (the system prompt, tool set, execution hooks, and context-management scaf…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Harness"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
+    },
+    {
+      "id": "hfugmr",
+      "title": "ExecCritic: Learn to Test, Test to Improve for Coding Agents",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09133v1",
+      "date": "2026-09-08",
+      "summary": "Execution feedback can guide coding agents toward correct repository repairs, but only when the tests capture the behavior requested by the issue. Agent-generated tests can encode incomplete or incorrect behavioral targe…",
+      "tldr": "Execution feedback can guide coding agents toward correct repository repairs, but only whe…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
+    },
+    {
+      "id": "hftvvb",
+      "title": "A Generalization of Amari's Bayesian Duality",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09126v1",
+      "date": "2026-09-08",
+      "summary": "Amari's contributions to information geometry and machine learning are well known. Here, we revisit Amari's work on Bayesian duality which has not received as much attention. We connect Amari's Bayesian duality to a conv…",
+      "tldr": "Amari's contributions to information geometry and machine learning are well known. Here, w…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
+    },
+    {
+      "id": "hftudx",
+      "title": "Canonical Color as a Lens into Concept Decodability in Vision Encoders and VLMs",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09124v1",
+      "date": "2026-09-08",
+      "summary": "Visual encoders construct a representation of the image input for Vision-Language models. How much conceptual, as opposed to immediately visible, information does this representation contain? We use canonical color as a …",
+      "tldr": "Visual encoders construct a representation of the image input for Vision-Language models.…",
+      "maturity": "proposed",
+      "tags": [
+        "多模态"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
+    },
+    {
+      "id": "hftb3v",
+      "title": "DeCAL: Towards Physically-Grounded Dexterous Vision-Language-Action Models via Contact-Aware Latent Co-Imagination",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09119v1",
+      "date": "2026-09-08",
+      "summary": "Dexterous manipulation involves contact-rich and fine-grained interactions with the physical world, posing significant challenges for existing vision-language-action (VLA) models due to severe visual occlusions and compl…",
+      "tldr": "Dexterous manipulation involves contact-rich and fine-grained interactions with the physic…",
+      "maturity": "proposed",
+      "tags": [
+        "多模态"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
+    },
+    {
+      "id": "hft853",
+      "title": "MeClear: Cooperative Game-Theoretic Attribution and Risk-Aware Memory Clearance for Long-Horizon LLM Agents",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09115v1",
+      "date": "2026-09-08",
+      "summary": "Long horizon Large Language Model (LLM) agents rely on external memory systems to preserve user preferences and task knowledge across extended interactions. Conventional retrieval mechanisms optimize semantic compatibili…",
+      "tldr": "Long horizon Large Language Model (LLM) agents rely on external memory systems to preserve…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
+    },
+    {
+      "id": "hft6np",
+      "title": "SAEScientist-Bench: Can AI Agents Conduct Autonomous SAE Interpretability Research?",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09113v1",
+      "date": "2026-09-08",
+      "summary": "While research on recursive self-improvement (RSI) has predominantly automated model training pipelines, reliable autonomous development demands a missing pillar: post-hoc monitoring and auditing to understand what model…",
+      "tldr": "While research on recursive self-improvement (RSI) has predominantly automated model train…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
+    },
+    {
+      "id": "hfeip9",
+      "title": "The Surprising Effectiveness of Approximate Value Iteration in Self-Play",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09094v1",
+      "date": "2026-09-08",
+      "summary": "Combining search with function approximation has driven major advances in game-playing programs, making self-play algorithms more competitive than ever. Still, the computational overhead of the most popular methods, base…",
+      "tldr": "Combining search with function approximation has driven major advances in game-playing pro…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
+    },
+    {
+      "id": "hfefqh",
+      "title": "Measuring LLM Sycophancy under Sustained Multi-Turn Pressure",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09090v1",
+      "date": "2026-09-08",
+      "summary": "Large language models (LLMs) may abandon correct positions when users push back, exhibiting a failure mode known as sycophancy. Existing evaluations typically use short, pre-specified conversations and may therefore miss…",
+      "tldr": "Large language models (LLMs) may abandon correct positions when users push back, exhibitin…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
+    },
+    {
+      "id": "hfdwgf",
+      "title": "It's Not RoPE that Creates Sinks: The Role of Self-Concentration and Value-Non-Mixing in Attention",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09085v1",
+      "date": "2026-09-08",
+      "summary": "Large Language Models (LLMs) often exhibit \"Attention Sink\" (AS) and the accompanying \"Massive Activations\" (MAs) at the initial position of a sequence. These phenomena frequently co-occur, and MAs can pose challenges fo…",
+      "tldr": "Large Language Models (LLMs) often exhibit \"Attention Sink\" (AS) and the accompanying \"Mas…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
+    },
+    {
+      "id": "hfdu8c",
+      "title": "GoDeep: Annotation-Free Open-Vocabulary 3D Scene Understanding via Language-Space Lifting",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.09082v1",
+      "date": "2026-09-08",
+      "summary": "Open vocabulary 3D semantic segmentation methods typically lift CLIP features into 3D. This embeds points in a joint vision-language space known to behave like a bag-of-words on compositional tasks. Furthermore, even ann…",
+      "tldr": "Open vocabulary 3D semantic segmentation methods typically lift CLIP features into 3D. Thi…",
+      "maturity": "proposed",
+      "tags": [
+        "多模态"
+      ],
+      "addedAt": "2026-09-09T12:43:19.461Z"
     },
     {
       "id": "101ndwf",
@@ -5317,365 +5727,6 @@
       "addedAt": "2026-08-26T10:20:33.862Z",
       "cover": "https://cdn.sanity.io/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "tldr": "Anthropic is an AI safety and research company that's working to build reliable, interpret…"
-    },
-    {
-      "id": "5xeta",
-      "title": "Inside our 353,000-person vibe coding course",
-      "source": "Google AI Blog",
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/ai-agents-intensive-recap-2026/",
-      "date": "2026-08-03",
-      "summary": "Kaggle’s AI Agents Intensive with Google brought learners together in a no-cost course to build and deploy the next frontier of AI.",
-      "maturity": "emerging",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-08-22T14:39:42.173Z",
-      "tldr": "Kaggle’s AI Agents Intensive with Google brought learners together in a no-cost course to…"
-    },
-    {
-      "id": "1pnvaen",
-      "title": "Introducing Claude for Nonprofits",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/claude-for-nonprofits",
-      "date": "2026-08-03",
-      "summary": "Anthropic launches Claude for Nonprofits to help organizations maximize their impact, featuring free AI training and discounted rates for nonprofits.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T10:20:34.216Z",
-      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20NodeGlobe&amp;backgroundColor=clay",
-      "tldr": "Anthropic launches Claude for Nonprofits to help organizations maximize their impact, feat…"
-    },
-    {
-      "id": "u5kvts",
-      "title": "Investigating three real-world incidents in our cybersecurity evaluations",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
-      "date": "2026-08-03",
-      "summary": "In a review of our cybersecurity evaluation transcripts, we found three incidents in which a Claude model reached the internet from within or while interacting with a third-party evaluation environment, and then gained u…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T10:20:34.582Z",
-      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20Lock&amp;backgroundColor=heather",
-      "tldr": "In a review of our cybersecurity evaluation transcripts, we found three incidents in which…"
-    },
-    {
-      "id": "1xbwtec",
-      "title": "Gemini Robotics ER 2: powering robotics with video understanding, task orchestration, and multi-robot collaboration",
-      "source": "Google DeepMind",
-      "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/",
-      "date": "2026-07-30",
-      "summary": "Gemini Robotics ER 2 helps robots reason, collaborate, and solve real-world tasks. It represents a step change in video understanding, tool orchestration, and multi-robot collaboration for robotic applications.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-22T14:38:44.074Z",
-      "tldr": "Gemini Robotics ER 2 helps robots reason, collaborate, and solve real-world tasks. It repr…"
-    },
-    {
-      "id": "s9um3g",
-      "title": "GPU Management: Why Idle GPUs Are the New Grounded Aircraft",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/Dharma-AI/gpu-management",
-      "date": "2026-07-30",
-      "summary": "",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-22T14:39:42.621Z",
-      "tldr": "GPU Management: Why Idle GPUs Are the New Grounded Aircraft"
-    },
-    {
-      "id": "twyv5o",
-      "title": "We’re launching Lyria 3.5 in Google Flow Music, with advances across musicality, lyrics, vocals, and creative control",
-      "source": "Google DeepMind",
-      "url": "https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control/",
-      "date": "2026-07-29",
-      "summary": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --btn-bg-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --card-draw-percent{inherits:fa…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-22T14:38:44.074Z",
-      "tldr": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@proper…"
-    },
-    {
-      "id": "1gywwsg",
-      "title": "Gemini Robotics 2 brings whole body intelligence to robots",
-      "source": "Google DeepMind",
-      "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
-      "date": "2026-07-28",
-      "summary": ".g-blue { fill: var(--g-logo-blue); } .g-red { fill: var(--g-logo-red); } .g-yellow { fill: var(--g-logo-yellow); } .g-green { fill: var(--g-logo-green); } Explore our next generation AI systems Explo…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-22T14:38:44.074Z",
-      "cover": "https://lh3.googleusercontent.com/VZ5KwQMxv9xBcQnYipsQB2EUj3oX1yvFYLktIamY8V2a76Y6ctEEuaLF59TuPdnaVn6OAMINDilqnuhju1O-AXc7QlOVmcogjskrWxS7xVQ1mc5S7g=w528-h297-n-nu-rw-lo",
-      "tldr": ".g-blue { fill: var(--g-logo-blue); } .g-red { fill: var(--g-logo-red); } .g-yellow { fill…"
-    },
-    {
-      "id": "um3nfn",
-      "title": "Gemini API Managed Agents: 3.6 Flash, hooks, and more",
-      "source": "Google AI Blog",
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/",
-      "date": "2026-07-28",
-      "summary": "We’re announcing even more new capabilities in Managed Agents in Gemini API so developers can build reliable, production-ready agents.",
-      "maturity": "emerging",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-08-22T14:39:42.173Z",
-      "tldr": "We’re announcing even more new capabilities in Managed Agents in Gemini API so developers…"
-    },
-    {
-      "id": "162lptv",
-      "title": "5 ways AI Mode in Search helps you enjoy the real world",
-      "source": "Google AI Blog",
-      "url": "https://blog.google/products-and-platforms/products/search/ai-mode-real-world-tips/",
-      "date": "2026-07-28",
-      "summary": "It might sound counterintuitive, but Search's AI tools can actually help you make the most of your time offline whether you want to book concert tickets or find the perf…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-22T14:39:42.173Z",
-      "tldr": "It might sound counterintuitive, but Search's AI tools can actually help you make the most…"
-    },
-    {
-      "id": "1pxz91v",
-      "title": "5 ways to host the ultimate dinner party with Google Search",
-      "source": "Google AI Blog",
-      "url": "https://blog.google/products-and-platforms/products/search/dinner-party-hosting-tips/",
-      "date": "2026-07-28",
-      "summary": "These AI features can help you craft a menu, design a tablescape, and handle other party-planning tasks.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-22T14:39:42.173Z",
-      "tldr": "These AI features can help you craft a menu, design a tablescape, and handle other party-p…"
-    },
-    {
-      "id": "1uvzcgx",
-      "title": "Our position on open-weights models",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/position-open-weights-models",
-      "date": "2026-07-28",
-      "summary": "Anthropic CEO Dario Amodei on open-weights models",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T10:20:34.986Z",
-      "cover": "https://cdn.sanity.io/images/4zrzovbb/website/62993bb857986e2808c2a75024f384e7b85312b6-2400x1254.png",
-      "tldr": "Anthropic CEO Dario Amodei on open-weights models"
-    },
-    {
-      "id": "9wtskc",
-      "title": "Expanding our partnership with Cognizant | Anthropic",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/cognizant-anthropic",
-      "date": "2026-07-27",
-      "summary": "Cognizant embeds Claude across its platforms, with 30,000+ associates trained, and becomes a Global Premier Partner in the Claude Partner Network.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T10:20:35.360Z",
-      "cover": "https://cdn.sanity.io/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
-      "tldr": "Cognizant embeds Claude across its platforms, with 30,000+ associates trained, and becomes…"
-    },
-    {
-      "id": "9lkl3q",
-      "title": "Accelerating the frontiers of scientific discovery: Google’s $40M commitment to the Genesis Mission",
-      "source": "Google DeepMind",
-      "url": "https://deepmind.google/blog/accelerating-the-frontiers-of-scientific-discovery-googles-40m-commitment-to-the-genesis-mission/",
-      "date": "2026-07-22",
-      "summary": "Google commits $40M in AI tokens and credits for the Genesis Mission",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-22T14:38:44.074Z",
-      "tldr": "Google commits $40M in AI tokens and credits for the Genesis Mission"
-    },
-    {
-      "id": "1ydlqkq",
-      "title": "3 Google updates from Galaxy Unpacked 2026",
-      "source": "Google AI Blog",
-      "url": "https://blog.google/products-and-platforms/platforms/android/galaxy-unpacked-2026/",
-      "date": "2026-07-22",
-      "summary": "We shared how Samsung users can boost productivity and get time back on new foldables, watches, and glasses coming soon.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-22T14:39:42.173Z",
-      "tldr": "We shared how Samsung users can boost productivity and get time back on new foldables, wat…"
-    },
-    {
-      "id": "ydxqem",
-      "title": "Introducing Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber",
-      "source": "Google DeepMind",
-      "url": "https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber/",
-      "date": "2026-07-21",
-      "summary": "We’re introducing new Gemini models, including Gemini 3.6 Flash, 3.5 Flash-Lite and 3.5 Flash Cyber.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-22T14:38:44.074Z",
-      "tldr": "We’re introducing new Gemini models, including Gemini 3.6 Flash, 3.5 Flash-Lite and 3.5 Fl…"
-    },
-    {
-      "id": "tn8xzo",
-      "title": "Introducing Gemini 3.5 Flash Cyber",
-      "source": "Google DeepMind",
-      "url": "https://deepmind.google/blog/introducing-gemini-3-5-flash-cyber/",
-      "date": "2026-07-17",
-      "summary": "Google introduces Gemini 3.5 Flash Cyber, a lightweight cybersecurity model to find and patch vulnerabilities.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-22T14:38:44.074Z",
-      "cover": "https://lh3.googleusercontent.com/esSD0-kSrZ8K07XxNkSKL3OGlcx1Cf3M-qiQut0q_vArHMiK2L1CpUIGVkjuQrhu_m0g8UMVflVQpDp7VFAJSubDdCjSXsPJPDeK-PUtaPbqA8W1=w528-h297-n-nu-rw-lo",
-      "tldr": "Google introduces Gemini 3.5 Flash Cyber, a lightweight cybersecurity model to find and pa…"
-    },
-    {
-      "id": "19l2uik",
-      "title": "Our approach to bioresilience",
-      "source": "Google DeepMind",
-      "url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
-      "date": "2026-07-16",
-      "summary": "Google DeepMind and Isomorphic Labs are sharing our joint approach to bioresilience and AI models.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-22T14:38:44.074Z",
-      "cover": "https://lh3.googleusercontent.com/ZRyQg91pjea8kXXaGSlnZIJF90-VwnKHSBxo22e2RedCvCCszsurR8W9NHw80e1V6HtWXccbU1MI27Rtjjf963rD673XgkWK7cZe_1ekfruPgdHHVEc=w528-h297-n-nu-rw-lo",
-      "tldr": "Google DeepMind and Isomorphic Labs are sharing our joint approach to bioresilience and AI…"
-    },
-    {
-      "id": "17vso6g",
-      "title": "Connect more of your apps to Search",
-      "source": "Google AI Blog",
-      "url": "https://blog.google/products-and-platforms/products/search/connected-apps/",
-      "date": "2026-07-16",
-      "summary": "You’ll be able to securely link and interact with your go-to services directly in AI Mode.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-22T14:39:42.173Z",
-      "tldr": "You’ll be able to securely link and interact with your go-to services directly in AI Mode."
-    },
-    {
-      "id": "l04qpi",
-      "title": "Create, edit and star in videos with two Google Vids updates",
-      "source": "Google AI Blog",
-      "url": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/",
-      "date": "2026-07-16",
-      "summary": "Gemini Omni and personal avatars in Google Vids make video creation easier than ever.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-22T14:39:42.173Z",
-      "tldr": "Gemini Omni and personal avatars in Google Vids make video creation easier than ever."
-    },
-    {
-      "id": "1yz4737",
-      "title": "Celebrating 25 years of visual search innovation",
-      "source": "Google AI Blog",
-      "url": "https://blog.google/products-and-platforms/products/search/google-images-25th-anniversary/",
-      "date": "2026-07-14",
-      "summary": "Google Images is turning 25. Here’s a look back at some major milestones — and new ways to explore and create visual content.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-22T14:39:42.173Z",
-      "tldr": "Google Images is turning 25. Here’s a look back at some major milestones — and new ways to…"
-    },
-    {
-      "id": "19iqs2g",
-      "title": "Empowering India’s next generation of innovators with ATL Saathi",
-      "source": "Google DeepMind",
-      "url": "https://deepmind.google/blog/empowering-indias-next-generation-of-innovators-with-atl-saathi/",
-      "date": "2026-07-13",
-      "summary": "Google and AIM launched ATL Saathi, a Gemini-powered AI tool empowering Indian educators in robotics labs.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-22T14:38:44.074Z",
-      "cover": "https://lh3.googleusercontent.com/0BYvIo8ObViyRtRGOYajXHdEGUFX6cKMTQ6lxys98kN0sB6H7rrTo1pdW8M4kCUGnBnidJWbIr6VvcxGKDEDD4YxOVqYRlyxj_a48uqNw_AytF7c-A=w528-h297-n-nu-rw-lo",
-      "tldr": "Google and AIM launched ATL Saathi, a Gemini-powered AI tool empowering Indian educators i…"
-    },
-    {
-      "id": "1tf7q6w",
-      "title": "Expanding Managed Agents in Gemini API:  background tasks, remote MCP and more",
-      "source": "Google AI Blog",
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
-      "date": "2026-07-07",
-      "summary": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Managed_agents_feature_bundle_l.max-600x600.format-webp.webp\"&gt;We’re announcing new capabilities in Managed Agents in Gemini API so developer…",
-      "maturity": "emerging",
-      "tags": [
-        "Agent",
-        "MCP"
-      ],
-      "addedAt": "2026-08-22T14:39:42.173Z",
-      "tldr": "We’re announcing new capabilities in Managed Agents in Gemini API so developer…"
-    },
-    {
-      "id": "10b3ggh",
-      "title": "Google DeepMind and A24 announce first-of-its-kind research partnership",
-      "source": "Google DeepMind",
-      "url": "https://deepmind.google/blog/google-deepmind-and-a24-announce-first-of-its-kind-research-partnership/",
-      "date": "2026-07-03",
-      "summary": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --btn-bg-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --card-draw-percent{inherits:fa…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-22T14:38:44.074Z",
-      "tldr": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@proper…"
-    },
-    {
-      "id": "1jum991",
-      "title": "Start building with Nano Banana 2 Lite and Gemini Omni Flash",
-      "source": "Google DeepMind",
-      "url": "https://deepmind.google/blog/start-building-with-nano-banana-2-lite-and-gemini-omni-flash/",
-      "date": "2026-06-30",
-      "summary": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --btn-bg-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --card-draw-percent{inherits:fa…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-22T14:38:44.074Z",
-      "tldr": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@proper…"
-    },
-    {
-      "id": "1jw7d9s",
-      "title": "Introducing computer use in Gemini 3.5 Flash",
-      "source": "Google DeepMind",
-      "url": "https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/",
-      "date": "2026-06-24",
-      "summary": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --btn-bg-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --card-draw-percent{inherits:fa…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-22T14:38:44.074Z",
-      "tldr": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@proper…"
     }
   ]
 }
