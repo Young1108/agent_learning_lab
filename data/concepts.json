@@ -1,9 +1,51 @@
 {
-  "updatedAt": "2026-09-11T12:35:47.403Z",
+  "updatedAt": "2026-09-12T11:57:53.775Z",
   "version": 22,
   "sourceCount": 6,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "1dwx81f",
+      "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
+      "date": "2026-09-14",
+      "summary": "",
+      "tldr": "Perplexity trusts GPT-6 Astra with end-to-end systems",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-12T11:57:33.511Z"
+    },
+    {
+      "id": "153l4k",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
+      "date": "2026-09-11",
+      "summary": "",
+      "tldr": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-12T11:57:33.805Z"
+    },
+    {
+      "id": "1nxl5qt",
+      "title": "Cognition helps Devin test its own work with GPT‑6 Astra",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/cognition-devin-testing-with-astra",
+      "date": "2026-09-11",
+      "summary": "",
+      "tldr": "Cognition helps Devin test its own work with GPT‑6 Astra",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-12T11:57:34.055Z"
+    },
     {
       "id": "v5yy3u",
       "title": "Rebuilding AUTOMATIC1111 with Gradio Workflow",
@@ -4918,7 +4960,7 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/ibm-granite/granite-4-2",
       "date": "2026-08-25",
-      "summary": "TL;DR: Granite 4.2 is our first family of dense, decoder-only reasoning LLMs, released in three sizes: 3B, 8B, and 30B. Each model is pre-trained from scratch on roughly 15T tokens with a five-phase s…",
+      "summary": "TL;DR: Granite 4.2 is our first family of dense, decoder-only reasoning LLMs, released in three sizes: 3B, 8B, and 30B. These models are post-trained from Granite-4.1 base models. Granite-4.1 base mod…",
       "maturity": "emerging",
       "tags": [
         "前沿",
@@ -5696,48 +5738,6 @@
       ],
       "addedAt": "2026-08-22T14:39:42.621Z",
       "tldr": "One reason is that traditional benchmarks overlook many of the conditions and qualities th…"
-    },
-    {
-      "id": "17oohz9",
-      "title": "Primal Acceleration of Newton's Method",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.21359v1",
-      "date": "2026-08-21",
-      "summary": "We develop a new direct accelerated Newton method for minimizing convex functions with Lipschitz continuous Hessian. The algorithm uses only primal variables and performs just one linear solve per iteration. With a simpl…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-24T08:43:52.378Z",
-      "tldr": "We develop a new direct accelerated Newton method for minimizing convex functions with Lip…"
-    },
-    {
-      "id": "17ooghv",
-      "title": "VIALS: A Benchmark for Visual Interpretation of Artifacts in the Life Sciences",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.21357v1",
-      "date": "2026-08-21",
-      "summary": "In professional life sciences workflows, scientists routinely interpret visual artifacts (gel blots, microscopy images, plasmid maps, flow cytometry plots, molecular structures, ...) to inform research decisions. We intr…",
-      "maturity": "proposed",
-      "tags": [
-        "评测"
-      ],
-      "addedAt": "2026-08-24T08:43:52.378Z",
-      "tldr": "In professional life sciences workflows, scientists routinely interpret visual artifacts (…"
-    },
-    {
-      "id": "17oofr6",
-      "title": "AI with Authority, from Application to Silicon",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.21356v1",
-      "date": "2026-08-21",
-      "summary": "For sixty years, machine verification has been a major cost overhead, affordable only for exceptional artifacts. Here we report that generative AI inverts this relationship: at AI speed, machine verification is not only …",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-24T08:43:52.378Z",
-      "tldr": "For sixty years, machine verification has been a major cost overhead, affordable only for…"
     }
   ]
 }
