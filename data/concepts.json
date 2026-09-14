@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-13T13:06:07.223Z",
+  "updatedAt": "2026-09-14T14:43:28.590Z",
   "version": 22,
   "sourceCount": 6,
   "conceptCount": 400,
@@ -633,6 +633,20 @@
         "前沿"
       ],
       "addedAt": "2026-09-11T12:35:47.398Z"
+    },
+    {
+      "id": "jsg24z",
+      "title": "Async GRPO with LoRA across HF Jobs: a bucket, a proxy, and no NCCL",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/asyncgrpo-lora-hfjobs",
+      "date": "2026-09-10",
+      "summary": "LoRA support recently landed in TRL's AsyncGRPOTrainer with PR #7017, and ships with TRL v1.14. The asynchronous trainer can now train an adapter instead of the full model, and it syncs only the LoRA …",
+      "tldr": "LoRA support recently landed in TRL's AsyncGRPOTrainer with PR #7017, and ships with TRL v…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-14T14:42:54.643Z"
     },
     {
       "id": "nspfge",
@@ -5723,21 +5737,6 @@
       "addedAt": "2026-08-22T14:38:44.074Z",
       "cover": "https://lh3.googleusercontent.com/ymmK0Dgovn-_MGlnQJffYxKdTe5LAnkAZr-GNnIjiFzsGOAAmOmUDuVACbNgIy-tqrJhGBdaQ_PaElc8EKRKRWtYg4eWx8HVcaVzdYy7hg7Q_8k=w528-h297-n-nu-rw-lo",
       "tldr": "Google DeepMind partners with game studios to prototype breakthrough AI gameplay."
-    },
-    {
-      "id": "87mzof",
-      "title": "Measuring benchmark optimization in speech recognition",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/asr-benchmark-optimization",
-      "date": "2026-08-21",
-      "summary": "One reason is that traditional benchmarks overlook many of the conditions and qualities that make voice systems reliable, natural, contextually appropriate, and effective in practice. That's why we re…",
-      "maturity": "emerging",
-      "tags": [
-        "评测",
-        "开源"
-      ],
-      "addedAt": "2026-08-22T14:39:42.621Z",
-      "tldr": "One reason is that traditional benchmarks overlook many of the conditions and qualities th…"
     }
   ]
 }
