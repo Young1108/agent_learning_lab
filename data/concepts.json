@@ -1,9 +1,23 @@
 {
-  "updatedAt": "2026-09-14T14:43:28.590Z",
+  "updatedAt": "2026-09-15T13:07:51.600Z",
   "version": 22,
   "sourceCount": 6,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "sgcz9d",
+      "title": "New insights from Google’s AI & Economy ATLAS",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-economy-atlas-september-2026/",
+      "date": "2026-09-15",
+      "summary": "We’ve translated ATLAS’s millions of global data points into an interactive, open-access experience.",
+      "tldr": "We’ve translated ATLAS’s millions of global data points into an interactive, open-access e…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-15T13:07:17.252Z"
+    },
     {
       "id": "1dwx81f",
       "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
@@ -17,6 +31,48 @@
         "前沿"
       ],
       "addedAt": "2026-09-12T11:57:33.511Z"
+    },
+    {
+      "id": "jegt8a",
+      "title": "How Fyxer built an AI executive assistant people trust",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/fyxer",
+      "date": "2026-09-14",
+      "summary": "",
+      "tldr": "How Fyxer built an AI executive assistant people trust",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-15T13:07:01.785Z"
+    },
+    {
+      "id": "oq3hhc",
+      "title": "Watch astronaut Christina Koch and Google’s James Manyika discuss space, technology, and discovery.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/dialogues-christina-koch/",
+      "date": "2026-09-14",
+      "summary": "Christina Koch sits down with James Manyika, Google’s Senior Vice President of Research, Labs, Technology & Society.",
+      "tldr": "Christina Koch sits down with James Manyika, Google’s Senior Vice President of Research, L…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-15T13:07:17.252Z"
+    },
+    {
+      "id": "108t5db",
+      "title": "DevFest is back",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/devfest2026/",
+      "date": "2026-09-14",
+      "summary": "DevFest 2026 is back and here’s how you can connect with one of the more than 800 global events to build, secure, and scale in the agentic AI era.",
+      "tldr": "DevFest 2026 is back and here’s how you can connect with one of the more than 800 global e…",
+      "maturity": "emerging",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-15T13:07:17.252Z"
     },
     {
       "id": "153l4k",
@@ -5678,65 +5734,6 @@
       ],
       "addedAt": "2026-08-25T03:31:38.196Z",
       "tldr": "Narrow fine-tuning on small, domain-specific datasets can produce broad and surprising cha…"
-    },
-    {
-      "id": "2v38qj",
-      "title": "StrategyBench: Evaluating Explicit Strategy Induction in Large Language Models",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.23475v1",
-      "date": "2026-08-24",
-      "summary": "As large language models are increasingly used in data-scarce and evolving task scenarios, few-shot in-context learning (ICL) has become a key paradigm for task adaptation. However, direct ICL often uses a small set of e…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-25T03:31:38.196Z",
-      "tldr": "As large language models are increasingly used in data-scarce and evolving task scenarios,…"
-    },
-    {
-      "id": "sd0i20",
-      "title": "Improving Fable 5 Safeguards",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
-      "date": "2026-08-24",
-      "summary": "We’re making updates to Claude Fable 5’s biology safeguards in a way that substantially reduces fallbacks.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T10:20:32.144Z",
-      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Node%20Bird&amp;backgroundColor=heather",
-      "tldr": "We’re making updates to Claude Fable 5’s biology safeguards in a way that substantially re…"
-    },
-    {
-      "id": "w1kkml",
-      "title": "How Claude's text watermarking works",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/claude-text-watermark",
-      "date": "2026-08-24",
-      "summary": "Future Claude models will generate text that contains a watermark. This is a way of determining the likelihood that Claude was involved in writing the text, and we, along with several other major AI providers, are implem…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T10:20:32.501Z",
-      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20Quill&amp;backgroundColor=heather",
-      "tldr": "Future Claude models will generate text that contains a watermark. This is a way of determ…"
-    },
-    {
-      "id": "1n78d8c",
-      "title": "From Atari to EVE Online: Building on 15 Years of AI Research in Games",
-      "source": "Google DeepMind",
-      "url": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/",
-      "date": "2026-08-21",
-      "summary": "Google DeepMind partners with game studios to prototype breakthrough AI gameplay.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-22T14:38:44.074Z",
-      "cover": "https://lh3.googleusercontent.com/ymmK0Dgovn-_MGlnQJffYxKdTe5LAnkAZr-GNnIjiFzsGOAAmOmUDuVACbNgIy-tqrJhGBdaQ_PaElc8EKRKRWtYg4eWx8HVcaVzdYy7hg7Q_8k=w528-h297-n-nu-rw-lo",
-      "tldr": "Google DeepMind partners with game studios to prototype breakthrough AI gameplay."
     }
   ]
 }
