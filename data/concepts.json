@@ -1,9 +1,363 @@
 {
-  "updatedAt": "2026-09-16T13:06:29.333Z",
+  "updatedAt": "2026-09-17T13:02:00.178Z",
   "version": 22,
   "sourceCount": 6,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "1f48ex4",
+      "title": "Helping older adults use AI in everyday life",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/helping-older-adults-use-ai-in-everyday-life",
+      "date": "2026-09-16",
+      "summary": "",
+      "tldr": "Helping older adults use AI in everyday life",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-17T13:01:40.306Z"
+    },
+    {
+      "id": "30ctep",
+      "title": "Reimagining advertising with AI",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/reimagining-advertising-with-ai",
+      "date": "2026-09-16",
+      "summary": "",
+      "tldr": "Reimagining advertising with AI",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-17T13:01:40.557Z"
+    },
+    {
+      "id": "1tjdszp",
+      "title": "How to connect AI usage to business value",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/how-to-connect-ai-usage-to-business-value",
+      "date": "2026-09-16",
+      "summary": "",
+      "tldr": "How to connect AI usage to business value",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-17T13:01:40.895Z"
+    },
+    {
+      "id": "1t5xwwq",
+      "title": "Our framework for reporting model misalignment",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/model-misalignment-reporting-framework",
+      "date": "2026-09-16",
+      "summary": "",
+      "tldr": "Our framework for reporting model misalignment",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-17T13:01:41.148Z"
+    },
+    {
+      "id": "judkkw",
+      "title": "How workers are unlocking new ways of working",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/unlocking-new-ways-of-working",
+      "date": "2026-09-16",
+      "summary": "",
+      "tldr": "How workers are unlocking new ways of working",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-17T13:01:41.391Z"
+    },
+    {
+      "id": "w49fbp",
+      "title": "Objective vs. Search: Decomposing What Makes a Good Tokeniser",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.19145v1",
+      "date": "2026-09-16",
+      "summary": "Two dominant tokenisation algorithms are used by modern language models: byte-pair encoding (BPE) and UnigramLM. These differ along two orthogonal axes: their optimisation objective (compression vs. log-likelihood) and t…",
+      "tldr": "Two dominant tokenisation algorithms are used by modern language models: byte-pair encodin…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "w49el0",
+      "title": "A Zeroth-Order Paradigm for LLM Preference Alignment",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.19144v1",
+      "date": "2026-09-16",
+      "summary": "Direct preference alignment methods are widely used to align large language models (LLMs) with human preferences because of their computational and memory efficiency. However, likelihood displacement motivates alternativ…",
+      "tldr": "Direct preference alignment methods are widely used to align large language models (LLMs)…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "w49dub",
+      "title": "PANORAMA: Panoptic Grounded Captioning via Mask Proposal Selection",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.19143v1",
+      "date": "2026-09-16",
+      "summary": "Intelligent systems that act in the world require image understanding that is both comprehensive and spatially grounded. Current vision-language models (VLMs) can generate fluent and detailed image captions, but reliably…",
+      "tldr": "Intelligent systems that act in the world require image understanding that is both compreh…",
+      "maturity": "proposed",
+      "tags": [
+        "多模态"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "w48ttk",
+      "title": "Dreaming the Sound of Contact: Leveraging Video and Audio Generation for Zero-Shot Force-Aware Manipulation and Data Generation",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.19137v1",
+      "date": "2026-09-16",
+      "summary": "Recent advances in video generation allow robots to learn manipulation trajectories from generated videos. However, these approaches produce purely kinematic trajectories that lack force information, causing failures in …",
+      "tldr": "Recent advances in video generation allow robots to learn manipulation trajectories from g…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "w48rlh",
+      "title": "ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.19134v1",
+      "date": "2026-09-16",
+      "summary": "Scientific code repositories encode decades of human knowledge in executable models, methods, and tools. Yet fragmented toolchains, implicit domain conventions, and specialized correctness criteria make this knowledge di…",
+      "tldr": "Scientific code repositories encode decades of human knowledge in executable models, metho…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "w487kq",
+      "title": "Cognitive Extensions for Dual-Process Language Agents: Memory and Self-Reflection in Interactive Environments",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.19128v1",
+      "date": "2026-09-16",
+      "summary": "Language agents remain brittle in interactive environments, where success requires long-horizon state tracking, valid action execution, and recovery from failed steps. We extend SwiftSage, a dual-process agent that combi…",
+      "tldr": "Language agents remain brittle in interactive environments, where success requires long-ho…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "w485cn",
+      "title": "Affora: A Design System for Agent-Friendly Interfaces",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.19125v1",
+      "date": "2026-09-16",
+      "summary": "Computer-use agents increasingly operate software designed for people, but interfaces often leave actions or task state unclear to machine readers. We present Affora, a design system that supports both readers while pres…",
+      "tldr": "Computer-use agents increasingly operate software designed for people, but interfaces ofte…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "w484ly",
+      "title": "Flag Game: A Toy Model for Mechanistic Swarm Interpretability",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.19124v1",
+      "date": "2026-09-16",
+      "summary": "Emergent coordinated behaviors of AI agents are starting to present critical safety risks. A key phenomenon driving these behaviors is the rapid formation and spread of beliefs about the world, and mechanistic understand…",
+      "tldr": "Emergent coordinated behaviors of AI agents are starting to present critical safety risks.…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "安全"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "w47gvq",
+      "title": "Playing log(N)-Questions over Wikipedia Abstracts: Communication Efficiency Between Paired Frontier Models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.19113v1",
+      "date": "2026-09-16",
+      "summary": "We evaluate six frontier language models on the two-agent $\\log(N)$-Questions game. A questioner sees $N$ Wikipedia lead paragraphs and must identify a secretly chosen target using exactly $\\log_2 N$ yes/no questions. An…",
+      "tldr": "We evaluate six frontier language models on the two-agent $\\log(N)$-Questions game. A ques…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Graph"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "w46umw",
+      "title": "rMuscle: Robotic Muscle Memory for Efficient Vision-Language-Action Model Inference",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.19104v1",
+      "date": "2026-09-16",
+      "summary": "Factory work is a promising early scenario for embodied AI: assigning repetitive manual jobs to robots has clear economic payoff, and a structured station keeps the jobs tractable for current policies. Vision-Language-Ac…",
+      "tldr": "Factory work is a promising early scenario for embodied AI: assigning repetitive manual jo…",
+      "maturity": "proposed",
+      "tags": [
+        "多模态"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "w46set",
+      "title": "Monitoring and Discovering Reward Hacking with Internal Representations during LLM Evaluations",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.19101v1",
+      "date": "2026-09-16",
+      "summary": "As models scale, reward hacking becomes more frequent, more sophisticated, and more consequential. Does it leave a telltale signature in model representations? This work analyzes how reward hacking is represented interna…",
+      "tldr": "As models scale, reward hacking becomes more frequent, more sophisticated, and more conseq…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "w3sueo",
+      "title": "Prepared Or Unprepared? Evaluating Healthcare Workforce Readiness for Clinical Adoption of Artificial Intelligence in Nigeria",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.19096v1",
+      "date": "2026-09-16",
+      "summary": "Artificial intelligence (AI) is increasingly integrated into healthcare systems worldwide, yet its successful clinical adoption depends critically on workforce readiness, particularly in low- and middle-income countries …",
+      "tldr": "Artificial intelligence (AI) is increasingly integrated into healthcare systems worldwide,…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "w3ss6l",
+      "title": "Reporting Practice Matters: The Impact of Reference Choice on Chest X-ray Report Evaluation",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.19093v1",
+      "date": "2026-09-16",
+      "summary": "Radiologists follow heterogeneous reporting practices. Two radiologists examining the same image and identifying the same clinical findings might nevertheless compose superficially distinct reports, varying in terminolog…",
+      "tldr": "Radiologists follow heterogeneous reporting practices. Two radiologists examining the same…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "w3spyi",
+      "title": "Securing quantum error correction against misleading advice from AI agents",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.19090v1",
+      "date": "2026-09-16",
+      "summary": "Can an attacker turn influence over an artificial intelligence (AI) adviser into a harmful quantum error-correction update? We identify an ambiguity in passive syndrome records that obstructs recovery selection, then sho…",
+      "tldr": "Can an attacker turn influence over an artificial intelligence (AI) adviser into a harmful…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "w3s8wj",
+      "title": "MUSE: Benchmarking Large Vision-Language Models on Multi-Modal Understanding in Situated Education",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.19088v1",
+      "date": "2026-09-16",
+      "summary": "Large vision-language models have achieved remarkable progress in multi-modal understanding, yet their capabilities in educational settings remain insufficiently evaluated. In AI-assisted language learning, models must i…",
+      "tldr": "Large vision-language models have achieved remarkable progress in multi-modal understandin…",
+      "maturity": "proposed",
+      "tags": [
+        "评测",
+        "多模态"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "w3rl6b",
+      "title": "Probabilistic Linear Explanations",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.19077v1",
+      "date": "2026-09-16",
+      "summary": "Formal explainability provides mathematically grounded justifications for individual predictions. However, abductive explanations often exceed human cognitive limits by involving too many features, while probabilistic re…",
+      "tldr": "Formal explainability provides mathematically grounded justifications for individual predi…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "w3rkfm",
+      "title": "Double descent is the principle of least action",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.19076v1",
+      "date": "2026-09-16",
+      "summary": "The test error of a model plotted against its number of parameters $d$ falls, peaks when the model can just fit the training data, and falls again, exhibiting the double descent phenomenon. We explain the phenomenon with…",
+      "tldr": "The test error of a model plotted against its number of parameters $d$ falls, peaks when t…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "w3riy8",
+      "title": "RLLBC-Lib: An Educational Code Library for Reinforcement Learning and Learning-Based Control",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.19074v1",
+      "date": "2026-09-16",
+      "summary": "Reinforcement learning (RL) is an exciting concept as well as a remarkable success story worth sharing. However, RL builds on rather complex interactions between different objects that play out over several cycles. Such …",
+      "tldr": "Reinforcement learning (RL) is an exciting concept as well as a remarkable success story w…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "vrliov",
+      "title": "Long-Lived Characters, Local Inference: Incremental Memory Maintenance for Game NPCs",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.18935v1",
+      "date": "2026-09-16",
+      "summary": "A game character should not have to reread its entire life before every conversation. For locally deployed language-model characters, however, revising a few memories can invalidate a long reusable prefix. The resulting …",
+      "tldr": "A game character should not have to reread its entire life before every conversation. For…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "vrkyo4",
+      "title": "Social Laws for Multi-agent Coordination in Stochastic Environments",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.18929v1",
+      "date": "2026-09-16",
+      "summary": "In multi-agent environments, coordinating agents to prevent interference and ensure robust individual performance is a critical challenge. Previous research on social laws for multi-agent systems has primarily focused on…",
+      "tldr": "In multi-agent environments, coordinating agents to prevent interference and ensure robust…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Multi-Agent"
+      ],
+      "addedAt": "2026-09-17T13:02:00.176Z"
+    },
     {
       "id": "sgcz9d",
       "title": "New insights from Google’s AI & Economy ATLAS",
@@ -5362,368 +5716,6 @@
       ],
       "addedAt": "2026-08-26T08:39:16.786Z",
       "tldr": "Introducing the Admin plugin for ChatGPT Work and Codex"
-    },
-    {
-      "id": "6kgzf6",
-      "title": "5 ways to upgrade your home decor with Google Search",
-      "source": "Google AI Blog",
-      "url": "https://blog.google/products-and-platforms/products/search/home-decor-tips/",
-      "date": "2026-08-25",
-      "summary": "Learn how to use Google Search tools to find home decor inspiration, shop for furniture, and tackle DIY projects.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T08:39:17.087Z",
-      "tldr": "Learn how to use Google Search tools to find home decor inspiration, shop for furniture, a…"
-    },
-    {
-      "id": "tyx80j",
-      "title": "Granite 4.2 LLMs: How They're Built",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/ibm-granite/granite-4-2",
-      "date": "2026-08-25",
-      "summary": "TL;DR: Granite 4.2 is our first family of dense, decoder-only reasoning LLMs, released in three sizes: 3B, 8B, and 30B. These models are post-trained from Granite-4.1 base models. Granite-4.1 base mod…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿",
-        "推理"
-      ],
-      "addedAt": "2026-08-26T08:39:17.218Z",
-      "tldr": "TL;DR: Granite 4.2 is our first family of dense, decoder-only reasoning LLMs, released in…"
-    },
-    {
-      "id": "1in84o6",
-      "title": "Quantization-Aware Healing: a compressed, 4-bit model that outperforms its full-precision original",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/MultiverseComputingCAI/quantization-aware-healing",
-      "date": "2026-08-25",
-      "summary": "Our latest paper, Quantization-Aware Healing: A Practical Recipe for Recovering Compressed, 4-Bit LLMs, asks a question that the field has mostly left open: once a model has already been through struc…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T08:39:17.218Z",
-      "tldr": "Our latest paper, Quantization-Aware Healing: A Practical Recipe for Recovering Compressed…"
-    },
-    {
-      "id": "3ec28v",
-      "title": "Recursive Experiential-Working Memory Evolution for Long-Horizon Agent Harnesses",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24876v1",
-      "date": "2026-08-25",
-      "summary": "Recursive self-improvement (RSI) remains hard in long-horizon tasks, where growing histories obscure the task state and misalign skill invocation. We introduce Recuris, a recursive Experiential-Working Memory architectur…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Harness",
-        "Skill"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "Recursive self-improvement (RSI) remains hard in long-horizon tasks, where growing histori…"
-    },
-    {
-      "id": "3ebxsp",
-      "title": "SPO++: Stream-Aligned Policy Optimization for Asynchronous Agentic RL",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24870v1",
-      "date": "2026-08-25",
-      "summary": "Group-relative reinforcement learning waits for sibling rollouts of the same prompt, which is costly for long and variable tool-use trajectories. Single-stream Policy Optimization (SPO) removes this dependency with a per…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "Group-relative reinforcement learning waits for sibling rollouts of the same prompt, which…"
-    },
-    {
-      "id": "3ea6ro",
-      "title": "BrowserForge: Scaling Web Episode via Parallel Browser Sandboxes",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24848v1",
-      "date": "2026-08-25",
-      "summary": "Web agents that act from rendered pixels avoid the fragility and heavy token cost of reading a page's HTML or accessibility tree, but training them depends on large amounts of high-quality interaction trajectories, and h…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "Web agents that act from rendered pixels avoid the fragility and heavy token cost of readi…"
-    },
-    {
-      "id": "3ea5aa",
-      "title": "FedV-KGQA: Multi-Hop Question Answering over Vertically Partitioned Knowledge Graphs",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24846v1",
-      "date": "2026-08-25",
-      "summary": "Real-world data for knowledge graph question answering is often distributed across different organizations due to governance and data sovereignty constraints. While centralized systems exist, they cannot answer multi-hop…",
-      "maturity": "proposed",
-      "tags": [
-        "Graph"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "Real-world data for knowledge graph question answering is often distributed across differe…"
-    },
-    {
-      "id": "3ea4jl",
-      "title": "LAION-BVD: A 10-Million-Hour Open Video Dataset for Multimodal Pre-training",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24845v1",
-      "date": "2026-08-25",
-      "summary": "We present LAION-BVD, a large-scale open video dataset for multimodal learning, which contains 1.3B platform-specific video URLs collected from CommonCrawl. From these, we download 80M videos with a total duration of 10 …",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "We present LAION-BVD, a large-scale open video dataset for multimodal learning, which cont…"
-    },
-    {
-      "id": "3ea2bi",
-      "title": "Reading Is Not Using: Retrieval, Judgment, and the Design of AI Financial Research Workflows",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24842v1",
-      "date": "2026-08-25",
-      "summary": "Large language models (LLMs) are increasingly deployed as AI analysts to process financial disclosures and support AI-assisted investment decisions. Yet such systems are usually evaluated by what they can retrieve, not w…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "Large language models (LLMs) are increasingly deployed as AI analysts to process financial…"
-    },
-    {
-      "id": "3e8ukj",
-      "title": "A Dual-Dimensional LLM Framework for Automated Item Incidental Content Similarity Analysis in Large-Scale Assessments",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24825v1",
-      "date": "2026-08-25",
-      "summary": "The rapid expansion of large-scale assessments and the growing adoption of automatic item generation have intensified concerns about incidental content redundancy, where construct-irrelevant elements such as wording or c…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "The rapid expansion of large-scale assessments and the growing adoption of automatic item…"
-    },
-    {
-      "id": "3e8ttu",
-      "title": "Constrained Entity Selection under Partial Knowledge for LLM-Based Knowledge Graph QA",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24824v1",
-      "date": "2026-08-25",
-      "summary": "Large language models are increasingly used for knowledge graph question answering (KGQA), but can fail to correctly ground answers in the underlying graph. Current approaches to LLM-based KGQA either rely on full semant…",
-      "maturity": "proposed",
-      "tags": [
-        "Graph"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "Large language models are increasingly used for knowledge graph question answering (KGQA),…"
-    },
-    {
-      "id": "3e83vj",
-      "title": "Strictly Causal Streaming Video Anomaly Detection with a Theoretically-Grounded State-Space Core",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24810v1",
-      "date": "2026-08-25",
-      "summary": "Recent work has applied Mamba style state space models (SSMs) to video anomaly detection, yet existing approaches still rely on buffering clips or windows internally, lack a theoretical account of how temporal memory rel…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "Recent work has applied Mamba style state space models (SSMs) to video anomaly detection,…"
-    },
-    {
-      "id": "3e7nk9",
-      "title": "Structurally-bounded Agentic Graph Exploration for Evidence-Grounded Scholarly DeepSearch",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24809v1",
-      "date": "2026-08-25",
-      "summary": "We present Crase, a bounded and inspectable alternative to deep research agents for scholarly search. Instead of an open-ended search loop, Crase queries a search engine once for seed papers, expands them along their 1.5…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Loop",
-        "Graph"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "We present Crase, a bounded and inspectable alternative to deep research agents for schola…"
-    },
-    {
-      "id": "3e7m2v",
-      "title": "Automatic Model Card Generation Using an LLM",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24807v1",
-      "date": "2026-08-25",
-      "summary": "Model cards are structured documents that summarize key information about machine learning models to improve transparency, usability, and accountability. However, they often lack a consistent structure, and many models p…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "Model cards are structured documents that summarize key information about machine learning…"
-    },
-    {
-      "id": "3e7jus",
-      "title": "StarHarness: Evolving Harnesses with Stratified Search for Enterprise Environments",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24804v1",
-      "date": "2026-08-25",
-      "summary": "We present StarHarness, a framework for evolving environment-specific agent harnesses while keeping model weights fixed. The evolved harness can include prompt and task framing, tool interfaces, skills, MCP-backed provid…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Harness",
-        "MCP",
-        "Skill"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "We present StarHarness, a framework for evolving environment-specific agent harnesses whil…"
-    },
-    {
-      "id": "3dti56",
-      "title": "CAFE: Self-Improving Search Agents Need Co-Evolving Feedback",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24794v1",
-      "date": "2026-08-25",
-      "summary": "Outcome-supervised search agents learn when and how to retrieve evidence, but terminal rewards neither localize intermediate errors nor redirect an ongoing trajectory before those errors compound. Treating corrective fee…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "Outcome-supervised search agents learn when and how to retrieve evidence, but terminal rew…"
-    },
-    {
-      "id": "3dtf6e",
-      "title": "Right Diagnoses, Decorative Reasoning:A Perturbation Audit of Medical Chain-of-Thought",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24790v1",
-      "date": "2026-08-25",
-      "summary": "Clinicians read chain-of-thought (CoT) rationales as evidence of medical reasoning, but whether the visible chain plays that role is rarely tested. General-domain CoT-faithfulness probes ignore clinical cost, and medical…",
-      "maturity": "proposed",
-      "tags": [
-        "推理"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "Clinicians read chain-of-thought (CoT) rationales as evidence of medical reasoning, but wh…"
-    },
-    {
-      "id": "3dss6v",
-      "title": "Linear Probing Provides Robust and Efficient Detection of Machine-Generated Text",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24780v1",
-      "date": "2026-08-25",
-      "summary": "Distinguishing machine-generated text (MGT) from human-written text (HWT) becomes increasingly important due to potential misuse. However, most supervised detectors often degrade out-of-domain (OOD) and require large, di…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "Distinguishing machine-generated text (MGT) from human-written text (HWT) becomes increasi…"
-    },
-    {
-      "id": "3dsae7",
-      "title": "StepGuard: Learning Step-Level Guardrails with Scalable Supervision and Safety-Utility Balancing",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24777v1",
-      "date": "2026-08-25",
-      "summary": "LLM-based agents can interact with external environments through tool invocation, but this capability also introduces security risks such as file modification, information leakage, and unauthorized actions. Existing guar…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "安全",
-        "多模态"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "LLM-based agents can interact with external environments through tool invocation, but this…"
-    },
-    {
-      "id": "3ds5y1",
-      "title": "Ensemble of Convolutional Neural Networks for StrokePrediction: Towards Improved Diagnostic Accuracy",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24771v1",
-      "date": "2026-08-25",
-      "summary": "Brain stroke, known for its high mortality and incidence rates, poses significant health risks and requires rapid intervention for survival. Early diagnosis and preventive measures can greatly reduce life loss and disabi…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "Brain stroke, known for its high mortality and incidence rates, poses significant health r…"
-    },
-    {
-      "id": "3dro5d",
-      "title": "Score-Based Ideal Observer Approximation via Denoising Score Matching for Signal-Known-Exactly Detection Tasks",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24768v1",
-      "date": "2026-08-25",
-      "summary": "The Bayesian Ideal Observer (IO) establishes the theoretical upper bound on task performance for binary detection tasks. However, analytical computation of the IO test statistic is generally intractable. Numerical approa…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "The Bayesian Ideal Observer (IO) establishes the theoretical upper bound on task performan…"
-    },
-    {
-      "id": "3drl6l",
-      "title": "Evidence Blindness in Direct Corpus Interaction: Persistent Navigation with AtlasNav",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24764v1",
-      "date": "2026-08-25",
-      "summary": "Large language model agents are moving beyond conventional retrieval-augmented generation toward direct interaction with external corpora. Direct Corpus Interaction (DCI) keeps the full corpus accessible, yet reachable e…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "Large language model agents are moving beyond conventional retrieval-augmented generation…"
-    },
-    {
-      "id": "3drjp7",
-      "title": "Beyond Uniform Local Isometry and Topology: FactoMap for Disentangled Representations",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.24762v1",
-      "date": "2026-08-25",
-      "summary": "Many disentanglement methods represent generative factors using Euclidean product coordinates, although the underlying factor spaces may wrap, collapse, or have position-dependent geometry. We introduce factor-space stru…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T08:39:17.415Z",
-      "tldr": "Many disentanglement methods represent generative factors using Euclidean product coordina…"
-    },
-    {
-      "id": "882y87",
-      "title": "Funding better evaluations of AI’s impact on wellbeing",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/wellbeing-research-grants",
-      "date": "2026-08-25",
-      "summary": "Anthropic is launching a $5 million grant program to fund independent research into how AI impacts users’ wellbeing.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T10:20:29.569Z",
-      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20HeadFlower&amp;backgroundColor=heather",
-      "tldr": "Anthropic is launching a $5 million grant program to fund independent research into how AI…"
-    },
-    {
-      "id": "1ul3r7h",
-      "title": "Introducing the Anthropic Economic Index",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/the-anthropic-economic-index",
-      "date": "2026-08-25",
-      "summary": "Announcement of the new Anthropic Economic Index and description of the new data on AI use in occupations",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T10:20:29.935Z",
-      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20NodeGraph&amp;backgroundColor=heather",
-      "tldr": "Announcement of the new Anthropic Economic Index and description of the new data on AI use…"
     }
   ]
 }
