@@ -1,9 +1,66 @@
 {
-  "updatedAt": "2026-09-18T12:41:12.966Z",
+  "updatedAt": "2026-09-19T12:16:14.315Z",
   "version": 22,
   "sourceCount": 6,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "ypdj6h",
+      "title": "Introducing the Australian Youth Safety Blueprint",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/australian-youth-safety-blueprint",
+      "date": "2026-09-18",
+      "summary": "",
+      "tldr": "Introducing the Australian Youth Safety Blueprint",
+      "maturity": "emerging",
+      "tags": [
+        "安全"
+      ],
+      "addedAt": "2026-09-19T12:15:57.951Z"
+    },
+    {
+      "id": "1lt4i2",
+      "title": "Partnering with Accenture on embedded evaluation",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/accenture-embedded-evaluation",
+      "date": "2026-09-18",
+      "summary": "We’re partnering with Accenture on independent evaluation of frontier AI—part of our recent commitment to embed evaluators at Anthropic. Both we and Accenture expect to invest at least $1 billion to build capacity in thi…",
+      "cover": "https://cdn.sanity.io/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+      "tldr": "We’re partnering with Accenture on independent evaluation of frontier AI—part of our recen…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-19T12:16:01.197Z"
+    },
+    {
+      "id": "1om6izs",
+      "title": "New experts join Google’s AI & Economy team",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/",
+      "date": "2026-09-18",
+      "summary": "We are expanding our AI & Economy team with world-class academic advisors, fellows, and core internal researchers.",
+      "tldr": "We are expanding our AI & Economy team with world-class academic advisors, fellows, and co…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-19T12:16:10.633Z"
+    },
+    {
+      "id": "nzr1at",
+      "title": "Co-creating the future of fashion with Google",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-flow-fashion-week/",
+      "date": "2026-09-18",
+      "summary": "Google worked side-by-side with designers Jane Wade and Sergio Hudson to custom-design Google Flow tools to prep for NYFW.",
+      "tldr": "Google worked side-by-side with designers Jane Wade and Sergio Hudson to custom-design Goo…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-19T12:16:10.633Z"
+    },
     {
       "id": "1tzto15",
       "title": "How Cooley is accelerating IPO work with ChatGPT",
@@ -700,6 +757,20 @@
         "Multi-Agent"
       ],
       "addedAt": "2026-09-17T13:02:00.176Z"
+    },
+    {
+      "id": "k7u4y6",
+      "title": "Hex turns complex analysis into visual reports with GPT‑6 Astra",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/hex-gpt-6-astra",
+      "date": "2026-09-16",
+      "summary": "",
+      "tldr": "Hex turns complex analysis into visual reports with GPT‑6 Astra",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-19T12:15:58.959Z"
     },
     {
       "id": "sgcz9d",
@@ -5645,76 +5716,6 @@
         "前沿"
       ],
       "addedAt": "2026-08-27T18:48:42.407Z"
-    },
-    {
-      "id": "17qpkx",
-      "title": "The Hugging Face incident and the road ahead",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead",
-      "date": "2026-08-26",
-      "summary": "",
-      "tldr": "The Hugging Face incident and the road ahead",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-27T18:48:42.643Z"
-    },
-    {
-      "id": "1lj2qlq",
-      "title": "Intelligent transcription with Gemini 3.5 Transcribe",
-      "source": "Google DeepMind",
-      "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/",
-      "date": "2026-08-26",
-      "summary": "Now you can get more intelligent speech-to-text transcription with Gemini 3.5 Transcribe.",
-      "tldr": "Now you can get more intelligent speech-to-text transcription with Gemini 3.5 Transcribe.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-27T18:48:52.903Z"
-    },
-    {
-      "id": "10yyio",
-      "title": "Training and Finetuning Multi-Vector Embedding Models with Sentence Transformers",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/train-multi-vector-encoder",
-      "date": "2026-08-26",
-      "summary": "Finetuning multi-vector models involves several components: the model itself, datasets, loss functions, training arguments, evaluators, and the trainer class. I'll have a look at each of these compone…",
-      "tldr": "Finetuning multi-vector models involves several components: the model itself, datasets, lo…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-27T18:48:55.102Z"
-    },
-    {
-      "id": "48g98c",
-      "title": "VBVR-Pro: A Scalable and Verifiable Suite for Native Visual Reasoning",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.26105v1",
-      "date": "2026-08-26",
-      "summary": "Native visual reasoning treats visual generation as the medium of reasoning itself: visual states (i.e. images and videos) are not merely inputs to be understood or outputs to be rendered, but first-class substrates for …",
-      "tldr": "Native visual reasoning treats visual generation as the medium of reasoning itself: visual…",
-      "maturity": "proposed",
-      "tags": [
-        "推理"
-      ],
-      "addedAt": "2026-08-27T18:48:59.340Z"
-    },
-    {
-      "id": "4827iq",
-      "title": "A Visual Dependence-Aware Framework for Multimodal Unsupervised Continual Post-Training",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.26095v1",
-      "date": "2026-08-26",
-      "summary": "In this paper, we explore a novel task of Multimodal Unsupervised Continual Post-Training (MU-CPT), enabling deployed MLLMs to continually evolve from streaming unlabeled data. Existing unsupervised post-training methods…",
-      "tldr": "In this paper, we explore a novel task of Multimodal Unsupervised Continual Post-Training…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-27T18:48:59.340Z"
     }
   ]
 }
