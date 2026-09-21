@@ -1,9 +1,51 @@
 {
-  "updatedAt": "2026-09-20T12:51:11.604Z",
+  "updatedAt": "2026-09-21T14:50:02.046Z",
   "version": 22,
   "sourceCount": 6,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "cze8s9",
+      "title": "How V7 gives AI agents institutional memory",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/v7",
+      "date": "2026-09-21",
+      "summary": "",
+      "tldr": "How V7 gives AI agents institutional memory",
+      "maturity": "emerging",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-21T14:49:42.342Z"
+    },
+    {
+      "id": "1q4ovps",
+      "title": "Pruning LLMs Like a Physicist: Block Removal as an Ising Optimization Problem",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/MultiverseComputingCAI/pruning-llms-like-a-physicist-block-removal-as-an",
+      "date": "2026-09-21",
+      "summary": "Our latest paper, LLM Compression by Block Removal with Constrained Binary Optimization, takes that correspondence literally. We reformulate block selection as a constrained binary optimization (CBO) …",
+      "tldr": "Our latest paper, LLM Compression by Block Removal with Constrained Binary Optimization, t…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-21T14:49:58.169Z"
+    },
+    {
+      "id": "1l8r2c7",
+      "title": "tokenizers v1: encode, decode and scaling, measured",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/tokenizers-v1",
+      "date": "2026-09-21",
+      "summary": "As models become faster and workloads scale, that balance begins to shift. Training on massive datasets, serving many concurrent requests, or repeatedly processing long inputs can put enough pressure …",
+      "tldr": "As models become faster and workloads scale, that balance begins to shift. Training on mas…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-21T14:49:58.423Z"
+    },
     {
       "id": "ypdj6h",
       "title": "Introducing the Australian Youth Safety Blueprint",
@@ -60,6 +102,288 @@
         "前沿"
       ],
       "addedAt": "2026-09-19T12:16:10.633Z"
+    },
+    {
+      "id": "17gv4vt",
+      "title": "Designer-RSI: Evolving Procedural Memory from User Traffic for Agentic Graphic Design",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.22086v1",
+      "date": "2026-09-18",
+      "summary": "Professional graphic design is a long-horizon agentic task in which structured, editable artifacts emerge from many interdependent actions, yet outcomes admit no reliable programmatic oracle. We introduce a continual ada…",
+      "tldr": "Professional graphic design is a long-horizon agentic task in which structured, editable a…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Graph"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
+    },
+    {
+      "id": "17gv16c",
+      "title": "Cross-sector generalization of accident-process role classification in occupational accident narratives",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.22081v1",
+      "date": "2026-09-18",
+      "summary": "Occupational accident narratives contain valuable information about work situations, unfavourable conditions, accident events, and their consequences. Automatically structuring these narratives can facilitate large-scale…",
+      "tldr": "Occupational accident narratives contain valuable information about work situations, unfav…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
+    },
+    {
+      "id": "17gtwe5",
+      "title": "CodeMidas: Scaling Agentic Coding RL Environments from Code Itself",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.22068v1",
+      "date": "2026-09-18",
+      "summary": "Training capable coding agents via reinforcement learning (RL) requires diverse tasks with reliable verifiers. Open-source codebases offer a rich source of such tasks, while existing methods typically rely on development…",
+      "tldr": "Training capable coding agents via reinforcement learning (RL) requires diverse tasks with…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
+    },
+    {
+      "id": "17gtvng",
+      "title": "Value-Sensitive Delegation in Everyday AI Agent Use: Evidence from OpenClaw",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.22067v1",
+      "date": "2026-09-18",
+      "summary": "Users increasingly delegate work to autonomous AI agents, yet evaluations typically measure task completion rather than the values users prioritize. Using Value Sensitive Design, we analyzed, with LLM assistance, 73,093 …",
+      "tldr": "Users increasingly delegate work to autonomous AI agents, yet evaluations typically measur…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
+    },
+    {
+      "id": "17gt7x8",
+      "title": "Predictable Failure in Multi-Hop Retrieval: Score-Distributional Confidence Scoring and Abstention",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.22056v1",
+      "date": "2026-09-18",
+      "summary": "Multi-hop retrieval failures are not uniformly distributed across queries: they cluster in structurally predictable subpopulations. We prove two results formalizing this structure. First (CWAR Reducibility): confident-fa…",
+      "tldr": "Multi-hop retrieval failures are not uniformly distributed across queries: they cluster in…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
+    },
+    {
+      "id": "17gsipm",
+      "title": "An Interpretable Memory Decision Controller for LLM Agents Based on Three-Signal Complementarity: Decoupling Confidence and Consistency",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.22043v1",
+      "date": "2026-09-18",
+      "summary": "Memory systems for large language models have focused predominantly on efficient retrieval, whereas the decision of whether retrieved memories should be trusted has received comparatively little attention. When the memor…",
+      "tldr": "Memory systems for large language models have focused predominantly on efficient retrieval…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
+    },
+    {
+      "id": "17gs069",
+      "title": "Gricea: An Open Science Platform for Conversational AI Research",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.22039v1",
+      "date": "2026-09-18",
+      "summary": "We need studies on conversational AI (CAI) at scale to understand human behavior and shape CAI design. However, fragmented reporting of systems and study configurations hinders replication, extension, and knowledge accum…",
+      "tldr": "We need studies on conversational AI (CAI) at scale to understand human behavior and shape…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
+    },
+    {
+      "id": "17grzfk",
+      "title": "QuranicMMLU: A Cognitively-Aware Benchmark for Evaluating Generative AI Solutions on Quranic Linguistic Knowledge",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.22038v1",
+      "date": "2026-09-18",
+      "summary": "We introduce QuranicMMLU, a benchmark for evaluating generative AI on Quranic Arabic across multiple dimensions of linguistic complexity. Existing Quranic benchmarks center on general question answering and semantic retr…",
+      "tldr": "We introduce QuranicMMLU, a benchmark for evaluating generative AI on Quranic Arabic acros…",
+      "maturity": "proposed",
+      "tags": [
+        "评测"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
+    },
+    {
+      "id": "17gq2gz",
+      "title": "DiaVLo: Diagnosing Behaviours of Vision-Language Models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.22008v1",
+      "date": "2026-09-18",
+      "summary": "Vision-language models (VLMs) rely on storing and transferring appropriate information across their sub-components. Verifying that the VLMs exhibit desired behaviours, while avoiding harmful ones, is central to their rel…",
+      "tldr": "Vision-language models (VLMs) rely on storing and transferring appropriate information acr…",
+      "maturity": "proposed",
+      "tags": [
+        "多模态"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
+    },
+    {
+      "id": "17gq08w",
+      "title": "Abstention and Noise Filtering: Two Missing Primitives of Softmax Attention",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.22005v1",
+      "date": "2026-09-18",
+      "summary": "Gating the value pathway of attention reportedly improves language model pretraining, and prior studies disagree on why. We argue and provide experimental evidence that such gates supply two different things that softmax…",
+      "tldr": "Gating the value pathway of attention reportedly improves language model pretraining, and…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
+    },
+    {
+      "id": "17gpwjf",
+      "title": "RecreationWorld: Scalable and Verifiable Environments for Hybrid Computer-Use Agents",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.22000v1",
+      "date": "2026-09-18",
+      "summary": "Computer-use agents (CUAs) have advanced along two separate lines: graphical interaction and software development through code and the command line. Real digital work requires both, interleaved rather than stacked end to…",
+      "tldr": "Computer-use agents (CUAs) have advanced along two separate lines: graphical interaction a…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Graph"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
+    },
+    {
+      "id": "174sbk3",
+      "title": "Bayesian Belief Layer for Controllable Opinion Dynamics in LLM Agents",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.21997v1",
+      "date": "2026-09-18",
+      "summary": "LLM agents in social simulation revise their opinions implicitly, in context: how open an agent is to persuasion can neither be specified nor verified, and collective outcomes inherit the model's training prior. We intro…",
+      "tldr": "LLM agents in social simulation revise their opinions implicitly, in context: how open an…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
+    },
+    {
+      "id": "174sate",
+      "title": "A Lie Detector Test for Language Models: Reading Knowledge a Model Won't Reveal",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.21996v1",
+      "date": "2026-09-18",
+      "summary": "Large language models can hold knowledge they do not report. A model may sandbag on a capability evaluation, or answer against what it internally knows, and its outputs alone cannot tell whether it is hiding an answer or…",
+      "tldr": "Large language models can hold knowledge they do not report. A model may sandbag on a capa…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
+    },
+    {
+      "id": "174s7um",
+      "title": "Moral Entropy: Auditing Bias and Uncertainty in Moral Judgment",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.21992v1",
+      "date": "2026-09-18",
+      "summary": "Most work in computational ethics treats annotator disagreement on moral content as noise to be voted away, collapsed into majority vote or the more permissive any-annotator rule the moment a single annotator flags an it…",
+      "tldr": "Most work in computational ethics treats annotator disagreement on moral content as noise…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
+    },
+    {
+      "id": "174qeli",
+      "title": "NemotronLabs VoiceChat: An Open Full-duplex Speech-to-Speech Model with Tool Calling Capabilities",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.21967v1",
+      "date": "2026-09-18",
+      "summary": "We introduce NemotronLabs VoiceChat, an open full-duplex speech-to-speech model with native tool-calling capabilities. NemotronLabs VoiceChat combines a streaming speech encoder and decoder-only language model with paral…",
+      "tldr": "We introduce NemotronLabs VoiceChat, an open full-duplex speech-to-speech model with nativ…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
+    },
+    {
+      "id": "174qaw1",
+      "title": "Learning Cardiac Features: ECG Biometrics Across Time and~Exercise",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.21962v1",
+      "date": "2026-09-18",
+      "summary": "Electrocardiograms (ECGs) carry subject-specific patterns enabling reliable individual discrimination, forming the basis of ECG biometrics. Beyond authentication, this paradigm holds significant potential to secure sensi…",
+      "tldr": "Electrocardiograms (ECGs) carry subject-specific patterns enabling reliable individual dis…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
+    },
+    {
+      "id": "174p0wz",
+      "title": "When Should a Failing Robot Ask? Initiating Corrective Human-Robot Dialogue from Audited Sensor Evidence",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.21942v1",
+      "date": "2026-09-18",
+      "summary": "A robot that fails at a task faces the first decision in corrective dialogue: act on its own diagnosis, consult another onboard sensor, or interrupt a person. Choosing well requires knowing how much the robot's sensors r…",
+      "tldr": "A robot that fails at a task faces the first decision in corrective dialogue: act on its o…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
+    },
+    {
+      "id": "174ozfl",
+      "title": "AutoViewMem: Self-Configuring Orthogonal Views for Conversational Long-Term Memory",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.21940v1",
+      "date": "2026-09-18",
+      "summary": "Long-term memory is essential for large language model (LLM) agents to maintain consistency and personalization over extended interactions. Existing memory systems typically rely on fixed granularities or static schemas,…",
+      "tldr": "Long-term memory is essential for large language model (LLM) agents to maintain consistenc…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
+    },
+    {
+      "id": "174nsfb",
+      "title": "What Should We Ask Next? Retrieval-Aware Question Learning under Partial Evidence",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.21924v1",
+      "date": "2026-09-18",
+      "summary": "Interactive retrieval under partial evidence is a sequential information-acquisition problem: an agent must decide which question will create the most useful evidence for the next retrieval update. Existing systems train…",
+      "tldr": "Interactive retrieval under partial evidence is a sequential information-acquisition probl…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
+    },
+    {
+      "id": "1747wpw",
+      "title": "Detecting Pretraining Data in Large Language Models from a Free-Energy Perspective",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2609.21888v1",
+      "date": "2026-09-18",
+      "summary": "Detecting pretraining data in large language models is challenging because high likelihood can reflect either training exposure or strong generalization. In the joint space of prediction loss and predictive entropy, a li…",
+      "tldr": "Detecting pretraining data in large language models is challenging because high likelihood…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-21T14:50:02.042Z"
     },
     {
       "id": "1tzto15",
@@ -5389,333 +5713,6 @@
         "前沿"
       ],
       "addedAt": "2026-08-27T18:48:54.784Z"
-    },
-    {
-      "id": "4r8gc9",
-      "title": "CritICL: Inference-Time Weak-to-Strong Generalization from Small Language Model Failure Modes",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27455v1",
-      "date": "2026-08-27",
-      "summary": "Recent advances in inference-time scaling have significantly improved the reasoning performance of large language models (LLMs). However, these methods typically rely on repeated generation or external verification. To a…",
-      "tldr": "Recent advances in inference-time scaling have significantly improved the reasoning perfor…",
-      "maturity": "proposed",
-      "tags": [
-        "推理"
-      ],
-      "addedAt": "2026-08-28T19:52:46.873Z"
-    },
-    {
-      "id": "4r8flk",
-      "title": "WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27454v1",
-      "date": "2026-08-27",
-      "summary": "Agent skills package specialized knowledge and workflows into reusable resources that extend AI agent capabilities. Recent work automatically discovers such skills from agent experience, which enables agents to progressi…",
-      "tldr": "Agent skills package specialized knowledge and workflows into reusable resources that exte…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Skill"
-      ],
-      "addedAt": "2026-08-28T19:52:46.873Z"
-    },
-    {
-      "id": "4r7wbi",
-      "title": "SWE-Prime: Fewer Trajectories, Better Performance",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27449v1",
-      "date": "2026-08-27",
-      "summary": "To improve large language models' ability to resolve real-world software issues, prior work has focused on constructing large-scale agent trajectory datasets and performing supervised fine-tuning (SFT) on successful traj…",
-      "tldr": "To improve large language models' ability to resolve real-world software issues, prior wor…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-08-28T19:52:46.873Z"
-    },
-    {
-      "id": "4r7vkt",
-      "title": "TTPO: Test-Time Policy Optimization",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27448v1",
-      "date": "2026-08-27",
-      "summary": "Recent prominent post-training methods, such as Reinforcement Learning (RL) and On-Policy Self-Distillation (OPSD), have driven rapid progress in mathematical reasoning for large language models, yet their reliance on gr…",
-      "tldr": "Recent prominent post-training methods, such as Reinforcement Learning (RL) and On-Policy…",
-      "maturity": "proposed",
-      "tags": [
-        "推理"
-      ],
-      "addedAt": "2026-08-28T19:52:46.873Z"
-    },
-    {
-      "id": "4r7r4n",
-      "title": "From Static to Dynamic: Benchmarking Real-World Code Review with MCR-Bench",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27442v1",
-      "date": "2026-08-27",
-      "summary": "In real-world software development, code review typically involves iterative interactions between developers and reviewers to improve software quality, making the process costly and time-consuming. Although recent work e…",
-      "tldr": "In real-world software development, code review typically involves iterative interactions…",
-      "maturity": "proposed",
-      "tags": [
-        "评测"
-      ],
-      "addedAt": "2026-08-28T19:52:46.873Z"
-    },
-    {
-      "id": "4r79bz",
-      "title": "RedEvoAgent: Automatic Red-Teaming Agent with Experience-Driven Skill Evolution",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27439v1",
-      "date": "2026-08-27",
-      "summary": "LLM-based agents are increasingly deployed in product-level execution harnesses, where jailbreaks can trigger harmful tool use and persistent state changes, creating greater risks than unsafe text generation alone. Exist…",
-      "tldr": "LLM-based agents are increasingly deployed in product-level execution harnesses, where jai…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Harness",
-        "Skill",
-        "Tool Use",
-        "越狱"
-      ],
-      "addedAt": "2026-08-28T19:52:46.874Z"
-    },
-    {
-      "id": "4r6mcg",
-      "title": "Mechanistic Reaction Prediction via Discrete Flow Matching on Graph-Structured Electron Occupation",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27429v1",
-      "date": "2026-08-27",
-      "summary": "Chemical reactions are fundamentally transformations in electron space, yet most machine learning approaches model them either through \\textit{de novo} generation of product molecules or through heuristic graph edits tha…",
-      "tldr": "Chemical reactions are fundamentally transformations in electron space, yet most machine l…",
-      "maturity": "proposed",
-      "tags": [
-        "Graph"
-      ],
-      "addedAt": "2026-08-28T19:52:46.874Z"
-    },
-    {
-      "id": "4r6llr",
-      "title": "Stochastic Estimation of Transduced Language Models",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27428v1",
-      "date": "2026-08-27",
-      "summary": "Transduced language models (TLMs) compose a pretrained \\emph{source} language model with a functional finite-state transducer to induce a language model over \\emph{target} strings. Computing the probability of a target p…",
-      "tldr": "Transduced language models (TLMs) compose a pretrained \\emph{source} language model with a…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-28T19:52:46.874Z"
-    },
-    {
-      "id": "4r6kv2",
-      "title": "Persona-Execution Separation: An Architecture Pattern for Evolving LLM Agents under Execution Audit",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27427v1",
-      "date": "2026-08-27",
-      "summary": "Large language model (LLM) agents in governed organizations must let the persona (instructions, tone, self-presentation) evolve freely, while keeping execution (stateful, audited work) traceable. A single trust domain do…",
-      "tldr": "Large language model (LLM) agents in governed organizations must let the persona (instruct…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-08-28T19:52:46.874Z"
-    },
-    {
-      "id": "4r6imz",
-      "title": "Beyond F1: Evaluating Coverage and Failure Recovery in AI Model Security Scanners",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27424v1",
-      "date": "2026-08-27",
-      "summary": "Static scanners are increasingly used to identify executable or otherwise unsafe content in machine- learning artifacts, yet conventional evaluation metrics characterize only cases where a scanner yields a usable securit…",
-      "tldr": "Static scanners are increasingly used to identify executable or otherwise unsafe content i…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-28T19:52:46.874Z"
-    },
-    {
-      "id": "4r6gew",
-      "title": "Learning a Continuous Sepsis Severity Score Without Hour-by-Hour Supervision: A Two-Site Retrospective Study",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27421v1",
-      "date": "2026-08-27",
-      "summary": "Currently used sepsis severity indices rely on fixed variables and weights established decades ago, which are coarsely discretized and calibrated to a cohort that no longer reflects contemporary critical care. No alterna…",
-      "tldr": "Currently used sepsis severity indices rely on fixed variables and weights established dec…",
-      "maturity": "proposed",
-      "tags": [
-        "多模态"
-      ],
-      "addedAt": "2026-08-28T19:52:46.874Z"
-    },
-    {
-      "id": "4r6fo7",
-      "title": "Boosting LLM Exploration via Weak-Model Guidance in RLVR",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27420v1",
-      "date": "2026-08-27",
-      "summary": "Reinforcement Learning with Verifiable Rewards (RLVR) significantly improves LLM reasoning but often causes a drop in policy entropy, leading to narrowed reasoning coverage and degraded pass@$k$ for large $k$. While exis…",
-      "tldr": "Reinforcement Learning with Verifiable Rewards (RLVR) significantly improves LLM reasoning…",
-      "maturity": "proposed",
-      "tags": [
-        "推理"
-      ],
-      "addedAt": "2026-08-28T19:52:46.874Z"
-    },
-    {
-      "id": "4r5cde",
-      "title": "Consolidating RLVR Capabilities Across Domains: A Deep Dive into Fusion Paradigms",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27409v1",
-      "date": "2026-08-27",
-      "summary": "Reinforcement learning with verifiable rewards (RLVR) improves specific capabilities of large language models, but covering multiple capabilities often involves training separate domain experts and subsequently consolida…",
-      "tldr": "Reinforcement learning with verifiable rewards (RLVR) improves specific capabilities of la…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-28T19:52:46.874Z"
-    },
-    {
-      "id": "4r5a5b",
-      "title": "CLAP: Cross-Embodiment Video World Models are Zero-Shot Physical Simulators",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27406v1",
-      "date": "2026-08-27",
-      "summary": "State-of-the-art action-conditioned video models are typically restricted to a single robot embodiment, preventing them from leveraging the vast corpus of heterogeneous video data that contains rich signals for learning …",
-      "tldr": "State-of-the-art action-conditioned video models are typically restricted to a single robo…",
-      "maturity": "proposed",
-      "tags": [
-        "世界模型"
-      ],
-      "addedAt": "2026-08-28T19:52:46.874Z"
-    },
-    {
-      "id": "4r576j",
-      "title": "How Language Models Organize and Structure Moral Knowledge",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27402v1",
-      "date": "2026-08-27",
-      "summary": "How do large language models (LLMs) organize moral knowledge? Models detect moral content broadly, but detection is a low bar. We ask whether they go further, distinguishing moral foundations from one another and organiz…",
-      "tldr": "How do large language models (LLMs) organize moral knowledge?",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-28T19:52:46.874Z"
-    },
-    {
-      "id": "4qr96e",
-      "title": "Making Clinical Language Models Auditable: Concept-Guided Fine-Tuning for Robust Prediction",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27397v1",
-      "date": "2026-08-27",
-      "summary": "Clinical language models can achieve strong in-hospital accuracy yet fail under deployment shifts because they exploit note-specific artifacts (e.g., templates, separators, boilerplate) that do not reflect patient state.…",
-      "tldr": "Clinical language models can achieve strong in-hospital accuracy yet fail under deployment…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-28T19:52:46.874Z"
-    },
-    {
-      "id": "4qr7p0",
-      "title": "LeVJEPA: Efficient & Scalable Video Pretraining without the Heuristics",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27395v1",
-      "date": "2026-08-27",
-      "summary": "Video carries the temporal structure of the physical world, yet learning representations from it has remained computationally expensive: prevailing self-supervised methods either prevent representation collapse through a…",
-      "tldr": "Video carries the temporal structure of the physical world, yet learning representations f…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-28T19:52:46.874Z"
-    },
-    {
-      "id": "4qr6yb",
-      "title": "RATIO: A Benchmark for Retrieval Across Typed Ideation Operations in Scientific Literature",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27394v1",
-      "date": "2026-08-27",
-      "summary": "Retrieved scientific literature can serve as inspiration for both human and AI scientists. Inspiration can take different forms: prior work may directly suggest how to address a problem, or surface directions at differen…",
-      "tldr": "Retrieved scientific literature can serve as inspiration for both human and AI scientists.…",
-      "maturity": "proposed",
-      "tags": [
-        "评测"
-      ],
-      "addedAt": "2026-08-28T19:52:46.874Z"
-    },
-    {
-      "id": "4qr5gx",
-      "title": "Property-Specific Recoverability from Contact PPG to Camera rPPG under Heterogeneous Observation Conditions",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27392v1",
-      "date": "2026-08-27",
-      "summary": "Camera-derived remote photoplethysmography (rPPG) is commonly validated through endpoint accuracy, but endpoint performance does not establish whether other physiological properties of source contact photoplethysmography…",
-      "tldr": "Camera-derived remote photoplethysmography (rPPG) is commonly validated through endpoint a…",
-      "maturity": "proposed",
-      "tags": [
-        "Graph"
-      ],
-      "addedAt": "2026-08-28T19:52:46.874Z"
-    },
-    {
-      "id": "4qr4q8",
-      "title": "CorporateBench: Large-Scale Q&A Benchmarking with Temporal Knowledge Bases",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2608.27391v1",
-      "date": "2026-08-27",
-      "summary": "LLMs are increasingly able to answer complex questions about enterprise-scale document collections. But evaluation is hard: companies don't want to share internal communications, and synthetic datasets have been overly s…",
-      "tldr": "LLMs are increasingly able to answer complex questions about enterprise-scale document col…",
-      "maturity": "proposed",
-      "tags": [
-        "评测"
-      ],
-      "addedAt": "2026-08-28T19:52:46.874Z"
-    },
-    {
-      "id": "1x9t81x",
-      "title": "How loveholidays is making everyone a builder with Codex",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/loveholidays",
-      "date": "2026-08-26",
-      "summary": "",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-26T10:15:14.693Z",
-      "tldr": "How loveholidays is making everyone a builder with Codex"
-    },
-    {
-      "id": "3wsk4c",
-      "title": "Bringing ChatGPT for Teachers to more U.S. school districts",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
-      "date": "2026-08-26",
-      "summary": "",
-      "tldr": "Bringing ChatGPT for Teachers to more U.S. school districts",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-27T18:48:42.200Z"
-    },
-    {
-      "id": "lqipo9",
-      "title": "Learning never stops: How AI makes learning continuous",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/learning-never-stops",
-      "date": "2026-08-26",
-      "summary": "",
-      "tldr": "Learning never stops: How AI makes learning continuous",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-08-27T18:48:42.407Z"
     }
   ]
 }
