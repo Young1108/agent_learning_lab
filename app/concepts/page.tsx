@@ -202,7 +202,7 @@ function ConceptArchive() {
             账本在生长，<span className="tone">半径不变</span>
           </h1>
           <p className="sub">
-            定时抓取 OpenAI / Google DeepMind / Hugging Face / arXiv 等一手来源。每张卡片是一条可对读的展陈，不是信息流。
+            定时抓取 OpenAI / Google DeepMind / Hugging Face / arXiv 等一手来源，并策展 Meta Muse / Kimi / Creao AI / Genspark 等技术文章。每张卡片是一条可对读的展陈，不是信息流。
           </p>
           <div className="meta-chips">
             <span className="mc">馆藏 {DATA.conceptCount} 条</span>

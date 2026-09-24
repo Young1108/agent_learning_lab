@@ -1,0 +1,9 @@
+[
+  {
+    "title": "We Built an Agent Platform. Then the Agents Rebuilt It.",
+    "url": "https://creao.ai/blog/we-built-an-agent-platform.-then-the-agents-rebuilt-it.",
+    "date": "2026-04-13",
+    "summary": "CREAO（25 人团队）自述 AI-first 工程实践：99% 的生产代码由 AI 编写。按 OpenAI 所称的 harness engineering 思路重构工程流程——统一 monorepo 让智能体可读系统全貌、六阶段确定性 CI/CD 流水线、Claude 三路并行代码审查（质量/安全/依赖），以及每天定时巡检 CloudWatch、错误聚类自动打单的自愈反馈回路。",
+    "tags": ["Agent", "Harness", "前沿"]
+  }
+]

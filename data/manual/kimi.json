@@ -1,0 +1,9 @@
+[
+  {
+    "title": "Kimi K3：智能的新前沿",
+    "url": "https://www.kimi.com/news/kimi-k3",
+    "date": "2026-07-17",
+    "summary": "月之暗面（Moonshot AI）发布旗舰模型 Kimi K3：2.8 万亿参数级的开源 MoE 模型，基于 Kimi Delta Attention（KDA）混合线性注意力与 Attention Residuals 架构，原生支持视觉理解并具备 1M token 上下文窗口，面向长程编程、知识工作与深度推理等前沿场景设计；完整模型权重于 2026 年 7 月 27 日前发布。",
+    "tags": ["模型", "推理", "多模态", "开源"]
+  }
+]

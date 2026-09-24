@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Introducing Muse: The World's First Personal AI Agent Built for Everyone",
+    "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+    "date": "2026-09-10",
+    "summary": "Meta 发布面向所有人的个人 AI 智能体 Muse：以 Muse Spark 模型为底座，运行在专门的 Muse Secure VM 中（含独立浏览器），能拆解目标、检索信息、调用工具并执行预约、表单填写、客服沟通等真实操作，用户关闭应用后仍可在后台继续处理；交互与日常消息对话一致，可在 Muse 应用或 WhatsApp 中直接使用。",
+    "tags": ["Agent", "前沿"]
+  },
+  {
+    "title": "Introducing Muse Spark: MSL's First Model, Purpose-Built to Prioritize People",
+    "url": "https://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintelligence-labs/",
+    "date": "2026-04-08",
+    "summary": "Meta Superintelligence Labs（MSL）发布首个模型 Muse Spark：为 Meta 产品量身打造的多模态推理模型，当前驱动 Meta AI 应用与网站，并逐步解锁跨 Instagram、Facebook、Threads 的推荐引用能力；官方称其是可预测扩展轨迹上的早期数据点，更大模型已在开发中。",
+    "tags": ["模型", "多模态", "前沿"]
+  }
+]

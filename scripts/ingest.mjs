@@ -15,6 +15,16 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_PATH = join(__dirname, "..", "data", "concepts.json");
 
+/* DeepSeek 新闻 slug 即发布日期：2025 年起是 newsYYMMDD（news260910 → 2026-09-10），
+ * 更早的是 newsMMDD（无年份，站点上这批都属于 2024 年）。
+ * 页面自身取不到可信日期：正文首屏混排侧栏「最新新闻」的日期，会被误当成文章日期。 */
+export function deepseekDateFromUrl(loc) {
+  const six = String(loc).match(/news(\d{2})(\d{2})(\d{2})$/);
+  if (six) return `20${six[1]}-${six[2]}-${six[3]}`;
+  const four = String(loc).match(/news(\d{2})(\d{2})$/);
+  return four ? `2024-${four[1]}-${four[2]}` : "";
+}
+
 /* 来源清单：type = rss | arxiv | sitemap */
 const SOURCES = [
   {
@@ -64,6 +74,82 @@ const SOURCES = [
     maturity: "proposed",
     tags: ["论文"],
     limit: 20,
+  },
+  {
+    name: "Meta",
+    type: "rss",
+    url: "https://engineering.fb.com/feed/",
+    maturity: "emerging",
+    tags: ["meta", "模型"],
+    limit: 15,
+  },
+  {
+    name: "Meta Muse",
+    type: "manual",
+    file: "data/manual/meta-muse.json",
+    maturity: "emerging",
+    tags: ["meta", "Agent"],
+    limit: 3,
+  },
+  {
+    name: "DeepSeek",
+    type: "sitemap",
+    url: "https://api-docs.deepseek.com/sitemap.xml",
+    pathRe: /\/news\//,
+    titleStrip: /\s*\|\s*DeepSeek API Docs\s*$/i,
+    // 已下线/软 404 的新闻页会回落成文档默认页，标题固定为站点首页标题，直接丢弃
+    titleExcludeRe: /^your first api call$/i,
+    dateFromUrl: deepseekDateFromUrl,
+    maturity: "emerging",
+    tags: ["deepseek", "开源"],
+    limit: 10,
+  },
+  {
+    name: "Kimi",
+    type: "manual",
+    file: "data/manual/kimi.json",
+    maturity: "emerging",
+    tags: ["moonshot", "模型"],
+    limit: 3,
+  },
+  {
+    name: "Creao AI",
+    type: "manual",
+    file: "data/manual/creoai.json",
+    maturity: "emerging",
+    tags: ["agent", "平台"],
+    limit: 3,
+  },
+  {
+    name: "Genspark",
+    type: "manual",
+    file: "data/manual/genspark.json",
+    maturity: "emerging",
+    tags: ["agent", "搜索"],
+    limit: 3,
+  },
+  {
+    name: "Manus",
+    type: "sitemap",
+    url: "https://manus.im/sitemap.xml",
+    pathRe: /\/blog\//,
+    excludeRe: /\/blog\/(customer-stories|product)$/,
+    titleStrip: /\s*\|\s*Manus\s*$/i,
+    // blog 无 lastmod、页内无结构化日期：发布日期只能从 og:image 的 CDN 路径拿
+    dateFromImage: true,
+    // 29 篇全抓：日期未知时无法按 lastmod 预筛，漏抓就等于漏最新文章
+    fetchLimit: 32,
+    maturity: "emerging",
+    tags: ["agent", "平台"],
+    limit: 10,
+  },
+  {
+    name: "Google Gemini",
+    type: "rss",
+    url: "https://blog.google/products/gemini/rss/",
+    maturity: "emerging",
+    tags: ["gemini", "模型"],
+    limit: 15,
   },
 ];
 
@@ -347,24 +433,94 @@ async function fetchArticleSummary(url) {
   }
 }
 
-/* 解析 sitemap：提取 news/engineering 文章 URL + lastmod */
-export function parseSitemap(xml) {
+/* 解析 sitemap：提取文章 URL + lastmod；pathRe 可逐源定制（如 Manus 的 /blog/、DeepSeek 的 /news/） */
+export function parseSitemap(xml, pathRe = /\/news\/|\/engineering\//) {
   const pairs = [];
   const blocks = xml.match(/<url>[\s\S]*?<\/url>/g) ?? [];
   for (const block of blocks) {
     const loc = block.match(/<loc>([^<]+)<\/loc>/)?.[1] ?? "";
-    if (!/\/news\/|\/engineering\//.test(loc)) continue;
+    if (!pathRe.test(loc)) continue;
     const lastmod = block.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1] ?? "";
     pairs.push({ loc, lastmod });
   }
   return pairs;
 }
 
-/* Anthropic 无公开 RSS：sitemap 取最新文章，逐篇抓 title + description */
+/* 文章页内日期提取：优先 article:published_time meta，其次逐源 dateRe（如 DeepSeek 页首的 YYYY/MM/DD） */
+function extractDateFromHtml(html, dateRe) {
+  if (!html) return "";
+  const meta = html.match(
+    /<meta[^>]*property=["']article:published_time["'][^>]*content=["']([^"']+)/i,
+  );
+  if (meta?.[1]) return normalizeDate(meta[1]);
+  if (dateRe) {
+    const m = html.match(dateRe);
+    if (m?.[1] && m[2] && m[3]) {
+      return `${m[1]}-${String(m[2]).padStart(2, "0")}-${String(m[3]).padStart(2, "0")}`;
+    }
+  }
+  return "";
+}
+
+/* 封面 CDN 路径常带发布日（manuscdn .../materials/2025/10/16/<hash>.webp）；
+ * 站点既无 lastmod 也无结构化日期时的最后一条可靠线索 */
+export function dateFromImageUrl(url) {
+  const m = String(url ?? "").match(/\/(20\d{2})\/(\d{2})\/(\d{2})\//);
+  return m ? `${m[1]}-${m[2]}-${m[3]}` : "";
+}
+
+/* 实在取不到日期时的兜底：显式告警。静默写「今天」会让条目永久霸占榜单首位，
+ * 而 400 条滚动上限只淘汰日期最旧的，永远淘汰不到它们。 */
+function unknownDateFallback(sourceName, url) {
+  console.error(`[date?] ${sourceName}: no date found, falling back to today: ${url}`);
+  return new Date().toISOString().slice(0, 10);
+}
+
+/* 手动策展源：读取 data/manual/<file>.json（数组），按 URL 规范化后进入统一合并流程 */
+export async function fetchManual(source) {
+  const file = join(__dirname, "..", source.file);
+  let raw = [];
+  try {
+    raw = JSON.parse(readFileSync(file, "utf8"));
+  } catch (err) {
+    console.error(`[skip] ${source.name}: manual file unreadable: ${err.message}`);
+    return [];
+  }
+  if (!Array.isArray(raw)) return [];
+  const items = [];
+  for (const it of raw.slice(0, source.limit)) {
+    const url = normalizeUrl(it.url);
+    const title = String(it.title ?? "").trim();
+    if (!url || !title) continue;
+    const summary = cleanSummary(it.summary ?? "");
+    items.push({
+      id: hashId(url),
+      title,
+      source: source.name,
+      url,
+      date: normalizeDate(it.date) || unknownDateFallback(source.name, url),
+      summary,
+      cover: /^https?:/i.test(it.cover ?? "") ? it.cover : undefined,
+      tldr: makeTldr(title, summary),
+      maturity: it.maturity ?? source.maturity,
+      tags:
+        Array.isArray(it.tags) && it.tags.length > 0
+          ? it.tags
+          : inferTags(title, summary),
+      pinned: true, // 策展条目不被 400 条滚动上限挤掉
+      addedAt: new Date().toISOString(),
+    });
+  }
+  return items;
+}
+
+/* Anthropic 无公开 RSS：sitemap 取最新文章，逐篇抓 title + description；日期优先 lastmod，其次页内日期，最后回退今天 */
 async function fetchSitemapArticles(source, xml) {
-  const pairs = parseSitemap(xml)
-    .sort((a, b) => (a.lastmod < b.lastmod ? 1 : -1))
-    .slice(0, source.limit);
+  const pairs = parseSitemap(xml, source.pathRe)
+    .filter((p) => !source.excludeRe?.test(p.loc))
+    // lastmod 缺失时不能返回 -1：比较器不自洽会让预筛顺序随机，可能丢掉最新文章
+    .sort((a, b) => (a.lastmod < b.lastmod ? 1 : a.lastmod > b.lastmod ? -1 : 0))
+    .slice(0, source.fetchLimit ?? source.limit * 2);
   const items = [];
   for (const { loc, lastmod } of pairs) {
     await new Promise((resolve) => setTimeout(resolve, 250)); // 限速，避免触发风控
@@ -373,9 +529,14 @@ async function fetchSitemapArticles(source, xml) {
       const title = decodeEntities(
         html.match(/<title[^>]*>([\s\S]*?)<\/title>/)?.[1] ?? "",
       )
-        .replace(/\s*[|\\]\s*Anthropic\s*$/i, "")
+        .replace(source.titleStrip ?? /\s*[|\\]\s*Anthropic\s*$/i, "")
         .replace(/\s+/g, " ")
         .trim();
+      // 软 404 / 已下线文章会回落成站点默认页，标题是同一句站点标语 → 不是文章
+      if (source.titleExcludeRe?.test(title)) {
+        console.error(`[skip] article ${loc}: generic page title "${title}"`);
+        continue;
+      }
       const desc = decodeEntities(
         html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? "",
       );
@@ -391,7 +552,12 @@ async function fetchSitemapArticles(source, xml) {
         title,
         source: source.name,
         url,
-        date: normalizeDate(lastmod) || new Date().toISOString().slice(0, 10),
+        date:
+          normalizeDate(lastmod) ||
+          (source.dateFromUrl ? source.dateFromUrl(loc) : "") ||
+          extractDateFromHtml(html, source.dateRe) ||
+          (source.dateFromImage ? dateFromImageUrl(cover) : "") ||
+          unknownDateFallback(source.name, loc),
         summary,
         cover: /^https?:/i.test(cover) ? cover : undefined,
         tldr: makeTldr(title, summary),
@@ -403,10 +569,13 @@ async function fetchSitemapArticles(source, xml) {
       console.error(`[skip] article ${loc}: ${err.message}`);
     }
   }
-  return items;
+  // sitemap 常缺 lastmod（如 Manus / DeepSeek）：先抓再按实际日期倒序，取最新 limit 条
+  items.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+  return items.slice(0, source.limit);
 }
 
 async function fetchSource(source) {
+  if (source.type === "manual") return fetchManual(source);
   const raw = await fetchWithTimeout(source.url);
   if (source.type === "sitemap") {
     return fetchSitemapArticles(source, raw);
@@ -430,7 +599,7 @@ async function fetchSource(source) {
       title: item.title,
       source: source.name,
       url,
-      date: normalizeDate(item.date) || new Date().toISOString().slice(0, 10),
+      date: normalizeDate(item.date) || unknownDateFallback(source.name, url),
       summary,
       cover: source.type === "rss" && item.image ? item.image : undefined,
       tldr: makeTldr(item.title, summary),
@@ -466,22 +635,90 @@ export function mergeItems(existing, fetched) {
       continue;
     }
     const tags = [...new Set([...(current.tags ?? []), ...(item.tags ?? [])])];
+    const pinned = Boolean(current.pinned || item.pinned);
     byUrl.set(url, {
       ...current,
       tags,
       title: current.title || item.title || current.title,
       // 摘要为自动抓取产物：新抓取（含正文首段）优先刷新
       summary: item.summary || current.summary || "",
+      // 日期以新抓取为准（解析逻辑迭代后更可靠），旧值兜底
+      date: item.date || current.date || "",
       // 缺失字段（封面）用新抓取补全；tldr 是自动生成的，新抓取优先刷新
       cover: current.cover ?? item.cover,
       tldr: item.tldr ?? current.tldr,
+      // 策展标记必须显式合并：老库里没有该字段，只靠 ...current 会让已入库的策展条目丢掉钉住资格
+      ...(pinned ? { pinned: true } : {}),
     });
   }
   return [...byUrl.values()];
 }
 
+/* 历史条目就地校正。合并只做「新增/刷新」，不会撤销上一轮写错的条目；
+ * 而错误日期若被写成「今天」，就会永久排在 400 条滚动上限的队首，永远淘汰不掉。
+ * 这里用当前来源规则回头修正老库：
+ *   1) 标题命中 titleExcludeRe 的（软 404 回落页）不是文章 → 剔除；
+ *   2) slug / 封面 CDN 路径里带发布日的来源 → 用规则值覆盖历史错值（页面内日期会被侧栏污染）。 */
+export function reconcileExisting(concepts, sources) {
+  const byName = new Map(sources.map((s) => [s.name, s]));
+  const kept = [];
+  let pruned = 0;
+  let retouched = 0;
+  for (const c of concepts) {
+    const src = byName.get(c.source);
+    if (!src) {
+      kept.push(c);
+      continue;
+    }
+    if (!c.pinned && src.titleExcludeRe?.test(c.title ?? "")) {
+      pruned += 1;
+      continue;
+    }
+    const url = normalizeUrl(c.url) || c.url;
+    const authoritative =
+      (src.dateFromUrl ? src.dateFromUrl(url) : "") ||
+      (src.dateFromImage ? dateFromImageUrl(c.cover) : "");
+    if (authoritative && authoritative !== c.date) {
+      kept.push({ ...c, date: authoritative });
+      retouched += 1;
+      continue;
+    }
+    kept.push(c);
+  }
+  return { concepts: kept, pruned, retouched };
+}
+
+/* 容量上限（cap 条）的名额分配：
+ *   1) 策展条目（pinned）永不淘汰；
+ *   2) 每个来源保底保留最新 limit 条 —— limit 同时是「抓多少」和「保底留多少」。
+ *      只按全局日期倒序裁的话，低频来源（Manus / DeepSeek / Kimi）会被 arXiv 与大厂 feed
+ *      的高频条目整体挤出窗口，等于这个来源白接了；
+ *   3) 剩余名额按全局日期倒序填满。 */
+export function selectCapped(merged, sources, cap = 400) {
+  const byDateDesc = (a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0);
+  const pinned = merged.filter((c) => c.pinned);
+  const rest = merged.filter((c) => !c.pinned).sort(byDateDesc);
+  const quota = Math.max(0, cap - pinned.length);
+  const selected = new Map();
+  for (const source of sources) {
+    if (selected.size >= quota) break;
+    for (const c of rest.filter((x) => x.source === source.name).slice(0, source.limit)) {
+      if (selected.size >= quota) break;
+      selected.set(c.url, c);
+    }
+  }
+  for (const c of rest) {
+    if (selected.size >= quota) break;
+    selected.set(c.url, c);
+  }
+  // 整体仍按日期倒序：保底与策展标记只决定「留不留」，不改变账本的时间顺序
+  return [...pinned, ...selected.values()].sort(byDateDesc);
+}
+
 async function main() {
-  const { concepts: existing, version } = loadExisting();
+  const loaded = loadExisting();
+  const { concepts: existing, pruned, retouched } = reconcileExisting(loaded.concepts, SOURCES);
+  const version = loaded.version;
 
   let fetched = 0;
   let failed = 0;
@@ -502,16 +739,18 @@ async function main() {
   for (const c of merged) {
     c.tldr = makeTldr(c.title, c.summary);
   }
-  // 按 date 倒序（最新在前），再按 addedAt 倒序
-  merged.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+  const byDateDesc = (a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0);
+  merged.sort(byDateDesc);
 
-  // 容量上限
-  const capped = merged.slice(0, 400);
+  const capped = selectCapped(merged, SOURCES);
 
-  const isNew = capped.length > existing.length;
+  // 版本记号 = 新出现过的 URL 数。库里长期处于 400 条满编，用「总数变多」判断会让版本号永久停住，
+  // 前端「自上次访问新增 N 个」就永远显示 0
+  const knownUrls = new Set(existing.map((c) => normalizeUrl(c.url) || c.url));
+  const added = capped.filter((c) => !knownUrls.has(normalizeUrl(c.url) || c.url)).length;
   const data = {
     updatedAt: new Date().toISOString(),
-    version: isNew ? version + 1 : version,
+    version: added > 0 ? version + 1 : version,
     sourceCount: SOURCES.length,
     conceptCount: capped.length,
     concepts: capped,
@@ -519,10 +758,11 @@ async function main() {
   mkdirSync(dirname(DATA_PATH), { recursive: true });
   writeFileSync(DATA_PATH, JSON.stringify(data, null, 2) + "\n");
 
+  const pinnedCount = capped.filter((c) => c.pinned).length;
   console.log(
-    `sources ok: ${SOURCES.length - failed}/${SOURCES.length}, items: ${fetched}, total: ${capped.length}, new: ${isNew ? "yes" : "no"}`,
+    `sources ok: ${SOURCES.length - failed}/${SOURCES.length}, items: ${fetched}, total: ${capped.length}, pinned: ${pinnedCount}, added: ${added}, reconciled: -${pruned}/~${retouched}`,
   );
-  if (isNew) console.log("CHANGED");
+  if (added > 0) console.log("CHANGED");
   process.exit(0);
 }
 

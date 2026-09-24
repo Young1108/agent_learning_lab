@@ -1,0 +1,9 @@
+[
+  {
+    "title": "The AI Efficiency Frontier: How Enterprises Scale Agentic AI Without Letting Cost Outrun Value",
+    "url": "https://www.genspark.ai/blog/the-ai-efficiency-frontier",
+    "date": "2026-08-06",
+    "summary": "Genspark 联合创始人兼 CTO Kay 的技术长文：企业规模化 Agentic AI 的关键不是押注单一模型，而是按「每次成功任务的成本」移动效率前沿。文中给出三层执行架构——模型路由（按任务分派模型并追踪 router regret）、微调开放权重模型做领域专才（对 Kimi K2 强化微调后奖励质量 0.76→0.82、成本降约 50%）、廉价执行模型+前沿顾问模型的 advisor 模式——底层以持续评测系统作为治理基础。",
+    "tags": ["Agent", "评测", "前沿"]
+  }
+]

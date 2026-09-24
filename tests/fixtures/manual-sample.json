@@ -1,0 +1,9 @@
+[
+  {
+    "title": "Sample Curated Article",
+    "url": "https://example.com/curated/1",
+    "date": "2026-09-01",
+    "summary": "这是策展条目示例。它应被解析为正式概念条目。",
+    "tags": ["Agent", "前沿"]
+  }
+]
