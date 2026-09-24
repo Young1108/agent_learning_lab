@@ -1,9 +1,24 @@
 {
-  "updatedAt": "2026-09-24T09:52:30.251Z",
+  "updatedAt": "2026-09-24T13:11:30.784Z",
   "version": 26,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "5fzwnz",
+      "title": "Claude discovers a novel enzyme system",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
+      "date": "2026-09-24",
+      "summary": "In early results from our new life sciences research lab, Claude agents found an enzyme system whose function is still unknown.",
+      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/394de337d8a5d8db93a1c048fa1cb53e16a09625-2048x1240.jpg",
+      "tldr": "In early results from our new life sciences research lab, Claude agents found an enzyme sy…",
+      "maturity": "emerging",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-24T08:28:18.894Z"
+    },
     {
       "id": "6mjbqa",
       "title": "Bringing Private Processing to Meta AI Glasses",
@@ -157,21 +172,6 @@
         "前沿"
       ],
       "addedAt": "2026-09-24T08:26:41.002Z"
-    },
-    {
-      "id": "5fzwnz",
-      "title": "Claude discovers a novel enzyme system",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
-      "date": "2026-09-23",
-      "summary": "In early results from our new life sciences research lab, Claude agents found an enzyme system whose function is still unknown.",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/394de337d8a5d8db93a1c048fa1cb53e16a09625-2048x1240.jpg",
-      "tldr": "In early results from our new life sciences research lab, Claude agents found an enzyme sy…",
-      "maturity": "emerging",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-09-24T08:28:18.894Z"
     },
     {
       "id": "1rhqxag",
