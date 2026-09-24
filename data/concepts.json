@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-24T08:53:24.063Z",
-  "version": 25,
+  "updatedAt": "2026-09-24T09:52:30.251Z",
+  "version": 26,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
@@ -229,6 +229,20 @@
         "前沿"
       ],
       "addedAt": "2026-09-23T13:20:47.681Z"
+    },
+    {
+      "id": "13xc0a2",
+      "title": "How to Use NVIDIA Warp and MjWarp to Accelerate Robotics Simulation and Learning Workflows",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/nvidia/how-to-use-nvidia-warp-and-mjwarp",
+      "date": "2026-09-23",
+      "summary": "MuJoCo Warp (MJWarp), built on NVIDIA Warp, takes compatible MuJoCo models into that GPU-scale regime. In this article, we will move an SO-101 follower arm from a familiar MuJoCo workflow to as many a…",
+      "tldr": "MuJoCo Warp (MJWarp), built on NVIDIA Warp, takes compatible MuJoCo models into that GPU-s…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-24T09:51:27.444Z"
     },
     {
       "id": "1adbaxf",
@@ -4974,20 +4988,6 @@
       "addedAt": "2026-09-03T12:35:03.144Z"
     },
     {
-      "id": "fyi4qa",
-      "title": "NeoMME: an efficient Multimodal-native and Multilingual Encoder",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/Hcompany/neomme",
-      "date": "2026-09-03",
-      "summary": "TL;DR We introduce NeoMME, a family of 260M and 800M multilingual multimodal encoders. Unlike many generative visual language models, NeoMME does not use a separate pretrained vision tower or a causal…",
-      "tldr": "TL;DR We introduce NeoMME, a family of 260M and 800M multilingual multimodal encoders. Unl…",
-      "maturity": "emerging",
-      "tags": [
-        "多模态"
-      ],
-      "addedAt": "2026-09-04T12:29:08.818Z"
-    },
-    {
       "id": "5l8jsj",
       "title": "ZGateway: Learnings from Putting a Proxy in Front of ZippyDB",
       "source": "Meta",
@@ -5000,6 +5000,20 @@
         "前沿"
       ],
       "addedAt": "2026-09-24T08:38:27.214Z"
+    },
+    {
+      "id": "fyi4qa",
+      "title": "NeoMME: an efficient Multimodal-native and Multilingual Encoder",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/Hcompany/neomme",
+      "date": "2026-09-03",
+      "summary": "TL;DR We introduce NeoMME, a family of 260M and 800M multilingual multimodal encoders. Unlike many generative visual language models, NeoMME does not use a separate pretrained vision tower or a causal…",
+      "tldr": "TL;DR We introduce NeoMME, a family of 260M and 800M multilingual multimodal encoders. Unl…",
+      "maturity": "emerging",
+      "tags": [
+        "多模态"
+      ],
+      "addedAt": "2026-09-04T12:29:08.818Z"
     },
     {
       "id": "1l1900a",
@@ -5042,20 +5056,6 @@
         "前沿"
       ],
       "addedAt": "2026-09-04T12:28:54.714Z"
-    },
-    {
-      "id": "odqy9z",
-      "title": "Safety overview: GPT-6 Astra",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/safety-overview-gpt-6-astra",
-      "date": "2026-09-03",
-      "summary": "",
-      "tldr": "Safety overview: GPT-6 Astra",
-      "maturity": "emerging",
-      "tags": [
-        "安全"
-      ],
-      "addedAt": "2026-09-04T12:28:55.005Z"
     },
     {
       "id": "1iislmd",
@@ -5634,6 +5634,21 @@
       "addedAt": "2026-09-24T08:50:57.820Z"
     },
     {
+      "id": "19nss3x",
+      "title": "DeepSeek-V3.2 Release",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news251201",
+      "date": "2025-12-01",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "DeepSeek-V3.2 Release",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-24T09:51:47.296Z"
+    },
+    {
       "id": "19nsad7",
       "title": "Introducing DeepSeek-V3.2-Exp",
       "source": "DeepSeek",
@@ -5707,21 +5722,6 @@
         "前沿"
       ],
       "addedAt": "2026-09-24T08:50:17.942Z"
-    },
-    {
-      "id": "19ns4eo",
-      "title": "Introducing DeepSeek App",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news250115",
-      "date": "2025-01-15",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "Introducing DeepSeek App",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-24T08:50:17.196Z"
     }
   ]
 }
