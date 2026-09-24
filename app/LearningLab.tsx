@@ -1891,6 +1891,7 @@ export function LearningLab() {
               <a href="/agent-foundations.html">基础馆</a>
               <a href="/concepts">概念馆</a>
               <a href="/git-workflow.html">Git 实验室</a>
+              <a href="/jev-system-one.html">Jev 技术综述</a>
               <a href="#sec-skill">Skill 体系</a>
               <a href="#sec-sources">来源</a>
             </div>
@@ -1986,6 +1987,7 @@ export function LearningLab() {
                 <span className="mc">3 个机制 Demo</span>
                 <span className="mc">Skill 分层手册</span>
                 <span className="mc">判断手感训练</span>
+                <span className="mc">System One 模型综述</span>
                 <span className="mc">课程核对 {CURRICULUM_AS_OF}</span>
                 <span className="mc">账本 {ledgerUpdated}</span>
               </div>
@@ -2127,6 +2129,12 @@ export function LearningLab() {
                 <h3>协作工作坊</h3>
                 <p>用图形化提交网络理解 merge、rebase、冲突与远端同步。</p>
                 <b>进入课程 →</b>
+              </a>
+              <a className="course-card exhibit" href="/jev-system-one.html" style={{ gridColumn: "1 / -1" }}>
+                <span>前沿模型馆 · 技术综述</span>
+                <h3>TypeSafe Jev：System One 决策模型</h3>
+                <p>不生成文本、只输出带校准概率的结构化决策。官方声称 vs 第三方实测、开源复现路线与争议，四级证据一页看清。</p>
+                <b>进入展厅 →</b>
               </a>
             </div>
             <div className="chapter-jump">

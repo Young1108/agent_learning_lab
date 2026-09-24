@@ -1,6 +1,6 @@
 export const CURRICULUM_AS_OF = "2026-07-28";
 
-export type WingId = "home" | "network" | "foundations" | "concepts" | "git";
+export type WingId = "home" | "network" | "foundations" | "concepts" | "git" | "jev";
 
 export const WINGS: { id: WingId; href: string; label: string; hint: string }[] = [
   { id: "home", href: "/", label: "今日", hint: "选择起点" },
@@ -8,6 +8,7 @@ export const WINGS: { id: WingId; href: string; label: string; hint: string }[] 
   { id: "concepts", href: "/concepts", label: "概念", hint: "每日账本" },
   { id: "foundations", href: "/agent-foundations.html", label: "基础馆", hint: "通关课程" },
   { id: "git", href: "/git-workflow.html", label: "Git", hint: "协作图" },
+  { id: "jev", href: "/jev-system-one.html", label: "Jev", hint: "System One 模型" },
 ];
 
 export type RadiusId =

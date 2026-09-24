@@ -19,6 +19,7 @@
 - 首页：知识网络、Harness / Loop / Graph 技术复现 Demo、Skill 体系、判断手感桥接
 - [`public/agent-foundations.html`](./public/agent-foundations.html)：Agent 基础馆（Tool / ReAct / Loop / MCP / Multi-Agent / Skill / A2A）
 - [`public/git-workflow.html`](./public/git-workflow.html)：Git Workflow 图形化实验室
+- [`public/jev-system-one.html`](./public/jev-system-one.html)：TypeSafe Jev / System One 模型技术综述（多 agent 研究产物，官方披露/声称与第三方实测分级标注）
 
 ## 本地开发
 
