@@ -5,6 +5,7 @@ import conceptsData from "../../data/concepts.json";
 import Link from "next/link";
 import { LabShell } from "../LabShell";
 import { CURRICULUM_AS_OF, RADIUS, relateToRadius, type RadiusId } from "../lab-chrome";
+import "./kami.css";
 
 type Concept = {
   id: string;
@@ -35,8 +36,9 @@ const MATURITY_LABEL: Record<string, string> = {
 };
 
 const archiveNav = [
-  { id: "sec-ledger", num: "Ⅰ", label: "每日账本", color: "var(--ink)" },
-  { id: "sec-radius", num: "Ⅱ", label: "控制半径索引", color: "var(--ink-soft)" },
+  { id: "sec-radius", num: "01", label: "控制半径", color: "var(--ink)" },
+  { id: "sec-filter", num: "02", label: "检索与筛选", color: "var(--ink-soft)" },
+  { id: "sec-ledger", num: "03", label: "账本", color: "var(--ink)" },
 ];
 
 function useLocalStorage<T>(key: string, initial: T): [T, (v: T | ((c: T) => T)) => void] {
@@ -155,6 +157,7 @@ function ConceptArchive() {
 
   return (
     <LabShell
+      skin="kami"
       wing="concepts"
       logo="本章"
       tag="每日账本 · 挂回控制半径"
@@ -167,7 +170,9 @@ function ConceptArchive() {
       navItems={archiveNav}
       activeId={activeId}
       onActive={setActiveId}
-      crumb={radius === "全部" ? "Ⅰ · 每日账本" : `半径 · ${RADIUS.find((r) => r.id === radius)?.en ?? radius}`}
+      crumb={
+        radius === "全部" ? "概念账本" : `半径 · ${RADIUS.find((r) => r.id === radius)?.en ?? radius}`
+      }
       progressLabel="馆藏"
       footer={
         <footer className="pagefoot">
@@ -182,47 +187,54 @@ function ConceptArchive() {
         </footer>
       }
     >
-      <section className="lesson" id="sec-ledger" style={{ ["--sc" as string]: "var(--ink)" }}>
-        <div className="path-bridge">
-          <span className="pb-k">学习路径</span>
-          <div className="pb-steps">
-            <Link href="/">今日</Link>
-            <span>→</span>
-            <Link href="/#sec-network">知识网络</Link>
-            <span>→</span>
-            <a href="/agent-foundations.html">基础馆</a>
-            <span>→</span>
-            <strong>概念（当前）</strong>
-          </div>
+      <header>
+        <div className="k-kicker">AI Learning Lab / 概念账本</div>
+        <h1 className="k-title">
+          账本在生长，<em>半径不变</em>
+        </h1>
+        <p className="k-lead">
+          定时抓取 OpenAI / Google DeepMind / Hugging Face / arXiv 等一手来源，并策展 Meta Muse /
+          Kimi / Creao AI / Genspark 等技术文章。每张卡片是一条可对读的展陈，不是信息流。
+        </p>
+        <div className="k-meta">
+          <span>
+            馆藏 <b>{DATA.conceptCount}</b> 条
+          </span>
+          <span>
+            来源 <b>{DATA.sourceCount}</b> 处
+          </span>
+          <span>
+            账本 <b>{DATA.updatedAt.slice(0, 10)}</b>
+          </span>
+          <span>
+            课程核对 <b>{CURRICULUM_AS_OF}</b>
+          </span>
         </div>
 
-        <div className="hello archive-hero">
-          <p className="eyebrow">概念账本</p>
-          <h1>
-            账本在生长，<span className="tone">半径不变</span>
-          </h1>
-          <p className="sub">
-            定时抓取 OpenAI / Google DeepMind / Hugging Face / arXiv 等一手来源，并策展 Meta Muse / Kimi / Creao AI / Genspark 等技术文章。每张卡片是一条可对读的展陈，不是信息流。
-          </p>
-          <div className="meta-chips">
-            <span className="mc">馆藏 {DATA.conceptCount} 条</span>
-            <span className="mc">来源 {DATA.sourceCount} 处</span>
-            <span className="mc">账本 {DATA.updatedAt.slice(0, 10)}</span>
-            <span className="mc">课程核对 {CURRICULUM_AS_OF}</span>
-          </div>
+        <div className="k-path">
+          <span>学习路径</span>
+          <Link href="/">今日</Link>
+          <span>→</span>
+          <Link href="/#sec-network">知识网络</Link>
+          <span>→</span>
+          <a href="/agent-foundations.html">基础馆</a>
+          <span>→</span>
+          <strong>概念（当前）</strong>
         </div>
 
         {isNewVisit && (
-          <div className="archive-banner">
-            自上次访问新增 <b>{newCount}</b> 个版本记号（v{DATA.version}）。{" "}
-            <button type="button" className="text-button" onClick={() => setSeenVersion(DATA.version)}>
+          <div className="k-note">
+            <span>
+              自上次访问新增 <b>{newCount}</b> 个版本记号（v{DATA.version}）。
+            </span>
+            <button type="button" className="k-link" onClick={() => setSeenVersion(DATA.version)}>
               标记为已读
             </button>
           </div>
         )}
 
-        <div className="archive-sub">
-          <div className="as-head">
+        <div className="k-sub">
+          <div className="k-sub-head">
             <div>
               <b>订阅概念方向</b>
               <small>
@@ -231,68 +243,69 @@ function ConceptArchive() {
                   : "选择关心的方向；新概念以站内横幅提醒"}
               </small>
             </div>
-            <button type="button" className="btn" onClick={() => setShowSub((s) => !s)}>
+            <button type="button" className="k-btn" onClick={() => setShowSub((s) => !s)}>
               {showSub ? "收起" : subTags.length > 0 ? "编辑订阅" : "立即订阅"}
             </button>
           </div>
           {showSub && (
-            <div className="as-body">
-              <div className="as-tags">
+            <div className="k-sub-body">
+              <div className="k-chip-row">
                 {allTags.map((t) => (
                   <button
                     type="button"
                     key={t}
-                    className={`as-tag ${subTags.includes(t) ? "on" : ""}`}
+                    className={`k-chip ${subTags.includes(t) ? "on" : ""}`}
                     onClick={() => toggleTag(t)}
                   >
                     {t}
                   </button>
                 ))}
               </div>
-              <div className="as-email">
-                <input
-                  type="email"
-                  value={draftEmail || subs.email}
-                  placeholder="邮箱（可选，仅存本地浏览器）"
-                  onChange={(e) => {
-                    setDraftEmail(e.target.value);
-                    setSubs((cur) => ({ ...cur, email: e.target.value }));
+              <input
+                type="email"
+                value={draftEmail || subs.email}
+                placeholder="邮箱（可选，仅存本地浏览器）"
+                onChange={(e) => {
+                  setDraftEmail(e.target.value);
+                  setSubs((cur) => ({ ...cur, email: e.target.value }));
+                }}
+              />
+              <p className="k-sub-note">
+                订阅仅保存在当前浏览器。邮件网关接入后启用提醒。{" "}
+                <button
+                  type="button"
+                  className="k-link"
+                  onClick={() => {
+                    setSubs({ tags: [], email: "" });
+                    setDraftEmail("");
                   }}
-                />
-                <p className="ms-note">
-                  订阅仅保存在当前浏览器。邮件网关接入后启用提醒。{" "}
-                  <button
-                    type="button"
-                    className="text-button"
-                    onClick={() => {
-                      setSubs({ tags: [], email: "" });
-                      setDraftEmail("");
-                    }}
-                  >
-                    清空订阅
-                  </button>
-                </p>
-              </div>
+                >
+                  清空订阅
+                </button>
+              </p>
             </div>
           )}
         </div>
-      </section>
+      </header>
 
-      <section className="lesson" id="sec-radius" style={{ ["--sc" as string]: "var(--ink-soft)" }}>
-        <div className="sec-head">
-          <span className="sec-num">Ⅱ</span>
-          <h2>按控制半径浏览</h2>
-        </div>
-        <p className="sec-sub">与首页知识网络、基础馆章节共用同一组节点。点选即筛选账本。</p>
-        <div className="cat-chips" aria-label="按控制半径筛选">
-          <button type="button" className={`count-chip ${radius === "全部" ? "on" : ""}`} onClick={() => setRadius("全部")}>
+      <section className="k-sec" id="sec-radius">
+        <h2>
+          <span className="k-no">01</span>按控制半径浏览
+        </h2>
+        <p className="k-sec-sub">与首页知识网络、基础馆章节共用同一组节点。点选即筛选账本。</p>
+        <div className="k-chip-row" aria-label="按控制半径筛选">
+          <button
+            type="button"
+            className={`k-chip ${radius === "全部" ? "on" : ""}`}
+            onClick={() => setRadius("全部")}
+          >
             全部 <b>{concepts.length}</b>
           </button>
           {RADIUS.map((r) => (
             <button
               type="button"
               key={r.id}
-              className={`count-chip ${radius === r.id ? "on" : ""}`}
+              className={`k-chip ${radius === r.id ? "on" : ""}`}
               onClick={() => setRadius((cur) => (cur === r.id ? "全部" : r.id))}
             >
               {r.en} <b>{radiusCounts.get(r.id) ?? 0}</b>
@@ -301,160 +314,182 @@ function ConceptArchive() {
         </div>
       </section>
 
-      <div className="archive-toolbar">
-        <input
-          type="search"
-          placeholder="搜索概念 / 摘要 / 标签…"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <select value={maturity} onChange={(e) => setMaturity(e.target.value)}>
-          <option value="全部">成熟度：全部</option>
-          {Object.entries(MATURITY_LABEL).map(([k, v]) => (
-            <option key={k} value={k}>
-              {v}
-            </option>
-          ))}
-        </select>
-        <select value={source} onChange={(e) => setSource(e.target.value)}>
-          <option value="全部">来源：全部</option>
-          {allSources.map((s) => (
-            <option key={s} value={s}>
-              {s}
-            </option>
-          ))}
-        </select>
-      </div>
+      <hr className="k-sep" />
 
-      <div className="archive-tags">
-        <button type="button" className={`count-chip ${tag === "全部" ? "on" : ""}`} onClick={() => setTag("全部")}>
-          全部标签
-        </button>
-        {allTags.map((t) => (
-          <button type="button" key={t} className={`count-chip ${tag === t ? "on" : ""}`} onClick={() => setTag(t)}>
-            {t}
+      <section className="k-sec" id="sec-filter">
+        <h2>
+          <span className="k-no">02</span>检索与筛选
+        </h2>
+        <div className="k-toolbar">
+          <input
+            type="search"
+            placeholder="搜索概念 / 摘要 / 标签…"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <select value={maturity} onChange={(e) => setMaturity(e.target.value)}>
+            <option value="全部">成熟度：全部</option>
+            {Object.entries(MATURITY_LABEL).map(([k, v]) => (
+              <option key={k} value={k}>
+                {v}
+              </option>
+            ))}
+          </select>
+          <select value={source} onChange={(e) => setSource(e.target.value)}>
+            <option value="全部">来源：全部</option>
+            {allSources.map((s) => (
+              <option key={s} value={s}>
+                {s}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="k-chip-row">
+          <button
+            type="button"
+            className={`k-chip ${tag === "全部" ? "on" : ""}`}
+            onClick={() => setTag("全部")}
+          >
+            全部标签
           </button>
-        ))}
-      </div>
+          {allTags.map((t) => (
+            <button
+              type="button"
+              key={t}
+              className={`k-chip ${tag === t ? "on" : ""}`}
+              onClick={() => setTag(t)}
+            >
+              {t}
+            </button>
+          ))}
+        </div>
+      </section>
 
-      <div className="archive-count">
-        共 {filtered.length} 条
-        {radius !== "全部" ? ` · 半径 ${RADIUS.find((r) => r.id === radius)?.en}` : ""}
-      </div>
+      <hr className="k-sep" />
 
-      <div className="archive-list catalog-grid">
-        {filtered.map((c) => {
-          const open = expanded.has(c.id);
-          const related = relateToRadius(c);
-          return (
-            <article className="concept-card catalog-card" key={c.id}>
-              <div className="catalog-preview" aria-hidden="true">
-                {c.cover ? (
-                  <img
-                    className="pv-img"
-                    src={c.cover}
-                    alt=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer"
-                    onError={(e) => {
-                      e.currentTarget.style.display = "none";
-                    }}
-                  />
-                ) : (
-                  <div className="pv-win">
-                    <div className="pv-bar" />
-                  </div>
-                )}
-                <span className="pv-dot" />
-              </div>
-              <div className="cc-body">
-              <div className="cc-head">
-                <span className="cc-source">{c.source}</span>
-                <span className="cc-date">{c.date}</span>
-                <span className={`maturity ${c.maturity}`}>{MATURITY_LABEL[c.maturity] ?? c.maturity}</span>
-              </div>
-              <h3>{c.title}</h3>
-              <p className={open ? "cc-summary open" : "cc-summary"}>
-                {open ? (
-                  c.summary || c.tldr || "（摘要待补）"
-                ) : (
-                  <>
-                    <span className="cc-tldr-badge">TL;DR</span>
-                    {c.tldr || c.summary || "（摘要待补）"}
-                  </>
-                )}
-              </p>
-              {related.length > 0 && (
-                <div className="cc-radius">
-                  {related.map((id) => {
-                    const r = RADIUS.find((x) => x.id === id);
-                    if (!r) return null;
-                    return (
-                      <button type="button" key={id} className="cc-radius-chip" onClick={() => setRadius(id)}>
-                        {r.en}
-                      </button>
-                    );
-                  })}
+      <section className="k-sec" id="sec-ledger">
+        <h2>
+          <span className="k-no">03</span>账本
+        </h2>
+        <div className="k-count">
+          共 {filtered.length} 条
+          {radius !== "全部" ? ` · 半径 ${RADIUS.find((r) => r.id === radius)?.en}` : ""}
+          {tag !== "全部" ? ` · 标签 ${tag}` : ""}
+          {source !== "全部" ? ` · 来源 ${source}` : ""}
+        </div>
+
+        <div className="k-ledger">
+          {filtered.map((c) => {
+            const open = expanded.has(c.id);
+            const related = relateToRadius(c);
+            return (
+              <article className="k-card" key={c.id}>
+                <div className="k-card-head">
+                  <span className="k-card-src">{c.source}</span>
+                  <span className="k-card-date">{c.date}</span>
+                  <span className={`k-mat ${c.maturity}`}>
+                    {MATURITY_LABEL[c.maturity] ?? c.maturity}
+                  </span>
                 </div>
-              )}
-              <div className="cc-tags">
-                {c.tags.map((t) => (
-                  <button type="button" key={t} className="cc-tag" onClick={() => setTag(t)}>
-                    #{t}
-                  </button>
-                ))}
-              </div>
-              <div className="cc-actions">
-                <button type="button" className="text-button" onClick={() => toggleExpand(c.id)}>
-                  {open ? "收起" : "查看详情"}
-                </button>
-                {related[0] && (
-                  <a className="text-button" href={RADIUS.find((r) => r.id === related[0])?.foundation}>
-                    对读基础馆
+                <h3>
+                  <a href={c.url} target="_blank" rel="noreferrer">
+                    {c.title}
                   </a>
+                </h3>
+                <p className="k-sum">
+                  {open ? (
+                    c.summary || c.tldr || "（摘要待补）"
+                  ) : (
+                    <>
+                      <span className="k-badge">TL;DR</span>
+                      {c.tldr || c.summary || "（摘要待补）"}
+                    </>
+                  )}
+                </p>
+                {related.length > 0 && (
+                  <div className="k-card-radius">
+                    {related.map((id) => {
+                      const r = RADIUS.find((x) => x.id === id);
+                      if (!r) return null;
+                      return (
+                        <button type="button" key={id} onClick={() => setRadius(id)}>
+                          {r.en}
+                        </button>
+                      );
+                    })}
+                  </div>
                 )}
-                <a className="text-button" href={c.url} target="_blank" rel="noreferrer">
-                  打开原文 ↗
-                </a>
-              </div>
-              {open && (
-                <div className="cc-detail">
-                  <div className="cd-row">
-                    <span>概念 ID</span>
-                    <code>{c.id}</code>
-                  </div>
-                  <div className="cd-row">
-                    <span>入库时间</span>
-                    <span>{c.addedAt.slice(0, 10)}</span>
-                  </div>
-                  <div className="cd-row">
-                    <span>来源链接</span>
-                    <a href={c.url} target="_blank" rel="noreferrer">
-                      {c.url}
-                    </a>
-                  </div>
-                  <p className="cd-hint">
-                    想深入理解？回到{" "}
-                    <Link href="/#sec-network">
-                      <b>知识网络</b>
-                    </Link>{" "}
-                    点亮对应节点，或打开首页 AI 导师用反问带你走一遍。
-                  </p>
+                <div className="k-card-tags">
+                  {c.tags.map((t) => (
+                    <button type="button" key={t} onClick={() => setTag(t)}>
+                      #{t}
+                    </button>
+                  ))}
                 </div>
-              )}
-              </div>
-            </article>
-          );
-        })}
-        {filtered.length === 0 && (
-          <div className="empty-state" style={{ marginTop: 8 }}>
-            <span className="es-ico" aria-hidden="true">
-              🔍
-            </span>
-            <p>没有匹配的概念，换个关键词或半径试试。</p>
-          </div>
-        )}
-      </div>
+                <div className="k-card-acts">
+                  <button type="button" className="k-link" onClick={() => toggleExpand(c.id)}>
+                    {open ? "收起" : "查看详情"}
+                  </button>
+                  {related[0] && (
+                    <a
+                      className="k-link"
+                      href={RADIUS.find((r) => r.id === related[0])?.foundation}
+                    >
+                      对读基础馆
+                    </a>
+                  )}
+                  <a className="k-link" href={c.url} target="_blank" rel="noreferrer">
+                    打开原文 ↗
+                  </a>
+                </div>
+                {open && (
+                  <div className="k-detail">
+                    {c.cover && (
+                      <figure>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={c.cover}
+                          alt=""
+                          loading="lazy"
+                          referrerPolicy="no-referrer"
+                          onError={(e) => {
+                            e.currentTarget.style.display = "none";
+                          }}
+                        />
+                        <figcaption>原文封面 · {c.source}</figcaption>
+                      </figure>
+                    )}
+                    <div className="k-detail-row">
+                      <span>概念 ID</span>
+                      <code>{c.id}</code>
+                    </div>
+                    <div className="k-detail-row">
+                      <span>入库时间</span>
+                      <span>{c.addedAt.slice(0, 10)}</span>
+                    </div>
+                    <div className="k-detail-row">
+                      <span>来源链接</span>
+                      <a href={c.url} target="_blank" rel="noreferrer">
+                        {c.url}
+                      </a>
+                    </div>
+                    <p className="k-detail-hint">
+                      想深入理解？回到{" "}
+                      <Link href="/#sec-network">
+                        <b>知识网络</b>
+                      </Link>{" "}
+                      点亮对应节点，或打开首页 AI 导师用反问带你走一遍。
+                    </p>
+                  </div>
+                )}
+              </article>
+            );
+          })}
+          {filtered.length === 0 && (
+            <p className="k-empty">没有匹配的概念。换个关键词、标签或控制半径再试。</p>
+          )}
+        </div>
+      </section>
     </LabShell>
   );
 }

@@ -67,6 +67,7 @@ export function LabShell({
   mode,
   onMode,
   searchExtra,
+  skin,
 }: {
   wing: WingId;
   logo: string;
@@ -85,6 +86,8 @@ export function LabShell({
   mode?: string;
   onMode?: (id: string) => void;
   searchExtra?: { href: string; label: string; hint: string; kind: string; id?: string }[];
+  /* 换肤标记：仅给本页根节点加 skin-<name>，样式收在对应的皮肤样式表里，默认 undefined 时行为不变 */
+  skin?: string;
 }) {
   const [theme, setTheme] = useLocalStorage<"light" | "dark">("ai-lab-theme", "light");
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -154,7 +157,7 @@ export function LabShell({
   });
 
   return (
-    <div className={`lab-shell studio-shell ${modes?.length ? "has-modes" : ""}`}>
+    <div className={`lab-shell studio-shell ${modes?.length ? "has-modes" : ""} ${skin ? `skin-${skin}` : ""}`}>
       <div id="progressbar" style={{ width: `${progress}%` }} />
 
       <header className="topbar pill-nav">

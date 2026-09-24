@@ -73,3 +73,15 @@ test("foundations HTML and React surface include ACP and CLI", async () => {
   assert.match(html, /Agent CLI/);
   assert.match(html, /Client ↔ Agent|Client ↔ 本地 Agent/);
 });
+
+test("concepts page renders inside the kami skin", async () => {
+  const response = await render("/concepts");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /skin-kami/);
+  assert.match(html, /账本在生长/);
+  assert.match(html, /按控制半径浏览/);
+  assert.match(html, /k-ledger/);
+  assert.match(html, /一手来源/);
+});
