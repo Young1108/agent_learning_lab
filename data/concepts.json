@@ -1,9 +1,23 @@
 {
-  "updatedAt": "2026-09-25T13:15:47.849Z",
-  "version": 27,
+  "updatedAt": "2026-09-26T12:41:07.802Z",
+  "version": 28,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "1m7k9ez",
+      "title": "Proaction boosts sales 60% and saves 75+ hours with Codex",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/proaction",
+      "date": "2026-09-25",
+      "summary": "",
+      "tldr": "Proaction boosts sales 60% and saves 75+ hours with Codex",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-26T12:39:35.363Z"
+    },
     {
       "id": "5fzwnz",
       "title": "Claude discovers a novel enzyme system",
@@ -1264,20 +1278,6 @@
       "addedAt": "2026-09-23T13:20:50.974Z"
     },
     {
-      "id": "cze8s9",
-      "title": "How V7 gives AI agents institutional memory",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/v7",
-      "date": "2026-09-21",
-      "summary": "",
-      "tldr": "How V7 gives AI agents institutional memory",
-      "maturity": "emerging",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-09-21T14:49:42.342Z"
-    },
-    {
       "id": "1q4ovps",
       "title": "Pruning LLMs Like a Physicist: Block Removal as an Ising Optimization Problem",
       "source": "Hugging Face",
@@ -1332,6 +1332,20 @@
         "前沿"
       ],
       "addedAt": "2026-09-24T08:29:34.827Z"
+    },
+    {
+      "id": "cze8s9",
+      "title": "How V7 gives AI agents institutional memory",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/v7",
+      "date": "2026-09-21",
+      "summary": "",
+      "tldr": "How V7 gives AI agents institutional memory",
+      "maturity": "emerging",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-21T14:49:42.342Z"
     },
     {
       "id": "1hy3shl",
@@ -4997,20 +5011,6 @@
         "前沿"
       ],
       "addedAt": "2026-09-07T13:57:43.912Z"
-    },
-    {
-      "id": "fl9fvh",
-      "title": "RegionFed: Federated Learning for Personalized Query Understanding in Heterogeneous Retail Environments",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.05403v1",
-      "date": "2026-09-04",
-      "summary": "Retail search systems serve diverse geographic regions with distinct query patterns, vocabularies, and product preferences, creating significant data heterogeneity that challenges both privacy-preserving training and mod…",
-      "tldr": "Retail search systems serve diverse geographic regions with distinct query patterns, vocab…",
-      "maturity": "proposed",
-      "tags": [
-        "Graph"
-      ],
-      "addedAt": "2026-09-07T13:57:43.913Z"
     },
     {
       "id": "1ueie3k",
