@@ -1,9 +1,66 @@
 {
-  "updatedAt": "2026-10-02T14:27:35.308Z",
-  "version": 33,
+  "updatedAt": "2026-10-03T13:02:52.432Z",
+  "version": 34,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "1ynlaho",
+      "title": "A model guide for the GPT-6 family",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/practical-guide-building-gpt-6",
+      "date": "2026-10-02",
+      "summary": "",
+      "tldr": "A model guide for the GPT-6 family",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-03T13:01:25.195Z"
+    },
+    {
+      "id": "kn3t1c",
+      "title": "Chatham scales its capital markets expertise with OpenAI",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/chatham-financial",
+      "date": "2026-10-02",
+      "summary": "",
+      "tldr": "Chatham scales its capital markets expertise with OpenAI",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-03T13:01:25.424Z"
+    },
+    {
+      "id": "14mnm39",
+      "title": "Claude Frontier Academy: $100M to train 10,000 engineers",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/claude-frontier-academy",
+      "date": "2026-10-02",
+      "summary": "Claude Frontier Academy trains Frontier Deployed Engineers to the standard of Anthropic’s own — a $100 million commitment to train 10,000 by the end of 2027.",
+      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20Build&amp;backgroundColor=heather",
+      "tldr": "Claude Frontier Academy trains Frontier Deployed Engineers to the standard of Anthropic’s…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-03T13:01:29.084Z"
+    },
+    {
+      "id": "pcfac7",
+      "title": "The latest AI news we announced in September 2026",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
+      "date": "2026-10-02",
+      "summary": "Here are Google’s latest AI updates from September 2026",
+      "tldr": "Here are Google’s latest AI updates from September 2026",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-03T13:01:44.344Z"
+    },
     {
       "id": "1hyo95z",
       "title": "AutoSynthData: Generating Training Data for Enterprise Agents",
@@ -17,6 +74,20 @@
         "Agent"
       ],
       "addedAt": "2026-10-02T14:26:28.220Z"
+    },
+    {
+      "id": "etfls9",
+      "title": "Open-sourcing AstaBrief, the fast report-generation model in Asta",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/allenai/astabrief",
+      "date": "2026-10-02",
+      "summary": "Language models can already help researchers search the literature, synthesize evidence, and work through complex questions. But scientific work places particular demands on these models—answers need …",
+      "tldr": "Language models can already help researchers search the literature, synthesize evidence, a…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-03T13:01:44.724Z"
     },
     {
       "id": "1gu4oju",
@@ -2229,20 +2300,6 @@
       "addedAt": "2026-09-25T13:14:43.189Z"
     },
     {
-      "id": "1nrh3ds",
-      "title": "OpenAI extends cyber access to Ukraine for civilian defense",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/openai-extends-cyber-access-to-ukraine-for-civilian-defense",
-      "date": "2026-09-23",
-      "summary": "",
-      "tldr": "OpenAI extends cyber access to Ukraine for civilian defense",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-23T13:20:31.971Z"
-    },
-    {
       "id": "1rhqxag",
       "title": "Advancing Private AI Compute with secure, server-side memory",
       "source": "Google DeepMind",
@@ -2340,6 +2397,20 @@
         "前沿"
       ],
       "addedAt": "2026-09-24T08:30:27.678Z"
+    },
+    {
+      "id": "1nrh3ds",
+      "title": "OpenAI extends cyber access to Ukraine for civilian defense",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/openai-extends-cyber-access-to-ukraine-for-civilian-defense",
+      "date": "2026-09-23",
+      "summary": "",
+      "tldr": "OpenAI extends cyber access to Ukraine for civilian defense",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-23T13:20:31.971Z"
     },
     {
       "id": "esst7p",
@@ -4651,20 +4722,6 @@
       "addedAt": "2026-09-16T13:06:25.317Z"
     },
     {
-      "id": "kpyvpp",
-      "title": "Your Agent Aced the Task. Will It Do It Again?",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/ibm-research/altk-evolve-consistency",
-      "date": "2026-09-15",
-      "summary": "That is embarrassing onstage. In production, it is a reliability problem: a workflow that succeeded once may fail the next time a user makes the same request. For mission-critical work, such as reconc…",
-      "tldr": "That is embarrassing onstage. In production, it is a reliability problem: a workflow that…",
-      "maturity": "emerging",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-09-16T13:06:25.614Z"
-    },
-    {
       "id": "1loyovd",
       "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
       "source": "Google Gemini",
@@ -4691,6 +4748,20 @@
         "前沿"
       ],
       "addedAt": "2026-09-24T08:30:27.678Z"
+    },
+    {
+      "id": "kpyvpp",
+      "title": "Your Agent Aced the Task. Will It Do It Again?",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/ibm-research/altk-evolve-consistency",
+      "date": "2026-09-15",
+      "summary": "That is embarrassing onstage. In production, it is a reliability problem: a workflow that succeeded once may fail the next time a user makes the same request. For mission-critical work, such as reconc…",
+      "tldr": "That is embarrassing onstage. In production, it is a reliability problem: a workflow that…",
+      "maturity": "emerging",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-16T13:06:25.614Z"
     },
     {
       "id": "v8c4f3",
@@ -4771,49 +4842,6 @@
       "date": "2026-09-15",
       "summary": "Neural audio codecs are a key component in speech language modeling. However, their high frame rates lead to long sequence lengths, increasing computational costs. Dynamic frame rate codecs mitigate this by reducing the …",
       "tldr": "Neural audio codecs are a key component in speech language modeling. However, their high f…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-16T13:06:29.330Z"
-    },
-    {
-      "id": "v7wu7t",
-      "title": "ENCP: Episode-Normalized Conformal Prediction for Vision-and-Language Navigation",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.17499v1",
-      "date": "2026-09-15",
-      "summary": "Uncertainty estimation for Vision-Language-Navigation (VLN) models is a critical task since it can help identify ambiguous and unreliable predictions, enabling agents to make safer navigation decisions. As one of the mos…",
-      "tldr": "Uncertainty estimation for Vision-Language-Navigation (VLN) models is a critical task sinc…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "多模态"
-      ],
-      "addedAt": "2026-09-16T13:06:29.330Z"
-    },
-    {
-      "id": "v7wrzq",
-      "title": "Verifiable Social Reasoning for LLM Assistants",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.17496v1",
-      "date": "2026-09-15",
-      "summary": "LLM assistants are widely used for daily social advice, yet evaluating their social reasoning in such consultation settings remains challenging since (i) it requires setups where the assistant learns about social situati…",
-      "tldr": "LLM assistants are widely used for daily social advice, yet evaluating their social reason…",
-      "maturity": "proposed",
-      "tags": [
-        "推理"
-      ],
-      "addedAt": "2026-09-16T13:06:29.330Z"
-    },
-    {
-      "id": "v7w6hl",
-      "title": "LimiX-2: A Contextual Mechanism Network Towards General Structured-Data Intelligence",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.17488v1",
-      "date": "2026-09-15",
-      "summary": "We introduce LimiX-2, a new model in the LimiX family, developed through model and data scaling guided by our previously established scaling laws. LimiX-2 adopts the Contextual Mechanism Networks (CMNs) paradigm and is p…",
-      "tldr": "We introduce LimiX-2, a new model in the LimiX family, developed through model and data sc…",
       "maturity": "proposed",
       "tags": [
         "前沿"
@@ -5000,21 +5028,6 @@
       "addedAt": "2026-09-11T12:35:37.507Z"
     },
     {
-      "id": "u287i7",
-      "title": "Chris Ciauri named Managing Director of International",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/anthropic-expands-global-leadership-in-enterprise-ai-naming-chris-ciauri-as-managing-director-of",
-      "date": "2026-09-10",
-      "summary": "Chris Ciauri joins Anthropic as Managing Director of International, adding to our global leadership team as we expand our worldwide presence.",
-      "cover": "https://www.anthropic.com/api/opengraph-illustration?name=Node%20Globe&amp;backgroundColor=olive",
-      "tldr": "Chris Ciauri joins Anthropic as Managing Director of International, adding to our global l…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-11T12:35:37.872Z"
-    },
-    {
       "id": "1nv7hpd",
       "title": "3 ways to prep for your next big race with Search",
       "source": "Google AI Blog",
@@ -5184,20 +5197,6 @@
         "前沿"
       ],
       "addedAt": "2026-09-24T08:38:00.969Z"
-    },
-    {
-      "id": "1dh2htj",
-      "title": "Proactive cyber defense for governments and enterprises",
-      "source": "Google AI Blog",
-      "url": "https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/",
-      "date": "2026-09-02",
-      "summary": "The Fairwind Program is a limited access program for governments and trusted partners to use our cyber defense tools.",
-      "tldr": "The Fairwind Program is a limited access program for governments and trusted partners to u…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-24T08:44:09.980Z"
     },
     {
       "id": "cegz5f",
