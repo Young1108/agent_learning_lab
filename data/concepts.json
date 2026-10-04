@@ -1,9 +1,24 @@
 {
-  "updatedAt": "2026-10-03T13:02:52.432Z",
-  "version": 34,
+  "updatedAt": "2026-10-04T13:41:26.336Z",
+  "version": 35,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "j947z9",
+      "title": "The Agent Said It Was Done. The Database Disagreed.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/microsoft/thinkingbox",
+      "date": "2026-10-03",
+      "summary": "Figure 1: ThinkingBox runs an agent against isolated MCP tool sessions, then grades the terminal backend state and side effects it leaves behind. From our ThinkingBox paper.",
+      "tldr": "Figure 1: ThinkingBox runs an agent against isolated MCP tool sessions, then grades the te…",
+      "maturity": "emerging",
+      "tags": [
+        "Agent",
+        "MCP"
+      ],
+      "addedAt": "2026-10-04T13:40:17.710Z"
+    },
     {
       "id": "1ynlaho",
       "title": "A model guide for the GPT-6 family",
@@ -3220,20 +3235,6 @@
       "addedAt": "2026-09-21T14:49:58.169Z"
     },
     {
-      "id": "1l8r2c7",
-      "title": "tokenizers v1: encode, decode and scaling, measured",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/tokenizers-v1",
-      "date": "2026-09-21",
-      "summary": "As models become faster and workloads scale, that balance begins to shift. Training on massive datasets, serving many concurrent requests, or repeatedly processing long inputs can put enough pressure …",
-      "tldr": "As models become faster and workloads scale, that balance begins to shift. Training on mas…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-21T14:49:58.423Z"
-    },
-    {
       "id": "1n1q3d9",
       "title": "Open-Sourcing Rebalancer: A Generic, High-Performance Library for Solving Assignment Problems",
       "source": "Meta",
@@ -3260,6 +3261,20 @@
         "前沿"
       ],
       "addedAt": "2026-09-24T08:29:34.827Z"
+    },
+    {
+      "id": "1l8r2c7",
+      "title": "tokenizers v1: encode, decode and scaling, measured",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/tokenizers-v1",
+      "date": "2026-09-21",
+      "summary": "As models become faster and workloads scale, that balance begins to shift. Training on massive datasets, serving many concurrent requests, or repeatedly processing long inputs can put enough pressure …",
+      "tldr": "As models become faster and workloads scale, that balance begins to shift. Training on mas…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-21T14:49:58.423Z"
     },
     {
       "id": "cze8s9",
@@ -4828,20 +4843,6 @@
       "date": "2026-09-15",
       "summary": "Pruning can reduce the deployment cost of large language models (LLMs), but its impact on context-grounded tool calling remains poorly understood. We systematically study pruning-induced degradation in smart-home tool ca…",
       "tldr": "Pruning can reduce the deployment cost of large language models (LLMs), but its impact on…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-16T13:06:29.330Z"
-    },
-    {
-      "id": "v8avxf",
-      "title": "LACE: Layer-Wise Compression for Dynamic Frame Rate Codecs",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.17509v1",
-      "date": "2026-09-15",
-      "summary": "Neural audio codecs are a key component in speech language modeling. However, their high frame rates lead to long sequence lengths, increasing computational costs. Dynamic frame rate codecs mitigate this by reducing the …",
-      "tldr": "Neural audio codecs are a key component in speech language modeling. However, their high f…",
       "maturity": "proposed",
       "tags": [
         "前沿"
