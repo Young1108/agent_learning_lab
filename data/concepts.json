@@ -1,9 +1,23 @@
 {
-  "updatedAt": "2026-10-05T16:47:55.550Z",
-  "version": 36,
+  "updatedAt": "2026-10-06T14:45:03.914Z",
+  "version": 37,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "1hszva6",
+      "title": "Falcon-Emirati: When an LLM Learns the Dialect, the Culture, and the Nuance",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/tiiuae/falcon-emirati",
+      "date": "2026-10-06",
+      "summary": "Arabic is really a family of languages living under one name. Modern Standard Arabic is what you read in the news or a textbook, but it's rarely how people actually talk to each other. In the UAE, day…",
+      "tldr": "Arabic is really a family of languages living under one name. Modern Standard Arabic is wh…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-06T14:43:57.777Z"
+    },
     {
       "id": "i7yom4",
       "title": "Our approach to EU text provenance rules",
@@ -31,6 +45,288 @@
         "前沿"
       ],
       "addedAt": "2026-10-05T16:46:30.930Z"
+    },
+    {
+      "id": "1wt9h80",
+      "title": "One Figure, Every Canvas: Editable Flowchart Relayout via Agentic Pipeline",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06852v1",
+      "date": "2026-10-05",
+      "summary": "Pipeline figures in ML papers must be repurposed across many canvases, including paper columns, 16:9 slides, portrait posters, 1:1 social teasers, 9:16 phone previews. Each format imposes a different aspect ratio on the …",
+      "tldr": "Pipeline figures in ML papers must be repurposed across many canvases, including paper col…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
+    },
+    {
+      "id": "1wt9ghb",
+      "title": "Base Models Can Reason By Taking a Cue From Training Data",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06851v1",
+      "date": "2026-10-05",
+      "summary": "In this paper, we study how training data creates associations between the tokens at the start of a base model's response and the reasoning behavior that follows. First, we demonstrate that fixing particular starting tok…",
+      "tldr": "In this paper, we study how training data creates associations between the tokens at the s…",
+      "maturity": "proposed",
+      "tags": [
+        "推理"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
+    },
+    {
+      "id": "1wt8x79",
+      "title": "BiasFlow: Geometric Monitoring and Backbone Regularization for Spurious Feature Reliance",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06846v1",
+      "date": "2026-10-05",
+      "summary": "Worst-group accuracy (WGA) evaluates a trained predictor but does not characterize how its frozen backbone behaves when a new head is learned. We introduce BiasFlow, a hook-based toolkit for monitoring class-attribute ce…",
+      "tldr": "Worst-group accuracy (WGA) evaluates a trained predictor but does not characterize how its…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
+    },
+    {
+      "id": "1wt8vpv",
+      "title": "Learning to Read the Contextual Tokens in Diffusion Transformers",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06844v1",
+      "date": "2026-10-05",
+      "summary": "Multimodal Diffusion Transformers (MM-DiTs) jointly process visual and textual representations throughout generation. These models repeatedly update the text tokens through multimodal attention, forming dynamic contextua…",
+      "tldr": "Multimodal Diffusion Transformers (MM-DiTs) jointly process visual and textual representat…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
+    },
+    {
+      "id": "1wt8uz6",
+      "title": "Recursive Video In-Context Learning for Agentic Robot",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06843v1",
+      "date": "2026-10-05",
+      "summary": "LLM agents that orchestrate frozen vision-language-action (VLA) policies improve across episodes through text memory, which records what the agent did but not how the task is done. A demonstration video shows it, but fit…",
+      "tldr": "LLM agents that orchestrate frozen vision-language-action (VLA) policies improve across ep…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "多模态"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
+    },
+    {
+      "id": "1wt86i9",
+      "title": "UniSlider: Perceptually Uniform Sliders for Continuous Image Editing",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06831v1",
+      "date": "2026-10-05",
+      "summary": "Sliders provide an intuitive interface for continuous image editing. In current generative approaches, however, the slider is simply a rescaling of the method's strength parameter, such as an adapter coefficient, a promp…",
+      "tldr": "Sliders provide an intuitive interface for continuous image editing. In current generative…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
+    },
+    {
+      "id": "1wt85rk",
+      "title": "MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06830v1",
+      "date": "2026-10-05",
+      "summary": "Memory has become integral to the LLM agent ecosystem, supporting information retention and reuse across interactions. However, most existing agent memory systems construct memory in a query-agnostic manner, which can in…",
+      "tldr": "Memory has become integral to the LLM agent ecosystem, supporting information retention an…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
+    },
+    {
+      "id": "1wt7pga",
+      "title": "CLIFT: Conformal Self-Verification for Web Agent Training and Test-Time Scaling",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06829v1",
+      "date": "2026-10-05",
+      "summary": "Open-source web agents are now strong enough to execute realistic browser tasks, but training them with reinforcement learning still depends on weak supervision: binary task success is too sparse for credit assignment, w…",
+      "tldr": "Open-source web agents are now strong enough to execute realistic browser tasks, but train…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "多模态"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
+    },
+    {
+      "id": "1wt7mhi",
+      "title": "PlotGround: Grounding Plot Digitization in Real Scientific Figures and Their Source Data",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06825v1",
+      "date": "2026-10-05",
+      "summary": "Scientific figures often encode quantitative results that are not readily available in machine-readable form, making accurate plot digitization important for verifying and reusing published findings. Yet it remains uncle…",
+      "tldr": "Scientific figures often encode quantitative results that are not readily available in mac…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
+    },
+    {
+      "id": "1wt7lqt",
+      "title": "TasteVal: Measuring the Experimental Research Taste of AI Systems Against Human Experts",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06824v1",
+      "date": "2026-10-05",
+      "summary": "We introduce TasteVal, a benchmark to evaluate the experimental research taste of frontier models. We define research taste as the ability to pick interesting problems to solve, design experiments, and interpret experime…",
+      "tldr": "We introduce TasteVal, a benchmark to evaluate the experimental research taste of frontier…",
+      "maturity": "proposed",
+      "tags": [
+        "评测"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
+    },
+    {
+      "id": "1wt7l04",
+      "title": "Deep Learning for Sleep Heart Rate Estimation from Accelerometers: Toward Population-Scale Cardiac Insight Without Optical Sensors",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06823v1",
+      "date": "2026-10-05",
+      "summary": "Large longitudinal cohorts often contain wrist accelerometry without optical heart-rate sensing, motivating recovery of cardiac information from motion signals already collected during sleep. We present SeqSmoother, a tr…",
+      "tldr": "Large longitudinal cohorts often contain wrist accelerometry without optical heart-rate se…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
+    },
+    {
+      "id": "1wt70zd",
+      "title": "Paradee: Distilling Kokoro-82M into an 8M-Parameter Single-Voice Text-to-Speech Model",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06817v1",
+      "date": "2026-10-05",
+      "summary": "We distill Kokoro-82M, a widely used open text-to-speech model with 54 voices, into Paradee, an 8.07M-parameter model that speaks one of them. Paradee keeps Kokoro's architecture with much narrower layers, and each of it…",
+      "tldr": "We distill Kokoro-82M, a widely used open text-to-speech model with 54 voices, into Parade…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
+    },
+    {
+      "id": "1wt6yra",
+      "title": "TAPDreamer: Transferable Adversarial Patches for World Action Models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06814v1",
+      "date": "2026-10-05",
+      "summary": "World models learn to predict how their environment will evolve, making them an important foundation for general-purpose robotic control. Yet world action models depend on camera inputs whose manipulation can corrupt the…",
+      "tldr": "World models learn to predict how their environment will evolve, making them an important…",
+      "maturity": "proposed",
+      "tags": [
+        "世界模型"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
+    },
+    {
+      "id": "1wt6brr",
+      "title": "Sharpen Without Search: On-Policy Distillation of Sequence-Level Power Distribution",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06804v1",
+      "date": "2026-10-05",
+      "summary": "A language model can give a correct answer more probability than any single incorrect answer and still usually sample an incorrect one, because the incorrect answers together hold more probability. The power distribution…",
+      "tldr": "A language model can give a correct answer more probability than any single incorrect answ…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
+    },
+    {
+      "id": "1wt69jo",
+      "title": "MC-Sparse: Deconstructing and Closing the Dense-Sparse Attention Gap in Diffusion Transformers",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06801v1",
+      "date": "2026-10-05",
+      "summary": "Sparse attention is a primary approach to reducing the latency of diffusion transformers in long-sequence generation tasks, such as video and high-resolution 3D asset generation. However, existing methods can degrade gen…",
+      "tldr": "Sparse attention is a primary approach to reducing the latency of diffusion transformers i…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
+    },
+    {
+      "id": "1wss73d",
+      "title": "Back to the Future: Rethinking EDA Infrastructure for Agentic Systems in Chip Design Verification",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06790v1",
+      "date": "2026-10-05",
+      "summary": "The unprecedented computational scale of modern artificial intelligence depends on complex, multi-billion-transistor Systems-on-Chip, yet the workflows that verify these chips remain stubbornly manual. Although Large Lan…",
+      "tldr": "The unprecedented computational scale of modern artificial intelligence depends on complex…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
+    },
+    {
+      "id": "1wsrll8",
+      "title": "T-Search: An Open Agentic Retriever and Playground for Hard Multi-Step Search",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06782v1",
+      "date": "2026-10-05",
+      "summary": "We present T-Search, an open-weight agentic retriever for hard multi-step search. Given a question and a search tool over a fixed corpus, it runs a bounded multi-round search and returns a ranked list of evidence chunks …",
+      "tldr": "We present T-Search, an open-weight agentic retriever for hard multi-step search. Given a…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
+    },
+    {
+      "id": "1wsr31v",
+      "title": "IdeaLens: Detecting AI Ideas in Long-form Writing",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06778v1",
+      "date": "2026-10-05",
+      "summary": "While modern AI detectors identify who wrote the words, emerging policies on AI use increasingly hinge on a different question: who came up with the ideas? We introduce IdeaLens, a detector that identifies whether a docu…",
+      "tldr": "While modern AI detectors identify who wrote the words, emerging policies on AI use increa…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
+    },
+    {
+      "id": "1wsqdu9",
+      "title": "Conditional Rank Allocation for Taxonomy-Aware Medical Language Model Adaptation",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06765v1",
+      "date": "2026-10-05",
+      "summary": "Medical question answering spans specialties and clinical operations that may benefit from different adaptation directions. We propose ARBOR, a parameter-efficient method that selects rank-one components from a shared lo…",
+      "tldr": "Medical question answering spans specialties and clinical operations that may benefit from…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
+    },
+    {
+      "id": "1wspnvy",
+      "title": "MatrixFormer: A Foundation Model for Matrix Completion",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.06751v1",
+      "date": "2026-10-05",
+      "summary": "Matrix completion underlies problems from tabular imputation to causal inference, yet existing tabular foundation models treat it as entry-by-entry prediction, repeating context for every target and discarding the matrix…",
+      "tldr": "Matrix completion underlies problems from tabular imputation to causal inference, yet exis…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-06T14:44:01.911Z"
     },
     {
       "id": "j947z9",
@@ -4449,305 +4745,6 @@
         "前沿"
       ],
       "addedAt": "2026-09-18T12:41:12.963Z"
-    },
-    {
-      "id": "16n13gp",
-      "title": "An Empirical Study of Harness Design for Coding Agents",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.20804v1",
-      "date": "2026-09-17",
-      "summary": "Coding harnesses shape how autonomous coding agents translate model capabilities into long-horizon software-engineering performance, yet existing work typically evaluates harnesses as monolithic systems, leaving the effe…",
-      "tldr": "Coding harnesses shape how autonomous coding agents translate model capabilities into long…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Harness"
-      ],
-      "addedAt": "2026-09-18T12:41:12.963Z"
-    },
-    {
-      "id": "16n10hx",
-      "title": "JEPA-Anything: Learning Predictive Models across Different Worlds",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.20800v1",
-      "date": "2026-09-17",
-      "summary": "World modeling enables intelligence to anticipate consequences, guide interventions, and learn from interaction. Yet predictive models remain domain-specific: can a common learning principle support world modeling across…",
-      "tldr": "World modeling enables intelligence to anticipate consequences, guide interventions, and l…",
-      "maturity": "proposed",
-      "tags": [
-        "世界模型"
-      ],
-      "addedAt": "2026-09-18T12:41:12.963Z"
-    },
-    {
-      "id": "16mmerk",
-      "title": "RetireOPD: Self-Retiring On-Policy Distillation for Agentic Reinforcement Learning",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.20784v1",
-      "date": "2026-09-17",
-      "summary": "Multi-turn agents trained with reinforcement learning (RL) receive a single scalar reward per trajectory, which motivates self on-policy distillation (OPD) to supply dense token-level supervision from a self-teacher with…",
-      "tldr": "Multi-turn agents trained with reinforcement learning (RL) receive a single scalar reward…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "多模态"
-      ],
-      "addedAt": "2026-09-18T12:41:12.963Z"
-    },
-    {
-      "id": "16mlvhi",
-      "title": "Harm Laundering in GPT Models: Evidence That Gender Discrimination Is Transformed Rather Than Reduced Across Safety-Trained Generations",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.20779v1",
-      "date": "2026-09-17",
-      "summary": "Safety evaluations for large language models rely on surface-form classifiers that report declining harm scores across model generations. We provide evidence that this methodology is systematically incomplete: explicit d…",
-      "tldr": "Safety evaluations for large language models rely on surface-form classifiers that report…",
-      "maturity": "proposed",
-      "tags": [
-        "安全"
-      ],
-      "addedAt": "2026-09-18T12:41:12.963Z"
-    },
-    {
-      "id": "16mlt9f",
-      "title": "GeoAAC: Geometry-Based Adaptive Action Chunking from Denoising Trajectories in VLA Policies",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.20776v1",
-      "date": "2026-09-17",
-      "summary": "Action chunking is widely used for action generation and execution in Vision-Language-Action (VLA) policies, yet existing approaches commonly use a fixed action horizon. During a rollout, different task stages may requir…",
-      "tldr": "Action chunking is widely used for action generation and execution in Vision-Language-Acti…",
-      "maturity": "proposed",
-      "tags": [
-        "多模态"
-      ],
-      "addedAt": "2026-09-18T12:41:12.963Z"
-    },
-    {
-      "id": "16ml7ra",
-      "title": "Semantic Action Graph: A Shared Representation for Agent Grounding and Human Interpretation of Sports Highlights",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.20768v1",
-      "date": "2026-09-17",
-      "summary": "Generative agents are increasingly used to select and narrate video highlights, but they typically operate over unstructured or frame-level representations. Their output is consequently difficult for a viewer to verify a…",
-      "tldr": "Generative agents are increasingly used to select and narrate video highlights, but they t…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Graph"
-      ],
-      "addedAt": "2026-09-18T12:41:12.963Z"
-    },
-    {
-      "id": "16mkkrr",
-      "title": "Prediction-Powered Smoothing and Validation for Disaggregated AI Evaluation",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.20758v1",
-      "date": "2026-09-17",
-      "summary": "Evaluating an AI system requires disaggregated assessment, as performance varies across domains such as benchmark task types or conversation types in deployed agents. Exhaustive testing is expensive, so evaluation rests …",
-      "tldr": "Evaluating an AI system requires disaggregated assessment, as performance varies across do…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "评测"
-      ],
-      "addedAt": "2026-09-18T12:41:12.963Z"
-    },
-    {
-      "id": "16mkhsz",
-      "title": "RAFT: A Stateful Retrieval-Augmented Framework for Troubleshooting Agents",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.20754v1",
-      "date": "2026-09-17",
-      "summary": "Effective troubleshooting agents in enterprise customer support depend on retrieving actionable guidance from similar historical cases, yet existing retrieval-augmented generation (RAG) systems treat support cases as sta…",
-      "tldr": "Effective troubleshooting agents in enterprise customer support depend on retrieving actio…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-09-18T12:41:12.963Z"
-    },
-    {
-      "id": "16mkgbl",
-      "title": "Large Language Models as Falsifiers for Cyber-Physical Systems",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.20752v1",
-      "date": "2026-09-17",
-      "summary": "Falsification searches for counterexamples to formal specifications in cyber-physical systems (CPS). With specifications written in Signal Temporal Logic (STL), falsification can be formulated as a robustness optimizatio…",
-      "tldr": "Falsification searches for counterexamples to formal specifications in cyber-physical syst…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-18T12:41:12.963Z"
-    },
-    {
-      "id": "16mkfkw",
-      "title": "dQwen3.5: Hybrid-Attention Diffusion Language Models",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.20751v1",
-      "date": "2026-09-17",
-      "summary": "Adapting a pretrained autoregressive (AR) model is a cost-efficient route to a diffusion language model (DLM). While nearly all such adaptations start from a full-attention transformer, AR modeling has shifted toward hyb…",
-      "tldr": "Adapting a pretrained autoregressive (AR) model is a cost-efficient route to a diffusion l…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-18T12:41:12.963Z"
-    },
-    {
-      "id": "16mj7tx",
-      "title": "On-Demand Attention: Language Models Know When to Recall",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.20734v1",
-      "date": "2026-09-17",
-      "summary": "Reasoning and agentic workloads increasingly demand efficient long-context inference. Yet full-attention decoding reads the growing history at every step, regardless of its benefit to the next prediction. We show that a …",
-      "tldr": "Reasoning and agentic workloads increasingly demand efficient long-context inference. Yet…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "推理"
-      ],
-      "addedAt": "2026-09-18T12:41:12.963Z"
-    },
-    {
-      "id": "16mj6cj",
-      "title": "Q&A on Any Spreadsheet Requires Interpreting Its Grid Structure",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.20732v1",
-      "date": "2026-09-17",
-      "summary": "Semantic cell annotation improves chunking interpretability for spreadsheets in LLM-driven RAG systems, aiding answer generation through enriched context rather than improved retrieval accuracy. We propose a novel framew…",
-      "tldr": "Semantic cell annotation improves chunking interpretability for spreadsheets in LLM-driven…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-18T12:41:12.963Z"
-    },
-    {
-      "id": "1f48ex4",
-      "title": "Helping older adults use AI in everyday life",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/helping-older-adults-use-ai-in-everyday-life",
-      "date": "2026-09-16",
-      "summary": "",
-      "tldr": "Helping older adults use AI in everyday life",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-17T13:01:40.306Z"
-    },
-    {
-      "id": "30ctep",
-      "title": "Reimagining advertising with AI",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/reimagining-advertising-with-ai",
-      "date": "2026-09-16",
-      "summary": "",
-      "tldr": "Reimagining advertising with AI",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-17T13:01:40.557Z"
-    },
-    {
-      "id": "1tjdszp",
-      "title": "How to connect AI usage to business value",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/how-to-connect-ai-usage-to-business-value",
-      "date": "2026-09-16",
-      "summary": "",
-      "tldr": "How to connect AI usage to business value",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-17T13:01:40.895Z"
-    },
-    {
-      "id": "1t5xwwq",
-      "title": "Our framework for reporting model misalignment",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/model-misalignment-reporting-framework",
-      "date": "2026-09-16",
-      "summary": "",
-      "tldr": "Our framework for reporting model misalignment",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-17T13:01:41.148Z"
-    },
-    {
-      "id": "judkkw",
-      "title": "How workers are unlocking new ways of working",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/unlocking-new-ways-of-working",
-      "date": "2026-09-16",
-      "summary": "",
-      "tldr": "How workers are unlocking new ways of working",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-17T13:01:41.391Z"
-    },
-    {
-      "id": "w49fbp",
-      "title": "Objective vs. Search: Decomposing What Makes a Good Tokeniser",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.19145v1",
-      "date": "2026-09-16",
-      "summary": "Two dominant tokenisation algorithms are used by modern language models: byte-pair encoding (BPE) and UnigramLM. These differ along two orthogonal axes: their optimisation objective (compression vs. log-likelihood) and t…",
-      "tldr": "Two dominant tokenisation algorithms are used by modern language models: byte-pair encodin…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-17T13:02:00.176Z"
-    },
-    {
-      "id": "w49el0",
-      "title": "A Zeroth-Order Paradigm for LLM Preference Alignment",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.19144v1",
-      "date": "2026-09-16",
-      "summary": "Direct preference alignment methods are widely used to align large language models (LLMs) with human preferences because of their computational and memory efficiency. However, likelihood displacement motivates alternativ…",
-      "tldr": "Direct preference alignment methods are widely used to align large language models (LLMs)…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-17T13:02:00.176Z"
-    },
-    {
-      "id": "w49dub",
-      "title": "PANORAMA: Panoptic Grounded Captioning via Mask Proposal Selection",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.19143v1",
-      "date": "2026-09-16",
-      "summary": "Intelligent systems that act in the world require image understanding that is both comprehensive and spatially grounded. Current vision-language models (VLMs) can generate fluent and detailed image captions, but reliably…",
-      "tldr": "Intelligent systems that act in the world require image understanding that is both compreh…",
-      "maturity": "proposed",
-      "tags": [
-        "多模态"
-      ],
-      "addedAt": "2026-09-17T13:02:00.176Z"
-    },
-    {
-      "id": "w48ttk",
-      "title": "Dreaming the Sound of Contact: Leveraging Video and Audio Generation for Zero-Shot Force-Aware Manipulation and Data Generation",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.19137v1",
-      "date": "2026-09-16",
-      "summary": "Recent advances in video generation allow robots to learn manipulation trajectories from generated videos. However, these approaches produce purely kinematic trajectories that lack force information, causing failures in …",
-      "tldr": "Recent advances in video generation allow robots to learn manipulation trajectories from g…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-17T13:02:00.176Z"
     },
     {
       "id": "i81944",
