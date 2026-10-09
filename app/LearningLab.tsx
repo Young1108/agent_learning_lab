@@ -19,7 +19,7 @@ const navItems = [
   { id: "sec-network", num: "1", label: "知识网络", color: "var(--ink)" },
   { id: "sec-labs", num: "2", label: "技术复现实验", color: "var(--emerald)" },
   { id: "sec-skill", num: "3", label: "Skill 体系", color: "var(--ink-soft)" },
-  { id: "sec-tacit", num: "4", label: "判断手感", color: "var(--slate)" },
+  { id: "sec-tacit", num: "4", label: "场景诊断", color: "var(--slate)" },
   { id: "sec-courses", num: "5", label: "深入课程", color: "var(--ink-soft)" },
   { id: "sec-sources", num: "6", label: "一手来源", color: "var(--ink)" },
 ];
@@ -32,86 +32,87 @@ const mentorCtx: Record<
   "sec-0": {
     section: "总览与学习地图",
     points: [
-      "AI Learning Lab = 一手来源 × 概念对比网络 × 可运行 Demo × Skill 手册",
-      "主线是「控制半径」：Harness(单次) → Loop(重复) → Graph(多循环) → Skill(分层能力)",
+      "AI Learning Lab：聚焦 Agent 架构全景、协议选型与闭环工程实践",
+      "核心维度：执行环境(Harness) → 闭环迭代(Loop) → 协同治理(Graph) → 技能封装(Skill)",
     ],
     questions: [
-      "「控制半径」这个词，你是怎么理解的？可以先说说看。",
-      "首页的三个 Demo（Harness / Loop / Graph）分别解决哪一类问题？",
-      "如果只保留一个实验去理解 Agent 工程，你会选哪个？为什么？",
+      "在你的实际项目中，开发 Agent 时遇到的最大痛点是什么？",
+      "首页的三个实验（Harness / Loop / Graph）分别对应工程中的哪些阶段？",
+      "如果只保留一个实验来排查 Agent 任务执行失败，你会优先关注哪一层？",
     ],
   },
   "sec-network": {
-    section: "知识网络",
+    section: "知识网络与协议全景",
     points: [
-      "Tool Calling 是模型改变外部状态的基础能力",
-      "MCP 连接工具与数据源（标准化的手）；ACP 是客户端到本地 Agent 的会话通道；A2A 是独立 Agent 间协作（社交协议）",
-      "CLI 是可执行的本地编码 Agent（stdio 子进程），不是云端对话框",
-      "Agent Card 是能力名片；Skill 是宿主内分层手册",
-      "ReAct = 推理→行动→观察的认知循环",
+      "Tool Calling：模型与外部环境交互的基础能力，通过函数签名调用外部 API",
+      "MCP：标准化工具与数据源接入协议（Agent ↔ 工具/API/数据源）",
+      "ACP：客户端与本地 Agent 会话协议（Client ↔ 本地 Agent，基于 stdio/RPC）",
+      "A2A：面向独立 Agent 间的长任务委托与状态同步规范",
+      "Agent CLI：运行于本地终端的编码助手，具备完整工作区开发上下文",
+      "Agent Card：对外声明的能力元数据清单；Skill：结构化工作流与技能手册",
+      "ReAct：Reason + Act 基础认知循环（思考、工具执行与观察）",
     ],
     questions: [
-      "MCP、ACP、A2A 分别连接哪两端？你能各举一个真实场景吗？",
-      "为什么说 Agent Card 不是本地的 SKILL.md？",
-      "Tool Calling、MCP、Skill 三者之间是什么关系？试着用自己的话排个序。",
+      "MCP、ACP 与 A2A 分别连接哪两端？在实际开发中如何选择？",
+      "为什么说完整的编码助手不适合只作为一个单次调用的 MCP 工具？",
+      "Tool Calling、MCP 与 Skill 三者各自解决什么问题？试着梳理它们的分工。",
     ],
   },
   "sec-labs": {
     section: "技术复现实验",
     points: [
-      "Harness：一次运行能不能完成——工具、可见性、约束、完成证据",
-      "Loop：重复运行能不能收敛——状态、验证器、预算、停止条件",
-      "Graph：多个循环会不会共同漂移——所有权、否决边、外部锚点",
+      "Harness：单次任务执行保障——工具链、环境可观测性、架构约束与验收判据",
+      "Loop：多轮自主迭代——状态持久化、评估器打分、预算限制与退出策略",
+      "Graph：多智能体协同治理——所有权边界、全局否决机制与业务基准锚点",
     ],
     questions: [
-      "把 Harness 的「环境可观察」关掉，Agent 会卡在哪一步？为什么？",
-      "Loop 里「预算」和「目标分数」谁先触底，结果有什么不同？",
-      "Graph 实验中为什么会出现「局部指标全绿、外部目标下跌」？",
+      "在 Harness 实验中，如果关闭环境可观测性，Agent 为什么会无法前进？",
+      "在 Loop 迭代中，目标分数与计算预算的关系是什么？为什么需要预算熔断？",
+      "为什么会出现「各子模块指标全绿，但全局业务指标恶化」的现象？",
     ],
   },
   "sec-skill": {
     section: "Skill 体系",
     points: [
-      "SKILL.md 是操作手册；references 是资料库；scripts 是工具箱；assets 是原材料",
-      "三级加载省上下文：name+description → SKILL.md → 按需读资料/跑脚本",
-      "Skill 的价值是流程可复现，不是输出完全一致",
+      "SKILL.md 规定工作流与判断规则；references/ 沉淀参考资料；scripts/ 承载确定性脚本；assets/ 存放模板素材",
+      "三级渐进加载降低上下文开销：元数据路由 → SKILL.md 流程 → 按需读取资料/运行脚本",
+      "Skill 的核心价值是流程与工程规范的可复现性，而非每次生成字字一致",
     ],
     questions: [
-      "一个「只有 SKILL.md」的 Skill 和「超长提示词」的本质区别是什么？",
-      "为什么支付政策要放 references 而不是塞进 SKILL.md？",
-      "scripts 和 assets 都涉及「文件」，你怎么区分它们？",
+      "结构化的 Skill 与一段超长 Prompt 的本质区别是什么？",
+      "为什么详细的业务规则或文档适合放入 references/，而不是全塞进 SKILL.md？",
+      "哪些逻辑适合写成确定性脚本（scripts/），哪些适合交由模型判断？",
     ],
   },
   "sec-tacit": {
-    section: "判断手感",
+    section: "场景诊断与信号定位",
     points: [
-      "先看失败落在哪一层：跨任务重复→Harness；跨轮出现→Loop；局部全绿但真实目标下跌→Graph",
-      "把隐性判断桥接成可观察的线索，再形式化",
+      "故障分层定位：跨任务重复缺乏反馈→补齐 Harness；多轮修改陷入死循环→优化 Loop 控制；局部达标全局受损→强化 Graph 治理",
+      "从可观察的系统信号切入，避免盲目修改 Prompt",
     ],
     questions: [
-      "「Agent 总要人复制日志才能继续」，这个现象提示先补哪一层？",
-      "三个诊断卡片里，哪个场景你见过或最可能遇到？",
+      "如果 Agent 经常卡在报错并需要人工复制控制台输出，提示应该优先解决哪一层的问题？",
+      "在日常开发中，你遇到过哪些典型的 Agent 失控或死循环场景？",
     ],
   },
   "sec-courses": {
     section: "深入课程",
     points: [
-      "基础馆把控制半径拆成可通关章节：Tool → ReAct → Loop → MCP → ACP/CLI → Multi-Agent → Skill → A2A",
-      "Git 实验室用图形化提交网络理解 merge / rebase / 冲突",
+      "系统教程：从基础工具调用到多智能体架构的全流程指引",
+      "Git 协作实验：通过图形化网络直观理解分支、合并与冲突解决",
     ],
     questions: [
-      "你更想先通关基础馆，还是先回来玩首页的 Demo？为什么？",
+      "你希望先深入理解协议规范与源码，还是先在实验台中验证机制？",
     ],
   },
   "sec-sources": {
     section: "一手来源",
     points: [
-      "来源有成熟度分级：established / emerging / proposed",
-      "Harness(OpenAI) 与 Loop(IBM) 标记 emerging；Graph(Eigent) 标记 proposed",
-      "来源支持定义 ≠ 行业已形成统一标准",
+      "行业技术来源成熟度分级：established（成熟标准）/ emerging（发展中提议）/ proposed（探索性构想）",
+      "区分官方事实规范与单一组织的提议构想，避免盲目跟风概念",
     ],
     questions: [
-      "proposed 和 emerging 有什么区别？看到 proposed 的术语你该抱什么态度？",
+      "面对社区新出现的技术术语与概念，你会从哪些维度评估其落地成熟度？",
     ],
   },
 };
@@ -123,7 +124,7 @@ const sources = [
     date: "2026-02-11",
     maturity: "emerging",
     url: "https://openai.com/index/harness-engineering/",
-    note: "Agent-first 团队如何设计可见环境、仓库知识、结构约束与反馈回路。",
+    note: "针对以 Agent 为核心的研发团队，探讨如何设计执行环境、项目代码上下文、结构约束与反馈回路。",
   },
   {
     label: "Loop Engineering",
@@ -131,7 +132,7 @@ const sources = [
     date: "2026-07-17",
     maturity: "emerging",
     url: "https://www.ibm.com/think/topics/loop-engineering",
-    note: "目标、行动、观察、调整，以及调度、状态、工具和人工门禁。",
+    note: "构建目标驱动的迭代闭环：涵盖任务调度、状态流转、工具链调用与人工审核把关机制。",
   },
   {
     label: "Graph Engineering",
@@ -139,7 +140,7 @@ const sources = [
     date: "2026-07-21",
     maturity: "proposed",
     url: "https://www.eigent.ai/blog/graph-engineering-ai-agents",
-    note: "多个反馈循环之间的权威、节奏、否决边与外部锚点；仍是单一组织提出的新标签。",
+    note: "探讨多循环协同下的权限划分、执行节奏、否决机制与业务锚点；目前属于探索性提议。",
   },
   {
     label: "A2A and MCP",
@@ -147,7 +148,7 @@ const sources = [
     date: "持续更新",
     maturity: "established",
     url: "https://a2acn.com/docs/topics/a2a-and-mcp/",
-    note: "官方互补定位：MCP 连接工具与数据源，A2A 负责独立 Agent 间发现、任务协作与上下文交换。",
+    note: "官方定位互补：MCP 连接工具与数据源，A2A 负责独立 Agent 间发现、任务协作与上下文交换。",
   },
   {
     label: "Agent Client Protocol",
@@ -180,7 +181,7 @@ const knowledgeNodes = [
     id: "tool",
     eyebrow: "基础能力",
     title: "Tool Calling",
-    note: "让模型能改变外部状态",
+    note: "模型与外部交互的基础，通过参数签名调用 API",
     links: "连接 → react / mcp",
     color: "var(--ink)",
   },
@@ -188,7 +189,7 @@ const knowledgeNodes = [
     id: "react",
     eyebrow: "认知循环",
     title: "ReAct",
-    note: "推理 → 行动 → 观察",
+    note: "推理、执行工具、观察反馈的交替推演闭环",
     links: "连接 → loop",
     color: "var(--ink-soft)",
   },
@@ -196,7 +197,7 @@ const knowledgeNodes = [
     id: "mcp",
     eyebrow: "工具协议",
     title: "MCP",
-    note: "Agent ↔ 工具 / API / 数据源",
+    note: "标准化接入工具与数据源（Agent ↔ 工具/API/数据）",
     links: "对比 → acp / a2a / card",
     color: "var(--ink)",
   },
@@ -204,7 +205,7 @@ const knowledgeNodes = [
     id: "acp",
     eyebrow: "会话协议",
     title: "ACP",
-    note: "Client ↔ 本地 Agent 会话",
+    note: "客户端与本地 Agent 会话通道（Client ↔ 本地 Agent）",
     links: "对比 → mcp · 依赖 → cli",
     color: "#8a6234",
   },
@@ -212,7 +213,7 @@ const knowledgeNodes = [
     id: "cli",
     eyebrow: "本地 Agent",
     title: "Agent CLI",
-    note: "命令行里的编码 Agent，stdio 会话",
+    note: "命令行环境中的编码助手，基于 stdio 双向通信",
     links: "连接 → acp / harness / loop",
     color: "#c46a2b",
   },
@@ -220,7 +221,7 @@ const knowledgeNodes = [
     id: "a2a",
     eyebrow: "协作协议",
     title: "A2A",
-    note: "独立 Agent 间发现、委托、长任务",
+    note: "跨服务 Agent 间的服务发现、长任务委托与状态同步",
     links: "依赖 → card · 对比 → mcp",
     color: "var(--slate)",
   },
@@ -228,7 +229,7 @@ const knowledgeNodes = [
     id: "card",
     eyebrow: "能力名片",
     title: "Agent Card",
-    note: "公开身份、技能、端点与认证",
+    note: "对外公开的服务元数据：服务地址、认证方式与技能清单",
     links: "服务 → a2a · 不同于 → skill",
     color: "var(--slate)",
   },
@@ -236,32 +237,32 @@ const knowledgeNodes = [
     id: "skill",
     eyebrow: "能力模块",
     title: "Skill",
-    note: "分层手册：路由、流程、资料、工具",
+    note: "结构化工作流与技能手册，按需分层加载节省上下文",
     links: "连接 → harness / mcp",
     color: "var(--ink-soft)",
   },
   {
     id: "harness",
-    eyebrow: "单次运行",
+    eyebrow: "执行环境",
     title: "Harness Engineering",
-    note: "环境、工具、可见性、约束、完成证据",
+    note: "为单次运行提供工具链、环境观测、安全约束与验收判据",
     links: "连接 → loop",
     color: "var(--emerald)",
   },
   {
     id: "loop",
-    eyebrow: "重复运行",
+    eyebrow: "闭环迭代",
     title: "Loop Engineering",
-    note: "状态、验证、预算、停止与升级",
+    note: "多轮迭代控制：状态维护、质量评估、预算熔断与退出",
     links: "连接 → graph",
     color: "var(--slate)",
   },
   {
     id: "graph",
-    eyebrow: "多循环治理",
+    eyebrow: "协同治理",
     title: "Graph Engineering",
-    note: "目标所有权、冲突、节奏与外部锚点",
-    links: "外部目标与治理锚点",
+    note: "多智能体协同治理：权责划分、冲突仲裁与全局基准约束",
+    links: "业务基准与全局治理约束",
     color: "var(--ink)",
   },
 ];
@@ -284,128 +285,128 @@ const protocolQuiz = [
   {
     id: "p1",
     prompt:
-      "外层客服 Agent 调用内层知识库的 knowledge_chat：传入 message / conversation_id，返回答案。该用什么？",
+      "业务场景：外层客服 Agent 调用内层知识库的 knowledge_chat 接口：传入 message / conversation_id 并获取回答。该选什么协议？",
     answer: "mcp",
     choices: [
-      { id: "mcp", label: "保留 MCP：这是在调用一个知识能力/工具" },
-      { id: "a2a", label: "立刻换成 A2A：因为内层也是 Agent" },
-      { id: "both", label: "必须双协议并行，否则无法问答" },
+      { id: "mcp", label: "使用 MCP：本质是在调用一个标准化的知识检索工具" },
+      { id: "a2a", label: "使用 A2A：因为被调用方也是一个 Agent" },
+      { id: "both", label: "双协议并行：同时使用 MCP 和 A2A" },
     ],
     explain:
-      "角色上像 Agent 调 Agent，协议上仍是外层调用一个知识能力。MCP 负责工具 schema、参数和结构化结果；A2A 在这里过重。",
+      "虽然被调用方内部有智能体逻辑，但对外交互本质上仍是确定性的问答能力调用。MCP 提供了标准化的工具 Schema 与结构化数据交互，在这里更轻量直接；引入 A2A 属于过度设计。",
   },
   {
     id: "p2",
     prompt:
-      "你需要让对方 Agent 通过公开名片发现“我会什么、端点在哪、怎么认证”。核心构件是？",
+      "业务场景：你需要让第三方系统的 Agent 能够动态发现“我具备哪些能力、服务地址在哪里、如何进行鉴权”。核心规范是？",
     answer: "card",
     choices: [
-      { id: "mcp", label: "MCP tools/list 菜单" },
+      { id: "mcp", label: "MCP tools/list 接口" },
       { id: "card", label: "Agent Card（.well-known/agent-card.json）" },
-      { id: "skillmd", label: "本地 SKILL.md 目录" },
+      { id: "skillmd", label: "本地 SKILL.md 规范" },
     ],
     explain:
-      "Agent Card 是 A2A 的能力发现入口；MCP 的 tools/list 面向工具菜单，本地 Skill 面向宿主内渐进披露，不是跨 Agent 名片。",
+      "Agent Card 是分布式 Agent 的声明式服务名片；MCP 的 tools/list 面向单个 Agent 的本地工具菜单，本地 SKILL.md 面向代码库内的工作流组织，均非跨服务能力发现规范。",
   },
   {
     id: "p3",
-    prompt: "出现跨团队独立部署、长任务取消/恢复、Artifact 交付时，更合理的演进是？",
+    prompt: "业务场景：当系统演进至跨团队独立部署、需要支持异步长任务取消/恢复、并能交付复杂工件（Artifact）时，合理的架构演进是？",
     answer: "adapter",
     choices: [
-      { id: "replace", label: "删掉 MCP，全部重写成 A2A" },
-      { id: "adapter", label: "保留 MCP，外层加 A2A Adapter 处理长任务委托" },
-      { id: "wrap", label: "把 A2A 客户端再包成一个 MCP 工具就够了" },
+      { id: "replace", label: "彻底废弃 MCP，全部重构为 A2A" },
+      { id: "adapter", label: "底层保留 MCP 工具接入，在上层引入 A2A 适配层处理长任务委托" },
+      { id: "wrap", label: "将 A2A 客户端重新包装成一个普通的 MCP 工具" },
     ],
     explain:
-      "官方定位是互补。未来应分层：短请求与确定性工具走 MCP，长任务与独立 Agent 委托走 A2A；只把 A2A 再包成 MCP 工具，往往只增加复杂度。",
+      "MCP 与 A2A 属于互补层级：短周期高频工具调用与数据查询保留在 MCP 层，跨团队长周期异步任务委托交由 A2A 处理。将 A2A 简单包裹为 MCP 工具只会引入不必要的嵌套与状态管理混乱。",
   },
   {
     id: "p4",
     prompt:
-      "编辑器要把本地编码 Agent 拉起来做完整会话（提示、流式输出、diff、权限确认）。该用什么？",
+      "业务场景：代码编辑器或 IDE 需要在本地启动编码智能体，进行持续交互会话（Prompt 交互、流式输出、生成 Diff、确认权限）。该选什么协议？",
     answer: "acp",
     choices: [
-      { id: "acp", label: "ACP：客户端 spawn 子进程，JSON-RPC over stdio 驱动会话" },
-      { id: "mcpwrap", label: "把整个 Agent 包成一个 MCP 工具，一次 tools/call 跑完" },
-      { id: "a2a", label: "A2A：先给这个本地进程发一张 Agent Card" },
+      { id: "acp", label: "ACP：客户端拉起本地子进程，通过 stdio/RPC 驱动完整交互会话" },
+      { id: "mcpwrap", label: "把整个编码 Agent 包装为一个 MCP 工具，单次 tools/call 执行" },
+      { id: "a2a", label: "A2A：给本地命令行进程生成 Agent Card 进行网络协商" },
     ],
     explain:
-      "完整编码会话是 Client↔Agent，走 ACP。有界短能力才包成 MCP 工具；A2A 留给独立部署的对等体。",
+      "完整的编码交互属于典型的 Client ↔ 本地 Agent 会话，ACP 原生支持 stdio 进程通信与双向流式协议；单次 MCP 调用无法支撑持续的交互会话与中断控制，而 A2A 则面向分布式网络场景，在本地进程间过于繁重。",
   },
 ];
 
 const tacitCards = [
   {
-    title: "先看失败落在哪一层",
+    title: "执行中断与环境盲区",
     situation:
-      "Agent 会写代码，却总要人类复制日志和截图才能继续。你先注意到什么？",
+      "Agent 编写代码逻辑正常，但每次执行遇到报错时，都必须依赖人工手动复制控制台日志或截图喂给它才能继续。",
     cues:
-      "卡点跨任务重复；完成证据存在但在 Agent 视野外；重试没有带来新反馈。先补 Harness，而不是继续改提示。",
+      "诊断线索：该问题在多个任务中重复出现；报错日志客观存在但处于 Agent 观察视野之外。根本原因是单次执行环境（Harness）缺乏自动化日志收集与环境反馈回传，应优先完善执行外壳，而非盲目调优 Prompt。",
   },
   {
-    title: "先看问题是否跨轮出现",
+    title: "多轮反复与无限重试",
     situation:
-      "手动执行很顺，一到每周自动运行就重复修改、无限重试。你先注意到什么？",
+      "在本地手动调用单次执行非常顺利，但一旦配置为无人值守的定时自动化任务，就会陷入反复修改同一处代码、甚至无限重试直至超时。",
     cues:
-      "单次运行能完成，缺的是跨轮状态、预算、停止和升级条件。问题落在 Loop。",
+      "诊断线索：单次执行能力完备，但缺少多轮状态追踪、进度评估、最大尝试预算与升级介入机制。根因出在闭环控制（Loop Engineering）缺乏终止约束与熔断保护。",
   },
   {
-    title: "先看局部绿色是否背离真实目标",
+    title: "局部指标达标但全局结果恶化",
     situation:
-      "速度、质量分、成本指标都变绿，续费率却持续下降。你先注意到什么？",
+      "代码生成速度提升、单测覆盖率达标、局部打分全绿，但交付到用户环境的实际业务留存率和满意度持续下滑。",
     cues:
-      "局部循环能解释自己的成功，但缺少共同目标所有者和不可自改的外部锚点。问题进入 Graph 层。",
+      "诊断线索：各个子模块的局部优化均能自我闭环解释，但缺乏全局目标校验与不可被局部改写的外部业务基准（Ground Truth）。问题属于多 Agent 协同治理（Graph Engineering）层级。",
   },
 ];
 
 const skillPlacementQuiz = [
   {
     id: "q1",
-    prompt: "“Agent 每次都必须先建立可复现的反馈循环，再提出假设。”",
+    prompt: "“Agent 每次执行时都必须首先遵循：先复现问题并建立验证闭环，再开始编写代码。”",
     answer: "skill.md",
     choices: [
-      { id: "skill.md", label: "SKILL.md（操作手册）" },
-      { id: "references", label: "references/（资料库）" },
-      { id: "scripts", label: "scripts/（工具箱）" },
-      { id: "assets", label: "assets/（原材料）" },
+      { id: "skill.md", label: "SKILL.md（操作流程规范）" },
+      { id: "references", label: "references/（参考文档库）" },
+      { id: "scripts", label: "scripts/（自动化脚本）" },
+      { id: "assets", label: "assets/（模板素材库）" },
     ],
-    explain: "这是每次都必须执行的流程与判断，应放在 SKILL.md。",
+    explain: "这是每次任务都必须执行的核心工作流与原则规范，应明确写入 SKILL.md。",
   },
   {
     id: "q2",
-    prompt: "“只有用户问到 Stripe 退款时才需要阅读的退款政策细节。”",
+    prompt: "“仅当涉及跨币种支付清算时，才需要查阅的退款手续费与银行规则明细。”",
     answer: "references",
     choices: [
-      { id: "skill.md", label: "SKILL.md（操作手册）" },
-      { id: "references", label: "references/（资料库）" },
-      { id: "scripts", label: "scripts/（工具箱）" },
-      { id: "assets", label: "assets/（原材料）" },
+      { id: "skill.md", label: "SKILL.md（操作流程规范）" },
+      { id: "references", label: "references/（参考文档库）" },
+      { id: "scripts", label: "scripts/（自动化脚本）" },
+      { id: "assets", label: "assets/（模板素材库）" },
     ],
-    explain: "分支才需要的知识应渐进披露到 references，避免每次都塞进上下文。",
+    explain: "特定分支才需要的详细业务知识应放入 references/ 进行渐进式按需读取，避免膨胀系统基础上下文。",
   },
   {
     id: "q3",
-    prompt: "“把 JSONL 账本做 URL 规范化、内容指纹和 added/updated 判定。”",
+    prompt: "“对抓取的抓取条目进行 URL 规范化清洗、提取内容指纹、以及判定更新状态。”",
     answer: "scripts",
     choices: [
-      { id: "skill.md", label: "SKILL.md（操作手册）" },
-      { id: "references", label: "references/（资料库）" },
-      { id: "scripts", label: "scripts/（工具箱）" },
-      { id: "assets", label: "assets/（原材料）" },
+      { id: "skill.md", label: "SKILL.md（操作流程规范）" },
+      { id: "references", label: "references/（参考文档库）" },
+      { id: "scripts", label: "scripts/（自动化脚本）" },
+      { id: "assets", label: "assets/（模板素材库）" },
     ],
-    explain: "重复、脆弱、要求稳定输出的确定性逻辑适合 scripts。",
+    explain: "计算确定、对一致性要求严格的重复性逻辑，最适合编写为独立脚本（scripts/）交给宿主直接运行。",
   },
   {
     id: "q4",
-    prompt: "“生成课程时要复制并改写的单文件 HTML 模板。”",
+    prompt: "“生成技术分析报告时需要复制并填充的预设 Markdown 或 HTML 骨架文件。”",
     answer: "assets",
     choices: [
-      { id: "skill.md", label: "SKILL.md（操作手册）" },
-      { id: "references", label: "references/（资料库）" },
-      { id: "scripts", label: "scripts/（工具箱）" },
-      { id: "assets", label: "assets/（原材料）" },
+      { id: "skill.md", label: "SKILL.md（操作流程规范）" },
+      { id: "references", label: "references/（参考文档库）" },
+      { id: "scripts", label: "scripts/（自动化脚本）" },
+      { id: "assets", label: "assets/（模板素材库）" },
     ],
-    explain: "最终产物要复制或加工的文件属于 assets，不是给 Agent 通读的资料。",
+    explain: "作为交付产物模板的样板文件归入 assets/，Agent 仅在生成目标文件时进行复制与填充。",
   },
 ];
 
@@ -765,7 +766,7 @@ function MentorPanel({ activeId }: { activeId: string }) {
 1. 默认反问引导：学习者提问后，先用 1-2 个启发式问题反问，激活他的已有知识，让他先说出自己的想法，不要急着给答案。
 2. 学习者给出想法后：先肯定其中正确的部分，再针对错误或模糊处给出精准反馈，并追问下一步。
 3. 以下情况可以直接讲解：(a) 学习者明确说「直接告诉我答案 / 直接回答 / 解释一下」；(b) 同一概念反问两次后仍卡住；(c) 纯事实性问题（如「MCP 的全称是什么」）。
-4. 用中文回答；常规回答控制在 150 字以内，讲解场景可适当展开；优先使用本园地已有类比：MCP=标准化的手、ACP=工位上的会话、CLI=请来的本地顾问、A2A=社交协议、Agent Card=名片、Skill=分层手册、控制半径=单次/重复/多循环治理。
+4. 用中文回答；常规回答控制在 150 字以内，讲解场景可适当展开；概念类比要清晰准确：MCP=标准化工具与数据接口、ACP=宿主与本地 Agent 的双向会话通道、CLI=终端本地编码助手、A2A=跨系统智能体协同协议、Agent Card=声明式能力名片、Skill=结构化工作流与技能手册。
 5. 对话要像一对一辅导而不是问答机器：解释后用提问收尾，或抛一个现实场景让学习者判断。`;
   }
 
@@ -1051,13 +1052,13 @@ function HarnessLab() {
       <div className="lab-title">
         <span className="lab-index">01</span>
         <div>
-          <p>单次运行控制半径</p>
+          <p>单次执行环境</p>
           <h3>Harness Lab</h3>
         </div>
         <span className="maturity emerging">emerging</span>
       </div>
       <p className="lab-intro">
-        亲手拆掉或补回 Agent 的执行环境，观察它究竟卡在行动、观察、约束还是完成证明。
+        配置 Agent 的运行环境，直观观察缺少工具、环境反馈、结构约束或验收标准时，任务会在哪一阶段中断。
       </p>
       <div className="tool-chips" aria-label="本次运行用到的能力">
         <span className="tool-chip">runHarnessDemo</span>
@@ -1069,26 +1070,26 @@ function HarnessLab() {
         <div className="control-stack">
           <Toggle
             checked={config.tools}
-            label="工具可调用"
-            detail="文件、终端、浏览器与测试"
+            label="工具调用能力"
+            detail="允许 Agent 读写文件、执行终端命令与测试"
             onChange={(value) => update("tools", value)}
           />
           <Toggle
             checked={config.observability}
-            label="环境可观察"
-            detail="日志、指标与界面状态回到上下文"
+            label="环境可观察性"
+            detail="日志、指标与界面状态能实时回传到上下文"
             onChange={(value) => update("observability", value)}
           />
           <Toggle
             checked={config.constraints}
-            label="结构约束"
-            detail="依赖方向与边界由机器检查"
+            label="架构与安全约束"
+            detail="依赖方向与代码规范由自动化工具拦截"
             onChange={(value) => update("constraints", value)}
           />
           <Toggle
             checked={config.completionProof}
-            label="完成证据"
-            detail="测试与用户路径决定何时停止"
+            label="明确验收判据"
+            detail="依赖测试结果或明确判定路径决定何时停止"
             onChange={(value) => update("completionProof", value)}
           />
           <RunButton
@@ -1107,7 +1108,7 @@ function HarnessLab() {
           ) : result ? (
             <HarnessResultView key={runId} result={result} />
           ) : (
-            <EmptyState>先切换开关，再运行。失败原因会停在第一个缺失能力。</EmptyState>
+            <EmptyState>调整环境开关后运行，查看 Agent 在当前配置下的执行轨迹与中断原因。</EmptyState>
           )}
         </div>
       </div>
@@ -1181,13 +1182,13 @@ function LoopLab() {
       <div className="lab-title">
         <span className="lab-index">02</span>
         <div>
-          <p>重复运行控制半径</p>
+          <p>闭环迭代控制</p>
           <h3>Loop Lab</h3>
         </div>
         <span className="maturity emerging">emerging</span>
       </div>
       <p className="lab-intro">
-        调整目标、迭代上限和预算，观察循环是真实收敛，还是在耗尽预算后诚实停下。
+        模拟 Agent 自主迭代过程。调整目标要求、最大轮次与算力预算，观察系统是达成收敛还是在预算耗尽后安全退出。
       </p>
       <div className="tool-chips" aria-label="本次运行用到的能力">
         <span className="tool-chip">runLoopDemo</span>
@@ -1217,7 +1218,7 @@ function LoopLab() {
           ) : result ? (
             <LoopResultView key={runId} result={result} />
           ) : (
-            <EmptyState>试着把预算设得比目标所需更小，看它如何报告预算耗尽。</EmptyState>
+            <EmptyState>调节参数后运行，观察评估器如何打分以及预算耗尽时的熔断表现。</EmptyState>
           )}
         </div>
       </div>
@@ -1266,13 +1267,13 @@ function GraphLab() {
       <div className="lab-title">
         <span className="lab-index">03</span>
         <div>
-          <p>多循环治理控制半径</p>
+          <p>多智能体治理</p>
           <h3>Graph Lab</h3>
         </div>
         <span className="maturity proposed">proposed</span>
       </div>
       <p className="lab-intro">
-        复现“局部指标全绿但外部目标下跌”，再用外部锚点与否决边纠正互相冲突的循环。
+        复现“各子模块局部达标，但核心业务目标恶化”的失控陷阱，观察全局约束锚点与否决机制的纠偏效果。
       </p>
       <div className="tool-chips" aria-label="本次运行用到的能力">
         <span className="tool-chip">runGraphDemo</span>
@@ -1284,8 +1285,8 @@ function GraphLab() {
         <div className="control-stack">
           <Toggle
             checked={anchorEnabled}
-            label="外部锚点"
-            detail="不可被局部循环自行改写的真实目标"
+            label="全局业务锚点"
+            detail="设定不可被局部优化篡改的真实业务指标（如留存率）"
             onChange={(value) => {
               setAnchorEnabled(value);
               reset();
@@ -1293,8 +1294,8 @@ function GraphLab() {
           />
           <Toggle
             checked={vetoEnabled}
-            label="否决边"
-            detail="局部优化若伤害锚点则被拒绝"
+            label="全局否决权机制"
+            detail="当局部优化改动损害全局指标时触发熔断驳回"
             onChange={(value) => {
               setVetoEnabled(value);
               reset();
@@ -1317,7 +1318,7 @@ function GraphLab() {
             <GraphResultView key={runId} result={result} />
           ) : (
             <EmptyState>
-              默认状态会复现“局部仪表盘全绿、真实目标下跌”。再逐步接入锚点和否决边。
+              默认配置下将复现“局部优化全绿、全局目标恶化”的失控现象；开启全局锚点与否决机制后可自动纠偏。
             </EmptyState>
           )}
         </div>
@@ -1377,7 +1378,7 @@ function KnowledgeNetwork() {
   return (
     <>
       <p className="kn-hint">
-        点击任意卡片，查看它在控制半径中的直接连接；再次点击取消。概念馆每日账本会挂回同一组节点。
+        点击任意卡片，高亮查看该概念在系统架构中的上下游关联与对比关系；再次点击取消高亮。
       </p>
       <div className="card-grid cols-3 kn-grid">
         {knowledgeNodes.map((node) => {
@@ -1409,12 +1410,12 @@ function KnowledgeNetwork() {
       {focusNode && (
         <div className="kn-focus" style={{ ["--sc" as string]: focusNode.color }}>
           <span>
-            <b>{focusNode.title}</b> 的直接连接：
+            <b>{focusNode.title}</b> 的关联节点：
             {neighbors.length > 0
               ? neighbors
                   .map((id) => knowledgeNodes.find((n) => n.id === id)?.title ?? id)
                   .join("、")
-              : "无（治理终点）"}
+              : "暂无下游依赖"}
           </span>
           <div className="kn-focus-actions">
             {relatedLedger > 0 && (
@@ -1440,17 +1441,16 @@ function KnowledgeNetwork() {
 function ProtocolLab() {
   return (
     <div className="protocol-lab">
-      <h3>协议层举一反三：MCP · ACP · CLI · A2A · Agent Card · Skill</h3>
+      <h3>协议选型与职责划分：MCP · ACP · CLI · A2A · Agent Card · Skill</h3>
       <p className="sec-sub" style={{ marginBottom: 12 }}>
-        先看“谁在跟谁说话”，再选协议。MCP / ACP / A2A 互补，不是互相取代的版本号。
+        根据通信两端角色与交互复杂度进行技术选型。MCP、ACP 与 A2A 分属不同层级，各司其职、互为补充。
       </p>
 
       <div className="tldr" style={{ ["--sc" as string]: "var(--ink-soft)" }}>
-        <div className="k">当前实践结论</div>
+        <div className="k">架构选型建议</div>
         <div className="v">
           外层 Agent 通过 MCP <code>knowledge_chat</code> 调用知识能力时，应保留
-          MCP；先做上下文边界治理。等出现跨团队独立 Agent、长任务生命周期、Artifact
-          交付时，再加 A2A Adapter，而不是重写知识库。
+          MCP；先做好上下文边界治理。等未来演进出跨团队独立 Agent、长周期任务生命周期与复杂工件（Artifact）交付时，再在上层引入 A2A Adapter 进行异步任务委托，无须重写底层知识库。
         </div>
       </div>
 
@@ -1460,15 +1460,15 @@ function ProtocolLab() {
           <span role="columnheader">MCP</span>
           <span role="columnheader">ACP</span>
           <span role="columnheader">A2A</span>
-          <span role="columnheader">举一反三</span>
+          <span role="columnheader">选型要点</span>
         </div>
         {[
-          ["谁连谁", "Agent ↔ 工具", "Client ↔ Agent", "Agent ↔ Agent", "先看两端再选协议"],
-          ["外层调用知识查询", "适合", "过重", "过重", "角色像 Agent，协议仍是能力调用"],
-          ["完整编码会话", "不够", "核心", "过重", "编辑器 spawn 本地 CLI Agent"],
-          ["能力发现", "tools/list", "初始化 / 会话", "Agent Card", "菜单 vs 工位 vs 名片"],
-          ["Agent 间任务委托", "弱", "不是这层", "核心", "手 vs 会话 vs 社交"],
-          ["长任务取消/恢复/推送", "需另建", "会话内取消", "原生支持", "短请求 vs 会话 vs 任务生命周期"],
+          ["通信两端", "Agent ↔ 外部工具/数据源", "Client ↔ 本地 Agent", "独立 Agent ↔ 独立 Agent", "先明确两端通信实体，再定协议架构"],
+          ["知识查询与能力调用", "首选方案（统一接口与数据结构）", "不适用（非会话控制场景）", "不推荐（仅数据调用无需对等协同）", "本质是能力调用，按标准 Tool 接入即可"],
+          ["IDE 内完整编码会话", "能力不足（缺乏长生命周期会话）", "首选方案（子进程双向驱动）", "不推荐（本机会话无需跨网络协商）", "编辑器通过 stdio 实时驱动本地编码 Agent"],
+          ["能力与服务发现", "tools/list 接口规范", "客户端启动协商 / 初始化", "Agent Card（声明式元数据）", "API 菜单 vs 进程协商 vs 服务名片"],
+          ["跨团队任务委托", "不推荐（缺乏异步长任务原语）", "不适用（局限于本机单会话）", "原生支持（异步委派与事件流）", "面向跨系统、跨网络的长周期协作"],
+          ["任务中断/恢复与流式推送", "需业务层自行封装", "支持在 stdio 会话内中断", "协议原生提供全生命周期管理", "按任务时长与可靠性要求选择协议层级"],
         ].map((row) => (
           <div className="comparison-row" role="row" key={row[0]}>
             {row.map((cell, ci) => (
@@ -1484,32 +1484,32 @@ function ProtocolLab() {
         <article className="mini-card" style={{ ["--sc" as string]: "var(--ink)" }}>
           <div className="eyebrow">Agent ↔ 工具</div>
           <h4>MCP</h4>
-          <p>连接工具、API、数据源；强调参数、schema、结构化结果。</p>
-          <small>类比：给 Agent 装上标准化的手</small>
+          <p>统一工具、API 与数据源的接入规范，强调参数校验与结构化返回结果。</p>
+          <small>类比：为智能体装上标准化的通用接口</small>
         </article>
         <article className="mini-card" style={{ ["--sc" as string]: "#8a6234" }}>
           <div className="eyebrow">Client ↔ Agent</div>
           <h4>ACP</h4>
-          <p>客户端 spawn 本地 Agent 子进程，JSON-RPC 2.0 / NDJSON / stdio 驱动完整会话。</p>
-          <small>类比：把顾问请到工位上对话</small>
+          <p>宿主软件拉起本地 Agent 子进程，通过 stdio/RPC 高效驱动代码编辑与交互。</p>
+          <small>类比：IDE 与本地助手之间的专属双向会话通道</small>
         </article>
         <article className="mini-card" style={{ ["--sc" as string]: "#c46a2b" }}>
           <div className="eyebrow">本地进程</div>
           <h4>Agent CLI</h4>
-          <p>会说 ACP stdio 的编码 Agent：一条命令，不是云端对话框。</p>
-          <small>类比：请来的那位顾问本人</small>
+          <p>原生支持 stdio 通信的本地编码智能体，直接操作工作区代码库。</p>
+          <small>类比：常驻终端的自动化结对开发助手</small>
         </article>
         <article className="mini-card" style={{ ["--sc" as string]: "var(--ink-soft)" }}>
           <div className="eyebrow">Agent ↔ Agent</div>
           <h4>A2A</h4>
-          <p>发现、协商、委托、共享任务与上下文；面向独立对等体。</p>
-          <small>类比：给 Agent 装上社交与协作协议</small>
+          <p>面向独立部署智能体之间的服务发现、任务委派与长流程状态流转。</p>
+          <small>类比：多智能体分布式协同与工作流协议</small>
         </article>
         <article className="mini-card" style={{ ["--sc" as string]: "var(--slate)" }}>
           <div className="eyebrow">公开身份</div>
           <h4>Agent Card</h4>
-          <p>名片：名字、端点、skills、能力特性、认证方式。</p>
-          <small>类比：A2A 的发现入口，不是本地 SKILL.md</small>
+          <p>对外公布的机器可读名片，包含端点地址、认证方式与能力范围描述。</p>
+          <small>类比：分布式服务契约，不同于内部的 SKILL.md</small>
         </article>
       </div>
 
@@ -1520,33 +1520,29 @@ function ProtocolLab() {
             <i />
             <i />
           </span>
-          <span>推荐分层，而不是替换</span>
+          <span>分层架构设计实践</span>
         </div>
         <pre>{`编辑器 / IM 宿主
-  └─ ACP：spawn 本地 CLI Agent，stdio 会话（完整编码任务）
+  └─ ACP：拉起本地 CLI Agent，通过 stdio 驱动完整编码交互
 
-外层 Agent
-  ├─ MCP：短请求、确定性工具、knowledge_chat
-  ├─ ACP：需要把本地编码 Agent 请来工位时
-  └─ A2A：长任务、异步协作、独立 Agent 委托
+核心业务 Agent
+  ├─ MCP：短请求、确定性工具调用、knowledge_chat
+  ├─ ACP：在需要本地编码辅助时，与本地工作区 Agent 对接
+  └─ A2A：长周期任务、异步协作、跨团队独立 Agent 委托
 
-知识库 Agent
-  └─ MCP：内部检索、HSCode、合规等业务工具
+知识库 / 内部服务
+  └─ MCP：内部检索、HSCode、合规等业务工具接口
 
-注意：不要把整个 CLI Agent 包成一次 MCP tools/call
-A2A contextId → opaque knowledge_thread_id`}</pre>
+避坑提示：避免将完整长会话 Agent 粗暴包装为单次调用的 MCP 工具；A2A contextId 可映射为底层的会话 ID`}</pre>
       </div>
 
       <h3 style={{ marginTop: 28 }}>场景判断：该留 MCP 还是上 A2A？</h3>
       <Quiz storageKey="ai-lab-quiz-protocol" items={protocolQuiz} color="#0891b2" />
 
       <div className="callout tip">
-        <div className="ct">和相邻概念怎么挂</div>
+        <div className="ct">常见概念辨析</div>
         <div>
-          Tool Calling 是模型怎么开单；MCP 是工具从哪接进来；ACP 是客户端如何与本地
-          Agent 做完整会话；CLI 是那条可执行命令；Skill
-          是宿主内如何分层复用流程；Agent Card / A2A 是独立 Agent
-          如何被发现并协作。换协议解决不了“鞋子和玻璃杯是否同一主题”这类上下文边界问题。
+          Tool Calling 解决模型如何调用函数；MCP 规范了工具与数据源的接入标准；ACP 解决了客户端（如 IDE）如何精确控制本地 Agent 进程；CLI 是可直接在终端交互的实体程序；Skill 是工程层面的工作流编排规范；Agent Card 与 A2A 则是跨网络 Agent 互相发现与委托协作的标准。按实际场景选择协议层级，切勿过度设计。
         </div>
       </div>
     </div>
@@ -1560,14 +1556,14 @@ function SkillLab() {
     <section className="lesson" id="sec-skill" style={{ ["--sc" as string]: "#7c3aed" }}>
       <div className="sec-head">
         <span className="sec-num">3</span>
-        <h2>Skill：把能力做成可组合的分层手册</h2>
+        <h2>Skill：构建模块化、低上下文损耗的能力包</h2>
       </div>
       <p className="sec-sub">
-        Skill 不是“很长的提示词”，而是一个节省上下文的分层执行系统：先路由，再加载流程，细节用到才读。
+        Skill 并非单纯把 Prompt 写长，而是按需渐进加载的工程规范：先路由匹配，再加载核心流程，细则与脚本仅在执行时按需读取。
       </p>
 
       <div className="tldr">
-        <div className="k">一句总纲</div>
+        <div className="k">核心结构</div>
         <div className="v">
           一个标准 Skill 真正必需的只有：一个独立目录 + `SKILL.md`。`references/`、`scripts/`、`assets/`
           都是按需添加的可选资源，不是必需项。
@@ -1607,41 +1603,41 @@ function SkillLab() {
       </div>
 
       <div className="callout tip">
-        <div className="ct">记忆口诀</div>
+        <div className="ct">构件分工原则</div>
         <div>
-          `SKILL.md` 是操作手册，`references` 是资料库，`scripts` 是工具箱，`assets`
-          是原材料，Skill 仓库是把这些能力组合起来的工作系统。
+          `SKILL.md` 是操作流程规范，`references` 是参考资料库，`scripts` 承载确定性自动化脚本，`assets`
+          存放产物样板与模板，协同构成完整的工程化能力包。
         </div>
       </div>
 
-      <h3>三级加载：如何省上下文</h3>
+      <h3>三级加载：降低上下文开销</h3>
       <div className="level-stack">
         <div className="level-card">
           <b>第一级 · name + description</b>
-          <div>始终可见的轻量路由：这个 Skill 做什么、什么时候该触发。</div>
+          <div>常驻上下文的轻量描述：负责意图匹配与触发判断。</div>
         </div>
         <div className="level-card">
           <b>第二级 · SKILL.md 正文</b>
-          <div>命中后才加载：执行顺序、判断分支、完成标准、何时读取其他文件。</div>
+          <div>命中后载入：包含执行步骤、分支决策、验收规范及资源索引。</div>
         </div>
         <div className="level-card">
           <b>第三级 · references / scripts / assets</b>
-          <div>某个任务分支需要时才读资料、跑脚本或使用模板，避免一次塞进全部知识。</div>
+          <div>特定任务分支需要时按需读取，避免一次性塞入全部资料导致上下文膨胀。</div>
         </div>
       </div>
 
-      <h3>内容该放哪里？动手分类</h3>
+      <h3>内容分类判定</h3>
       <Quiz storageKey="ai-lab-quiz-skill" items={skillPlacementQuiz} color="#7c3aed" />
 
       <h3>Skill 形态与触发方式</h3>
       <div className="card-grid cols-3">
         {[
-          ["纯流程型", "只有 SKILL.md", "适合判断和文字流程"],
-          ["流程 + Reference", "主流程稳定，分支查资料", "如支付政策、术语表"],
-          ["流程 + Script", "判断 + 确定性自动化", "如诊断循环模板"],
-          ["流程 + Asset", "Skill 定内容，模板给骨架", "如向导、课件模板"],
-          ["路由型 Skill", "不直接做工程，只指路", "如 ask-matt / 总入口"],
-          ["仓库级组合", "多个 Skill 形成生产线", "grill → spec → tickets → implement"],
+          ["纯流程型", "仅包含 SKILL.md", "适用于逻辑清晰的推导与审核流程"],
+          ["流程 + Reference", "主流程稳定，分支查阅资料", "适用于包含复杂业务政策、术语表的场景"],
+          ["流程 + Script", "LLM 决策 + 确定性脚本自动化", "适用于数据清洗、环境检测等自动化任务"],
+          ["流程 + Asset", "定义结构规范，模板提供骨架", "适用于代码样板、文档模板生成"],
+          ["路由型 Skill", "不执行具体业务，负责任务分发", "适用于作为复杂系统的统一入口"],
+          ["工程流水线", "多个 Skill 串联成标准化交付链路", "需求深挖 → 规格制定 → 任务拆解 → 测试实现"],
         ].map(([title, note, tip]) => (
           <div className="mini-card" key={title} style={{ ["--sc" as string]: "#7c3aed" }}>
             <div className="eyebrow">{note}</div>
@@ -1651,14 +1647,14 @@ function SkillLab() {
         ))}
       </div>
 
-      <h3>Matt 式工程生产线</h3>
+      <h3>标准化研发工作流流水线</h3>
       <div className="roadline" aria-label="Skill 组合流水线">
         {[
-          ["想法", "grill-with-docs", "把模糊需求问透"],
-          ["规格", "to-spec", "写成可执行规格"],
-          ["拆分", "to-tickets", "变成可交付工单"],
-          ["实现", "implement + tdd", "按测试驱动推进"],
-          ["审查", "code-review", "对照标准验收"],
+          ["需求", "需求澄清与对齐", "把模糊诉求梳理透彻"],
+          ["规格", "编写技术规格", "形成可执行的技术方案"],
+          ["拆解", "工单任务拆分", "拆解为独立可验证的任务"],
+          ["实现", "测试驱动开发", "遵循 TDD 编写测试与代码"],
+          ["审查", "代码合规审查", "对照工程标准自动化验收"],
         ].map(([year, title, detail]) => (
           <div className="road-node" key={title} style={{ ["--rc" as string]: "#7c3aed" }}>
             <div className="rn-y">{year}</div>
@@ -1672,41 +1668,40 @@ function SkillLab() {
         <thead>
           <tr>
             <th>关系类型</th>
-            <th>例子</th>
-            <th>在 Lab 中的对应</th>
+            <th>工程示例</th>
+            <th>在当前系统中的对应</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>调用关系</td>
-            <td>implement 使用 tdd</td>
-            <td>前沿追踪 Skill 调用账本脚本与课程渲染器</td>
+            <td>implement 依赖 tdd</td>
+            <td>前沿追踪 Skill 驱动数据清洗脚本与页面渲染</td>
           </tr>
           <tr>
             <td>前后阶段</td>
             <td>to-spec → to-tickets</td>
-            <td>发现核验 → 建图 → 技术复现 Demo → 学习反馈</td>
+            <td>文献核验 → 架构建图 → 交互实验 → 实践诊断</td>
           </tr>
           <tr>
-            <td>共享知识</td>
+            <td>共享规范</td>
             <td>多个 Skill 共用 codebase-design</td>
-            <td>Harness / Loop / Graph 共用“控制半径”词汇</td>
+            <td>Harness / Loop / Graph 共用架构层级约定</td>
           </tr>
         </tbody>
       </table>
 
       <div className="callout info">
-        <div className="ct">优秀 Skill 的标准</div>
+        <div className="ct">优秀 Skill 的工程标准</div>
         <div>
-          目标不是让每次输出完全相同，而是让 Agent 每次遵循相对可预测的过程。本 Lab 的
-          `track-ai-frontier` 正是按这个标准组织：入口流程在 `SKILL.md`，来源政策与课程规范按需读，账本与渲染脚本稳定执行。
+          目标不是强制要求每次输出字字一致，而是确保 Agent 每次都遵循清晰可预测的工程流程。入口流程在 `SKILL.md`，业务文档与规范按需读取，确定性逻辑交由自动化脚本稳定执行。
         </div>
       </div>
     </section>
   );
 }
 
-/* ---------------- 判断手感 ---------------- */
+/* ---------------- 场景诊断 ---------------- */
 
 function TacitBridge() {
   const [revealed, setRevealed] = useLocalStorage<number[]>("ai-lab-tacit-revealed", []);
@@ -1719,10 +1714,10 @@ function TacitBridge() {
     <section className="lesson" id="sec-tacit" style={{ ["--sc" as string]: "#d97706" }}>
       <div className="sec-head">
         <span className="sec-num">4</span>
-        <h2>判断手感：先训练注意力</h2>
+        <h2>场景诊断：工程实践与信号定位</h2>
       </div>
       <p className="sec-sub">
-        不把直觉神秘化：先写下你看见的信号，再展开可观察的参考线索，把隐性判断桥接成显性知识。
+        面对复杂的 Agent 异常现象，从可观察的系统信号切入，快速定位问题究竟出在执行环境、闭环控制还是全局治理层。
       </p>
       <div className="tacit-grid">
         {tacitCards.map((card, index) => {
@@ -1734,7 +1729,7 @@ function TacitBridge() {
               <p>{card.situation}</p>
               <textarea
                 aria-label={`${card.title}：写下你的观察`}
-                placeholder="先写下你的观察与判断依据…"
+                placeholder="先写下你的观察与诊断依据…"
                 value={notes[index] ?? ""}
                 onChange={(event) =>
                   setNotes((current) => ({ ...current, [index]: event.target.value }))
@@ -1750,7 +1745,7 @@ function TacitBridge() {
                 }
                 disabled={isRevealed}
               >
-                {isRevealed ? "参考线索已展开" : "写完后展开参考线索"}
+                {isRevealed ? "诊断线索已展开" : "展开诊断线索"}
               </button>
               {isRevealed && <div className="cue-answer">{card.cues}</div>}
             </article>
@@ -1853,13 +1848,13 @@ export function LearningLab() {
     <LabShell
       wing={activeId === "sec-network" ? "network" : "home"}
       logo="本章"
-      tag="控制半径 · 对比 · 通关 · 账本"
+      tag="架构全景 · 协议选型 · 闭环实践"
       searchExtra={[
-        { href: "/#harness-lab", label: "Harness Lab", hint: "单次运行", kind: "Demo", id: "sec-labs" },
-        { href: "/#loop-lab", label: "Loop Lab", hint: "重复运行", kind: "Demo", id: "sec-labs" },
-        { href: "/#graph-lab", label: "Graph Lab", hint: "多循环治理", kind: "Demo", id: "sec-labs" },
-        { href: "/#sec-sources", label: "一手来源", hint: "上下文卡片", kind: "来源", id: "sec-sources" },
-        { href: "/concepts", label: "概念馆账本", hint: "每日入库", kind: "概念" },
+        { href: "/#harness-lab", label: "Harness Lab", hint: "执行环境", kind: "Demo", id: "sec-labs" },
+        { href: "/#loop-lab", label: "Loop Lab", hint: "闭环迭代", kind: "Demo", id: "sec-labs" },
+        { href: "/#graph-lab", label: "Graph Lab", hint: "协同治理", kind: "Demo", id: "sec-labs" },
+        { href: "/#sec-sources", label: "一手来源", hint: "技术文献", kind: "来源", id: "sec-sources" },
+        { href: "/concepts", label: "前沿概念", hint: "持续追踪", kind: "概念" },
       ]}
       navItems={navItems}
       activeId={activeId}
@@ -1884,9 +1879,9 @@ export function LearningLab() {
       }
       footer={
           <footer className="pagefoot">
-            AI Learning Lab · 为产品与工程人员建立持续生长的 AI 知识网络。
+            AI Learning Lab · 面向工程师与产品技术人员的 Agent 架构实践平台。
             <br />
-            基础馆课程核对于 {CURRICULUM_AS_OF}；概念馆账本更新于 {ledgerUpdated}。学习进度仅保存在当前浏览器。
+            基础馆课程核对于 {CURRICULUM_AS_OF}；概念馆更新于 {ledgerUpdated}。学习进度仅保存在当前浏览器。
             <div>
               <a href="/agent-foundations.html">基础馆</a>
               <a href="/concepts">概念馆</a>
@@ -1902,46 +1897,46 @@ export function LearningLab() {
             <div className="hello">
               <p className="eyebrow">今日</p>
               <h1>
-                前沿技术，亲手跑懂
-                <span className="tone"> 并形成自己的知识网络</span>
+                前沿技术，逐项验证
+                <span className="tone"> 系统构建 Agent 工程知识体系</span>
               </h1>
               <p className="sub">
-                一手来源沉淀 × 知识网络 × 可运行 Demo × Skill。选一个起点进入工作室画布。
+                一手技术文献 × 架构全景图 × 可交互实验台 × 结构化 Skill 规范。选择一个起点，开始探索。
               </p>
               <p className="today-path" aria-label="今日路径">
-                今日路径：知识网络 → Graph Demo → 判断手感 → 基础馆
+                今日路径：知识网络 → Graph Demo → 场景诊断 → 基础馆
               </p>
             </div>
             <div className="start-grid">
               <a className="start-card" href="#sec-network">
-                <span className="start-k">画布</span>
+                <span className="start-k">全景</span>
                 <div className="start-preview" aria-hidden="true">
                   <i style={{ left: 10, top: 16, width: 42, height: 28 }} />
                   <i style={{ left: 62, top: 22, width: 36, height: 22 }} />
                   <i style={{ left: 108, top: 14, width: 48, height: 34 }} />
                 </div>
                 <h2>知识网络</h2>
-                <p>不是词汇表，是控制半径。</p>
+                <p>Agent 架构全景与协议关系图谱。</p>
               </a>
               <a className="start-card" href="#sec-labs">
-                <span className="start-k">沙盒</span>
+                <span className="start-k">实验</span>
                 <div className="start-preview" aria-hidden="true">
                   <i style={{ left: 12, top: 12, width: "70%", height: 10 }} />
                   <i style={{ left: 12, top: 30, width: "40%", height: 10 }} />
                   <i style={{ left: 12, top: 48, width: 18, height: 10, background: "var(--lime)" }} />
                 </div>
                 <h2>Harness / Loop / Graph Demo</h2>
-                <p>亲手观察机制：单次、重复、多循环。</p>
+                <p>交互式实验台：执行环境、闭环迭代、协同治理。</p>
               </a>
               <a className="start-card" href="/agent-foundations.html">
-                <span className="start-k">课程</span>
+                <span className="start-k">教程</span>
                 <div className="start-preview" aria-hidden="true">
                   <i style={{ left: 12, top: 14, width: "80%", height: 8 }} />
                   <i style={{ left: 12, top: 30, width: "55%", height: 8 }} />
                   <i style={{ left: 12, top: 46, width: "66%", height: 8 }} />
                 </div>
                 <h2>基础馆</h2>
-                <p>把同一条半径拆成可通关章节。</p>
+                <p>从 Tool Calling 到多智能体架构的系统化教程。</p>
               </a>
               <a className="start-card" href="/agent-foundations.html#sec-acp">
                 <span className="start-k">协议</span>
@@ -1951,63 +1946,62 @@ export function LearningLab() {
                   <i style={{ left: 92, top: 18, width: 40, height: 28 }} />
                 </div>
                 <h2>ACP / CLI</h2>
-                <p>客户端如何拉起本地 Agent 会话。</p>
+                <p>客户端与本地 Agent 进程间的会话协议。</p>
               </a>
               <a className="start-card" href="/concepts">
-                <span className="start-k">账本</span>
+                <span className="start-k">追踪</span>
                 <div className="start-preview" aria-hidden="true">
                   <i style={{ left: 10, top: 12, width: "45%", height: 48 }} />
                   <i style={{ left: "52%", top: 12, width: "40%", height: 48 }} />
                 </div>
-                <h2>概念账本</h2>
-                <p>一手来源入库，按半径挂回节点。</p>
+                <h2>前沿概念</h2>
+                <p>自动追踪前沿技术文献，分类索引持续更新。</p>
               </a>
               <a className="start-card" href="/git-workflow.html">
-                <span className="start-k">工坊</span>
+                <span className="start-k">实验</span>
                 <div className="start-preview" aria-hidden="true">
                   <i style={{ left: 20, top: 18, width: 14, height: 14, borderRadius: 99 }} />
                   <i style={{ left: 50, top: 28, width: 14, height: 14, borderRadius: 99 }} />
                   <i style={{ left: 80, top: 18, width: 14, height: 14, borderRadius: 99 }} />
                 </div>
                 <h2>Git</h2>
-                <p>永远从目标合入分支拉新分支。</p>
+                <p>图形化理解分支策略、合并与冲突解决。</p>
               </a>
               <a className="start-card" href="#sec-skill">
-                <span className="start-k">手册</span>
+                <span className="start-k">规范</span>
                 <div className="start-preview" aria-hidden="true">
                   <i style={{ left: 14, top: 14, width: 22, height: 44 }} />
                   <i style={{ left: 44, top: 14, width: "50%", height: 12 }} />
                   <i style={{ left: 44, top: 34, width: "38%", height: 12 }} />
                 </div>
                 <h2>Skill 体系</h2>
-                <p>分层手册，不是超长提示词。</p>
+                <p>模块化工作流规范，按需渐进加载。</p>
               </a>
             </div>
             <div className="meta-chips" aria-label="馆藏规模">
-                <span className="mc">3 个机制 Demo</span>
-                <span className="mc">Skill 分层手册</span>
-                <span className="mc">判断手感训练</span>
+                <span className="mc">3 个交互式实验</span>
+                <span className="mc">Skill 工程规范</span>
+                <span className="mc">场景诊断训练</span>
                 <span className="mc">System One 模型综述</span>
                 <span className="mc">课程核对 {CURRICULUM_AS_OF}</span>
-                <span className="mc">账本 {ledgerUpdated}</span>
+                <span className="mc">概念更新 {ledgerUpdated}</span>
               </div>
 
             <div className="tldr">
-              <div className="k">一句总纲</div>
+              <div className="k">平台定位</div>
               <div className="v">
-                AI Learning Lab = 一手来源沉淀 × 概念对比网络 × 可运行技术 Demo × Skill
-                分层能力手册。不是词汇表，是控制半径。
+                AI Learning Lab 聚焦 Agent 工程实践：一手技术文献追踪 × 架构与协议全景 × 可交互机制实验 × 结构化 Skill 工作流规范。
               </div>
             </div>
 
-            <h3>学习地图</h3>
+            <h3>学习路径</h3>
             <div className="roadline">
               {[
-                ["01", "发现核验", "官方文档、论文、成熟度"],
-                ["02", "建图对比", "依赖、边界、反例"],
-                ["03", "技术复现", "Harness / Loop / Graph"],
-                ["04", "Skill 整合", "手册、资料、工具、素材"],
-                ["05", "判断迁移", "先观察，再形式化"],
+                ["01", "文献核验", "追踪官方文档、论文与技术成熟度"],
+                ["02", "架构建图", "梳理依赖关系、协议边界与反模式"],
+                ["03", "机制实验", "Harness / Loop / Graph 交互式验证"],
+                ["04", "Skill 整合", "流程规范、参考文档、脚本与模板"],
+                ["05", "实践诊断", "从系统信号定位问题层级"],
               ].map(([year, title, detail]) => (
                 <div className="road-node" key={year} style={{ ["--rc" as string]: "var(--ink)" }}>
                   <div className="rn-y">{year}</div>
@@ -2019,16 +2013,16 @@ export function LearningLab() {
 
             <div className="btn-row">
               <a className="btn primary" href="#sec-labs">
-                开始技术实验
+                进入实验台
               </a>
               <a className="btn" href="#sec-skill">
-                学习 Skill 体系
+                查看 Skill 规范
               </a>
               <a className="btn" href="/agent-foundations.html">
                 进入基础馆
               </a>
               <a className="btn" href="/concepts">
-                📥 前沿概念馆（每日更新）
+                前沿概念追踪（持续更新）
               </a>
             </div>
           </section>
@@ -2040,11 +2034,11 @@ export function LearningLab() {
           >
             <div className="sec-head">
               <span className="sec-num">1</span>
-              <h2>知识网络：不是词汇表，是控制半径</h2>
+              <h2>知识网络：架构全景与协议对照</h2>
             </div>
             <p className="sec-sub">
-              从“模型能调用工具”一路走到“多个优化循环如何不互相欺骗”，并把 MCP、ACP、CLI、A2A、Agent
-              Card、Skill 放进同一张控制半径图。
+              覆盖从单工具调用到多循环协同治理的完整链路，并将 MCP、ACP、CLI、A2A、Agent
+              Card、Skill 纳入同一张架构对照图。
             </p>
             <div className="studio-frame">
               <div className="studio-frame-bar">知识网络</div>
@@ -2084,10 +2078,10 @@ export function LearningLab() {
           <section className="lesson" id="sec-labs" style={{ ["--sc" as string]: "var(--emerald)" }}>
             <div className="sec-head">
               <span className="sec-num">2</span>
-              <h2>技术复现 Demo：亲手观察机制</h2>
+              <h2>技术复现 Demo：机制交互验证</h2>
             </div>
             <p className="sec-sub">
-              Demo 复现的是技术机制本身。每个实验都改变可观察状态，并明确显示为什么成功、为什么失败、为什么停止。
+              每个实验复现一项技术机制：通过调整配置改变可观察状态，并明确呈现成功、失败或停止的具体原因。
             </p>
             <HarnessLab />
             <LoopLab />
@@ -2107,7 +2101,7 @@ export function LearningLab() {
               <h2>深入课程：同一路径的下一站</h2>
             </div>
             <p className="sec-sub">
-              首页练对比与复现；基础馆把控制半径拆成可通关章节；概念馆把新入库条目挂回同一组节点。馆翼共用顶栏与路径。
+              首页提供架构对照与机制实验；基础馆将同一知识体系拆分为渐进式章节；概念馆将新入库条目归档至对应主题节点。各馆共用顶栏与学习路径。
             </p>
             <div className="course-grid cols-3">
               <a className="course-card exhibit" href="/agent-foundations.html">
@@ -2119,21 +2113,21 @@ export function LearningLab() {
                 <b>进入展厅 →</b>
               </a>
               <a className="course-card exhibit" href="/concepts">
-                <span>概念馆 · 每日账本</span>
+                <span>概念馆 · 每日更新</span>
                 <h3>前沿概念馆</h3>
-                <p>一手来源自动入库，按控制半径索引。账本更新于 {ledgerUpdated}。</p>
+                <p>一手来源自动入库，按主题网络索引。数据更新于 {ledgerUpdated}。</p>
                 <b>进入展厅 →</b>
               </a>
               <a className="course-card exhibit" href="/git-workflow.html">
                 <span>Git 实验室</span>
-                <h3>协作工作坊</h3>
+                <h3>Git 协作实验室</h3>
                 <p>用图形化提交网络理解 merge、rebase、冲突与远端同步。</p>
                 <b>进入课程 →</b>
               </a>
               <a className="course-card exhibit" href="/jev-system-one.html" style={{ gridColumn: "1 / -1" }}>
                 <span>前沿模型馆 · 技术综述</span>
                 <h3>TypeSafe Jev：System One 决策模型</h3>
-                <p>不生成文本、只输出带校准概率的结构化决策。官方声称 vs 第三方实测、开源复现路线与争议，四级证据一页看清。</p>
+                <p>不生成文本、只输出带校准概率的结构化决策。官方声称与第三方实测对比、开源复现路线与争议分析，四级证据分级呈现。</p>
                 <b>进入展厅 →</b>
               </a>
             </div>

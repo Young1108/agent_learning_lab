@@ -253,7 +253,7 @@ export function LabShell({
             <div className="bar">
               <i style={{ width: `${progress}%` }} />
             </div>
-            <div className="sp-detail">{done ? `已读 ${doneCount}/${navItems.length}` : "同一条控制半径"}</div>
+            <div className="sp-detail">{done ? `已读 ${doneCount}/${navItems.length}` : "系统架构与协议全景"}</div>
           </div>
         )}
         <div className="side-nav">
