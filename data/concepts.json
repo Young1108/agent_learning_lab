@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-09T14:58:55.313Z",
-  "version": 41,
+  "updatedAt": "2026-10-10T14:13:32.687Z",
+  "version": 42,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
@@ -17,6 +17,49 @@
         "前沿"
       ],
       "addedAt": "2026-10-09T14:57:26.076Z"
+    },
+    {
+      "id": "1r6wtq5",
+      "title": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/asana-browser-agent",
+      "date": "2026-10-09",
+      "summary": "",
+      "tldr": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-10T14:12:17.671Z"
+    },
+    {
+      "id": "xyela8",
+      "title": "Introducing Claude Corps",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/claude-corps",
+      "date": "2026-10-09",
+      "summary": "Claude Corps is a national fellowship for early-career people passionate about extending the benefits of AI to communities across America.",
+      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/eb5d94573805e24cb381cd0676527cfada75c177-3840x2160.jpg",
+      "tldr": "Claude Corps is a national fellowship for early-career people passionate about extending t…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-09-23T13:20:36.758Z"
+    },
+    {
+      "id": "4og6u4",
+      "title": "Impactful scheduling for GPU clusters",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/allenai/impactful-scheduling",
+      "date": "2026-10-09",
+      "summary": "On the AI Infrastructure team at Ai2, we’re responsible for providing the institute’s GPU compute capacity, specifically targeting large, distributed training workloads. We think about this task as a …",
+      "tldr": "On the AI Infrastructure team at Ai2, we’re responsible for providing the institute’s GPU…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-10T14:12:36.693Z"
     },
     {
       "id": "11cq1h2",
@@ -1532,20 +1575,6 @@
       "addedAt": "2026-10-04T13:40:17.710Z"
     },
     {
-      "id": "1ynlaho",
-      "title": "A model guide for the GPT-6 family",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/practical-guide-building-gpt-6",
-      "date": "2026-10-02",
-      "summary": "",
-      "tldr": "A model guide for the GPT-6 family",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-03T13:01:25.195Z"
-    },
-    {
       "id": "14mnm39",
       "title": "Claude Frontier Academy: $100M to train 10,000 engineers",
       "source": "Anthropic",
@@ -1601,6 +1630,20 @@
         "前沿"
       ],
       "addedAt": "2026-10-03T13:01:44.724Z"
+    },
+    {
+      "id": "1ynlaho",
+      "title": "A model guide for the GPT-6 family",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/practical-guide-building-gpt-6",
+      "date": "2026-10-02",
+      "summary": "",
+      "tldr": "A model guide for the GPT-6 family",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-03T13:01:25.195Z"
     },
     {
       "id": "kn3t1c",
@@ -3785,20 +3828,6 @@
       "addedAt": "2026-09-25T13:14:34.690Z"
     },
     {
-      "id": "vscp6o",
-      "title": "Accelerating vision-language models with LFM2.5-VL-DSpark",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark",
-      "date": "2026-09-24",
-      "summary": "How does speculative decoding work for VLMs The vision drafter uses the same architecture as our text LFM2.5-DSpark drafters: it captures the target model's hidden states at a fixed set of tapped laye…",
-      "tldr": "How does speculative decoding work for VLMs The vision drafter uses the same architecture…",
-      "maturity": "emerging",
-      "tags": [
-        "多模态"
-      ],
-      "addedAt": "2026-09-25T13:14:39.073Z"
-    },
-    {
       "id": "6mjbqa",
       "title": "Bringing Private Processing to Meta AI Glasses",
       "source": "Meta",
@@ -3825,6 +3854,20 @@
         "前沿"
       ],
       "addedAt": "2026-09-25T13:15:47.840Z"
+    },
+    {
+      "id": "vscp6o",
+      "title": "Accelerating vision-language models with LFM2.5-VL-DSpark",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark",
+      "date": "2026-09-24",
+      "summary": "How does speculative decoding work for VLMs The vision drafter uses the same architecture as our text LFM2.5-DSpark drafters: it captures the target model's hidden states at a fixed set of tapped laye…",
+      "tldr": "How does speculative decoding work for VLMs The vision drafter uses the same architecture…",
+      "maturity": "emerging",
+      "tags": [
+        "多模态"
+      ],
+      "addedAt": "2026-09-25T13:14:39.073Z"
     },
     {
       "id": "1l88hj4",
@@ -4715,34 +4758,6 @@
       "addedAt": "2026-09-23T13:20:32.787Z"
     },
     {
-      "id": "9bhwld",
-      "title": "Priorities and principles for effective third party assessments",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/priorities-principles-third-party-assessments",
-      "date": "2026-09-22",
-      "summary": "",
-      "tldr": "Priorities and principles for effective third party assessments",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-23T13:20:33.016Z"
-    },
-    {
-      "id": "19gwtln",
-      "title": "Flash-dLLM: IO-Aware KV Caching and Parallel Decoding for Fast, Memory-Efficient Diffusion LLMs",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.26796v1",
-      "date": "2026-09-22",
-      "summary": "Diffusion Large Language Models (dLLMs) have recently emerged as a promising alternative to autoregressive LLMs by enabling non-autoregressive text generation. However, their practical deployment remains limited by ineff…",
-      "tldr": "Diffusion Large Language Models (dLLMs) have recently emerged as a promising alternative t…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-23T13:20:50.974Z"
-    },
-    {
       "id": "1n1q3d9",
       "title": "Open-Sourcing Rebalancer: A Generic, High-Performance Library for Solving Assignment Problems",
       "source": "Meta",
@@ -4952,21 +4967,6 @@
         "Agent"
       ],
       "addedAt": "2026-09-15T13:07:17.252Z"
-    },
-    {
-      "id": "xyela8",
-      "title": "Introducing Claude Corps",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/claude-corps",
-      "date": "2026-09-11",
-      "summary": "Claude Corps is a national fellowship for early-career people passionate about extending the benefits of AI to communities across America.",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/eb5d94573805e24cb381cd0676527cfada75c177-3840x2160.jpg",
-      "tldr": "Claude Corps is a national fellowship for early-career people passionate about extending t…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-23T13:20:36.758Z"
     },
     {
       "id": "xdcffj",
