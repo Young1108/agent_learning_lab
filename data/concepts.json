@@ -1,9 +1,24 @@
 {
-  "updatedAt": "2026-10-12T17:21:18.997Z",
-  "version": 43,
+  "updatedAt": "2026-10-13T15:34:49.013Z",
+  "version": 44,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "5fzwnz",
+      "title": "Claude discovers a novel enzyme system",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
+      "date": "2026-10-13",
+      "summary": "In early results from our new life sciences research lab, Claude agents found an enzyme system whose function is still unknown.",
+      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/394de337d8a5d8db93a1c048fa1cb53e16a09625-2048x1240.jpg",
+      "tldr": "In early results from our new life sciences research lab, Claude agents found an enzyme sy…",
+      "maturity": "emerging",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-09-24T08:28:18.894Z"
+    },
     {
       "id": "hardat",
       "title": "Shipping Media Over QUIC at Meta Scale for Instagram Live Ingest",
@@ -17,6 +32,34 @@
         "前沿"
       ],
       "addedAt": "2026-10-12T17:20:22.125Z"
+    },
+    {
+      "id": "j4phtc",
+      "title": "OCP Summit 2026: Powering AI with Open Innovations in Scale-Up, Scale-Out, and Scale-Across Networks",
+      "source": "Meta",
+      "url": "https://engineering.fb.com/2026/10/12/open-source/ocp-summit-2026-powering-ai-with-open-innovations-in-scale-up-scale-out-and-scale-across-networks/",
+      "date": "2026-10-12",
+      "summary": "At the 2026 Open Compute Project Global Summit, Meta is sharing the next generation of open networking infrastructure, including: Our first liquid-cooled network rack (IcePack), and 102.4T switch platform (IceCube). Flat…",
+      "tldr": "At the 2026 Open Compute Project Global Summit, Meta is sharing the next generation of ope…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-13T15:33:57.274Z"
+    },
+    {
+      "id": "eh8f97",
+      "title": "Turning Opportunistic AI Inference Capacity Into Better Ads Recommendations",
+      "source": "Meta",
+      "url": "https://engineering.fb.com/2026/10/12/ml-applications/turning-opportunistic-ai-inference-capacity-into-better-ads-recommendations/",
+      "date": "2026-10-12",
+      "summary": "At Meta, we’ve built a system that enhances ads recommendations by leveraging idle inference capacity in our fleet. Two elasticity levers in the system allow ads recommendation work to expand across opportunistic capacit…",
+      "tldr": "At Meta, we’ve built a system that enhances ads recommendations by leveraging idle inferen…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-13T15:33:57.275Z"
     },
     {
       "id": "137itv4",
@@ -799,21 +842,6 @@
         "前沿"
       ],
       "addedAt": "2026-10-08T15:11:52.869Z"
-    },
-    {
-      "id": "5fzwnz",
-      "title": "Claude discovers a novel enzyme system",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
-      "date": "2026-10-07",
-      "summary": "In early results from our new life sciences research lab, Claude agents found an enzyme system whose function is still unknown.",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/394de337d8a5d8db93a1c048fa1cb53e16a09625-2048x1240.jpg",
-      "tldr": "In early results from our new life sciences research lab, Claude agents found an enzyme sy…",
-      "maturity": "emerging",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-09-24T08:28:18.894Z"
     },
     {
       "id": "12wfgj0",
@@ -4725,34 +4753,6 @@
       "maturity": "proposed",
       "tags": [
         "前沿"
-      ],
-      "addedAt": "2026-09-24T08:34:54.542Z"
-    },
-    {
-      "id": "1ad9jwe",
-      "title": "Can LLMs Reason About Runtime Behavior? A Repository-Level Dynamic Benchmark",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.28449v1",
-      "date": "2026-09-23",
-      "summary": "Large language models (LLMs) are increasingly used in coding tasks, but their ability to reason about code execution remains unclear. Existing repository-level QA benchmarks mainly evaluate static code understanding and …",
-      "tldr": "Large language models (LLMs) are increasingly used in coding tasks, but their ability to r…",
-      "maturity": "proposed",
-      "tags": [
-        "评测"
-      ],
-      "addedAt": "2026-09-24T08:34:54.542Z"
-    },
-    {
-      "id": "1ad9epj",
-      "title": "Order-Invariant Answers, Order-Sensitive Representations in Mathematical Reasoning",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.28442v1",
-      "date": "2026-09-23",
-      "summary": "Reordering a set of mathematical rules without changing its meaning should preserve the correct answer, but must a model's internal representations stay invariant too? We investigate this question using synthetic multi-s…",
-      "tldr": "Reordering a set of mathematical rules without changing its meaning should preserve the co…",
-      "maturity": "proposed",
-      "tags": [
-        "推理"
       ],
       "addedAt": "2026-09-24T08:34:54.542Z"
     },
