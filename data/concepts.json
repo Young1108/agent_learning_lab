@@ -1,9 +1,81 @@
 {
-  "updatedAt": "2026-10-16T13:01:28.874Z",
-  "version": 47,
+  "updatedAt": "2026-10-17T11:59:15.475Z",
+  "version": 48,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "19ocj8x",
+      "title": "DeepSeek-V4.1-Flash-1017: Wish-Driven Programming Made Real",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news261017",
+      "date": "2026-10-17",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "DeepSeek-V4.1-Flash-1017: Wish-Driven Programming Made Real",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-17T11:58:25.914Z"
+    },
+    {
+      "id": "1fo1xiv",
+      "title": "How Itaú is building generative AI for its entire customer base",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/itau-generative-ai",
+      "date": "2026-10-16",
+      "summary": "",
+      "tldr": "How Itaú is building generative AI for its entire customer base",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-17T11:57:41.875Z"
+    },
+    {
+      "id": "vkaw63",
+      "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/stack-overflow-chatgpt-plugin",
+      "date": "2026-10-16",
+      "summary": "",
+      "tldr": "Stack Overflow for Agents triples signups with ChatGPT plugin",
+      "maturity": "emerging",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-10-17T11:57:42.132Z"
+    },
+    {
+      "id": "9umg07",
+      "title": "Benefit Street Partners answers questions faster with Codex",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/benefit-street-partners",
+      "date": "2026-10-16",
+      "summary": "",
+      "tldr": "Benefit Street Partners answers questions faster with Codex",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-17T11:57:42.372Z"
+    },
+    {
+      "id": "8tmldn",
+      "title": "Anthropic update on independent evaluators",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+      "date": "2026-10-16",
+      "summary": "Anthropic announces updates to embedding independent evaluators",
+      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/d2e351e6311a0ada8ea4a0304ce6cda39243eaf4-1200x630.jpg",
+      "tldr": "Anthropic announces updates to embedding independent evaluators",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-16T13:00:07.163Z"
+    },
     {
       "id": "mwu2kk",
       "title": "Scaling Indic Pretraining: 2.8 Trillion Tokens and an Open Data Generation Pipeline",
@@ -17,6 +89,20 @@
         "前沿"
       ],
       "addedAt": "2026-10-16T13:00:32.973Z"
+    },
+    {
+      "id": "1koim4",
+      "title": "Welcome Beam: a 501B open model you can own, customize, and scale",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/reflection-beam",
+      "date": "2026-10-16",
+      "summary": "Beam is focused on coding and agentic use cases. It is for teams that want a frontier-scale model on their own hardware, infrastructure, or cloud, and want to customize it to their own use cases. Beam…",
+      "tldr": "Beam is focused on coding and agentic use cases. It is for teams that want a frontier-scal…",
+      "maturity": "emerging",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-10-17T11:58:04.137Z"
     },
     {
       "id": "168pzid",
@@ -74,21 +160,6 @@
         "前沿"
       ],
       "addedAt": "2026-10-14T13:17:58.636Z"
-    },
-    {
-      "id": "8tmldn",
-      "title": "Anthropic update on independent evaluators",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
-      "date": "2026-10-15",
-      "summary": "Anthropic announces updates to embedding independent evaluators",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/d2e351e6311a0ada8ea4a0304ce6cda39243eaf4-1200x630.jpg",
-      "tldr": "Anthropic announces updates to embedding independent evaluators",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-16T13:00:07.163Z"
     },
     {
       "id": "1gnkyyu",
@@ -1757,48 +1828,6 @@
       "addedAt": "2026-10-09T09:03:40.689Z"
     },
     {
-      "id": "g662nx",
-      "title": "Pollo AI turns creative ideas into campaigns with OpenAI",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/pollo-ai",
-      "date": "2026-10-08",
-      "summary": "",
-      "tldr": "Pollo AI turns creative ideas into campaigns with OpenAI",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-09T09:03:40.901Z"
-    },
-    {
-      "id": "78lifp",
-      "title": "LegalOn halves Codex costs while maintaining development speed",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/legalon-halves-codex-costs",
-      "date": "2026-10-08",
-      "summary": "",
-      "tldr": "LegalOn halves Codex costs while maintaining development speed",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-09T09:03:41.120Z"
-    },
-    {
-      "id": "1jetnoj",
-      "title": "Disrupting AI-enabled “false front” operations",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/disrupting-ai-enabled-false-front-operations",
-      "date": "2026-10-08",
-      "summary": "",
-      "tldr": "Disrupting AI-enabled “false front” operations",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-09T09:03:41.329Z"
-    },
-    {
       "id": "19jwvdt",
       "title": "Building on our commitment to American scientific discovery",
       "source": "Anthropic",
@@ -1856,6 +1885,48 @@
         "前沿"
       ],
       "addedAt": "2026-10-09T09:04:00.286Z"
+    },
+    {
+      "id": "g662nx",
+      "title": "Pollo AI turns creative ideas into campaigns with OpenAI",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/pollo-ai",
+      "date": "2026-10-08",
+      "summary": "",
+      "tldr": "Pollo AI turns creative ideas into campaigns with OpenAI",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-09T09:03:40.901Z"
+    },
+    {
+      "id": "78lifp",
+      "title": "LegalOn halves Codex costs while maintaining development speed",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/legalon-halves-codex-costs",
+      "date": "2026-10-08",
+      "summary": "",
+      "tldr": "LegalOn halves Codex costs while maintaining development speed",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-09T09:03:41.120Z"
+    },
+    {
+      "id": "1jetnoj",
+      "title": "Disrupting AI-enabled “false front” operations",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/disrupting-ai-enabled-false-front-operations",
+      "date": "2026-10-08",
+      "summary": "",
+      "tldr": "Disrupting AI-enabled “false front” operations",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-09T09:03:41.329Z"
     },
     {
       "id": "ai6rh0",
@@ -4844,62 +4915,6 @@
       "addedAt": "2026-09-29T14:35:52.030Z"
     },
     {
-      "id": "k0qi73",
-      "title": "Towards safety cases for frontier AI training",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/towards-safety-cases-for-frontier-ai-training",
-      "date": "2026-09-28",
-      "summary": "",
-      "tldr": "Towards safety cases for frontier AI training",
-      "maturity": "emerging",
-      "tags": [
-        "安全"
-      ],
-      "addedAt": "2026-09-29T14:35:52.254Z"
-    },
-    {
-      "id": "1d0gype",
-      "title": "The Lenfest Institute grows landmark program with expanded OpenAI support",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/lenfest-ai-collaborative-expansion",
-      "date": "2026-09-28",
-      "summary": "",
-      "tldr": "The Lenfest Institute grows landmark program with expanded OpenAI support",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-29T14:35:52.471Z"
-    },
-    {
-      "id": "1664icw",
-      "title": "Are you a Codex Original?",
-      "source": "OpenAI",
-      "url": "https://openai.com/form/codex-originals",
-      "date": "2026-09-28",
-      "summary": "",
-      "tldr": "Are you a Codex Original?",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-29T14:35:52.697Z"
-    },
-    {
-      "id": "1vyb62c",
-      "title": "Basis completes a tax workbook 2x faster with GPT-6 Astra",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/basis-tax-workbook-with-astra",
-      "date": "2026-09-28",
-      "summary": "",
-      "tldr": "Basis completes a tax workbook 2x faster with GPT-6 Astra",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-29T14:35:52.914Z"
-    },
-    {
       "id": "k2xcms",
       "title": "Introducing Gemini 3.8 Live with Live Avatar",
       "source": "Google DeepMind",
@@ -5705,21 +5720,6 @@
         "前沿"
       ],
       "addedAt": "2026-09-24T08:50:18.384Z"
-    },
-    {
-      "id": "19ns5wx",
-      "title": "DeepSeek-V3-0324 Release",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news250325",
-      "date": "2025-03-25",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "DeepSeek-V3-0324 Release",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-24T08:50:17.942Z"
     }
   ]
 }
