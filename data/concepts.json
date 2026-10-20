@@ -1,9 +1,51 @@
 {
-  "updatedAt": "2026-10-19T15:17:34.440Z",
-  "version": 49,
+  "updatedAt": "2026-10-20T13:20:15.882Z",
+  "version": 50,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "7m2u9",
+      "title": "AnyLanguageModel 1.0: One Year of Local Models on Apple Platforms",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/anylanguagemodel-1-0",
+      "date": "2026-10-20",
+      "summary": "Local and hosted inference each have their strengths, and both have a role in building this new generation of intelligent apps. A shared API makes it easier to choose the right model for each task.",
+      "tldr": "Local and hosted inference each have their strengths, and both have a role in building thi…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-20T13:19:00.071Z"
+    },
+    {
+      "id": "1nvoocr",
+      "title": "MPS in PyTorch 2.15",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/mps-pytorch-2-15",
+      "date": "2026-10-20",
+      "summary": "A quick word about who we are: we're the PyTorch team at Hugging Face. We contribute across PyTorch, and one of our focus areas is the MPS backend, where the goal is to make your Mac a first-class pla…",
+      "tldr": "A quick word about who we are: we're the PyTorch team at Hugging Face. We contribute acros…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-20T13:19:00.324Z"
+    },
+    {
+      "id": "d0a9bt",
+      "title": "Advancing coding in low‑resource programming languages",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/low-resource-programming-languages",
+      "date": "2026-10-19",
+      "summary": "",
+      "tldr": "Advancing coding in low‑resource programming languages",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-20T13:18:37.321Z"
+    },
     {
       "id": "8tmldn",
       "title": "Anthropic update on independent evaluators",
@@ -20,6 +62,311 @@
       "addedAt": "2026-10-16T13:00:07.163Z"
     },
     {
+      "id": "kz8qdx",
+      "title": "TorchNeuron: running HF models on AWS Trainium is easier than ever",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/hf-torchneuron",
+      "date": "2026-10-19",
+      "summary": "TorchNeuron TorchNeuron is a PyTorch plugin that brings a new backend for Trainium enabling support for eager mode, torch.compile and native distributed APIs like FSDP and TP. Read the Pytorch blog to…",
+      "tldr": "TorchNeuron TorchNeuron is a PyTorch plugin that brings a new backend for Trainium enablin…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-20T13:19:00.572Z"
+    },
+    {
+      "id": "r4yl73",
+      "title": "OpenVLHarness: Real World Visual Agentic Tool-Use with Multimodal Memory",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26860v1",
+      "date": "2026-10-19",
+      "summary": "Multimodal large language models (MLLMs) have made rapid progress on visual reasoning, yet many tasks require evidence that is difficult to obtain through internal reasoning alone: our controlled study on 22 benchmarks s…",
+      "tldr": "Multimodal large language models (MLLMs) have made rapid progress on visual reasoning, yet…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Harness",
+        "推理",
+        "评测"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
+      "id": "r4ylxs",
+      "title": "Can It Actually Work? Synthesizing Functional CAD Mechanisms",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26861v1",
+      "date": "2026-10-19",
+      "summary": "While LLM agents can generate visually plausible CAD assemblies, these designs often fail to fulfill their intended physical functions. We study functional CAD design, a setting where agents interpret underspecified requ…",
+      "tldr": "While LLM agents can generate visually plausible CAD assemblies, these designs often fail…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
+      "id": "r4y2nq",
+      "title": "Reinforcement Learning with Visually Attributable On-Policy Self-Distillation",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26856v1",
+      "date": "2026-10-19",
+      "summary": "Multimodal reinforcement learning with verifiable rewards (RLVR) provides reliable task-level supervision, yet offers limited guidance for localizing errors in visual reasoning. On-policy self-distillation (OPSD) complem…",
+      "tldr": "Multimodal reinforcement learning with verifiable rewards (RLVR) provides reliable task-le…",
+      "maturity": "proposed",
+      "tags": [
+        "推理",
+        "多模态"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
+      "id": "r4xzoy",
+      "title": "CoopUQ: Robust Multi-Robot Social Navigation via Uncertainty-Aware Cooperative Forecasting",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26852v1",
+      "date": "2026-10-19",
+      "summary": "Reinforcement learning enables mobile robots to make fast and scalable navigation decisions in constrained human-shared environments. However, directly extending single-robot approaches to multi-robot settings often fail…",
+      "tldr": "Reinforcement learning enables mobile robots to make fast and scalable navigation decision…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
+      "id": "r4xh5l",
+      "title": "Where is Physical RSI capability from? An Observational Scaling Law of LLM-as-policy",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26848v1",
+      "date": "2026-10-19",
+      "summary": "In this paper, we systematically investigate the mechanisms, scaling behavior, and generalization of physical Recursive self-improvement. We introduce PhysRSI-eval to quantify physical RSI through a five-axis metric: Fir…",
+      "tldr": "In this paper, we systematically investigate the mechanisms, scaling behavior, and general…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
+      "id": "r4xgew",
+      "title": "WeAct: Dynamic Weight Switching as Agent Actions",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26847v1",
+      "date": "2026-10-19",
+      "summary": "Long-horizon agents must learn heterogeneous capabilities from interleaved trajectories. Updating shared parameters to learn new capabilities can degrade previously acquired ones, resulting in catastrophic forgetting. As…",
+      "tldr": "Long-horizon agents must learn heterogeneous capabilities from interleaved trajectories. U…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
+      "id": "r4xexi",
+      "title": "Train An Imaginative Agent",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26845v1",
+      "date": "2026-10-19",
+      "summary": "A seemingly reasonable push in Sokoban can make the puzzle unsolvable. To avoid such mistakes, an agent has to anticipate the consequences of its actions before execution, especially when feedback from the real environme…",
+      "tldr": "A seemingly reasonable push in Sokoban can make the puzzle unsolvable. To avoid such mista…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
+      "id": "r4xe6t",
+      "title": "AnyGoal: On World Model Generalization Beyond Expert Rollouts",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26844v1",
+      "date": "2026-10-19",
+      "summary": "The goal of a world model is to capture the dynamics of an environment. This has the great appeal that it allows agents to plan and simulate a course of actions with the help of a world model. For these uses to be reliab…",
+      "tldr": "The goal of a world model is to capture the dynamics of an environment. This has the great…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "世界模型"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
+      "id": "r4xb81",
+      "title": "LatComm: Reusable Context Compression for Latent Communication between Large Language Models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26840v1",
+      "date": "2026-10-19",
+      "summary": "Systems that combine several large language models (LLMs) often use one context for many questions. When the context is passed between models as text, the receiving model processes all of its tokens again for every quest…",
+      "tldr": "Systems that combine several large language models (LLMs) often use one context for many q…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
+      "id": "r4wsoo",
+      "title": "Same Simulation, Different Evidence: Where Retrieved Tool Output Costs LLM Agents Accuracy",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26836v1",
+      "date": "2026-10-19",
+      "summary": "LLM agents that compute the right answer can still answer wrongly. Agent harnesses increasingly keep long tool outputs out of the context window, saving them to files that the agent searches or reads on demand. We ask wh…",
+      "tldr": "LLM agents that compute the right answer can still answer wrongly. Agent harnesses increas…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Harness"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
+      "id": "r4wr7a",
+      "title": "Kronecker Delta Rule for Long Context Linear Attention",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26834v1",
+      "date": "2026-10-19",
+      "summary": "We propose KronLSTM, a linear attention architecture based on the Kronecker Delta Rule, a novel update rule for associative matrix memories. KronLSTM extends the xLSTM family with a memory-revision mechanism that correct…",
+      "tldr": "We propose KronLSTM, a linear attention architecture based on the Kronecker Delta Rule, a…",
+      "maturity": "proposed",
+      "tags": [
+        "多模态"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
+      "id": "r4wo8i",
+      "title": "Competing Learning in Hybrid Architectures",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26830v1",
+      "date": "2026-10-19",
+      "summary": "Many modern language models have adopted hybrid architectures that incorporate both linear-time recurrence and softmax attention. Modern recurrence layers provide a highly expressive mixing mechanism while ensuring high …",
+      "tldr": "Many modern language models have adopted hybrid architectures that incorporate both linear…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
+      "id": "r4w7x8",
+      "title": "ProteinGeoBench: Frontier Structural-Biology Agents Are Fluent at Lookup but Lost in Geometry",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26829v1",
+      "date": "2026-10-19",
+      "summary": "Frontier agents retrieve structural metadata well and compute geometry from coordinates less reliably. We ask how much of a benchmark score reflects that gap and how much reflects the evaluation configuration around the …",
+      "tldr": "Frontier agents retrieve structural metadata well and compute geometry from coordinates le…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "评测"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
+      "id": "r4w76j",
+      "title": "Agent World Model in the Wild: Computer-Use Agent Environment Synthesis",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26828v1",
+      "date": "2026-10-19",
+      "summary": "Agent learning is shifting from learning from human data toward learning through interaction with the world. However, scaling such learning directly in real-world computer systems is challenging and can introduce substan…",
+      "tldr": "Agent learning is shifting from learning from human data toward learning through interacti…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "世界模型"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
+      "id": "r4w6fu",
+      "title": "KEEP-Bench: Evaluating Evidence Preservation in Context Compression",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26827v1",
+      "date": "2026-10-19",
+      "summary": "Context compression improves long-context efficiency but may introduce faithfulness issues through an information bottleneck. Existing evaluations rely on QA metrics, but a reader can still answer correctly from an unfai…",
+      "tldr": "Context compression improves long-context efficiency but may introduce faithfulness issues…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
+      "id": "r4w5p5",
+      "title": "RefCraft: Benchmarking Visual-Reference-Conditioned Agentic Generation through Web Development",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26826v1",
+      "date": "2026-10-19",
+      "summary": "Beyond basic tool use and coding skills, effectively incorporating visual references into agentic generation is equally essential for applying AI agents to real-world productivity tasks. We study this crucial capability …",
+      "tldr": "Beyond basic tool use and coding skills, effectively incorporating visual references into…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Skill",
+        "Tool Use",
+        "评测"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
+      "id": "r4w4yg",
+      "title": "MemT-1.0: Towards Memory-Native Evolution",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26825v1",
+      "date": "2026-10-19",
+      "summary": "Memory-native evolution requires making memory an intrinsic capability of foundation models, enabling them to continuously accumulate and utilize information. To this end, we introduce MemT-1.0, a new architecture of mem…",
+      "tldr": "Memory-native evolution requires making memory an intrinsic capability of foundation model…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
+      "id": "r4w47r",
+      "title": "SpecMRL: Redesign Matryoshka Representation Learning within Parametric Spectrum",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26824v1",
+      "date": "2026-10-19",
+      "summary": "Matryoshka Representation Learning (MRL) is designed to support flexible representation sizes by jointly optimizing nested prefixes. While effective, this design lacks an explicit constraint to ensure that the leading po…",
+      "tldr": "Matryoshka Representation Learning (MRL) is designed to support flexible representation si…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
+      "id": "r4w1zo",
+      "title": "AfriBED: a Speech Recognition Bias Evaluation Dataset for Low Resource African Languages",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26821v1",
+      "date": "2026-10-19",
+      "summary": "Despite advancements in automatic speech recognition systems (ASR), current systems exhibit speaker-attribute bias, i.e., their speech recognition performance is biased against certain speakers based on their demographic…",
+      "tldr": "Despite advancements in automatic speech recognition systems (ASR), current systems exhibi…",
+      "maturity": "proposed",
+      "tags": [
+        "Graph"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
+      "id": "r4vkxp",
+      "title": "ASTOR: Benchmarking and Improving Autoformulation for Soft-Constraint Optimization with a Formal Grammar",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2610.26819v1",
+      "date": "2026-10-19",
+      "summary": "Real-world decision problems combine two qualitatively different kinds of constraints: requirements that must be satisfied, called hard constraints, and preferences that can be violated, called soft constraints. Because …",
+      "tldr": "Real-world decision problems combine two qualitatively different kinds of constraints: req…",
+      "maturity": "proposed",
+      "tags": [
+        "评测"
+      ],
+      "addedAt": "2026-10-20T13:19:03.826Z"
+    },
+    {
       "id": "jxna65",
       "title": "Inside Prometheus: Meta’s Journey to a Gigawatt-Scale Supercluster",
       "source": "Meta",
@@ -32,6 +379,48 @@
         "前沿"
       ],
       "addedAt": "2026-10-19T15:16:29.633Z"
+    },
+    {
+      "id": "yv6k40",
+      "title": "GenRecs Tokenization: Transforming Ads Recommendation at Meta with Stable Model Vocabulary",
+      "source": "Meta",
+      "url": "https://engineering.fb.com/2026/10/19/ml-applications/genrecs-tokenization-transforming-ads-recommendation-at-meta-with-stable-model-vocabulary/",
+      "date": "2026-10-19",
+      "summary": "Generative Recommenders (GenRecs) represent a paradigm shift from scoring every ad to reasoning about ad content and user preferences together in order to predict the best outcome for advertisers. Leveraging the world kn…",
+      "tldr": "Generative Recommenders (GenRecs) represent a paradigm shift from scoring every ad to reas…",
+      "maturity": "emerging",
+      "tags": [
+        "推理"
+      ],
+      "addedAt": "2026-10-20T13:19:03.955Z"
+    },
+    {
+      "id": "1s9ceyy",
+      "title": "The Thin Orchestrator: How We Made Our AI Agents More Reliable by Giving the Router Less to Do",
+      "source": "Meta",
+      "url": "https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture/",
+      "date": "2026-10-19",
+      "summary": "Sometimes, giving an AI agent all of the knowledge it needs is the wrong approach. At Meta, we’ve seen notable improvements in efficiency and accuracy by keeping the orchestration layer of our data pipeline agents delibe…",
+      "tldr": "Sometimes, giving an AI agent all of the knowledge it needs is the wrong approach. At Meta…",
+      "maturity": "emerging",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-10-20T13:19:03.955Z"
+    },
+    {
+      "id": "gv72z8",
+      "title": "4 tips for styling outfits with Gemini",
+      "source": "Google Gemini",
+      "url": "https://blog.google/products-and-platforms/products/gemini/stylist-outfit-tips-gemini/",
+      "date": "2026-10-19",
+      "summary": "Here’s how athlete stylist Sydney Bordonaro uses Gemini to build looks for clients — and how you can build your own, too.",
+      "tldr": "Here’s how athlete stylist Sydney Bordonaro uses Gemini to build looks for clients — and h…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-20T13:20:15.870Z"
     },
     {
       "id": "1t2jqd5",
@@ -111,8 +500,8 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/nvidia/scaling-indic-pretraining",
       "date": "2026-10-16",
-      "summary": "Authors: AI4Bharat — Mohammed Safi Ur Rahman Khan, Mitesh Khapra, Anoop Kunchukuttan. NVIDIA — Niket Agarwal, Raviraj Joshi, Anusha Kamath, Markus Kliegl, Yev Meyer, Sriharsha Niverty, Kiran Praveen, …",
-      "tldr": "Authors: AI4Bharat — Mohammed Safi Ur Rahman Khan, Mitesh Khapra, Anoop Kunchukuttan. NVID…",
+      "summary": "Authors: AI4Bharat — Sumanth Doddapaneni, Thanmay Jayakumar, Mohammed Safi Ur Rahman Khan, Mitesh Khapra, Anoop Kunchukuttan, Rudra Murthy, Ujjwal Sharma. NVIDIA — Niket Agarwal, Ramani Akkati, Mohamm…",
+      "tldr": "Authors: AI4Bharat — Sumanth Doddapaneni, Thanmay Jayakumar, Mohammed Safi Ur Rahman Khan,…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -2139,20 +2528,6 @@
       "addedAt": "2026-10-12T17:20:21.654Z"
     },
     {
-      "id": "11cq1h2",
-      "title": "How Oracle turns days of work into minutes with ChatGPT and Codex",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/oracle",
-      "date": "2026-10-08",
-      "summary": "",
-      "tldr": "How Oracle turns days of work into minutes with ChatGPT and Codex",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-09T09:03:40.689Z"
-    },
-    {
       "id": "19jwvdt",
       "title": "Building on our commitment to American scientific discovery",
       "source": "Anthropic",
@@ -2210,6 +2585,20 @@
         "前沿"
       ],
       "addedAt": "2026-10-09T09:04:00.286Z"
+    },
+    {
+      "id": "11cq1h2",
+      "title": "How Oracle turns days of work into minutes with ChatGPT and Codex",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/oracle",
+      "date": "2026-10-08",
+      "summary": "",
+      "tldr": "How Oracle turns days of work into minutes with ChatGPT and Codex",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-09T09:03:40.689Z"
     },
     {
       "id": "g662nx",
@@ -2947,20 +3336,6 @@
       "addedAt": "2026-10-07T15:03:51.567Z"
     },
     {
-      "id": "1hszva6",
-      "title": "Falcon-Emirati: When an LLM Learns the Dialect, the Culture, and the Nuance",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/tiiuae/falcon-emirati",
-      "date": "2026-10-06",
-      "summary": "Arabic is really a family of languages living under one name. Modern Standard Arabic is what you read in the news or a textbook, but it's rarely how people actually talk to each other. In the UAE, day…",
-      "tldr": "Arabic is really a family of languages living under one name. Modern Standard Arabic is wh…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-06T14:43:57.777Z"
-    },
-    {
       "id": "1gdpsuq",
       "title": "NTS: Authenticated Time at Meta",
       "source": "Meta",
@@ -2973,6 +3348,20 @@
         "前沿"
       ],
       "addedAt": "2026-10-07T15:04:01.038Z"
+    },
+    {
+      "id": "1hszva6",
+      "title": "Falcon-Emirati: When an LLM Learns the Dialect, the Culture, and the Nuance",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/tiiuae/falcon-emirati",
+      "date": "2026-10-06",
+      "summary": "Arabic is really a family of languages living under one name. Modern Standard Arabic is what you read in the news or a textbook, but it's rarely how people actually talk to each other. In the UAE, day…",
+      "tldr": "Arabic is really a family of languages living under one name. Modern Standard Arabic is wh…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-06T14:43:57.777Z"
     },
     {
       "id": "ml0gl6",
@@ -4531,355 +4920,6 @@
       "addedAt": "2026-10-01T15:04:40.982Z"
     },
     {
-      "id": "w13y6",
-      "title": "EvoDuet: Bilevel Co-Evolution of Web Searching and Task Solving for Scientific Discovery",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.40340v1",
-      "date": "2026-09-30",
-      "summary": "Evolutionary search with large language models (LLMs) can stall when progress requires external knowledge the model lacks. Supplying relevant documents helps, but simply adding web search tool can keep returning the same…",
-      "tldr": "Evolutionary search with large language models (LLMs) can stall when progress requires ext…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-01T15:04:40.982Z"
-    },
-    {
-      "id": "w0gyn",
-      "title": "Turbo Harness: Instance-Adaptive Harness Optimization",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.40330v1",
-      "date": "2026-09-30",
-      "summary": "Automating the search for effective harnesses is an important step toward enabling agents to recursively self-improve. Existing harness optimizations typically produce a single global harness that is applied uniformly ac…",
-      "tldr": "Automating the search for effective harnesses is an important step toward enabling agents…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Harness"
-      ],
-      "addedAt": "2026-10-01T15:04:40.982Z"
-    },
-    {
-      "id": "vzxol",
-      "title": "WorldAuditBench: Interactive 3D World Auditing with Multimodal Agents",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.40325v1",
-      "date": "2026-09-30",
-      "summary": "As interactive 3D worlds are increasingly used to study intelligent behavior, it becomes important to develop efficient pipelines for identifying anomalies in these simulated environments, such as floating objects, trave…",
-      "tldr": "As interactive 3D worlds are increasingly used to study intelligent behavior, it becomes i…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-10-01T15:04:40.982Z"
-    },
-    {
-      "id": "vzwxw",
-      "title": "Cogentic: Multi-Agent Orchestration for Automated Proof Discovery",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.40324v1",
-      "date": "2026-09-30",
-      "summary": "We present Cogentic, a multi-agent harness for automated proof discovery on open research problems. While frontier language models can generate strong mathematical ideas in a single shot, single-shot generation is often …",
-      "tldr": "We present Cogentic, a multi-agent harness for automated proof discovery on open research…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Harness",
-        "Multi-Agent"
-      ],
-      "addedAt": "2026-10-01T15:04:40.982Z"
-    },
-    {
-      "id": "vzvgi",
-      "title": "MatLoom: Layered Text-to-Material Generation in a Compact Program Space",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.40322v1",
-      "date": "2026-09-30",
-      "summary": "Material generation should produce not only an appearance, but also the rules that construct it. We introduce MatLoom, a compact, layer-oriented language for text-to-material generation with pretrained language models. E…",
-      "tldr": "Material generation should produce not only an appearance, but also the rules that constru…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-01T15:04:40.982Z"
-    },
-    {
-      "id": "vzbfr",
-      "title": "Scaling Laws for Looped Mixture of Experts",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.40316v1",
-      "date": "2026-09-30",
-      "summary": "Looped transformers and Mixture-of-Experts (MoE) offer complementary routes to efficient scaling: recurrence increases computational depth at fixed parameters, while MoE sparsity expands total capacity at fixed active co…",
-      "tldr": "Looped transformers and Mixture-of-Experts (MoE) offer complementary routes to efficient s…",
-      "maturity": "proposed",
-      "tags": [
-        "Loop"
-      ],
-      "addedAt": "2026-10-01T15:04:40.982Z"
-    },
-    {
-      "id": "vyog8",
-      "title": "DynaHarness: A Dynamic Physical Harness for Self-Evolving Robot Agents",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.40306v1",
-      "date": "2026-09-30",
-      "summary": "Pretrained robot policies provide useful action priors, but long-horizon manipulation still requires coordination between semantic reasoning and physical execution. Semantic reasoning operates at a coarser timescale than…",
-      "tldr": "Pretrained robot policies provide useful action priors, but long-horizon manipulation stil…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Harness",
-        "推理"
-      ],
-      "addedAt": "2026-10-01T15:04:40.982Z"
-    },
-    {
-      "id": "vym85",
-      "title": "How Much of a Harness Does a Strong Agent Need for Autonomous ML Engineering?",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.40303v1",
-      "date": "2026-09-30",
-      "summary": "Recent autonomous machine learning engineering (MLE) agents have made significant progress on public leaderboards. Often motivated by progress stagnation over long-horizon cycles and limited Large Language Model (LLM) pr…",
-      "tldr": "Recent autonomous machine learning engineering (MLE) agents have made significant progress…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Harness"
-      ],
-      "addedAt": "2026-10-01T15:04:40.982Z"
-    },
-    {
-      "id": "vklzx",
-      "title": "How Much Is an AI Token Worth? Scaling Laws for Wild AI-Generated Web Text",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.40295v1",
-      "date": "2026-09-30",
-      "summary": "Web text makes up the majority of pretraining data and is increasingly AI-generated. After applying FineWeb quality filtering, we find that 27.5% of tokens from June 2026 web data are labeled as AI-generated by Pangram, …",
-      "tldr": "Web text makes up the majority of pretraining data and is increasingly AI-generated. After…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-01T15:04:40.982Z"
-    },
-    {
-      "id": "vkiag",
-      "title": "CAS II: Symmetric Partitions as Kolmogorov Models",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.40290v1",
-      "date": "2026-09-30",
-      "summary": "In algorithmic statistics a string x is explained by a finite set containing it, and Kolmogorov's structure function records the smallest such model at each level of complexity. Vereshchagin's strong models, those comput…",
-      "tldr": "In algorithmic statistics a string x is explained by a finite set containing it, and Kolmo…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-01T15:04:40.982Z"
-    },
-    {
-      "id": "vjzr3",
-      "title": "Linguistic Loopholes in LLM Unlearning: From a 174-Language Benchmark to Coverage-Aware Unlearning",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.40286v1",
-      "date": "2026-09-30",
-      "summary": "Unlearning a fact in one language does not guarantee its removal in others as changing the query or even the requested answer language can reopen seemingly forgotten knowledge -- a cross-lingual loophole. The most straig…",
-      "tldr": "Unlearning a fact in one language does not guarantee its removal in others as changing the…",
-      "maturity": "proposed",
-      "tags": [
-        "Loop",
-        "评测"
-      ],
-      "addedAt": "2026-10-01T15:04:40.982Z"
-    },
-    {
-      "id": "vjz0e",
-      "title": "PivotOPD: Learning to Recover from Pivotal Mistakes in Multi-Turn Agents",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.40285v1",
-      "date": "2026-09-30",
-      "summary": "On-policy distillation (OPD) is a promising approach for training language agents, providing dense teacher supervision on student-generated trajectories. However, in multi-turn interaction, an incorrect action changes th…",
-      "tldr": "On-policy distillation (OPD) is a promising approach for training language agents, providi…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "多模态"
-      ],
-      "addedAt": "2026-10-01T15:04:40.982Z"
-    },
-    {
-      "id": "vjy9p",
-      "title": "cua-speedrun: Standardized Benchmarking of the Speed of Computer-Use Agents",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.40284v1",
-      "date": "2026-09-30",
-      "summary": "Computer use agents (CUAs), which use graphical user interfaces (GUIs) to complete tasks on a computer, have recently surpassed human performance on many standard benchmarks, including difficult long-horizon tasks. Their…",
-      "tldr": "Computer use agents (CUAs), which use graphical user interfaces (GUIs) to complete tasks o…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Graph",
-        "评测"
-      ],
-      "addedAt": "2026-10-01T15:04:40.982Z"
-    },
-    {
-      "id": "vis04",
-      "title": "Belief-Aware Multi-Agent Path Finding under Map Uncertainty",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.40269v1",
-      "date": "2026-09-30",
-      "summary": "Multi-Agent Path Finding (MAPF) aims to find collision-free paths for multiple agents in a shared environment. Classical MAPF assumes that all static obstacles are known in advance, but real-world environments can change…",
-      "tldr": "Multi-Agent Path Finding (MAPF) aims to find collision-free paths for multiple agents in a…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Multi-Agent"
-      ],
-      "addedAt": "2026-10-01T15:04:40.982Z"
-    },
-    {
-      "id": "vi0kf",
-      "title": "ComputerSD: Online Self-Distillation from Real-Time Feedback for Computer-Use Agents",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.40253v1",
-      "date": "2026-09-30",
-      "summary": "Online training enables computer-use agents (CUAs) to improve through interaction with executable environments. However, existing methods primarily rely on sparse outcome rewards, which provide no supervision for interme…",
-      "tldr": "Online training enables computer-use agents (CUAs) to improve through interaction with exe…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "多模态"
-      ],
-      "addedAt": "2026-10-01T15:04:40.982Z"
-    },
-    {
-      "id": "vhc3i",
-      "title": "Decision-Oriented Recommendation Reranking: An Empirical Study of Jev",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.40241v1",
-      "date": "2026-09-30",
-      "summary": "Large language models (LLMs) have shown promise for recommendation reranking, but their use introduces an important tradeoff between recommendation quality and serving efficiency. We investigate whether a decision-orient…",
-      "tldr": "Large language models (LLMs) have shown promise for recommendation reranking, but their us…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-01T15:04:40.982Z"
-    },
-    {
-      "id": "vgstg",
-      "title": "Comparison of techniques for fine-tuning open-weight models for entity extraction from radiology reports",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.40236v1",
-      "date": "2026-09-30",
-      "summary": "Converting free-text radiology reports into structured labels supports cohort building, quality assurance, and monitoring of clinical imaging models, but the strongest label extractors are hosted proprietary models whose…",
-      "tldr": "Converting free-text radiology reports into structured labels supports cohort building, qu…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-01T15:04:40.982Z"
-    },
-    {
-      "id": "1c2y5m8",
-      "title": "Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
-      "date": "2026-09-29",
-      "summary": "Our latest paper, ProvenanceGuard: Source-Aware Factuality Verification for MCP-Based LLM Agents (read it on Hugging Face, or on arXiv in the meantime), targets that gap. The failure mode we care abou…",
-      "tldr": "Our latest paper, ProvenanceGuard: Source-Aware Factuality Verification for MCP-Based LLM…",
-      "maturity": "emerging",
-      "tags": [
-        "Agent",
-        "MCP"
-      ],
-      "addedAt": "2026-09-29T14:36:12.740Z"
-    },
-    {
-      "id": "kv1exn",
-      "title": "NVIDIA Kumo Tabular Sets a New Accuracy-Efficiency Frontier for Tabular Prediction",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/nvidia/kumo-tabular",
-      "date": "2026-09-29",
-      "summary": "The Shift to Tabular Foundation Models Tabular data is the backbone of enterprise machine learning. Customer records, transactions, sensor logs, claims, and orders all live in tables, and predicting c…",
-      "tldr": "The Shift to Tabular Foundation Models Tabular data is the backbone of enterprise machine…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-30T14:36:16.963Z"
-    },
-    {
-      "id": "ua7zrm",
-      "title": "Introducing GPT-6.1 Sol",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/introducing-gpt-6-1-sol",
-      "date": "2026-09-29",
-      "summary": "",
-      "tldr": "Introducing GPT-6.1 Sol",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-30T14:35:56.736Z"
-    },
-    {
-      "id": "w7zso2",
-      "title": "DevDay 2026 Recap",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/devday-2026-recap",
-      "date": "2026-09-29",
-      "summary": "",
-      "tldr": "DevDay 2026 Recap",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-30T14:35:56.941Z"
-    },
-    {
-      "id": "in9rrn",
-      "title": "Introducing dots",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/introducing-dots",
-      "date": "2026-09-29",
-      "summary": "",
-      "tldr": "Introducing dots",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-30T14:35:57.146Z"
-    },
-    {
-      "id": "1p02ck8",
-      "title": "Skill-Space Shooting for Autonomous Robot Policy Improvement",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.38178v1",
-      "date": "2026-09-29",
-      "summary": "Robots deployed in the physical world must be able to improve beyond their initial training as they encounter new situations and failures. For this improvement to scale across tasks, it must make effective use of experie…",
-      "tldr": "Robots deployed in the physical world must be able to improve beyond their initial trainin…",
-      "maturity": "proposed",
-      "tags": [
-        "Skill"
-      ],
-      "addedAt": "2026-09-30T14:36:20.368Z"
-    },
-    {
-      "id": "1p02btj",
-      "title": "Imagine3D-LLM: Teaching MLLMs to Imagine 3D Scenes Before Answering",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2609.38177v1",
-      "date": "2026-09-29",
-      "summary": "Reasoning about the 3D world from multi-view images remains a fundamental challenge for Multimodal Large Language Models (MLLMs). While modern MLLMs handle single-image inputs effectively, they struggle to integrate evid…",
-      "tldr": "Reasoning about the 3D world from multi-view images remains a fundamental challenge for Mu…",
-      "maturity": "proposed",
-      "tags": [
-        "推理"
-      ],
-      "addedAt": "2026-09-30T14:36:20.368Z"
-    },
-    {
       "id": "lh3dte",
       "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
       "source": "Google AI Blog",
@@ -5276,20 +5316,6 @@
       "addedAt": "2026-09-24T08:29:36.019Z"
     },
     {
-      "id": "1kwb718",
-      "title": "The Gemini app is now available for Windows",
-      "source": "Google Gemini",
-      "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/",
-      "date": "2026-09-10",
-      "summary": "We’re launching the Gemini app for Windows, the new desktop app built to work alongside your favorite tools and daily applications.",
-      "tldr": "We’re launching the Gemini app for Windows, the new desktop app built to work alongside yo…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-24T08:30:27.678Z"
-    },
-    {
       "id": "skramt",
       "title": "AlphaGenome Atlas: A predictive map of every possible DNA letter change in the human genome",
       "source": "Google DeepMind",
@@ -5346,34 +5372,6 @@
         "前沿"
       ],
       "addedAt": "2026-09-24T08:37:59.021Z"
-    },
-    {
-      "id": "cegz5f",
-      "title": "An Organizational Second Brain: Building an AI That Learns From Experts",
-      "source": "Meta",
-      "url": "https://engineering.fb.com/2026/09/02/ml-applications/organizational-second-brain-ai-learns-from-experts/",
-      "date": "2026-09-02",
-      "summary": "We’ve built an AI agent that acts as a secondary expert for a given domain, making deep specialist knowledge readily available and preserved for anyone in an organization to access, share, and build upon. This is not a t…",
-      "tldr": "We’ve built an AI agent that acts as a secondary expert for a given domain, making deep sp…",
-      "maturity": "emerging",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-09-24T08:44:12.214Z"
-    },
-    {
-      "id": "lxj4ar",
-      "title": "MetaRoCE: A New RDMA Transport Built for AI-Scale Ethernet",
-      "source": "Meta",
-      "url": "https://engineering.fb.com/2026/08/24/networking-traffic/metaroce-rdma-transport-ai-ethernet/",
-      "date": "2026-08-24",
-      "summary": "Training and serving frontier AI models depends on fast, reliable networks that move data between GPUs without wasting compute cycles. To meet this challenge at scale, Meta designed MetaRoCE – a clean-sheet RDMA transpor…",
-      "tldr": "Training and serving frontier AI models depends on fast, reliable networks that move data…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-24T08:47:20.669Z"
     },
     {
       "id": "19oc27n",
