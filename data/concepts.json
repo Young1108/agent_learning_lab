@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-23T13:05:05.935Z",
-  "version": 53,
+  "updatedAt": "2026-10-24T12:27:53.671Z",
+  "version": 54,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
@@ -17,6 +17,76 @@
         "安全"
       ],
       "addedAt": "2026-10-23T13:03:36.655Z"
+    },
+    {
+      "id": "153p22",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+      "date": "2026-10-23",
+      "summary": "",
+      "tldr": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-24T12:26:25.711Z"
+    },
+    {
+      "id": "w1yqw2",
+      "title": "Securing our frontier model training environment",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+      "date": "2026-10-23",
+      "summary": "",
+      "tldr": "Securing our frontier model training environment",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-24T12:26:26.076Z"
+    },
+    {
+      "id": "cvucql",
+      "title": "LitPivot: Developing research ideas through dynamic contextualization within the literature landscape",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/allenai/litpivot",
+      "date": "2026-10-23",
+      "summary": "Encountering a new paper can change a research idea's trajectory. The researcher may discover that someone has already addressed their proposed contribution, or find an unresolved problem in the paper…",
+      "tldr": "Encountering a new paper can change a research idea's trajectory. The researcher may disco…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-24T12:26:49.093Z"
+    },
+    {
+      "id": "145ixy5",
+      "title": "Does Your Model Run on AWS Trainium? Look It Up",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/torch-neuronx-model-support",
+      "date": "2026-10-23",
+      "summary": "The torch-neuronx model support Space answers that question for the most popular models on the Hub. It tells you whether a model runs unmodified on Trainium, and gives you the script to run it yoursel…",
+      "tldr": "The torch-neuronx model support Space answers that question for the most popular models on…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-24T12:26:49.358Z"
+    },
+    {
+      "id": "1kdjmgi",
+      "title": "See what 5 builders are making with Gemini 4 Argon",
+      "source": "Google Gemini",
+      "url": "https://blog.google/products-and-platforms/products/gemini/gemini-4-argon-builders/",
+      "date": "2026-10-23",
+      "summary": "See how five builders are putting Gemini 4 Argon to work — and get inspired for your next build.",
+      "tldr": "See how five builders are putting Gemini 4 Argon to work — and get inspired for your next…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-24T12:27:53.664Z"
     },
     {
       "id": "1ngovzg",
@@ -979,34 +1049,6 @@
       "addedAt": "2026-10-22T13:25:47.524Z"
     },
     {
-      "id": "16wq1yt",
-      "title": "Franchisee reconciles cash in 94% less time with ChatGPT Work",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/ted-taylor-restaurant",
-      "date": "2026-10-20",
-      "summary": "",
-      "tldr": "Franchisee reconciles cash in 94% less time with ChatGPT Work",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-21T13:24:23.810Z"
-    },
-    {
-      "id": "uej8wv",
-      "title": "Terminal X matches senior investor judgment 88.6% with GPT-6.1",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/terminal-x",
-      "date": "2026-10-20",
-      "summary": "",
-      "tldr": "Terminal X matches senior investor judgment 88.6% with GPT-6.1",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-21T13:24:24.060Z"
-    },
-    {
       "id": "8tmldn",
       "title": "Anthropic update on independent evaluators",
       "source": "Anthropic",
@@ -1136,6 +1178,34 @@
         "前沿"
       ],
       "addedAt": "2026-10-21T13:25:53.517Z"
+    },
+    {
+      "id": "16wq1yt",
+      "title": "Franchisee reconciles cash in 94% less time with ChatGPT Work",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/ted-taylor-restaurant",
+      "date": "2026-10-20",
+      "summary": "",
+      "tldr": "Franchisee reconciles cash in 94% less time with ChatGPT Work",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-21T13:24:23.810Z"
+    },
+    {
+      "id": "uej8wv",
+      "title": "Terminal X matches senior investor judgment 88.6% with GPT-6.1",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/terminal-x",
+      "date": "2026-10-20",
+      "summary": "",
+      "tldr": "Terminal X matches senior investor judgment 88.6% with GPT-6.1",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-21T13:24:24.060Z"
     },
     {
       "id": "kz1vtu",
@@ -1538,20 +1608,6 @@
       "addedAt": "2026-10-21T13:24:31.209Z"
     },
     {
-      "id": "kz8qdx",
-      "title": "TorchNeuron: running HF models on AWS Trainium is easier than ever",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/hf-torchneuron",
-      "date": "2026-10-19",
-      "summary": "TorchNeuron TorchNeuron is a PyTorch plugin that brings a new backend for Trainium enabling support for eager mode, torch.compile and native distributed APIs like FSDP and TP. Read the Pytorch blog to…",
-      "tldr": "TorchNeuron TorchNeuron is a PyTorch plugin that brings a new backend for Trainium enablin…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-20T13:19:00.572Z"
-    },
-    {
       "id": "jxna65",
       "title": "Inside Prometheus: Meta’s Journey to a Gigawatt-Scale Supercluster",
       "source": "Meta",
@@ -1606,6 +1662,20 @@
         "前沿"
       ],
       "addedAt": "2026-10-20T13:20:15.870Z"
+    },
+    {
+      "id": "kz8qdx",
+      "title": "TorchNeuron: running HF models on AWS Trainium is easier than ever",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/hf-torchneuron",
+      "date": "2026-10-19",
+      "summary": "TorchNeuron TorchNeuron is a PyTorch plugin that brings a new backend for Trainium enabling support for eager mode, torch.compile and native distributed APIs like FSDP and TP. Read the Pytorch blog to…",
+      "tldr": "TorchNeuron TorchNeuron is a PyTorch plugin that brings a new backend for Trainium enablin…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-20T13:19:00.572Z"
     },
     {
       "id": "d0a9bt",
@@ -4815,48 +4885,6 @@
       "addedAt": "2026-10-08T15:12:17.985Z"
     },
     {
-      "id": "9k29g9",
-      "title": "A Good Self-Teacher Meets the Student Where They Are: Joint On-Policy Learning and Teaching",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.10447v1",
-      "date": "2026-10-07",
-      "summary": "Reinforcement Learning (RL) from outcome rewards suffers from sparse supervision, particularly on difficult, long-horizon tasks where successful trajectories are rare and costly to generate. On-Policy Distillation (OPD) …",
-      "tldr": "Reinforcement Learning (RL) from outcome rewards suffers from sparse supervision, particul…",
-      "maturity": "proposed",
-      "tags": [
-        "多模态"
-      ],
-      "addedAt": "2026-10-08T15:12:17.985Z"
-    },
-    {
-      "id": "9k2786",
-      "title": "RunningTab: Direct Workspace Interaction with Environment-Side Tabs",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.10444v1",
-      "date": "2026-10-07",
-      "summary": "Much knowledge work produces new deliverables from files a workspace already holds, and LLM agents are beginning to take such work over. Through direct corpus interaction, an agent can search and read any of those files …",
-      "tldr": "Much knowledge work produces new deliverables from files a workspace already holds, and LL…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-10-08T15:12:17.985Z"
-    },
-    {
-      "id": "9k1mgq",
-      "title": "Q-Learning with Scalar Adjoint Matching",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.10437v1",
-      "date": "2026-10-07",
-      "summary": "Flow policies capture rich and diverse action distributions, and fine-tuning them with off-policy RL to improve beyond the demonstrations has drawn growing interest. However, fine-tuning a flow policy against a learned v…",
-      "tldr": "Flow policies capture rich and diverse action distributions, and fine-tuning them with off…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-08T15:12:17.985Z"
-    },
-    {
       "id": "nu32xb",
       "title": "EmbeddingGemma 2: an open, lightweight multimodal embedding model",
       "source": "Google DeepMind",
@@ -4883,20 +4911,6 @@
         "前沿"
       ],
       "addedAt": "2026-10-07T15:04:01.038Z"
-    },
-    {
-      "id": "1hszva6",
-      "title": "Falcon-Emirati: When an LLM Learns the Dialect, the Culture, and the Nuance",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/tiiuae/falcon-emirati",
-      "date": "2026-10-06",
-      "summary": "Arabic is really a family of languages living under one name. Modern Standard Arabic is what you read in the news or a textbook, but it's rarely how people actually talk to each other. In the UAE, day…",
-      "tldr": "Arabic is really a family of languages living under one name. Modern Standard Arabic is wh…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-06T14:43:57.777Z"
     },
     {
       "id": "pcfac7",
@@ -5277,20 +5291,6 @@
         "前沿"
       ],
       "addedAt": "2026-09-16T13:06:25.317Z"
-    },
-    {
-      "id": "1loyovd",
-      "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
-      "source": "Google Gemini",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/",
-      "date": "2026-09-15",
-      "summary": "Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking are our most advanced live dialogue models yet, built for natural conversation.",
-      "tldr": "Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking are our most advanced live dialogue…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-24T08:30:27.678Z"
     },
     {
       "id": "oq3hhc",
