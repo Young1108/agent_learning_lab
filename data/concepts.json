@@ -1,9 +1,80 @@
 {
-  "updatedAt": "2026-10-28T14:51:39.229Z",
-  "version": 57,
+  "updatedAt": "2026-10-29T14:57:13.216Z",
+  "version": 58,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "xe4fmo",
+      "title": "AI for Science expands to foundations and institutions",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
+      "date": "2026-10-29",
+      "summary": "We’re highlighting 20 scientific foundations, institutions, and research groups from around the world that we’ve partnered with in an expansion of our AI for Science program.",
+      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/2c317246f4ac7eaf0667d90a76ac05a7a7b601fc-1200x630.jpg",
+      "tldr": "We’re highlighting 20 scientific foundations, institutions, and research groups from aroun…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-29T14:55:50.649Z"
+    },
+    {
+      "id": "5hnf8p",
+      "title": "Granite Switch 4.1.1 — Update models like you update software",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1",
+      "date": "2026-10-29",
+      "summary": "Just over a week ago, we released Granite Switch 4.1, showing that our modular Switch architecture lets you configure a language model with specialized, cache-efficient adapters — adding new expertise…",
+      "tldr": "Just over a week ago, we released Granite Switch 4.1, showing that our modular Switch arch…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-29T14:56:09.407Z"
+    },
+    {
+      "id": "7hmgb8",
+      "title": "Announcing Project ProtoStar: Making Publicly Funded Science AI-Ready",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/announcing-project-protostar",
+      "date": "2026-10-29",
+      "summary": "Today, we're announcing Project ProtoStar, an initiative to unlock the potential of publicly funded scientific research by making datasets, models, and code more accessible and reusable, particularly …",
+      "tldr": "Today, we're announcing Project ProtoStar, an initiative to unlock the potential of public…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-29T14:56:09.623Z"
+    },
+    {
+      "id": "4vn6ez",
+      "title": "Welcome Le Chonk: Mistral Large 4 on Hugging Face",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/mistral-large4",
+      "date": "2026-10-29",
+      "summary": "The model is released in two official variants:",
+      "tldr": "The model is released in two official variants:",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-29T14:56:09.864Z"
+    },
+    {
+      "id": "1c9vjx2",
+      "title": "Introducing AnySpeechRecognizer and AnyDecisionModel: Open Models for Speech and Decisions on Apple Platforms",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/anydecisionmodel",
+      "date": "2026-10-29",
+      "summary": "Say a customer calls your support line. First, you want to know what they said (speech recognition). Then, you want to decide where to send them (decision). You could hand both to a language model, bu…",
+      "tldr": "Say a customer calls your support line. First, you want to know what they said (speech rec…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-29T14:56:10.103Z"
+    },
     {
       "id": "1oo4mo8",
       "title": "Legora is building the agentic operating system for legal work",
@@ -17,6 +88,146 @@
         "Agent"
       ],
       "addedAt": "2026-10-28T14:50:12.611Z"
+    },
+    {
+      "id": "1hs4ju5",
+      "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/openai-servicenow-partnership-expansion",
+      "date": "2026-10-28",
+      "summary": "",
+      "tldr": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-29T14:55:46.885Z"
+    },
+    {
+      "id": "17gzq8q",
+      "title": "The future of the firm",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/the-future-of-the-firm",
+      "date": "2026-10-28",
+      "summary": "",
+      "tldr": "The future of the firm",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-29T14:55:47.096Z"
+    },
+    {
+      "id": "zqjxjc",
+      "title": "Legora is building the agentic operating system for legal work",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/legora",
+      "date": "2026-10-28",
+      "summary": "",
+      "tldr": "Legora is building the agentic operating system for legal work",
+      "maturity": "emerging",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-10-29T14:55:47.330Z"
+    },
+    {
+      "id": "rpnlck",
+      "title": "Gemini 4 Carbon: Our next frontier model",
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
+      "date": "2026-10-28",
+      "summary": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --btn-bg-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --card-draw-percent{inherits:fa…",
+      "tldr": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@proper…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-29T14:56:02.906Z"
+    },
+    {
+      "id": "1uc5tow",
+      "title": "NVIDIA Nemotron 3.5 Transcribe and Granary v2: Intelligent Multilingual Transcription You Can Prompt and Adapt",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+      "date": "2026-10-28",
+      "summary": "NVIDIA Nemotron 3.5 Transcribe is an open-weight, promptable model that turns recorded speech into useful text, now available on Hugging Face and ModelScope. It brings transcription, speaker attributi…",
+      "tldr": "NVIDIA Nemotron 3.5 Transcribe is an open-weight, promptable model that turns recorded spe…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-29T14:56:10.350Z"
+    },
+    {
+      "id": "16f1fls",
+      "title": "Meta Andromeda: Powering the Next Generation of Ads Retrieval Through Model-System Co-Design",
+      "source": "Meta",
+      "url": "https://engineering.fb.com/2026/10/28/ml-applications/meta-andromeda-next-gen-ads-retrieval-gpu-co-design/",
+      "date": "2026-10-28",
+      "summary": "This post describes the next generation of Meta Andromeda, Meta’s personalized ads retrieval engine, and how co-designing the model, system, and GPU hardware unlocks a new efficiency frontier for ads retrieval. In produc…",
+      "tldr": "This post describes the next generation of Meta Andromeda, Meta’s personalized ads retriev…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-29T14:56:12.874Z"
+    },
+    {
+      "id": "tjp84a",
+      "title": "Dive into new topics with immersive explorations in the Gemini app.",
+      "source": "Google Gemini",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/immersive-explorations-student-hub/",
+      "date": "2026-10-28",
+      "summary": "Today, we are rolling out immersive explorations in the new Gemini student hub.",
+      "tldr": "Today, we are rolling out immersive explorations in the new Gemini student hub.",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-29T14:57:13.208Z"
+    },
+    {
+      "id": "tw9wek",
+      "title": "Gemini 4 Carbon: our next frontier model",
+      "source": "Google Gemini",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "date": "2026-10-28",
+      "summary": "Gemini 4 Carbon is our strongest model with state-of-the-art cybersecurity and long horizon capabilities.",
+      "tldr": "Gemini 4 Carbon is our strongest model with state-of-the-art cybersecurity and long horizo…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-29T14:57:13.208Z"
+    },
+    {
+      "id": "1qedyr5",
+      "title": "XREAL AURA: Wired XR glasses to watch, work, and play",
+      "source": "Google Gemini",
+      "url": "https://blog.google/products-and-platforms/platforms/android/xreal-aura/",
+      "date": "2026-10-28",
+      "summary": "XREAL AURA, the first wired XR glasses powered by Android XR, lets you work, watch, and play anywhere with Gemini by your side.",
+      "tldr": "XREAL AURA, the first wired XR glasses powered by Android XR, lets you work, watch, and pl…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-29T14:57:13.208Z"
+    },
+    {
+      "id": "1kw9wlr",
+      "title": "Build and manage Connected Apps in one place",
+      "source": "Google Gemini",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/connected-apps-one-place/",
+      "date": "2026-10-28",
+      "summary": "We’re announcing new connected apps partners and a new platform for developers to build and track their apps in one place.",
+      "tldr": "We’re announcing new connected apps partners and a new platform for developers to build an…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-29T14:57:13.208Z"
     },
     {
       "id": "1iaq189",
@@ -898,48 +1109,6 @@
       "addedAt": "2026-10-23T13:03:36.655Z"
     },
     {
-      "id": "153p22",
-      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
-      "date": "2026-10-23",
-      "summary": "",
-      "tldr": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-24T12:26:25.711Z"
-    },
-    {
-      "id": "w1yqw2",
-      "title": "Securing our frontier model training environment",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
-      "date": "2026-10-23",
-      "summary": "",
-      "tldr": "Securing our frontier model training environment",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-24T12:26:26.076Z"
-    },
-    {
-      "id": "jbiigo",
-      "title": "Anima helps clinics cut call waits by 75% with GPT-6 and GPT-Live",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/anima",
-      "date": "2026-10-23",
-      "summary": "",
-      "tldr": "Anima helps clinics cut call waits by 75% with GPT-6 and GPT-Live",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-28T14:50:15.390Z"
-    },
-    {
       "id": "cvucql",
       "title": "LitPivot: Developing research ideas through dynamic contextualization within the literature landscape",
       "source": "Hugging Face",
@@ -980,6 +1149,48 @@
         "前沿"
       ],
       "addedAt": "2026-10-24T12:27:53.664Z"
+    },
+    {
+      "id": "153p22",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+      "date": "2026-10-23",
+      "summary": "",
+      "tldr": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-24T12:26:25.711Z"
+    },
+    {
+      "id": "w1yqw2",
+      "title": "Securing our frontier model training environment",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+      "date": "2026-10-23",
+      "summary": "",
+      "tldr": "Securing our frontier model training environment",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-24T12:26:26.076Z"
+    },
+    {
+      "id": "jbiigo",
+      "title": "Anima helps clinics cut call waits by 75% with GPT-6 and GPT-Live",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/anima",
+      "date": "2026-10-23",
+      "summary": "",
+      "tldr": "Anima helps clinics cut call waits by 75% with GPT-6 and GPT-Live",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-28T14:50:15.390Z"
     },
     {
       "id": "13xrhw5",
@@ -2269,6 +2480,20 @@
       "addedAt": "2026-10-21T13:24:28.617Z"
     },
     {
+      "id": "1210tg",
+      "title": "New Gemini tools for small business owners",
+      "source": "Google Gemini",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-tools-small-business-owners/",
+      "date": "2026-10-20",
+      "summary": "We’re announcing new tools for Gemini — including a dedicated business landing page — to help small business owners around the world.",
+      "tldr": "We’re announcing new tools for Gemini — including a dedicated business landing page — to h…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-21T13:25:53.517Z"
+    },
+    {
       "id": "7m2u9",
       "title": "AnyLanguageModel 1.0: One Year of Local Models on Apple Platforms",
       "source": "Hugging Face",
@@ -2310,20 +2535,6 @@
         "评测"
       ],
       "addedAt": "2026-10-21T13:24:46.153Z"
-    },
-    {
-      "id": "1210tg",
-      "title": "New Gemini tools for small business owners",
-      "source": "Google Gemini",
-      "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-tools-small-business-owners/",
-      "date": "2026-10-20",
-      "summary": "We’re announcing new tools for Gemini — including a dedicated business landing page — to help small business owners around the world.",
-      "tldr": "We’re announcing new tools for Gemini — including a dedicated business landing page — to h…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-21T13:25:53.517Z"
     },
     {
       "id": "z5v9v0",
@@ -2738,21 +2949,6 @@
       "addedAt": "2026-10-21T13:24:30.098Z"
     },
     {
-      "id": "1bmelns",
-      "title": "Our compliance framework for California's SB 53",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/compliance-framework-SB53",
-      "date": "2026-10-19",
-      "summary": "Anthropic's Frontier Compliance Framework discloses how we assess and manage catastrophic AI risks under California's Transparency in Frontier AI Act.",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
-      "tldr": "Anthropic's Frontier Compliance Framework discloses how we assess and manage catastrophic…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-21T13:24:30.464Z"
-    },
-    {
       "id": "jxna65",
       "title": "Inside Prometheus: Meta’s Journey to a Gigawatt-Scale Supercluster",
       "source": "Meta",
@@ -2807,6 +3003,21 @@
         "前沿"
       ],
       "addedAt": "2026-10-20T13:20:15.870Z"
+    },
+    {
+      "id": "1bmelns",
+      "title": "Our compliance framework for California's SB 53",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/compliance-framework-SB53",
+      "date": "2026-10-19",
+      "summary": "Anthropic's Frontier Compliance Framework discloses how we assess and manage catastrophic AI risks under California's Transparency in Frontier AI Act.",
+      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+      "tldr": "Anthropic's Frontier Compliance Framework discloses how we assess and manage catastrophic…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-21T13:24:30.464Z"
     },
     {
       "id": "2iiczl",
@@ -4797,136 +5008,6 @@
       "addedAt": "2026-10-14T13:18:18.543Z"
     },
     {
-      "id": "delth4",
-      "title": "Fast Rates for Offline Q-Learning with KL Regularization",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.18839v1",
-      "date": "2026-10-13",
-      "summary": "This paper investigates offline Q-learning for finite-horizon Markov decision processes with Kullback-Leibler (KL) regularization. Recent studies have shown that KL regularization can yield fast rates in offline decision…",
-      "tldr": "This paper investigates offline Q-learning for finite-horizon Markov decision processes wi…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-14T13:18:18.543Z"
-    },
-    {
-      "id": "delqic",
-      "title": "RoboSimStudio: An Interactive Toolkit for Rapid Real2Sim of Robot Manipulation Tasks",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.18835v1",
-      "date": "2026-10-13",
-      "summary": "It is difficult to accurately model the physics of the interaction between a robot and the objects it manipulates, including contact mechanics, coupled contact dynamics, deformations, stiffness and friction. We present R…",
-      "tldr": "It is difficult to accurately model the physics of the interaction between a robot and the…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-14T13:18:18.543Z"
-    },
-    {
-      "id": "del6hl",
-      "title": "OmniCompass: A Holistic Benchmark for Omni-Modal Video Grounding and Understanding",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.18829v1",
-      "date": "2026-10-13",
-      "summary": "With the rapid development of multimodal large language models (MLLMs), evaluating their video understanding capabilities has become increasingly important. Existing video understanding benchmarks cover only part of the …",
-      "tldr": "With the rapid development of multimodal large language models (MLLMs), evaluating their v…",
-      "maturity": "proposed",
-      "tags": [
-        "评测"
-      ],
-      "addedAt": "2026-10-14T13:18:18.543Z"
-    },
-    {
-      "id": "dekztc",
-      "title": "Read the Room Before Your Model Generates",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.18820v1",
-      "date": "2026-10-13",
-      "summary": "Large language models (LLMs) generally rely on sampling temperature to regulate the amount of randomness in their outputs. Mainstream methods for selecting temperature typically involve fixed, heuristic global settings a…",
-      "tldr": "Large language models (LLMs) generally rely on sampling temperature to regulate the amount…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-14T13:18:18.543Z"
-    },
-    {
-      "id": "dekird",
-      "title": "Back-Translation Still Matters: Leveraging Monolingual Data for Low-Resource Machine Translation with LLMs",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.18818v1",
-      "date": "2026-10-13",
-      "summary": "Pre-trained Large Language Model (LLMs) are effective on many tasks in zero-shot and few-shot settings. For machine translation of low-resource languages, the obvious options are few-shot prompting and fine-tuning on a s…",
-      "tldr": "Pre-trained Large Language Model (LLMs) are effective on many tasks in zero-shot and few-s…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-14T13:18:18.543Z"
-    },
-    {
-      "id": "dekf1w",
-      "title": "Self-Evolving Agent Harness",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.18813v1",
-      "date": "2026-10-13",
-      "summary": "Harness self-evolution revises an agent's software scaffolding, including prompts, memory, workflows, and executable components, while keeping model weights fixed. We formalize a feedback-driven process in which accepted…",
-      "tldr": "Harness self-evolution revises an agent's software scaffolding, including prompts, memory,…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Harness"
-      ],
-      "addedAt": "2026-10-14T13:18:18.543Z"
-    },
-    {
-      "id": "dejvru",
-      "title": "Optimizing Team Behavior via Extremum-seeking Control in Multi-agent Reinforcement Learning",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.18808v1",
-      "date": "2026-10-13",
-      "summary": "In cooperative Multi-Agent Reinforcement Learning (MARL), agents must learn to coordinate their actions to achieve shared objectives. A key indicator of effective coordination is behavioral diversity, i.e., the agents' p…",
-      "tldr": "In cooperative Multi-Agent Reinforcement Learning (MARL), agents must learn to coordinate…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Multi-Agent"
-      ],
-      "addedAt": "2026-10-14T13:18:18.543Z"
-    },
-    {
-      "id": "dejv15",
-      "title": "SkillScaffold: Scaffolding Agentic Reinforcement Learning with Policy-Adaptive Skill Credit Assignment and Selective Injection",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.18807v1",
-      "date": "2026-10-13",
-      "summary": "Agentic reinforcement learning (RL) enables large language models (LLMs) to learn from multi-turn interactions with verifiable outcomes. Textual skills can improve exploration by distilling prior interactions into reusab…",
-      "tldr": "Agentic reinforcement learning (RL) enables large language models (LLMs) to learn from mul…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Skill"
-      ],
-      "addedAt": "2026-10-14T13:18:18.543Z"
-    },
-    {
-      "id": "de5pm2",
-      "title": "SEAR: Self-Evolving Agentic Robotics",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.18792v1",
-      "date": "2026-10-13",
-      "summary": "Frontier language-model agents can now improve robots on their own: they write control code, test it, and keep what works as skills and memories for the next task. We introduce SEAR (Self-Evolving Agentic Robotics), a fr…",
-      "tldr": "Frontier language-model agents can now improve robots on their own: they write control cod…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Skill"
-      ],
-      "addedAt": "2026-10-14T13:18:18.543Z"
-    },
-    {
       "id": "hardat",
       "title": "Shipping Media Over QUIC at Meta Scale for Instagram Live Ingest",
       "source": "Meta",
@@ -5082,20 +5163,6 @@
       "addedAt": "2026-10-01T15:05:35.202Z"
     },
     {
-      "id": "102ycxm",
-      "title": "Let skills in Gemini tackle your most repetitive tasks",
-      "source": "Google Gemini",
-      "url": "https://blog.google/products-and-platforms/products/gemini/automate-tasks-with-skills/",
-      "date": "2026-09-30",
-      "summary": "Now you can automate your most repetitive tasks more easily with reusable custom instructions through skills, which will be replacing gems.",
-      "tldr": "Now you can automate your most repetitive tasks more easily with reusable custom instructi…",
-      "maturity": "emerging",
-      "tags": [
-        "Skill"
-      ],
-      "addedAt": "2026-10-01T15:05:35.202Z"
-    },
-    {
       "id": "lh3dte",
       "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
       "source": "Google AI Blog",
@@ -5110,34 +5177,6 @@
       "addedAt": "2026-09-29T14:36:12.290Z"
     },
     {
-      "id": "13yjsnd",
-      "title": "3 ways this grocer cooks for 200 guests with Gemini",
-      "source": "Google Gemini",
-      "url": "https://blog.google/products-and-platforms/products/gemini/edys-grocer-gemini/",
-      "date": "2026-09-28",
-      "summary": "Edy Massih uses Gemini to transform regular recipes into massive catering spreads, automate grocery orders, and adapt menus for dietary restrictions.",
-      "tldr": "Edy Massih uses Gemini to transform regular recipes into massive catering spreads, automat…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-28T16:27:37.201Z"
-    },
-    {
-      "id": "1czrvgs",
-      "title": "See what 4 builders are making with Gemini 3.8 Flash",
-      "source": "Google Gemini",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-flash-developers/",
-      "date": "2026-09-28",
-      "summary": "See what developers have built with Gemini 3.8 Flash, our most intelligent workhorse model, launched in early September.",
-      "tldr": "See what developers have built with Gemini 3.8 Flash, our most intelligent workhorse model…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-29T14:37:18.480Z"
-    },
-    {
       "id": "k2xcms",
       "title": "Introducing Gemini 3.8 Live with Live Avatar",
       "source": "Google DeepMind",
@@ -5150,34 +5189,6 @@
         "前沿"
       ],
       "addedAt": "2026-09-25T13:14:34.690Z"
-    },
-    {
-      "id": "6mjbqa",
-      "title": "Bringing Private Processing to Meta AI Glasses",
-      "source": "Meta",
-      "url": "https://engineering.fb.com/2026/09/23/security/private-processing-meta-ai-glasses/",
-      "date": "2026-09-24",
-      "summary": "We believe glasses are the best form factor for having AI help throughout your day. They can understand your personal context better than other kinds of devices and keep you present without picking up a mobile phone. Mos…",
-      "tldr": "We believe glasses are the best form factor for having AI help throughout your day. They c…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-24T08:29:34.827Z"
-    },
-    {
-      "id": "enlh4o",
-      "title": "Introducing Gemini 3.8 Live with Live Avatar",
-      "source": "Google Gemini",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/",
-      "date": "2026-09-24",
-      "summary": "Introducing Gemini 3.8 Live with Live Avatar, which brings near real-time visual presence to Gemini’s conversational AI.",
-      "tldr": "Introducing Gemini 3.8 Live with Live Avatar, which brings near real-time visual presence…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-25T13:15:47.840Z"
     },
     {
       "id": "1rhqxag",
@@ -5378,21 +5389,6 @@
         "前沿"
       ],
       "addedAt": "2026-09-24T08:29:36.019Z"
-    },
-    {
-      "id": "skramt",
-      "title": "AlphaGenome Atlas: A predictive map of every possible DNA letter change in the human genome",
-      "source": "Google DeepMind",
-      "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
-      "date": "2026-09-08",
-      "summary": "AlphaGenome Atlas maps the molecular effects of 9 billion single-letter DNA variants across the human genome.",
-      "cover": "https://lh3.googleusercontent.com/vOjFcTcdX2GCEB9yk-tJ7GAfyhTAMo-zW7scq3TrT9qk1mYw5qE0BdUqI8XQclMuUchZr7pYUFdVt3ZzrXc1NGFFJOqi7kIUX_QuAXZR7lkVzxjk=w528-h297-n-nu-rw-lo",
-      "tldr": "AlphaGenome Atlas maps the molecular effects of 9 billion single-letter DNA variants acros…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-09T12:43:11.998Z"
     },
     {
       "id": "19oc27n",
