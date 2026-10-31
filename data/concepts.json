@@ -1,9 +1,65 @@
 {
-  "updatedAt": "2026-10-30T14:49:50.197Z",
-  "version": 59,
+  "updatedAt": "2026-10-31T14:18:00.873Z",
+  "version": 60,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "evxja4",
+      "title": "Making it easier for websites to express AI training preferences",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+      "date": "2026-10-30",
+      "summary": "",
+      "tldr": "Making it easier for websites to express AI training preferences",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-31T14:16:27.132Z"
+    },
+    {
+      "id": "17tzon9",
+      "title": "Community safety report and new protections for teens",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
+      "date": "2026-10-30",
+      "summary": "",
+      "tldr": "Community safety report and new protections for teens",
+      "maturity": "emerging",
+      "tags": [
+        "安全"
+      ],
+      "addedAt": "2026-10-31T14:16:27.357Z"
+    },
+    {
+      "id": "9gb411",
+      "title": "Fair use benefits everyone",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/fair-use-benefits-everyone",
+      "date": "2026-10-30",
+      "summary": "",
+      "tldr": "Fair use benefits everyone",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-31T14:16:27.582Z"
+    },
+    {
+      "id": "jqyuid",
+      "title": "nemotron-halloween",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/nvidia/nemotron-halloween",
+      "date": "2026-10-30",
+      "summary": "TL;DR: MonsterHouse is an interactive projection I created for Halloween. He listens to trick-or-treaters, answers in the voice of a grumpy old pirate ship and softens when visitors remember their man…",
+      "tldr": "TL;DR: MonsterHouse is an interactive projection I created for Halloween. He listens to tr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-31T14:16:45.380Z"
+    },
     {
       "id": "izvdex",
       "title": "An updated Model Spec for more capable and beneficial AI",
@@ -45,6 +101,20 @@
         "前沿"
       ],
       "addedAt": "2026-10-30T14:48:06.956Z"
+    },
+    {
+      "id": "1hehzub",
+      "title": "Credit Saison achieves 954% ROI in a ChatGPT Enterprise pilot",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/credit-saison",
+      "date": "2026-10-29",
+      "summary": "",
+      "tldr": "Credit Saison achieves 954% ROI in a ChatGPT Enterprise pilot",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-31T14:16:28.458Z"
     },
     {
       "id": "xe4fmo",
@@ -1048,6 +1118,48 @@
       "addedAt": "2026-10-26T14:49:52.264Z"
     },
     {
+      "id": "t5xk66",
+      "title": "Our newest AI Quest: Mapping the human brain",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/",
+      "date": "2026-10-26",
+      "summary": "Learn AI literacy via Google’s latest AI Quests lesson on neuroscience, “Polar Peaks.”",
+      "tldr": "Learn AI literacy via Google’s latest AI Quests lesson on neuroscience, “Polar Peaks.”",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-27T13:56:26.049Z"
+    },
+    {
+      "id": "565su0",
+      "title": "Meta Networking at the 2026 OCP Global Summit: Open Innovation for Scale-Up, Scale-Out, and Scale-Across AI Networks",
+      "source": "Meta",
+      "url": "https://engineering.fb.com/2026/10/26/open-source/ocp-summit-2026-meta-networking-talks/",
+      "date": "2026-10-26",
+      "summary": "At the 2026 Open Compute Project (OCP) Global Summit, Meta shared the networking innovations that are directly supporting our latest AI models, including Muse Wonder and Muse Spark, and our gigawatt-scale Prometheus clus…",
+      "tldr": "At the 2026 Open Compute Project (OCP) Global Summit, Meta shared the networking innovatio…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-27T13:56:29.682Z"
+    },
+    {
+      "id": "1qbdir1",
+      "title": "15 college students share their favorite Gemini features",
+      "source": "Google Gemini",
+      "url": "https://blog.google/products-and-platforms/products/gemini/college-student-favorite-features/",
+      "date": "2026-10-26",
+      "summary": "We asked 15 college students about their favorite Gemini features for learning, studying, taking notes, and more.",
+      "tldr": "We asked 15 college students about their favorite Gemini features for learning, studying,…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-27T13:57:22.467Z"
+    },
+    {
       "id": "cy3l0p",
       "title": "Greptile takes bug detection beyond code review with GPT-6 Astra",
       "source": "OpenAI",
@@ -1102,48 +1214,6 @@
         "前沿"
       ],
       "addedAt": "2026-10-27T13:56:07.184Z"
-    },
-    {
-      "id": "t5xk66",
-      "title": "Our newest AI Quest: Mapping the human brain",
-      "source": "Google AI Blog",
-      "url": "https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/",
-      "date": "2026-10-26",
-      "summary": "Learn AI literacy via Google’s latest AI Quests lesson on neuroscience, “Polar Peaks.”",
-      "tldr": "Learn AI literacy via Google’s latest AI Quests lesson on neuroscience, “Polar Peaks.”",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-27T13:56:26.049Z"
-    },
-    {
-      "id": "565su0",
-      "title": "Meta Networking at the 2026 OCP Global Summit: Open Innovation for Scale-Up, Scale-Out, and Scale-Across AI Networks",
-      "source": "Meta",
-      "url": "https://engineering.fb.com/2026/10/26/open-source/ocp-summit-2026-meta-networking-talks/",
-      "date": "2026-10-26",
-      "summary": "At the 2026 Open Compute Project (OCP) Global Summit, Meta shared the networking innovations that are directly supporting our latest AI models, including Muse Wonder and Muse Spark, and our gigawatt-scale Prometheus clus…",
-      "tldr": "At the 2026 Open Compute Project (OCP) Global Summit, Meta shared the networking innovatio…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-27T13:56:29.682Z"
-    },
-    {
-      "id": "1qbdir1",
-      "title": "15 college students share their favorite Gemini features",
-      "source": "Google Gemini",
-      "url": "https://blog.google/products-and-platforms/products/gemini/college-student-favorite-features/",
-      "date": "2026-10-26",
-      "summary": "We asked 15 college students about their favorite Gemini features for learning, studying, taking notes, and more.",
-      "tldr": "We asked 15 college students about their favorite Gemini features for learning, studying,…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-27T13:57:22.467Z"
     },
     {
       "id": "hi1q45",
@@ -4852,76 +4922,6 @@
       "maturity": "proposed",
       "tags": [
         "前沿"
-      ],
-      "addedAt": "2026-10-15T13:03:53.555Z"
-    },
-    {
-      "id": "o92tzo",
-      "title": "Player-1: Learning to Play from Synthetic Experience",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.20584v1",
-      "date": "2026-10-14",
-      "summary": "Computer-use agents have demonstrated strong capabilities in interpreting screens and executing keyboard and mouse actions. However, games, with their visually rich worlds and diverse mechanics, remain challenging and of…",
-      "tldr": "Computer-use agents have demonstrated strong capabilities in interpreting screens and exec…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-10-15T13:03:53.555Z"
-    },
-    {
-      "id": "o92sia",
-      "title": "Latent Compaction with Test-Time Training",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.20582v1",
-      "date": "2026-10-14",
-      "summary": "Long contexts enlarge key--value (KV) caches, increasing memory use and attention costs during generation. Compressing these caches must preserve information for unseen questions. We introduce **Latent Compaction**, whic…",
-      "tldr": "Long contexts enlarge key--value (KV) caches, increasing memory use and attention costs du…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-15T13:03:53.555Z"
-    },
-    {
-      "id": "o928hj",
-      "title": "One Task, Many Interfaces: Simple Cross-Interface Consistency Training Improves LLM Agent Robustness",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.20576v1",
-      "date": "2026-10-14",
-      "summary": "Post-training binds the competence of an LLM agent to the interface it was trained on. Semantics-preserving perturbations of that interface, such as renaming an action or changing the notation, leave the underlying task …",
-      "tldr": "Post-training binds the competence of an LLM agent to the interface it was trained on. Sem…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-10-15T13:03:53.555Z"
-    },
-    {
-      "id": "o9269g",
-      "title": "Beyond LLM Judge: Mechanical Verification for Agentic Autoformalization",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.20573v1",
-      "date": "2026-10-14",
-      "summary": "We introduce a novel method for verifying Lean formalizations that goes beyond LLM-judged faithfulness. Unlike most verification methods, which rely on LLMs or trained models, our method combines LLM-based semantic revie…",
-      "tldr": "We introduce a novel method for verifying Lean formalizations that goes beyond LLM-judged…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-10-15T13:03:53.555Z"
-    },
-    {
-      "id": "o925ir",
-      "title": "Recovering Reliable Supervision via Critique-Guided On-Policy Distillation",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.20572v1",
-      "date": "2026-10-14",
-      "summary": "On-policy distillation (OPD) trains a student model on its own rollouts with token-level supervision from a teacher, assuming that the teacher can reach a correct answer from any prefix the student writes. We call this p…",
-      "tldr": "On-policy distillation (OPD) trains a student model on its own rollouts with token-level s…",
-      "maturity": "proposed",
-      "tags": [
-        "多模态"
       ],
       "addedAt": "2026-10-15T13:03:53.555Z"
     },
