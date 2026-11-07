@@ -1,9 +1,37 @@
 {
-  "updatedAt": "2026-11-06T15:40:04.612Z",
-  "version": 65,
+  "updatedAt": "2026-11-07T14:40:37.954Z",
+  "version": 66,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "1smyppm",
+      "title": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/partnering-with-hacktron",
+      "date": "2026-11-06",
+      "summary": "",
+      "tldr": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-07T14:39:16.033Z"
+    },
+    {
+      "id": "1ornq1l",
+      "title": "Measuring how AI agents handle everyday wet-lab science",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+      "date": "2026-11-06",
+      "summary": "",
+      "tldr": "Measuring how AI agents handle everyday wet-lab science",
+      "maturity": "emerging",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-11-07T14:39:16.234Z"
+    },
     {
       "id": "1h0vpme",
       "title": "Open call for guest investigators in the life sciences",
@@ -25,8 +53,8 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/allenai/toyblocks",
       "date": "2026-11-06",
-      "summary": "Robots are learning to fold laundry, sort parts, and handle unfamiliar objects. But those demonstrations are often rather narrow and don't explain what a robot has learned or why it fails.",
-      "tldr": "Robots are learning to fold laundry, sort parts, and handle unfamiliar objects. But those…",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -39,8 +67,8 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/open-asr-leaderboard-liva",
       "date": "2026-11-06",
-      "summary": "We’re excited to announce a new collaboration with Liva AI to add even more private data with two new accents: Egyptian 🇪🇬 and Nigerian 🇳🇬.",
-      "tldr": "We’re excited to announce a new collaboration with Liva AI to add even more private data w…",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -194,8 +222,8 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/phonon-tts",
       "date": "2026-11-05",
-      "summary": "Two weeks ago, we opened up Phonon, our small text-to-speech model that runs on your own device. It needs no server and no network, and what you type stays with you.",
-      "tldr": "Two weeks ago, we opened up Phonon, our small text-to-speech model that runs on your own d…",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
       "maturity": "emerging",
       "tags": [
         "评测"
@@ -208,8 +236,8 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation",
       "date": "2026-11-05",
-      "summary": "All four models are post-trained examples of Cosmos 3 Nano and have 16B trainable parameters. The models use OpenMDW1.1, permitting commercial and non-commercial use under its terms.",
-      "tldr": "All four models are post-trained examples of Cosmos 3 Nano and have 16B trainable paramete…",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -588,8 +616,8 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/Dharma-AI/dharma-field-extractor",
       "date": "2026-11-04",
-      "summary": "In April, we released DharmaOCR-LITE, a model specialized for OCR across a wide range of documents, from contracts and court filings to invoices, IDs and forms. The paper behind it made a narrow, well…",
-      "tldr": "In April, we released DharmaOCR-LITE, a model specialized for OCR across a wide range of d…",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -893,34 +921,6 @@
       "addedAt": "2026-11-03T15:47:59.711Z"
     },
     {
-      "id": "15ze2q9",
-      "title": "Accelerating engineering for the physical world",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world",
-      "date": "2026-11-03",
-      "summary": "",
-      "tldr": "Accelerating engineering for the physical world",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:56:41.339Z"
-    },
-    {
-      "id": "11fts0d",
-      "title": "How Cisco defends at machine speed with OpenAI",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/cisco-cyber",
-      "date": "2026-11-03",
-      "summary": "",
-      "tldr": "How Cisco defends at machine speed with OpenAI",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:56:41.589Z"
-    },
-    {
       "id": "tlc0r7",
       "title": "Agentic cheminformatics with Google Antigravity",
       "source": "Google DeepMind",
@@ -942,8 +942,8 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/transformers-mic",
       "date": "2026-11-03",
-      "summary": "When we later replayed those commits, a small UMT5 model running on CPU flagged it on every one of them. This post is about that model and the tests built around it.",
-      "tldr": "When we later replayed those commits, a small UMT5 model running on CPU flagged it on ever…",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -970,8 +970,8 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/ibm-research/palette-deck-building",
       "date": "2026-11-03",
-      "summary": "Both of those point to a model you own: open weights, running on your own infrastructure, trained on your own design language. The catch is that small open models, the kind you'd actually self-host, a…",
-      "tldr": "Both of those point to a model you own: open weights, running on your own infrastructure,…",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -984,8 +984,8 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/cwe-bench",
       "date": "2026-11-03",
-      "summary": "Our goal is to be exhaustive. A defender has to anticipate the ways an attacker could get in, and get it right every single time. These 100 tasks cover 91 different CWEs, spanning a wide range of vuln…",
-      "tldr": "Our goal is to be exhaustive. A defender has to anticipate the ways an attacker could get…",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -1005,6 +1005,34 @@
         "前沿"
       ],
       "addedAt": "2026-11-04T15:57:07.740Z"
+    },
+    {
+      "id": "15ze2q9",
+      "title": "Accelerating engineering for the physical world",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world",
+      "date": "2026-11-03",
+      "summary": "",
+      "tldr": "Accelerating engineering for the physical world",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-04T15:56:41.339Z"
+    },
+    {
+      "id": "11fts0d",
+      "title": "How Cisco defends at machine speed with OpenAI",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/cisco-cyber",
+      "date": "2026-11-03",
+      "summary": "",
+      "tldr": "How Cisco defends at machine speed with OpenAI",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-04T15:56:41.589Z"
     },
     {
       "id": "a0nk8t",
@@ -2091,8 +2119,8 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1",
       "date": "2026-10-29",
-      "summary": "Just over a week ago, we released Granite Switch 4.1, showing that our modular Switch architecture lets you configure a language model with specialized, cache-efficient adapters — adding new expertise…",
-      "tldr": "Just over a week ago, we released Granite Switch 4.1, showing that our modular Switch arch…",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -2105,8 +2133,8 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/announcing-project-protostar",
       "date": "2026-10-29",
-      "summary": "Today, we're announcing Project ProtoStar, an initiative to unlock the potential of publicly funded scientific research by making datasets, models, and code more accessible and reusable, particularly …",
-      "tldr": "Today, we're announcing Project ProtoStar, an initiative to unlock the potential of public…",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -2119,8 +2147,8 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/mistral-large4",
       "date": "2026-10-29",
-      "summary": "The model is released in two official variants:",
-      "tldr": "The model is released in two official variants:",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -2133,8 +2161,8 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/anydecisionmodel",
       "date": "2026-10-29",
-      "summary": "Say a customer calls your support line. First, you want to know what they said (speech recognition). Then, you want to decide where to send them (decision). You could hand both to a language model, bu…",
-      "tldr": "Say a customer calls your support line. First, you want to know what they said (speech rec…",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -2752,8 +2780,8 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/LiquidAI/lfm3",
       "date": "2026-10-27",
-      "summary": "LFM3 brings four main changes compared to our previous LFM2 family:",
-      "tldr": "LFM3 brings four main changes compared to our previous LFM2 family:",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -3558,8 +3586,8 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/torch-neuronx-model-support",
       "date": "2026-10-23",
-      "summary": "The torch-neuronx model support Space answers that question for the most popular models on the Hub. It tells you whether a model runs unmodified on Trainium, and gives you the script to run it yoursel…",
-      "tldr": "The torch-neuronx model support Space answers that question for the most popular models on…",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -3956,8 +3984,8 @@
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/microsoft/thinkingbox-training",
       "date": "2026-10-22",
-      "summary": "We built ThinkingBox to evaluate an agent's work by comparing the final database state with the expected outcome. We then used the same kind of executable signal as a reward on training tasks outside …",
-      "tldr": "We built ThinkingBox to evaluate an agent's work by comparing the final database state wit…",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
       "maturity": "emerging",
       "tags": [
         "Agent"
@@ -4710,35 +4738,6 @@
       "date": "2026-10-21",
       "summary": "Reinforcement Learning with Human Feedback (RLHF) has become a central paradigm for aligning Large Language Models with human values. However, the reliance on sensitive preference data necessitates rigorous differential …",
       "tldr": "Reinforcement Learning with Human Feedback (RLHF) has become a central paradigm for aligni…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-22T13:25:47.524Z"
-    },
-    {
-      "id": "12uqugi",
-      "title": "AtomicRL: Atomic Reinforcement Learning for Long-Horizon Robotic Manipulation",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.30097v1",
-      "date": "2026-10-21",
-      "summary": "Vision-language-action (VLA) models have shown promise in robotic manipulation, but imitation learning (IL) alone often struggles to master complex long-horizon skills. Reinforcement learning (RL) offers an effective ave…",
-      "tldr": "Vision-language-action (VLA) models have shown promise in robotic manipulation, but imitat…",
-      "maturity": "proposed",
-      "tags": [
-        "Skill",
-        "多模态"
-      ],
-      "addedAt": "2026-10-22T13:25:47.524Z"
-    },
-    {
-      "id": "12uqp9n",
-      "title": "VX-One: Typed, Calibrated Decision Heads for Real-Time Perimeter Triage - An empirical study of unknown-attack honesty, cascade gray zones, and calibration under drift",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.30090v1",
-      "date": "2026-10-21",
-      "summary": "Perimeter triage faces a latency/semantics trade-off: signature engines are fast and format-safe but blind to unseen attacks, while generative models are semantic but slow and produce unparseable output. In late 2026 a c…",
-      "tldr": "Perimeter triage faces a latency/semantics trade-off: signature engines are fast and forma…",
       "maturity": "proposed",
       "tags": [
         "前沿"
