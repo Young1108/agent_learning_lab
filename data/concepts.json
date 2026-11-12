@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-11T15:51:58.328Z",
-  "version": 69,
+  "updatedAt": "2026-11-12T16:34:55.083Z",
+  "version": 70,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
@@ -19,6 +19,63 @@
       "addedAt": "2026-11-11T15:50:09.157Z"
     },
     {
+      "id": "189wmbg",
+      "title": "Holiday Extras is rethinking what it can build with Codex",
+      "source": "OpenAI",
+      "url": "https://openai.com/business/customer-stories/holidays-extras-codex",
+      "date": "2026-11-12",
+      "summary": "",
+      "tldr": "Holiday Extras is rethinking what it can build with Codex",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-12T16:33:06.005Z"
+    },
+    {
+      "id": "jtbytj",
+      "title": "Supporting research on AI and children’s safety",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/children-first-declaration",
+      "date": "2026-11-12",
+      "summary": "",
+      "tldr": "Supporting research on AI and children’s safety",
+      "maturity": "emerging",
+      "tags": [
+        "安全"
+      ],
+      "addedAt": "2026-11-12T16:33:06.266Z"
+    },
+    {
+      "id": "14di85k",
+      "title": "Anthropic files S-1 with the SEC for proposed initial public offering",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/s1-sec",
+      "date": "2026-11-12",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+      "tldr": "Anthropic is an AI safety and research company that's working to build reliable, interpret…",
+      "maturity": "emerging",
+      "tags": [
+        "安全"
+      ],
+      "addedAt": "2026-10-26T14:49:55.523Z"
+    },
+    {
+      "id": "qztobn",
+      "title": "The Definitive Fine-Tuning Guide for 3D Generation Models",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/3d-lora-finetuning",
+      "date": "2026-11-12",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-12T16:33:29.758Z"
+    },
+    {
       "id": "1klv8qh",
       "title": "ChatGPT Plus for veterans and servicemembers",
       "source": "OpenAI",
@@ -31,6 +88,20 @@
         "前沿"
       ],
       "addedAt": "2026-11-11T15:50:09.390Z"
+    },
+    {
+      "id": "imscg2",
+      "title": "JioStar’s chief architect on AI discovery at 500M-user scale",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/jiostar-vijay-seshadri",
+      "date": "2026-11-11",
+      "summary": "",
+      "tldr": "JioStar’s chief architect on AI discovery at 500M-user scale",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-12T16:33:06.991Z"
     },
     {
       "id": "ww1rk5",
@@ -62,6 +133,34 @@
       "addedAt": "2026-11-11T15:50:29.576Z"
     },
     {
+      "id": "11wuorw",
+      "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+      "date": "2026-11-11",
+      "summary": "Meet the Gemini Decisions API, powered by our state-of-the-art model Gemini Decision for fast, calibrated multimodal decisions.",
+      "tldr": "Meet the Gemini Decisions API, powered by our state-of-the-art model Gemini Decision for f…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-12T16:33:29.388Z"
+    },
+    {
+      "id": "1ghzg46",
+      "title": "Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/",
+      "date": "2026-11-11",
+      "summary": "Tabletop is a new Google Labs experiment for group collaboration. Build interactive itineraries, polls, and brackets with your team. Join the waitlist.",
+      "tldr": "Tabletop is a new Google Labs experiment for group collaboration. Build interactive itiner…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-12T16:33:29.388Z"
+    },
+    {
       "id": "1mre44i",
       "title": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model",
       "source": "Hugging Face",
@@ -88,6 +187,34 @@
         "前沿"
       ],
       "addedAt": "2026-11-11T15:50:30.096Z"
+    },
+    {
+      "id": "1fiongw",
+      "title": "Intelligent Delivery: Making Every Unit of Compute Serve Better Ads",
+      "source": "Meta",
+      "url": "https://engineering.fb.com/2026/11/11/ml-applications/intelligent-delivery-serve-better-ads/",
+      "date": "2026-11-11",
+      "summary": "Ads ranking models are growing toward LLM scale faster than the hardware to run them can keep up. An extra unit of compute has more impact on some ad requests, models, and chips than on others. The challenge is deciding …",
+      "tldr": "Ads ranking models are growing toward LLM scale faster than the hardware to run them can k…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-12T16:33:33.153Z"
+    },
+    {
+      "id": "1lv58q5",
+      "title": "Talk it through with Gemini, now on Apple CarPlay",
+      "source": "Google Gemini",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-on-apple-carplay/",
+      "date": "2026-11-11",
+      "summary": "Gemini is now available on Apple CarPlay.",
+      "tldr": "Gemini is now available on Apple CarPlay.",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-12T16:34:55.077Z"
     },
     {
       "id": "r84f89",
@@ -1028,34 +1155,6 @@
       "addedAt": "2026-11-10T16:04:56.938Z"
     },
     {
-      "id": "1smyppm",
-      "title": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/partnering-with-hacktron",
-      "date": "2026-11-06",
-      "summary": "",
-      "tldr": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-07T14:39:16.033Z"
-    },
-    {
-      "id": "1ornq1l",
-      "title": "Measuring how AI agents handle everyday wet-lab science",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
-      "date": "2026-11-06",
-      "summary": "",
-      "tldr": "Measuring how AI agents handle everyday wet-lab science",
-      "maturity": "emerging",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-11-07T14:39:16.234Z"
-    },
-    {
       "id": "1h0vpme",
       "title": "Open call for guest investigators in the life sciences",
       "source": "Anthropic",
@@ -1097,6 +1196,34 @@
         "前沿"
       ],
       "addedAt": "2026-11-06T15:39:01.170Z"
+    },
+    {
+      "id": "1smyppm",
+      "title": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/partnering-with-hacktron",
+      "date": "2026-11-06",
+      "summary": "",
+      "tldr": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-07T14:39:16.033Z"
+    },
+    {
+      "id": "1ornq1l",
+      "title": "Measuring how AI agents handle everyday wet-lab science",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+      "date": "2026-11-06",
+      "summary": "",
+      "tldr": "Measuring how AI agents handle everyday wet-lab science",
+      "maturity": "emerging",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-11-07T14:39:16.234Z"
     },
     {
       "id": "14ccvka",
@@ -1382,20 +1509,6 @@
       "addedAt": "2026-11-09T18:17:17.931Z"
     },
     {
-      "id": "9fokgz",
-      "title": "Setting a new standard for responsible AI infrastructure",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/setting-new-standard-responsible-ai-infrastructure",
-      "date": "2026-11-05",
-      "summary": "",
-      "tldr": "Setting a new standard for responsible AI infrastructure",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-05T16:05:12.303Z"
-    },
-    {
       "id": "1k26mcw",
       "title": "The Long-Term Benefit Trust",
       "source": "Anthropic",
@@ -1479,6 +1592,20 @@
         "前沿"
       ],
       "addedAt": "2026-11-06T15:40:04.603Z"
+    },
+    {
+      "id": "9fokgz",
+      "title": "Setting a new standard for responsible AI infrastructure",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/setting-new-standard-responsible-ai-infrastructure",
+      "date": "2026-11-05",
+      "summary": "",
+      "tldr": "Setting a new standard for responsible AI infrastructure",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-05T16:05:12.303Z"
     },
     {
       "id": "156y81p",
@@ -2271,20 +2398,6 @@
       "addedAt": "2026-11-04T15:57:04.083Z"
     },
     {
-      "id": "idi1bz",
-      "title": "CWE-bench v2: More coverage, quality, and transparency",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/cwe-bench",
-      "date": "2026-11-03",
-      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
-      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:57:04.340Z"
-    },
-    {
       "id": "mew7as",
       "title": "F3 Lightning: How Meta Accelerates Ads ML Features to Production at Scale",
       "source": "Meta",
@@ -2297,6 +2410,20 @@
         "前沿"
       ],
       "addedAt": "2026-11-04T15:57:07.740Z"
+    },
+    {
+      "id": "idi1bz",
+      "title": "CWE-bench v2: More coverage, quality, and transparency",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/cwe-bench",
+      "date": "2026-11-03",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-04T15:57:04.340Z"
     },
     {
       "id": "rwzlom",
@@ -4009,21 +4136,6 @@
       "addedAt": "2026-10-29T14:55:47.330Z"
     },
     {
-      "id": "14di85k",
-      "title": "Anthropic files S-1 with the SEC for proposed initial public offering",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/s1-sec",
-      "date": "2026-10-27",
-      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
-      "tldr": "Anthropic is an AI safety and research company that's working to build reliable, interpret…",
-      "maturity": "emerging",
-      "tags": [
-        "安全"
-      ],
-      "addedAt": "2026-10-26T14:49:55.523Z"
-    },
-    {
       "id": "1uv02xt",
       "title": "Genie 4: A new generation of world simulation",
       "source": "Google DeepMind",
@@ -4788,63 +4900,6 @@
       "addedAt": "2026-10-27T13:56:29.616Z"
     },
     {
-      "id": "15brlmf",
-      "title": "Free to Look, Free to Reason: Simple LLM Harnesses Outdiagnose Hand-Crafted Root Cause Analysis Agents",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.35767v1",
-      "date": "2026-10-26",
-      "summary": "Root cause analysis (RCA) of microservice failures has attracted many LLM agents whose investigation is hand-crafted, through standard operating procedures, fixed stages and role agents. Each is evaluated on its own data…",
-      "tldr": "Root cause analysis (RCA) of microservice failures has attracted many LLM agents whose inv…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Harness"
-      ],
-      "addedAt": "2026-10-27T13:56:29.616Z"
-    },
-    {
-      "id": "15brk51",
-      "title": "Do Similarity Measures Measure Similarity? How User Activity Creates Phantom Correlation in Recommender Systems",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.35765v1",
-      "date": "2026-10-26",
-      "summary": "Item-item similarity is one of the oldest and most foundational signals in recommender systems: two items are assumed to be similar when the same users consume them. Despite the sparsity and scale of interaction data, th…",
-      "tldr": "Item-item similarity is one of the oldest and most foundational signals in recommender sys…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-27T13:56:29.616Z"
-    },
-    {
-      "id": "15brh69",
-      "title": "Beyond Physical Illness: Can Clinical Narratives Reveal Emerging Mental Health Risks in Chronically Ill Patients?",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.35761v1",
-      "date": "2026-10-26",
-      "summary": "Mental-health risks such as depression, dementia, and suicidal ideation can emerge during hospitalization among chronically ill patients and may worsen without timely recognition and intervention. However, most existing …",
-      "tldr": "Mental-health risks such as depression, dementia, and suicidal ideation can emerge during…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-27T13:56:29.616Z"
-    },
-    {
-      "id": "15bqymw",
-      "title": "EEGaze: Multimodal Attention Prediction in Visual Search via EEG-Based Saliency Refinement",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.35757v1",
-      "date": "2026-10-26",
-      "summary": "Visual search is ubiquitous in daily life, from locating keys in a messy apartment to finding a tool in a cluttered workshop or an application icon on a desktop screen. While visual attention is to a large extent driven …",
-      "tldr": "Visual search is ubiquitous in daily life, from locating keys in a messy apartment to find…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-27T13:56:29.616Z"
-    },
-    {
       "id": "1kdjmgi",
       "title": "See what 5 builders are making with Gemini 4 Argon",
       "source": "Google Gemini",
@@ -5153,34 +5208,6 @@
       "addedAt": "2026-10-16T13:00:36.552Z"
     },
     {
-      "id": "prv0pm",
-      "title": "Sapienz Receives ISSTA 2026 Impact Paper Award",
-      "source": "Meta",
-      "url": "https://engineering.fb.com/2026/10/15/developer-tools/sapienz-issta-2026-impact-paper-award-meta/",
-      "date": "2026-10-15",
-      "summary": "Ke Mao, Mark Harman, and Yue Jia have been recognized with the ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA) 2026 Most Influential Paper Award for their 2016 research, “Sapienz: multi-objec…",
-      "tldr": "Ke Mao, Mark Harman, and Yue Jia have been recognized with the ACM SIGSOFT International S…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-16T13:00:36.552Z"
-    },
-    {
-      "id": "1vjny8y",
-      "title": "An intelligent new shopping cart",
-      "source": "Google Gemini",
-      "url": "https://blog.google/products-and-platforms/products/shopping/universal-cart-launch/",
-      "date": "2026-10-15",
-      "summary": "Universal Cart helps make holiday shopping easier. It’s now available in the U.S. across Search and the Gemini app.",
-      "tldr": "Universal Cart helps make holiday shopping easier. It’s now available in the U.S. across S…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-15T13:04:50.333Z"
-    },
-    {
       "id": "1lrmpq",
       "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
       "source": "Google DeepMind",
@@ -5306,34 +5333,6 @@
         "前沿"
       ],
       "addedAt": "2026-09-24T08:29:12.444Z"
-    },
-    {
-      "id": "1om6izs",
-      "title": "New experts join Google’s AI & Economy team",
-      "source": "Google AI Blog",
-      "url": "https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/",
-      "date": "2026-09-18",
-      "summary": "We are expanding our AI & Economy team with world-class academic advisors, fellows, and core internal researchers.",
-      "tldr": "We are expanding our AI & Economy team with world-class academic advisors, fellows, and co…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-19T12:16:10.633Z"
-    },
-    {
-      "id": "nzr1at",
-      "title": "Co-creating the future of fashion with Google",
-      "source": "Google AI Blog",
-      "url": "https://blog.google/innovation-and-ai/technology/ai/google-flow-fashion-week/",
-      "date": "2026-09-18",
-      "summary": "Google worked side-by-side with designers Jane Wade and Sergio Hudson to custom-design Google Flow tools to prep for NYFW.",
-      "tldr": "Google worked side-by-side with designers Jane Wade and Sergio Hudson to custom-design Goo…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-09-19T12:16:10.633Z"
     },
     {
       "id": "xdcffj",
