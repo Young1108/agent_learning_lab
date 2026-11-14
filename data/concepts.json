@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-13T15:55:52.106Z",
-  "version": 71,
+  "updatedAt": "2026-11-14T14:46:21.793Z",
+  "version": 72,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
@@ -19,6 +19,20 @@
       "addedAt": "2026-11-13T15:54:04.077Z"
     },
     {
+      "id": "77ndc0",
+      "title": "Shield helps technicians hand off legacy portal work with OpenAI",
+      "source": "OpenAI",
+      "url": "https://openai.com/business/customer-stories/shield",
+      "date": "2026-11-13",
+      "summary": "",
+      "tldr": "Shield helps technicians hand off legacy portal work with OpenAI",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:44:29.686Z"
+    },
+    {
       "id": "hfd16m",
       "title": "Introducing Claude for Teachers",
       "source": "Anthropic",
@@ -32,6 +46,216 @@
         "Skill"
       ],
       "addedAt": "2026-11-13T15:54:07.295Z"
+    },
+    {
+      "id": "8tmldn",
+      "title": "Anthropic update on independent evaluators",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+      "date": "2026-11-13",
+      "summary": "Anthropic announces updates to embedding independent evaluators",
+      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/d2e351e6311a0ada8ea4a0304ce6cda39243eaf4-1200x630.jpg",
+      "tldr": "Anthropic announces updates to embedding independent evaluators",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-16T13:00:07.163Z"
+    },
+    {
+      "id": "1idn7s0",
+      "title": "Anthropic is endorsing SB 53",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/anthropic-is-endorsing-sb-53",
+      "date": "2026-11-13",
+      "summary": "Anthropic is endorsing SB 53, the California bill that governs powerful AI systems built by frontier AI developers like Anthropic.",
+      "cover": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
+      "tldr": "Anthropic is endorsing SB 53, the California bill that governs powerful AI systems built b…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:44:33.293Z"
+    },
+    {
+      "id": "1xxxzba",
+      "title": "Understanding and addressing AI harms",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/our-approach-to-understanding-and-addressing-ai-harms",
+      "date": "2026-11-13",
+      "summary": "Anthropic's framework for identifying, classifying, and mitigating potential harms from AI systems to support responsible development.",
+      "cover": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
+      "tldr": "Anthropic's framework for identifying, classifying, and mitigating potential harms from AI…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:44:33.652Z"
+    },
+    {
+      "id": "1ewhfb8",
+      "title": "Funding third-party model evaluations",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/a-new-initiative-for-developing-third-party-model-evaluations",
+      "date": "2026-11-13",
+      "summary": "A new initiative to fund evaluations developed by third-party organizations that can effectively measure advanced AI capabilities.",
+      "cover": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
+      "tldr": "A new initiative to fund evaluations developed by third-party organizations that can effec…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:44:34.431Z"
+    },
+    {
+      "id": "grgbij",
+      "title": "Protecting the wellbeing of our users",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/protecting-well-being-of-users",
+      "date": "2026-11-13",
+      "summary": "New safeguards include a crisis classifier that routes users to 170+ helplines worldwide and models that are far less sycophantic.",
+      "cover": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
+      "tldr": "New safeguards include a crisis classifier that routes users to 170+ helplines worldwide a…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:44:34.809Z"
+    },
+    {
+      "id": "1lt4i2",
+      "title": "Partnering with Accenture on embedded evaluation",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/accenture-embedded-evaluation",
+      "date": "2026-11-13",
+      "summary": "We’re partnering with Accenture on independent evaluation of frontier AI—part of our recent commitment to embed evaluators at Anthropic. Both we and Accenture expect to invest at least $1 billion to build capacity in thi…",
+      "cover": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
+      "tldr": "We’re partnering with Accenture on independent evaluation of frontier AI—part of our recen…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:44:35.168Z"
+    },
+    {
+      "id": "sd0i20",
+      "title": "Improving Fable 5's safeguards",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
+      "date": "2026-11-13",
+      "summary": "We’re making updates to Claude Fable 5’s biology safeguards in a way that substantially reduces fallbacks.",
+      "cover": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
+      "tldr": "We’re making updates to Claude Fable 5’s biology safeguards in a way that substantially re…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:44:35.529Z"
+    },
+    {
+      "id": "1aixs9g",
+      "title": "Challenges in red teaming AI systems",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/challenges-in-red-teaming-ai-systems",
+      "date": "2026-11-13",
+      "summary": "In this post we detail insights from a sample of red teaming approaches that we’ve used to test our AI systems. Through this practice, we’ve begun to gather empirical data about the appropriate tool to reach for in a giv…",
+      "cover": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
+      "tldr": "In this post we detail insights from a sample of red teaming approaches that we’ve used to…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:44:35.906Z"
+    },
+    {
+      "id": "1kplrgf",
+      "title": "Commitments on model deprecation and preservation",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/deprecation-commitments",
+      "date": "2026-11-13",
+      "summary": "Anthropic commits to preserving the weights of all publicly released Claude models and interviewing retiring models about their preferences.",
+      "cover": "https://assets.claude.com/f8121c10b1392d40d2c96e51a6d3b08cb42cf429.png",
+      "tldr": "Anthropic commits to preserving the weights of all publicly released Claude models and int…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:44:36.262Z"
+    },
+    {
+      "id": "47w1qh",
+      "title": "Anthropic's position on the diffusion rule",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/securing-america-s-compute-advantage-anthropic-s-position-on-the-diffusion-rule",
+      "date": "2026-11-13",
+      "summary": "Anthropic's recommendations for strengthening US export controls on advanced AI chips and model weights to secure America's compute advantage.",
+      "cover": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
+      "tldr": "Anthropic's recommendations for strengthening US export controls on advanced AI chips and…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:44:36.664Z"
+    },
+    {
+      "id": "onbbw",
+      "title": "A framework for AI development transparency",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/the-need-for-transparency-in-frontier-ai",
+      "date": "2026-11-13",
+      "summary": "A targeted approach to increasing transparency in frontier AI development, focusing on safety standards and accountability measures for advanced AI systems.",
+      "cover": "https://assets.claude.com/e0853b84180c5a9d360cff0bc1a8d26d00107e49.png",
+      "tldr": "A targeted approach to increasing transparency in frontier AI development, focusing on saf…",
+      "maturity": "emerging",
+      "tags": [
+        "安全"
+      ],
+      "addedAt": "2026-11-14T14:44:37.048Z"
+    },
+    {
+      "id": "1euccad",
+      "title": "Thoughts on America’s AI Action Plan",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/thoughts-on-america-s-ai-action-plan",
+      "date": "2026-11-13",
+      "summary": "Anthropic welcomes the White House plan's infrastructure and procurement provisions and urges stronger chip export controls and transparency standards.",
+      "cover": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
+      "tldr": "Anthropic welcomes the White House plan's infrastructure and procurement provisions and ur…",
+      "maturity": "emerging",
+      "tags": [
+        "多模态"
+      ],
+      "addedAt": "2026-11-14T14:44:37.457Z"
+    },
+    {
+      "id": "10473da",
+      "title": "U.S. elections readiness",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/us-elections-readiness",
+      "date": "2026-11-13",
+      "summary": "How Anthropic prepared for the 2024 US elections, from usage policy enforcement to redirecting voting queries to authoritative sources.",
+      "cover": "https://assets.claude.com/d349f9f92aaf574702f002fbb2b01159e6e4c659.png",
+      "tldr": "How Anthropic prepared for the 2024 US elections, from usage policy enforcement to redirec…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:44:37.820Z"
+    },
+    {
+      "id": "hu9bld",
+      "title": "Economic Futures Research Fund agenda",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/economic-futures-research-fund-agenda",
+      "date": "2026-11-13",
+      "summary": "We’re committing $200 million to the Anthropic Economic Futures Research Fund to support ambitious external research.",
+      "cover": "https://assets.claude.com/5e0ea9f3679f90b61b17e25e44c098d9697f80c2.jpg",
+      "tldr": "We’re committing $200 million to the Anthropic Economic Futures Research Fund to support a…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:44:38.199Z"
     },
     {
       "id": "17hu88x",
@@ -48,6 +272,48 @@
       "addedAt": "2026-11-13T15:54:19.652Z"
     },
     {
+      "id": "vrm9ao",
+      "title": "Build a Robot Pick-and-Place Simulation with SimReady Assets",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/nvidia/simready-assets-robot-pick-and-place",
+      "date": "2026-11-13",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:44:47.340Z"
+    },
+    {
+      "id": "1x9za1p",
+      "title": "XYBench: Helping with the problem behind the question",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/allenai/xybench",
+      "date": "2026-11-13",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:44:47.560Z"
+    },
+    {
+      "id": "6whsrd",
+      "title": "Cuttlefish on Mac: Running Android’s Virtual Device Framework Natively on Apple Silicon",
+      "source": "Meta",
+      "url": "https://engineering.fb.com/2026/11/13/android/cuttlefish-on-mac/",
+      "date": "2026-11-13",
+      "summary": "How Meta's Reality Labs brought Cuttlefish and its QEMU backend to macOS and Apple silicon. [...] Read More... The post Cuttlefish on Mac: Running Android’s Virtual Device Framework Natively on Apple Silicon appeared fir…",
+      "tldr": "How Meta's Reality Labs brought Cuttlefish and its QEMU backend to macOS and Apple silicon…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:44:51.174Z"
+    },
+    {
       "id": "19ocjzi",
       "title": "The full DeepSeek App experience, now via API",
       "source": "DeepSeek",
@@ -61,6 +327,35 @@
         "前沿"
       ],
       "addedAt": "2026-11-13T15:55:07.989Z"
+    },
+    {
+      "id": "espthl",
+      "title": "Connect Google Wallet to Gemini for personal finance insights",
+      "source": "Google Gemini",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/google-wallet-gemini-app/",
+      "date": "2026-11-13",
+      "summary": "All Gemini app users in the U.S. can connect Google Wallet to get responses informed by their spending habits.",
+      "tldr": "All Gemini app users in the U.S. can connect Google Wallet to get responses informed by th…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:46:21.787Z"
+    },
+    {
+      "id": "1k9gbh8",
+      "title": "Introducing Claude Sonnet 5",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/claude-sonnet-5",
+      "date": "2026-11-13",
+      "summary": "Our most agentic Sonnet yet, with top-tier intelligence for coding and everyday professional work.",
+      "cover": "https://assets.claude.com/0bbf8e479049df48b02c84d94c82dfa642a6ab13.jpg",
+      "tldr": "Our most agentic Sonnet yet, with top-tier intelligence for coding and everyday profession…",
+      "maturity": "emerging",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-11-14T14:44:38.576Z"
     },
     {
       "id": "lseuu9",
@@ -131,36 +426,6 @@
         "前沿"
       ],
       "addedAt": "2026-11-13T15:54:04.508Z"
-    },
-    {
-      "id": "14di85k",
-      "title": "Anthropic files S-1 with the SEC for proposed initial public offering",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/s1-sec",
-      "date": "2026-11-12",
-      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
-      "tldr": "Anthropic is an AI safety and research company that's working to build reliable, interpret…",
-      "maturity": "emerging",
-      "tags": [
-        "安全"
-      ],
-      "addedAt": "2026-10-26T14:49:55.523Z"
-    },
-    {
-      "id": "ky7xez",
-      "title": "Introducing Claude 4",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/claude-4",
-      "date": "2026-11-12",
-      "summary": "Discover Claude 4's breakthrough AI capabilities. Experience more reliable, interpretable assistance for complex tasks across work and learning.",
-      "cover": "https://assets.claude.com/93b4c6dfe4a91568ce8819eaa9f630efc7d4936b.jpg",
-      "tldr": "Discover Claude 4's breakthrough AI capabilities. Experience more reliable, interpretable…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-13T15:54:07.615Z"
     },
     {
       "id": "1hp9yhz",
@@ -545,6 +810,36 @@
       "addedAt": "2026-11-13T15:55:52.100Z"
     },
     {
+      "id": "14di85k",
+      "title": "Anthropic files S-1 with the SEC for proposed initial public offering",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/s1-sec",
+      "date": "2026-11-12",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+      "tldr": "Anthropic is an AI safety and research company that's working to build reliable, interpret…",
+      "maturity": "emerging",
+      "tags": [
+        "安全"
+      ],
+      "addedAt": "2026-10-26T14:49:55.523Z"
+    },
+    {
+      "id": "ky7xez",
+      "title": "Introducing Claude 4",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/claude-4",
+      "date": "2026-11-12",
+      "summary": "Discover Claude 4's breakthrough AI capabilities. Experience more reliable, interpretable assistance for complex tasks across work and learning.",
+      "cover": "https://assets.claude.com/93b4c6dfe4a91568ce8819eaa9f630efc7d4936b.jpg",
+      "tldr": "Discover Claude 4's breakthrough AI capabilities. Experience more reliable, interpretable…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-13T15:54:07.615Z"
+    },
+    {
       "id": "1klv8qh",
       "title": "ChatGPT Plus for veterans and servicemembers",
       "source": "OpenAI",
@@ -770,21 +1065,6 @@
       "addedAt": "2026-11-11T15:50:10.819Z"
     },
     {
-      "id": "1x762kd",
-      "title": "Anthropic launches roadshow for proposed initial public offering",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/roadshow-launch",
-      "date": "2026-11-10",
-      "summary": "Today Anthropic, PBC launched the roadshow for its proposed initial public offering of its Class A common stock.",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
-      "tldr": "Today Anthropic, PBC launched the roadshow for its proposed initial public offering of its…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-10T16:04:36.419Z"
-    },
-    {
       "id": "yzwus9",
       "title": "Gemini 4 Carbon is now available",
       "source": "Google DeepMind",
@@ -954,6 +1234,21 @@
         "前沿"
       ],
       "addedAt": "2026-11-10T16:06:24.223Z"
+    },
+    {
+      "id": "1x762kd",
+      "title": "Anthropic launches roadshow for proposed initial public offering",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/roadshow-launch",
+      "date": "2026-11-10",
+      "summary": "Today Anthropic, PBC launched the roadshow for its proposed initial public offering of its Class A common stock.",
+      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+      "tldr": "Today Anthropic, PBC launched the roadshow for its proposed initial public offering of its…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-10T16:04:36.419Z"
     },
     {
       "id": "1glqpbw",
@@ -1240,20 +1535,6 @@
       "addedAt": "2026-11-11T15:50:32.797Z"
     },
     {
-      "id": "1g10dhd",
-      "title": "ChatGPT Enterprise now available in AWS Marketplace",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
-      "date": "2026-11-09",
-      "summary": "",
-      "tldr": "ChatGPT Enterprise now available in AWS Marketplace",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-10T16:04:32.628Z"
-    },
-    {
       "id": "rwbjjw",
       "title": "Gemini Robotics 2.5 accelerates real-world general dexterity",
       "source": "Google DeepMind",
@@ -1310,6 +1591,20 @@
         "前沿"
       ],
       "addedAt": "2026-11-09T18:17:17.990Z"
+    },
+    {
+      "id": "1g10dhd",
+      "title": "ChatGPT Enterprise now available in AWS Marketplace",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+      "date": "2026-11-09",
+      "summary": "",
+      "tldr": "ChatGPT Enterprise now available in AWS Marketplace",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-10T16:04:32.628Z"
     },
     {
       "id": "1l26toj",
@@ -1639,21 +1934,6 @@
       "addedAt": "2026-11-10T16:04:56.938Z"
     },
     {
-      "id": "1h0vpme",
-      "title": "Open call for guest investigators in the life sciences",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/open-call-guest-investigators-life-sciences",
-      "date": "2026-11-06",
-      "summary": "Today, we’re inviting members of the life sciences community to apply to work with us on special projects.",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/633e51e2d75a5c14022fa48961b886553d41ce9d-1200x630.jpg",
-      "tldr": "Today, we’re inviting members of the life sciences community to apply to work with us on s…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-23T13:03:40.163Z"
-    },
-    {
       "id": "18vaqia",
       "title": "ToyBlocks: A controlled world for robot learning and evaluation",
       "source": "Hugging Face",
@@ -1680,6 +1960,21 @@
         "前沿"
       ],
       "addedAt": "2026-11-06T15:39:01.170Z"
+    },
+    {
+      "id": "1h0vpme",
+      "title": "Open call for guest investigators in the life sciences",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/open-call-guest-investigators-life-sciences",
+      "date": "2026-11-06",
+      "summary": "Today, we’re inviting members of the life sciences community to apply to work with us on special projects.",
+      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/633e51e2d75a5c14022fa48961b886553d41ce9d-1200x630.jpg",
+      "tldr": "Today, we’re inviting members of the life sciences community to apply to work with us on s…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-23T13:03:40.163Z"
     },
     {
       "id": "1smyppm",
@@ -1993,21 +2288,6 @@
       "addedAt": "2026-11-09T18:17:17.931Z"
     },
     {
-      "id": "1k26mcw",
-      "title": "The Long-Term Benefit Trust",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/the-long-term-benefit-trust",
-      "date": "2026-11-05",
-      "summary": "An independent body of five trustees with authority to elect and remove Anthropic board members, balancing stockholder and public interests.",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
-      "tldr": "An independent body of five trustees with authority to elect and remove Anthropic board me…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-06T15:38:46.457Z"
-    },
-    {
       "id": "gwj74t",
       "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
       "source": "Google DeepMind",
@@ -2076,6 +2356,21 @@
         "前沿"
       ],
       "addedAt": "2026-11-06T15:40:04.603Z"
+    },
+    {
+      "id": "1k26mcw",
+      "title": "The Long-Term Benefit Trust",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/the-long-term-benefit-trust",
+      "date": "2026-11-05",
+      "summary": "An independent body of five trustees with authority to elect and remove Anthropic board members, balancing stockholder and public interests.",
+      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+      "tldr": "An independent body of five trustees with authority to elect and remove Anthropic board me…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-06T15:38:46.457Z"
     },
     {
       "id": "9fokgz",
@@ -2840,20 +3135,6 @@
       "addedAt": "2026-11-04T15:56:56.843Z"
     },
     {
-      "id": "1pba2eh",
-      "title": "Transformers Model Integration Contracts",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/transformers-mic",
-      "date": "2026-11-03",
-      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
-      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-03T15:48:21.261Z"
-    },
-    {
       "id": "mew7as",
       "title": "F3 Lightning: How Meta Accelerates Ads ML Features to Production at Scale",
       "source": "Meta",
@@ -2866,6 +3147,20 @@
         "前沿"
       ],
       "addedAt": "2026-11-04T15:57:07.740Z"
+    },
+    {
+      "id": "1pba2eh",
+      "title": "Transformers Model Integration Contracts",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/transformers-mic",
+      "date": "2026-11-03",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-03T15:48:21.261Z"
     },
     {
       "id": "wc6gtt",
@@ -4001,36 +4296,6 @@
       "addedAt": "2026-11-02T17:47:18.494Z"
     },
     {
-      "id": "xe4fmo",
-      "title": "AI for Science expands to foundations and institutions",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
-      "date": "2026-10-29",
-      "summary": "We’re highlighting 20 scientific foundations, institutions, and research groups from around the world that we’ve partnered with in an expansion of our AI for Science program.",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/2c317246f4ac7eaf0667d90a76ac05a7a7b601fc-1200x630.jpg",
-      "tldr": "We’re highlighting 20 scientific foundations, institutions, and research groups from aroun…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-29T14:55:50.649Z"
-    },
-    {
-      "id": "rlqhs1",
-      "title": "Expanding our partnership with GSA to bring Claude to all levels of government",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/expanding-partnership-gsa",
-      "date": "2026-10-29",
-      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/4e3bfa972a8ec391977288fa36de3da1ecd78232-1920x1080.webp",
-      "tldr": "Anthropic is an AI safety and research company that's working to build reliable, interpret…",
-      "maturity": "emerging",
-      "tags": [
-        "安全"
-      ],
-      "addedAt": "2026-10-28T14:50:16.081Z"
-    },
-    {
       "id": "zvjnpz",
       "title": "Catching Bugs Before They Land: JiTTesting’s Human-on-the-Loop Approach at Full Scale",
       "source": "Meta",
@@ -4071,6 +4336,36 @@
         "前沿"
       ],
       "addedAt": "2026-10-30T14:49:50.190Z"
+    },
+    {
+      "id": "xe4fmo",
+      "title": "AI for Science expands to foundations and institutions",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
+      "date": "2026-10-29",
+      "summary": "We’re highlighting 20 scientific foundations, institutions, and research groups from around the world that we’ve partnered with in an expansion of our AI for Science program.",
+      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/2c317246f4ac7eaf0667d90a76ac05a7a7b601fc-1200x630.jpg",
+      "tldr": "We’re highlighting 20 scientific foundations, institutions, and research groups from aroun…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-10-29T14:55:50.649Z"
+    },
+    {
+      "id": "rlqhs1",
+      "title": "Expanding our partnership with GSA to bring Claude to all levels of government",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/expanding-partnership-gsa",
+      "date": "2026-10-29",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/4e3bfa972a8ec391977288fa36de3da1ecd78232-1920x1080.webp",
+      "tldr": "Anthropic is an AI safety and research company that's working to build reliable, interpret…",
+      "maturity": "emerging",
+      "tags": [
+        "安全"
+      ],
+      "addedAt": "2026-10-28T14:50:16.081Z"
     },
     {
       "id": "5hnf8p",
@@ -4832,160 +5127,6 @@
       "addedAt": "2026-10-28T14:50:37.018Z"
     },
     {
-      "id": "1699tbs",
-      "title": "Can LLMs Uncover Hidden Physical Laws through Free Exploration?",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.37649v1",
-      "date": "2026-10-27",
-      "summary": "Scientific discovery often begins with an unexpected observation that prompts a new research question. In a world with altered physical laws, can large language models (LLMs) notice unexpected behavior, such as heavier o…",
-      "tldr": "Scientific discovery often begins with an unexpected observation that prompts a new resear…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-28T14:50:37.018Z"
-    },
-    {
-      "id": "1699rue",
-      "title": "MuonGS: Pretraining LLMs with Relaxed Weight-Norm Control",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.37647v1",
-      "date": "2026-10-27",
-      "summary": "Weight decay and explicit weight-norm constraints improve optimizer performance in language model pretraining, yet a unified understanding of why such control helps and how much is needed remains incomplete. We analyze n…",
-      "tldr": "Weight decay and explicit weight-norm constraints improve optimizer performance in languag…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-28T14:50:37.018Z"
-    },
-    {
-      "id": "1699qd0",
-      "title": "Multi-State Linear Attention with Generalized Second-Order Routing",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.37645v1",
-      "date": "2026-10-27",
-      "summary": "Self-attention plays a key role in long-sequence modeling, but its quadratic time complexity fundamentally limits the scaling of Large Language Models. Recently, Multi-State Linear Attention (MSLA) mechanisms have been p…",
-      "tldr": "Self-attention plays a key role in long-sequence modeling, but its quadratic time complexi…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-28T14:50:37.018Z"
-    },
-    {
-      "id": "1699o4x",
-      "title": "Metacognitive Decoding: Efficient Inference for Diffusion Language Agents",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.37642v1",
-      "date": "2026-10-27",
-      "summary": "Diffusion language models offer a promising path to efficient agents through parallel token generation. However, efficient interaction requires adapting both where computation is spent and how much text is generated. We …",
-      "tldr": "Diffusion language models offer a promising path to efficient agents through parallel toke…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-10-28T14:50:37.018Z"
-    },
-    {
-      "id": "16990ep",
-      "title": "What Improves During Pretraining? Tracking Knowledge Acquisition with Point-in-Time Models",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.37631v1",
-      "date": "2026-10-27",
-      "summary": "Language models pretrained on web corpora collected over multiple years learn both general and domain-specific knowledge. How these different kinds of knowledge are learned as pretraining progresses remains unclear. Rece…",
-      "tldr": "Language models pretrained on web corpora collected over multiple years learn both general…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-28T14:50:37.018Z"
-    },
-    {
-      "id": "1698fn9",
-      "title": "Rare, Relevant, and Still Wrong: How Memory Fails LLM Group Decisions",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.37624v1",
-      "date": "2026-10-27",
-      "summary": "When an LLM group's discussion is compressed into a short memory for a final decision maker, what should the memory keep? Two natural heuristics keep the rarest claims or the claims relevant to the decision criteria. On …",
-      "tldr": "When an LLM group's discussion is compressed into a short memory for a final decision make…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-28T14:50:37.018Z"
-    },
-    {
-      "id": "1697rx1",
-      "title": "VideoLVR: Latent Visual Reasoning over Grounded Video Evidence",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.37613v1",
-      "date": "2026-10-27",
-      "summary": "Chain-of-thought reasoning has substantially advanced video understanding in multimodal large language models (MLLMs). However, language-based reasoning traces do not provide a reliable mechanism for models to revisit re…",
-      "tldr": "Chain-of-thought reasoning has substantially advanced video understanding in multimodal la…",
-      "maturity": "proposed",
-      "tags": [
-        "推理"
-      ],
-      "addedAt": "2026-10-28T14:50:37.018Z"
-    },
-    {
-      "id": "16979do",
-      "title": "EnvSched: Environment-Aware Scheduling for Rollout-Efficient Agent Reinforcement Learning",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.37609v1",
-      "date": "2026-10-27",
-      "summary": "As executable environments for language agents scale, generating and verifying their rollouts becomes increasingly expensive. Under finite rollout budgets, this raises an important question: can data management at the en…",
-      "tldr": "As executable environments for language agents scale, generating and verifying their rollo…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-10-28T14:50:37.018Z"
-    },
-    {
-      "id": "16976ew",
-      "title": "Beyond Answer Changes: Matched Same-Class Controls for Local Audio Evidence",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.37605v1",
-      "date": "2026-10-27",
-      "summary": "For audio-language models, an answer change after a local sound-event edit can reflect a response to the event's class, sensitivity to waveform rewriting, or both. We compare matched same-class and different-class replac…",
-      "tldr": "For audio-language models, an answer change after a local sound-event edit can reflect a r…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-28T14:50:37.018Z"
-    },
-    {
-      "id": "168t7o2",
-      "title": "MoI-Bench: A Benchmark for Image Generation and Editing on Mobile Devices",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.37599v1",
-      "date": "2026-10-27",
-      "summary": "Developing on-device image models requires considering practical user needs, task types and device resource constraints. However, existing benchmarks provide limited guidance on identifying capability gaps between on-dev…",
-      "tldr": "Developing on-device image models requires considering practical user needs, task types an…",
-      "maturity": "proposed",
-      "tags": [
-        "评测"
-      ],
-      "addedAt": "2026-10-28T14:50:37.018Z"
-    },
-    {
-      "id": "168t6xd",
-      "title": "GAS-PFN: Graph-Aware Spatiotemporal Prior-Data Fitted Networks for Zero-Shot Traffic Forecasting",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.37598v1",
-      "date": "2026-10-27",
-      "summary": "Traffic forecasting requires modeling complex temporal dynamics and the spatial dependencies imposed by road topology. Supervised graph-based models achieve strong performance, but are often trained for a particular data…",
-      "tldr": "Traffic forecasting requires modeling complex temporal dynamics and the spatial dependenci…",
-      "maturity": "proposed",
-      "tags": [
-        "Graph"
-      ],
-      "addedAt": "2026-10-28T14:50:37.018Z"
-    },
-    {
       "id": "t5xk66",
       "title": "Our newest AI Quest: Mapping the human brain",
       "source": "Google AI Blog",
@@ -5014,37 +5155,6 @@
       "addedAt": "2026-10-27T13:56:29.682Z"
     },
     {
-      "id": "1qbdir1",
-      "title": "15 college students share their favorite Gemini features",
-      "source": "Google Gemini",
-      "url": "https://blog.google/products-and-platforms/products/gemini/college-student-favorite-features/",
-      "date": "2026-10-26",
-      "summary": "We asked 15 college students about their favorite Gemini features for learning, studying, taking notes, and more.",
-      "tldr": "We asked 15 college students about their favorite Gemini features for learning, studying,…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-27T13:57:22.467Z"
-    },
-    {
-      "id": "xiin2c",
-      "title": "Donating Agent Skills to the Agentic AI Foundation",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
-      "date": "2026-10-22",
-      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
-      "tldr": "Anthropic is an AI safety and research company that's working to build reliable, interpret…",
-      "maturity": "emerging",
-      "tags": [
-        "Agent",
-        "Skill",
-        "安全"
-      ],
-      "addedAt": "2026-10-23T13:03:40.505Z"
-    },
-    {
       "id": "14lt838",
       "title": "Beyond tree cover: mapping the world’s forest types",
       "source": "Google DeepMind",
@@ -5060,51 +5170,6 @@
       "addedAt": "2026-10-23T13:03:51.917Z"
     },
     {
-      "id": "1t2jqd5",
-      "title": "Investing in the public benefit",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/public-benefit-fund",
-      "date": "2026-10-21",
-      "summary": "We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new entity with a structure that increases the stake as the company grows.",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/85648c93880ac27347f8e6a4008650a65c12ede8-1200x630.jpg",
-      "tldr": "We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a n…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-19T15:16:03.983Z"
-    },
-    {
-      "id": "1wgtjxx",
-      "title": "Developing Enterprise Frontier Safeguards with our customers",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/enterprise-frontier-safeguards",
-      "date": "2026-10-21",
-      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
-      "tldr": "Anthropic is an AI safety and research company that's working to build reliable, interpret…",
-      "maturity": "emerging",
-      "tags": [
-        "安全"
-      ],
-      "addedAt": "2026-10-22T13:25:23.605Z"
-    },
-    {
-      "id": "1nj6ckc",
-      "title": "Physicist Christopher Stubbs joins Anthropic's Long-Term Benefit Trust",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust",
-      "date": "2026-10-21",
-      "summary": "Dr. Christopher Stubbs, an experimental physicist and former Dean of Science at Harvard University, has joined Anthropic’s Long-Term Benefit Trust. He brings to the Trust decades of scientific expertise across observatio…",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
-      "tldr": "Dr. Christopher Stubbs, an experimental physicist and former Dean of Science at Harvard Un…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-22T13:25:23.953Z"
-    },
-    {
       "id": "ys3jqf",
       "title": "Southeast Asia’s digital economy to hit $368 billion",
       "source": "Google AI Blog",
@@ -5117,51 +5182,6 @@
         "前沿"
       ],
       "addedAt": "2026-10-21T13:24:45.510Z"
-    },
-    {
-      "id": "8tmldn",
-      "title": "Anthropic update on independent evaluators",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
-      "date": "2026-10-20",
-      "summary": "Anthropic announces updates to embedding independent evaluators",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/d2e351e6311a0ada8ea4a0304ce6cda39243eaf4-1200x630.jpg",
-      "tldr": "Anthropic announces updates to embedding independent evaluators",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-16T13:00:07.163Z"
-    },
-    {
-      "id": "1m3mgw9",
-      "title": "Detecting and preventing distillation attacks",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks",
-      "date": "2026-10-20",
-      "summary": "We identified coordinated distillation attacks using ~24,000 fraudulent accounts to extract Claude's capabilities.",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/1d767aa7f133d192c43906d67b947bbffbadb2d4-1200x630.jpg",
-      "tldr": "We identified coordinated distillation attacks using ~24,000 fraudulent accounts to extrac…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-21T13:24:28.259Z"
-    },
-    {
-      "id": "1y9rjri",
-      "title": "Disrupting an AI-orchestrated cyber espionage campaign",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/disrupting-AI-espionage",
-      "date": "2026-10-20",
-      "summary": "A report describing a highly sophisticated AI-led cyberattack and how we disrupted it.",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/e519896cc7432ba8deab8c661b2030f439f7a0e0-1200x630.jpg",
-      "tldr": "A report describing a highly sophisticated AI-led cyberattack and how we disrupted it.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-21T13:24:28.617Z"
     },
     {
       "id": "jxna65",
@@ -5246,20 +5266,6 @@
       "maturity": "emerging",
       "tags": [
         "Agent"
-      ],
-      "addedAt": "2026-10-16T13:00:36.552Z"
-    },
-    {
-      "id": "fb2hcn",
-      "title": "2026 World Cup: Breaking Records, Spiky Charts and Reliability at Scale",
-      "source": "Meta",
-      "url": "https://engineering.fb.com/2026/10/15/production-engineering/2026-world-cup-record-traffic-reliability-at-scale/",
-      "date": "2026-10-15",
-      "summary": "Every four years, the World Cup becomes the largest planned stress test of our infrastructure. This year it also set an all-time record! There are a few moments throughout the year, like New Years Eve, that really let us…",
-      "tldr": "Every four years, the World Cup becomes the largest planned stress test of our infrastruct…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
       ],
       "addedAt": "2026-10-16T13:00:36.552Z"
     },
