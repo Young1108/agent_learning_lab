@@ -1,9 +1,65 @@
 {
-  "updatedAt": "2026-11-17T17:22:53.315Z",
-  "version": 74,
+  "updatedAt": "2026-11-18T16:57:28.662Z",
+  "version": 75,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "177mnr1",
+      "title": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
+      "date": "2026-11-18",
+      "summary": "",
+      "tldr": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:55:41.494Z"
+    },
+    {
+      "id": "o8ftuj",
+      "title": "Time-Series Models in the Streamhouse: A New Frontier and Use Cases",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse",
+      "date": "2026-11-18",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:55:59.950Z"
+    },
+    {
+      "id": "13blxoe",
+      "title": "180B Parameters, 32GB of RAM: Pushing MoE Inference to the Limit with Transformers",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/moe-expert-streaming",
+      "date": "2026-11-18",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:56:00.221Z"
+    },
+    {
+      "id": "1ac5gb2",
+      "title": "Rumble-2-Flash: an open 0.5B speech model for 40+ languages",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/rumble-2-flash",
+      "date": "2026-11-18",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:56:00.457Z"
+    },
     {
       "id": "sl2le2",
       "title": "Strengthening NATO and allied cyber defenses with AI",
@@ -33,6 +89,48 @@
       "addedAt": "2026-11-17T17:21:22.870Z"
     },
     {
+      "id": "1lvha47",
+      "title": "Introducing GPT-6.2 Astra and Sol",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+      "date": "2026-11-17",
+      "summary": "",
+      "tldr": "Introducing GPT-6.2 Astra and Sol",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:55:41.732Z"
+    },
+    {
+      "id": "1ug71gl",
+      "title": "Introducing ChatGPT for Sales",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/introducing-chatgpt-for-sales",
+      "date": "2026-11-17",
+      "summary": "",
+      "tldr": "Introducing ChatGPT for Sales",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:55:42.416Z"
+    },
+    {
+      "id": "wqr0d8",
+      "title": "Astra for Law leads in legal intelligence",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/astra-law-6-2",
+      "date": "2026-11-17",
+      "summary": "",
+      "tldr": "Astra for Law leads in legal intelligence",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:55:42.644Z"
+    },
+    {
       "id": "yheibl",
       "title": "Advancing Claude for Financial Services",
       "source": "Anthropic",
@@ -60,6 +158,302 @@
         "前沿"
       ],
       "addedAt": "2026-11-17T17:21:38.433Z"
+    },
+    {
+      "id": "1urgmd6",
+      "title": "Ambient LLMs: Data-Efficient Supervised Fine-tuning via Temperature Matching",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23229v1",
+      "date": "2026-11-17",
+      "summary": "Collecting large-scale, diverse, and high-quality post-training datasets for autoregressive language models is challenging. Consequently, Supervised Fine-Tuning (SFT) is typically applied to datasets significantly smalle…",
+      "tldr": "Collecting large-scale, diverse, and high-quality post-training datasets for autoregressiv…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "1urgjee",
+      "title": "StringQFT: A Multiuse Textbook Resource for AI-Assisted Theoretical Physics",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23225v1",
+      "date": "2026-11-17",
+      "summary": "We present StringQFT as a textbook collection for string constructions of quantum field theory and as infrastructure for AI-assisted theoretical physics. The collection comprises 18 volumes, 190 chapters and 3,795 pages,…",
+      "tldr": "We present StringQFT as a textbook collection for string constructions of quantum field th…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "1urfzdn",
+      "title": "Do LLM Agents Still Need to Be Told How to Self-Improve?",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23219v1",
+      "date": "2026-11-17",
+      "summary": "LLM agents increasingly drive their own learning. Self-improvement methods delegate various components of model optimization to the models themselves. As models become more capable, this motivates a basic question: do th…",
+      "tldr": "LLM agents increasingly drive their own learning. Self-improvement methods delegate variou…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "1urfymy",
+      "title": "What Does a Bias Head Measure? Non-Identifiability in Head-Level Bias Attribution",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23218v1",
+      "date": "2026-11-17",
+      "summary": "Methods that localise social bias in large language models to individual attention heads and remove it by ablation are validated by their effect on a fairness metric, never by evidence that the statistic selecting the he…",
+      "tldr": "Methods that localise social bias in large language models to individual attention heads a…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "1urfx5k",
+      "title": "Higher-Scoring Coding Models Did Not Get More Work Done",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23216v1",
+      "date": "2026-11-17",
+      "summary": "New coding models advertise themselves on score improvements of coding benchmarks. Yet no study has tested if a model that scores higher on these benchmarks gets more real work done. On June 12, 2026, a U.S. export contr…",
+      "tldr": "New coding models advertise themselves on score improvements of coding benchmarks. Yet no…",
+      "maturity": "proposed",
+      "tags": [
+        "评测"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "1urfa61",
+      "title": "Reading Scene States: Uncovering Safety Failures in Vision-Language Models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23206v1",
+      "date": "2026-11-17",
+      "summary": "Vision-language models (VLMs) can provide harmful assistance by interpreting visual events, even without an explicit request for the underlying harmful objective. We identify this \\textbf{scene-state safety vulnerability…",
+      "tldr": "Vision-language models (VLMs) can provide harmful assistance by interpreting visual events…",
+      "maturity": "proposed",
+      "tags": [
+        "安全",
+        "多模态"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "1urf9fc",
+      "title": "Fine-Tuning Gemma 4 Edge Models for MATLAB Signal-Processing Code with SFT and QLoRA on a Laptop iGPU",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23205v1",
+      "date": "2026-11-17",
+      "summary": "Small language models that run on a laptop are attractive for writing signal-processing code offline, but they make systematic errors on digital signal processing (DSP) conventions. We apply supervised fine-tuning (SFT) …",
+      "tldr": "Small language models that run on a laptop are attractive for writing signal-processing co…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "1urf779",
+      "title": "Agent Trust Infrastructure (ATI): A Federated Identity, Trust, Attestation, and Accountability Architecture for Cross-Organization Autonomous AI Agents",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23202v1",
+      "date": "2026-11-17",
+      "summary": "AI agents increasingly collaborate across organizational boundaries, invoking tools and interacting with agents operated by independent entities. Although existing agent frameworks support planning and coordination, they…",
+      "tldr": "AI agents increasingly collaborate across organizational boundaries, invoking tools and in…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "1ur1974",
+      "title": "Structure--Residual Inductive Biases for Language Model Pretraining",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23197v1",
+      "date": "2026-11-17",
+      "summary": "Next-token prediction is relied upon to learn both predictive behavior and internal representations. We ask whether representation structure itself should be an explicit inductive bias. Motivated by the two-part coding v…",
+      "tldr": "Next-token prediction is relied upon to learn both predictive behavior and internal repres…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "1ur15hn",
+      "title": "WoRD: Diffusion-Based Posterior Inference for Online Goal Recognition",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23192v1",
+      "date": "2026-11-17",
+      "summary": "Goal recognition is the task of inferring an agent's intended goal from its observed behavior. Most existing work focuses on high-level symbolic recognition, abstracting away the continuous motion through which agents re…",
+      "tldr": "Goal recognition is the task of inferring an agent's intended goal from its observed behav…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "1ur0noz",
+      "title": "Retrieval-Augmented Correction for Generalist Medical Image Segmentation",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23189v1",
+      "date": "2026-11-17",
+      "summary": "Automated segmentation is routinely used as the first step in quantitative image-based clinical workflows, where predicted masks are subsequently reviewed and corrected by human operators. Automated correction of the res…",
+      "tldr": "Automated segmentation is routinely used as the first step in quantitative image-based cli…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "1ur0kq7",
+      "title": "Polarity Composition Hypothesis: Causal Evidence from Negation in NLI",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23185v1",
+      "date": "2026-11-17",
+      "summary": "We investigate how language models process negation in natural language inference (NLI). We propose the \\textit{Polarity Composition Hypothesis}, a high-level causal model of this computation. Behavioral evaluations show…",
+      "tldr": "We investigate how language models process negation in natural language inference (NLI). W…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "1ur00pg",
+      "title": "Say Less, Hallucinate Less? Diagnosing and Restoring Object Coverage in Preference-Optimized Vision-Language Models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23179v1",
+      "date": "2026-11-17",
+      "summary": "Preference optimization (PO) is the standard way to reduce object hallucination in large vision-language models. We find that four public PO checkpoints of LLaVA-1.5-7B also lower object coverage. They name fewer object …",
+      "tldr": "Preference optimization (PO) is the standard way to reduce object hallucination in large v…",
+      "maturity": "proposed",
+      "tags": [
+        "多模态"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "1uqzwzz",
+      "title": "Inference after coding agents",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23174v1",
+      "date": "2026-11-17",
+      "summary": "Empirical research is changing rapidly as AI coding agents are becoming increasingly proficient in every step of it, from writing code to manipulating data. We argue that while the potential of coding agents for science …",
+      "tldr": "Empirical research is changing rapidly as AI coding agents are becoming increasingly profi…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "1uqz7sd",
+      "title": "Attribution Through the Decoder: Prediction-Space Explanations for Structured Outputs",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23161v1",
+      "date": "2026-11-17",
+      "summary": "Networks that predict angles, gaze directions, and rotations do not output these quantities directly: they emit raw coordinates that a fixed decoder, such as normalization, maps to the final prediction. Attribution metho…",
+      "tldr": "Networks that predict angles, gaze directions, and rotations do not output these quantitie…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "1uqypzp",
+      "title": "MoE--LoRA Methods for Multilingual Adaptation: A Systematic Empirical Study",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23158v1",
+      "date": "2026-11-17",
+      "summary": "Routed low-rank adapters offer a parameter-efficient means to improve the performance of large language models (LLMs) across tasks. Hence, it is assumed that they can also be used to improve the support of low-resource l…",
+      "tldr": "Routed low-rank adapters offer a parameter-efficient means to improve the performance of l…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "1uqynrm",
+      "title": "TextSphere: Efficient Text-to-Image Generation via Shared Hyperspherical Alignment and Uniformity",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23155v1",
+      "date": "2026-11-17",
+      "summary": "Recent advances in text-to-image generation have substantially improved image quality, particularly through diffusion-based methods that require multiple inference steps. In contrast, Sphere Encoder offers an efficient g…",
+      "tldr": "Recent advances in text-to-image generation have substantially improved image quality, par…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "1uqyn0x",
+      "title": "Learning Stratified Policies for Inference-Time Objectives",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23154v1",
+      "date": "2026-11-17",
+      "summary": "Inference-time scaling improves the performance of large language models by sampling multiple responses and evaluating their collective utility. However, many existing approaches obtain these samples by repeatedly sampli…",
+      "tldr": "Inference-time scaling improves the performance of large language models by sampling multi…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "1uqxyk0",
+      "title": "Mind the Gap: A Deployed Multi-Agent System for Documentation Maintenance",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23142v1",
+      "date": "2026-11-17",
+      "summary": "The \"AI revolution\" has enabled teams across the technology industry to deliver software features at unprecedented velocity. While code evolves faster than ever, customer-facing documentation often struggles to stay up t…",
+      "tldr": "The \"AI revolution\" has enabled teams across the technology industry to deliver software f…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Multi-Agent"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "1uqxg0n",
+      "title": "RSI-Prime: Training Models to Train Models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.23138v1",
+      "date": "2026-11-17",
+      "summary": "Enabling large language models (LLMs) to autonomously conduct training and improve target models is an important foundation for recursive self-improvement (RSI). As LLMs expand their role from being trained to conducting…",
+      "tldr": "Enabling large language models (LLMs) to autonomously conduct training and improve target…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:56:03.488Z"
+    },
+    {
+      "id": "134vxwk",
+      "title": "See what 5 builders are making with Gemini 4 Carbon",
+      "source": "Google Gemini",
+      "url": "https://blog.google/products-and-platforms/products/gemini/gemini-4-carbon-builders/",
+      "date": "2026-11-17",
+      "summary": "See what 5 builders are making with Gemini 4 Carbon.",
+      "tldr": "See what 5 builders are making with Gemini 4 Carbon.",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:57:28.653Z"
     },
     {
       "id": "79o6tc",
@@ -186,20 +580,6 @@
         "前沿"
       ],
       "addedAt": "2026-11-17T17:21:23.780Z"
-    },
-    {
-      "id": "kdpb7s",
-      "title": "At Holiday Extras, dots get to work before anyone asks",
-      "source": "OpenAI",
-      "url": "https://openai.com/business/customer-stories/holiday-extras-dots",
-      "date": "2026-11-16",
-      "summary": "",
-      "tldr": "At Holiday Extras, dots get to work before anyone asks",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-17T17:21:25.121Z"
     },
     {
       "id": "1aka6po",
@@ -333,6 +713,34 @@
         "前沿"
       ],
       "addedAt": "2026-11-16T17:55:04.936Z"
+    },
+    {
+      "id": "zx0kzh",
+      "title": "Regional voices are rolling out in the Gemini app.",
+      "source": "Google Gemini",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/regional-voices/",
+      "date": "2026-11-16",
+      "summary": "Gemini now offers 66 regional voices on Android and iOS. Choose a natural, local dialect for your app interactions. Pick your favorite voice today.",
+      "tldr": "Gemini now offers 66 regional voices on Android and iOS. Choose a natural, local dialect f…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-17T17:22:53.307Z"
+    },
+    {
+      "id": "kdpb7s",
+      "title": "At Holiday Extras, dots get to work before anyone asks",
+      "source": "OpenAI",
+      "url": "https://openai.com/business/customer-stories/holiday-extras-dots",
+      "date": "2026-11-16",
+      "summary": "",
+      "tldr": "At Holiday Extras, dots get to work before anyone asks",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-17T17:21:25.121Z"
     },
     {
       "id": "1tvj98h",
@@ -619,20 +1027,6 @@
       "addedAt": "2026-11-17T17:21:41.844Z"
     },
     {
-      "id": "zx0kzh",
-      "title": "Regional voices are rolling out in the Gemini app.",
-      "source": "Google Gemini",
-      "url": "https://blog.google/innovation-and-ai/products/gemini-app/regional-voices/",
-      "date": "2026-11-16",
-      "summary": "Gemini now offers 66 regional voices on Android and iOS. Choose a natural, local dialect for your app interactions. Pick your favorite voice today.",
-      "tldr": "Gemini now offers 66 regional voices on Android and iOS. Choose a natural, local dialect f…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-17T17:22:53.307Z"
-    },
-    {
       "id": "12742kd",
       "title": "A step toward defining the Standard Model on a lattice",
       "source": "OpenAI",
@@ -659,20 +1053,6 @@
         "前沿"
       ],
       "addedAt": "2026-11-16T17:54:47.668Z"
-    },
-    {
-      "id": "1q090xo",
-      "title": "Introducing ChatGPT Wallet",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/introducing-chatgpt-wallet",
-      "date": "2026-11-13",
-      "summary": "",
-      "tldr": "Introducing ChatGPT Wallet",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-13T15:54:04.077Z"
     },
     {
       "id": "hfd16m",
@@ -863,6 +1243,20 @@
         "前沿"
       ],
       "addedAt": "2026-11-14T14:46:21.787Z"
+    },
+    {
+      "id": "1q090xo",
+      "title": "Introducing ChatGPT Wallet",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/introducing-chatgpt-wallet",
+      "date": "2026-11-13",
+      "summary": "",
+      "tldr": "Introducing ChatGPT Wallet",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-13T15:54:04.077Z"
     },
     {
       "id": "77ndc0",
@@ -3256,20 +3650,6 @@
       "addedAt": "2026-11-06T15:39:00.610Z"
     },
     {
-      "id": "mc5i1d",
-      "title": "A Closer Look at Phonon TTS. Launching High-Quality On-Device Speech That Tops the Benchmarks.",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/phonon-tts",
-      "date": "2026-11-05",
-      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
-      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
-      "maturity": "emerging",
-      "tags": [
-        "评测"
-      ],
-      "addedAt": "2026-11-05T16:05:32.479Z"
-    },
-    {
       "id": "50v42v",
       "title": "Transform a quick drawing into a live app with Gemini.",
       "source": "Google Gemini",
@@ -3282,6 +3662,20 @@
         "前沿"
       ],
       "addedAt": "2026-11-06T15:40:04.603Z"
+    },
+    {
+      "id": "mc5i1d",
+      "title": "A Closer Look at Phonon TTS. Launching High-Quality On-Device Speech That Tops the Benchmarks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/phonon-tts",
+      "date": "2026-11-05",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "评测"
+      ],
+      "addedAt": "2026-11-05T16:05:32.479Z"
     },
     {
       "id": "1nvylch",
@@ -4596,291 +4990,6 @@
       "addedAt": "2026-11-03T15:48:01.453Z"
     },
     {
-      "id": "11gwgs8",
-      "title": "Pixel-UMI: Learning Environment-Aware Whole-Body Manipulation from Sensorized Human Demonstrations",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03647v1",
-      "date": "2026-11-02",
-      "summary": "Sensorized human demonstrations offer scalable data for mobile manipulation, but embodiment differences complicate policy learning. We present Pixel-UMI, a pipeline for learning environment-aware whole-body policies from…",
-      "tldr": "Sensorized human demonstrations offer scalable data for mobile manipulation, but embodimen…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
-      "id": "11gwhix",
-      "title": "Pixel: A Co-Designed Full-Stack Robot System for Learning General-Purpose Mobile Manipulation",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03648v1",
-      "date": "2026-11-02",
-      "summary": "General-purpose mobile manipulation requires a combination of capable robot hardware, scalable demonstration collection, expressive whole-body control, and effective policy learning. Yet these components are often develo…",
-      "tldr": "General-purpose mobile manipulation requires a combination of capable robot hardware, scal…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
-      "id": "11gwcc2",
-      "title": "From Natural Language to Exact Cover: A Neuro-Symbolic Approach to Zebra Puzzles",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03641v1",
-      "date": "2026-11-02",
-      "summary": "Chain-of-Thought (CoT) generation has substantially improved the performance of Large Language Models (LLMs) on complex reasoning tasks, including code generation, data analysis, and exam-style question answering. Despit…",
-      "tldr": "Chain-of-Thought (CoT) generation has substantially improved the performance of Large Lang…",
-      "maturity": "proposed",
-      "tags": [
-        "推理"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
-      "id": "11gvrkm",
-      "title": "WebHarbor: Docking Real Websites for Evolving GUI Agent Environments",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03634v1",
-      "date": "2026-11-02",
-      "summary": "GUI web agents require realistic and interactive environments that remain stable during both evaluation and training. Live website evaluation suffers from changing content, access restrictions, and limited coverage of au…",
-      "tldr": "GUI web agents require realistic and interactive environments that remain stable during bo…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
-      "id": "11gv33p",
-      "title": "D&A: Decoupling Description and Assessment Enables VLMs as Zero-Shot Robotic Reward Models",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03622v1",
-      "date": "2026-11-02",
-      "summary": "Vision-Language Models (VLMs) hold promise for zero-shot video task-progress estimation in robot learning, yet existing frameworks frequently suffer from confirmation bias, hallucinating progress in failed executions due…",
-      "tldr": "Vision-Language Models (VLMs) hold promise for zero-shot video task-progress estimation in…",
-      "maturity": "proposed",
-      "tags": [
-        "多模态"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
-      "id": "11gukkc",
-      "title": "Strategist: Evolving Reasoning with Agents",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03618v1",
-      "date": "2026-11-02",
-      "summary": "A model is only half of an AI agent system. The other half is the inference strategy: the reasoning procedure that turns model calls into a response. Today that second half is written by hand, and the experience of build…",
-      "tldr": "A model is only half of an AI agent system. The other half is the inference strategy: the…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "推理"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
-      "id": "11gujtn",
-      "title": "Tracing the Scientific Discovery Capacity of LLMs to Their Training Data",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03617v1",
-      "date": "2026-11-02",
-      "summary": "Large language models (LLMs) show growing promise for scientific discovery, yet basic questions remain about what enables reliable discovery. How can we trace the scientific discovery capacity of LLMs to their training d…",
-      "tldr": "Large language models (LLMs) show growing promise for scientific discovery, yet basic ques…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
-      "id": "11gtvcq",
-      "title": "ufakzeka-kulak: Building and Evaluating a 31.6M-Parameter Turkish Speech Recognizer from Scratch",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03605v1",
-      "date": "2026-11-02",
-      "summary": "ufakzeka-kulak is an open Turkish speech-to-text model of 31.6M parameters, a FastConformer encoder with a token-and-duration transducer (TDT) and a CTC head, trained from scratch and released under Apache-2.0. It writes…",
-      "tldr": "ufakzeka-kulak is an open Turkish speech-to-text model of 31.6M parameters, a FastConforme…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
-      "id": "11gtsdy",
-      "title": "DiabAgent: Toward Agentic Physiological Control",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03601v1",
-      "date": "2026-11-02",
-      "summary": "As pretraining scales, medical language models have advanced rapidly in clinical question answering. Their ability to achieve effective physiological control through sustained intervention still lacks systematic quantita…",
-      "tldr": "As pretraining scales, medical language models have advanced rapidly in clinical question…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
-      "id": "11gtrn9",
-      "title": "Four Bridges: Measuring Deception Propensity in a Multi-Agent Game",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03600v1",
-      "date": "2026-11-02",
-      "summary": "AI agents are increasingly deployed in settings where they interact and coordinate with other agents, yet honesty is mostly measured in single-turn, single-agent benchmarks that pressure the model to deceive. We study de…",
-      "tldr": "AI agents are increasingly deployed in settings where they interact and coordinate with ot…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Multi-Agent",
-        "评测"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
-      "id": "11gfudt",
-      "title": "Spacetime Emergence in the Memory of a Learning Agent",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03596v1",
-      "date": "2026-11-02",
-      "summary": "We show that the causal structure of spacetime can emerge within the memory of a learning agent performing a quantum information task. We train a model-based reinforcement-learning agent to maximize the quantum mutual in…",
-      "tldr": "We show that the causal structure of spacetime can emerge within the memory of a learning…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
-      "id": "11gfrf1",
-      "title": "Evaluating Uncertainty Calibration in Probabilistic Time Series Foundation Models",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03592v1",
-      "date": "2026-11-02",
-      "summary": "Time series foundation models (TSFMs) are increasingly used for probabilistic forecasting across diverse domains, yet the reliability of their uncertainty estimates remains poorly understood. In this work, we study uncer…",
-      "tldr": "Time series foundation models (TSFMs) are increasingly used for probabilistic forecasting…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
-      "id": "11gf7ea",
-      "title": "FedReady: Bounded Agents for Federation Formation",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03586v1",
-      "date": "2026-11-02",
-      "summary": "Federated learning (FL) runtimes standardize aggregation and deployment, but each new study still requires federation formation: selecting task-eligible sites and preparing their local data and task code for federated tr…",
-      "tldr": "Federated learning (FL) runtimes standardize aggregation and deployment, but each new stud…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
-      "id": "11gel5g",
-      "title": "Sonar-MoE: In-Backward Expert Updates for Memory-Efficient Mixture-of-Experts Training",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03577v1",
-      "date": "2026-11-02",
-      "summary": "Most parameters of a Mixture-of-Experts (MoE) model belong to its experts, and standard training keeps every expert gradient in GPU memory until the optimizer step. This memory grows with the number and size of the exper…",
-      "tldr": "Most parameters of a Mixture-of-Experts (MoE) model belong to its experts, and standard tr…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
-      "id": "11geker",
-      "title": "NitiBench+: A Temporal Thai Legal Question Answering Benchmark Across 17 Domains",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03576v1",
-      "date": "2026-11-02",
-      "summary": "Law changes over time. A court decides a case under the law in force on that day, and legal QA benchmarks grade answers against today's law. We checked 156,650 decisions of four Thai courts. Up to 67% of them cite law th…",
-      "tldr": "Law changes over time. A court decides a case under the law in force on that day, and lega…",
-      "maturity": "proposed",
-      "tags": [
-        "评测"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
-      "id": "11gejo2",
-      "title": "VeriHarm-Bench: Measuring Harmful Success in LLM Coding Agents Verifiably",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03575v1",
-      "date": "2026-11-02",
-      "summary": "Large language model (LLM) coding agents increasingly operate with shell access, allowing them to write scripts, move files, alter permissions, and modify system configurations. However, an agent may achieve a user's goa…",
-      "tldr": "Large language model (LLM) coding agents increasingly operate with shell access, allowing…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
-      "id": "11gdb6e",
-      "title": "PlantVLM-Edge: Quantized Vision-Language Models for On-Device Crop Health Diagnosis",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03557v1",
-      "date": "2026-11-02",
-      "summary": "Timely and accurate crop health diagnosis is essential for sustainable agricultural production, yet accurate diagnosis often requires expert knowledge that is not readily available. Recent vision-language models (VLMs) h…",
-      "tldr": "Timely and accurate crop health diagnosis is essential for sustainable agricultural produc…",
-      "maturity": "proposed",
-      "tags": [
-        "多模态"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
-      "id": "11gd9p0",
-      "title": "MCP Tool Poisoning in Agentic AI Frameworks: A Cross-Framework Measurement Study",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03555v1",
-      "date": "2026-11-02",
-      "summary": "The Model Context Protocol (MCP) lets agentic AI frameworks connect language models to external tool providers, but it carries attacker-controlled content (tool descriptions, schema fields, and response data) into model …",
-      "tldr": "The Model Context Protocol (MCP) lets agentic AI frameworks connect language models to ext…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "MCP"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
-      "id": "11gd6q8",
-      "title": "Can LLM Agents Be Forward-Deployed Engineers? Requirement Discovery and Delivery for Enterprise Text-to-SQL",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03551v1",
-      "date": "2026-11-02",
-      "summary": "LLM coding agents can increasingly automate model post-training, but whether they can act as forward-deployed engineer (FDE) agents, discovering customer requirements and turning them into deployment decisions, remains u…",
-      "tldr": "LLM coding agents can increasingly automate model post-training, but whether they can act…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
-      "id": "11gbyz9",
-      "title": "An Agentic Framework for Automated Power System Studies and Grid Connection Assessment",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.03534v1",
-      "date": "2026-11-02",
-      "summary": "Connecting new generation and demand to the grid depends on two scarce skills: checking applications against a large, changing body of regulation, and running the network studies that decide where and how a project conne…",
-      "tldr": "Connecting new generation and demand to the grid depends on two scarce skills: checking ap…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Skill"
-      ],
-      "addedAt": "2026-11-03T15:48:24.738Z"
-    },
-    {
       "id": "1s031zi",
       "title": "Speeding up planning decisions with AI",
       "source": "Google DeepMind",
@@ -4894,105 +5003,6 @@
         "前沿"
       ],
       "addedAt": "2026-11-02T17:47:10.080Z"
-    },
-    {
-      "id": "jqyuid",
-      "title": "nemotron-halloween",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/nvidia/nemotron-halloween",
-      "date": "2026-10-30",
-      "summary": "TL;DR: MonsterHouse is an interactive projection I created for Halloween. He listens to trick-or-treaters, answers in the voice of a grumpy old pirate ship and softens when visitors remember their man…",
-      "tldr": "TL;DR: MonsterHouse is an interactive projection I created for Halloween. He listens to tr…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-31T14:16:45.380Z"
-    },
-    {
-      "id": "evxja4",
-      "title": "Making it easier for websites to express AI training preferences",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
-      "date": "2026-10-30",
-      "summary": "",
-      "tldr": "Making it easier for websites to express AI training preferences",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-31T14:16:27.132Z"
-    },
-    {
-      "id": "17tzon9",
-      "title": "Community safety report and new protections for teens",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
-      "date": "2026-10-30",
-      "summary": "",
-      "tldr": "Community safety report and new protections for teens",
-      "maturity": "emerging",
-      "tags": [
-        "安全"
-      ],
-      "addedAt": "2026-10-31T14:16:27.357Z"
-    },
-    {
-      "id": "9gb411",
-      "title": "Fair use benefits everyone",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/fair-use-benefits-everyone",
-      "date": "2026-10-30",
-      "summary": "",
-      "tldr": "Fair use benefits everyone",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-31T14:16:27.582Z"
-    },
-    {
-      "id": "1ihp0m1",
-      "title": "Latent Reasoning in Continuous Space for Unified Multimodal Models",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.42149v1",
-      "date": "2026-10-30",
-      "summary": "Unified Multimodal Models (UMMs) achieve remarkable success on diverse multimodal understanding and generation tasks, yet they still struggle to effectively leverage language-based chain-of-thought reasoning for image ge…",
-      "tldr": "Unified Multimodal Models (UMMs) achieve remarkable success on diverse multimodal understa…",
-      "maturity": "proposed",
-      "tags": [
-        "推理"
-      ],
-      "addedAt": "2026-11-02T17:47:18.494Z"
-    },
-    {
-      "id": "1ihozvc",
-      "title": "Flide: Accelerating Decision Inference with Exact State Forking",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.42148v1",
-      "date": "2026-10-30",
-      "summary": "Decision models such as Jev have emerged as a highly promising paradigm for LLM agent systems, providing lightweight and reliable categorical reasoning for rapid System One execution. However, existing generation-oriente…",
-      "tldr": "Decision models such as Jev have emerged as a highly promising paradigm for LLM agent syst…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "推理"
-      ],
-      "addedAt": "2026-11-02T17:47:18.494Z"
-    },
-    {
-      "id": "1ihoz4n",
-      "title": "Latent Sparse Attention: Towards Subquadratic Ultra-Long Context Attention",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2610.42147v1",
-      "date": "2026-10-30",
-      "summary": "Agentic workflows are increasingly shifting towards long-horizon tasks, such as open-ended scientific work, where models benefit from long context windows. However, at ultra-long context (above 1M tokens), full attention…",
-      "tldr": "Agentic workflows are increasingly shifting towards long-horizon tasks, such as open-ended…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-11-02T17:47:18.494Z"
     },
     {
       "id": "zvjnpz",
@@ -5100,20 +5110,6 @@
       "date": "2026-10-28",
       "summary": "XREAL AURA, the first wired XR glasses powered by Android XR, lets you work, watch, and play anywhere with Gemini by your side.",
       "tldr": "XREAL AURA, the first wired XR glasses powered by Android XR, lets you work, watch, and pl…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-29T14:57:13.208Z"
-    },
-    {
-      "id": "1kw9wlr",
-      "title": "Build and manage Connected Apps in one place",
-      "source": "Google Gemini",
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/connected-apps-one-place/",
-      "date": "2026-10-28",
-      "summary": "We’re announcing new connected apps partners and a new platform for developers to build and track their apps in one place.",
-      "tldr": "We’re announcing new connected apps partners and a new platform for developers to build an…",
       "maturity": "emerging",
       "tags": [
         "前沿"
