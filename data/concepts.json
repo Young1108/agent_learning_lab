@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-18T16:57:28.662Z",
-  "version": 75,
+  "updatedAt": "2026-11-19T17:03:41.162Z",
+  "version": 76,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
@@ -17,6 +17,177 @@
         "前沿"
       ],
       "addedAt": "2026-11-18T16:55:41.494Z"
+    },
+    {
+      "id": "1hvikwj",
+      "title": "The Silent Consensus",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/the-silent-consensus",
+      "date": "2026-11-18",
+      "summary": "",
+      "tldr": "The Silent Consensus",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:01:45.517Z"
+    },
+    {
+      "id": "ztgcmp",
+      "title": "Research acceleration: The jagged frontier",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/research-acceleration-jagged-frontier",
+      "date": "2026-11-18",
+      "summary": "",
+      "tldr": "Research acceleration: The jagged frontier",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:01:45.784Z"
+    },
+    {
+      "id": "2p0dfb",
+      "title": "How Sumitomo Life’s leaders helped teams adopt ChatGPT Enterprise",
+      "source": "OpenAI",
+      "url": "https://openai.com/business/customer-stories/sumitomo-life",
+      "date": "2026-11-18",
+      "summary": "",
+      "tldr": "How Sumitomo Life’s leaders helped teams adopt ChatGPT Enterprise",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:01:46.039Z"
+    },
+    {
+      "id": "1kt5kts",
+      "title": "Inside the Codex sandbox",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/inside-the-codex-sandbox",
+      "date": "2026-11-18",
+      "summary": "",
+      "tldr": "Inside the Codex sandbox",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:01:46.290Z"
+    },
+    {
+      "id": "1imb5bb",
+      "title": "Managing frontier AI risk: From training to deployment",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/managing-frontier-ai-risk",
+      "date": "2026-11-18",
+      "summary": "",
+      "tldr": "Managing frontier AI risk: From training to deployment",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:01:46.545Z"
+    },
+    {
+      "id": "1v54ari",
+      "title": "Advancing chip design with OpenAI models",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/advancing-chip-design-with-our-models",
+      "date": "2026-11-18",
+      "summary": "",
+      "tldr": "Advancing chip design with OpenAI models",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:01:47.036Z"
+    },
+    {
+      "id": "ecfsed",
+      "title": "Anthropic prices initial public offering",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+      "date": "2026-11-18",
+      "summary": "Today Anthropic, PBC priced its initial public offering of its Class A common stock.",
+      "cover": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
+      "tldr": "Today Anthropic, PBC priced its initial public offering of its Class A common stock.",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:01:49.578Z"
+    },
+    {
+      "id": "12wfgj0",
+      "title": "Expanding the Cyber Verification Program",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/cyber-verification-program",
+      "date": "2026-11-18",
+      "summary": "We’re launching a new, expanded version of our Cyber Verification Program (CVP), which makes advanced cyber capabilities and reduced blocking classifiers available to qualifying security professionals.",
+      "cover": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
+      "tldr": "We’re launching a new, expanded version of our Cyber Verification Program (CVP), which mak…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:01:49.952Z"
+    },
+    {
+      "id": "la8cdn",
+      "title": "Focus areas for The Anthropic Institute",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/anthropic-institute-agenda",
+      "date": "2026-11-18",
+      "summary": "The Anthropic Institute investigates AI's impact on the world from within a frontier lab. Here are the questions driving its agenda.",
+      "cover": "https://assets.claude.com/65e5ea18e02e61436d9e953b53eefc19af3302b1.jpg",
+      "tldr": "The Anthropic Institute investigates AI's impact on the world from within a frontier lab.…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:01:50.475Z"
+    },
+    {
+      "id": "5flagh",
+      "title": "Introducing Gemini 4 Neon",
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/introducing-gemini-4-neon/",
+      "date": "2026-11-18",
+      "summary": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --btn-bg-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --card-draw-percent{inherits:fa…",
+      "tldr": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@proper…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:01.765Z"
+    },
+    {
+      "id": "1vp01ke",
+      "title": "Genie 4 is now available",
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/genie-4-is-now-available/",
+      "date": "2026-11-18",
+      "summary": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --btn-bg-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --card-draw-percent{inherits:fa…",
+      "tldr": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@proper…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:02.227Z"
+    },
+    {
+      "id": "1djismv",
+      "title": "The Gemini app is now available on lower-memory Android devices.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/",
+      "date": "2026-11-18",
+      "summary": "The Google Gemini app now supports lower-memory Android devices. Access Gemini Live and custom image creation on your phone. Download the app today.",
+      "tldr": "The Google Gemini app now supports lower-memory Android devices. Access Gemini Live and cu…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:04.229Z"
     },
     {
       "id": "o8ftuj",
@@ -59,6 +230,374 @@
         "前沿"
       ],
       "addedAt": "2026-11-18T16:56:00.457Z"
+    },
+    {
+      "id": "m3g2dz",
+      "title": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+      "date": "2026-11-18",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:04.663Z"
+    },
+    {
+      "id": "ar7hem",
+      "title": "Why your fine-tuning job takes longer than the FLOPs say",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time",
+      "date": "2026-11-18",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:04.929Z"
+    },
+    {
+      "id": "1vcddoc",
+      "title": "Jailbreak Detection on Large Language Models via Contrastive Prototype Structures",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24936v1",
+      "date": "2026-11-18",
+      "summary": "Jailbreak attempts and harmful prompts remain a challenge for the safe deployment of large language models. We study whether contrastively learned representations can support safety detection without training an addition…",
+      "tldr": "Jailbreak attempts and harmful prompts remain a challenge for the safe deployment of large…",
+      "maturity": "proposed",
+      "tags": [
+        "安全",
+        "越狱"
+      ],
+      "addedAt": "2026-11-19T17:02:22.532Z"
+    },
+    {
+      "id": "1vcdapk",
+      "title": "Knowing What You Know: A Trait Theory of Reviewer Value in Human-AI Cognitive Systems",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24932v1",
+      "date": "2026-11-18",
+      "summary": "When a capable model and a human reviewer cooperate on the same decision, which human still adds value? We argue this is a question about a single cognitive trait, metacognitive calibration: the alignment between a revie…",
+      "tldr": "When a capable model and a human reviewer cooperate on the same decision, which human stil…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:22.532Z"
+    },
+    {
+      "id": "1vccrfi",
+      "title": "Mapping the AI Supply Chain: Dependencies, Vulnerabilities, and Market Concentration in the AI Ecosystem",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24927v1",
+      "date": "2026-11-18",
+      "summary": "AI systems are built across many organizations that contribute models, data, compute, capital, talent, and other assets. While the layers of the AI stack are relatively well understood, the relationships between actors a…",
+      "tldr": "AI systems are built across many organizations that contribute models, data, compute, capi…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:22.532Z"
+    },
+    {
+      "id": "1vccp7f",
+      "title": "Agentic Harness Engineering Beta: Requirement-Centered Evolution of Agent Harnesses",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24924v1",
+      "date": "2026-11-18",
+      "summary": "Real-world harness engineering is driven by explicit and implicit user requirements, which guide development and validation. However, existing harness evolution methods often overlook implicit requirements and interactio…",
+      "tldr": "Real-world harness engineering is driven by explicit and implicit user requirements, which…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Harness"
+      ],
+      "addedAt": "2026-11-19T17:02:22.532Z"
+    },
+    {
+      "id": "1vbwti0",
+      "title": "Who are you? The Personal Imitation Game",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24888v1",
+      "date": "2026-11-18",
+      "summary": "Large Language Models (LLMs) now perform strongly on Alan Turing's 1950 Imitation Game, so we propose a harder challenge, the Personal Imitation Game, which asks whether a machine can replicate a specific individual in c…",
+      "tldr": "Large Language Models (LLMs) now perform strongly on Alan Turing's 1950 Imitation Game, so…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:22.532Z"
+    },
+    {
+      "id": "1vbwsrb",
+      "title": "Ground, Iterate, Trace: Decomposing AI Research Ideation",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24887v1",
+      "date": "2026-11-18",
+      "summary": "Large language models have been widely used to generate plausible research ideas, yet it remains unclear what makes automated ideation effective and how generated novel proposals arise from prior scientific work. We intr…",
+      "tldr": "Large language models have been widely used to generate plausible research ideas, yet it r…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:22.532Z"
+    },
+    {
+      "id": "1vbwnkg",
+      "title": "Local AI Agents in Power Electronics Simulation: Deployment, Measurements and Costs",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24880v1",
+      "date": "2026-11-18",
+      "summary": "Agentic artificial intelligence (AI) is emerging in power electronics, where it drives the simulation loop that engineers used to close largely by hand. In this loop, a converter design, or a study of the network it conn…",
+      "tldr": "Agentic artificial intelligence (AI) is emerging in power electronics, where it drives the…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "Loop"
+      ],
+      "addedAt": "2026-11-19T17:02:22.532Z"
+    },
+    {
+      "id": "1vbw5rs",
+      "title": "Auditing black-box clinical prediction models with a large language model through queries alone: a blinded test with planted flaws",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24877v1",
+      "date": "2026-11-18",
+      "summary": "Large language models (LLMs) are used to explain clinical prediction models, on the promise that they can say what a model computes, find its faults and even reveal new knowledge in it. We tested the three promises where…",
+      "tldr": "Large language models (LLMs) are used to explain clinical prediction models, on the promis…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:22.533Z"
+    },
+    {
+      "id": "1vbvk9n",
+      "title": "WorldRuler: Interactive World Modeling under Configurable Rules",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24869v1",
+      "date": "2026-11-18",
+      "summary": "Rules govern how player actions change interactive worlds. Different rules create distinct gameplay experiences within similar scenes and action spaces. For customizable gameplay, generative world models must follow user…",
+      "tldr": "Rules govern how player actions change interactive worlds. Different rules create distinct…",
+      "maturity": "proposed",
+      "tags": [
+        "世界模型"
+      ],
+      "addedAt": "2026-11-19T17:02:22.533Z"
+    },
+    {
+      "id": "1vbvis9",
+      "title": "Choosing What to Observe: Budget-Paired Counterfactual Audits for Credible Evaluation of Visual Agents",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24867v1",
+      "date": "2026-11-18",
+      "summary": "Visual agents that read dense documents must ration a finite observation budget across candidate regions, yet answer accuracy conflates where an agent looks, how it adapts to the reads that remain, and how it an?swers on…",
+      "tldr": "Visual agents that read dense documents must ration a finite observation budget across can…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-11-19T17:02:22.533Z"
+    },
+    {
+      "id": "1vbuaal",
+      "title": "Can Programs Replace LLM Judges? Executable Program Judges for Scalable and Efficient Relevance Labeling",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24849v1",
+      "date": "2026-11-18",
+      "summary": "Large language model (LLM) judges have become a common way to create large-scale relevance judgments for retrieval evaluation. However, each judgment requires a potentially expensive call to a frontier model, and the jud…",
+      "tldr": "Large language model (LLM) judges have become a common way to create large-scale relevance…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:22.533Z"
+    },
+    {
+      "id": "1vbu7bt",
+      "title": "Vibe-Trading: Towards Agent-Native Trading",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24845v1",
+      "date": "2026-11-18",
+      "summary": "Existing AI agents can retrieve information, call tools, run experiments, and produce multi-step outputs. Yet most are built around relatively static workflows and struggle to preserve reliable state as the environment c…",
+      "tldr": "Existing AI agents can retrieve information, call tools, run experiments, and produce mult…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-11-19T17:02:22.533Z"
+    },
+    {
+      "id": "1vbu6l4",
+      "title": "General progress substitutes for specific training data in language models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24844v1",
+      "date": "2026-11-18",
+      "summary": "Language models acquire their capabilities from training data, and developers withhold data during training to keep models from learning capabilities that could be misused. How long this delays a capability, and how much…",
+      "tldr": "Language models acquire their capabilities from training data, and developers withhold dat…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:22.533Z"
+    },
+    {
+      "id": "1vbu3mc",
+      "title": "Does the Action Matter? Probing Action-Conditioned Semantic Forecasting as a World Model for Autonomous Driving",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24840v1",
+      "date": "2026-11-18",
+      "summary": "World models are increasingly used in autonomous driving to predict how a scene evolves under the ego vehicle's actions, supporting counterfactual reasoning and model-based planning. However, existing evaluations focus o…",
+      "tldr": "World models are increasingly used in autonomous driving to predict how a scene evolves un…",
+      "maturity": "proposed",
+      "tags": [
+        "推理",
+        "世界模型"
+      ],
+      "addedAt": "2026-11-19T17:02:22.533Z"
+    },
+    {
+      "id": "1vbtgmt",
+      "title": "A Foundation Model to Measure and Predict Human Behaviour",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24830v1",
+      "date": "2026-11-18",
+      "summary": "Large language models (LLMs) are increasingly used to infer psychological attributes, predict individual behaviour, and simulate human populations. However, despite generating plausible responses, they often misrepresent…",
+      "tldr": "Large language models (LLMs) are increasingly used to infer psychological attributes, pred…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:22.533Z"
+    },
+    {
+      "id": "1vbs6nr",
+      "title": "LAaDT-DSS: decision support for non-experts on rooftop PV, incentive and grid simulations under Turkish tariff rules",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24810v1",
+      "date": "2026-11-18",
+      "summary": "Rooftop photovoltaics raise three questions: should a household invest, which incentive costs the state least, and does the feeder stay within limits? Those who ask are rarely modellers. We present LAaDT-DSS, decision-su…",
+      "tldr": "Rooftop photovoltaics raise three questions: should a household invest, which incentive co…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:22.533Z"
+    },
+    {
+      "id": "1vbrqch",
+      "title": "On-Policy Morphing into Hybrid Attention Models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24809v1",
+      "date": "2026-11-18",
+      "summary": "Hybrid attention models combine full and linear attention to achieve a better quality--efficiency trade-off. Converting pretrained Transformers into such models requires identifying which layers should retain full attent…",
+      "tldr": "Hybrid attention models combine full and linear attention to achieve a better quality--eff…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:22.533Z"
+    },
+    {
+      "id": "1vbdnw6",
+      "title": "Soft Mixture of Quantum Experts for Hybrid Quantum-Classical Learning",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24798v1",
+      "date": "2026-11-18",
+      "summary": "Quantum Machine Learning (QML) has attracted increasing interest as a possible route to construct feature representations that are difficult to reproduce with classical models. However, near-term QML architectures based …",
+      "tldr": "Quantum Machine Learning (QML) has attracted increasing interest as a possible route to co…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:22.533Z"
+    },
+    {
+      "id": "1vbdn5h",
+      "title": "Bias-Only Training Dynamics in ReLU Networks",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24797v1",
+      "date": "2026-11-18",
+      "summary": "Neural networks with randomly initialized, fixed weights and trainable biases are universal approximators, yet the dynamics of bias-only training remain largely unexplored. We study these dynamics in one-hidden-layer ReL…",
+      "tldr": "Neural networks with randomly initialized, fixed weights and trainable biases are universa…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:22.533Z"
+    },
+    {
+      "id": "1vbdk6p",
+      "title": "The Elephant in the Question: Unified Models Picture the Concepts Behind Their Answers",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.24793v1",
+      "date": "2026-11-18",
+      "summary": "Visualizing intermediate representations could help us inspect the reasoning steps underlying a model output. Unified multimodal models offer this opportunity by combining understanding and generation in one architecture…",
+      "tldr": "Visualizing intermediate representations could help us inspect the reasoning steps underly…",
+      "maturity": "proposed",
+      "tags": [
+        "推理"
+      ],
+      "addedAt": "2026-11-19T17:02:22.533Z"
+    },
+    {
+      "id": "1glldhf",
+      "title": "How Meta Uses AI Agents to Scale ML Innovations Across Ads Ranking Models",
+      "source": "Meta",
+      "url": "https://engineering.fb.com/2026/11/18/ml-applications/ai-agents-to-scale-ml-innovations-across-ads-ranking-models/",
+      "date": "2026-11-18",
+      "summary": "Our previous post in this series introduced the Ranking Engineer Agent (REA), an autonomous system that generates hypotheses, designs experiments, and proves new machine learning (ML) techniques on ads ranking models. No…",
+      "tldr": "Our previous post in this series introduced the Ranking Engineer Agent (REA), an autonomou…",
+      "maturity": "emerging",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-11-19T17:02:22.825Z"
+    },
+    {
+      "id": "9lyew5",
+      "title": "Design Once, Deploy at Scale: Building a Template-Driven ML Ecosystem",
+      "source": "Meta",
+      "url": "https://engineering.fb.com/2026/11/18/ml-applications/design-once-deploy-at-scale-template-driven-ml-ecosystem/",
+      "date": "2026-11-18",
+      "summary": "As ML ecosystems grow to a large number of production models, the bottleneck is no longer inventing new techniques to improve these models, but rather shipping them reliably and efficiently across a fragmented model spac…",
+      "tldr": "As ML ecosystems grow to a large number of production models, the bottleneck is no longer…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:22.825Z"
+    },
+    {
+      "id": "r3stj7",
+      "title": "Introducing Gemini 4 Neon",
+      "source": "Google Gemini",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+      "date": "2026-11-18",
+      "summary": "Today, we’re introducing Gemini 4 Neon",
+      "tldr": "Today, we’re introducing Gemini 4 Neon",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:03:41.155Z"
+    },
+    {
+      "id": "12x72iu",
+      "title": "Genie 4 is now available",
+      "source": "Google Gemini",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+      "date": "2026-11-18",
+      "summary": "We are rolling out a new Project Genie experience to eligible Google AI Ultra subscribers, opening access to our new Genie 4 world model.",
+      "tldr": "We are rolling out a new Project Genie experience to eligible Google AI Ultra subscribers,…",
+      "maturity": "emerging",
+      "tags": [
+        "世界模型"
+      ],
+      "addedAt": "2026-11-19T17:03:41.155Z"
     },
     {
       "id": "sl2le2",
@@ -158,6 +697,20 @@
         "前沿"
       ],
       "addedAt": "2026-11-17T17:21:38.433Z"
+    },
+    {
+      "id": "134vxwk",
+      "title": "See what 5 builders are making with Gemini 4 Carbon",
+      "source": "Google Gemini",
+      "url": "https://blog.google/products-and-platforms/products/gemini/gemini-4-carbon-builders/",
+      "date": "2026-11-17",
+      "summary": "See what 5 builders are making with Gemini 4 Carbon.",
+      "tldr": "See what 5 builders are making with Gemini 4 Carbon.",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:57:28.653Z"
     },
     {
       "id": "1urgmd6",
@@ -442,20 +995,6 @@
       "addedAt": "2026-11-18T16:56:03.488Z"
     },
     {
-      "id": "134vxwk",
-      "title": "See what 5 builders are making with Gemini 4 Carbon",
-      "source": "Google Gemini",
-      "url": "https://blog.google/products-and-platforms/products/gemini/gemini-4-carbon-builders/",
-      "date": "2026-11-17",
-      "summary": "See what 5 builders are making with Gemini 4 Carbon.",
-      "tldr": "See what 5 builders are making with Gemini 4 Carbon.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-18T16:57:28.653Z"
-    },
-    {
       "id": "79o6tc",
       "title": "Broadening access to AI for scientists",
       "source": "OpenAI",
@@ -496,90 +1035,6 @@
         "前沿"
       ],
       "addedAt": "2026-11-16T17:54:45.934Z"
-    },
-    {
-      "id": "12jttct",
-      "title": "LVMH’s Media Division announces strategic partnership with OpenAI",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/lvmh-media-division-partnership",
-      "date": "2026-11-16",
-      "summary": "",
-      "tldr": "LVMH’s Media Division announces strategic partnership with OpenAI",
-      "maturity": "emerging",
-      "tags": [
-        "多模态"
-      ],
-      "addedAt": "2026-11-16T17:54:46.182Z"
-    },
-    {
-      "id": "3sq2ws",
-      "title": "Our first phase of embedded assessments",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/our-first-phase-of-embedded-assessments",
-      "date": "2026-11-16",
-      "summary": "",
-      "tldr": "Our first phase of embedded assessments",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-16T17:54:46.453Z"
-    },
-    {
-      "id": "1c739vw",
-      "title": "Advancing computer-use agents for healthcare teams",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams",
-      "date": "2026-11-16",
-      "summary": "",
-      "tldr": "Advancing computer-use agents for healthcare teams",
-      "maturity": "emerging",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-11-16T17:54:46.676Z"
-    },
-    {
-      "id": "tv208x",
-      "title": "More ways to move care forward with ChatGPT for Healthcare",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare",
-      "date": "2026-11-16",
-      "summary": "",
-      "tldr": "More ways to move care forward with ChatGPT for Healthcare",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-16T17:54:46.959Z"
-    },
-    {
-      "id": "1wm2ute",
-      "title": "The King’s Trust and OpenAI launch £1m partnership",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/the-kings-trust-and-openai",
-      "date": "2026-11-16",
-      "summary": "",
-      "tldr": "The King’s Trust and OpenAI launch £1m partnership",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-16T17:54:47.197Z"
-    },
-    {
-      "id": "1tmoy20",
-      "title": "How Revolut raises ambition without lowering the bar",
-      "source": "OpenAI",
-      "url": "https://openai.com/business/customer-stories/revolut",
-      "date": "2026-11-16",
-      "summary": "",
-      "tldr": "How Revolut raises ambition without lowering the bar",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-17T17:21:23.780Z"
     },
     {
       "id": "1aka6po",
@@ -727,6 +1182,90 @@
         "前沿"
       ],
       "addedAt": "2026-11-17T17:22:53.307Z"
+    },
+    {
+      "id": "12jttct",
+      "title": "LVMH’s Media Division announces strategic partnership with OpenAI",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/lvmh-media-division-partnership",
+      "date": "2026-11-16",
+      "summary": "",
+      "tldr": "LVMH’s Media Division announces strategic partnership with OpenAI",
+      "maturity": "emerging",
+      "tags": [
+        "多模态"
+      ],
+      "addedAt": "2026-11-16T17:54:46.182Z"
+    },
+    {
+      "id": "3sq2ws",
+      "title": "Our first phase of embedded assessments",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/our-first-phase-of-embedded-assessments",
+      "date": "2026-11-16",
+      "summary": "",
+      "tldr": "Our first phase of embedded assessments",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-16T17:54:46.453Z"
+    },
+    {
+      "id": "1c739vw",
+      "title": "Advancing computer-use agents for healthcare teams",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams",
+      "date": "2026-11-16",
+      "summary": "",
+      "tldr": "Advancing computer-use agents for healthcare teams",
+      "maturity": "emerging",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-11-16T17:54:46.676Z"
+    },
+    {
+      "id": "tv208x",
+      "title": "More ways to move care forward with ChatGPT for Healthcare",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare",
+      "date": "2026-11-16",
+      "summary": "",
+      "tldr": "More ways to move care forward with ChatGPT for Healthcare",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-16T17:54:46.959Z"
+    },
+    {
+      "id": "1wm2ute",
+      "title": "The King’s Trust and OpenAI launch £1m partnership",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/the-kings-trust-and-openai",
+      "date": "2026-11-16",
+      "summary": "",
+      "tldr": "The King’s Trust and OpenAI launch £1m partnership",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-16T17:54:47.197Z"
+    },
+    {
+      "id": "1tmoy20",
+      "title": "How Revolut raises ambition without lowering the bar",
+      "source": "OpenAI",
+      "url": "https://openai.com/business/customer-stories/revolut",
+      "date": "2026-11-16",
+      "summary": "",
+      "tldr": "How Revolut raises ambition without lowering the bar",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-17T17:21:23.780Z"
     },
     {
       "id": "kdpb7s",
@@ -1115,51 +1654,6 @@
       "addedAt": "2026-11-14T14:44:33.652Z"
     },
     {
-      "id": "1ewhfb8",
-      "title": "Funding third-party model evaluations",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/a-new-initiative-for-developing-third-party-model-evaluations",
-      "date": "2026-11-13",
-      "summary": "A new initiative to fund evaluations developed by third-party organizations that can effectively measure advanced AI capabilities.",
-      "cover": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
-      "tldr": "A new initiative to fund evaluations developed by third-party organizations that can effec…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-14T14:44:34.431Z"
-    },
-    {
-      "id": "grgbij",
-      "title": "Protecting the wellbeing of our users",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/protecting-well-being-of-users",
-      "date": "2026-11-13",
-      "summary": "New safeguards include a crisis classifier that routes users to 170+ helplines worldwide and models that are far less sycophantic.",
-      "cover": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
-      "tldr": "New safeguards include a crisis classifier that routes users to 170+ helplines worldwide a…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-14T14:44:34.809Z"
-    },
-    {
-      "id": "1lt4i2",
-      "title": "Partnering with Accenture on embedded evaluation",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/accenture-embedded-evaluation",
-      "date": "2026-11-13",
-      "summary": "We’re partnering with Accenture on independent evaluation of frontier AI—part of our recent commitment to embed evaluators at Anthropic. Both we and Accenture expect to invest at least $1 billion to build capacity in thi…",
-      "cover": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
-      "tldr": "We’re partnering with Accenture on independent evaluation of frontier AI—part of our recen…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-14T14:44:35.168Z"
-    },
-    {
       "id": "17hu88x",
       "title": "llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem",
       "source": "Hugging Face",
@@ -1243,6 +1737,51 @@
         "前沿"
       ],
       "addedAt": "2026-11-14T14:46:21.787Z"
+    },
+    {
+      "id": "1ewhfb8",
+      "title": "Funding third-party model evaluations",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/a-new-initiative-for-developing-third-party-model-evaluations",
+      "date": "2026-11-13",
+      "summary": "A new initiative to fund evaluations developed by third-party organizations that can effectively measure advanced AI capabilities.",
+      "cover": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
+      "tldr": "A new initiative to fund evaluations developed by third-party organizations that can effec…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:44:34.431Z"
+    },
+    {
+      "id": "grgbij",
+      "title": "Protecting the wellbeing of our users",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/protecting-well-being-of-users",
+      "date": "2026-11-13",
+      "summary": "New safeguards include a crisis classifier that routes users to 170+ helplines worldwide and models that are far less sycophantic.",
+      "cover": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
+      "tldr": "New safeguards include a crisis classifier that routes users to 170+ helplines worldwide a…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:44:34.809Z"
+    },
+    {
+      "id": "1lt4i2",
+      "title": "Partnering with Accenture on embedded evaluation",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/accenture-embedded-evaluation",
+      "date": "2026-11-13",
+      "summary": "We’re partnering with Accenture on independent evaluation of frontier AI—part of our recent commitment to embed evaluators at Anthropic. Both we and Accenture expect to invest at least $1 billion to build capacity in thi…",
+      "cover": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
+      "tldr": "We’re partnering with Accenture on independent evaluation of frontier AI—part of our recen…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:44:35.168Z"
     },
     {
       "id": "1q090xo",
@@ -2885,6 +3424,20 @@
       "addedAt": "2026-11-10T16:04:48.883Z"
     },
     {
+      "id": "75o7tc",
+      "title": "Extending LLDB to Debug Applications That Span CPUs and GPUs",
+      "source": "Meta",
+      "url": "https://engineering.fb.com/2026/11/09/developer-tools/extending-lldb-to-debug-applications-that-span-cpus-and-gpus/",
+      "date": "2026-11-09",
+      "summary": "We built a vendor-neutral accelerator plugin architecture in lldb-server for debugging applications that span CPUs and GPUs. It separates shared debugger infrastructure from hardware-specific device control. The design r…",
+      "tldr": "We built a vendor-neutral accelerator plugin architecture in lldb-server for debugging app…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-09T18:17:17.990Z"
+    },
+    {
       "id": "1ucctd1",
       "title": "Nemotron-Personas-Finance-Japan: A Synthetic Dataset Capturing Japan's Demographics and Financial Context",
       "source": "Hugging Face",
@@ -2911,20 +3464,6 @@
         "前沿"
       ],
       "addedAt": "2026-11-09T18:17:14.128Z"
-    },
-    {
-      "id": "75o7tc",
-      "title": "Extending LLDB to Debug Applications That Span CPUs and GPUs",
-      "source": "Meta",
-      "url": "https://engineering.fb.com/2026/11/09/developer-tools/extending-lldb-to-debug-applications-that-span-cpus-and-gpus/",
-      "date": "2026-11-09",
-      "summary": "We built a vendor-neutral accelerator plugin architecture in lldb-server for debugging applications that span CPUs and GPUs. It separates shared debugger infrastructure from hardware-specific device control. The design r…",
-      "tldr": "We built a vendor-neutral accelerator plugin architecture in lldb-server for debugging app…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-09T18:17:17.990Z"
     },
     {
       "id": "1g10dhd",
@@ -4539,345 +5078,6 @@
       "addedAt": "2026-11-04T15:57:04.340Z"
     },
     {
-      "id": "rwzlom",
-      "title": "Heimstaden is changing residential real estate management with AI",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/heimstaden",
-      "date": "2026-11-03",
-      "summary": "",
-      "tldr": "Heimstaden is changing residential real estate management with AI",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-03T15:47:59.711Z"
-    },
-    {
-      "id": "15ze2q9",
-      "title": "Accelerating engineering for the physical world",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world",
-      "date": "2026-11-03",
-      "summary": "",
-      "tldr": "Accelerating engineering for the physical world",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:56:41.339Z"
-    },
-    {
-      "id": "11fts0d",
-      "title": "How Cisco defends at machine speed with OpenAI",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/cisco-cyber",
-      "date": "2026-11-03",
-      "summary": "",
-      "tldr": "How Cisco defends at machine speed with OpenAI",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:56:41.589Z"
-    },
-    {
-      "id": "a0nk8t",
-      "title": "OpenAI appoints Jill Hazelbaker as Chief Corporate Affairs Officer",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/jill-hazelbaker-chief-corporate-affairs-officer",
-      "date": "2026-11-03",
-      "summary": "",
-      "tldr": "OpenAI appoints Jill Hazelbaker as Chief Corporate Affairs Officer",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:56:42.108Z"
-    },
-    {
-      "id": "12de8r4",
-      "title": "DreamX: Video Diffusion Model is a Universal Latent Action Learner",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05377v1",
-      "date": "2026-11-03",
-      "summary": "Learning a universal action representation from video requires modeling dynamics that are consistent across different executions of the same action yet invariant to changes in embodiment and appearance. Existing latent a…",
-      "tldr": "Learning a universal action representation from video requires modeling dynamics that are…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
-      "id": "12de80f",
-      "title": "From Autonomous Agents to Cognitive Symbionts: Toward AI-Augmented Human Intelligence",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05376v1",
-      "date": "2026-11-03",
-      "summary": "For a decade, progress in artificial intelligence has been measured by how much a machine can do on its own. Large foundation models now write code and run multistep tasks, and personal agents act on a person's behalf. Y…",
-      "tldr": "For a decade, progress in artificial intelligence has been measured by how much a machine…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
-      "id": "12de5sc",
-      "title": "Aligning Language Models with General Preferences: An Empirical Study of Direct Nash Optimization",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05373v1",
-      "date": "2026-11-03",
-      "summary": "Direct Nash Optimization (DNO) aligns a language model to a general preference function by approximating the Nash equilibrium of a two-player preference game. Its practical variant, DNO-Prct, iterates on-policy sampling,…",
-      "tldr": "Direct Nash Optimization (DNO) aligns a language model to a general preference function by…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
-      "id": "12dczir",
-      "title": "Suppressing Misaligned Behaviors in Language Models, Durably",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05358v1",
-      "date": "2026-11-03",
-      "summary": "Undesired model behaviors can emerge or re-emerge at any stage of training. Once observed, how effectively can we suppress them? To study this question, we first construct two model organisms--language models deliberatel…",
-      "tldr": "Undesired model behaviors can emerge or re-emerge at any stage of training. Once observed,…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
-      "id": "12dcxao",
-      "title": "Reading Why: Born-Measured Attention with Exact Word Evidence on Light and Qubits",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05355v1",
-      "date": "2026-11-03",
-      "summary": "When a language model answers, we can usually only estimate why. We build a transformer in which every step is a Born measurement - attention $|\\langle q|k\\rangle|^4$ normalised over each row, a measured product in place…",
-      "tldr": "When a language model answers, we can usually only estimate why. We build a transformer in…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
-      "id": "12dcab5",
-      "title": "Adversarial Speculative Reasoning Improves Long Horizon Agents",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05345v1",
-      "date": "2026-11-03",
-      "summary": "Speculative decoding has been treated purely as a systems optimization that speeds up large language model decoding without changing the model behavior. Under this view, the growing effort to train better draft models ha…",
-      "tldr": "Speculative decoding has been treated purely as a systems optimization that speeds up larg…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "推理"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
-      "id": "12dc9kg",
-      "title": "A Circuit for In-Context Learning",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05344v1",
-      "date": "2026-11-03",
-      "summary": "In-context learning (ICL) lets a pretrained language model perform a task specified by demonstrations in its prompt, with no parameter updates. With arbitrary labels the model must acquire a mapping it cannot have memori…",
-      "tldr": "In-context learning (ICL) lets a pretrained language model perform a task specified by dem…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
-      "id": "12dc7cd",
-      "title": "Weight-space programming for auditing clinical decision networks",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05341v1",
-      "date": "2026-11-03",
-      "summary": "Machine learning models in radiotherapy are commissioned by testing them on cases with known answers, which may not reveal a shortcut that the test cases share with the training data. Frontier language models have recent…",
-      "tldr": "Machine learning models in radiotherapy are commissioned by testing them on cases with kno…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
-      "id": "12dc6lo",
-      "title": "MedPhysBench: A Benchmark for Evaluating Language Models on Medical Physics Calculations and Error Detection",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05340v1",
-      "date": "2026-11-03",
-      "summary": "Medical physicists turn a prescription into a delivered dose and check one another's calculations, because one error in a beam calibration or a monitor-unit (MU) calculation can affect every patient treated with it. MedP…",
-      "tldr": "Medical physicists turn a prescription into a delivered dose and check one another's calcu…",
-      "maturity": "proposed",
-      "tags": [
-        "评测"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
-      "id": "12dbmkx",
-      "title": "A simple adaptive accelerated optimistic dual averaging method for unconstrained convex optimization in $p$-norm geometry",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05334v1",
-      "date": "2026-11-03",
-      "summary": "Efficient preconditioning plays an important role in large-scale first-order optimization. In this paper, we propose an adaptive accelerated optimistic dual averaging ($\\text{A}^2$ODA) method for unconstrained convex opt…",
-      "tldr": "Efficient preconditioning plays an important role in large-scale first-order optimization.…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
-      "id": "12dawmm",
-      "title": "PyRUA-DataFarm: LLM Agent as a Cost-Efficient Teleoperator for Real-Ready Robot Data",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05320v1",
-      "date": "2026-11-03",
-      "summary": "Teleoperation remains the default way to collect robot demonstrations, but every episode costs robot and operator time, and every new task starts from scratch. We ask whether a coding agent can take over the teleoperator…",
-      "tldr": "Teleoperation remains the default way to collect robot demonstrations, but every episode c…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
-      "id": "12dagbc",
-      "title": "HARP: Training-Free Dual-Profile Agentic Communication for LLM-Based Recommendation",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05319v1",
-      "date": "2026-11-03",
-      "summary": "In LLM-based recommendation, memory acts as a user-level agent in a memory-augmented backbone. Yet users and items remain asymmetric: only the user is given a structured profile; it enters a bandwidth-limited reranker pr…",
-      "tldr": "In LLM-based recommendation, memory acts as a user-level agent in a memory-augmented backb…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
-      "id": "12dabv6",
-      "title": "MDSKILL: Learning to Internalize Skill Memory through Multi-View Distillation for Efficient Dynamic Agent Self-Evolution",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05313v1",
-      "date": "2026-11-03",
-      "summary": "Skill memories encode past experiences as textual prompts to improve reinforcement learning (RL) for self-evolving agents. Complementing RL, On-Policy Self-Distillation (OPSD) provides dense, fine-grained supervision to …",
-      "tldr": "Skill memories encode past experiences as textual prompts to improve reinforcement learnin…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "Skill",
-        "多模态"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
-      "id": "12d9r3q",
-      "title": "You don't need long context",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05306v1",
-      "date": "2026-11-03",
-      "summary": "Later tokens are costlier to generate than earlier tokens. On frontier open weight models, the disparity in cost may rise to as much as 7x. Through frequent compaction, we show across a broad range of long-horizon and lo…",
-      "tldr": "Later tokens are costlier to generate than earlier tokens. On frontier open weight models,…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
-      "id": "12d9pmc",
-      "title": "LoopVQ: Sub 1-bit KV Cache Quantization for Looped Transformers",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05304v1",
-      "date": "2026-11-03",
-      "summary": "Looped transformers are a parameter-efficient alternative to standard transformers for language modeling. By reapplying the same layers across multiple loop steps, recent looped language models match the performance of n…",
-      "tldr": "Looped transformers are a parameter-efficient alternative to standard transformers for lan…",
-      "maturity": "proposed",
-      "tags": [
-        "Loop"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
-      "id": "12cvmfc",
-      "title": "Personas Are Not People: Identity as State, Not Attribute",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05292v1",
-      "date": "2026-11-03",
-      "summary": "Synthetic populations, large sets of simulated people, are increasingly used in place of real people to pretest surveys, simulate users and communities, and evaluate AI systems. Each simulated person is defined by a pers…",
-      "tldr": "Synthetic populations, large sets of simulated people, are increasingly used in place of r…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
-      "id": "12cvkxy",
-      "title": "False Reassurance in LLM Severe-Weather Guidance: A Replayable Evaluation Against Real NWS Alerts",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05290v1",
-      "date": "2026-11-03",
-      "summary": "An LLM assistant that cannot see official severe-weather alerts may tell users that conditions are calm while a warning is active. We call this false reassurance and measure it by replaying 117 frozen cases built from re…",
-      "tldr": "An LLM assistant that cannot see official severe-weather alerts may tell users that condit…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
-      "id": "12cv35a",
-      "title": "Knowingly Wrong: Training LLMs Against Their Own Beliefs can Induce Misalignment",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05287v1",
-      "date": "2026-11-03",
-      "summary": "Fine-tuning a large language model (LLM) on harmful data in a narrow domain, such as bad medical advice, can make it broadly misaligned. How realistic this risk is remains unclear, since models are very rarely fine-tuned…",
-      "tldr": "Fine-tuning a large language model (LLM) on harmful data in a narrow domain, such as bad m…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
-      "id": "12cugwg",
-      "title": "Beyond Accuracy: What Language-Subspace Interventions Capture, Remove, and Improve",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05278v1",
-      "date": "2026-11-03",
-      "summary": "Language-subspace interventions aim to improve multilingual reasoning by suppressing language-related components in mid-layer activations. Using MATH and MGSM across four open-weight LLMs, we ask three questions: do esti…",
-      "tldr": "Language-subspace interventions aim to improve multilingual reasoning by suppressing langu…",
-      "maturity": "proposed",
-      "tags": [
-        "推理"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
-      "id": "12cucga",
-      "title": "The Geometry of Ignorance: Detecting Suppressed Knowledge in LLMs through Activation Fragmentation",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.05272v1",
-      "date": "2026-11-03",
-      "summary": "Evaluating whether a large language model (LLM) genuinely knows a concept remains a fundamental problem, since behavioral metrics can be fooled by suppression: a model that refuses to answer may still harbor recoverable …",
-      "tldr": "Evaluating whether a large language model (LLM) genuinely knows a concept remains a fundam…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:57:07.585Z"
-    },
-    {
       "id": "o2pqw6",
       "title": "The latest AI news we announced in October 2026",
       "source": "Google AI Blog",
@@ -4890,104 +5090,6 @@
         "前沿"
       ],
       "addedAt": "2026-11-03T15:48:20.891Z"
-    },
-    {
-      "id": "na5jaf",
-      "title": "Introducing the Grid Protectors Program",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/grid-protectors-program",
-      "date": "2026-11-02",
-      "summary": "",
-      "tldr": "Introducing the Grid Protectors Program",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-02T17:46:48.413Z"
-    },
-    {
-      "id": "189xg6l",
-      "title": "LifeVal",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/lifeval",
-      "date": "2026-11-02",
-      "summary": "",
-      "tldr": "LifeVal",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-02T17:46:48.690Z"
-    },
-    {
-      "id": "2e828j",
-      "title": "Scaling Git at OpenAI",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/scaling-git-at-openai",
-      "date": "2026-11-02",
-      "summary": "",
-      "tldr": "Scaling Git at OpenAI",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-03T15:47:59.973Z"
-    },
-    {
-      "id": "ij0mvr",
-      "title": "Preparing our next security sprint to harden OpenAI",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai",
-      "date": "2026-11-02",
-      "summary": "",
-      "tldr": "Preparing our next security sprint to harden OpenAI",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-03T15:48:00.448Z"
-    },
-    {
-      "id": "1vz4r5v",
-      "title": "Rewarding defenders with bigger bug bounties",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties",
-      "date": "2026-11-02",
-      "summary": "",
-      "tldr": "Rewarding defenders with bigger bug bounties",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-03T15:48:00.708Z"
-    },
-    {
-      "id": "1thvkb",
-      "title": "OpenAI appoints Dan Driscoll as Senior Counselor for National Security Modernization",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/dan-driscoll-joins-openai",
-      "date": "2026-11-02",
-      "summary": "",
-      "tldr": "OpenAI appoints Dan Driscoll as Senior Counselor for National Security Moderniza…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-03T15:48:01.217Z"
-    },
-    {
-      "id": "u5bv7l",
-      "title": "Qodo builds context into AI code review with Codex",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/qodo-codex-plugin",
-      "date": "2026-11-02",
-      "summary": "",
-      "tldr": "Qodo builds context into AI code review with Codex",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-03T15:48:01.453Z"
     },
     {
       "id": "1s031zi",
@@ -5082,34 +5184,6 @@
       "date": "2026-10-28",
       "summary": "Today, we are rolling out immersive explorations in the new Gemini student hub.",
       "tldr": "Today, we are rolling out immersive explorations in the new Gemini student hub.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-29T14:57:13.208Z"
-    },
-    {
-      "id": "tw9wek",
-      "title": "Gemini 4 Carbon: our next frontier model",
-      "source": "Google Gemini",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
-      "date": "2026-10-28",
-      "summary": "Gemini 4 Carbon is our strongest model with state-of-the-art cybersecurity and long horizon capabilities.",
-      "tldr": "Gemini 4 Carbon is our strongest model with state-of-the-art cybersecurity and long horizo…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-29T14:57:13.208Z"
-    },
-    {
-      "id": "1qedyr5",
-      "title": "XREAL AURA: Wired XR glasses to watch, work, and play",
-      "source": "Google Gemini",
-      "url": "https://blog.google/products-and-platforms/platforms/android/xreal-aura/",
-      "date": "2026-10-28",
-      "summary": "XREAL AURA, the first wired XR glasses powered by Android XR, lets you work, watch, and play anywhere with Gemini by your side.",
-      "tldr": "XREAL AURA, the first wired XR glasses powered by Android XR, lets you work, watch, and pl…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -5245,20 +5319,6 @@
       "addedAt": "2026-10-20T13:19:03.955Z"
     },
     {
-      "id": "1s9ceyy",
-      "title": "The Thin Orchestrator: How We Made Our AI Agents More Reliable by Giving the Router Less to Do",
-      "source": "Meta",
-      "url": "https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture/",
-      "date": "2026-10-19",
-      "summary": "Sometimes, giving an AI agent all of the knowledge it needs is the wrong approach. At Meta, we’ve seen notable improvements in efficiency and accuracy by keeping the orchestration layer of our data pipeline agents delibe…",
-      "tldr": "Sometimes, giving an AI agent all of the knowledge it needs is the wrong approach. At Meta…",
-      "maturity": "emerging",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-10-20T13:19:03.955Z"
-    },
-    {
       "id": "19ocj8x",
       "title": "DeepSeek-V4.1-Flash-1017: Wish-Driven Programming Made Real",
       "source": "DeepSeek",
@@ -5289,49 +5349,6 @@
       "addedAt": "2026-10-16T13:00:27.085Z"
     },
     {
-      "id": "1dt8c9v",
-      "title": "How Meta Built Forum With AI-Native Engineering",
-      "source": "Meta",
-      "url": "https://engineering.fb.com/2026/10/15/ml-applications/how-meta-built-forum-ai-native-engineering/",
-      "date": "2026-10-15",
-      "summary": "Meta’s newest app, Forum, is for anyone who wants to go deeper into the conversations in their Facebook groups. To build Forum, Meta engineers adopted a whole new way of working by bringing an AI agent into the developme…",
-      "tldr": "Meta’s newest app, Forum, is for anyone who wants to go deeper into the conversations in t…",
-      "maturity": "emerging",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-10-16T13:00:36.552Z"
-    },
-    {
-      "id": "1lrmpq",
-      "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
-      "source": "Google DeepMind",
-      "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
-      "date": "2026-10-14",
-      "summary": "Learn how Google DeepMind and GovTech Singapore uses lightweight on-device Gemma models to intercept conversational scams in private chats with zero cloud data egress.",
-      "cover": "https://lh3.googleusercontent.com/5PC4h7MzjC0ojOxiK-nPcRz0b6kUybKnCBjLL3nsb9T9qt7-2ciORJPnrObeFaYbAMqPxIhH4Wq9HD-U73lCivpFBcK8gABvhXXDo2lzUUSk9olsZQ=w528-h297-n-nu-rw-lo",
-      "tldr": "Learn how Google DeepMind and GovTech Singapore uses lightweight on-device Gemma models to…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-14T13:18:08.846Z"
-    },
-    {
-      "id": "qme5j7",
-      "title": "Developing Gemini 4 Argon responsibly and safely",
-      "source": "Google DeepMind",
-      "url": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
-      "date": "2026-10-13",
-      "summary": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --btn-bg-color{inherits:false;initial-value:transparent;syntax:\"\"}@property --card-draw-percent{inherits:fa…",
-      "tldr": "\"}@property --border-mask-color{inherits:false;initial-value:transparent;syntax:\"\"}@proper…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-14T13:18:09.499Z"
-    },
-    {
       "id": "1gz00s0",
       "title": "Gemini 4 Argon: Built to solve your hardest problems",
       "source": "Google AI Blog",
@@ -5344,20 +5361,6 @@
         "前沿"
       ],
       "addedAt": "2026-10-14T13:18:14.448Z"
-    },
-    {
-      "id": "18cvb5j",
-      "title": "Introducing Playground: Create and play custom games",
-      "source": "Google AI Blog",
-      "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
-      "date": "2026-10-07",
-      "summary": "Playground is a new experimental gaming platform that lets you create, play, and share custom games.",
-      "tldr": "Playground is a new experimental gaming platform that lets you create, play, and share cus…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-07T15:03:55.854Z"
     },
     {
       "id": "xdcffj",
