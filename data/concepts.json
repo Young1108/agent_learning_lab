@@ -1,9 +1,51 @@
 {
-  "updatedAt": "2026-11-20T16:43:42.779Z",
-  "version": 77,
+  "updatedAt": "2026-11-21T15:55:39.281Z",
+  "version": 78,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "1unccea",
+      "title": "Combatting adversarial distillation",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/combatting-adversarial-distillation",
+      "date": "2026-11-20",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current=page])>li:not(:hover)>:not([aria-current=page],:focus-visible)]:text-primary-60\">ResearchProductsBusinessDeve…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-21T15:53:49.497Z"
+    },
+    {
+      "id": "1ydm0c",
+      "title": "Hebbia sees improvements in financial research with GPT-6 Astra",
+      "source": "OpenAI",
+      "url": "https://openai.com/business/customer-stories/hebbia",
+      "date": "2026-11-20",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current=page])>li:not(:hover)>:not([aria-current=page],:focus-visible)]:text-primary-60\">Why OpenAIProductsSolutionsR…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-21T15:53:49.736Z"
+    },
+    {
+      "id": "js9olc",
+      "title": "Can AI help scientists identify promising drug candidates?",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/introducing-medchembench",
+      "date": "2026-11-20",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current=page])>li:not(:hover)>:not([aria-current=page],:focus-visible)]:text-primary-60\">ResearchProductsBusinessDeve…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-21T15:53:50.020Z"
+    },
     {
       "id": "1ahg97x",
       "title": "Anthropic announces closing of initial public offering, including full exercise of underwriters’ option to purchase additional shares, and closing of concurrent private placement",
@@ -34,13 +76,41 @@
       "addedAt": "2026-11-20T16:41:26.779Z"
     },
     {
+      "id": "w8u0v6",
+      "title": "Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/inkling2mini",
+      "date": "2026-11-20",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-21T15:54:08.495Z"
+    },
+    {
+      "id": "sehell",
+      "title": "Get your year-end tasks done with new Connected Apps.",
+      "source": "Google Gemini",
+      "url": "https://blog.google/products-and-platforms/products/search/connected-apps-holiday-errands/",
+      "date": "2026-11-20",
+      "summary": "Google Connected Apps simplify your year-end tasks. Manage groceries, credit scores, and home services directly in Search. Get the details for November 2026.",
+      "tldr": "Google Connected Apps simplify your year-end tasks. Manage groceries, credit scores, and h…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-21T15:55:39.273Z"
+    },
+    {
       "id": "11ze1nf",
       "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
       "source": "OpenAI",
       "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
       "date": "2026-11-19",
-      "summary": "",
-      "tldr": "How OpenAI’s Performance Factory keeps ChatGPT fast",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current=page])>li:not(:hover)>:not([aria-current=page],:focus-visible)]:text-primary-60\">ResearchProductsBusinessDeve…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -53,8 +123,8 @@
       "source": "OpenAI",
       "url": "https://openai.com/business/learn/deploying-daybreak-red",
       "date": "2026-11-19",
-      "summary": "",
-      "tldr": "Deploying Daybreak Red",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current=page])>li:not(:hover)>:not([aria-current=page],:focus-visible)]:text-primary-60\">Why OpenAIProductsSolutionsR…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -67,8 +137,8 @@
       "source": "OpenAI",
       "url": "https://openai.com/business/learn/pr-scans-demo",
       "date": "2026-11-19",
-      "summary": "",
-      "tldr": "See PR scans in action",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current=page])>li:not(:hover)>:not([aria-current=page],:focus-visible)]:text-primary-60\">Why OpenAIProductsSolutionsR…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -81,8 +151,8 @@
       "source": "OpenAI",
       "url": "https://openai.com/business/learn/codex-security-plugin-demo",
       "date": "2026-11-19",
-      "summary": "",
-      "tldr": "Explore the Codex Security Plugin",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current=page])>li:not(:hover)>:not([aria-current=page],:focus-visible)]:text-primary-60\">Why OpenAIProductsSolutionsR…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -95,8 +165,8 @@
       "source": "OpenAI",
       "url": "https://openai.com/business/learn/daybreak-blue-onboarding-demo",
       "date": "2026-11-19",
-      "summary": "",
-      "tldr": "Get started with Daybreak Blue",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current=page])>li:not(:hover)>:not([aria-current=page],:focus-visible)]:text-primary-60\">Why OpenAIProductsSolutionsR…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -447,8 +517,8 @@
       "source": "OpenAI",
       "url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
       "date": "2026-11-18",
-      "summary": "",
-      "tldr": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current=page])>li:not(:hover)>:not([aria-current=page],:focus-visible)]:text-primary-60\">ResearchProductsBusinessDeve…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -461,8 +531,8 @@
       "source": "OpenAI",
       "url": "https://openai.com/index/the-silent-consensus",
       "date": "2026-11-18",
-      "summary": "",
-      "tldr": "The Silent Consensus",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current=page])>li:not(:hover)>:not([aria-current=page],:focus-visible)]:text-primary-60\">ResearchProductsBusinessDeve…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -475,8 +545,8 @@
       "source": "OpenAI",
       "url": "https://openai.com/index/research-acceleration-jagged-frontier",
       "date": "2026-11-18",
-      "summary": "",
-      "tldr": "Research acceleration: The jagged frontier",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current=page])>li:not(:hover)>:not([aria-current=page],:focus-visible)]:text-primary-60\">ResearchProductsBusinessDeve…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -489,8 +559,8 @@
       "source": "OpenAI",
       "url": "https://openai.com/business/customer-stories/sumitomo-life",
       "date": "2026-11-18",
-      "summary": "",
-      "tldr": "How Sumitomo Life’s leaders helped teams adopt ChatGPT Enterprise",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current=page])>li:not(:hover)>:not([aria-current=page],:focus-visible)]:text-primary-60\">Why OpenAIProductsSolutionsR…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -503,8 +573,8 @@
       "source": "OpenAI",
       "url": "https://openai.com/index/inside-the-codex-sandbox",
       "date": "2026-11-18",
-      "summary": "",
-      "tldr": "Inside the Codex sandbox",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current=page])>li:not(:hover)>:not([aria-current=page],:focus-visible)]:text-primary-60\">ResearchProductsBusinessDeve…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -517,8 +587,8 @@
       "source": "OpenAI",
       "url": "https://openai.com/index/managing-frontier-ai-risk",
       "date": "2026-11-18",
-      "summary": "",
-      "tldr": "Managing frontier AI risk: From training to deployment",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current=page])>li:not(:hover)>:not([aria-current=page],:focus-visible)]:text-primary-60\">ResearchProductsBusinessDeve…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -531,8 +601,8 @@
       "source": "OpenAI",
       "url": "https://openai.com/index/advancing-chip-design-with-our-models",
       "date": "2026-11-18",
-      "summary": "",
-      "tldr": "Advancing chip design with OpenAI models",
+      "summary": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current=page])>li:not(:hover)>:not([aria-current=page],:focus-visible)]:text-primary-60\">ResearchProductsBusinessDeve…",
+      "tldr": "li:hover)>li:not(:hover)>*]:text-primary-60 not-has-aria-expanded:[&:has(>li>[aria-current…",
       "maturity": "emerging",
       "tags": [
         "前沿"
@@ -1037,48 +1107,6 @@
       "addedAt": "2026-11-19T17:02:22.533Z"
     },
     {
-      "id": "sl2le2",
-      "title": "Strengthening NATO and allied cyber defenses with AI",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai",
-      "date": "2026-11-17",
-      "summary": "",
-      "tldr": "Strengthening NATO and allied cyber defenses with AI",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-17T17:21:22.632Z"
-    },
-    {
-      "id": "66wjk7",
-      "title": "Introducing OpenAI for Chile",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/introducing-openai-for-chile",
-      "date": "2026-11-17",
-      "summary": "",
-      "tldr": "Introducing OpenAI for Chile",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-17T17:21:22.870Z"
-    },
-    {
-      "id": "1lvha47",
-      "title": "Introducing GPT-6.2 Astra and Sol",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
-      "date": "2026-11-17",
-      "summary": "",
-      "tldr": "Introducing GPT-6.2 Astra and Sol",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-18T16:55:41.732Z"
-    },
-    {
       "id": "yheibl",
       "title": "Advancing Claude for Financial Services",
       "source": "Anthropic",
@@ -1120,6 +1148,48 @@
         "前沿"
       ],
       "addedAt": "2026-11-18T16:57:28.653Z"
+    },
+    {
+      "id": "sl2le2",
+      "title": "Strengthening NATO and allied cyber defenses with AI",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai",
+      "date": "2026-11-17",
+      "summary": "",
+      "tldr": "Strengthening NATO and allied cyber defenses with AI",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-17T17:21:22.632Z"
+    },
+    {
+      "id": "66wjk7",
+      "title": "Introducing OpenAI for Chile",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/introducing-openai-for-chile",
+      "date": "2026-11-17",
+      "summary": "",
+      "tldr": "Introducing OpenAI for Chile",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-17T17:21:22.870Z"
+    },
+    {
+      "id": "1lvha47",
+      "title": "Introducing GPT-6.2 Astra and Sol",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+      "date": "2026-11-17",
+      "summary": "",
+      "tldr": "Introducing GPT-6.2 Astra and Sol",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-18T16:55:41.732Z"
     },
     {
       "id": "1ug71gl",
@@ -3377,20 +3447,6 @@
       "addedAt": "2026-11-11T15:50:29.576Z"
     },
     {
-      "id": "ltmivl",
-      "title": "Decision Models in Hugging Face",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/decision",
-      "date": "2026-11-10",
-      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
-      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-10T16:04:53.408Z"
-    },
-    {
       "id": "1lbxceb",
       "title": "Your Algorithm: Giving People More Ways to Personalize Facebook Recommendations",
       "source": "Meta",
@@ -3446,6 +3502,20 @@
         "前沿"
       ],
       "addedAt": "2026-11-10T16:06:24.223Z"
+    },
+    {
+      "id": "ltmivl",
+      "title": "Decision Models in Hugging Face",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/decision",
+      "date": "2026-11-10",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-10T16:04:53.408Z"
     },
     {
       "id": "17xll2d",
@@ -5048,63 +5118,6 @@
       "addedAt": "2026-11-06T15:39:04.164Z"
     },
     {
-      "id": "13siifk",
-      "title": "NPCBench: A Clinical Apprenticeship Benchmark for Multimodal Care-Pathway Reasoning in Nasopharyngeal Carcinoma",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.08369v1",
-      "date": "2026-11-05",
-      "summary": "Current medical benchmarks typically break down clinical competence into isolated factual questions, single-image tasks, or static case vignettes. These tests score individual answers, but reveal less about whether a mod…",
-      "tldr": "Current medical benchmarks typically break down clinical competence into isolated factual…",
-      "maturity": "proposed",
-      "tags": [
-        "推理",
-        "评测"
-      ],
-      "addedAt": "2026-11-06T15:39:04.164Z"
-    },
-    {
-      "id": "1q00339",
-      "title": "Dharma Field Extractor: Any Document In, Structured Fields in JSON Out",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/Dharma-AI/dharma-field-extractor",
-      "date": "2026-11-04",
-      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
-      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-05T16:05:32.744Z"
-    },
-    {
-      "id": "1elx7fj",
-      "title": "OpenAI to acquire Pierre Computer Company, Inc.",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/openai-to-acquire-pierre",
-      "date": "2026-11-04",
-      "summary": "",
-      "tldr": "OpenAI to acquire Pierre Computer Company, Inc.",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:56:40.825Z"
-    },
-    {
-      "id": "18efcx1",
-      "title": "Daybreak Red is now available in AWS GovCloud (US-East)",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/daybreak-red-aws-govcloud",
-      "date": "2026-11-04",
-      "summary": "",
-      "tldr": "Daybreak Red is now available in AWS GovCloud (US-East)",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-04T15:56:41.069Z"
-    },
-    {
       "id": "tlc0r7",
       "title": "Agentic cheminformatics with Google Antigravity",
       "source": "Google DeepMind",
@@ -5176,20 +5189,6 @@
         "Loop"
       ],
       "addedAt": "2026-10-30T14:48:32.259Z"
-    },
-    {
-      "id": "ugaawt",
-      "title": "You can now generate, preview, and edit documents, PDFs, presentations, spreadsheets, and more directly in Gemini.",
-      "source": "Google Gemini",
-      "url": "https://blog.google/innovation-and-ai/products/gemini-app/edit-files-directly/",
-      "date": "2026-10-29",
-      "summary": "Generate, edit, and preview PDFs or Docs directly in Gemini. Use the new full-screen editor to refine your files today. See what's new in Gemini.",
-      "tldr": "Generate, edit, and preview PDFs or Docs directly in Gemini. Use the new full-screen edito…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-10-30T14:49:50.190Z"
     },
     {
       "id": "rpnlck",
