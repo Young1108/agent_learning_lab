@@ -1,9 +1,202 @@
 {
-  "updatedAt": "2026-11-25T18:25:26.439Z",
-  "version": 81,
+  "updatedAt": "2026-11-26T18:07:38.238Z",
+  "version": 82,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "105asio",
+      "title": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
+      "date": "2026-11-26",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing More Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Har…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "评测"
+      ],
+      "addedAt": "2026-11-26T18:06:27.450Z"
+    },
+    {
+      "id": "1mkmuv5",
+      "title": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+      "date": "2026-11-26",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing More Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Har…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-26T18:06:27.664Z"
+    },
+    {
+      "id": "11n1do9",
+      "title": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/training-swarms",
+      "date": "2026-11-26",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing More Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Har…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "Agent",
+        "Multi-Agent"
+      ],
+      "addedAt": "2026-11-26T18:06:27.872Z"
+    },
+    {
+      "id": "sxt8ot",
+      "title": "DeepSeek API Upgrade",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news0725/",
+      "date": "2026-11-26",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "DeepSeek API Upgrade",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-23T19:48:52.206Z"
+    },
+    {
+      "id": "sxtu4d",
+      "title": "DeepSeek API introduces Context Caching on Disk, cutting prices by an order of magnitude",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news0802/",
+      "date": "2026-11-26",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "DeepSeek API introduces Context Caching on Disk, cutting prices by an order of m…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-23T19:48:52.527Z"
+    },
+    {
+      "id": "sxuh6h",
+      "title": "DeepSeek-V2.5: A New Open-Source Model Combining General and Coding Capabilities",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news0905/",
+      "date": "2026-11-26",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "DeepSeek-V2.5: A New Open-Source Model Combining General and Coding Capabilities",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-23T19:48:52.870Z"
+    },
+    {
+      "id": "sy978p",
+      "title": "🚀 DeepSeek-R1-Lite-Preview is now live: unleashing supercharged reasoning power!",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news1120/",
+      "date": "2026-11-26",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "🚀 DeepSeek-R1-Lite-Preview is now live: unleashing supercharged reasoning power…",
+      "maturity": "emerging",
+      "tags": [
+        "推理"
+      ],
+      "addedAt": "2026-11-23T19:48:53.343Z"
+    },
+    {
+      "id": "sy9thj",
+      "title": "🚀 DeepSeek V2.5: The Grand Finale 🎉",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news1210/",
+      "date": "2026-11-26",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "🚀 DeepSeek V2.5: The Grand Finale 🎉",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-23T19:48:53.666Z"
+    },
+    {
+      "id": "sy9ude",
+      "title": "🚀 Introducing DeepSeek-V3",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news1226/",
+      "date": "2026-11-26",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "🚀 Introducing DeepSeek-V3",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-23T19:48:54.530Z"
+    },
+    {
+      "id": "1tw2r4v",
+      "title": "Introducing DeepSeek App",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news250115/",
+      "date": "2026-11-26",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "Introducing DeepSeek App",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-23T19:48:54.790Z"
+    },
+    {
+      "id": "1tw2rr9",
+      "title": "DeepSeek-R1 Release",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news250120/",
+      "date": "2026-11-26",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "DeepSeek-R1 Release",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-23T19:48:55.111Z"
+    },
+    {
+      "id": "1tw41um",
+      "title": "DeepSeek-V3-0324 Release",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news250325/",
+      "date": "2026-11-26",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "DeepSeek-V3-0324 Release",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-23T19:48:55.433Z"
+    },
+    {
+      "id": "1tw5bw9",
+      "title": "DeepSeek-R1-0528 Release",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news250528/",
+      "date": "2026-11-26",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "DeepSeek-R1-0528 Release",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-23T19:48:55.752Z"
+    },
     {
       "id": "13lvg9u",
       "title": "An Indic Voice Agent with CUGA",
@@ -33,154 +226,301 @@
       "addedAt": "2026-11-25T18:24:38.119Z"
     },
     {
-      "id": "sxt8ot",
-      "title": "DeepSeek API Upgrade",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news0725/",
+      "id": "6liq6r",
+      "title": "Where scientists draw the line on AI agents",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
       "date": "2026-11-25",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "DeepSeek API Upgrade",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing More Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Har…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
       "maturity": "emerging",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-11-26T18:06:28.106Z"
+    },
+    {
+      "id": "azo5y0",
+      "title": "Spectrum Adaptation of AI-Native Autoencoder Communications with Transfer Learning",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34942v1",
+      "date": "2026-11-25",
+      "summary": "End-to-end physical-layer learning replaces separate modulation, coding, and detection operations with an autoencoder (AE) that consists of a jointly trained encoder-decoder pair at the transmitter and the receiver. This…",
+      "tldr": "End-to-end physical-layer learning replaces separate modulation, coding, and detection ope…",
+      "maturity": "proposed",
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-11-23T19:48:52.206Z"
+      "addedAt": "2026-11-26T18:06:30.558Z"
     },
     {
-      "id": "sxtu4d",
-      "title": "DeepSeek API introduces Context Caching on Disk, cutting prices by an order of magnitude",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news0802/",
+      "id": "aznnen",
+      "title": "Tokenisation is not in APX",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34938v1",
       "date": "2026-11-25",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "DeepSeek API introduces Context Caching on Disk, cutting prices by an order of m…",
-      "maturity": "emerging",
+      "summary": "In this paper, we prove that, unless P=NP, no polynomial-time algorithm can find a tokeniser whose objective is within any constant factor of the optimum, meaning that tokenisation is not in the APX complexity class. We …",
+      "tldr": "In this paper, we prove that, unless P=NP, no polynomial-time algorithm can find a tokenis…",
+      "maturity": "proposed",
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-11-23T19:48:52.527Z"
+      "addedAt": "2026-11-26T18:06:30.558Z"
     },
     {
-      "id": "sxuh6h",
-      "title": "DeepSeek-V2.5: A New Open-Source Model Combining General and Coding Capabilities",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news0905/",
+      "id": "aznl6k",
+      "title": "Can image generation help visual reasoning? An empirical study",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34935v1",
       "date": "2026-11-25",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "DeepSeek-V2.5: A New Open-Source Model Combining General and Coding Capabilities",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-23T19:48:52.870Z"
-    },
-    {
-      "id": "sy978p",
-      "title": "🚀 DeepSeek-R1-Lite-Preview is now live: unleashing supercharged reasoning power!",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news1120/",
-      "date": "2026-11-25",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "🚀 DeepSeek-R1-Lite-Preview is now live: unleashing supercharged reasoning power…",
-      "maturity": "emerging",
+      "summary": "Language models think in words; then multimodal models might think in images. We test whether a generated helper improves the answer to a visual question. A model describes the helper it needs and then answers using the …",
+      "tldr": "Language models think in words; then multimodal models might think in images. We test whet…",
+      "maturity": "proposed",
       "tags": [
         "推理"
       ],
-      "addedAt": "2026-11-23T19:48:53.343Z"
+      "addedAt": "2026-11-26T18:06:30.558Z"
     },
     {
-      "id": "sy9thj",
-      "title": "🚀 DeepSeek V2.5: The Grand Finale 🎉",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news1210/",
+      "id": "aznkfv",
+      "title": "Attack Policy Selection can Mislead Monitor Evaluators",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34934v1",
       "date": "2026-11-25",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "🚀 DeepSeek V2.5: The Grand Finale 🎉",
-      "maturity": "emerging",
+      "summary": "AI monitors, classifiers that flag dangerous behaviour by AI agents, are often evaluated against transcripts generated by attack policies acting as proxies for dangerous behaviour in deployment. We evaluate an ex-product…",
+      "tldr": "AI monitors, classifiers that flag dangerous behaviour by AI agents, are often evaluated a…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-11-26T18:06:30.558Z"
+    },
+    {
+      "id": "azn0f4",
+      "title": "Diverse Alternative Reasoning Traces for Hard Math Problems",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34928v1",
+      "date": "2026-11-25",
+      "summary": "Post-training large language models (LLMs) for mathematical reasoning often relies on accepted traces whose final answers pass a verifier. For hard math problems, however, such traces can be rare under independent Monte …",
+      "tldr": "Post-training large language models (LLMs) for mathematical reasoning often relies on acce…",
+      "maturity": "proposed",
+      "tags": [
+        "推理"
+      ],
+      "addedAt": "2026-11-26T18:06:30.558Z"
+    },
+    {
+      "id": "azmwpn",
+      "title": "Mixture-of-Loops Transformer",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34923v1",
+      "date": "2026-11-25",
+      "summary": "Looped Transformers boost expressivity by reusing shared layers across loops, yet at the cost of efficiency. Pushing their expressivity-efficiency frontier requires rethinking the core mechanism connecting adjacent loops…",
+      "tldr": "Looped Transformers boost expressivity by reusing shared layers across loops, yet at the c…",
+      "maturity": "proposed",
+      "tags": [
+        "Loop"
+      ],
+      "addedAt": "2026-11-26T18:06:30.558Z"
+    },
+    {
+      "id": "azmuhk",
+      "title": "$μ$-Bench: Benchmarking Multi-User Task Completion in Shared Interaction Voice Agents",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34920v1",
+      "date": "2026-11-25",
+      "summary": "Voice agents in shared spaces must satisfy interdependent multi-user requests while upholding per-user authority, privacy, and task constraints. Existing evaluations offer limited coverage when participants react through…",
+      "tldr": "Voice agents in shared spaces must satisfy interdependent multi-user requests while uphold…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "评测"
+      ],
+      "addedAt": "2026-11-26T18:06:30.558Z"
+    },
+    {
+      "id": "az7ph5",
+      "title": "Enhancing Maritime Domain Awareness using Latent Space Representations",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34899v1",
+      "date": "2026-11-25",
+      "summary": "This work presents a novel application of Earth Observation (EO) embeddings for Maritime Domain Awareness (MDA) from the perspective of the geospatial foundation model TerraMind. By operating directly on compressed laten…",
+      "tldr": "This work presents a novel application of Earth Observation (EO) embeddings for Maritime D…",
+      "maturity": "proposed",
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-11-23T19:48:53.666Z"
+      "addedAt": "2026-11-26T18:06:30.558Z"
     },
     {
-      "id": "sy9ude",
-      "title": "🚀 Introducing DeepSeek-V3",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news1226/",
+      "id": "az7108",
+      "title": "Interpretable and Accurate Hybrid Decision Trees with Selective Case-Based Splits",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34887v1",
       "date": "2026-11-25",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "🚀 Introducing DeepSeek-V3",
-      "maturity": "emerging",
+      "summary": "Decision trees are among the most well-known interpretable models in Machine Learning. Over the years, a wide variety of strategies have been proposed to define split conditions within the greedy learning framework, aimi…",
+      "tldr": "Decision trees are among the most well-known interpretable models in Machine Learning. Ove…",
+      "maturity": "proposed",
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-11-23T19:48:54.530Z"
+      "addedAt": "2026-11-26T18:06:30.558Z"
     },
     {
-      "id": "1tw2r4v",
-      "title": "Introducing DeepSeek App",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news250115/",
+      "id": "az6cjb",
+      "title": "How Much Do Coding Agents Over-Edit, and Why? An Empirical Study of Unneeded Edits in Repository-Level Agent Patches",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34875v1",
       "date": "2026-11-25",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "Introducing DeepSeek App",
-      "maturity": "emerging",
+      "summary": "Agent patches are larger than developers', which is widely read as over-editing. But patch size does not say whether the extra edits are needed, what they are, or where they come from. We introduce Delta Residue Attribut…",
+      "tldr": "Agent patches are larger than developers', which is widely read as over-editing. But patch…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent"
+      ],
+      "addedAt": "2026-11-26T18:06:30.558Z"
+    },
+    {
+      "id": "az68tu",
+      "title": "Shape-Aware Three-Way Merge for RDF Knowledge Graphs: The schema defines the conflict: an implementation and evaluation",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34870v1",
+      "date": "2026-11-25",
+      "summary": "Merging RDF serializations creates ordering conflicts and misses semantic ones. We describe and evaluate a three-way merge in which the schema defines a conflict: set algebra combines canonical triples, and a slot is con…",
+      "tldr": "Merging RDF serializations creates ordering conflicts and misses semantic ones. We describ…",
+      "maturity": "proposed",
+      "tags": [
+        "Graph"
+      ],
+      "addedAt": "2026-11-26T18:06:30.558Z"
+    },
+    {
+      "id": "az5rrv",
+      "title": "A Survey of Security, Privacy, and Ethics of Large Language Models in Telecom",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34868v1",
+      "date": "2026-11-25",
+      "summary": "Large Language Models (LLMs) are increasingly integrated into telecommunications for customer service, network analytics, and operational support. While offering efficiency and innovation, their deployment raises critica…",
+      "tldr": "Large Language Models (LLMs) are increasingly integrated into telecommunications for custo…",
+      "maturity": "proposed",
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-11-23T19:48:54.790Z"
+      "addedAt": "2026-11-26T18:06:30.558Z"
     },
     {
-      "id": "1tw2rr9",
-      "title": "DeepSeek-R1 Release",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news250120/",
+      "id": "az5ot3",
+      "title": "RePace: Reasoning about Demonstration Speedup for Faster Vision-Language-Action Policies",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34864v1",
       "date": "2026-11-25",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "DeepSeek-R1 Release",
-      "maturity": "emerging",
+      "summary": "Since vision-language-action (VLA) policies can inherit the slow pace of human demonstrations, accelerating these demonstrations before fine-tuning can lead to faster VLA policies without an additional speed-selection mo…",
+      "tldr": "Since vision-language-action (VLA) policies can inherit the slow pace of human demonstrati…",
+      "maturity": "proposed",
+      "tags": [
+        "推理",
+        "多模态"
+      ],
+      "addedAt": "2026-11-26T18:06:30.558Z"
+    },
+    {
+      "id": "az5nbp",
+      "title": "BOP-Refer: Benchmark for Monocular 3D and 2D Object Grounding",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34862v1",
+      "date": "2026-11-25",
+      "summary": "We introduce BOP-Refer, the first benchmark for monocular 3D and 2D grounding of everyday and industrial objects sourced from 9 diverse BOP datasets. We pair images from these datasets with VLM-generated and human-verifi…",
+      "tldr": "We introduce BOP-Refer, the first benchmark for monocular 3D and 2D grounding of everyday…",
+      "maturity": "proposed",
+      "tags": [
+        "评测"
+      ],
+      "addedAt": "2026-11-26T18:06:30.558Z"
+    },
+    {
+      "id": "az54sc",
+      "title": "From Prediction to Decision: Decision-Focused Fine-Tuning of Autoregressive Tabular Transformers for Cost-Sensitive Financial Events",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34858v1",
+      "date": "2026-11-25",
+      "summary": "Autoregressive transformers trained on tokenized tabular event streams are a simple and strong baseline for predicting financial events such as fraud. Yet institutions do not act on probabilities; they act on decisions w…",
+      "tldr": "Autoregressive transformers trained on tokenized tabular event streams are a simple and st…",
+      "maturity": "proposed",
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-11-23T19:48:55.111Z"
+      "addedAt": "2026-11-26T18:06:30.559Z"
     },
     {
-      "id": "1tw41um",
-      "title": "DeepSeek-V3-0324 Release",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news250325/",
+      "id": "az50c6",
+      "title": "DRBench Pro: A Knowledge-Centric Benchmark for Professional Deep Research Agents",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34852v1",
       "date": "2026-11-25",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "DeepSeek-V3-0324 Release",
-      "maturity": "emerging",
+      "summary": "Deep research agents gather information from multiple sources and synthesize it into reports on complex, open-ended questions. Existing benchmarks assess report quality along several dimensions, but lack a dedicated know…",
+      "tldr": "Deep research agents gather information from multiple sources and synthesize it into repor…",
+      "maturity": "proposed",
+      "tags": [
+        "Agent",
+        "评测"
+      ],
+      "addedAt": "2026-11-26T18:06:30.559Z"
+    },
+    {
+      "id": "az4e3c",
+      "title": "Probing Visual Idiosyncrasies in Text-to-Image Models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34843v1",
+      "date": "2026-11-25",
+      "summary": "Text-to-Image (T2I) models turn short text descriptions into images, and the leading models now produce images of comparable visual quality. Whether their outputs still carry model-specific characteristics matters for at…",
+      "tldr": "Text-to-Image (T2I) models turn short text descriptions into images, and the leading model…",
+      "maturity": "proposed",
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-11-23T19:48:55.433Z"
+      "addedAt": "2026-11-26T18:06:30.559Z"
     },
     {
-      "id": "1tw5bw9",
-      "title": "DeepSeek-R1-0528 Release",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news250528/",
+      "id": "az4cly",
+      "title": "Knowledge-Base Gradient Descent: Self-Structuring Learning through Question Answering",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34841v1",
       "date": "2026-11-25",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "DeepSeek-R1-0528 Release",
-      "maturity": "emerging",
+      "summary": "We consider the problem of constructing knowledge bases for applications based on large language models, in which the structure of a knowledge base determines how an application can retrieve and connect the information n…",
+      "tldr": "We consider the problem of constructing knowledge bases for applications based on large la…",
+      "maturity": "proposed",
       "tags": [
         "前沿"
       ],
-      "addedAt": "2026-11-23T19:48:55.752Z"
+      "addedAt": "2026-11-26T18:06:30.559Z"
+    },
+    {
+      "id": "az3qd4",
+      "title": "Proverbs As A Window On Collective Prescriptions",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34832v1",
+      "date": "2026-11-25",
+      "summary": "Proverbs, as repositories of traditional wisdom, have informed human reasoning for millennia. Yet the collective prescriptions they encode have remained largely unquantified. We introduce a computational framework to ana…",
+      "tldr": "Proverbs, as repositories of traditional wisdom, have informed human reasoning for millenn…",
+      "maturity": "proposed",
+      "tags": [
+        "推理"
+      ],
+      "addedAt": "2026-11-26T18:06:30.559Z"
+    },
+    {
+      "id": "az3pmf",
+      "title": "Repairing the Trustworthiness of Distilled Language Models",
+      "source": "arXiv AI",
+      "url": "https://arxiv.org/abs/2611.34831v1",
+      "date": "2026-11-25",
+      "summary": "Knowledge distillation enables the deployment of large language models through smaller student models, but the compression process can introduce regressions in trustworthiness even when downstream performance is preserve…",
+      "tldr": "Knowledge distillation enables the deployment of large language models through smaller stu…",
+      "maturity": "proposed",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-26T18:06:30.559Z"
     },
     {
       "id": "jfrvtb",
@@ -308,6 +648,20 @@
         "前沿"
       ],
       "addedAt": "2026-11-24T19:19:12.278Z"
+    },
+    {
+      "id": "dyjz2f",
+      "title": "See what 5 builders are making with Gemini 4 Neon",
+      "source": "Google Gemini",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-neon-builders/",
+      "date": "2026-11-24",
+      "summary": "See five projects builders created with Gemini 4 Neon, from a glowing 3D Earth and Three.js butterflies to an interactive black hole.",
+      "tldr": "See five projects builders created with Gemini 4 Neon, from a glowing 3D Earth and Three.j…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-24T19:20:06.024Z"
     },
     {
       "id": "ae8y8m",
@@ -593,20 +947,6 @@
         "前沿"
       ],
       "addedAt": "2026-11-25T18:24:41.381Z"
-    },
-    {
-      "id": "dyjz2f",
-      "title": "See what 5 builders are making with Gemini 4 Neon",
-      "source": "Google Gemini",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-neon-builders/",
-      "date": "2026-11-24",
-      "summary": "See five projects builders created with Gemini 4 Neon, from a glowing 3D Earth and Three.js butterflies to an interactive black hole.",
-      "tldr": "See five projects builders created with Gemini 4 Neon, from a glowing 3D Earth and Three.j…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-24T19:20:06.024Z"
     },
     {
       "id": "1kbx7jn",
@@ -1971,20 +2311,6 @@
       "addedAt": "2026-11-19T17:02:04.663Z"
     },
     {
-      "id": "ar7hem",
-      "title": "Why your fine-tuning job takes longer than the FLOPs say",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time",
-      "date": "2026-11-18",
-      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing More Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Har…",
-      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-19T17:02:04.929Z"
-    },
-    {
       "id": "1glldhf",
       "title": "How Meta Uses AI Agents to Scale ML Innovations Across Ads Ranking Models",
       "source": "Meta",
@@ -2039,6 +2365,20 @@
         "世界模型"
       ],
       "addedAt": "2026-11-19T17:03:41.155Z"
+    },
+    {
+      "id": "ar7hem",
+      "title": "Why your fine-tuning job takes longer than the FLOPs say",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time",
+      "date": "2026-11-18",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing More Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Har…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:04.929Z"
     },
     {
       "id": "177mnr1",
@@ -2937,20 +3277,6 @@
       "addedAt": "2026-11-16T17:55:04.478Z"
     },
     {
-      "id": "1vxvm6g",
-      "title": "Hugging Face and OpenRouter join forces to make open-weight models easy to run",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/openrouter",
-      "date": "2026-11-16",
-      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing More Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Har…",
-      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-16T17:55:04.936Z"
-    },
-    {
       "id": "zx0kzh",
       "title": "Regional voices are rolling out in the Gemini app.",
       "source": "Google Gemini",
@@ -2963,6 +3289,20 @@
         "前沿"
       ],
       "addedAt": "2026-11-17T17:22:53.307Z"
+    },
+    {
+      "id": "1vxvm6g",
+      "title": "Hugging Face and OpenRouter join forces to make open-weight models easy to run",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/openrouter",
+      "date": "2026-11-16",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing More Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Har…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-16T17:55:04.936Z"
     },
     {
       "id": "79o6tc",
@@ -3462,34 +3802,6 @@
       "addedAt": "2026-11-14T14:44:33.293Z"
     },
     {
-      "id": "17hu88x",
-      "title": "llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
-      "date": "2026-11-13",
-      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing More Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Har…",
-      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-13T15:54:19.652Z"
-    },
-    {
-      "id": "vrm9ao",
-      "title": "Build a Robot Pick-and-Place Simulation with SimReady Assets",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/nvidia/simready-assets-robot-pick-and-place",
-      "date": "2026-11-13",
-      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
-      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-14T14:44:47.340Z"
-    },
-    {
       "id": "6whsrd",
       "title": "Cuttlefish on Mac: Running Android’s Virtual Device Framework Natively on Apple Silicon",
       "source": "Meta",
@@ -3516,6 +3828,34 @@
         "前沿"
       ],
       "addedAt": "2026-11-14T14:46:21.787Z"
+    },
+    {
+      "id": "17hu88x",
+      "title": "llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+      "date": "2026-11-13",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing More Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Har…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-13T15:54:19.652Z"
+    },
+    {
+      "id": "vrm9ao",
+      "title": "Build a Robot Pick-and-Place Simulation with SimReady Assets",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/nvidia/simready-assets-robot-pick-and-place",
+      "date": "2026-11-13",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-14T14:44:47.340Z"
     },
     {
       "id": "1x9za1p",
@@ -4918,319 +5258,6 @@
       "addedAt": "2026-11-11T15:50:10.364Z"
     },
     {
-      "id": "vltlyd",
-      "title": "Cogent and OpenAI build cyber defense factories for enterprises",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/cogent-security",
-      "date": "2026-11-10",
-      "summary": "",
-      "tldr": "Cogent and OpenAI build cyber defense factories for enterprises",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-11T15:50:10.819Z"
-    },
-    {
-      "id": "1x762kd",
-      "title": "Anthropic launches roadshow for proposed initial public offering",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/roadshow-launch",
-      "date": "2026-11-10",
-      "summary": "Today Anthropic, PBC launched the roadshow for its proposed initial public offering of its Class A common stock.",
-      "cover": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
-      "tldr": "Today Anthropic, PBC launched the roadshow for its proposed initial public offering of its…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-10T16:04:36.419Z"
-    },
-    {
-      "id": "1glqpbw",
-      "title": "Medical Image Segmentation: Foundation Model Adaptation versus Task-Specific Training",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14519v1",
-      "date": "2026-11-10",
-      "summary": "Foundation models pretrained on large natural-image collections are increasingly adapted for medical image segmentation, in the expectation that they will replace models trained for each task. Most comparisons, however, …",
-      "tldr": "Foundation models pretrained on large natural-image collections are increasingly adapted f…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
-      "id": "1glqol7",
-      "title": "Toward Foundation Detection Models via Example-Based Grounding in EM-DETR",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14518v1",
-      "date": "2026-11-10",
-      "summary": "DeepLearning (DL)-based Computer-Aided Diagnostic (CAD) systems have shown great promise in supporting clinicians, but their performance heavily depends on the availability of large, well-annotated datasets. In medical l…",
-      "tldr": "DeepLearning (DL)-based Computer-Aided Diagnostic (CAD) systems have shown great promise i…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
-      "id": "1glqmd4",
-      "title": "AutoScaffold: AI-Guided Scaffolding for Reinforcement Learning of Language Models",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14515v1",
-      "date": "2026-11-10",
-      "summary": "Reinforcement learning with verifiable rewards (RLVR) produces rich training experience, yet outcome rewards reduce each attempt to a single number and leave most of this information unused. Training-time scaffolds, such…",
-      "tldr": "Reinforcement learning with verifiable rewards (RLVR) produces rich training experience, y…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
-      "id": "1glqlmf",
-      "title": "Contrastive Discovery: Open-Ended Scientific Discovery over Competing Explanations",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14514v1",
-      "date": "2026-11-10",
-      "summary": "LLM agents are increasingly used for open-ended, data-driven scientific discovery, yet most of them evaluate hypotheses pointwise, testing an empirical claim $h$ only against its complement $\\neg h$. When evidence reject…",
-      "tldr": "LLM agents are increasingly used for open-ended, data-driven scientific discovery, yet mos…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
-      "id": "1glbw6l",
-      "title": "Comparative Analysis of Agent Evaluation Frameworks: Stability, Detection, and Discovery in Enterprise Analytics Agents",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14493v1",
-      "date": "2026-11-10",
-      "summary": "Deploying LLM-based analytics agents in enterprise settings requires evaluation frameworks that can reliably detect failures across complex, multi-tool workflows. We present a three-phase comparative study of three evalu…",
-      "tldr": "Deploying LLM-based analytics agents in enterprise settings requires evaluation frameworks…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
-      "id": "1glbvfw",
-      "title": "ReTrace: Distilling Tool-Using Agents into Planner-Free Workflows",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14492v1",
-      "date": "2026-11-10",
-      "summary": "Business process automation runs the same Standard Operating Procedure (SOP) again and again on new inputs. Large Language Model (LLM) agents can follow an SOP written in natural language, but they call an LLM to choose …",
-      "tldr": "Business process automation runs the same Standard Operating Procedure (SOP) again and aga…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
-      "id": "1glbc5u",
-      "title": "Re-Search: Dissecting LLM Ideation Through a Two-Player Questioning Game",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14487v1",
-      "date": "2026-11-10",
-      "summary": "Research ideation is iterative: researchers refine their ideas step by step based on feedback. Yet existing evaluations obscure this search process, making it difficult to understand how LLMs explore the space of researc…",
-      "tldr": "Research ideation is iterative: researchers refine their ideas step by step based on feedb…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
-      "id": "1glb972",
-      "title": "Mechanistic Interpretability Needs a Logic of Inference",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14483v1",
-      "date": "2026-11-10",
-      "summary": "Neural networks are increasingly studied not merely as predictive systems, but as complex systems whose internal computations are themselves objects of scientific inquiry. Recent progress in mechanistic interpretability …",
-      "tldr": "Neural networks are increasingly studied not merely as predictive systems, but as complex…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
-      "id": "1glb6yz",
-      "title": "Pterodactyl: Pushing the Limits of Efficient Automated Translation Evaluation",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14480v1",
-      "date": "2026-11-10",
-      "summary": "In this paper, we present 1020 Group's submission to the WMT26 shared task on automated quality evaluation. Our system, Pterodactyl, was engineered specifically for subtasks 2 and 3, that is, segment-level quality score …",
-      "tldr": "In this paper, we present 1020 Group's submission to the WMT26 shared task on automated qu…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
-      "id": "1glap6b",
-      "title": "FERN: Cross-Benchmark Table Retrieval for Text-to-SQL with Frozen Retrievers and Learned Ranking",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14477v1",
-      "date": "2026-11-10",
-      "summary": "Text-to-SQL systems over large pooled catalogs must first retrieve the tables a question needs. We compare against the published table recall of RASL, which uses Claude 3.5 models to extract keywords and select tables, o…",
-      "tldr": "Text-to-SQL systems over large pooled catalogs must first retrieve the tables a question n…",
-      "maturity": "proposed",
-      "tags": [
-        "评测"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
-      "id": "1gl9gon",
-      "title": "When does text encoding matter for language modeling?",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14459v1",
-      "date": "2026-11-10",
-      "summary": "UTF-8's role as the de facto encoding standard in language models introduces cross-lingual inequities due to its variable-length design. However, the effect that this encoding choice has on model performance remains larg…",
-      "tldr": "UTF-8's role as the de facto encoding standard in language models introduces cross-lingual…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
-      "id": "1gl81iq",
-      "title": "One Policy for 100 Household Tasks: Our Solution for the 2026 BEHAVIOR Challenge",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14432v1",
-      "date": "2026-11-10",
-      "summary": "We describe our solution for the 2026 BEHAVIOR Challenge: 100 long-horizon household tasks in the OmniGibson simulator. We placed 9th on the final leaderboard, the only independent team in the top 10. The core of the sol…",
-      "tldr": "We describe our solution for the 2026 BEHAVIOR Challenge: 100 long-horizon household tasks…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
-      "id": "1gl7hhz",
-      "title": "Two Communities, One Problem: Branch-and-Bound vs. A* for Resource-Constrained Project Scheduling",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14426v1",
-      "date": "2026-11-10",
-      "summary": "Branch-and-Bound (B&B) and $A^*$ are popular exact search methods originating from Operations Research and Artificial Intelligence, respectively. Although the two methods share fundamental search principles, their differ…",
-      "tldr": "Branch-and-Bound (B&B) and $A^*$ are popular exact search methods originating from Operati…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
-      "id": "1gl7gra",
-      "title": "Quantifying the Sampling Frequency Invariance of Time-Series Foundation Models for Sensor Data Applications",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14425v1",
-      "date": "2026-11-10",
-      "summary": "Time-Series Foundation Models (TSFMs) are increasingly used in sensor applications, where sampling frequency (SF) varies across sensors, devices, and operating modes (e.g., power saving). Ideally, TSFMs must remain effec…",
-      "tldr": "Time-Series Foundation Models (TSFMs) are increasingly used in sensor applications, where…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
-      "id": "1gl7dsi",
-      "title": "Earlybird: Predictive Streaming Speech Recognition in 29M Parameters",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14421v1",
-      "date": "2026-11-10",
-      "summary": "Streaming speech recognizers output a word only after the speaker has finished it, typically 90-400 ms later. For a voice agent every millisecond counts: the sooner the words are outputted, the sooner the agent can start…",
-      "tldr": "Streaming speech recognizers output a word only after the speaker has finished it, typical…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
-      "id": "1gl6wqj",
-      "title": "Evaluating LLM-Generated World Models for Neuro-Symbolic Reasoning",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14419v1",
-      "date": "2026-11-10",
-      "summary": "Formal world models can support planning, verification, and safety reasoning, but constructing them from open-ended natural-language situations is difficult, particularly in multi-agent settings where several formalizati…",
-      "tldr": "Formal world models can support planning, verification, and safety reasoning, but construc…",
-      "maturity": "proposed",
-      "tags": [
-        "Agent",
-        "推理",
-        "Multi-Agent",
-        "世界模型",
-        "安全"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
-      "id": "1gl6vzu",
-      "title": "Precision on Demand: Escalating Weight Bits at Uncertain Decoding Steps in a Small Local Model",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14418v1",
-      "date": "2026-11-10",
-      "summary": "Local decoding usually fixes one weight precision for the whole generation. We study a different allocation: store 8-bit weights, decode with their top 4 bits, and redo a step at 8 bits only when the low-precision output…",
-      "tldr": "Local decoding usually fixes one weight precision for the whole generation. We study a dif…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
-      "id": "1gl6sad",
-      "title": "Bits or permutations? Spending a fixed inference budget on weight precision or on option-order averaging in small local language models",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14413v1",
-      "date": "2026-11-10",
-      "summary": "Local language models can save memory by storing weights in fewer bits, and they can reduce sensitivity to the order of answer options by averaging a few reorderings. We ask whether the first makes the second worse, and …",
-      "tldr": "Local language models can save memory by storing weights in fewer bits, and they can reduc…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
-      "id": "1gl689m",
-      "title": "Causal Concept Explanations for Deep Neural Models",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14407v1",
-      "date": "2026-11-10",
-      "summary": "Concept-based explanations in neural models are important for the development, certification, and adoption of autonomous systems. Yet, interpretability remains correlational. Without methods to guide and quantify causal …",
-      "tldr": "Concept-based explanations in neural models are important for the development, certificati…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
-      "id": "1gks81e",
-      "title": "REAL Loss: Optimizing Real Expected Acceptance Length for Speculative Decoding",
-      "source": "arXiv AI",
-      "url": "https://arxiv.org/abs/2611.14399v1",
-      "date": "2026-11-10",
-      "summary": "Speculative decoding accelerates LLM inference by having a draft model propose multiple tokens for the target model to verify in one pass. The speedup is governed by the expected acceptance length (EAL), yet standard tra…",
-      "tldr": "Speculative decoding accelerates LLM inference by having a draft model propose multiple to…",
-      "maturity": "proposed",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-11T15:50:32.797Z"
-    },
-    {
       "id": "rwbjjw",
       "title": "Gemini Robotics 2.5 accelerates real-world general dexterity",
       "source": "Google DeepMind",
@@ -5259,34 +5286,6 @@
         "前沿"
       ],
       "addedAt": "2026-11-09T18:17:17.990Z"
-    },
-    {
-      "id": "1ucctd1",
-      "title": "Nemotron-Personas-Finance-Japan: A Synthetic Dataset Capturing Japan's Demographics and Financial Context",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/nvidia/nemotron-personas-finance-japan",
-      "date": "2026-11-09",
-      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
-      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
-      "maturity": "emerging",
-      "tags": [
-        "Graph"
-      ],
-      "addedAt": "2026-11-09T18:17:13.872Z"
-    },
-    {
-      "id": "49neyk",
-      "title": "Your Experts Have Partners. There's HOPE for Keeping Them Together",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/amazon/higher-order-pruning-experts",
-      "date": "2026-11-09",
-      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware…",
-      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-09T18:17:14.128Z"
     },
     {
       "id": "gwj74t",
