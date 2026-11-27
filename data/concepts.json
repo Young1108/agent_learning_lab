@@ -1,9 +1,173 @@
 {
-  "updatedAt": "2026-11-26T18:07:38.238Z",
-  "version": 82,
+  "updatedAt": "2026-11-27T17:50:18.413Z",
+  "version": 83,
   "sourceCount": 14,
   "conceptCount": 400,
   "concepts": [
+    {
+      "id": "1siijub",
+      "title": "Taking Trainium3 to the Track: Generating Videos with LTX-2.5",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/video-trainium3",
+      "date": "2026-11-27",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing More Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Har…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-27T17:49:27.653Z"
+    },
+    {
+      "id": "sxt8ot",
+      "title": "DeepSeek API Upgrade",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news0725/",
+      "date": "2026-11-27",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "DeepSeek API Upgrade",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-23T19:48:52.206Z"
+    },
+    {
+      "id": "sxtu4d",
+      "title": "DeepSeek API introduces Context Caching on Disk, cutting prices by an order of magnitude",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news0802/",
+      "date": "2026-11-27",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "DeepSeek API introduces Context Caching on Disk, cutting prices by an order of m…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-23T19:48:52.527Z"
+    },
+    {
+      "id": "sxuh6h",
+      "title": "DeepSeek-V2.5: A New Open-Source Model Combining General and Coding Capabilities",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news0905/",
+      "date": "2026-11-27",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "DeepSeek-V2.5: A New Open-Source Model Combining General and Coding Capabilities",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-23T19:48:52.870Z"
+    },
+    {
+      "id": "sy978p",
+      "title": "🚀 DeepSeek-R1-Lite-Preview is now live: unleashing supercharged reasoning power!",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news1120/",
+      "date": "2026-11-27",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "🚀 DeepSeek-R1-Lite-Preview is now live: unleashing supercharged reasoning power…",
+      "maturity": "emerging",
+      "tags": [
+        "推理"
+      ],
+      "addedAt": "2026-11-23T19:48:53.343Z"
+    },
+    {
+      "id": "sy9thj",
+      "title": "🚀 DeepSeek V2.5: The Grand Finale 🎉",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news1210/",
+      "date": "2026-11-27",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "🚀 DeepSeek V2.5: The Grand Finale 🎉",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-23T19:48:53.666Z"
+    },
+    {
+      "id": "sy9ude",
+      "title": "🚀 Introducing DeepSeek-V3",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news1226/",
+      "date": "2026-11-27",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "🚀 Introducing DeepSeek-V3",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-23T19:48:54.530Z"
+    },
+    {
+      "id": "1tw2r4v",
+      "title": "Introducing DeepSeek App",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news250115/",
+      "date": "2026-11-27",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "Introducing DeepSeek App",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-23T19:48:54.790Z"
+    },
+    {
+      "id": "1tw2rr9",
+      "title": "DeepSeek-R1 Release",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news250120/",
+      "date": "2026-11-27",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "DeepSeek-R1 Release",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-23T19:48:55.111Z"
+    },
+    {
+      "id": "1tw41um",
+      "title": "DeepSeek-V3-0324 Release",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news250325/",
+      "date": "2026-11-27",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "DeepSeek-V3-0324 Release",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-23T19:48:55.433Z"
+    },
+    {
+      "id": "1tw5bw9",
+      "title": "DeepSeek-R1-0528 Release",
+      "source": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/news/news250528/",
+      "date": "2026-11-27",
+      "summary": "",
+      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
+      "tldr": "DeepSeek-R1-0528 Release",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-23T19:48:55.752Z"
+    },
     {
       "id": "105asio",
       "title": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
@@ -46,156 +210,6 @@
         "Multi-Agent"
       ],
       "addedAt": "2026-11-26T18:06:27.872Z"
-    },
-    {
-      "id": "sxt8ot",
-      "title": "DeepSeek API Upgrade",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news0725/",
-      "date": "2026-11-26",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "DeepSeek API Upgrade",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-23T19:48:52.206Z"
-    },
-    {
-      "id": "sxtu4d",
-      "title": "DeepSeek API introduces Context Caching on Disk, cutting prices by an order of magnitude",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news0802/",
-      "date": "2026-11-26",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "DeepSeek API introduces Context Caching on Disk, cutting prices by an order of m…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-23T19:48:52.527Z"
-    },
-    {
-      "id": "sxuh6h",
-      "title": "DeepSeek-V2.5: A New Open-Source Model Combining General and Coding Capabilities",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news0905/",
-      "date": "2026-11-26",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "DeepSeek-V2.5: A New Open-Source Model Combining General and Coding Capabilities",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-23T19:48:52.870Z"
-    },
-    {
-      "id": "sy978p",
-      "title": "🚀 DeepSeek-R1-Lite-Preview is now live: unleashing supercharged reasoning power!",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news1120/",
-      "date": "2026-11-26",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "🚀 DeepSeek-R1-Lite-Preview is now live: unleashing supercharged reasoning power…",
-      "maturity": "emerging",
-      "tags": [
-        "推理"
-      ],
-      "addedAt": "2026-11-23T19:48:53.343Z"
-    },
-    {
-      "id": "sy9thj",
-      "title": "🚀 DeepSeek V2.5: The Grand Finale 🎉",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news1210/",
-      "date": "2026-11-26",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "🚀 DeepSeek V2.5: The Grand Finale 🎉",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-23T19:48:53.666Z"
-    },
-    {
-      "id": "sy9ude",
-      "title": "🚀 Introducing DeepSeek-V3",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news1226/",
-      "date": "2026-11-26",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "🚀 Introducing DeepSeek-V3",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-23T19:48:54.530Z"
-    },
-    {
-      "id": "1tw2r4v",
-      "title": "Introducing DeepSeek App",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news250115/",
-      "date": "2026-11-26",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "Introducing DeepSeek App",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-23T19:48:54.790Z"
-    },
-    {
-      "id": "1tw2rr9",
-      "title": "DeepSeek-R1 Release",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news250120/",
-      "date": "2026-11-26",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "DeepSeek-R1 Release",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-23T19:48:55.111Z"
-    },
-    {
-      "id": "1tw41um",
-      "title": "DeepSeek-V3-0324 Release",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news250325/",
-      "date": "2026-11-26",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "DeepSeek-V3-0324 Release",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-23T19:48:55.433Z"
-    },
-    {
-      "id": "1tw5bw9",
-      "title": "DeepSeek-R1-0528 Release",
-      "source": "DeepSeek",
-      "url": "https://api-docs.deepseek.com/news/news250528/",
-      "date": "2026-11-26",
-      "summary": "",
-      "cover": "https://api-docs.deepseek.com/img/deepseek-social-card.jpeg",
-      "tldr": "DeepSeek-R1-0528 Release",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-23T19:48:55.752Z"
     },
     {
       "id": "13lvg9u",
@@ -2297,20 +2311,6 @@
       "addedAt": "2026-11-18T16:56:00.457Z"
     },
     {
-      "id": "m3g2dz",
-      "title": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
-      "date": "2026-11-18",
-      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing More Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Har…",
-      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-19T17:02:04.663Z"
-    },
-    {
       "id": "1glldhf",
       "title": "How Meta Uses AI Agents to Scale ML Innovations Across Ads Ranking Models",
       "source": "Meta",
@@ -2365,6 +2365,20 @@
         "世界模型"
       ],
       "addedAt": "2026-11-19T17:03:41.155Z"
+    },
+    {
+      "id": "m3g2dz",
+      "title": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+      "date": "2026-11-18",
+      "summary": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pricing More Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Har…",
+      "tldr": "Search models, datasets, users... Ctrl K Models Datasets Spaces Buckets Docs Enterprise Pr…",
+      "maturity": "emerging",
+      "tags": [
+        "前沿"
+      ],
+      "addedAt": "2026-11-19T17:02:04.663Z"
     },
     {
       "id": "ar7hem",
@@ -5242,20 +5256,6 @@
         "前沿"
       ],
       "addedAt": "2026-11-11T15:50:09.899Z"
-    },
-    {
-      "id": "10kozv1",
-      "title": "Singapore Airlines elevates travel & work with OpenAI technology",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/singapore-airlines-travel-work",
-      "date": "2026-11-10",
-      "summary": "",
-      "tldr": "Singapore Airlines elevates travel & work with OpenAI technology",
-      "maturity": "emerging",
-      "tags": [
-        "前沿"
-      ],
-      "addedAt": "2026-11-11T15:50:10.364Z"
     },
     {
       "id": "rwbjjw",
